@@ -1,0 +1,6 @@
+
+创建srnprjava_path环境变量,变量值为本地工作空间路径
+配置eclipse -windows -preferces-maven -User setting -user setting 
+更改为E:\AAAProject\srnprjava\srnprjava\zzoos\eclipse\mavensetting\settings.xml
+
+
