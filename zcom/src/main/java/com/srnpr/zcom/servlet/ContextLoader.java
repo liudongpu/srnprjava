@@ -9,7 +9,7 @@ public  void Init(ServletContext servletContext) {
 		try {
 			
 			 
-			servletContext.log("Initializing zsrnpr");
+			servletContext.log("Initializing srnprjava");
 			
 			
 			InitProcess();
