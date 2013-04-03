@@ -1,5 +1,7 @@
 package com.srnpr.zcom.common;
 
+import java.util.Date;
+
 import com.srnpr.zcom.manager.ConfigCacheManager;
 
 
@@ -26,10 +28,27 @@ public class ComFunction {
 	 * @update 2013-4-3 上午12:01:45
 	 */
 		
-	public String ConfigValue(String sKey)
+	public static String ConfigValue(String sKey)
 	{
 		return ConfigCacheManager.Get(sKey);
 	}
+	
+	
+	
+	
+	 /**
+	 * @param sMessage
+	 * @description 
+	 * @version 1.0
+	 * @author srnpr
+	 * @update 2013-4-3 下午11:25:12
+	 */
+		
+	public static void OutLog(String sMessage) {
+		System.out.println((new Date()).toString()+sMessage);
+	}
+	
+	
 	
 	
 }
