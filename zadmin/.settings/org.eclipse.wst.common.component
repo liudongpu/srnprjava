@@ -13,6 +13,9 @@
         <dependent-module archiveName="zdata-0.0.1-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/zdata/zdata">
             <dependency-type>uses</dependency-type>
         </dependent-module>
+        <dependent-module archiveName="zzero-0.0.1-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/zzero/zzero">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
 		<property name="java-output-path" value="target/classes"/>
         <property name="context-root" value="zadmin"/>
 	</wb-module>

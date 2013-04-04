@@ -1,5 +1,6 @@
 package com.srnpr.zcom.common;
 
+import com.srnpr.zcom.enumer.EComConst;
 import com.srnpr.zcom.enumer.ERunType;
 
 public class CommonConst {
@@ -7,22 +8,20 @@ public class CommonConst {
 	
 	
 	
-	public static String GetConfigPath()
+	public static String Get(EComConst eConst)
 	{
-		return ConstStatic.CONST_CONFIG_PATH;
+		return ConstStatic.CONST_COM_MAP.get(eConst).toString();
+	}
+	
+	public  void Put(EComConst eConst,Object oValue)
+	{
+		ConstStatic.CONST_COM_MAP.put(eConst, oValue);
 	}
 	
 	
 	
-	public static ERunType GetRunType()
-	{
-		return ConstStatic.CONST_SERVER_RUNTYPE;
-	}
 	
-	public  void SetRunType(ERunType eRunType)
-	{
-		ConstStatic.CONST_SERVER_RUNTYPE=eRunType;
-	}
+	
 	
 	
 	
@@ -37,15 +36,7 @@ public class CommonConst {
 	}
 	
 	
-	public static String GetWebServerPath()
-	{
-		return ConstStatic.CONST_WEB_SERVER_PATH;
-	}
 	
-	public void SetWebServerPath(String sString)
-	{
-		ConstStatic.CONST_WEB_SERVER_PATH=sString;
-	}
 	
 	
 	

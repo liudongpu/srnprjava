@@ -48,7 +48,7 @@ public class IoHelper {
 		{
 			
 			String sUrlString=r.getURI().toString();
-			sUrlString=sUrlString.substring(sUrlString.indexOf(sKeyName));
+			sUrlString=sUrlString.substring(sUrlString.indexOf(sKeyName)+sKeyName.length()+1);
 			
 			
 			 InputStream  inStream  = r.getInputStream();  //读入原文件  

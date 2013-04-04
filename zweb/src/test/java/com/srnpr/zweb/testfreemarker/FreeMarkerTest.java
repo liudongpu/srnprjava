@@ -1,23 +1,26 @@
 package com.srnpr.zweb.testfreemarker;
 
 import java.util.HashMap;
+import java.util.concurrent.ConcurrentHashMap;
+
 import org.junit.Test;
 import com.srnpr.zcom.common.ComFunction;
+
+import com.srnpr.zcom.enumer.EComConst;
 import com.srnpr.zcom.helper.FreemarkerHelper;
 import com.srnpr.zweb.TestBase;
 import com.srnpr.zweb.common.WebConst;
+import com.srnpr.zweb.page.WebPage;
 
 public class FreeMarkerTest extends TestBase {
 
 	@Test
 	public void test() {
 
-		HashMap<Object, Object> map = new HashMap<Object, Object>();
-		map.put("userName", "xx    ");
-		map.put("init", ComFunction.ConfigArray("zsrnpr.init"));
-		String sReturnString = FreemarkerHelper.GetStringFromTemp(
-				WebConst.GetTempletePath(), "web_admin_pagebase.ftl", map);
-		ComFunction.OutLog(sReturnString);
+		
+		
+		
+		ComFunction.OutLog(new WebPage().GetPageHtml());
 
 	}
 

@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import com.srnpr.zcom.common.ComFunction;
 import com.srnpr.zcom.helper.FreemarkerHelper;
 import com.srnpr.zweb.common.WebConst;
+import com.srnpr.zweb.page.WebPage;
 
 /**
  * Handles requests for the application home page.
@@ -29,15 +30,8 @@ public class HomeController {
 	 */
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home(Locale locale, Model model) {
-		logger.info("Welcome home! The client locale is {}.", locale);
 		
-		HashMap<Object, Object> map = new HashMap<Object, Object>();
-		map.put("userName", "xx    ");
-		map.put("init", ComFunction.ConfigArray("zsrnpr.init"));
-		String sReturnString = FreemarkerHelper.GetStringFromTemp(
-				WebConst.GetTempletePath(), "web_admin_pagebase.ftl", map);
-		
-		model.addAttribute("serverTime", sReturnString );
+		model.addAttribute("serverTime", new WebPage().GetPageHtml() );
 		
 		return "home";
 	}

@@ -6,6 +6,7 @@ import org.springframework.core.io.Resource;
 
 import com.srnpr.zcom.common.ComFunction;
 import com.srnpr.zcom.common.CommonConst;
+import com.srnpr.zcom.enumer.EComConst;
 import com.srnpr.zcom.enumer.ERunType;
 import com.srnpr.zcom.helper.IoHelper;
 import com.srnpr.zcom.i.IBaseInit;
@@ -20,35 +21,47 @@ public class InitWeb implements IBaseInit {
 		
 		try {
 			InitTemplete(ComFunction.ConfigValue("zweb.templeteclaspath"));
+			
+			InitPageConfig();
+			
+			
+			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+		
 
 	}
 	
 	
 	
+	private void InitPageConfig() {
+		
+		
+		
+		
+		WebConst.PageConfig().put("staticurl", "aa");
+		
+	}
+
+
+
 	void InitTemplete(String sClassPath) throws IOException
 	{
+		if(!CommonConst.GetWebServerFlag())
+		{
+			
 		Resource[] resources=IoHelper.GetResource(sClassPath);
 		
 		if(resources.length>0)
     	{
-    		if(!CommonConst.GetWebServerFlag())
-    		{
-    			(new WebConst()).SetTempletePath(resources[0].getFile().getParent());
-    		}
-    		else
-    		{
-    			
-    			
-    			(new WebConst()).SetTempletePath(resources[0].getFile().getParent());
-    			
-    			
-    		}
-    		
+    		(new WebConst()).SetTempletePath(resources[0].getFile().getParent());
     	}
-    	
+		}
+		else
+		{
+			(new WebConst()).SetTempletePath(CommonConst.Get(EComConst.root_realpath_zsrnpr)+ComFunction.ConfigValue("zweb.templetefilepath"));
+		}
     	
     	
 		

@@ -1,14 +1,6 @@
 
-
-
-<aa>
-ddd
-
-
-
-
-<#list init as e>
-${e_index}. ${e}
+<#assign keys=PageConfig?keys>
+<#list keys as key>
+${key}---${PageConfig[key]}
 </#list>
 
-<dd>
