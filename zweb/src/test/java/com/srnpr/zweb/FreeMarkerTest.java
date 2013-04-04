@@ -1,10 +1,13 @@
 package com.srnpr.zweb;
 
+import static org.junit.Assert.*;
+
 import java.io.File;
 import java.io.StringWriter;
 import java.util.HashMap;
 import java.util.Locale;
-import java.util.Map;
+
+import org.junit.Test;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 
@@ -14,40 +17,13 @@ import freemarker.cache.FileTemplateLoader;
 import freemarker.template.Configuration;
 import freemarker.template.Template;
 import freemarker.template.TemplateException;
-import junit.framework.Test;
-import junit.framework.TestCase;
-import junit.framework.TestSuite;
 
-/**
- * Unit test for simple App.
- */
-public class AppTest 
-    extends TestCase
-{
-    /**
-     * Create the test case
-     *
-     * @param testName name of the test case
-     */
-    public AppTest( String testName )
-    {
-        super( testName );
-    }
+public class FreeMarkerTest {
 
-    /**
-     * @return the suite of tests being tested
-     */
-    public static Test suite()
-    {
-        return new TestSuite( AppTest.class );
-    }
-
-    /**
-     * Rigourous Test :-)
-     */
-    public void testApp()
-    {
-    	Configuration configuration = new Configuration(); 
+	@Test
+	public void test() {
+		
+		Configuration configuration = new Configuration(); 
     	PathMatchingResourcePatternResolver patternResolver = new PathMatchingResourcePatternResolver();  
     	
     	File file = null;
@@ -96,8 +72,7 @@ public class AppTest
 		{
 			ComFunction.OutLog(ex.getMessage());
 		}
-         
-    	
-        assertTrue( true );
-    }
+		
+	}
+
 }
