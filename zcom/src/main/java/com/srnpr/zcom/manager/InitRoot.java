@@ -1,17 +1,22 @@
 package com.srnpr.zcom.manager;
 
 import java.io.IOException;
+import java.rmi.server.ServerCloneException;
 import java.util.Iterator;
 import java.util.concurrent.ConcurrentHashMap;
 
+import javax.servlet.ServletContext;
+
 import org.apache.commons.configuration.ConfigurationException;
 import org.apache.commons.configuration.PropertiesConfiguration;
+import org.apache.commons.io.IOUtils;
 import org.springframework.core.io.Resource;
 
 import com.srnpr.zcom.common.ComFunction;
 import com.srnpr.zcom.common.CommonConst;
 import com.srnpr.zcom.helper.IoHelper;
 import com.srnpr.zcom.i.IBaseInit;
+import com.srnpr.zcom.init.InitJunit;
 
 public class InitRoot implements IBaseInit {
 
@@ -24,12 +29,8 @@ public class InitRoot implements IBaseInit {
 		
 		
 		try {
-			
+
 			InitConfig("classpath*:com/srnpr/*/zsrnpr/config/*.properties");
-			
-			
-			
-			
 			InitClass("zsrnpr.init");
 			
 		} catch (Exception e) {
@@ -43,7 +44,28 @@ public class InitRoot implements IBaseInit {
 	
 	
 	 
-	 /**
+	 public synchronized void InitConst(ServletContext servletContext) {
+		
+		 
+		 CommonConst commonConst=new CommonConst();
+		 commonConst.SetWebServerFlag(true);
+		 String sReallPath= servletContext.getRealPath("");
+		 commonConst.SetWebServerPath(sReallPath);
+		
+		 IoHelper.ResourcesMove("classpath*:com/srnpr/*/zsrnpr/templete/**/*.ftl", sReallPath+"/WEB-INF/", "zsrnpr");
+		 
+		 IoHelper.ResourcesMove("classpath*:com/srnpr/zzero/**/*.*", sReallPath+"/zzero", "zsrnpr");
+	}
+	 
+	 
+	 
+	 
+	 
+
+
+
+
+	/**
 	 * @param sResourceName
 	 * @description 
 	 * @version 1.0
@@ -111,12 +133,17 @@ public class InitRoot implements IBaseInit {
 		
 		for(String sClassName:ComFunction.ConfigArray(sConfigName))
 		{
-			Class<?> cClass=Class.forName(sClassName);
-			if(cClass!=null&&cClass.getDeclaredMethods()!=null)
-			{
-				IBaseInit init=(IBaseInit)cClass.newInstance();
-				init.Init();
+			try {
+				Class<?> cClass=Class.forName(sClassName);
+				if(cClass!=null&&cClass.getDeclaredMethods()!=null)
+				{
+					IBaseInit init=(IBaseInit)cClass.newInstance();
+					init.Init();
+				}
+			} catch (Exception e) {
+				// TODO: handle exception
 			}
+			
 		}
 	}
 }

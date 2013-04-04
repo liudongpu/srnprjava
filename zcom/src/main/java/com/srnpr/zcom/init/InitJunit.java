@@ -9,15 +9,15 @@ public class InitJunit implements IBaseInit {
 
 	public void Init() {
 		
-		
 	
-		
-		CommonConst.SetRunType(ERunType.junit);
-		
+		(new CommonConst()).SetRunType(ERunType.junit);
 		IBaseInit baseInit=new InitRoot();
 		baseInit.Init();
-		
-		
 	}
+	
+	
+	
+	
+	
 
 }

@@ -2,6 +2,8 @@ package com.srnpr.zcom.manager;
 
 import java.util.concurrent.ConcurrentHashMap;
 
+import com.srnpr.zcom.i.IConstStatic;
+
 
  /**
  * @description 
@@ -11,7 +13,7 @@ import java.util.concurrent.ConcurrentHashMap;
  * @update 2013-4-4 下午12:05:26
  */
 	
-class ConstStatic {
+class ConstStatic implements IConstStatic {
 
 	
 	

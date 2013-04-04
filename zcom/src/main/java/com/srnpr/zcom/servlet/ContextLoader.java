@@ -15,7 +15,7 @@ public  void Init(ServletContext servletContext) {
 			servletContext.log("Initializing srnprjava");
 			
 			
-			InitProcess();
+			InitProcess(servletContext);
 			
 		}
 		catch(RuntimeException ex)
@@ -26,9 +26,10 @@ public  void Init(ServletContext servletContext) {
 		
 	}
 
-	private void InitProcess() {
+	private void InitProcess(ServletContext servletContext) {
 		
-		IBaseInit baseInit=new InitRoot();
+		InitRoot baseInit=new InitRoot();
+		baseInit.InitConst( servletContext);
 		baseInit.Init();
 	}
 }

@@ -1,14 +1,12 @@
 package com.srnpr.zcom.manager;
 
-import static org.junit.Assert.*;
-
 import org.junit.Test;
+import org.springframework.core.io.Resource;
 
 import com.srnpr.zcom.TestBase;
 import com.srnpr.zcom.common.ComFunction;
 import com.srnpr.zcom.helper.FormatHelper;
-import com.srnpr.zcom.helper.HashHelper;
-import com.srnpr.zcom.i.IBaseInit;
+import com.srnpr.zcom.helper.IoHelper;
 
 public class InitTest extends TestBase {
 
@@ -18,7 +16,10 @@ public class InitTest extends TestBase {
 		
 		
 		
-		ComFunction.OutLog(FormatHelper.StringJoin(ComFunction.ConfigArray("zsrnpr.jskey")));
+		Resource[] resources=IoHelper.GetResource("classpath*:com/srnpr/*/zsrnpr/**/*.ftl");
+		
+		
+		
 		
 	}
 

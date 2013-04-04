@@ -1,9 +1,5 @@
 package com.srnpr.zcom.common;
 
-import org.apache.commons.lang.StringUtils;
-import org.springframework.context.support.StaticApplicationContext;
-
-import com.srnpr.zcom.enumer.ERunType;
 import com.srnpr.zcom.helper.FormatHelper;
 import com.srnpr.zcom.manager.ConfigCacheManager;
 

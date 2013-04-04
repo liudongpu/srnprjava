@@ -19,10 +19,34 @@ public class CommonConst {
 		return ConstStatic.CONST_SERVER_RUNTYPE;
 	}
 	
-	public static void SetRunType(ERunType eRunType)
+	public  void SetRunType(ERunType eRunType)
 	{
 		ConstStatic.CONST_SERVER_RUNTYPE=eRunType;
 	}
+	
+	
+	
+	public static Boolean GetWebServerFlag()
+	{
+		return ConstStatic.CONST_WEB_SERVER_FLAG;
+	}
+	
+	public void SetWebServerFlag(Boolean bFlag)
+	{
+		ConstStatic.CONST_WEB_SERVER_FLAG=bFlag;
+	}
+	
+	
+	public static String GetWebServerPath()
+	{
+		return ConstStatic.CONST_WEB_SERVER_PATH;
+	}
+	
+	public void SetWebServerPath(String sString)
+	{
+		ConstStatic.CONST_WEB_SERVER_PATH=sString;
+	}
+	
 	
 	
 	

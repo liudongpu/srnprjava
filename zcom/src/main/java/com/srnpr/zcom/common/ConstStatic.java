@@ -13,5 +13,16 @@ class ConstStatic implements IConstStatic {
 	 static String CONST_CONFIG_PATH="zsrnpr.config.";
 	
 	
+	 
+	 
+	 static String CONST_WEB_SERVER_PATH="";
+
+
+	 static boolean CONST_WEB_SERVER_FLAG=false;
+
+
+	
+	 
+	 
 	
 }
