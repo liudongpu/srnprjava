@@ -1,11 +1,15 @@
 package com.srnpr.zcom;
 
-import static org.junit.Assert.*;
-
-import org.junit.Test;
+import com.srnpr.zcom.i.IBaseInit;
+import com.srnpr.zcom.init.InitJunit;
+import com.srnpr.zcom.manager.InitRoot;
 
 public class TestBase {
 
-	
+	public  TestBase() {
+		
+		new InitJunit().Init();
+		
+	}
 
 }

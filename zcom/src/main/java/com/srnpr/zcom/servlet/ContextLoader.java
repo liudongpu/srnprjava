@@ -1,5 +1,8 @@
 package com.srnpr.zcom.servlet;
 import javax.servlet.ServletContext;
+
+import com.srnpr.zcom.i.IBaseInit;
+import com.srnpr.zcom.manager.InitRoot;
 public class ContextLoader {
 
 	
@@ -25,6 +28,7 @@ public  void Init(ServletContext servletContext) {
 
 	private void InitProcess() {
 		
-		
+		IBaseInit baseInit=new InitRoot();
+		baseInit.Init();
 	}
 }

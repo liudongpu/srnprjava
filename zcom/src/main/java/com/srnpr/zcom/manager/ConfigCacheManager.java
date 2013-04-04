@@ -1,7 +1,7 @@
 package com.srnpr.zcom.manager;
 
-import java.util.concurrent.ConcurrentHashMap;
-
+import com.srnpr.zcom.common.CommonConst;
+import com.srnpr.zcom.helper.HashHelper;
 import com.srnpr.zcom.i.ICacheManager;
 
 public class ConfigCacheManager implements ICacheManager {
@@ -17,11 +17,8 @@ public class ConfigCacheManager implements ICacheManager {
     }  
 	
 	
-	 /**
-	 * @fields cMap
-	 */
 		
-	private static ConcurrentHashMap<String, String> cMap=new ConcurrentHashMap<String, String>();
+	
 
 	
 	
@@ -41,10 +38,17 @@ public class ConfigCacheManager implements ICacheManager {
 	}
 
 	public static String Get(String sKey) {
+	
 		
-		return cMap.get(sKey);
+		return ConstStatic.CONST_CONFIG_MAP.get(CommonConst.GetConfigPath()+ sKey);
 	}
 
+	
+	
+	public static String[] GetArray(String sKey)
+	{
+		return HashHelper.GetStringFromCurrentHash(ConstStatic.CONST_CONFIG_HASH.get(CommonConst.GetConfigPath()+sKey));
+	}
 	
 	
 

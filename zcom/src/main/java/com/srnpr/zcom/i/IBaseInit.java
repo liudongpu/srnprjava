@@ -4,7 +4,7 @@ public interface IBaseInit {
 
 	
 	
-	public void InitProcess();
+	public void Init();
 	
 	
 }

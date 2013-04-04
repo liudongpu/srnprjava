@@ -1,7 +1,10 @@
 package com.srnpr.zcom.common;
 
-import java.util.Date;
+import org.apache.commons.lang.StringUtils;
+import org.springframework.context.support.StaticApplicationContext;
 
+import com.srnpr.zcom.enumer.ERunType;
+import com.srnpr.zcom.helper.FormatHelper;
 import com.srnpr.zcom.manager.ConfigCacheManager;
 
 
@@ -30,10 +33,14 @@ public class ComFunction {
 		
 	public static String ConfigValue(String sKey)
 	{
+		
 		return ConfigCacheManager.Get(sKey);
 	}
 	
-	
+	public static String[] ConfigArray(String sKey)
+	{
+		return ConfigCacheManager.GetArray(sKey);
+	}
 	
 	
 	 /**
@@ -44,9 +51,14 @@ public class ComFunction {
 	 * @update 2013-4-3 下午11:25:12
 	 */
 		
-	public static void OutLog(String sMessage) {
-		System.out.println((new Date()).toString()+sMessage);
+	public static void OutLog(String... sMessage) {
+		
+		
+		
+		System.out.println(FormatHelper.GetDateTime()+"  "+FormatHelper.StringJoin(sMessage));
 	}
+	
+	
 	
 	
 	

@@ -1,6 +1,6 @@
 package com.srnpr.zweb;
 
-import static org.junit.Assert.*;
+
 
 import java.io.File;
 import java.io.StringWriter;
@@ -12,16 +12,21 @@ import org.springframework.core.io.Resource;
 import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 
 import com.srnpr.zcom.common.ComFunction;
+import com.srnpr.zcom.helper.FormatHelper;
 
 import freemarker.cache.FileTemplateLoader;
 import freemarker.template.Configuration;
 import freemarker.template.Template;
 import freemarker.template.TemplateException;
 
-public class FreeMarkerTest {
+public class FreeMarkerTest extends TestBase {
 
 	@Test
 	public void test() {
+		
+		
+		ComFunction.OutLog(FormatHelper.StringJoin(ComFunction.ConfigArray("zweb.jskey")));
+		
 		
 		Configuration configuration = new Configuration(); 
     	PathMatchingResourcePatternResolver patternResolver = new PathMatchingResourcePatternResolver();  
@@ -29,6 +34,9 @@ public class FreeMarkerTest {
     	File file = null;
     	
 		try {
+			
+			
+			
     	Resource[] resources = patternResolver.getResources("classpath*:com/srnpr/*/zsrnpr/webtemplete/*.ftl");
     	
 		
@@ -46,6 +54,10 @@ public class FreeMarkerTest {
 	         //configuration.setEncoding(Locale.CHINA, "UTF-8"); 
 	        // configuration.setDirectoryForTemplateLoading(file);
 	        // Template template = configuration.getTemplate("hello.html"); 
+    	
+    	
+    	
+    	
     	  configuration.setEncoding(Locale.CHINA, "UTF-8"); 
     		configuration.setTemplateLoader(fTemplateLoader);
     		Template template=configuration.getTemplate("basepage.ftl");
