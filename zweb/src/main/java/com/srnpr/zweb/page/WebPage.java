@@ -26,17 +26,18 @@ public class WebPage {
 		
 		HashMap<Object, Object> hWebPage=new HashMap<Object, Object>();
 		
-		hWebPage.put("WebConfig", ConfigCacheManager.GetHash("zweb.webconfig"));
+		
 		
 		hWebPage.put("PageConfig", WebConst.PageConfig());
 		
-		hWebPage.put("IncludePage", "web_admin_pagelogin.ftl");
+		
+
 		
 		hPageTemp.put("WebPage", hWebPage);
 		
 		
 		String sReturnString = FreemarkerHelper.GetStringFromTemp(
-				WebConst.Get(EWebConst.templete_path), "web_admin_pagebase.ftl", hPageTemp);
+				WebConst.Get(EWebConst.templete_path), ComFunction.ConfigValue("zweb.page_admin"), hPageTemp);
 		
 		
 		return sReturnString;

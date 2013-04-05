@@ -26,7 +26,7 @@ public class WebConst {
 	
 	
 	
-	public static ConcurrentHashMap<String, String> PageConfig() {
+	public static ConcurrentHashMap<Object, Object> PageConfig() {
 		return ConstStatic.CONST_PAGE_CONFIG;
 	}
 	

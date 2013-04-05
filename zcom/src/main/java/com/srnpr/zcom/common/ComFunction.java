@@ -1,5 +1,7 @@
 package com.srnpr.zcom.common;
 
+import java.util.concurrent.ConcurrentHashMap;
+
 import com.srnpr.zcom.helper.FormatHelper;
 import com.srnpr.zcom.manager.ConfigCacheManager;
 
@@ -36,6 +38,11 @@ public class ComFunction {
 	public static String[] ConfigArray(String sKey)
 	{
 		return ConfigCacheManager.GetArray(sKey);
+	}
+	
+	public static ConcurrentHashMap<String, String> ConfigHash(String sKey)
+	{
+		return ConfigCacheManager.GetHash(sKey);
 	}
 	
 	

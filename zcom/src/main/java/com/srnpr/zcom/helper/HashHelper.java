@@ -1,11 +1,17 @@
 package com.srnpr.zcom.helper;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.Enumeration;
 import java.util.Iterator;
 import java.util.concurrent.ConcurrentHashMap;
 
+import org.apache.commons.configuration.ConfigurationException;
 import org.apache.commons.configuration.PropertiesConfiguration;
+import org.apache.commons.io.FileUtils;
 
+import com.srnpr.zcom.common.CommonConst;
+import com.srnpr.zcom.enumer.EComConst;
 import com.srnpr.zcom.model.MPropertiesHash;
 
 public class HashHelper {
@@ -30,6 +36,31 @@ public class HashHelper {
 		
 	}
 	
+	
+	
+	
+	public MPropertiesHash getMPropertiesHash(String sFilePath,String sLeftPad)
+	{
+		return getMPropertiesHash(new File(sFilePath), sLeftPad);
+	}
+	
+	
+	public MPropertiesHash getMPropertiesHash(File fFile,String sLeftPad)
+	{
+		
+		PropertiesConfiguration pConfiguration=new PropertiesConfiguration();
+		
+		try {
+			pConfiguration.load(FileUtils.openInputStream(fFile),CommonConst.Get(EComConst.server_encoding));
+		} catch (Exception e) {
+			
+			e.printStackTrace();
+		}
+		
+		return getMPropertiesHash(pConfiguration, sLeftPad);
+		
+		
+	}
 	
 	
 	

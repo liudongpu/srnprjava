@@ -85,15 +85,10 @@ public class ConfigCacheManager implements ICacheManager {
 		for(File f:files)
 		{
 			
-
-					PropertiesConfiguration pJarConfiguration=new PropertiesConfiguration();
-					
-					pJarConfiguration.load(FileUtils.openInputStream(f),CommonConst.Get(EComConst.server_encoding));
-					
 					String sFileNameString=f.getName();
 					String sLeftString= sFileNameString.substring(0,sFileNameString.lastIndexOf("."))+".";
 					HashHelper hashHelper=new HashHelper();
-					MPropertiesHash mHash=hashHelper.getMPropertiesHash(pJarConfiguration, sLeftString);
+					MPropertiesHash mHash=hashHelper.getMPropertiesHash(f, sLeftString);
 					Enumeration<String> eKey=mHash.getKeyValue().keys();
 					while (eKey.hasMoreElements()) {
 						String sKey = eKey.nextElement();
