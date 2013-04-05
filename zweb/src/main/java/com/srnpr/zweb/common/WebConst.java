@@ -2,20 +2,27 @@ package com.srnpr.zweb.common;
 
 import java.util.concurrent.ConcurrentHashMap;
 
+import com.srnpr.zweb.enumer.EWebConst;
+
 public class WebConst {
 
 	
-	public void SetTempletePath(String sPath)
+	
+	
+	
+	public static String Get(EWebConst eConst)
 	{
-		ConstStatic.CONST_WEB_TEMPLETE_PATH=sPath;
+		return ConstStatic.CONST_WEB_CONST.get(eConst).toString();
+	}
+	
+	public static void Put(EWebConst eConst,Object oValue)
+	{
+		ConstStatic.CONST_WEB_CONST.put(eConst, oValue);
 	}
 	
 	
-	public static String GetTempletePath()
-	{
-		return ConstStatic.CONST_WEB_TEMPLETE_PATH;
-	}
 	
+
 	
 	
 	

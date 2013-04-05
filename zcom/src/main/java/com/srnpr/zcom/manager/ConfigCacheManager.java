@@ -1,15 +1,20 @@
 package com.srnpr.zcom.manager;
 
+import java.io.File;
 import java.io.IOException;
 import java.io.Reader;
+import java.util.Collection;
 import java.util.Enumeration;
 import java.util.Iterator;
 import java.util.concurrent.ConcurrentHashMap;
 
 import org.apache.commons.configuration.ConfigurationException;
 import org.apache.commons.configuration.PropertiesConfiguration;
+import org.apache.commons.io.FileUtils;
+import org.apache.commons.io.filefilter.IOFileFilter;
 import org.springframework.core.io.Resource;
 
+import com.srnpr.zcom.common.ComFunction;
 import com.srnpr.zcom.common.CommonConst;
 import com.srnpr.zcom.enumer.EComConst;
 import com.srnpr.zcom.helper.HashHelper;
@@ -74,29 +79,32 @@ public class ConfigCacheManager implements ICacheManager {
 	public void InitConfig(String sResourceName) throws ConfigurationException, IOException
 	{
 		
-			for(Resource r:IoHelper.GetResource(sResourceName))
-			{
+		
+		Collection<File> files= FileUtils.listFiles((new File(sResourceName)),new String[]{"properties"}, true);
+
+		for(File f:files)
+		{
+			
 
 					PropertiesConfiguration pJarConfiguration=new PropertiesConfiguration();
-					pJarConfiguration.load(r.getInputStream(),CommonConst.Get(EComConst.server_encoding));
-					String sFileNameString=r.getFilename();
+					
+					pJarConfiguration.load(FileUtils.openInputStream(f),CommonConst.Get(EComConst.server_encoding));
+					
+					String sFileNameString=f.getName();
 					String sLeftString= sFileNameString.substring(0,sFileNameString.lastIndexOf("."))+".";
 					HashHelper hashHelper=new HashHelper();
 					MPropertiesHash mHash=hashHelper.getMPropertiesHash(pJarConfiguration, sLeftString);
 					Enumeration<String> eKey=mHash.getKeyValue().keys();
 					while (eKey.hasMoreElements()) {
-						String sKey = (String) eKey.nextElement();
+						String sKey = eKey.nextElement();
 						ConstStatic.CONST_CONFIG_MAP.put(sKey,mHash.getKeyValue().get(sKey));
 					}
 					
 					Enumeration<String> eHashKey=mHash.getChild().keys();
 					while (eHashKey.hasMoreElements()) {
-						String sKey = (String) eHashKey.nextElement();
+						String sKey = eHashKey.nextElement();
 						ConstStatic.CONST_CONFIG_HASH.put(sKey,mHash.getChild().get(sKey));
 					}
-					
-					
-				
 					
 			}
 

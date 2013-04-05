@@ -7,6 +7,7 @@ import com.srnpr.zcom.common.ComFunction;
 import com.srnpr.zcom.helper.FreemarkerHelper;
 import com.srnpr.zcom.manager.ConfigCacheManager;
 import com.srnpr.zweb.common.WebConst;
+import com.srnpr.zweb.enumer.EWebConst;
 
 public class WebPage {
 
@@ -35,7 +36,7 @@ public class WebPage {
 		
 		
 		String sReturnString = FreemarkerHelper.GetStringFromTemp(
-				WebConst.GetTempletePath(), "web_admin_pagebase.ftl", hPageTemp);
+				WebConst.Get(EWebConst.templete_path), "web_admin_pagebase.ftl", hPageTemp);
 		
 		
 		return sReturnString;

@@ -33,8 +33,19 @@ public class InitRoot implements IBaseInit {
 			 CommonConst commonConst=new CommonConst();
 			 commonConst.Put(EComConst.server_encoding, "UTF-8");
 			
+			 
+			 IoHelper.ResourcesMove("classpath*:com/srnpr/*/zsrnpr/**/*.*", CommonConst.Get(EComConst.root_realpath_zsrnpr), "zsrnpr");
+			 IoHelper.ResourcesMove("classpath*:com/srnpr/zzero/**/*.*", CommonConst.Get(EComConst.root_realpath_zero), "srnpr/zzero");
+			 
+			 
+			 
+			 
 			
-			new ConfigCacheManager().InitConfig("classpath*:com/srnpr/*/zsrnpr/config/*.properties");
+			new ConfigCacheManager().InitConfig(commonConst.Get(EComConst.root_realpath_zsrnpr)+"/config");
+			
+			
+			
+			
 			InitClass("zsrnpr.init");
 			
 		} catch (Exception e) {
@@ -61,10 +72,7 @@ public class InitRoot implements IBaseInit {
 		 commonConst.Put(EComConst.root_realpath_zsrnpr, sReallPath+"/WEB-INF/zsrnpr/");
 		 commonConst.Put(EComConst.root_realpath_zero, sReallPath+"/zzero/");
 		
-		 IoHelper.ResourcesMove("classpath*:com/srnpr/*/zsrnpr/**/*.*", CommonConst.Get(EComConst.root_realpath_zsrnpr), "zsrnpr");
-		 
-		 IoHelper.ResourcesMove("classpath*:com/srnpr/zzero/**/*.*", CommonConst.Get(EComConst.root_realpath_zero), "srnpr/zzero");
-		 
+		
 		 
 		 
 		 

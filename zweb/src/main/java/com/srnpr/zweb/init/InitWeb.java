@@ -12,6 +12,7 @@ import com.srnpr.zcom.helper.IoHelper;
 import com.srnpr.zcom.i.IBaseInit;
 import com.srnpr.zcom.init.InitJunit;
 import com.srnpr.zweb.common.WebConst;
+import com.srnpr.zweb.enumer.EWebConst;
 
 public class InitWeb implements IBaseInit {
 
@@ -20,6 +21,8 @@ public class InitWeb implements IBaseInit {
 		ComFunction.OutLog(this.getClass().getName());
 		
 		try {
+			
+			
 			InitTemplete(ComFunction.ConfigValue("zweb.templeteclaspath"));
 			
 			InitPageConfig();
@@ -48,22 +51,9 @@ public class InitWeb implements IBaseInit {
 
 	void InitTemplete(String sClassPath) throws IOException
 	{
-		if(!CommonConst.GetWebServerFlag())
-		{
-			
-		Resource[] resources=IoHelper.GetResource(sClassPath);
 		
-		if(resources.length>0)
-    	{
-    		(new WebConst()).SetTempletePath(resources[0].getFile().getParent());
-    	}
-		}
-		else
-		{
-			(new WebConst()).SetTempletePath(CommonConst.Get(EComConst.root_realpath_zsrnpr)+ComFunction.ConfigValue("zweb.templetefilepath"));
-		}
-    	
-    	
+		WebConst.Put(EWebConst.templete_path, CommonConst.Get(EComConst.root_realpath_zsrnpr)+ComFunction.ConfigValue("zweb.templetefilepath"));
+		
 		
 	}
 	
