@@ -1,4 +1,0 @@
-#NOTE: This is an internal implementation file, its format can be changed without prior notice.
-#Tue Nov 20 22:56:08 CST 2012
-default-http\://repo.maven.apache.org/maven2/.lastUpdated=1353423368211
-http\://repo.maven.apache.org/maven2/.error=Could not transfer artifact org.slf4j\:slf4j-api\:jar\:1.5.10 from/to central (http\://repo.maven.apache.org/maven2)\: No response received after 60000
