@@ -44,7 +44,8 @@ public class InitWeb implements IBaseInit {
 		WebConst.PageConfig().put("admin_include",
 				ComFunction.ConfigHash("zweb.admin_include"));
 
-		String sAdminTheamsPath =  ComFunction.ConfigValue("zweb.path_themes_admin_config");
+		String sAdminTheamsPath = ComFunction
+				.ConfigValue("zweb.path_themes_admin_config");
 
 		ArrayList<String> lCssList = new ArrayList<String>();
 		ArrayList<String> lJsList = new ArrayList<String>();
@@ -57,11 +58,16 @@ public class InitWeb implements IBaseInit {
 			lCssList.add(ComFunction.ConfigValue("zweb.url_themes_admin") + s);
 		}
 
+		for (String s : HashHelper.GetStringFromCurrentHash(ComFunction
+				.ConfigHash("zweb.lib_bootstrap_css"))) {
+			lCssList.add(s);
+		}
+
 		WebConst.PageConfig().put("admin_css", lCssList.toArray());
 
 		for (String s : HashHelper.GetStringFromCurrentHash(
 				ComFunction.ConfigHash("zweb.lib_jquery_js"),
-				ComFunction.ConfigHash("zweb.lib_dojo_js"),
+				ComFunction.ConfigHash("zweb.lib_bootstrap_js"),
 				ComFunction.ConfigHash("zweb.lib_zen_js"))) {
 			lJsList.add(s);
 		}

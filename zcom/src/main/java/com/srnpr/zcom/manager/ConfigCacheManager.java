@@ -48,6 +48,10 @@ public class ConfigCacheManager implements ICacheManager {
 
 		return ConstStatic.CONST_CONFIG_MAP.get(sKey);
 	}
+	
+	
+	
+	
 
 	public static String[] GetArray(String sKey) {
 		return HashHelper
