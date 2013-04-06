@@ -25,19 +25,12 @@ public class WebPage {
 		
 		
 		HashMap<Object, Object> hWebPage=new HashMap<Object, Object>();
-		
-		
-		
-		hWebPage.put("PageConfig", WebConst.PageConfig());
-		
-		
 
-		
+		hWebPage.put("PageConfig", WebConst.PageConfig());
+
 		hPageTemp.put("WebPage", hWebPage);
-		
-		
 		String sReturnString = FreemarkerHelper.GetStringFromTemp(
-				WebConst.Get(EWebConst.templete_path), ComFunction.ConfigValue("zweb.page_admin"), hPageTemp);
+				WebConst.Get(EWebConst.templete_path), ComFunction.ConfigValue("zweb.admin_page"), hPageTemp);
 		
 		
 		return sReturnString;

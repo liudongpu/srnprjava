@@ -4,6 +4,8 @@ import java.io.File;
 import java.io.StringWriter;
 import java.util.Locale;
 
+import com.srnpr.zcom.common.ComFunction;
+
 import freemarker.cache.FileTemplateLoader;
 import freemarker.template.Configuration;
 import freemarker.template.Template;
@@ -43,13 +45,13 @@ public class FreemarkerHelper {
 
 				template.process(oRootMap, sWriter);
 			} catch (TemplateException e) {
-				e.printStackTrace();
+				ComFunction.ThrowError(e);
 			}
 
 			sReturn = sWriter.toString();
 
 		} catch (Exception e) {
-			e.printStackTrace();
+			ComFunction.ThrowError(e);
 		}
 
 		return sReturn;

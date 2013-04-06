@@ -32,7 +32,7 @@ public class IoHelper {
 		}
 		catch(Exception e)
 		{
-			e.printStackTrace();
+			ComFunction.ThrowError(e);
 		}
 		
 		return resources;
@@ -70,7 +70,7 @@ public class IoHelper {
 		}
 		catch(Exception e)
 		{
-			e.printStackTrace();
+			ComFunction.ThrowError(e);
 		}
 		
 		

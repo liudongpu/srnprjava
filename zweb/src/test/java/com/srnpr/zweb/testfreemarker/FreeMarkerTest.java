@@ -11,8 +11,10 @@ import com.srnpr.zcom.common.ComFunction;
 
 import com.srnpr.zcom.enumer.EComConst;
 import com.srnpr.zcom.helper.FreemarkerHelper;
+import com.srnpr.zcom.manager.ConfigCacheManager;
 import com.srnpr.zweb.TestBase;
 import com.srnpr.zweb.common.WebConst;
+import com.srnpr.zweb.enumer.EWebConst;
 import com.srnpr.zweb.page.WebPage;
 
 public class FreeMarkerTest extends TestBase {
@@ -24,7 +26,9 @@ public class FreeMarkerTest extends TestBase {
 		
 		
 		ComFunction.OutLog(new WebPage().GetPageHtml());
-
+		
+		
+		
 	}
 
 }

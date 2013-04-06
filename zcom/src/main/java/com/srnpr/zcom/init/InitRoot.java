@@ -35,22 +35,22 @@ public class InitRoot implements IBaseInit {
 			
 			 
 			 IoHelper.ResourcesMove("classpath*:com/srnpr/*/zsrnpr/**/*.*", CommonConst.Get(EComConst.root_realpath_zsrnpr), "zsrnpr");
-			 IoHelper.ResourcesMove("classpath*:com/srnpr/zzero/**/*.*", CommonConst.Get(EComConst.root_realpath_zero), "srnpr/zzero");
+			 IoHelper.ResourcesMove("classpath*:com/srnpr/zzero/**/*.*", CommonConst.Get(EComConst.root_realpath_zzero), "srnpr/zzero");
 			 
 			 
+			 ConfigCacheManager configCacheManager=new ConfigCacheManager();
+			 configCacheManager.InitConfig(CommonConst.Get(EComConst.root_realpath_zsrnpr)+"/config");
+			 configCacheManager.FlushConfig();
 			 
 			 
-			
-			new ConfigCacheManager().InitConfig(commonConst.Get(EComConst.root_realpath_zsrnpr)+"/config");
-			
+			 InitClass("zsrnpr.init");
 			
 			
 			
-			InitClass("zsrnpr.init");
+			
 			
 		} catch (Exception e) {
-			
-			e.printStackTrace();
+			ComFunction.ThrowError(e);
 		}
 	}
 	
@@ -64,13 +64,13 @@ public class InitRoot implements IBaseInit {
 		 CommonConst commonConst=new CommonConst();
 		 commonConst.SetWebServerFlag(true);
 		 String sReallPath= servletContext.getRealPath("");
-		 commonConst.Put(EComConst.server_web_path, sReallPath);
+		 commonConst.Put(EComConst.root_realpath_baseweb, sReallPath);
 		 
-		 commonConst.Put(EComConst.server_web_contentname, servletContext.getContextPath());
+		 commonConst.Put(EComConst.server_web_name, servletContext.getContextPath());
 		
 		 
 		 commonConst.Put(EComConst.root_realpath_zsrnpr, sReallPath+"/WEB-INF/zsrnpr/");
-		 commonConst.Put(EComConst.root_realpath_zero, sReallPath+"/zzero/");
+		 commonConst.Put(EComConst.root_realpath_zzero, sReallPath+"/zzero/");
 		
 		
 		 
@@ -103,7 +103,7 @@ public class InitRoot implements IBaseInit {
 					init.Init();
 				}
 			} catch (Exception e) {
-				// TODO: handle exception
+				ComFunction.ThrowError(e);
 			}
 			
 		}

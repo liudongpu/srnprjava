@@ -10,12 +10,14 @@ public enum EComConst {
 	
 	server_encoding,
 	
-	server_web_path,
-	
-	server_web_contentname,
 	
 	
-	root_realpath_zero,
+	server_web_name,
+	
+	
+	root_realpath_baseweb,
+	
+	root_realpath_zzero,
 	
 	root_realpath_zsrnpr
 	

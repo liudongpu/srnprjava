@@ -54,7 +54,7 @@ public class ComFunction {
 	 * @update 2013-4-3 下午11:25:12
 	 */
 		
-	public static void OutLog(String... sMessage) {
+	public static void OutLog(Object... sMessage) {
 		
 		
 		
@@ -63,6 +63,15 @@ public class ComFunction {
 	
 	
 	
+	public static void ThrowError(String sError)
+	{
+		ThrowError(new Exception(sError));
+	}
+	public static void ThrowError(Exception e)
+	{
+		e.printStackTrace();
+		
+	}
 	
 	
 	

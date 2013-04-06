@@ -1,7 +1,10 @@
 package com.srnpr.zcom.helper;
 
+import java.awt.List;
+import java.awt.color.CMMException;
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Enumeration;
 import java.util.Iterator;
 import java.util.concurrent.ConcurrentHashMap;
@@ -10,6 +13,7 @@ import org.apache.commons.configuration.ConfigurationException;
 import org.apache.commons.configuration.PropertiesConfiguration;
 import org.apache.commons.io.FileUtils;
 
+import com.srnpr.zcom.common.ComFunction;
 import com.srnpr.zcom.common.CommonConst;
 import com.srnpr.zcom.enumer.EComConst;
 import com.srnpr.zcom.model.MPropertiesHash;
@@ -18,19 +22,47 @@ public class HashHelper {
 
 	
 	
-	public static String[] GetStringFromCurrentHash(ConcurrentHashMap<String, String> cMap)
-	{
-		String[] sReturn=new String[cMap.size()];
+
+	
+	
+	 /**
+	 * @param cMapList 
+	 * @return
+	 * @description 转换Hash值为String[]
+	 * @version 1.0
+	 * @author srnpr
+	 * @update 2013-4-6 下午4:01:06
+	 */
 		
-		Enumeration<String> iterator=cMap.keys();
-		int iIndex=0;
-		while (iterator.hasMoreElements()) {
-			String sKey = (String) iterator.nextElement();
-			
-			sReturn[iIndex]=cMap.get(sKey);
-			iIndex++;
+	public static String[] GetStringFromCurrentHash(ConcurrentHashMap<String, String>... cMapList)
+	{
+		
+		
+		int iLength=0;
+		
+		for(ConcurrentHashMap<String, String> cMap:cMapList)
+		{
+			iLength+=cMap.size();
 		}
 		
+		
+		String[] sReturn=new String[iLength];
+		
+		if(iLength>0)
+		{
+			int iIndex=0;
+			for(ConcurrentHashMap<String, String> cMap:cMapList)
+			{
+				Enumeration<String> iterator=cMap.keys();
+				
+				while (iterator.hasMoreElements()) {
+					String sKey = (String) iterator.nextElement();
+					
+					sReturn[iIndex]=(String)cMap.get(sKey);
+					iIndex++;
+				}
+			}
+		}
 		return sReturn;
 		
 		
@@ -54,7 +86,7 @@ public class HashHelper {
 			pConfiguration.load(FileUtils.openInputStream(fFile),CommonConst.Get(EComConst.server_encoding));
 		} catch (Exception e) {
 			
-			e.printStackTrace();
+			ComFunction.ThrowError(e);
 		}
 		
 		return getMPropertiesHash(pConfiguration, sLeftPad);
@@ -64,7 +96,7 @@ public class HashHelper {
 	
 	
 	
-	public  MPropertiesHash getMPropertiesHash(PropertiesConfiguration pConfiguration,String sLeftPad)
+	private  MPropertiesHash getMPropertiesHash(PropertiesConfiguration pConfiguration,String sLeftPad)
 	{
 		MPropertiesHash mHash=new MPropertiesHash();
 		
