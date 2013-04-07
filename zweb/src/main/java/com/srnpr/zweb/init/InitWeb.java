@@ -2,6 +2,8 @@ package com.srnpr.zweb.init;
 
 import java.io.IOException;
 import java.util.ArrayList;
+
+import com.srnpr.zcom.base.BaseClass;
 import com.srnpr.zcom.common.ComFunction;
 import com.srnpr.zcom.helper.HashHelper;
 import com.srnpr.zcom.i.IBaseInit;
@@ -10,11 +12,13 @@ import com.srnpr.zcom.model.MPropertiesHash;
 import com.srnpr.zweb.common.WebConst;
 import com.srnpr.zweb.enumer.EWebConst;
 
-public class InitWeb implements IBaseInit {
+public class InitWeb extends BaseClass implements IBaseInit {
 
 	public synchronized void Init() {
 
-		ComFunction.OutLog(this.getClass().getName());
+
+		BLogDebug(this.getClass().getName());
+		
 
 		try {
 
@@ -28,7 +32,7 @@ public class InitWeb implements IBaseInit {
 
 	}
 
-	@SuppressWarnings("unchecked")
+	
 	private void InitPageConfig() {
 
 		WebConst.PageConfig().put("admin_include",

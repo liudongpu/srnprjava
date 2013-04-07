@@ -1,6 +1,5 @@
 package com.srnpr.zweb.common;
 
-import java.util.HashMap;
 import java.util.concurrent.ConcurrentHashMap;
 
 import com.srnpr.zcom.i.IConstStatic;

@@ -1,7 +1,6 @@
 package com.srnpr.zcom.common;
 
 import com.srnpr.zcom.enumer.EComConst;
-import com.srnpr.zcom.enumer.ERunType;
 
 public class CommonConst {
 

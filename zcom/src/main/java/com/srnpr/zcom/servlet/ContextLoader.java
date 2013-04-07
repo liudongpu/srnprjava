@@ -1,7 +1,6 @@
 package com.srnpr.zcom.servlet;
 import javax.servlet.ServletContext;
 
-import com.srnpr.zcom.i.IBaseInit;
 import com.srnpr.zcom.init.InitRoot;
 
 public class ContextLoader {

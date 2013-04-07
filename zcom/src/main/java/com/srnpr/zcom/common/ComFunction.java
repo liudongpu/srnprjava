@@ -2,6 +2,8 @@ package com.srnpr.zcom.common;
 
 import java.util.concurrent.ConcurrentHashMap;
 
+import org.apache.commons.lang.StringUtils;
+
 import com.srnpr.zcom.helper.FormatHelper;
 import com.srnpr.zcom.manager.ConfigCacheManager;
 
@@ -55,7 +57,7 @@ public class ComFunction {
 		
 		
 		
-		System.out.println(FormatHelper.GetDateTime()+"  "+FormatHelper.StringJoin(sMessage));
+		System.out.println(FormatHelper.GetDateTime()+"  "+StringUtils.join(sMessage,"  "));
 	}
 	
 	
