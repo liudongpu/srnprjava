@@ -1,5 +1,9 @@
 package com.srnpr.zcom.base;
 
+import org.apache.commons.lang.StringUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.srnpr.zcom.common.ComFunction;
 
 
@@ -12,15 +16,16 @@ import com.srnpr.zcom.common.ComFunction;
  */
 	
 public class BaseClass {
-
-	public void BLog(Object... oLogInfo)
+	private  final Logger logger = LoggerFactory.getLogger(this.getClass().getName());
+	
+	public Logger BLog()
 	{
-		ComFunction.OutLog(oLogInfo);
+		return logger;
 	}
 	
-	public void BLogDebug(Object... oLogInfo)
+	public void BDebug(Object... oLogInfo)
 	{
-		ComFunction.OutLog(oLogInfo);
+		BLog().debug(StringUtils.join(oLogInfo));
 	}
 	
 	public String BConfig(String sKey)

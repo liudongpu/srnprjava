@@ -6,7 +6,7 @@ import com.srnpr.zcom.i.IBaseInit;
 public class InitCom extends BaseClass implements IBaseInit {
 
 	public void Init() {
-		BLogDebug(this.getClass().getName());
+		BDebug(this.getClass().getName());
 
 	}
 

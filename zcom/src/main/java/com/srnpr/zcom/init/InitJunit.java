@@ -13,7 +13,7 @@ public class InitJunit extends BaseClass implements IBaseInit {
 		
 	
 		
-		BLogDebug(this.getClass().getName());
+		BDebug(this.getClass().getName());
 		
 		InitJunitConst();
 		

@@ -2,6 +2,7 @@ package com.srnpr.zweb.testfreemarker;
 
 import org.junit.Test;
 import com.srnpr.zweb.TestBase;
+import com.srnpr.zweb.page.WebPage;
 
 public class FreeMarkerTest extends TestBase {
 
@@ -10,11 +11,11 @@ public class FreeMarkerTest extends TestBase {
 
 		
 	
-		
+		BDebug(new WebPage().GetPageHtml());
 	
 		
 		
-		//ComFunction.OutLog(new WebPage().GetPageHtml());
+		
 		
 		
 		

@@ -17,7 +17,7 @@ public class InitWeb extends BaseClass implements IBaseInit {
 	public synchronized void Init() {
 
 
-		BLogDebug(this.getClass().getName());
+		BDebug(this.getClass().getName());
 		
 
 		try {
