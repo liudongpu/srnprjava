@@ -6,7 +6,6 @@ import com.srnpr.zcom.base.BaseClass;
 import com.srnpr.zcom.common.ComFunction;
 import com.srnpr.zcom.common.CommonConst;
 import com.srnpr.zcom.enumer.EComConst;
-import com.srnpr.zcom.helper.HashHelper;
 import com.srnpr.zcom.helper.IoHelper;
 import com.srnpr.zcom.i.IBaseInit;
 import com.srnpr.zcom.manager.ConfigCacheManager;
