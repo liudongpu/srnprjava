@@ -2,31 +2,21 @@ package com.srnpr.zcom.manager;
 
 import java.io.File;
 import java.io.IOException;
-import java.io.Reader;
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Enumeration;
-import java.util.Iterator;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import org.apache.commons.configuration.ConfigurationException;
-import org.apache.commons.configuration.PropertiesConfiguration;
 import org.apache.commons.io.FileUtils;
-import org.apache.commons.io.filefilter.IOFileFilter;
-import org.apache.commons.lang.StringUtils;
-import org.springframework.core.io.Resource;
-
 import com.srnpr.zcom.common.ComFunction;
 import com.srnpr.zcom.common.CommonConst;
 import com.srnpr.zcom.enumer.EComConst;
 import com.srnpr.zcom.helper.HashHelper;
-import com.srnpr.zcom.helper.IoHelper;
 import com.srnpr.zcom.i.ICacheManager;
 import com.srnpr.zcom.model.MPropertiesHash;
-
-import freemarker.template.utility.Execute;
-import freemarker.template.utility.StringUtil;
 
 public class ConfigCacheManager implements ICacheManager {
 
@@ -49,15 +39,26 @@ public class ConfigCacheManager implements ICacheManager {
 		return ConstStatic.CONST_CONFIG_MAP.get(sKey);
 	}
 	
-	
+	public  String[] GetStrings(String... sKeys)
+	{
+		ArrayList<String> aList=new ArrayList<String>();
+		
+		for(String s:sKeys)
+		{
+			ConcurrentHashMap<String, String> cMap=GetHash(s);
+			Enumeration<String> iterator=cMap.keys();
+			while (iterator.hasMoreElements()) {
+				String sKey = (String) iterator.nextElement();
+				aList.add(cMap.get(sKey));
+			}
+		}
+		
+		String[] sReturn=new String[aList.size()];
+		return aList.toArray(sReturn);
+	}
 	
 	
 
-	public static String[] GetArray(String sKey) {
-		return HashHelper
-				.GetStringFromCurrentHash(ConstStatic.CONST_CONFIG_HASH
-						.get(sKey));
-	}
 
 	public static ConcurrentHashMap<String, String> GetHash(String sKey) {
 		return ConstStatic.CONST_CONFIG_HASH.get(sKey);

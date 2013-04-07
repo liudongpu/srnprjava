@@ -35,10 +35,7 @@ public class ComFunction {
 		return ConfigCacheManager.Get(sKey);
 	}
 	
-	public static String[] ConfigArray(String sKey)
-	{
-		return ConfigCacheManager.GetArray(sKey);
-	}
+	
 	
 	public static ConcurrentHashMap<String, String> ConfigHash(String sKey)
 	{

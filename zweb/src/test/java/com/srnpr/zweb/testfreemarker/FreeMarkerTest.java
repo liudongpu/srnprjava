@@ -23,6 +23,9 @@ public class FreeMarkerTest extends TestBase {
 	public void test() {
 
 		
+	
+		
+	
 		
 		
 		//ComFunction.OutLog(new WebPage().GetPageHtml());

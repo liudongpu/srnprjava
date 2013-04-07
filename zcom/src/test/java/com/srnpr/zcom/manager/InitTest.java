@@ -16,7 +16,7 @@ public class InitTest extends TestBase {
 		
 		
 		
-		Resource[] resources=IoHelper.GetResource("classpath*:com/srnpr/*/zsrnpr/**/*.ftl");
+		Resource[] resources=new IoHelper().GetResource("classpath*:com/srnpr/*/zsrnpr/**/*.ftl");
 		
 		
 		

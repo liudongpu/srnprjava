@@ -21,7 +21,7 @@ public class IoHelper {
 	
 	
 	
-	public static Resource[] GetResource(String sResourceName)
+	public  Resource[] GetResource(String sResourceName)
 	{
 		
 		Resource[] resources=null;
@@ -39,7 +39,7 @@ public class IoHelper {
 	}
 	
 	
-	public static void ResourcesMove(String sFromClass,String sToPath,String sKeyName) 
+	public  void ResourcesMove(String sFromClass,String sToPath,String sKeyName) 
 	{
 		try {
 		

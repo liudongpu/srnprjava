@@ -50,25 +50,31 @@ public class InitWeb implements IBaseInit {
 		ArrayList<String> lCssList = new ArrayList<String>();
 		ArrayList<String> lJsList = new ArrayList<String>();
 
-		MPropertiesHash mTheamsHash = new HashHelper().getMPropertiesHash(
+		
+		HashHelper hashHelper=new HashHelper();
+		
+		ConfigCacheManager cManager=new ConfigCacheManager();
+		
+		
+		MPropertiesHash mTheamsHash = hashHelper.getMPropertiesHash(
 				sAdminTheamsPath, "");
 
-		for (String s : HashHelper.GetStringFromCurrentHash(mTheamsHash
+		for (String s : hashHelper.GetStringFromCurrentHash(mTheamsHash
 				.getChild().get("admin_css"))) {
 			lCssList.add(ComFunction.ConfigValue("zweb.url_themes_admin") + s);
 		}
 
-		for (String s : HashHelper.GetStringFromCurrentHash(ComFunction
+		for (String s : hashHelper.GetStringFromCurrentHash(ComFunction
 				.ConfigHash("zweb.lib_bootstrap_css"))) {
 			lCssList.add(s);
 		}
 
 		WebConst.PageConfig().put("admin_css", lCssList.toArray());
 
-		for (String s : HashHelper.GetStringFromCurrentHash(
-				ComFunction.ConfigHash("zweb.lib_jquery_js"),
-				ComFunction.ConfigHash("zweb.lib_bootstrap_js"),
-				ComFunction.ConfigHash("zweb.lib_zen_js"))) {
+		for (String s : cManager.GetStrings(
+				"zweb.lib_jquery_js",
+				"zweb.lib_bootstrap_js",
+				"zweb.lib_zen_js")) {
 			lJsList.add(s);
 		}
 

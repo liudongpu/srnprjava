@@ -34,36 +34,23 @@ public class HashHelper {
 	 * @update 2013-4-6 下午4:01:06
 	 */
 		
-	public static String[] GetStringFromCurrentHash(ConcurrentHashMap<String, String>... cMapList)
+	public  String[] GetStringFromCurrentHash(ConcurrentHashMap<String, String> cMap)
 	{
 		
 		
-		int iLength=0;
-		
-		for(ConcurrentHashMap<String, String> cMap:cMapList)
-		{
-			iLength+=cMap.size();
-		}
+		ArrayList<String> aList=new ArrayList<String>();
 		
 		
-		String[] sReturn=new String[iLength];
-		
-		if(iLength>0)
-		{
-			int iIndex=0;
-			for(ConcurrentHashMap<String, String> cMap:cMapList)
-			{
-				Enumeration<String> iterator=cMap.keys();
-				
-				while (iterator.hasMoreElements()) {
-					String sKey = (String) iterator.nextElement();
-					
-					sReturn[iIndex]=(String)cMap.get(sKey);
-					iIndex++;
-				}
+			
+			Enumeration<String> iterator=cMap.keys();
+			while (iterator.hasMoreElements()) {
+				String sKey = (String) iterator.nextElement();
+				aList.add(cMap.get(sKey));
 			}
-		}
-		return sReturn;
+		
+			String[] sReturn=new String[aList.size()];
+		
+		return aList.toArray(sReturn);
 		
 		
 	}

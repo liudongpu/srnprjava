@@ -1,26 +1,17 @@
 package com.srnpr.zcom.init;
 
-import java.io.IOException;
-import java.rmi.server.ServerCloneException;
-import java.util.Iterator;
-import java.util.concurrent.ConcurrentHashMap;
-
 import javax.servlet.ServletContext;
 
-import org.apache.commons.configuration.ConfigurationException;
-import org.apache.commons.configuration.PropertiesConfiguration;
-import org.apache.commons.io.IOUtils;
-import org.springframework.core.io.Resource;
-
+import com.srnpr.zcom.base.BaseClass;
 import com.srnpr.zcom.common.ComFunction;
 import com.srnpr.zcom.common.CommonConst;
 import com.srnpr.zcom.enumer.EComConst;
+import com.srnpr.zcom.helper.HashHelper;
 import com.srnpr.zcom.helper.IoHelper;
 import com.srnpr.zcom.i.IBaseInit;
-import com.srnpr.zcom.init.InitJunit;
 import com.srnpr.zcom.manager.ConfigCacheManager;
 
-public class InitRoot implements IBaseInit {
+public class InitRoot extends BaseClass implements IBaseInit {
 
 	
 	
@@ -33,9 +24,9 @@ public class InitRoot implements IBaseInit {
 			 CommonConst commonConst=new CommonConst();
 			 commonConst.Put(EComConst.server_encoding, "UTF-8");
 			
-			 
-			 IoHelper.ResourcesMove("classpath*:com/srnpr/*/zsrnpr/**/*.*", CommonConst.Get(EComConst.root_realpath_zsrnpr), "zsrnpr");
-			 IoHelper.ResourcesMove("classpath*:com/srnpr/zzero/**/*.*", CommonConst.Get(EComConst.root_realpath_zzero), "srnpr/zzero");
+			 IoHelper ioHelper=new IoHelper();
+			 ioHelper.ResourcesMove("classpath*:com/srnpr/*/zsrnpr/**/*.*", CommonConst.Get(EComConst.root_realpath_zsrnpr), "zsrnpr");
+			 ioHelper.ResourcesMove("classpath*:com/srnpr/zzero/**/*.*", CommonConst.Get(EComConst.root_realpath_zzero), "srnpr/zzero");
 			 
 			 
 			 ConfigCacheManager configCacheManager=new ConfigCacheManager();
@@ -92,8 +83,12 @@ public class InitRoot implements IBaseInit {
 	
 	void InitClass(String sConfigName) throws ClassNotFoundException, InstantiationException, IllegalAccessException
 	{
+	
 		
-		for(String sClassName:ComFunction.ConfigArray(sConfigName))
+		ConfigCacheManager configCacheManager=new ConfigCacheManager();
+		
+		
+		for(String sClassName:configCacheManager.GetStrings(sConfigName))
 		{
 			try {
 				Class<?> cClass=Class.forName(sClassName);
