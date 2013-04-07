@@ -21,6 +21,13 @@ public class InitRoot extends BaseClass implements IBaseInit {
 	public synchronized void Init() {
 		try {
 			
+			
+			long start=System.currentTimeMillis(); //获取最初时间
+
+			
+
+		
+			
 			 CommonConst commonConst=new CommonConst();
 			 commonConst.Put(EComConst.server_encoding, "UTF-8");
 			
@@ -50,7 +57,11 @@ public class InitRoot extends BaseClass implements IBaseInit {
 			
 			
 			
-			 BDebug("13260312003");
+			 
+			 
+			 long end=System.currentTimeMillis(); //获取运行结束时间
+
+			 BDebug("13260312003",String.valueOf(end-start));
 			
 		} catch (Exception e) {
 				BError(e,e.getMessage());
