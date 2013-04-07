@@ -43,15 +43,17 @@ public class InitRoot extends BaseClass implements IBaseInit {
 			 messageCacheManager.Init();
 			 
 			 
+			 BDebug("13260312001");
+			 
 			 
 			 InitClass("zsrnpr.init");
 			
 			
 			
-			
+			 BDebug("13260312003");
 			
 		} catch (Exception e) {
-			ComFunction.ThrowError(e);
+				BError(e,"13260301001");
 		}
 	}
 	
@@ -100,16 +102,14 @@ public class InitRoot extends BaseClass implements IBaseInit {
 		
 		for(String sClassName:configCacheManager.GetStrings(sConfigName))
 		{
-			try {
+			
 				Class<?> cClass=Class.forName(sClassName);
 				if(cClass!=null&&cClass.getDeclaredMethods()!=null)
 				{
 					IBaseInit init=(IBaseInit)cClass.newInstance();
 					init.Init();
 				}
-			} catch (Exception e) {
-				ComFunction.ThrowError(e);
-			}
+			
 			
 		}
 	}

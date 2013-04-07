@@ -9,12 +9,13 @@ import java.util.concurrent.ConcurrentHashMap;
 import org.apache.commons.configuration.PropertiesConfiguration;
 import org.apache.commons.io.FileUtils;
 
+import com.srnpr.zcom.base.BaseClass;
 import com.srnpr.zcom.common.ComFunction;
 import com.srnpr.zcom.common.CommonConst;
 import com.srnpr.zcom.enumer.EComConst;
 import com.srnpr.zcom.model.MPropertiesHash;
 
-public class HashHelper {
+public class HashHelper extends BaseClass{
 
 	
 	
@@ -69,7 +70,10 @@ public class HashHelper {
 			pConfiguration.load(FileUtils.openInputStream(fFile),CommonConst.Get(EComConst.server_encoding));
 		} catch (Exception e) {
 			
-			ComFunction.ThrowError(e);
+			
+			
+			BError(e,"13260301003",fFile.getPath());
+			
 		}
 		
 		return getMPropertiesHash(pConfiguration, sLeftPad);

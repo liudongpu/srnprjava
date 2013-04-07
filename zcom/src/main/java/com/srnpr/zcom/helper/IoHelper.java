@@ -2,6 +2,7 @@ package com.srnpr.zcom.helper;
 
 import java.io.File;
 import java.io.FileOutputStream;
+import java.io.IOException;
 import java.io.InputStream;
 
 import org.apache.commons.io.IOUtils;
@@ -18,27 +19,23 @@ public class IoHelper {
 	
 	
 	
-	public  Resource[] GetResource(String sResourceName)
+	public  Resource[] GetResource(String sResourceName) throws IOException
 	{
 		
 		Resource[] resources=null;
-		try {
+		
 			PathMatchingResourcePatternResolver patternResolver = new PathMatchingResourcePatternResolver();  
 	    	
 	    	 resources = patternResolver.getResources(sResourceName);
-		}
-		catch(Exception e)
-		{
-			ComFunction.ThrowError(e);
-		}
+		
 		
 		return resources;
 	}
 	
 	
-	public  void ResourcesMove(String sFromClass,String sToPath,String sKeyName) 
+	public  void ResourcesMove(String sFromClass,String sToPath,String sKeyName) throws IOException 
 	{
-		try {
+		
 		
 		Resource[] resources=GetResource(sFromClass);
 		
@@ -64,11 +61,7 @@ public class IoHelper {
 			
 			
 		}
-		}
-		catch(Exception e)
-		{
-			ComFunction.ThrowError(e);
-		}
+		
 		
 		
 		

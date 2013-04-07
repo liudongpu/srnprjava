@@ -20,15 +20,14 @@ import com.srnpr.zcom.helper.HashHelper;
 import com.srnpr.zcom.i.ICacheManager;
 import com.srnpr.zcom.model.MPropertiesHash;
 
-
- /**
- * @description 
+/**
+ * @description
  * @version 1.0
  * @author srnpr
  * @ClassName: ConfigCacheManager
  * @update 2013-4-7 下午5:42:44
  */
-	
+
 public class ConfigCacheManager extends BaseClass implements ICacheManager {
 
 	/**
@@ -49,37 +48,31 @@ public class ConfigCacheManager extends BaseClass implements ICacheManager {
 
 		return ConstStatic.CONST_CONFIG_MAP.get(sKey);
 	}
-	
-	
-	 /**
+
+	/**
 	 * @param sKeys
-	 * @return 
-	 * @description   根据key返回数组
+	 * @return
+	 * @description 根据key返回数组
 	 * @version 1.0
 	 * @author srnpr
 	 * @update 2013-4-7 下午5:42:48
 	 */
-		
-	public  String[] GetStrings(String... sKeys)
-	{
-		ArrayList<String> aList=new ArrayList<String>();
-		
-		for(String s:sKeys)
-		{
-			ConcurrentHashMap<String, String> cMap=GetHash(s);
-			Enumeration<String> iterator=cMap.keys();
+
+	public String[] GetStrings(String... sKeys) {
+		ArrayList<String> aList = new ArrayList<String>();
+
+		for (String s : sKeys) {
+			ConcurrentHashMap<String, String> cMap = GetHash(s);
+			Enumeration<String> iterator = cMap.keys();
 			while (iterator.hasMoreElements()) {
 				String sKey = (String) iterator.nextElement();
 				aList.add(cMap.get(sKey));
 			}
 		}
-		
-		String[] sReturn=new String[aList.size()];
+
+		String[] sReturn = new String[aList.size()];
 		return aList.toArray(sReturn);
 	}
-	
-	
-
 
 	public static ConcurrentHashMap<String, String> GetHash(String sKey) {
 		return ConstStatic.CONST_CONFIG_HASH.get(sKey);
@@ -108,7 +101,7 @@ public class ConfigCacheManager extends BaseClass implements ICacheManager {
 			String sLeftString = sFileNameString.substring(0,
 					sFileNameString.lastIndexOf("."))
 					+ ".";
-			
+
 			MPropertiesHash mHash = hashHelper.getMPropertiesHash(f,
 					sLeftString);
 			Enumeration<String> eKey = mHash.getKeyValue().keys();
@@ -138,8 +131,8 @@ public class ConfigCacheManager extends BaseClass implements ICacheManager {
 			iTimeCount++;
 			if (iTimeCount > 100) {
 
-				ComFunction.ThrowError(this.getClass().getName()
-						+ "  FlushConfig eroor");
+				
+				BError("13260301002",String.valueOf(iTimeCount));
 
 			}
 		}
@@ -155,7 +148,6 @@ public class ConfigCacheManager extends BaseClass implements ICacheManager {
 			iReturn += FlushHash(ConstStatic.CONST_CONFIG_HASH.get(eHashKey
 					.nextElement()));
 		}
-
 		return iReturn;
 	}
 
@@ -198,14 +190,13 @@ public class ConfigCacheManager extends BaseClass implements ICacheManager {
 
 				String sConfigValue = Get(sConfigName);
 
-				
-				if (sConfigValue!=null) {
+				if (sConfigValue != null) {
 					if (sConfigValue.indexOf("{@") > -1
 							|| sConfigValue.indexOf("{$") > -1) {
 						iReturn++;
 					} else {
-						
-						sValueString=sValueString.replace(
+
+						sValueString = sValueString.replace(
 								mConfigMatcher.group(0), sConfigValue);
 
 						cMap.put(sKeyString, sValueString);

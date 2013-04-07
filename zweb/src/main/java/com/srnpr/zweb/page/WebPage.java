@@ -24,7 +24,10 @@ public class WebPage extends BaseClass {
 		hWebPage.put("PageConfig", WebConst.PageConfig());
 
 		hPageTemp.put("WebPage", hWebPage);
-		String sReturnString = FreemarkerHelper.GetStringFromTemp(
+		
+		FreemarkerHelper fHelper=new FreemarkerHelper();
+		
+		String sReturnString = fHelper.GetStringFromTemp(
 				WebConst.Get(EWebConst.templete_path),BConfig("zweb.admin_page") , hPageTemp);
 		
 		

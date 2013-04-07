@@ -17,17 +17,17 @@ public class InitWeb extends BaseClass implements IBaseInit {
 	public synchronized void Init() {
 
 
-		BDebug(this.getClass().getName());
+		BDebug("13260312002",this.getClass().getName());
 		
 
 		try {
 
-			InitTemplete(ComFunction.ConfigValue("zweb.templeteclaspath"));
+			InitTemplete(BConfig("zweb.templeteclaspath"));
 
 			InitPageConfig();
 
 		} catch (Exception e) {
-			ComFunction.ThrowError(e);
+			BError(e,"13260301001");
 		}
 
 	}
@@ -38,8 +38,7 @@ public class InitWeb extends BaseClass implements IBaseInit {
 		WebConst.PageConfig().put("admin_include",
 				ComFunction.ConfigHash("zweb.admin_include"));
 
-		String sAdminTheamsPath = ComFunction
-				.ConfigValue("zweb.path_themes_admin_config");
+		String sAdminTheamsPath =BConfig("zweb.path_themes_admin_config");
 
 		ArrayList<String> lCssList = new ArrayList<String>();
 		ArrayList<String> lJsList = new ArrayList<String>();
@@ -55,11 +54,10 @@ public class InitWeb extends BaseClass implements IBaseInit {
 
 		for (String s : hashHelper.GetStringFromCurrentHash(mTheamsHash
 				.getChild().get("admin_css"))) {
-			lCssList.add(ComFunction.ConfigValue("zweb.url_themes_admin") + s);
+			lCssList.add(BConfig("zweb.url_themes_admin") + s);
 		}
 
-		for (String s : hashHelper.GetStringFromCurrentHash(ComFunction
-				.ConfigHash("zweb.lib_bootstrap_css"))) {
+		for (String s : cManager.GetStrings("zweb.lib_bootstrap_css")) {
 			lCssList.add(s);
 		}
 
@@ -78,9 +76,8 @@ public class InitWeb extends BaseClass implements IBaseInit {
 
 	void InitTemplete(String sClassPath) throws IOException {
 
-		WebConst.Put(EWebConst.templete_path,
-				ComFunction.ConfigValue("zweb.path_templete"));
-
+		WebConst.Put(EWebConst.templete_path,BConfig("zweb.path_templete"));
+	
 	}
 
 }

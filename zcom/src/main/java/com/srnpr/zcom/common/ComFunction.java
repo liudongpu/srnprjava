@@ -55,22 +55,12 @@ public class ComFunction {
 		
 	public static void OutLog(Object... sMessage) {
 		
-		
-		
 		System.out.println(FormatHelper.GetDateTime()+"  "+StringUtils.join(sMessage,"  "));
 	}
 	
 	
 	
-	public static void ThrowError(String sError)
-	{
-		ThrowError(new Exception(sError));
-	}
-	public static void ThrowError(Exception e)
-	{
-		e.printStackTrace();
-		
-	}
+	
 	
 	
 	

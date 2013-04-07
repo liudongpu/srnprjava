@@ -13,7 +13,7 @@ public class InitJunit extends BaseClass implements IBaseInit {
 		
 	
 		
-		BDebug(this.getClass().getName());
+		BDebug("13260312002",this.getClass().getName());
 		
 		InitJunitConst();
 		

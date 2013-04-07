@@ -6,7 +6,7 @@ import com.srnpr.zcom.i.IBaseInit;
 public class InitCom extends BaseClass implements IBaseInit {
 
 	public void Init() {
-		BDebug(this.getClass().getName());
+		BDebug("13260312002",this.getClass().getName());
 
 	}
 

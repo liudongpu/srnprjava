@@ -4,14 +4,12 @@ import java.io.File;
 import java.io.StringWriter;
 import java.util.Locale;
 
-import com.srnpr.zcom.common.ComFunction;
-
+import com.srnpr.zcom.base.BaseClass;
 import freemarker.cache.FileTemplateLoader;
 import freemarker.template.Configuration;
 import freemarker.template.Template;
-import freemarker.template.TemplateException;
 
-public class FreemarkerHelper {
+public class FreemarkerHelper extends BaseClass {
 
 	/**
 	 * @param sTempPath
@@ -24,7 +22,7 @@ public class FreemarkerHelper {
 	 * @update 2013-4-4 下午4:55:42
 	 */
 
-	public static String GetStringFromTemp(String sTempPath, String sTempName,
+	public  String GetStringFromTemp(String sTempPath, String sTempName,
 			Object oRootMap) {
 
 		String sReturn = "";
@@ -41,17 +39,13 @@ public class FreemarkerHelper {
 
 			StringWriter sWriter = new StringWriter();
 
-			try {
-
-				template.process(oRootMap, sWriter);
-			} catch (TemplateException e) {
-				ComFunction.ThrowError(e);
-			}
+			template.process(oRootMap, sWriter);
+			
 
 			sReturn = sWriter.toString();
 
 		} catch (Exception e) {
-			ComFunction.ThrowError(e);
+			BError(e,"13260301004",sTempPath,sTempName);
 		}
 
 		return sReturn;
