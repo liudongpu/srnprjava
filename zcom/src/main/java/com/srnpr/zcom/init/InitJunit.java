@@ -1,5 +1,6 @@
 package com.srnpr.zcom.init;
 
+import java.io.File;
 import java.util.Map;
 
 import com.srnpr.zcom.base.BaseClass;
@@ -13,7 +14,7 @@ public class InitJunit extends BaseClass implements IBaseInit {
 		
 	
 		
-		BDebug("13260312002",this.getClass().getName());
+		BDebug(this.getClass().getName());
 		
 		InitJunitConst();
 		
@@ -28,8 +29,29 @@ public class InitJunit extends BaseClass implements IBaseInit {
 		 CommonConst commonConst=new CommonConst();
 		 Map<String,String> m = System.getenv();
 		
+		 String sDirPathString=System.getenv("srnprjava_path");
 		 
-		 String sTempPath=m.get("srnprjava_path")+"/zzoos/temp/tempz/";
+		 BDebug("can't init srnprjava_path");
+		 
+		
+		 //特殊判断  如果无法读取系统变量则存放到用户文件夹
+		 if(sDirPathString==null)
+		 {
+			 sDirPathString=System.getProperty("user.home");
+		 }
+		 
+		
+		 BDebug(sDirPathString);
+		 
+		 File file=new File(sDirPathString);
+		 if(!file.exists())
+		 {
+			 BError("can't init syspath");
+		 }
+		 
+		
+		 
+		 String sTempPath=sDirPathString+"/zzoos/temp/tempz/";
 		 
 		 commonConst.Put(EComConst.root_realpath_zsrnpr, sTempPath+"WEB-INF/zsrnpr/");
 		 commonConst.Put(EComConst.root_realpath_zzero, sTempPath+"zzero/");

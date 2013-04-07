@@ -41,7 +41,7 @@ public class ComFunction {
 	
 	public static ConcurrentHashMap<String, String> ConfigHash(String sKey)
 	{
-		return ConfigCacheManager.GetHash(sKey);
+		return new ConfigCacheManager().GetHash(sKey);
 	}
 	
 	

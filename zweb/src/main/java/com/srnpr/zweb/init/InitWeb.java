@@ -35,8 +35,10 @@ public class InitWeb extends BaseClass implements IBaseInit {
 	
 	private void InitPageConfig() {
 
+		ConfigCacheManager cManager=new ConfigCacheManager();
+		
 		WebConst.PageConfig().put("admin_include",
-				ComFunction.ConfigHash("zweb.admin_include"));
+				cManager.GetHash("zweb.admin_include"));
 
 		String sAdminTheamsPath =BConfig("zweb.path_themes_admin_config");
 
@@ -46,7 +48,7 @@ public class InitWeb extends BaseClass implements IBaseInit {
 		
 		HashHelper hashHelper=new HashHelper();
 		
-		ConfigCacheManager cManager=new ConfigCacheManager();
+		
 		
 		
 		MPropertiesHash mTheamsHash = hashHelper.getMPropertiesHash(

@@ -33,7 +33,7 @@ public class IoHelper {
 	}
 	
 	
-	public  void ResourcesMove(String sFromClass,String sToPath,String sKeyName) throws IOException 
+	public  void ResourcesCopy(String sFromClass,String sToPath,String sKeyName) throws IOException 
 	{
 		
 		
@@ -43,7 +43,7 @@ public class IoHelper {
 		{
 			
 			String sUrlString=r.getURI().toString();
-			sUrlString=sUrlString.substring(sUrlString.indexOf(sKeyName)+sKeyName.length()+1);
+			sUrlString=sUrlString.substring(sUrlString.lastIndexOf(sKeyName)+sKeyName.length());
 			
 			
 			 InputStream  inStream  = r.getInputStream();  //读入原文件  

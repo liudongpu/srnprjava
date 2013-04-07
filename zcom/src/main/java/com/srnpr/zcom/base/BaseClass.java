@@ -5,6 +5,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.srnpr.zcom.common.ComFunction;
+import com.srnpr.zcom.manager.ConfigCacheManager;
 import com.srnpr.zcom.manager.MessageCacheManager;
 
 /**
@@ -52,7 +53,8 @@ public class BaseClass {
 	
 
 	public String BConfig(String sKey) {
-		return ComFunction.ConfigValue(sKey);
+		
+		return ConfigCacheManager.Get(sKey);
 	}
 
 	public String BMessage(String... sKeys) {

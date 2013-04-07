@@ -74,7 +74,7 @@ public class ConfigCacheManager extends BaseClass implements ICacheManager {
 		return aList.toArray(sReturn);
 	}
 
-	public static ConcurrentHashMap<String, String> GetHash(String sKey) {
+	public  ConcurrentHashMap<String, String> GetHash(String sKey) {
 		return ConstStatic.CONST_CONFIG_HASH.get(sKey);
 	}
 

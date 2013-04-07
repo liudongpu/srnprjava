@@ -28,8 +28,8 @@ public class InitRoot extends BaseClass implements IBaseInit {
 			 
 			 //初始化各种文件到指定路径
 			 IoHelper ioHelper=new IoHelper();
-			 ioHelper.ResourcesMove("classpath*:com/srnpr/*/zsrnpr/**/*.*", CommonConst.Get(EComConst.root_realpath_zsrnpr), "zsrnpr");
-			 ioHelper.ResourcesMove("classpath*:com/srnpr/zzero/**/*.*", CommonConst.Get(EComConst.root_realpath_zzero), "srnpr/zzero");
+			 ioHelper.ResourcesCopy("classpath*:com/srnpr/*/zsrnpr/**/*.*", CommonConst.Get(EComConst.root_realpath_zsrnpr), "/zsrnpr/");
+			 ioHelper.ResourcesCopy("classpath*:com/srnpr/zzero/**/*.*", CommonConst.Get(EComConst.root_realpath_zzero), "/zzero/");
 			 
 			 
 			 //初始化各种配置
@@ -53,7 +53,7 @@ public class InitRoot extends BaseClass implements IBaseInit {
 			 BDebug("13260312003");
 			
 		} catch (Exception e) {
-				BError(e,"13260301001");
+				BError(e,e.getMessage());
 		}
 	}
 	
