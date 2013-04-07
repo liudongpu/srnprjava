@@ -11,117 +11,115 @@ import com.srnpr.zcom.i.IBaseInit;
 import com.srnpr.zcom.manager.ConfigCacheManager;
 import com.srnpr.zcom.manager.MessageCacheManager;
 
+
+ /**
+ * @description 传说中的最早调用者
+ * @version 1.0
+ * @author srnpr
+ * @ClassName: InitRoot
+ * @update 2013-4-8 上午12:02:58
+ */
+	
 public class InitRoot extends BaseClass implements IBaseInit {
 
 	
-	
-	
-	
-	
+	 /**
+	 * @description 基本初始化类 加载各种系统配置文件
+	 * @version 1.0
+	 * @author srnpr
+	 * @update 2013-4-8 上午12:02:18
+	 * @see com.srnpr.zcom.i.IBaseInit#Init()
+	 */
+		
 	public synchronized void Init() {
 		try {
-			
-			
-			long start=System.currentTimeMillis(); //获取最初时间
 
-			
+			long start = System.currentTimeMillis(); // 获取最初时间
 
-		
-			
-			 CommonConst commonConst=new CommonConst();
-			 commonConst.Put(EComConst.server_encoding, "UTF-8");
-			
-			 
-			 
-			 //初始化各种文件到指定路径
-			 IoHelper ioHelper=new IoHelper();
-			 ioHelper.ResourcesCopy("classpath*:com/srnpr/*/zsrnpr/**/*.*", CommonConst.Get(EComConst.root_realpath_zsrnpr), "/zsrnpr/");
-			 ioHelper.ResourcesCopy("classpath*:com/srnpr/zzero/**/*.*", CommonConst.Get(EComConst.root_realpath_zzero), "/zzero/");
-			 
-			 
-			 //初始化各种配置
-			 ConfigCacheManager configCacheManager=new ConfigCacheManager();
-			 configCacheManager.InitConfig(CommonConst.Get(EComConst.root_realpath_zsrnpr)+"/config");
-			 configCacheManager.FlushConfig();
-			 
-			 
-			 //初始化各种消息
-			 MessageCacheManager messageCacheManager=new MessageCacheManager();
-			 messageCacheManager.Init();
-			 
-			 
-			 BDebug("13260312001");
-			 
-			 
-			 InitClass("zsrnpr.init");
-			
-			
-			
-			 
-			 
-			 long end=System.currentTimeMillis(); //获取运行结束时间
+			CommonConst commonConst = new CommonConst();
+			commonConst.Put(EComConst.server_encoding, "UTF-8");
 
-			 BDebug("13260312003",String.valueOf(end-start));
-			
+			// 初始化各种文件到指定路径
+			IoHelper ioHelper = new IoHelper();
+			ioHelper.ResourcesCopy("classpath*:com/srnpr/*/zsrnpr/**/*.*",
+					CommonConst.Get(EComConst.root_realpath_zsrnpr), "/zsrnpr/");
+			ioHelper.ResourcesCopy("classpath*:com/srnpr/zzero/**/*.*",
+					CommonConst.Get(EComConst.root_realpath_zzero), "/zzero/");
+
+			// 初始化各种配置
+			ConfigCacheManager configCacheManager = new ConfigCacheManager();
+			configCacheManager.InitConfig(CommonConst
+					.Get(EComConst.root_realpath_zsrnpr) + "/config");
+			configCacheManager.FlushConfig();
+
+			// 初始化各种消息
+			MessageCacheManager messageCacheManager = new MessageCacheManager();
+			messageCacheManager.Init();
+
+			BDebug("13260312001");
+
+			// 加载各种标准初始化类
+			InitClass("zsrnpr.init");
+
+			long end = System.currentTimeMillis(); // 获取运行结束时间
+
+			BDebug("13260312003", String.valueOf(end - start));
+
 		} catch (Exception e) {
-				BError(e,e.getMessage());
+			BError(e, e.getMessage());
 		}
 	}
-	
-	
-	
-	
 
-	 public synchronized void InitConst(ServletContext servletContext) {
+	
+	 /**
+	 * @param servletContext
+	 * @description 初始化各种系统级别变量  此方法调用在Init之前 否则无法初始各种变量
+	 * @version 1.0
+	 * @author srnpr
+	 * @update 2013-4-8 上午12:01:33
+	 */
 		
-		 
-		 CommonConst commonConst=new CommonConst();
-		 commonConst.SetWebServerFlag(true);
-		 String sReallPath= servletContext.getRealPath("");
-		 commonConst.Put(EComConst.root_realpath_baseweb, sReallPath);
-		 
-		 commonConst.Put(EComConst.server_web_name, servletContext.getContextPath());
-		
-		 
-		 commonConst.Put(EComConst.root_realpath_zsrnpr, sReallPath+"/WEB-INF/zsrnpr/");
-		 commonConst.Put(EComConst.root_realpath_zzero, sReallPath+"/zzero/");
-		
-		
-		 
-		 
-		 
+	public synchronized void InitConst(ServletContext servletContext) {
+
+		CommonConst commonConst = new CommonConst();
+		commonConst.SetWebServerFlag(true);
+		String sReallPath = servletContext.getRealPath("");
+		commonConst.Put(EComConst.root_realpath_baseweb, sReallPath);
+
+		commonConst.Put(EComConst.server_web_name,
+				servletContext.getContextPath());
+
+		commonConst.Put(EComConst.root_realpath_zsrnpr, sReallPath
+				+ "/WEB-INF/zsrnpr/");
+		commonConst.Put(EComConst.root_realpath_zzero, sReallPath + "/zzero/");
+
 	}
-	 
-	 
-	 
-	 
-	 
-
-
-
 
 	
-	
-	
-	
-	void InitClass(String sConfigName) throws ClassNotFoundException, InstantiationException, IllegalAccessException
-	{
-	
+	 /**
+	 * @param sConfigName
+	 * @throws ClassNotFoundException
+	 * @throws InstantiationException
+	 * @throws IllegalAccessException
+	 * @description 加载各种类
+	 * @version 1.0
+	 * @author srnpr
+	 * @update 2013-4-8 上午12:01:19
+	 */
 		
-		ConfigCacheManager configCacheManager=new ConfigCacheManager();
-		
-		
-		for(String sClassName:configCacheManager.GetStrings(sConfigName))
-		{
-			
-				Class<?> cClass=Class.forName(sClassName);
-				if(cClass!=null&&cClass.getDeclaredMethods()!=null)
-				{
-					IBaseInit init=(IBaseInit)cClass.newInstance();
-					init.Init();
-				}
-			
-			
+	void InitClass(String sConfigName) throws ClassNotFoundException,
+			InstantiationException, IllegalAccessException {
+
+		ConfigCacheManager configCacheManager = new ConfigCacheManager();
+
+		for (String sClassName : configCacheManager.GetStrings(sConfigName)) {
+
+			Class<?> cClass = Class.forName(sClassName);
+			if (cClass != null && cClass.getDeclaredMethods() != null) {
+				IBaseInit init = (IBaseInit) cClass.newInstance();
+				init.Init();
+			}
+
 		}
 	}
 }
