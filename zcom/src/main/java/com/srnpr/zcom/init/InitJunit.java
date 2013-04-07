@@ -31,8 +31,8 @@ public class InitJunit extends BaseClass implements IBaseInit {
 		 
 		 String sTempPath=m.get("srnprjava_path")+"/zzoos/temp/tempz/";
 		 
-		 commonConst.Put(EComConst.root_realpath_zsrnpr, sTempPath+"/WEB-INF/zsrnpr/");
-		 commonConst.Put(EComConst.root_realpath_zzero, sTempPath+"/zzero/");
+		 commonConst.Put(EComConst.root_realpath_zsrnpr, sTempPath+"WEB-INF/zsrnpr/");
+		 commonConst.Put(EComConst.root_realpath_zzero, sTempPath+"zzero/");
 		 commonConst.Put(EComConst.server_web_name, "");
 		 
 	}

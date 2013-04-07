@@ -11,6 +11,8 @@ import java.util.regex.Pattern;
 
 import org.apache.commons.configuration.ConfigurationException;
 import org.apache.commons.io.FileUtils;
+
+import com.srnpr.zcom.base.BaseClass;
 import com.srnpr.zcom.common.ComFunction;
 import com.srnpr.zcom.common.CommonConst;
 import com.srnpr.zcom.enumer.EComConst;
@@ -18,7 +20,16 @@ import com.srnpr.zcom.helper.HashHelper;
 import com.srnpr.zcom.i.ICacheManager;
 import com.srnpr.zcom.model.MPropertiesHash;
 
-public class ConfigCacheManager implements ICacheManager {
+
+ /**
+ * @description 
+ * @version 1.0
+ * @author srnpr
+ * @ClassName: ConfigCacheManager
+ * @update 2013-4-7 下午5:42:44
+ */
+	
+public class ConfigCacheManager extends BaseClass implements ICacheManager {
 
 	/**
 	 * @return
@@ -39,6 +50,16 @@ public class ConfigCacheManager implements ICacheManager {
 		return ConstStatic.CONST_CONFIG_MAP.get(sKey);
 	}
 	
+	
+	 /**
+	 * @param sKeys
+	 * @return 
+	 * @description   根据key返回数组
+	 * @version 1.0
+	 * @author srnpr
+	 * @update 2013-4-7 下午5:42:48
+	 */
+		
 	public  String[] GetStrings(String... sKeys)
 	{
 		ArrayList<String> aList=new ArrayList<String>();
@@ -80,14 +101,14 @@ public class ConfigCacheManager implements ICacheManager {
 		@SuppressWarnings("unchecked")
 		Collection<File> files = FileUtils.listFiles((new File(sResourceName)),
 				new String[] { "properties" }, true);
-
+		HashHelper hashHelper = new HashHelper();
 		for (File f : files) {
 
 			String sFileNameString = f.getName();
 			String sLeftString = sFileNameString.substring(0,
 					sFileNameString.lastIndexOf("."))
 					+ ".";
-			HashHelper hashHelper = new HashHelper();
+			
 			MPropertiesHash mHash = hashHelper.getMPropertiesHash(f,
 					sLeftString);
 			Enumeration<String> eKey = mHash.getKeyValue().keys();

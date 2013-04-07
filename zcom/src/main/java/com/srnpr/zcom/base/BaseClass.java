@@ -5,6 +5,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.srnpr.zcom.common.ComFunction;
+import com.srnpr.zcom.manager.MessageCacheManager;
 
 
  /**
@@ -16,10 +17,14 @@ import com.srnpr.zcom.common.ComFunction;
  */
 	
 public class BaseClass {
-	private  final Logger logger = LoggerFactory.getLogger(this.getClass().getName());
+	private   Logger logger =null;
 	
 	public Logger BLog()
 	{
+		if(logger==null)
+		{
+			logger=LoggerFactory.getLogger(this.getClass().getName());
+		}
 		return logger;
 	}
 	
@@ -33,6 +38,17 @@ public class BaseClass {
 		return ComFunction.ConfigValue(sKey);
 	}
 	
+	
+	public String BMessage(String sKeys,String... sReplace) {
+		
+		String sReturn=MessageCacheManager.Get(sKeys);
+		for (int i = 0,j=sReplace.length; i < j; i++) {
+			sReturn=sReturn.replaceAll("{"+i+"}", sReplace[i]);
+			
+		}
+		return sReturn;
+		
+	}
 
 	
 	

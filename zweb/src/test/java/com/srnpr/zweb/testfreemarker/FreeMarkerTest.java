@@ -11,9 +11,9 @@ public class FreeMarkerTest extends TestBase {
 
 		
 	
-		BDebug(new WebPage().GetPageHtml());
+		//BDebug(new WebPage().GetPageHtml());
 	
-		
+		BDebug(BMessage("1326030001"));
 		
 		
 		

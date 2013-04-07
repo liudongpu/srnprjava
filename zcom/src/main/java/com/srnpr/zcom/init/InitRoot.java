@@ -9,6 +9,7 @@ import com.srnpr.zcom.enumer.EComConst;
 import com.srnpr.zcom.helper.IoHelper;
 import com.srnpr.zcom.i.IBaseInit;
 import com.srnpr.zcom.manager.ConfigCacheManager;
+import com.srnpr.zcom.manager.MessageCacheManager;
 
 public class InitRoot extends BaseClass implements IBaseInit {
 
@@ -23,14 +24,24 @@ public class InitRoot extends BaseClass implements IBaseInit {
 			 CommonConst commonConst=new CommonConst();
 			 commonConst.Put(EComConst.server_encoding, "UTF-8");
 			
+			 
+			 
+			 //初始化各种文件到指定路径
 			 IoHelper ioHelper=new IoHelper();
 			 ioHelper.ResourcesMove("classpath*:com/srnpr/*/zsrnpr/**/*.*", CommonConst.Get(EComConst.root_realpath_zsrnpr), "zsrnpr");
 			 ioHelper.ResourcesMove("classpath*:com/srnpr/zzero/**/*.*", CommonConst.Get(EComConst.root_realpath_zzero), "srnpr/zzero");
 			 
 			 
+			 //初始化各种配置
 			 ConfigCacheManager configCacheManager=new ConfigCacheManager();
 			 configCacheManager.InitConfig(CommonConst.Get(EComConst.root_realpath_zsrnpr)+"/config");
 			 configCacheManager.FlushConfig();
+			 
+			 
+			 //初始化各种消息
+			 MessageCacheManager messageCacheManager=new MessageCacheManager();
+			 messageCacheManager.Init();
+			 
 			 
 			 
 			 InitClass("zsrnpr.init");

@@ -29,4 +29,10 @@ class ConstStatic implements IConstStatic {
 	static ConcurrentHashMap<String, ConcurrentHashMap<String, String>> CONST_CONFIG_HASH=new ConcurrentHashMap<String, ConcurrentHashMap<String,String>>();
 	
 	
+	
+	
+	static ConcurrentHashMap<String, String> CONST_COM_MESSAGE=new ConcurrentHashMap<String, String>();
+	
+	
+	
 }
