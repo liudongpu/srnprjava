@@ -4,7 +4,6 @@ import org.apache.commons.lang.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.srnpr.zcom.common.ComFunction;
 import com.srnpr.zcom.manager.ConfigCacheManager;
 import com.srnpr.zcom.manager.MessageCacheManager;
 
@@ -28,13 +27,13 @@ public class BaseClass {
 
 	public void BDebug(long lKey, String... oLogInfo) {
 
-		BLog().debug(String.valueOf(lKey) + "  " + BMessage(lKey, oLogInfo));
+		BLog().debug(String.valueOf(lKey) + "  " + BInfo(lKey, oLogInfo));
 
 	}
 
 	public void BError(long lKey, String... oLogInfo) {
 
-		BLog().debug(String.valueOf(lKey) + "  " + BMessage(lKey, oLogInfo));
+		BLog().debug(String.valueOf(lKey) + "  " + BInfo(lKey, oLogInfo));
 	}
 
 	public void BError(Exception e, long lKey, String... oLogInfo) {
@@ -46,7 +45,18 @@ public class BaseClass {
 		return ConfigCacheManager.Get(sKey);
 	}
 
-	public String BMessage(long lKey, String... sKeys) {
+	
+	 /**
+	 * @param lKey
+	 * @param sKeys
+	 * @return
+	 * @description 返回配置的消息
+	 * @version 1.0
+	 * @author srnpr
+	 * @update 2013-4-8 下午4:04:56
+	 */
+		
+	public String BInfo(long lKey, String... sKeys) {
 		String sReturn = null;
 		if (lKey > 0) {
 			sReturn = MessageCacheManager.Get(String.valueOf(lKey));
