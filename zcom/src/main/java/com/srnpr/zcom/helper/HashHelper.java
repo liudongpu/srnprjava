@@ -72,7 +72,7 @@ public class HashHelper extends BaseClass{
 			
 			
 			
-			BError(e,"13260301003",fFile.getPath());
+			BError(e,967901003,fFile.getPath());
 			
 		}
 		

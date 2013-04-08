@@ -45,7 +45,7 @@ public class FreemarkerHelper extends BaseClass {
 			sReturn = sWriter.toString();
 
 		} catch (Exception e) {
-			BError(e,"13260301004",sTempPath,sTempName);
+			BError(e,967901004,sTempPath,sTempName);
 		}
 
 		return sReturn;

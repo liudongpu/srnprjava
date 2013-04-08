@@ -132,7 +132,7 @@ public class ConfigCacheManager extends BaseClass implements ICacheManager {
 			if (iTimeCount > 100) {
 
 				
-				BError("13260301002",String.valueOf(iTimeCount));
+				BError(967901002,String.valueOf(iTimeCount));
 
 			}
 		}

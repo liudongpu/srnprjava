@@ -7,7 +7,7 @@ public class InitData extends BaseClass implements IBaseInit {
 
 	public synchronized void Init() {
 
-		BDebug("13260312002", this.getClass().getName());
+		BDebug(967912002, this.getClass().getName());
 
 		
 		

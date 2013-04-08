@@ -26,45 +26,39 @@ public class BaseClass {
 		return logger;
 	}
 
-	public void BDebug(String... oLogInfo) {
-		if (oLogInfo[0].length() == 11 && oLogInfo[0].startsWith("13")) {
-			BLog().debug(oLogInfo[0]+"  " + BMessage(oLogInfo));
-		} else {
+	public void BDebug(long lKey, String... oLogInfo) {
 
-			BLog().debug(StringUtils.join(oLogInfo));
-		}
-	}
-	
-	
-	
-	public void BError(String... oLogInfo) {
-		if (oLogInfo[0].length() == 11 && oLogInfo[0].startsWith("13")) {
-			BLog().error(oLogInfo[0]+"  " + BMessage(oLogInfo));
-		} else {
+		BLog().debug(String.valueOf(lKey) + "  " + BMessage(lKey, oLogInfo));
 
-			BLog().error(StringUtils.join(oLogInfo));
-		}
 	}
-	
-	
-	public void BError(Exception e,String... oLogInfo) {
-		BError(oLogInfo);
+
+	public void BError(long lKey, String... oLogInfo) {
+
+		BLog().debug(String.valueOf(lKey) + "  " + BMessage(lKey, oLogInfo));
 	}
-	
+
+	public void BError(Exception e, long lKey, String... oLogInfo) {
+		BError(lKey, oLogInfo);
+	}
 
 	public String BConfig(String sKey) {
-		
+
 		return ConfigCacheManager.Get(sKey);
 	}
 
-	public String BMessage(String... sKeys) {
-
-		String sReturn = MessageCacheManager.Get(sKeys[0]);
-		if (sReturn != null) {
-			for (int i = 1, j = sKeys.length; i < j; i++) {
-				sReturn = sReturn.replace("{" + (i - 1) + "}", sKeys[i]);
-
+	public String BMessage(long lKey, String... sKeys) {
+		String sReturn = null;
+		if (lKey > 0) {
+			sReturn = MessageCacheManager.Get(String.valueOf(lKey));
+			if (sReturn != null) {
+				for (int i = 0, j = sKeys.length; i < j; i++) {
+					sReturn = sReturn.replace("{" + (i) + "}", sKeys[i]);
+				}
 			}
+		}
+		else
+		{
+			sReturn=StringUtils.join(sKeys,"  ");
 		}
 		return sReturn;
 

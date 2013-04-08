@@ -14,7 +14,7 @@ public class InitJunit extends BaseClass implements IBaseInit {
 		
 	
 		
-		BDebug(this.getClass().getName());
+		BDebug(0,this.getClass().getName());
 		
 		InitJunitConst();
 		
@@ -28,7 +28,7 @@ public class InitJunit extends BaseClass implements IBaseInit {
 	{
 		 CommonConst commonConst=new CommonConst();
 		
-		 String sDirPathString=System.getenv("srnprjava_path");
+		 String sDirPathString=System.getenv("srnprjava_path1");
 		 
 		
 		 
@@ -36,7 +36,10 @@ public class InitJunit extends BaseClass implements IBaseInit {
 		 //特殊判断  如果无法读取系统变量则存放到用户文件夹
 		 if(sDirPathString==null)
 		 {
-			 BDebug("can't init srnprjava_path");
+			 BError(0,"can't init srnprjava_path");
+			 
+			
+			 
 			 sDirPathString=System.getProperty("user.home");
 		 }
 		 
@@ -44,7 +47,7 @@ public class InitJunit extends BaseClass implements IBaseInit {
 		 File file=new File(sDirPathString);
 		 if(!file.exists())
 		 {
-			 BError("can't init syspath");
+			 BError(0,"can't init syspath");
 		 }
 		 
 		

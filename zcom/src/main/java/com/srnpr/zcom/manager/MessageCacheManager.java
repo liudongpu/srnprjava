@@ -31,7 +31,7 @@ public class MessageCacheManager extends BaseClass implements ICacheManager,
 	public void Init() {
 		
 		@SuppressWarnings("unchecked")
-		Collection<File> files = FileUtils.listFiles((new File(BConfig("zcom.path_message"))),
+		Collection<File> files = FileUtils.listFiles((new File(BConfig("zcom.path_info"))),
 				new String[] { BConfig("zcom.messagefile_fix") }, true);
 
 		HashHelper hashHelper = new HashHelper();

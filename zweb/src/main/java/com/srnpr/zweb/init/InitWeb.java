@@ -17,7 +17,7 @@ public class InitWeb extends BaseClass implements IBaseInit {
 	public synchronized void Init() {
 
 
-		BDebug("13260312002",this.getClass().getName());
+		BDebug(967912002,this.getClass().getName());
 		
 
 		try {
@@ -27,7 +27,7 @@ public class InitWeb extends BaseClass implements IBaseInit {
 			InitPageConfig();
 
 		} catch (Exception e) {
-			BError(e,"13260301001");
+			BError(e,967901001);
 		}
 
 	}

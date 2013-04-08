@@ -56,17 +56,17 @@ public class InitRoot extends BaseClass implements IBaseInit {
 			MessageCacheManager messageCacheManager = new MessageCacheManager();
 			messageCacheManager.Init();
 
-			BDebug("13260312001");
+			BDebug(967912001);
 
 			// 加载各种标准初始化类
 			InitClass("zsrnpr.init");
 
 			long end = System.currentTimeMillis(); // 获取运行结束时间
 
-			BDebug("13260312003", String.valueOf(end - start));
+			BDebug(967912003, String.valueOf(end - start));
 
 		} catch (Exception e) {
-			BError(e, e.getMessage());
+			BError(e,0, e.getMessage());
 		}
 	}
 
