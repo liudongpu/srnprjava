@@ -114,11 +114,18 @@ public class InitRoot extends BaseClass implements IBaseInit {
 
 		for (String sClassName : configCacheManager.GetStrings(sConfigName)) {
 
-			Class<?> cClass = Class.forName(sClassName);
-			if (cClass != null && cClass.getDeclaredMethods() != null) {
-				IBaseInit init = (IBaseInit) cClass.newInstance();
-				init.Init();
+			try {
+				Class<?> cClass = Class.forName(sClassName);
+				if (cClass != null && cClass.getDeclaredMethods() != null) {
+					IBaseInit init = (IBaseInit) cClass.newInstance();
+					init.Init();
+				}
+			} catch (Exception e) {
+				
+				BError(e,967901005,sClassName);
+				
 			}
+			
 
 		}
 	}
