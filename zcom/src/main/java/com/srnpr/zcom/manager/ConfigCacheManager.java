@@ -11,13 +11,14 @@ import java.util.regex.Pattern;
 
 import org.apache.commons.configuration.ConfigurationException;
 import org.apache.commons.io.FileUtils;
+import org.apache.commons.lang.StringUtils;
 
 import com.srnpr.zcom.base.BaseClass;
 import com.srnpr.zcom.common.ComFunction;
 import com.srnpr.zcom.common.CommonConst;
 import com.srnpr.zcom.enumer.EComConst;
 import com.srnpr.zcom.helper.HashHelper;
-import com.srnpr.zcom.i.ICacheManager;
+import com.srnpr.zcom.i.IBaseManager;
 import com.srnpr.zcom.model.MPropertiesHash;
 
 /**
@@ -28,7 +29,7 @@ import com.srnpr.zcom.model.MPropertiesHash;
  * @update 2013-4-7 下午5:42:44
  */
 
-public class ConfigCacheManager extends BaseClass implements ICacheManager {
+public class ConfigCacheManager extends BaseClass implements IBaseManager {
 
 	/**
 	 * @return
@@ -36,7 +37,7 @@ public class ConfigCacheManager extends BaseClass implements ICacheManager {
 	 * @version 1.0
 	 * @author srnpr
 	 * @update 2013-4-2 下午11:57:46
-	 * @see com.srnpr.zcom.i.ICacheManager#Refresh()
+	 * @see com.srnpr.zcom.i.IBaseManager#Refresh()
 	 */
 
 	public synchronized boolean Refresh() {
@@ -46,7 +47,12 @@ public class ConfigCacheManager extends BaseClass implements ICacheManager {
 
 	public static String Get(String sKey) {
 
-		return ConstStatic.CONST_CONFIG_MAP.get(sKey);
+		
+		return StringUtils.defaultString(ConstStatic.CONST_CONFIG_MAP.get(sKey));
+		
+		 
+		
+		
 	}
 
 	/**
@@ -66,7 +72,7 @@ public class ConfigCacheManager extends BaseClass implements ICacheManager {
 			Enumeration<String> iterator = cMap.keys();
 			while (iterator.hasMoreElements()) {
 				String sKey = (String) iterator.nextElement();
-				aList.add(cMap.get(sKey));
+				aList.add(StringUtils.defaultString(cMap.get(sKey)));
 			}
 		}
 

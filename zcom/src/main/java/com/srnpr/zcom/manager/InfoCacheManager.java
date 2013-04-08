@@ -11,10 +11,10 @@ import org.apache.commons.io.FileUtils;
 import com.srnpr.zcom.base.BaseClass;
 import com.srnpr.zcom.helper.HashHelper;
 import com.srnpr.zcom.i.IBaseInit;
-import com.srnpr.zcom.i.ICacheManager;
+import com.srnpr.zcom.i.IBaseManager;
 import com.srnpr.zcom.model.MPropertiesHash;
 
-public class MessageCacheManager extends BaseClass implements ICacheManager,
+public class InfoCacheManager extends BaseClass implements IBaseManager,
 		IBaseInit {
 
 	

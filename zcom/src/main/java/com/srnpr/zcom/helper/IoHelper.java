@@ -6,6 +6,9 @@ import java.io.IOException;
 import java.io.InputStream;
 
 import org.apache.commons.io.IOUtils;
+import org.omg.CORBA.PUBLIC_MEMBER;
+import org.springframework.context.support.AbstractApplicationContext;
+import org.springframework.context.support.FileSystemXmlApplicationContext;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 
@@ -65,6 +68,22 @@ public class IoHelper {
 		
 		
 		
+		
+		
+		
+		
+		
+		
+	}
+	
+	
+	
+	public Object GetBeanFromFile(String sFilePath,String sBeanName)
+	{
+		
+		AbstractApplicationContext ctx = new FileSystemXmlApplicationContext(sFilePath);
+		return ctx.getBean(sBeanName);
+    	
 		
 	}
 	

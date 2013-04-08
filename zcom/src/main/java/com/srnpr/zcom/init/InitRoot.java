@@ -9,7 +9,7 @@ import com.srnpr.zcom.enumer.EComConst;
 import com.srnpr.zcom.helper.IoHelper;
 import com.srnpr.zcom.i.IBaseInit;
 import com.srnpr.zcom.manager.ConfigCacheManager;
-import com.srnpr.zcom.manager.MessageCacheManager;
+import com.srnpr.zcom.manager.InfoCacheManager;
 
 
  /**
@@ -53,7 +53,7 @@ public class InitRoot extends BaseClass implements IBaseInit {
 			configCacheManager.FlushConfig();
 
 			// 初始化各种消息
-			MessageCacheManager messageCacheManager = new MessageCacheManager();
+			InfoCacheManager messageCacheManager = new InfoCacheManager();
 			messageCacheManager.Init();
 
 			BDebug(967912001);

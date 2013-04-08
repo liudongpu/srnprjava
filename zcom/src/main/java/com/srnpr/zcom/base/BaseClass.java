@@ -5,7 +5,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.srnpr.zcom.manager.ConfigCacheManager;
-import com.srnpr.zcom.manager.MessageCacheManager;
+import com.srnpr.zcom.manager.InfoCacheManager;
 
 /**
  * @description 基本类 包含一些通用的方法逻辑
@@ -59,7 +59,7 @@ public class BaseClass {
 	public String BInfo(long lKey, String... sKeys) {
 		String sReturn = null;
 		if (lKey > 0) {
-			sReturn = MessageCacheManager.Get(String.valueOf(lKey));
+			sReturn = InfoCacheManager.Get(String.valueOf(lKey));
 			if (sReturn != null) {
 				for (int i = 0, j = sKeys.length; i < j; i++) {
 					sReturn = sReturn.replace("{" + (i) + "}", sKeys[i]);
