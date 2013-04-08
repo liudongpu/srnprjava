@@ -4,4 +4,5 @@ encoding//src/main/java/com/srnpr/zcom/zsrnpr/config/zcom.properties=UTF-8
 encoding//src/main/java/com/srnpr/zcom/zsrnpr/config/zsrnpr.properties=UTF-8
 encoding//src/main/java/com/srnpr/zcom/zsrnpr/info/zcom.i9679.properties=UTF-8
 encoding//src/test/java=UTF-8
+encoding//src/test/resources=UTF-8
 encoding/<project>=UTF-8
