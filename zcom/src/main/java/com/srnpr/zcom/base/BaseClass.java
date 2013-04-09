@@ -25,16 +25,16 @@ public class BaseClass {
 		return logger;
 	}
 
-	public void BDebug(long lKey, String... oLogInfo) {
+	public void BDebug(int lKey, String... oLogInfo) {
 		BLog().debug(StringUtils.rightPad(String.valueOf(lKey), 11, " ") + BInfo(lKey, oLogInfo));
 	}
 
-	public void BError(long lKey, String... oLogInfo) {
+	public void BError(int lKey, String... oLogInfo) {
 
 		BLog().error( StringUtils.rightPad(String.valueOf(lKey), 11, " ") + BInfo(lKey, oLogInfo));
 	}
 
-	public void BError(Exception e, long lKey, String... oLogInfo) {
+	public void BError(Exception e, int lKey, String... oLogInfo) {
 		BError(lKey, oLogInfo);
 	}
 
@@ -54,7 +54,7 @@ public class BaseClass {
 	 * @update 2013-4-8 下午4:04:56
 	 */
 		
-	public String BInfo(long lKey, String... sKeys) {
+	public String BInfo(int lKey, String... sKeys) {
 		String sReturn = null;
 		if (lKey >99999999) {
 			sReturn = InfoCacheManager.Get(String.valueOf(lKey));

@@ -2,9 +2,11 @@ package com.srnpr.zdata.manager;
 
 import java.util.Map;
 
-import org.apache.commons.lang.StringUtils;
-import org.apache.commons.lang.time.StopWatch;
+
+
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.util.StopWatch;
+
 import com.mchange.v2.c3p0.ComboPooledDataSource;
 import com.srnpr.zcom.base.BaseClass;
 import com.srnpr.zcom.helper.IoHelper;
@@ -39,21 +41,15 @@ public class DataBaseManager extends BaseClass implements IBaseManager,
 		
 		
 		
-		
+		/*
 		for (Map<String, Object> map : Get(BConfig("zdata.database_name")).queryForList("select * from zd_serverinfo")) {
 			
 			
 			BDebug(1122, (String)map.get("code"));
 			
-		}
+		}*/
 		
-		
-		
-		
-		
-		
-		
-		
+	
 		
 		
 		
