@@ -17,7 +17,7 @@ class ConstStatic implements IConstStatic {
 	
 	
 
-	 static boolean CONST_WEB_SERVER_FLAG=false;
+	 
 
 
 	

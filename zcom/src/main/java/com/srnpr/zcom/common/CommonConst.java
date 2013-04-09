@@ -1,6 +1,9 @@
 package com.srnpr.zcom.common;
 
+import org.apache.commons.lang.StringUtils;
+
 import com.srnpr.zcom.enumer.EComConst;
+import com.srnpr.zcom.enumer.ERunType;
 
 public class CommonConst {
 
@@ -9,7 +12,7 @@ public class CommonConst {
 	
 	public static String Get(EComConst eConst)
 	{
-		return ConstStatic.CONST_COM_MAP.get(eConst).toString();
+		return StringUtils.defaultString((String)ConstStatic.CONST_COM_MAP.get(eConst));
 	}
 	
 	public  void Put(EComConst eConst,Object oValue)
@@ -24,15 +27,25 @@ public class CommonConst {
 	
 	
 	
-	public static Boolean GetWebServerFlag()
+	public  Boolean FlagJunitModel()
 	{
-		return ConstStatic.CONST_WEB_SERVER_FLAG;
+		
+		boolean bReturn=false;
+		
+		
+		
+		
+		if(Get(EComConst.com_run_type)!=null&&ERunType.junit.toString().equals(Get(EComConst.com_run_type)))
+		{
+			ComFunction.OutLog(Get(EComConst.com_run_type));
+		}
+		
+		
+		
+		return bReturn;
 	}
 	
-	public void SetWebServerFlag(Boolean bFlag)
-	{
-		ConstStatic.CONST_WEB_SERVER_FLAG=bFlag;
-	}
+
 	
 	
 	

@@ -6,6 +6,7 @@ import java.util.Map;
 import com.srnpr.zcom.base.BaseClass;
 import com.srnpr.zcom.common.CommonConst;
 import com.srnpr.zcom.enumer.EComConst;
+import com.srnpr.zcom.enumer.ERunType;
 import com.srnpr.zcom.i.IBaseInit;
 
 public class InitJunit extends BaseClass implements IBaseInit {
@@ -27,19 +28,12 @@ public class InitJunit extends BaseClass implements IBaseInit {
 	public void InitJunitConst()
 	{
 		 CommonConst commonConst=new CommonConst();
-		
 		 String sDirPathString=System.getenv("srnprjava_path");
 		 
-		
-		 
-		
 		 //特殊判断  如果无法读取系统变量则存放到用户文件夹
 		 if(sDirPathString==null)
 		 {
 			 BError(0,"can't init srnprjava_path");
-			 
-			
-			 
 			 sDirPathString=System.getProperty("user.home");
 		 }
 		 
@@ -57,6 +51,9 @@ public class InitJunit extends BaseClass implements IBaseInit {
 		 commonConst.Put(EComConst.root_realpath_zsrnpr, sTempPath+"WEB-INF/zsrnpr/");
 		 commonConst.Put(EComConst.root_realpath_zzero, sTempPath+"zzero/");
 		 commonConst.Put(EComConst.server_web_name, "");
+		 
+		// commonConst.Put(EComConst.com_run_type, ERunType.junit);
+		 
 		 
 	}
 	

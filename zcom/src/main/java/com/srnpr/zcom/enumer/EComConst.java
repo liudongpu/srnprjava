@@ -4,15 +4,15 @@ public enum EComConst {
 
 	
 	
-	 /**
-	 * @fields server_web_path  
-	 */
+	
 	
 	server_encoding,
 	
 	
 	
 	server_web_name,
+	
+	com_run_type,
 	
 	
 	root_realpath_baseweb,

@@ -26,14 +26,12 @@ public class BaseClass {
 	}
 
 	public void BDebug(long lKey, String... oLogInfo) {
-
-		BLog().debug(String.valueOf(lKey) + "  " + BInfo(lKey, oLogInfo));
-
+		BLog().debug(StringUtils.rightPad(String.valueOf(lKey), 11, " ") + BInfo(lKey, oLogInfo));
 	}
 
 	public void BError(long lKey, String... oLogInfo) {
 
-		BLog().debug(String.valueOf(lKey) + "  " + BInfo(lKey, oLogInfo));
+		BLog().error( StringUtils.rightPad(String.valueOf(lKey), 11, " ") + BInfo(lKey, oLogInfo));
 	}
 
 	public void BError(Exception e, long lKey, String... oLogInfo) {
@@ -68,7 +66,7 @@ public class BaseClass {
 		}
 		else
 		{
-			sReturn=StringUtils.join(sKeys,"  ");
+			sReturn=StringUtils.join(sKeys);
 		}
 		return sReturn;
 

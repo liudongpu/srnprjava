@@ -3,6 +3,8 @@ package com.srnpr.zcom.init;
 import javax.servlet.ServletContext;
 
 import org.apache.commons.lang.ClassUtils;
+import org.apache.commons.lang.StringUtils;
+import org.springframework.util.StopWatch;
 
 
 
@@ -38,10 +40,14 @@ public class InitRoot extends BaseClass implements IBaseInit {
 	public synchronized void Init() {
 		try {
 
-			long start = System.currentTimeMillis(); // 获取最初时间
+			StopWatch stopWatch=new StopWatch();
+			stopWatch.start();
+			
 
 			CommonConst commonConst = new CommonConst();
 			commonConst.Put(EComConst.server_encoding, "UTF-8");
+			
+			
 
 			// 初始化各种文件到指定路径
 			IoHelper ioHelper = new IoHelper();
@@ -64,11 +70,11 @@ public class InitRoot extends BaseClass implements IBaseInit {
 
 			// 加载各种标准初始化类
 			InitClass("zsrnpr.init");
+			
+			stopWatch.stop();
+			BDebug(967912003,String.valueOf( stopWatch.getTotalTimeSeconds()));
 
-			long end = System.currentTimeMillis(); // 获取运行结束时间
-
-			BDebug(967912003, String.valueOf(end - start));
-
+			
 		} catch (Exception e) {
 			BError(e,0, e.getMessage());
 		}
@@ -86,7 +92,7 @@ public class InitRoot extends BaseClass implements IBaseInit {
 	public synchronized void InitConst(ServletContext servletContext) {
 
 		CommonConst commonConst = new CommonConst();
-		commonConst.SetWebServerFlag(true);
+		
 		String sReallPath = servletContext.getRealPath("");
 		commonConst.Put(EComConst.root_realpath_baseweb, sReallPath);
 
@@ -114,6 +120,14 @@ public class InitRoot extends BaseClass implements IBaseInit {
 	void InitClass(String sConfigName) throws ClassNotFoundException,
 			InstantiationException, IllegalAccessException {
 
+		CommonConst commonConst=new CommonConst();
+		if(commonConst.FlagJunitModel())
+		{
+			
+		}
+		
+		
+		
 		ConfigCacheManager configCacheManager = new ConfigCacheManager();
 
 		for (String sClassName : configCacheManager.GetStrings(sConfigName)) {
