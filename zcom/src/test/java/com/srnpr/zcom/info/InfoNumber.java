@@ -14,7 +14,7 @@ public class InfoNumber extends BaseClass {
 	@Test
 	public void TestNumber()
 	{
-		long lNumber= FormatHelper.ConvertFormatStringNumber("zzzz", "abcdefghijklmnopqrstuvwxyz");
+		long lNumber= FormatHelper.ConvertFormatStringNumber("dt", "abcdefghijklmnopqrstuvwxyz");
 		
 		BDebug(0,String.valueOf(lNumber));
 		

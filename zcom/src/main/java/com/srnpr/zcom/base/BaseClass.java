@@ -56,7 +56,7 @@ public class BaseClass {
 		
 	public String BInfo(long lKey, String... sKeys) {
 		String sReturn = null;
-		if (lKey > 0) {
+		if (lKey >99999999) {
 			sReturn = InfoCacheManager.Get(String.valueOf(lKey));
 			if (sReturn != null) {
 				for (int i = 0, j = sKeys.length; i < j; i++) {

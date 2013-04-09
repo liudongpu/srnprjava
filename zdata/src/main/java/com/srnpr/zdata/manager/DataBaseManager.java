@@ -1,10 +1,10 @@
 package com.srnpr.zdata.manager;
 
-import org.springframework.context.support.AbstractApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
-import org.springframework.context.support.FileSystemXmlApplicationContext;
-import org.springframework.jdbc.core.JdbcTemplate;
+import java.util.Map;
 
+import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang.time.StopWatch;
+import org.springframework.jdbc.core.JdbcTemplate;
 import com.mchange.v2.c3p0.ComboPooledDataSource;
 import com.srnpr.zcom.base.BaseClass;
 import com.srnpr.zcom.helper.IoHelper;
@@ -37,10 +37,25 @@ public class DataBaseManager extends BaseClass implements IBaseManager,
 		
 		
 		
-		int iLength= Get(BConfig("zdata.database_name")).queryForInt("select count(1) from zd_serverinfo");
 		
 		
-		BDebug(0, String.valueOf(iLength));
+		
+		for (Map<String, Object> map : Get(BConfig("zdata.database_name")).queryForList("select * from zd_serverinfo")) {
+			
+			
+			BDebug(1122, (String)map.get("code"));
+			
+		}
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		
 		
 		
@@ -53,10 +68,14 @@ public class DataBaseManager extends BaseClass implements IBaseManager,
 			String sJdbcUser, String sJdbcPassword) {
 
 		IoHelper iHelper = new IoHelper();
-
-		ComboPooledDataSource cm = (ComboPooledDataSource) iHelper.GetBeanFromFile(BConfig("zdata.datasource_beanfile"),	BConfig("zdata.datasource_beanname"));
-		//ComboPooledDataSource cm =new ComboPooledDataSource();
-
+StopWatch sWatch=new StopWatch();
+		
+		
+		//ComboPooledDataSource cm = (ComboPooledDataSource) iHelper.GetBeanFromFile(BConfig("zdata.datasource_beanfile"),	BConfig("zdata.datasource_beanname"));
+		ComboPooledDataSource cm =new ComboPooledDataSource();
+		
+	
+		
 		try {
 			cm.setDriverClass(sJdbcClass);
 			cm.setJdbcUrl(sJdbcUrl);
