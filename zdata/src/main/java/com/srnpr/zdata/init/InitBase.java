@@ -4,7 +4,7 @@ import com.srnpr.zcom.base.BaseClass;
 import com.srnpr.zcom.i.IBaseInit;
 import com.srnpr.zdata.manager.DataBaseManager;
 
-public class InitData extends BaseClass implements IBaseInit {
+public class InitBase extends BaseClass implements IBaseInit {
 
 	public synchronized void Init() {
 

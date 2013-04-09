@@ -28,7 +28,7 @@ public class InitJunit extends BaseClass implements IBaseInit {
 	{
 		 CommonConst commonConst=new CommonConst();
 		
-		 String sDirPathString=System.getenv("srnprjava_path1");
+		 String sDirPathString=System.getenv("srnprjava_path");
 		 
 		
 		 

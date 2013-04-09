@@ -2,6 +2,10 @@ package com.srnpr.zcom.init;
 
 import javax.servlet.ServletContext;
 
+import org.apache.commons.lang.ClassUtils;
+
+
+
 import com.srnpr.zcom.base.BaseClass;
 import com.srnpr.zcom.common.ComFunction;
 import com.srnpr.zcom.common.CommonConst;
@@ -115,7 +119,8 @@ public class InitRoot extends BaseClass implements IBaseInit {
 		for (String sClassName : configCacheManager.GetStrings(sConfigName)) {
 
 			try {
-				Class<?> cClass = Class.forName(sClassName);
+
+				Class<?> cClass = ClassUtils.getClass(sClassName);
 				if (cClass != null && cClass.getDeclaredMethods() != null) {
 					IBaseInit init = (IBaseInit) cClass.newInstance();
 					init.Init();
