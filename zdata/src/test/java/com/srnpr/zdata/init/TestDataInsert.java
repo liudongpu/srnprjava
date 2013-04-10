@@ -20,7 +20,7 @@ public class TestDataInsert extends TestBase {
 		for(long i=100000;i<999999;i++)
 		{
 		
-			dbBaseManager.Get(BConfig("zdata.database_name")).update("insert into t1(t1col1,t1col2,t1col3) values("+i+","+i+","+i+")");
+			//dbBaseManager.Get(BConfig("zdata.database_name")).update("insert into t1(t1col1,t1col2,t1col3) values("+i+","+i+","+i+")");
 		
 		}
 		

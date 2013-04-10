@@ -29,7 +29,7 @@ public class DataBaseManager extends BaseClass implements IBaseManager,
 	public void Init() {
 
 		ConstStatic.CONST_JDBCTEMPLETE_MAP.put(
-				BConfig("zdata.database_name"),
+				BConfig("zdata.base_database_name"),
 				GetTemplete(BConfig("zdata.jdbc_class_zdata"),
 						BConfig("zdata.jdbc_url_zdata"),
 						BConfig("zdata.jdbc_user_zdata"),
@@ -37,36 +37,29 @@ public class DataBaseManager extends BaseClass implements IBaseManager,
 
 				));
 		
-		
-		
-		
-		
-		/*
-		for (Map<String, Object> map : Get(BConfig("zdata.database_name")).queryForList("select * from zd_serverinfo")) {
-			
-			
-			BDebug(1122, (String)map.get("code"));
-			
-		}*/
-		
 	
-		
-		
-		
-		
-		
-		
-		
+		for (Map<String, Object> map : Get(BConfig("zdata.base_database_name")).queryForList("select * from "+BConfig("zdata.db_table_server"))) {
+			
+			
+			ConstStatic.CONST_JDBCTEMPLETE_MAP.put(
+					(String)map.get(BConfig("zdata.db_column_server_name")),
+					GetTemplete((String)map.get(BConfig("zdata.db_column_server_class")),
+							(String)map.get(BConfig("zdata.db_column_server_url")),
+							(String)map.get(BConfig("zdata.db_column_server_user")),
+							(String)map.get(BConfig("zdata.db_column_server_password"))
+					));
+			
+		}
 
 	}
 
 	private JdbcTemplate GetTemplete(String sJdbcClass, String sJdbcUrl,
 			String sJdbcUser, String sJdbcPassword) {
 
-		IoHelper iHelper = new IoHelper();
-StopWatch sWatch=new StopWatch();
 		
+
 		
+		//IoHelper iHelper = new IoHelper();
 		//ComboPooledDataSource cm = (ComboPooledDataSource) iHelper.GetBeanFromFile(BConfig("zdata.datasource_beanfile"),	BConfig("zdata.datasource_beanname"));
 		ComboPooledDataSource cm =new ComboPooledDataSource();
 		
