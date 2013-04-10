@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- 主机: 127.0.0.1
--- 生成日期: 2013 年 04 月 09 日 19:04
+-- 生成日期: 2013 年 04 月 10 日 19:06
 -- 服务器版本: 5.5.27
 -- PHP 版本: 5.4.7
 
@@ -38,7 +38,7 @@ CREATE TABLE IF NOT EXISTS `zdata_column` (
   `note` varchar(100) DEFAULT NULL,
   `pid` int(11) DEFAULT '0',
   PRIMARY KEY (`zid`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=32 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=29 ;
 
 --
 -- 转存表中的数据 `zdata_column`
@@ -82,13 +82,12 @@ INSERT INTO `zdata_column` (`zid`, `server_name`, `table_name`, `column_name`, `
 
 CREATE TABLE IF NOT EXISTS `zdata_server` (
   `zid` int(11) NOT NULL AUTO_INCREMENT,
-  `code` varchar(20) NOT NULL,
-  `name` varchar(20) NOT NULL,
+  `name` varchar(100) NOT NULL,
   `jdbc_class` varchar(100) NOT NULL,
   `jdbc_url` varchar(100) NOT NULL,
   `jdbc_user` varchar(100) NOT NULL,
   `jdbc_password` varchar(100) NOT NULL,
-  `use` int(11) NOT NULL,
+  `note` varchar(1000) NOT NULL,
   PRIMARY KEY (`zid`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
 
@@ -96,8 +95,8 @@ CREATE TABLE IF NOT EXISTS `zdata_server` (
 -- 转存表中的数据 `zdata_server`
 --
 
-INSERT INTO `zdata_server` (`zid`, `code`, `name`, `jdbc_class`, `jdbc_url`, `jdbc_user`, `jdbc_password`, `use`) VALUES
-(1, 'zdata', 'zdata', '', '', '', '', 0);
+INSERT INTO `zdata_server` (`zid`, `name`, `jdbc_class`, `jdbc_url`, `jdbc_user`, `jdbc_password`, `note`) VALUES
+(1, 'zdata', 'com.mysql.jdbc.Driver', 'jdbc:mysql://127.0.0.1:3306/zdata', 'root', '', '0');
 
 -- --------------------------------------------------------
 
@@ -111,7 +110,7 @@ CREATE TABLE IF NOT EXISTS `zdata_table` (
   `name` varchar(100) NOT NULL,
   `note` varchar(100) NOT NULL,
   PRIMARY KEY (`zid`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=8 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
 
 --
 -- 转存表中的数据 `zdata_table`
