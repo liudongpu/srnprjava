@@ -86,8 +86,6 @@ public class HashHelper extends BaseClass{
 	private  MPropertiesHash getMPropertiesHash(PropertiesConfiguration pConfiguration,String sLeftPad)
 	{
 		MPropertiesHash mHash=new MPropertiesHash();
-		
-		
 		Iterator<String> em=pConfiguration.getKeys();
 		while (em.hasNext()) {
 			String sKeyString=(String)em.next();
@@ -95,6 +93,15 @@ public class HashHelper extends BaseClass{
 			String sValueString=new String(pConfiguration.getProperty(sKeyString).toString());
 			if(!sKeyString.isEmpty())
 			{
+				
+				//判断如果是参数左边的第一个字母为$ 则视该属性为覆写属性
+				if(sKeyString.substring(0,1).equals("$"))
+				{
+					sKeyString=sKeyString.substring(1);
+					sLeftPad="";
+				}
+				
+				
 				int iIndex=sKeyString.indexOf("[");
 				if( iIndex<0&&!sKeyString.endsWith("]"))
 				{

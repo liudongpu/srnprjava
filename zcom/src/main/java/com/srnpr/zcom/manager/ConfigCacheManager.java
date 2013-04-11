@@ -120,8 +120,22 @@ public class ConfigCacheManager extends BaseClass implements IBaseManager {
 			Enumeration<String> eHashKey = mHash.getChild().keys();
 			while (eHashKey.hasMoreElements()) {
 				String sKey = eHashKey.nextElement();
-				ConstStatic.CONST_CONFIG_HASH.put(sKey,
-						mHash.getChild().get(sKey));
+				
+				if(ConstStatic.CONST_CONFIG_HASH.contains(sKey))
+				{
+					Enumeration<String> sChildKey = mHash.getChild().get(sKey).keys();
+					while (sChildKey.hasMoreElements()) {
+						String sCkey=sChildKey.nextElement();
+						mHash.getChild().get(sKey).put(sCkey, mHash.getChild().get(sKey).get(sCkey));
+					}
+				}
+				else {
+					ConstStatic.CONST_CONFIG_HASH.put(sKey,
+							mHash.getChild().get(sKey));
+				}
+				
+				
+				
 			}
 
 		}
