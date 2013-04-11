@@ -3,6 +3,7 @@ package com.srnpr.zweb.page;
 import java.util.HashMap;
 import com.srnpr.zcom.base.BaseClass;
 import com.srnpr.zcom.helper.FreemarkerHelper;
+import com.srnpr.zdata.helper.DataHelper;
 import com.srnpr.zweb.common.WebConst;
 import com.srnpr.zweb.enumer.EWebConst;
 
@@ -24,6 +25,13 @@ public class WebPage extends BaseClass {
 		hWebPage.put("PageConfig", WebConst.PageConfig());
 
 		hPageTemp.put("WebPage", hWebPage);
+		
+		
+		
+		DataHelper dHelper=new DataHelper();
+		hPageTemp.put("DataTable", dHelper.Get("zdata", "zdata_column"));
+		
+		
 		
 		FreemarkerHelper fHelper=new FreemarkerHelper();
 		

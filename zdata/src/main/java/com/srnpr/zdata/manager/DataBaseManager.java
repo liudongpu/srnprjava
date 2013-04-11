@@ -5,18 +5,15 @@ import java.util.Map;
 
 
 import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.util.StopWatch;
-
 import com.mchange.v2.c3p0.ComboPooledDataSource;
 import com.srnpr.zcom.base.BaseClass;
-import com.srnpr.zcom.helper.IoHelper;
 import com.srnpr.zcom.i.IBaseInit;
 import com.srnpr.zcom.i.IBaseManager;
 
 public class DataBaseManager extends BaseClass implements IBaseManager,
 		IBaseInit {
 
-	public JdbcTemplate Get(String sKey) {
+	public static JdbcTemplate Get(String sKey) {
 
 		return ConstStatic.CONST_JDBCTEMPLETE_MAP.get(sKey);
 	}
@@ -49,7 +46,17 @@ public class DataBaseManager extends BaseClass implements IBaseManager,
 							(String)map.get(BConfig("zdata.db_column_server_password"))
 					));
 			
-		}
+		};
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 
 	}
 
