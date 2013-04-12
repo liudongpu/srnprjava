@@ -1,4 +1,4 @@
-package com.srnpr.zweb.page;
+ package com.srnpr.zweb.page;
 
 import java.util.HashMap;
 import com.srnpr.zcom.base.BaseClass;
@@ -14,24 +14,49 @@ public class WebPage extends BaseClass {
 	
 	
 	
-	public String GetPageHtml() {
+	public String GetPageHtml(String sUrl) {
 		 
 		HashMap<Object, Object> hPageTemp = new HashMap<Object, Object>();
-		
-		
-		
 		HashMap<Object, Object> hWebPage=new HashMap<Object, Object>();
 
 		hWebPage.put("PageConfig", WebConst.PageConfig());
-
+		
+		
+		
+		
+		
+		HashMap<Object, Object> hPageInfo=new HashMap<Object, Object>();
+		
+		String[] sParams=sUrl.split("-");
+		
+		String sPageType=sParams[0];
+		
+		
+		if(sPageType.equals("center"))
+		{
+			DataHelper dHelper=new DataHelper();
+			hPageTemp.put("DataTable", dHelper.Get("zdata", "zdata_column"));
+		}
+		else if(sPageType.equals("list"))
+		{
+			
+		}
+		else if(sPageType.equals("put"))
+		{
+			DataHelper dHelper=new DataHelper();
+			hWebPage.put("DataTable", dHelper.Get("zdata", "zdata_column","table_name","zdata_table"));
+		}
+		
+		
+		
+		
+		
+		
+		hPageInfo.put("PageInclude", "page_"+sPageType+".ftl");
+		
+		hWebPage.put("PageInfo", hPageInfo);
+		
 		hPageTemp.put("WebPage", hWebPage);
-		
-		
-		
-		DataHelper dHelper=new DataHelper();
-		hPageTemp.put("DataTable", dHelper.Get("zdata", "zdata_column"));
-		
-		
 		
 		FreemarkerHelper fHelper=new FreemarkerHelper();
 		

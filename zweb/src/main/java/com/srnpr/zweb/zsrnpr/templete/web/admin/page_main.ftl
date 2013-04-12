@@ -6,15 +6,15 @@
 				<span class="icon-bar"></span> <span class="icon-bar"></span> <span
 					class="icon-bar"></span>
 			</button>
-			<a class="brand" href="#">Project name</a>
+			<a class="brand" href="#">超级后台管理系统</a>
 			<div class="nav-collapse collapse">
 				<p class="navbar-text pull-right">
 					Logged in as <a href="#" class="navbar-link">Username</a>
 				</p>
 				<ul class="nav">
-					<li class="active"><a href="#">Home</a></li>
-					<li><a href="#about">About</a></li>
-					<li><a href="#contact">Contact</a></li>
+					<li class="active"><a href="#">首页</a></li>
+					<li><a href="#about">系统设置</a></li>
+					<li><a href="#contact">文章设置</a></li>
 				</ul>
 			</div>
 			<!--/.nav-collapse -->
@@ -38,8 +38,8 @@
 			<div class="well sidebar-nav">
 				<ul class="nav nav-list">
 					<li class="nav-header">Sidebar</li>
-					<li class="active"><a href="#">Link</a></li>
-					<li><a href="#">Link</a></li>
+					<li class="active"><a href="/zadmin/zadmin/list-fff">系统所有表</a></li>
+					<li><a href="/zadmin/zadmin/put-fff">添加</a></li>
 					<li><a href="#">Link</a></li>
 					<li><a href="#">Link</a></li>
 					<li class="nav-header">Sidebar</li>
@@ -61,7 +61,7 @@
 		<div class="span10">
 			
 			
-			<#include pageconfig.admin_include.page_center />
+			<#include pageinfo.PageInclude />
 			
 			
 		</div>

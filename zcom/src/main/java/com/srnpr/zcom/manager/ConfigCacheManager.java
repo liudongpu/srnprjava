@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Enumeration;
+import java.util.HashMap;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -17,6 +18,7 @@ import com.srnpr.zcom.base.BaseClass;
 import com.srnpr.zcom.common.ComFunction;
 import com.srnpr.zcom.common.CommonConst;
 import com.srnpr.zcom.enumer.EComConst;
+import com.srnpr.zcom.helper.FreemarkerHelper;
 import com.srnpr.zcom.helper.HashHelper;
 import com.srnpr.zcom.i.IBaseManager;
 import com.srnpr.zcom.model.MPropertiesHash;
@@ -121,12 +123,12 @@ public class ConfigCacheManager extends BaseClass implements IBaseManager {
 			while (eHashKey.hasMoreElements()) {
 				String sKey = eHashKey.nextElement();
 				
-				if(ConstStatic.CONST_CONFIG_HASH.contains(sKey))
+				if(ConstStatic.CONST_CONFIG_HASH.containsKey(sKey))
 				{
 					Enumeration<String> sChildKey = mHash.getChild().get(sKey).keys();
 					while (sChildKey.hasMoreElements()) {
 						String sCkey=sChildKey.nextElement();
-						mHash.getChild().get(sKey).put(sCkey, mHash.getChild().get(sKey).get(sCkey));
+						ConstStatic.CONST_CONFIG_HASH.get(sKey).put(sCkey, mHash.getChild().get(sKey).get(sCkey));
 					}
 				}
 				else {
@@ -230,5 +232,60 @@ public class ConfigCacheManager extends BaseClass implements IBaseManager {
 		return iReturn;
 
 	}
+	
+	
+	
+	
+	public String ShowAllConfig()
+	{
+		FreemarkerHelper fHelper=new FreemarkerHelper();
+		
+		ConcurrentHashMap<String, String> cMap=new ConcurrentHashMap<String, String>();
+
+		if(true)
+		{
+			ConcurrentHashMap<String, String> cHashMap=ConstStatic.CONST_CONFIG_MAP;
+			Enumeration<String> eKey=cHashMap.keys();
+			while (eKey.hasMoreElements()) {
+				String string = (String) eKey.nextElement();
+				cMap.put(string, cHashMap.get(string));
+			}
+		}
+
+		Enumeration<String> eKeyHash=ConstStatic.CONST_CONFIG_HASH.keys();
+		while (eKeyHash.hasMoreElements()) {
+			if(true)
+			{
+				String sHashKey=(String) eKeyHash.nextElement();
+				
+				ConcurrentHashMap<String, String> cHashMap=ConstStatic.CONST_CONFIG_HASH.get(sHashKey);
+				Enumeration<String> eKey=cHashMap.keys();
+				while (eKey.hasMoreElements()) {
+					String string = (String) eKey.nextElement();
+					cMap.put(sHashKey+"["+string+"]", cHashMap.get(string));
+				}
+			}
+		}
+		
+		
+		HashMap<String,Object> hMap=new HashMap<String, Object>();
+		
+		hMap.put("p_list", cMap);
+		
+		String sReturnString = fHelper.GetStringFromTemp(
+				CommonConst.Get(EComConst.root_realpath_zsrnpr)+"templete/com/" , "configlist.ftl",hMap);
+		
+		
+		return sReturnString;
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
 
 }

@@ -1,11 +1,7 @@
 <#macro m_page_table  p_list>
-	
 	<table  class="table table-bordered">
   <caption>...</caption>
   <thead>
-  
-  
-  
     <tr>
         <#list p_list[0]?keys as e>
       	 <th>${e}</th>
@@ -13,7 +9,6 @@
     </tr>
   </thead>
   <tbody>
-  
   <#list p_list as e_list>
 	<tr>
       <#list e_list?keys as e>
@@ -23,4 +18,15 @@
 	</#list>
   </tbody>
 </table>
+</#macro>
+
+<#macro m_page_input  p_info>
+
+<div class="control-group">
+    <label class="control-label" for="${p_info.column_name}">${p_info.column_name}</label>
+    <div class="controls">
+      <input type="text" id="${p_info.column_name}" >
+    </div>
+  </div>
+
 </#macro>

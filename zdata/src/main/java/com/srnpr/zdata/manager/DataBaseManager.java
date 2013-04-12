@@ -1,10 +1,14 @@
 package com.srnpr.zdata.manager;
 
+import java.util.HashMap;
 import java.util.Map;
 
 
 
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
+import org.springframework.jdbc.core.namedparam.SqlParameterSource;
+
 import com.mchange.v2.c3p0.ComboPooledDataSource;
 import com.srnpr.zcom.base.BaseClass;
 import com.srnpr.zcom.i.IBaseInit;
@@ -13,7 +17,7 @@ import com.srnpr.zcom.i.IBaseManager;
 public class DataBaseManager extends BaseClass implements IBaseManager,
 		IBaseInit {
 
-	public static JdbcTemplate Get(String sKey) {
+	public static NamedParameterJdbcTemplate Get(String sKey) {
 
 		return ConstStatic.CONST_JDBCTEMPLETE_MAP.get(sKey);
 	}
@@ -35,7 +39,7 @@ public class DataBaseManager extends BaseClass implements IBaseManager,
 				));
 		
 	
-		for (Map<String, Object> map : Get(BConfig("zdata.base_database_name")).queryForList("select * from "+BConfig("zdata.db_table_server"))) {
+		for (Map<String, Object> map : Get(BConfig("zdata.base_database_name")).queryForList("select * from "+BConfig("zdata.db_table_server"),new HashMap<String, Object>())) {
 			
 			
 			ConstStatic.CONST_JDBCTEMPLETE_MAP.put(
@@ -60,7 +64,7 @@ public class DataBaseManager extends BaseClass implements IBaseManager,
 
 	}
 
-	private JdbcTemplate GetTemplete(String sJdbcClass, String sJdbcUrl,
+	private NamedParameterJdbcTemplate GetTemplete(String sJdbcClass, String sJdbcUrl,
 			String sJdbcUser, String sJdbcPassword) {
 
 		
@@ -82,7 +86,10 @@ public class DataBaseManager extends BaseClass implements IBaseManager,
 			BError(e, 968001101, sJdbcClass, sJdbcUrl, sJdbcUser, sJdbcPassword);
 		}
 
-		JdbcTemplate jdbcTemplate = new JdbcTemplate(cm);
+		NamedParameterJdbcTemplate jdbcTemplate = new NamedParameterJdbcTemplate(cm);
+		
+	
+		
 		return jdbcTemplate;
 	}
 
