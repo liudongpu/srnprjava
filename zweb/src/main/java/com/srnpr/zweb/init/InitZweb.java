@@ -46,6 +46,8 @@ public class InitZweb extends BaseInit implements IBaseInit {
 		MWebConfig mConfig=new MWebConfig();
 		
 		mConfig.setBaseInclude(BConfig("zweb.base_include"));
+		
+		WebConst.PutWebCnfig("zcom", mConfig);
 
 		WebConst.PutWebProcess("zcom", new PageProcess());
 

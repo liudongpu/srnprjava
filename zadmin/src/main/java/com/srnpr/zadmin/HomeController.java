@@ -1,6 +1,9 @@
 package com.srnpr.zadmin;
 
+import java.util.Enumeration;
 import java.util.Locale;
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -44,9 +47,18 @@ public class HomeController {
 	@RequestMapping(value = "/{path}/{url}")
 	public String index(@PathVariable("path")String sPath,@PathVariable("url")String sUrl, Model model) {
 		
+		 HttpServletRequest request= ((ServletRequestAttributes)RequestContextHolder.getRequestAttributes()).getRequest();
 
+		 ConcurrentHashMap<String, String> cMap=new ConcurrentHashMap<String, String>();
+		 Enumeration<String> eKey= request.getParameterNames();
+		 while (eKey.hasMoreElements()) {
+			String string = (String) eKey.nextElement();
+			cMap.put(string, request.getParameter(string));
+			
+		}
+		 
+		 
 		model.addAttribute("serverTime", new WebPage().GetPageHtml(sPath,sUrl) );
-		
 		return "home";
 	}
 

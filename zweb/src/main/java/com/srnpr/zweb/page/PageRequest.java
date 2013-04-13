@@ -9,21 +9,34 @@ import com.srnpr.zweb.enumer.EWebRequest;
 public class PageRequest {
 
 	
-	private HttpServletRequest request;
+	private ConcurrentHashMap<String, String> request;
 	
-	public PageRequest(HttpServletRequest hRequest)
+	public PageRequest(ConcurrentHashMap<String, String> hRequest)
 	{
 		request=hRequest;
-		this.Put(EWebRequest.Request_Method, request.getMethod());
+		
 	}
 	
+	
+	public PageRequest()
+	{
+		
+	}
+			
 
 	
 	public String GetParam(String sName)
 	{
-		return request.getParameter(sName);
+		return request.get(sName);
 		
 	}
+	
+	
+	private ConcurrentHashMap<String, String> cHashMap=new ConcurrentHashMap<String, String>();
+	
+	
+	
+	
 	
 	
 	private ConcurrentHashMap<EWebRequest, String> cMap=new ConcurrentHashMap<EWebRequest, String>();

@@ -2,7 +2,7 @@
 
 
 
-<form class="form-horizontal">
+<form id="page_form" class="form-horizontal"  action="/zadmin/zcom/put-aa">
 
  <legend>修改</legend>
 
@@ -19,10 +19,37 @@
       <label class="checkbox">
         <input type="checkbox"> Remember me
       </label>
-      <button type="submit" class="btn">Sign in</button>
+      <button type="button" class="btn" onclick="testsubmit()">Sign in</button>
     </div>
   </div>
 </form>
 
 
 
+<script>
+
+
+
+
+
+function testsubmit()
+{
+	  
+	
+	
+	$('#page_form').ajaxSubmit(function(data){
+
+                alert(data);
+
+            });
+
+};
+	 
+	 
+	 
+	 
+
+
+
+
+</script>

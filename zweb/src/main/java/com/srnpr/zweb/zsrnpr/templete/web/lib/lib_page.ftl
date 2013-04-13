@@ -25,7 +25,7 @@
 <div class="control-group">
     <label class="control-label" for="${p_info.column_name}">${p_info.column_name}</label>
     <div class="controls">
-      <input type="text" id="${p_info.column_name}" >
+      <input type="text" id="${p_info.column_name}" name="${p_info.column_name}"/>
     </div>
   </div>
 

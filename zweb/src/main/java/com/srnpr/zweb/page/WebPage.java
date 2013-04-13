@@ -1,6 +1,9 @@
 package com.srnpr.zweb.page;
 
 import java.util.HashMap;
+import java.util.concurrent.ConcurrentHashMap;
+
+import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
@@ -49,15 +52,24 @@ public class WebPage extends BaseClass {
 	}
 	
 	
-	
-	
-	public String GetPageHtml(String sPath,String sUrl) {
-		PageRequest wRequest=new PageRequest(((ServletRequestAttributes)RequestContextHolder.getRequestAttributes()).getRequest());
+	public String GetPageHtml(String sPath,String sUrl,ConcurrentHashMap<String, String> cMap) {
+		
+		
+		PageRequest wRequest=new PageRequest(cMap);
 		wRequest.Put(EWebRequest.Url_Path, sPath);
 		String[] sParams=sUrl.split("-");
 		wRequest.Put(EWebRequest.Url_Target, sParams[0]);
 		wRequest.Put(EWebRequest.Url_View, sParams[1]);
 		return GetPageHtml(wRequest);
+
+	}
+	
+	
+	
+	
+	public String GetPageHtml(String sPath,String sUrl) {
+		
+		return GetPageHtml(sPath,sUrl,null);
 
 	}
 
