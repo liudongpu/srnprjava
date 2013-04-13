@@ -8,6 +8,11 @@ public class MWebConfig {
 	
 	
 	
+	
+	private String baseInclude="";
+	
+	
+	
 	private ArrayList<String> srcJs=new ArrayList<String>();
 	
 	private ArrayList<String> srcCss=new ArrayList<String>();
@@ -39,6 +44,14 @@ public class MWebConfig {
 
 	public void setPageInclude(ConcurrentHashMap<String, String> pageInclude) {
 		this.pageInclude = pageInclude;
+	}
+
+	public String getBaseInclude() {
+		return baseInclude;
+	}
+
+	public void setBaseInclude(String baseInclude) {
+		this.baseInclude = baseInclude;
 	}
 	
 	

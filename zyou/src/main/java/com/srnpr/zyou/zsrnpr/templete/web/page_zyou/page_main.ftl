@@ -38,8 +38,8 @@
 			<div class="well sidebar-nav">
 				<ul class="nav nav-list">
 					<li class="nav-header">Sidebar</li>
-					<li class="active"><a href="/zadmin/zadmin/list-fff">系统所有表</a></li>
-					<li><a href="/zadmin/zadmin/post-fff">添加</a></li>
+					<li class="active"><a href="/zadmin/zyou/list-fff">系统所有表</a></li>
+					<li><a href="/zadmin/zyou/post-fff">添加</a></li>
 					<li><a href="#">Link</a></li>
 					<li><a href="#">Link</a></li>
 					<li class="nav-header">Sidebar</li>

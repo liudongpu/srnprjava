@@ -10,6 +10,7 @@ import com.srnpr.zcom.manager.ConfigCacheManager;
 import com.srnpr.zcom.model.MPropertiesHash;
 import com.srnpr.zweb.common.WebConst;
 import com.srnpr.zweb.model.MWebConfig;
+import com.srnpr.zyou.page.PageProcess;
 
 public class InitZyou extends BaseInit implements IBaseInit {
 
@@ -47,12 +48,18 @@ public class InitZyou extends BaseInit implements IBaseInit {
 				"zweb.lib_zen_js")) {
 			mConfig.getSrcJs().add(s);
 		}
+		
+		
+		
+		mConfig.setBaseInclude(BConfig("zyou.base_include"));
+		
+		
 
 		WebConst.PutWebCnfig("zyou", mConfig);
 		
-		
-
 	
+
+		WebConst.PutWebProcess("zyou", new PageProcess());
 		
 		
 		

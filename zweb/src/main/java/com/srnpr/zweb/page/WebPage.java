@@ -6,6 +6,7 @@ import com.srnpr.zcom.helper.FreemarkerHelper;
 import com.srnpr.zdata.helper.DataHelper;
 import com.srnpr.zweb.common.WebConst;
 import com.srnpr.zweb.enumer.EWebConst;
+import com.srnpr.zweb.model.MWebConfig;
 import com.srnpr.zweb.model.MWebPage;
 
 public class WebPage extends BaseClass {
@@ -15,46 +16,32 @@ public class WebPage extends BaseClass {
 	public String GetPageHtml(String sPath, String sUrl) {
 
 		HashMap<Object, Object> hPageTemp = new HashMap<Object, Object>();
+		
 		HashMap<Object, Object> hWebPage = new HashMap<Object, Object>();
 
 		
 		
-		String[] sParams = sUrl.split("-");
+		
+		
+		
+		
+		MWebConfig mConfig=WebConst.GetWebConfig(sPath);
+
+		hWebPage.put("WebConfig", mConfig);
+		
+		
+		
+		
+		
+		
 		
 
-		hWebPage.put("WebConfig", WebConst.GetWebConfig(sPath));
-		
-		
-
-		MWebPage mPageInfo = new MWebPage();
+		MWebPage mPageInfo = WebConst.GetWebProcess(sPath).Process(sUrl);
 
 		// HashMap<Object, Object> hPageInfo=new HashMap<Object, Object>();
 
 		
 
-		String sPageType = sParams[0];
-
-		if (sPageType.equals("center")) {
-			DataHelper dHelper = new DataHelper();
-
-			mPageInfo.setPageData(dHelper.Get("zdata", "zdata_column"));
-		} else if (sPageType.equals("list")) {
-			DataHelper dHelper = new DataHelper();
-			mPageInfo.setPageData(dHelper.Get("zdata", "zdata_column",
-					"table_name", "zdata_column"));
-		} else if (sPageType.equals("put")) {
-			DataHelper dHelper = new DataHelper();
-			mPageInfo.setPageData(dHelper.Get("zdata", "zdata_column",
-					"table_name", "zdata_column"));
-		} else if (sPageType.equals("post")) {
-			DataHelper dHelper = new DataHelper();
-			mPageInfo.setPageData(dHelper.Get("zdata", "zdata_column",
-					"table_name", "zdata_column"));
-		}
-
-		// hPageInfo.put("PageInclude", "page_"+sPageType+".ftl");
-
-		mPageInfo.setPageInclude("page_" + sPageType + ".ftl");
 
 		hWebPage.put("PageInfo", mPageInfo);
 
@@ -64,7 +51,7 @@ public class WebPage extends BaseClass {
 
 		String sReturnString = fHelper.GetStringFromTemp(
 				WebConst.Get(EWebConst.templete_path),
-				BConfig("zweb.admin_page"), hPageTemp);
+				mConfig.getBaseInclude(), hPageTemp);
 
 		return sReturnString;
 

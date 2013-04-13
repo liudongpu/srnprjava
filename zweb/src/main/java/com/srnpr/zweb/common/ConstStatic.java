@@ -2,8 +2,11 @@ package com.srnpr.zweb.common;
 
 import java.util.concurrent.ConcurrentHashMap;
 
+import org.springframework.context.support.StaticApplicationContext;
+
 import com.srnpr.zcom.i.IConstStatic;
 import com.srnpr.zweb.enumer.EWebConst;
+import com.srnpr.zweb.i.IWebProcess;
 import com.srnpr.zweb.model.MWebConfig;
 
 class ConstStatic implements IConstStatic {
@@ -24,6 +27,13 @@ class ConstStatic implements IConstStatic {
 	
 	
 	static ConcurrentHashMap<String, MWebConfig> CONST_WEB_CONFIG=new ConcurrentHashMap<String, MWebConfig>();
+	
+	
+	
+	
+	static ConcurrentHashMap<String, IWebProcess> CONST_WEB_PROCESS=new ConcurrentHashMap<String, IWebProcess>();
+	
+	
 	
 	
 }

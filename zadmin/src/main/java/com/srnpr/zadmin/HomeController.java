@@ -27,15 +27,15 @@ public class HomeController {
 	 */
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home(Locale locale, Model model) {
-		model.addAttribute("serverTime", new WebPage().GetPageHtml("center") );
+		model.addAttribute("serverTime", new WebPage().GetPageHtml("zyou","center") );
 		//model.addAttribute("serverTime", new ConfigCacheManager().ShowAllConfig() );
 		return "home";
 	}
 	
-	@RequestMapping(value = "/zadmin/{p}")
-	public String index(Locale locale ,@PathVariable("p")String sUrl, Model model) {
+	@RequestMapping(value = "/{path}/{url}")
+	public String index(Locale locale ,@PathVariable("path")String sPath,@PathVariable("url")String sUrl, Model model) {
 		
-		model.addAttribute("serverTime", new WebPage().GetPageHtml(sUrl) );
+		model.addAttribute("serverTime", new WebPage().GetPageHtml(sPath,sUrl) );
 		return "home";
 	}
 	

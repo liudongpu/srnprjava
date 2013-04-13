@@ -3,7 +3,9 @@ package com.srnpr.zweb.common;
 import java.util.concurrent.ConcurrentHashMap;
 
 import com.srnpr.zweb.enumer.EWebConst;
+import com.srnpr.zweb.i.IWebProcess;
 import com.srnpr.zweb.model.MWebConfig;
+import com.srnpr.zweb.model.MWebPage;
 
 public class WebConst {
 
@@ -37,6 +39,18 @@ public class WebConst {
 	{
 		ConstStatic.CONST_WEB_CONFIG.put(sKey, mConfig);
 	}
+	
+	
+	public static IWebProcess GetWebProcess(String sKey)
+	{
+		return ConstStatic.CONST_WEB_PROCESS.get(sKey);
+	}
+	
+	public static void PutWebProcess(String sKey,IWebProcess iProcess)
+	{
+		ConstStatic.CONST_WEB_PROCESS.put(sKey, iProcess);
+	}
+	
 	
 	
 }

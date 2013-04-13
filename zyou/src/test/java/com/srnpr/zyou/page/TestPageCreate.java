@@ -11,9 +11,9 @@ public class TestPageCreate extends TestBase {
 	@Test
 	public void CreatePage()
 	{
-		String sMeString="";
+		String sMeString=new WebPage().GetPageHtml("zyou", "put-");
 		
-		new WebPage().GetPageHtml("zyou", "put-");
+		BDebug(123, sMeString);
 		
 	}
 	
