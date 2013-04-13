@@ -1,6 +1,7 @@
 package com.srnpr.zcom.helper;
 
 import java.io.File;
+import java.io.FileInputStream;
 import java.util.ArrayList;
 import java.util.Enumeration;
 import java.util.Iterator;
@@ -67,7 +68,14 @@ public class HashHelper extends BaseClass{
 		PropertiesConfiguration pConfiguration=new PropertiesConfiguration();
 		
 		try {
-			pConfiguration.load(FileUtils.openInputStream(fFile),CommonConst.Get(EComConst.server_encoding));
+			
+			FileInputStream fInputStream=FileUtils.openInputStream(fFile);
+			
+			pConfiguration.load(fInputStream,CommonConst.Get(EComConst.server_encoding));
+			
+			fInputStream.close();
+		
+			
 		} catch (Exception e) {
 			
 			

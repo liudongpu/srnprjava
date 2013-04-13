@@ -2,9 +2,13 @@
 
 
 
+
+
+
+
 <form class="form-horizontal">
 
- <legend>修改</legend>
+ <legend>新增</legend>
 
 
 <#list pageinfo.getPageData() as e_list>
@@ -16,10 +20,8 @@
 
   <div class="control-group">
     <div class="controls">
-      <label class="checkbox">
-        <input type="checkbox"> Remember me
-      </label>
-      <button type="submit" class="btn">Sign in</button>
+     
+      <button type="submit" class="btn">提交</button>
     </div>
   </div>
 </form>

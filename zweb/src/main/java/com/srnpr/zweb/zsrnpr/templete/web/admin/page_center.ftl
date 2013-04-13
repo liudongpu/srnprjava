@@ -2,7 +2,7 @@
 
 
 
-<@m_page_table DataTable />
+<@m_page_table pageinfo.getPageData() />
 
 
 

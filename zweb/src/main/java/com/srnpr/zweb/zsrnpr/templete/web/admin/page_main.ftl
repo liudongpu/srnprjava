@@ -13,7 +13,7 @@
 				</p>
 				<ul class="nav">
 					<li class="active"><a href="#">首页</a></li>
-					<li><a href="#about">系统设置</a></li>
+					<li><a href="/zadmin/">系统设置</a></li>
 					<li><a href="#contact">文章设置</a></li>
 				</ul>
 			</div>
@@ -39,7 +39,7 @@
 				<ul class="nav nav-list">
 					<li class="nav-header">Sidebar</li>
 					<li class="active"><a href="/zadmin/zadmin/list-fff">系统所有表</a></li>
-					<li><a href="/zadmin/zadmin/put-fff">添加</a></li>
+					<li><a href="/zadmin/zadmin/post-fff">添加</a></li>
 					<li><a href="#">Link</a></li>
 					<li><a href="#">Link</a></li>
 					<li class="nav-header">Sidebar</li>
@@ -61,7 +61,7 @@
 		<div class="span10">
 			
 			
-			<#include pageinfo.PageInclude />
+			<#include pageinfo.getPageInclude() />
 			
 			
 		</div>
