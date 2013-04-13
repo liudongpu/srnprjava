@@ -28,19 +28,9 @@ public class WebPage extends BaseClass {
 		MWebConfig mConfig=WebConst.GetWebConfig(sPath);
 
 		hWebPage.put("WebConfig", mConfig);
-		
-		
-		
-		
-		
-		
-		
+
 
 		MWebPage mPageInfo = WebConst.GetWebProcess(sPath).Process(sUrl);
-
-		// HashMap<Object, Object> hPageInfo=new HashMap<Object, Object>();
-
-		
 
 
 		hWebPage.put("PageInfo", mPageInfo);

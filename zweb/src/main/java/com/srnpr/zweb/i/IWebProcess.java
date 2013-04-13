@@ -6,7 +6,7 @@ public interface IWebProcess {
 
 	
 	
-	public MWebPage Process(String sParam);
+	public MWebPage Process(String sUrl);
 	
 	
 }

@@ -4,15 +4,15 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.concurrent.ConcurrentHashMap;
 
-import com.srnpr.zcom.base.BaseClass;
 import com.srnpr.zcom.base.BaseInit;
-import com.srnpr.zcom.common.ComFunction;
 import com.srnpr.zcom.helper.HashHelper;
 import com.srnpr.zcom.i.IBaseInit;
 import com.srnpr.zcom.manager.ConfigCacheManager;
 import com.srnpr.zcom.model.MPropertiesHash;
 import com.srnpr.zweb.common.WebConst;
 import com.srnpr.zweb.enumer.EWebConst;
+import com.srnpr.zweb.model.MWebConfig;
+import com.srnpr.zweb.page.PageProcess;
 
 public class InitZweb extends BaseInit implements IBaseInit {
 
@@ -43,47 +43,11 @@ public class InitZweb extends BaseInit implements IBaseInit {
 	
 	private void InitPageConfig() {
 
-		ConfigCacheManager cManager=new ConfigCacheManager();
+		MWebConfig mConfig=new MWebConfig();
 		
-		
-		ConcurrentHashMap<String, String> cMap=cManager.GetHash("zweb.admin_include");
-		
-		WebConst.PageConfig().put("admin_include",
-				cManager.GetHash("zweb.admin_include"));
+		mConfig.setBaseInclude(BConfig("zweb.base_include"));
 
-		String sAdminTheamsPath =BConfig("zweb.path_themes_admin_config");
-
-		ArrayList<String> lCssList = new ArrayList<String>();
-		ArrayList<String> lJsList = new ArrayList<String>();
-
-		
-		HashHelper hashHelper=new HashHelper();
-		
-		
-		
-		
-		MPropertiesHash mTheamsHash = hashHelper.getMPropertiesHash(
-				sAdminTheamsPath, "");
-
-		for (String s : hashHelper.GetStringFromCurrentHash(mTheamsHash
-				.getChild().get("admin_css"))) {
-			lCssList.add(BConfig("zweb.url_themes_admin") + s);
-		}
-
-		for (String s : cManager.GetStrings("zweb.lib_bootstrap_css")) {
-			lCssList.add(s);
-		}
-
-		WebConst.PageConfig().put("admin_css", lCssList.toArray());
-
-		for (String s : cManager.GetStrings(
-				"zweb.lib_jquery_js",
-				"zweb.lib_bootstrap_js",
-				"zweb.lib_zen_js")) {
-			lJsList.add(s);
-		}
-
-		WebConst.PageConfig().put("admin_js", lJsList.toArray());
+		WebConst.PutWebProcess("zcom", new PageProcess());
 
 	}
 
