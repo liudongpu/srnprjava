@@ -15,7 +15,7 @@ public class FreeMarkerTest extends TestBase {
 		
 		
 		
-		BDebug(0,new WebPage().GetPageHtml("zyou-put-afa"));
+		//BDebug(0,new WebPage().GetPageHtml("zyou-put-afa"));
 	
 		
 		

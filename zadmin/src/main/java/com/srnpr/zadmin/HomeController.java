@@ -2,6 +2,8 @@ package com.srnpr.zadmin;
 
 import java.util.Locale;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
@@ -15,7 +17,9 @@ import org.springframework.web.context.request.RequestAttributes;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
 
+import com.srnpr.zweb.enumer.EWebRequest;
 import com.srnpr.zweb.page.WebPage;
+import com.srnpr.zweb.page.PageRequest;
 
 /**
  * Handles requests for the application home page.
@@ -31,17 +35,16 @@ public class HomeController {
 	 */
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home( Model model) {
-		model.addAttribute("serverTime", new WebPage().GetPageHtml("zyou","center") );
+		//model.addAttribute("serverTime", new WebPage().GetPageHtml("zyou","center") );
 		//model.addAttribute("serverTime", new ConfigCacheManager().ShowAllConfig() );
-		return "home";
+		//return "home";
+		return index("zyou", "center", model);
 	}
 	
 	@RequestMapping(value = "/{path}/{url}")
 	public String index(@PathVariable("path")String sPath,@PathVariable("url")String sUrl, Model model) {
 		
-	
-		//RequestAttributes ra = RequestContextHolder.getRequestAttributes();  
-		//HttpServletRequest request = ((ServletRequestAttributes)ra).getRequest();  
+
 		model.addAttribute("serverTime", new WebPage().GetPageHtml(sPath,sUrl) );
 		
 		return "home";
