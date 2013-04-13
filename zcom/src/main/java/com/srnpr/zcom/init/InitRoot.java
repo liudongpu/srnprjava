@@ -7,6 +7,7 @@ import org.apache.commons.lang.StringUtils;
 import org.springframework.util.StopWatch;
 
 import com.srnpr.zcom.base.BaseClass;
+import com.srnpr.zcom.base.BaseInit;
 import com.srnpr.zcom.common.CommonConst;
 import com.srnpr.zcom.enumer.EComConst;
 import com.srnpr.zcom.helper.IoHelper;
@@ -22,7 +23,7 @@ import com.srnpr.zcom.manager.InfoCacheManager;
  * @update 2013-4-8 上午12:02:58
  */
 
-public class InitRoot extends BaseClass implements IBaseInit {
+public class InitRoot extends BaseInit implements IBaseInit {
 
 	/**
 	 * @description 基本初始化类 加载各种系统配置文件

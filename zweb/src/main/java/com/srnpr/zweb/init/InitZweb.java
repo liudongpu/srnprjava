@@ -12,7 +12,7 @@ import com.srnpr.zcom.model.MPropertiesHash;
 import com.srnpr.zweb.common.WebConst;
 import com.srnpr.zweb.enumer.EWebConst;
 
-public class InitBase extends BaseClass implements IBaseInit {
+public class InitZweb extends BaseClass implements IBaseInit {
 
 	public synchronized void Init() {
 

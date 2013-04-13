@@ -4,12 +4,13 @@ import java.io.File;
 import java.util.Map;
 
 import com.srnpr.zcom.base.BaseClass;
+import com.srnpr.zcom.base.BaseInit;
 import com.srnpr.zcom.common.CommonConst;
 import com.srnpr.zcom.enumer.EComConst;
 import com.srnpr.zcom.enumer.ERunType;
 import com.srnpr.zcom.i.IBaseInit;
 
-public class InitJunit extends BaseClass implements IBaseInit {
+public class InitJunit extends BaseInit implements IBaseInit {
 
 	public void Init() {
 		

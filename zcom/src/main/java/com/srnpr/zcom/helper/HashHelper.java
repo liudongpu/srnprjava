@@ -115,6 +115,11 @@ public class HashHelper extends BaseClass{
 				{
 					mHash.getKeyValue().put(sLeftPad+sKeyString, sValueString);
 				}
+				else if(sKeyString.substring(iIndex+1).equals("]"))
+				{
+					sLeftPad="";
+					//不做任何操作  如果是[]  等待后续初始化
+				}
 				else
 				{
 					String sHashKey=sLeftPad+sKeyString.substring(0,iIndex);
