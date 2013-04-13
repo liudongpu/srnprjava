@@ -4,6 +4,7 @@ import java.util.concurrent.ConcurrentHashMap;
 
 import com.srnpr.zcom.i.IConstStatic;
 import com.srnpr.zweb.enumer.EWebConst;
+import com.srnpr.zweb.model.MWebConfig;
 
 class ConstStatic implements IConstStatic {
 
@@ -22,7 +23,7 @@ class ConstStatic implements IConstStatic {
 	
 	
 	
-	
+	static ConcurrentHashMap<String, MWebConfig> CONST_WEB_CONFIG=new ConcurrentHashMap<String, MWebConfig>();
 	
 	
 }

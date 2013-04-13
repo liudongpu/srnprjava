@@ -99,6 +99,10 @@ public class HashHelper extends BaseClass{
 			String sKeyString=(String)em.next();
 			//String sValueString=pJarConfiguration.getString(sKeyString);
 			String sValueString=new String(pConfiguration.getProperty(sKeyString).toString());
+			
+			
+			String sLeftAddString=sLeftPad;
+			
 			if(!sKeyString.isEmpty())
 			{
 				
@@ -106,23 +110,23 @@ public class HashHelper extends BaseClass{
 				if(sKeyString.substring(0,1).equals("$"))
 				{
 					sKeyString=sKeyString.substring(1);
-					sLeftPad="";
+					sLeftAddString="";
 				}
 				
 				
 				int iIndex=sKeyString.indexOf("[");
 				if( iIndex<0&&!sKeyString.endsWith("]"))
 				{
-					mHash.getKeyValue().put(sLeftPad+sKeyString, sValueString);
+					mHash.getKeyValue().put(sLeftAddString+sKeyString, sValueString);
 				}
 				else if(sKeyString.substring(iIndex+1).equals("]"))
 				{
-					sLeftPad="";
+					sLeftAddString="";
 					//不做任何操作  如果是[]  等待后续初始化
 				}
 				else
 				{
-					String sHashKey=sLeftPad+sKeyString.substring(0,iIndex);
+					String sHashKey=sLeftAddString+sKeyString.substring(0,iIndex);
 					
 					if(!mHash.getChild().containsKey(sHashKey))
 					{

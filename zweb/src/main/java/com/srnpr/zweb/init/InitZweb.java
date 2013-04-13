@@ -2,8 +2,10 @@ package com.srnpr.zweb.init;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.concurrent.ConcurrentHashMap;
 
 import com.srnpr.zcom.base.BaseClass;
+import com.srnpr.zcom.base.BaseInit;
 import com.srnpr.zcom.common.ComFunction;
 import com.srnpr.zcom.helper.HashHelper;
 import com.srnpr.zcom.i.IBaseInit;
@@ -12,7 +14,7 @@ import com.srnpr.zcom.model.MPropertiesHash;
 import com.srnpr.zweb.common.WebConst;
 import com.srnpr.zweb.enumer.EWebConst;
 
-public class InitZweb extends BaseClass implements IBaseInit {
+public class InitZweb extends BaseInit implements IBaseInit {
 
 	public synchronized void Init() {
 
@@ -25,6 +27,12 @@ public class InitZweb extends BaseClass implements IBaseInit {
 			InitTemplete(BConfig("zweb.templeteclaspath"));
 
 			InitPageConfig();
+			
+			
+			
+			InitClass("zweb.web_init");
+			
+			
 
 		} catch (Exception e) {
 			BError(e,967901001);
@@ -36,6 +44,9 @@ public class InitZweb extends BaseClass implements IBaseInit {
 	private void InitPageConfig() {
 
 		ConfigCacheManager cManager=new ConfigCacheManager();
+		
+		
+		ConcurrentHashMap<String, String> cMap=cManager.GetHash("zweb.admin_include");
 		
 		WebConst.PageConfig().put("admin_include",
 				cManager.GetHash("zweb.admin_include"));
