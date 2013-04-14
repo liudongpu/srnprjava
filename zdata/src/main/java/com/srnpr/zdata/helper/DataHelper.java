@@ -3,12 +3,15 @@ package com.srnpr.zdata.helper;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 
+import org.apache.commons.lang.StringUtils;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.namedparam.SqlParameterSource;
-import org.springframework.jdbc.core.simple.SimpleJdbcTemplate;
+
 
 import com.srnpr.zcom.base.BaseClass;
+import com.srnpr.zcom.model.MHashMap;
 import com.srnpr.zdata.manager.DataBaseManager;
 
 public class DataHelper extends BaseClass {
@@ -25,7 +28,7 @@ public class DataHelper extends BaseClass {
 	public List<Map<String, Object>> Get(String sDataBase, String sTableName,
 			String sRows, String sOrder, int start, int end, Object... args) {
 
-		StringBuilder sBuilder = new StringBuilder();
+		StringBuffer sBuilder = new StringBuffer();
 
 		sBuilder.append("select ");
 		if (!sRows.isEmpty() && sRows.equals("*")) {
@@ -61,5 +64,36 @@ public class DataHelper extends BaseClass {
 				hParamHashMap);
 
 	}
+	
+	
+	
+	
+	public void Put(String sDataBase,String sTableName,MHashMap mHashMap)
+	{
+		
+		StringBuffer sSqlBuffer=new StringBuffer();
+		
+		sSqlBuffer.append("insert into "+sTableName+"(");
+		
+		String[] sKey=mHashMap.GetKeys();
+		
+		sSqlBuffer.append(StringUtils.join(sKey,","));
+		
+		sSqlBuffer.append(") values(:");
+		sSqlBuffer.append(StringUtils.join(sKey,",:"));
+		sSqlBuffer.append(")");
+		
+		DataBaseManager.Get(sDataBase).update(sSqlBuffer.toString(),mHashMap);
+
+		
+	}
+	
+	
+	
+	
+	
+	
+	
+	
 
 }

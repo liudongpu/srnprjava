@@ -15,21 +15,19 @@ public class MWebPage {
 		return pageType;
 	}
 
-
-
 	public void setPageType(String pageType) {
 		this.pageType = pageType;
 	}
 
 
 
-	public List<Map<String, Object>> getPageData() {
+	public Object getPageData() {
 		return pageData;
 	}
 
 
 
-	public void setPageData(List<Map<String, Object>> pageData) {
+	public void setPageData(Object pageData) {
 		this.pageData = pageData;
 	}
 
@@ -47,7 +45,7 @@ public class MWebPage {
 
 
 
-	private List<Map<String, Object>> pageData;
+	private Object pageData;
 	
 	
 	

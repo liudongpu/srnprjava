@@ -22,7 +22,7 @@
 	</div>
 </div>
 
-<div class="navbar navbar-inverse navbar-fixed-bottom">
+<div class="navbar  navbar-fixed-bottom">
 	<div class="navbar-inner">
 		<div class="container-fluid">aaa</div>
 	</div>
@@ -69,10 +69,7 @@
 	</div>
 	<!--/row-->
 
-	<hr>
+	<hr/>
 
-	<footer>
-		<p>&copy; Company 2013</p>
-	</footer>
-
+	
 </div>

@@ -1,31 +1,29 @@
+zen.e({
+	page : {
 
+		submit : function(sFormId) {
+			$('#' + sFormId).ajaxSubmit(function(data) {
 
+				alert(data);
 
+			});
 
-zen.e(
-		{
-			page:{
-				
-				
-				submit:function()
-				{
-					
-					
-					
-					
-					
-					
-				}
-				
-				
-				
-				
-				
-			}
+		},
+		init : function() {
+			
 		}
+
+	}
+}
 
 );
 
 
 
 
+
+
+
+$.ready(function() {
+	zen.page.init();
+});

@@ -20,6 +20,7 @@ import org.springframework.web.context.request.RequestAttributes;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
 
+import com.srnpr.zcom.model.MHashMap;
 import com.srnpr.zweb.enumer.EWebRequest;
 import com.srnpr.zweb.page.WebPage;
 import com.srnpr.zweb.page.PageRequest;
@@ -41,7 +42,7 @@ public class HomeController {
 		//model.addAttribute("serverTime", new WebPage().GetPageHtml("zyou","center") );
 		//model.addAttribute("serverTime", new ConfigCacheManager().ShowAllConfig() );
 		//return "home";
-		return index("zyou", "center", model);
+		return index("zyou", "center-center", model);
 	}
 	
 	@RequestMapping(value = "/{path}/{url}")
@@ -49,16 +50,16 @@ public class HomeController {
 		
 		 HttpServletRequest request= ((ServletRequestAttributes)RequestContextHolder.getRequestAttributes()).getRequest();
 
-		 ConcurrentHashMap<String, String> cMap=new ConcurrentHashMap<String, String>();
+		 MHashMap cMap=new MHashMap();
 		 Enumeration<String> eKey= request.getParameterNames();
 		 while (eKey.hasMoreElements()) {
-			String string = (String) eKey.nextElement();
+			String string = eKey.nextElement();
 			cMap.put(string, request.getParameter(string));
 			
 		}
 		 
 		 
-		model.addAttribute("serverTime", new WebPage().GetPageHtml(sPath,sUrl) );
+		model.addAttribute("serverTime", new WebPage().GetPageHtml(sPath,sUrl,cMap) );
 		return "home";
 	}
 

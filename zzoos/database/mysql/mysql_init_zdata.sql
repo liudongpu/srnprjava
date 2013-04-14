@@ -2,9 +2,9 @@
 
 ########  初始化表
 insert into zdata.zdata_table()
-select 0,TABLE_NAME,TABLE_NAME,TABLE_NAME from information_schema.TABLES where TABLE_SCHEMA in
-(select code from zdata.zdata_server)
-and TABLE_NAME not in(select code from zdata.zdata_table);
+select 0,TABLE_NAME,TABLE_NAME,TABLE_COMMENT from information_schema.TABLES where TABLE_SCHEMA in
+(select name from zdata.zdata_server)
+and TABLE_NAME not in(select name from zdata.zdata_table);
 
 
 
@@ -19,12 +19,12 @@ a.column_name column_name,
 (select b.code from zsrnpr_define b where rtrim(b.name)=rtrim(a.Data_type)) did_column_type,
 ifnull(a.CHARACTER_MAXIMUM_LENGTH,0) length_max,
 ifnull(a.NUMERIC_SCALE,0) length_scale,
-a.COLUMN_NAME note,
-a.ORDINAL_POSITION pid
+a.COLUMN_COMMENT note,
+a.ORDINAL_POSITION orderid
 
 FROM information_schema.COLUMNS a
 where a.TABLE_SCHEMA in
-(select code from zdata.zdata_server)
+(select name from zdata.zdata_server)
 
 
 

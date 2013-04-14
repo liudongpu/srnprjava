@@ -1,6 +1,7 @@
 package com.srnpr.zdata.model;
 
 import java.util.List;
+import java.util.concurrent.ConcurrentHashMap;
 
 
 public class MDataTable {
@@ -13,7 +14,22 @@ public class MDataTable {
 	private String serverName="";
 	
 	
-	private List<MTableColumn>  columns=null;
+
+	
+	
+	private ConcurrentHashMap<String, MTableColumn> columnsMap=new ConcurrentHashMap<String, MTableColumn>();
+	
+	
+
+
+	public ConcurrentHashMap<String, MTableColumn> getColumnsMap() {
+		return columnsMap;
+	}
+
+
+	public void setColumnsMap(ConcurrentHashMap<String, MTableColumn> columnsMap) {
+		this.columnsMap = columnsMap;
+	}
 
 
 	public String getTableName() {
@@ -36,14 +52,7 @@ public class MDataTable {
 	}
 
 
-	public List<MTableColumn> getColumns() {
-		return columns;
-	}
-
-
-	public void setColumns(List<MTableColumn> columns) {
-		this.columns = columns;
-	}
+	
 	
 	
 	

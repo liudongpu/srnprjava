@@ -10,6 +10,7 @@ import org.springframework.web.context.request.ServletRequestAttributes;
 
 import com.srnpr.zcom.base.BaseClass;
 import com.srnpr.zcom.helper.FreemarkerHelper;
+import com.srnpr.zcom.model.MHashMap;
 import com.srnpr.zdata.helper.DataHelper;
 import com.srnpr.zweb.common.WebConst;
 import com.srnpr.zweb.enumer.EWebConst;
@@ -52,7 +53,7 @@ public class WebPage extends BaseClass {
 	}
 	
 	
-	public String GetPageHtml(String sPath,String sUrl,ConcurrentHashMap<String, String> cMap) {
+	public String GetPageHtml(String sPath,String sUrl,MHashMap cMap) {
 		
 		
 		PageRequest wRequest=new PageRequest(cMap);

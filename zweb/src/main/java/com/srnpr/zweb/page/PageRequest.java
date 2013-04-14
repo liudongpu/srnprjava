@@ -4,16 +4,27 @@ import java.util.concurrent.ConcurrentHashMap;
 
 import javax.servlet.http.HttpServletRequest;
 
+import com.srnpr.zcom.model.MHashMap;
 import com.srnpr.zweb.enumer.EWebRequest;
 
 public class PageRequest {
 
 	
-	private ConcurrentHashMap<String, String> request;
+	private MHashMap reqMap=new MHashMap();
 	
-	public PageRequest(ConcurrentHashMap<String, String> hRequest)
+	public MHashMap getReqMap() {
+		return reqMap;
+	}
+
+
+	public void setReqMap(MHashMap reqMap) {
+		this.reqMap = reqMap;
+	}
+
+
+	public PageRequest(MHashMap hRequest)
 	{
-		request=hRequest;
+		reqMap=hRequest;
 		
 	}
 	
@@ -24,19 +35,17 @@ public class PageRequest {
 	}
 			
 
-	
-	public String GetParam(String sName)
+	public Boolean ContainsParam(String sName)
 	{
-		return request.get(sName);
-		
+		return reqMap!=null&&reqMap.containsKey(sName);
 	}
 	
 	
-	private ConcurrentHashMap<String, String> cHashMap=new ConcurrentHashMap<String, String>();
-	
-	
-	
-	
+	public String GetParam(String sName)
+	{
+		return (String)reqMap.get(sName);
+		
+	}
 	
 	
 	private ConcurrentHashMap<EWebRequest, String> cMap=new ConcurrentHashMap<EWebRequest, String>();

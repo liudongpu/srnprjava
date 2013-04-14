@@ -39,6 +39,8 @@ public class DataBaseManager extends BaseClass implements IBaseManager,
 				));
 		
 	
+		
+		//data source set
 		for (Map<String, Object> map : Get(BConfig("zdata.base_database_name")).queryForList("select * from "+BConfig("zdata.db_table_server"),new HashMap<String, Object>())) {
 			
 			
@@ -51,6 +53,15 @@ public class DataBaseManager extends BaseClass implements IBaseManager,
 					));
 			
 		};
+		
+		
+		//data table set
+		
+		
+		
+		
+		
+		
 		
 		
 		
