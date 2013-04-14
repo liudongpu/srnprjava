@@ -5,9 +5,9 @@ import com.srnpr.zweb.page.PageRequest;
 
 public interface IWebProcess {
 
-	
-	
+
+
 	public MWebPage Process(PageRequest wRequest);
-	
-	
+
+
 }

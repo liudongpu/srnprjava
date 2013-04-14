@@ -4,8 +4,8 @@ import java.util.concurrent.ConcurrentHashMap;
 
 public class MPropertiesHash {
 
-	
-	
+
+
 	private ConcurrentHashMap<String, String> keyValue=new ConcurrentHashMap<String, String>();
 
 	public ConcurrentHashMap<String, String> getKeyValue() {
@@ -15,9 +15,9 @@ public class MPropertiesHash {
 	public void setKeyValue(ConcurrentHashMap<String, String> keyValue) {
 		this.keyValue = keyValue;
 	}
-	
-	
-	
+
+
+
 	public ConcurrentHashMap<String, ConcurrentHashMap<String, String>> getChild() {
 		return child;
 	}
@@ -30,11 +30,11 @@ public class MPropertiesHash {
 
 
 	private ConcurrentHashMap<String,ConcurrentHashMap<String,String>> child=new ConcurrentHashMap<String, ConcurrentHashMap<String,String>>();
-	
-	
-	
-	
-	
-	
-	
+
+
+
+
+
+
+
 }

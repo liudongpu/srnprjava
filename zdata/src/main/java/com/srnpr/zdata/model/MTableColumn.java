@@ -45,11 +45,11 @@ public class MTableColumn {
 		this.lengthMax = lengthMax;
 	}
 
-	public int getNote() {
+	public String getNote() {
 		return note;
 	}
 
-	public void setNote(int note) {
+	public void setNote(String note) {
 		this.note = note;
 	}
 
@@ -63,7 +63,7 @@ public class MTableColumn {
 		this.lengthScale = lengthScale;
 	}
 
-	private int note;
+	private String note;
 	
 	
 	

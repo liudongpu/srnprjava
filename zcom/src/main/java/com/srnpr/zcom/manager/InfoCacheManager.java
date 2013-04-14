@@ -15,21 +15,21 @@ import com.srnpr.zcom.i.IBaseManager;
 import com.srnpr.zcom.model.MPropertiesHash;
 
 public class InfoCacheManager extends BaseClass implements IBaseManager,
-		IBaseInit {
+IBaseInit {
 
-	
-	
+
+
 	public static String Get(String sKey)
 	{
 		return ConstStatic.CONST_COM_MESSAGE.get(sKey);
 	}
-	
-	
-	
-	
-	
+
+
+
+
+
 	public void Init() {
-		
+
 		@SuppressWarnings("unchecked")
 		Collection<File> files = FileUtils.listFiles((new File(BConfig("zcom.path_info"))),
 				new String[] { BConfig("zcom.messagefile_fix") }, true);
@@ -38,7 +38,7 @@ public class InfoCacheManager extends BaseClass implements IBaseManager,
 		for (File f : files) {
 			MPropertiesHash mHash = hashHelper.getMPropertiesHash(f,
 					"");
-			
+
 			Enumeration<String> eKey = mHash.getKeyValue().keys();
 			while (eKey.hasMoreElements()) {
 				String sKey = eKey.nextElement();
@@ -50,7 +50,7 @@ public class InfoCacheManager extends BaseClass implements IBaseManager,
 	}
 
 	public boolean Refresh() {
-		
+
 		return false;
 	}
 

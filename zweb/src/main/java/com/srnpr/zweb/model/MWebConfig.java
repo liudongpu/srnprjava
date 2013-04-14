@@ -5,22 +5,22 @@ import java.util.concurrent.ConcurrentHashMap;
 
 public class MWebConfig {
 
-	
-	
-	
-	
+
+
+
+
 	private String baseInclude="";
-	
-	
-	
+
+
+
 	private ArrayList<String> srcJs=new ArrayList<String>();
-	
+
 	private ArrayList<String> srcCss=new ArrayList<String>();
-	
-	
+
+
 	private ConcurrentHashMap<String, String> pageInclude=new ConcurrentHashMap<String, String>();
-	
-	
+
+
 
 	public ArrayList<String> getSrcJs() {
 		return srcJs;
@@ -53,12 +53,12 @@ public class MWebConfig {
 	public void setBaseInclude(String baseInclude) {
 		this.baseInclude = baseInclude;
 	}
-	
-	
-	
-	
-	
-	
-	
-	
+
+
+
+
+
+
+
+
 }

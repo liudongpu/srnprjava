@@ -43,8 +43,8 @@ public class BaseClass {
 		return ConfigCacheManager.Get(sKey);
 	}
 
-	
-	 /**
+
+	/**
 	 * @param lKey
 	 * @param sKeys
 	 * @return
@@ -53,7 +53,7 @@ public class BaseClass {
 	 * @author srnpr
 	 * @update 2013-4-8 下午4:04:56
 	 */
-		
+
 	public String BInfo(int lKey, String... sKeys) {
 		String sReturn = null;
 		if (lKey >99999999) {

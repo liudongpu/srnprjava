@@ -1,8 +1,5 @@
 package com.srnpr.zyou.init;
 
-import java.util.ArrayList;
-import java.util.concurrent.ConcurrentHashMap;
-
 import com.srnpr.zcom.base.BaseInit;
 import com.srnpr.zcom.helper.HashHelper;
 import com.srnpr.zcom.i.IBaseInit;
@@ -15,15 +12,15 @@ import com.srnpr.zyou.page.PageProcess;
 public class InitZyou extends BaseInit implements IBaseInit {
 
 	public void Init() {
-		
-		
-		
-		
+
+
+
+
 		MWebConfig mConfig=new MWebConfig();
-		
+
 		ConfigCacheManager cManager=new ConfigCacheManager();
 		mConfig.setPageInclude(cManager.GetHash("zyou.admin_include"));
-	
+
 		String sAdminTheamsPath =BConfig("zyou.path_themes_admin_config");
 
 		HashHelper hashHelper=new HashHelper();
@@ -40,7 +37,7 @@ public class InitZyou extends BaseInit implements IBaseInit {
 		for (String s : cManager.GetStrings("zweb.lib_bootstrap_css")) {
 			mConfig.getSrcCss().add(s);
 		}
-		
+
 
 		for (String s : cManager.GetStrings(
 				"zweb.lib_jquery_js",
@@ -50,26 +47,26 @@ public class InitZyou extends BaseInit implements IBaseInit {
 				)) {
 			mConfig.getSrcJs().add(s);
 		}
-		
-		
-		
+
+
+
 		mConfig.setBaseInclude(BConfig("zyou.base_include"));
-		
-		
+
+
 
 		WebConst.PutWebCnfig("zyou", mConfig);
-		
-	
+
+
 
 		WebConst.PutWebProcess("zyou", new PageProcess());
-		
-		
-		
+
+
+
 	}
 
-	
-	
-	
-	
-	
+
+
+
+
+
 }

@@ -9,36 +9,36 @@ import com.srnpr.zweb.model.MWebPage;
 public class PageProcess extends BaseClass implements IWebProcess {
 
 	public MWebPage Process(PageRequest wRequest) {
-		
-		
+
+
 		MWebPage mWebPage=new MWebPage();
-		
-		
-	
+
+
+
 		String sPageTarget=wRequest.Get(EWebRequest.Url_Target);
-		
+
 		if(sPageTarget.equals("put"))
 		{
-			
-			
+
+
 			DataHelper dHelper = new DataHelper();
-			
+
 			//dHelper.
-			
+
 			dHelper.Put("zdata", "zdata_column", wRequest.getReqMap());
-			
-			
-			
-			
+
+
+
+
 		}
-		
-		
-		
-		
-		
-		
-		
-		
+
+
+
+
+
+
+
+
 		return mWebPage;
 	}
 

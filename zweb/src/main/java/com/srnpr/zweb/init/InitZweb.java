@@ -1,14 +1,9 @@
 package com.srnpr.zweb.init;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.concurrent.ConcurrentHashMap;
 
 import com.srnpr.zcom.base.BaseInit;
-import com.srnpr.zcom.helper.HashHelper;
 import com.srnpr.zcom.i.IBaseInit;
-import com.srnpr.zcom.manager.ConfigCacheManager;
-import com.srnpr.zcom.model.MPropertiesHash;
 import com.srnpr.zweb.common.WebConst;
 import com.srnpr.zweb.enumer.EWebConst;
 import com.srnpr.zweb.model.MWebConfig;
@@ -20,19 +15,19 @@ public class InitZweb extends BaseInit implements IBaseInit {
 
 
 		BDebug(967912002,this.getClass().getName());
-		
+
 
 		try {
 
 			InitTemplete(BConfig("zweb.templeteclaspath"));
 
 			InitPageConfig();
-			
-			
-			
+
+
+
 			InitClass("zweb.web_init");
-			
-			
+
+
 
 		} catch (Exception e) {
 			BError(e,967901001);
@@ -40,13 +35,13 @@ public class InitZweb extends BaseInit implements IBaseInit {
 
 	}
 
-	
+
 	private void InitPageConfig() {
 
 		MWebConfig mConfig=new MWebConfig();
-		
+
 		mConfig.setBaseInclude(BConfig("zweb.base_include"));
-		
+
 		WebConst.PutWebCnfig("zcom", mConfig);
 
 		WebConst.PutWebProcess("zcom", new PageProcess());
@@ -56,7 +51,7 @@ public class InitZweb extends BaseInit implements IBaseInit {
 	void InitTemplete(String sClassPath) throws IOException {
 
 		WebConst.Put(EWebConst.templete_path,BConfig("zweb.path_templete"));
-	
+
 	}
 
 }

@@ -5,10 +5,7 @@ import java.util.Map;
 
 
 
-import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
-import org.springframework.jdbc.core.namedparam.SqlParameterSource;
-
 import com.mchange.v2.c3p0.ComboPooledDataSource;
 import com.srnpr.zcom.base.BaseClass;
 import com.srnpr.zcom.i.IBaseInit;

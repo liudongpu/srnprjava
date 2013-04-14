@@ -8,7 +8,7 @@ import com.srnpr.zcom.manager.ConfigCacheManager;
 
 public class BaseInit extends BaseClass {
 
-	
+
 	/**
 	 * @param sConfigName
 	 * @throws ClassNotFoundException
@@ -21,7 +21,7 @@ public class BaseInit extends BaseClass {
 	 */
 
 	public void InitClass(String sConfigName) throws ClassNotFoundException,
-			InstantiationException, IllegalAccessException {
+	InstantiationException, IllegalAccessException {
 
 		ConfigCacheManager configCacheManager = new ConfigCacheManager();
 
@@ -44,6 +44,6 @@ public class BaseInit extends BaseClass {
 
 		}
 	}
-	
-	
+
+
 }

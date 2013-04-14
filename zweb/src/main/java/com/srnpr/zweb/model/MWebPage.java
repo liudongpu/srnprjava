@@ -1,16 +1,14 @@
 package com.srnpr.zweb.model;
 
-import java.util.List;
-import java.util.Map;
 
 
 
 public class MWebPage {
 
-	
+
 	private String pageType="";
-	
-	
+
+
 	public String getPageType() {
 		return pageType;
 	}
@@ -46,11 +44,11 @@ public class MWebPage {
 
 
 	private Object pageData;
-	
-	
-	
+
+
+
 	private String pageInclude="";
-	
-	
-	
+
+
+
 }

@@ -7,21 +7,21 @@ import com.srnpr.zcom.i.IConstStatic;
 
 class ConstStatic implements IConstStatic {
 
-	
-	
-	
-	
+
+
+
+
 	static ConcurrentHashMap<EComConst, Object> CONST_COM_MAP=new ConcurrentHashMap<EComConst, Object>();
-	
-	
-	
-	
-
-	 
 
 
-	
-	 
-	 
-	
+
+
+
+
+
+
+
+
+
+
 }

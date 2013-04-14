@@ -2,11 +2,8 @@ package com.srnpr.zcom.init;
 
 import javax.servlet.ServletContext;
 
-import org.apache.commons.lang.ClassUtils;
-import org.apache.commons.lang.StringUtils;
 import org.springframework.util.StopWatch;
 
-import com.srnpr.zcom.base.BaseClass;
 import com.srnpr.zcom.base.BaseInit;
 import com.srnpr.zcom.common.CommonConst;
 import com.srnpr.zcom.enumer.EComConst;
@@ -96,5 +93,5 @@ public class InitRoot extends BaseInit implements IBaseInit {
 
 	}
 
-	
+
 }

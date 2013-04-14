@@ -2,15 +2,15 @@ package com.srnpr.zweb.model;
 
 public class MWebElement {
 
-	
-	
-	
+
+
+
 	private String target="";
-	
-	
+
+
 	private String name="";
-	
-	
+
+
 	public String getTarget() {
 		return target;
 	}
@@ -42,13 +42,13 @@ public class MWebElement {
 
 
 	private String value="";
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
+
+
+
+
+
+
+
+
 }

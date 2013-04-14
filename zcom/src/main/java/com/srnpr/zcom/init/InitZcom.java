@@ -1,6 +1,5 @@
 package com.srnpr.zcom.init;
 
-import com.srnpr.zcom.base.BaseClass;
 import com.srnpr.zcom.base.BaseInit;
 import com.srnpr.zcom.i.IBaseInit;
 

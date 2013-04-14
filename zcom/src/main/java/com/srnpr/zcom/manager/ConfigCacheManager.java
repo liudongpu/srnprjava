@@ -15,7 +15,6 @@ import org.apache.commons.io.FileUtils;
 import org.apache.commons.lang.StringUtils;
 
 import com.srnpr.zcom.base.BaseClass;
-import com.srnpr.zcom.common.ComFunction;
 import com.srnpr.zcom.common.CommonConst;
 import com.srnpr.zcom.enumer.EComConst;
 import com.srnpr.zcom.helper.FreemarkerHelper;
@@ -49,12 +48,12 @@ public class ConfigCacheManager extends BaseClass implements IBaseManager {
 
 	public static String Get(String sKey) {
 
-		
+
 		return StringUtils.defaultString(ConstStatic.CONST_CONFIG_MAP.get(sKey));
-		
-		 
-		
-		
+
+
+
+
 	}
 
 	/**
@@ -73,7 +72,7 @@ public class ConfigCacheManager extends BaseClass implements IBaseManager {
 			ConcurrentHashMap<String, String> cMap = GetHash(s);
 			Enumeration<String> iterator = cMap.keys();
 			while (iterator.hasMoreElements()) {
-				String sKey = (String) iterator.nextElement();
+				String sKey = iterator.nextElement();
 				aList.add(StringUtils.defaultString(cMap.get(sKey)));
 			}
 		}
@@ -97,7 +96,7 @@ public class ConfigCacheManager extends BaseClass implements IBaseManager {
 	 */
 
 	public void InitConfig(String sResourceName) throws ConfigurationException,
-			IOException {
+	IOException {
 
 		@SuppressWarnings("unchecked")
 		Collection<File> files = FileUtils.listFiles((new File(sResourceName)),
@@ -122,7 +121,7 @@ public class ConfigCacheManager extends BaseClass implements IBaseManager {
 			Enumeration<String> eHashKey = mHash.getChild().keys();
 			while (eHashKey.hasMoreElements()) {
 				String sKey = eHashKey.nextElement();
-				
+
 				if(ConstStatic.CONST_CONFIG_HASH.containsKey(sKey))
 				{
 					Enumeration<String> sChildKey = mHash.getChild().get(sKey).keys();
@@ -135,11 +134,11 @@ public class ConfigCacheManager extends BaseClass implements IBaseManager {
 					ConstStatic.CONST_CONFIG_HASH.put(sKey,
 							mHash.getChild().get(sKey));
 				}
-				
-				
-				
+
+
+
 			}
-		
+
 
 		}
 	}
@@ -154,7 +153,7 @@ public class ConfigCacheManager extends BaseClass implements IBaseManager {
 			iTimeCount++;
 			if (iTimeCount > 100) {
 
-				
+
 				BError(967901002,String.valueOf(iTimeCount));
 
 			}
@@ -184,7 +183,7 @@ public class ConfigCacheManager extends BaseClass implements IBaseManager {
 		Enumeration<String> eMapKey = cMap.keys();
 
 		while (eMapKey.hasMoreElements()) {
-			String sKeyString = (String) eMapKey.nextElement();
+			String sKeyString = eMapKey.nextElement();
 			String sValueString = cMap.get(sKeyString);
 
 			Matcher mConstMatcher = pConst.matcher(sValueString);
@@ -233,14 +232,14 @@ public class ConfigCacheManager extends BaseClass implements IBaseManager {
 		return iReturn;
 
 	}
-	
-	
-	
-	
+
+
+
+
 	public String ShowAllConfig()
 	{
 		FreemarkerHelper fHelper=new FreemarkerHelper();
-		
+
 		ConcurrentHashMap<String, String> cMap=new ConcurrentHashMap<String, String>();
 
 		if(true)
@@ -248,7 +247,7 @@ public class ConfigCacheManager extends BaseClass implements IBaseManager {
 			ConcurrentHashMap<String, String> cHashMap=ConstStatic.CONST_CONFIG_MAP;
 			Enumeration<String> eKey=cHashMap.keys();
 			while (eKey.hasMoreElements()) {
-				String string = (String) eKey.nextElement();
+				String string = eKey.nextElement();
 				cMap.put(string, cHashMap.get(string));
 			}
 		}
@@ -257,36 +256,36 @@ public class ConfigCacheManager extends BaseClass implements IBaseManager {
 		while (eKeyHash.hasMoreElements()) {
 			if(true)
 			{
-				String sHashKey=(String) eKeyHash.nextElement();
-				
+				String sHashKey=eKeyHash.nextElement();
+
 				ConcurrentHashMap<String, String> cHashMap=ConstStatic.CONST_CONFIG_HASH.get(sHashKey);
 				Enumeration<String> eKey=cHashMap.keys();
 				while (eKey.hasMoreElements()) {
-					String string = (String) eKey.nextElement();
+					String string = eKey.nextElement();
 					cMap.put(sHashKey+"["+string+"]", cHashMap.get(string));
 				}
 			}
 		}
-		
-		
+
+
 		HashMap<String,Object> hMap=new HashMap<String, Object>();
-		
+
 		hMap.put("p_list", cMap);
-		
+
 		String sReturnString = fHelper.GetStringFromTemp(
 				CommonConst.Get(EComConst.root_realpath_zsrnpr)+"templete/com/" , "configlist.ftl",hMap);
-		
-		
+
+
 		return sReturnString;
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
+
+
+
+
+
+
+
+
 
 }
