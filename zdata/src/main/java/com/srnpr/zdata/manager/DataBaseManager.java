@@ -24,8 +24,11 @@ IBaseInit {
 		return false;
 	}
 
-	public void Init() {
+	public synchronized void Init() {
 
+		
+		
+		
 		ConstStatic.CONST_JDBCTEMPLETE_MAP.put(
 				BConfig("zdata.base_database_name"),
 				GetTemplete(BConfig("zdata.jdbc_class_zdata"),
