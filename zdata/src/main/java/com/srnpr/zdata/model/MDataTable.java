@@ -4,10 +4,10 @@ import java.util.concurrent.ConcurrentHashMap;
 
 public class MDataTable {
 
-	
-	
-	
-	
+
+
+
+
 	private String tableName = "";
 
 	private String serverName = "";

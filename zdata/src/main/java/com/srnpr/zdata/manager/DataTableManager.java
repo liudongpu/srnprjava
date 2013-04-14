@@ -12,7 +12,7 @@ import com.srnpr.zdata.model.MDataTable;
 import com.srnpr.zdata.model.MTableColumn;
 
 public class DataTableManager extends BaseClass implements IBaseManager,
-		IBaseInit
+IBaseInit
 {
 
 	public boolean Refresh()

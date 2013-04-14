@@ -4,8 +4,6 @@ import java.util.Enumeration;
 
 import javax.servlet.http.HttpServletRequest;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -24,8 +22,6 @@ import com.srnpr.zweb.page.WebPage;
 
 public class HomeController {
 
-	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
-
 	/**
 	 * Simply selects the home view to render by returning its name.
 	 */
@@ -43,6 +39,7 @@ public class HomeController {
 		HttpServletRequest request= ((ServletRequestAttributes)RequestContextHolder.getRequestAttributes()).getRequest();
 
 		MHashMap cMap=new MHashMap();
+		@SuppressWarnings("unchecked")
 		Enumeration<String> eKey= request.getParameterNames();
 		while (eKey.hasMoreElements()) {
 			String string = eKey.nextElement();

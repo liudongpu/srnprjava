@@ -2,17 +2,17 @@ package com.srnpr.zdata.model;
 
 public class MTableColumn {
 
-	
+
 	private String columnName="";
-	
+
 	private int didNullAble;
-	
-	
+
+
 	private int didColumnType;
-	
-	
+
+
 	private int lengthMax;
-	
+
 	public String getColumnName() {
 		return columnName;
 	}
@@ -54,7 +54,7 @@ public class MTableColumn {
 	}
 
 	private int lengthScale;
-	
+
 	public int getLengthScale() {
 		return lengthScale;
 	}
@@ -64,9 +64,9 @@ public class MTableColumn {
 	}
 
 	private String note;
-	
-	
-	
-	
-	
+
+
+
+
+
 }

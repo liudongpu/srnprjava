@@ -25,6 +25,7 @@ public class JsonHelper<T> extends BaseClass {
 	}
 
 
+	@SuppressWarnings("unchecked")
 	public T StringToObj(String sInput,T t)
 	{
 		//T t=null;

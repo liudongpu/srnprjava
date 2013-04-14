@@ -12,7 +12,7 @@ import com.srnpr.zcom.i.IBaseInit;
 import com.srnpr.zcom.i.IBaseManager;
 
 public class DataBaseManager extends BaseClass implements IBaseManager,
-		IBaseInit {
+IBaseInit {
 
 	public static NamedParameterJdbcTemplate Get(String sKey) {
 
@@ -33,57 +33,57 @@ public class DataBaseManager extends BaseClass implements IBaseManager,
 						BConfig("zdata.jdbc_user_zdata"),
 						BConfig("zdata.jdbc_password_zdata")
 
-				));
-		
-	
-		
+						));
+
+
+
 		//data source set
 		for (Map<String, Object> map : Get(BConfig("zdata.base_database_name")).queryForList("select * from "+BConfig("zdata.db_table_server"),new HashMap<String, Object>())) {
-			
-			
+
+
 			ConstStatic.CONST_JDBCTEMPLETE_MAP.put(
 					(String)map.get(BConfig("zdata.db_column_server_name")),
 					GetTemplete((String)map.get(BConfig("zdata.db_column_server_class")),
 							(String)map.get(BConfig("zdata.db_column_server_url")),
 							(String)map.get(BConfig("zdata.db_column_server_user")),
 							(String)map.get(BConfig("zdata.db_column_server_password"))
-					));
-			
+							));
+
 		};
-		
-		
+
+
 		//data table set
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 	}
 
 	private NamedParameterJdbcTemplate GetTemplete(String sJdbcClass, String sJdbcUrl,
 			String sJdbcUser, String sJdbcPassword) {
 
-		
 
-		
+
+
 		//IoHelper iHelper = new IoHelper();
 		//ComboPooledDataSource cm = (ComboPooledDataSource) iHelper.GetBeanFromFile(BConfig("zdata.datasource_beanfile"),	BConfig("zdata.datasource_beanname"));
 		ComboPooledDataSource cm =new ComboPooledDataSource();
-		
-	
-		
+
+
+
 		try {
 			cm.setDriverClass(sJdbcClass);
 			cm.setJdbcUrl(sJdbcUrl);
@@ -95,9 +95,9 @@ public class DataBaseManager extends BaseClass implements IBaseManager,
 		}
 
 		NamedParameterJdbcTemplate jdbcTemplate = new NamedParameterJdbcTemplate(cm);
-		
-	
-		
+
+
+
 		return jdbcTemplate;
 	}
 
