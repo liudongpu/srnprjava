@@ -6,6 +6,7 @@ import com.srnpr.zcom.base.BaseInit;
 import com.srnpr.zcom.i.IBaseInit;
 import com.srnpr.zweb.common.WebConst;
 import com.srnpr.zweb.enumer.EWebConst;
+import com.srnpr.zweb.manager.WebViewManager;
 import com.srnpr.zweb.model.MWebConfig;
 import com.srnpr.zweb.page.PageProcess;
 
@@ -23,6 +24,11 @@ public class InitZweb extends BaseInit implements IBaseInit {
 
 			InitPageConfig();
 
+			
+			
+			
+			WebViewManager webViewManager=new WebViewManager();
+			webViewManager.Init();
 
 
 			InitClass("zweb.web_init");

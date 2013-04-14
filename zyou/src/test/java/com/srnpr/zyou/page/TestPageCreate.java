@@ -12,7 +12,7 @@ public class TestPageCreate extends TestBase {
 	public void CreatePage()
 	{
 
-		String sMeString=new WebPage().GetPageHtml("zyou", "put-a");
+		String sMeString=new WebPage().GetPageHtml("zyou", "list-system_table");
 
 		BDebug(123, sMeString);
 

@@ -5,6 +5,7 @@ import java.util.Enumeration;
 import java.util.List;
 import java.util.Map;
 
+import com.mchange.lang.IntegerUtils;
 import com.srnpr.zcom.base.BaseClass;
 import com.srnpr.zcom.i.IBaseInit;
 import com.srnpr.zcom.i.IBaseManager;
@@ -45,9 +46,10 @@ IBaseInit
 			mTable = ConstStatic.CONST_DATATABLE_MAP.get(sTableName);
 
 			MTableColumn mColumn = new MTableColumn();
-			mColumn.setColumnName((String) map.get(BConfig("db_column_column_columnname")));
-			mColumn.setLengthMax(Integer.valueOf((String) map.get(BConfig("db_column_column_lengthmax"))));
-			mColumn.setNote((String) map.get(BConfig("db_column_column_note")));
+			mColumn.setColumnName((String) map.get(BConfig("zdata.db_column_column_columnname")));
+		
+			mColumn.setLengthMax((int)Integer.parseInt(String.valueOf( map.get(BConfig("zdata.db_column_column_lengthmax")))));
+			mColumn.setNote((String) map.get(BConfig("zdata.db_column_column_note")));
 			mTable.getColumnsMap().put(mColumn.getColumnName(), mColumn);
 
 		}

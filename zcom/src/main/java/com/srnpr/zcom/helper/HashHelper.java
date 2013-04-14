@@ -4,7 +4,10 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.util.ArrayList;
 import java.util.Enumeration;
+import java.util.HashMap;
 import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
 import org.apache.commons.configuration.PropertiesConfiguration;
@@ -13,6 +16,7 @@ import org.apache.commons.io.FileUtils;
 import com.srnpr.zcom.base.BaseClass;
 import com.srnpr.zcom.common.CommonConst;
 import com.srnpr.zcom.enumer.EComConst;
+import com.srnpr.zcom.model.MHashMap;
 import com.srnpr.zcom.model.MPropertiesHash;
 
 public class HashHelper extends BaseClass{
@@ -148,6 +152,15 @@ public class HashHelper extends BaseClass{
 	}
 
 
+	
+	
+	
+	
+	
+	
+	
+	
+	
 
 
 

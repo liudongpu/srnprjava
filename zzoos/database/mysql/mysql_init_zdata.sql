@@ -1,7 +1,7 @@
 
 
 ########  初始化表
-insert into zdata.zdata_table()
+insert into zdata.zdata_table
 select 0,TABLE_NAME,TABLE_NAME,TABLE_COMMENT from information_schema.TABLES where TABLE_SCHEMA in
 (select name from zdata.zdata_server)
 and TABLE_NAME not in(select name from zdata.zdata_table);

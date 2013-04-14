@@ -7,6 +7,7 @@ import java.util.Collection;
 import java.util.Enumeration;
 
 import org.apache.commons.io.FileUtils;
+import org.apache.commons.lang.StringUtils;
 
 import com.srnpr.zcom.base.BaseClass;
 import com.srnpr.zcom.helper.HashHelper;
@@ -24,7 +25,23 @@ IBaseInit {
 		return ConstStatic.CONST_COM_MESSAGE.get(sKey);
 	}
 
-
+	public static String Get(int lKey, String... sKeys)
+	{
+		String sReturn = null;
+		if (lKey >99999999) {
+			sReturn = Get(String.valueOf(lKey));
+			if (sReturn != null) {
+				for (int i = 0, j = sKeys.length; i < j; i++) {
+					sReturn = sReturn.replace("{" + (i) + "}", sKeys[i]);
+				}
+			}
+		}
+		else
+		{
+			sReturn=StringUtils.join(sKeys);
+		}
+		return sReturn;
+	}
 
 
 
