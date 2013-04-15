@@ -54,6 +54,17 @@ public class WebPage extends BaseClass {
 		String[] sParams=sUrl.split("-");
 		wRequest.Put(EWebRequest.Url_Target, sParams[0]);
 		wRequest.Put(EWebRequest.Url_View, sParams[1]);
+
+		if(sParams.length>2)
+		{
+			wRequest.Put(EWebRequest.Url_Option, sParams[2]);
+			if(sParams.length>3)
+			{
+				wRequest.Put(EWebRequest.Url_Param, sParams[3]);
+			}
+		}
+		
+		
 		return GetPageHtml(wRequest);
 
 	}

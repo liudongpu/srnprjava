@@ -14,6 +14,30 @@ public class FormatHelper {
 	public static String StringJoin(Object[] oParams) {
 		return StringUtils.join(oParams);
 	}
+	
+	
+	
+	 /**
+	 * @param sBaseString  
+	 * @param sFromStrings
+	 * @return  拼接字符串
+	 * @description 
+	 * @version 1.0
+	 * @author srnpr
+	 * @update 2013-4-15 下午11:02:41
+	 */
+		
+	public static String FormatString(String sBaseString,String... sFromStrings)
+	{
+		for (int i = 0, j = sFromStrings.length; i < j; i++) {
+			sBaseString = sBaseString.replace("{" + (i) + "}", sFromStrings[i]);
+		}
+		return sBaseString;
+		
+	}
+	
+	
+	
 
 
 	public static String GetDateTime()

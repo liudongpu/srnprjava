@@ -57,6 +57,7 @@ public class WebViewManager extends BaseClass implements IBaseManager,
 				mOptions.setDidPageType(Integer.valueOf(String.valueOf(mOptionView.get("did_page_type"))));
 				mOptions.setDidOptionType(Integer.valueOf(String.valueOf(mOptionView.get("did_option_type"))));
 				mOptions.setParams(String.valueOf(mOptionView.get("params")));
+				mOptions.setUid(String.valueOf(mOptionView.get("uid")));
 
 				mWebView.getOptions().add(mOptions);
 			}

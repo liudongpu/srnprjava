@@ -19,7 +19,7 @@ public class PageProcess extends ShowProcess implements IWebProcess
 	public MWebPage Process(PageRequest wRequest)
 	{
 
-		return super.ShowProcess(wRequest);
+		return super.ShowHtml(wRequest);
 	}
 
 }

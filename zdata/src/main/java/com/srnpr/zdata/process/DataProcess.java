@@ -29,6 +29,10 @@ public class DataProcess extends BaseClass
 	
 	
 	
+	public Map<String, Object> GetOne(String... args)
+	{
+		return Get("*", "", 0, 1, (Object[]) args).get(0);
+	}
 	
 	
 	

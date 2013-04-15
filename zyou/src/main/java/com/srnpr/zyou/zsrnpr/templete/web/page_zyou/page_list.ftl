@@ -1,8 +1,11 @@
 
  <legend>系统所有表
  <div class="btn-group pull-right">
-    <a class="btn  btn-small" href="put-tabliccolumn?server_name=zdata&table_name=zdata_column"><i class="icon-pencil"></i>&nbsp;&nbsp;新增</a>
-   
+ 
+    <#list pageinfo.getPageOptions() as e_list>
+	 <@m_lib_page_auto_options e_list />
+	</#list>
+ 
   </div></legend>
 
   

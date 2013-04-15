@@ -1,4 +1,7 @@
 
+#delete from zdata.zdata_table;
+#delete from zdata.zdata_column;
+
 
 ########  初始化表
 insert into zdata.zdata_table

@@ -10,6 +10,11 @@ public class MWebOptions
 	
 	private int didPageType;
 	
+	
+	private String uid;
+	
+	
+	
 	public String getName()
 	{
 	
@@ -56,6 +61,18 @@ public class MWebOptions
 	{
 	
 		this.didOptionType = didOptionType;
+	}
+
+	public String getUid()
+	{
+
+		return uid;
+	}
+
+	public void setUid(String uid)
+	{
+
+		this.uid = uid;
 	}
 
 	private int didOptionType;

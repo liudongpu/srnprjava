@@ -1,4 +1,4 @@
-<#compress>
+<#--<#compress>-->
 <!DOCTYPE html>
 <html>
 <head>
@@ -19,4 +19,5 @@
 <#include "page_main.ftl" />
 </body> 
 </html>
-</#compress>
+
+<#--</#compress>-->

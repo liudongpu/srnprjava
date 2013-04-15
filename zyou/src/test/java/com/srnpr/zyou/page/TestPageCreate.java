@@ -12,8 +12,8 @@ public class TestPageCreate extends TestBase {
 	public void CreatePage()
 	{
 
-		String sMeString=new WebPage().GetPageHtml("zyou", "list-system_table");
-
+		//String sMeString=new WebPage().GetPageHtml("zyou", "list-system_table");
+		String sMeString=new WebPage().GetPageHtml("zyou", "post-system_table-122-1");
 		BDebug(123, sMeString);
 
 	}

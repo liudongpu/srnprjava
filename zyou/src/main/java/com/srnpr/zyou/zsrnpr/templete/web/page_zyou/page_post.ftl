@@ -8,7 +8,14 @@
 
 <form class="form-horizontal">
 
- <legend>新增</legend>
+ <legend>系统所有表
+ <div class="btn-group pull-right">
+ 
+    <#list pageinfo.getPageOptions() as e_list>
+	 <@m_lib_page_auto_options e_list />
+	</#list>
+ 
+  </div></legend>
 
 
 <#list pageinfo.getPageData() as e_list>

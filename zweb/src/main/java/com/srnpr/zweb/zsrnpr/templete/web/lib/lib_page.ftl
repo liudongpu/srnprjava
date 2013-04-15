@@ -23,9 +23,9 @@
   <#list p_list as e_list>
 	<tr>
       <#list e_list?keys as e>
-      	<td>${e_list[e]}</td>
+      	<td>${e_list[e]?if_exists}</td>
       </#list>
-      <td> <a href="put-ff-${e_list["zid"]}">edit</a> </td>
+      <td> <a href="/zadmin/zyou/post-system_table-uuid-${e_list["zid"]}">edit</a> </td>
     </tr>
 	</#list>
   </tbody>
@@ -34,14 +34,19 @@
 
 <#macro m_page_input  p_info>
 <div class="control-group">
-    <label class="control-label" for="${p_info.getName()}">${p_info.getName()}</label>
+    <label class="control-label" for="${p_info.getName()?default('')}">${p_info.getName()?default('')}</label>
     <div class="controls">
-      <input type="text" id="${p_info.getName()}" name="${p_info.getName()}" value="${p_info.getValue()}"/>
+      <input type="text" id="${p_info.getName()?default('')}" name="${p_info.getName()?default('')}" value="${p_info.getValue()?default('')}"/>
     </div>
   </div>
 
 </#macro>
 
+
+
+<#macro m_page_option  p_name  p_href  p_icon>
+<a class="btn  btn-small" href="${p_href!}"><i class="${p_icon!}"></i>&nbsp;&nbsp;${p_name!}</a>
+</#macro>
 
 
 
@@ -58,6 +63,34 @@
 	<@m_page_input p_info_auto />
 </#if>
 </#macro>
+
+
+
+
+<#--   定义输出自动判断   -->
+<#macro m_lib_page_auto_options p_info_auto>
+
+
+	<#local m_page_autorun_id=p_info_auto.getDidOptionType() />
+	<#if m_page_autorun_id==416101002>
+		 <@m_page_option p_name=p_info_auto.getName() p_href=p_info_auto.getParams()?default('')  p_icon="icon-pencil" />
+	<#elseif m_page_autorun_id==0>
+		
+	<#else>
+		<@m_page_option p_name=p_info_auto.getName() p_href=p_info_auto.getParams()?default('')  p_icon="icon-pencil" />
+	</#if>
+
+</#macro>
+
+
+
+
+
+
+
+
+
+
 
 
 

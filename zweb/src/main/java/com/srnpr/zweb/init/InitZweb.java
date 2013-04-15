@@ -3,6 +3,8 @@ package com.srnpr.zweb.init;
 import java.io.IOException;
 
 import com.srnpr.zcom.base.BaseInit;
+import com.srnpr.zcom.common.CommonConst;
+import com.srnpr.zcom.enumer.EComConst;
 import com.srnpr.zcom.i.IBaseInit;
 import com.srnpr.zweb.common.WebConst;
 import com.srnpr.zweb.enumer.EWebConst;
@@ -21,6 +23,12 @@ public class InitZweb extends BaseInit implements IBaseInit {
 		try {
 
 			InitTemplete(BConfig("zweb.templeteclaspath"));
+			
+			
+			WebConst.Put(EWebConst.base_page_url, CommonConst.Get(EComConst.server_web_name)+"/{0}/{1}-{2}-{3}-{4}");
+			
+			
+			
 
 			InitPageConfig();
 
