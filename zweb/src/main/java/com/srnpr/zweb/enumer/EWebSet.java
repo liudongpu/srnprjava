@@ -1,6 +1,6 @@
 package com.srnpr.zweb.enumer;
 
-public enum EWebRequest {
+public enum EWebSet {
 
 
 	

@@ -6,7 +6,7 @@
 
 
 
-<form id="page_form" class="form-horizontal"   action="/zadmin/zweb/post-system_table-aa-1" method="post">
+<form id="page_form" class="form-horizontal"   action="/zadmin/zweb/${pageinfo.getWebSet().Url_Target}-${pageinfo.getWebSet().Url_View}-aa-1" method="post">
 
  <legend>系统所有表
  <div class="btn-group pull-right">

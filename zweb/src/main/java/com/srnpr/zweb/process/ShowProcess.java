@@ -12,7 +12,7 @@ import com.srnpr.zdata.helper.DataHelper;
 import com.srnpr.zdata.manager.DataTableManager;
 import com.srnpr.zweb.common.WebConst;
 import com.srnpr.zweb.enumer.EWebConst;
-import com.srnpr.zweb.enumer.EWebRequest;
+import com.srnpr.zweb.enumer.EWebSet;
 import com.srnpr.zweb.manager.WebViewManager;
 import com.srnpr.zweb.model.MWebElement;
 import com.srnpr.zweb.model.MWebOptions;
@@ -27,9 +27,9 @@ public class ShowProcess extends BaseClass
 
 		MWebPage mPageInfo = new MWebPage();
 
-		String sPageTarget = wRequest.Get(EWebRequest.Url_Target);
+		String sPageTarget = wRequest.GetSet(EWebSet.Url_Target);
 
-		String sPageView = wRequest.Get(EWebRequest.Url_View);
+		String sPageView = wRequest.GetSet(EWebSet.Url_View);
 		
 		
 		
@@ -86,7 +86,7 @@ public class ShowProcess extends BaseClass
 			DataHelper dHelper = DataTableManager.Get(mView.getTableName());
 			
 			
-			Map<String, Object> mData=dHelper.GetOne("zid",wRequest.Get(EWebRequest.Url_Param));
+			Map<String, Object> mData=dHelper.GetOne("zid",wRequest.GetSet(EWebSet.Url_Param));
 			
 			List<MWebElement> aElms = new ArrayList<MWebElement>();
 
@@ -142,9 +142,12 @@ public class ShowProcess extends BaseClass
 				
 				if(mNewOptions.getDidOptionType()==416101002)
 				{
-					sParams=FormatHelper.FormatString(WebConst.Get(EWebConst.base_page_url), wRequest.Get(EWebRequest.Url_Path),"put",wRequest.Get(EWebRequest.Url_View),mOptions.getUid(),"");
+					sParams=FormatHelper.FormatString(WebConst.Get(EWebConst.base_page_url), wRequest.GetSet(EWebSet.Url_Path),"put",wRequest.GetSet(EWebSet.Url_View),mOptions.getUid(),"");
 				}
-				
+				else if(mNewOptions.getDidOptionType()==416101003)
+				{
+					
+				}
 				
 				
 				

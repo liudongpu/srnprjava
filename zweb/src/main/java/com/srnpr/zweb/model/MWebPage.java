@@ -1,9 +1,17 @@
 
 package com.srnpr.zweb.model;
 
+import java.util.Map;
+
+import com.srnpr.zweb.page.PageRequest;
+
 public class MWebPage
 {
 
+	
+	private PageRequest req=new PageRequest();
+	
+	
 	
 	 /**
 	 * @fields pageType
@@ -60,7 +68,48 @@ public class MWebPage
 	}
 
 	
-	 /**
+	
+
+
+	public PageRequest getReq()
+	{
+
+		return req;
+	}
+
+	public void setReq(PageRequest req)
+	{
+
+		this.req = req;
+	}
+
+
+
+
+
+
+
+
+	public Map<String, String> getWebSet()
+	{
+
+		return webSet;
+	}
+
+	public void setWebSet(Map<String, String> webSet)
+	{
+
+		this.webSet = webSet;
+	}
+
+
+
+
+
+
+
+
+	/**
 	 * @fields pageData
 	 */
 		
@@ -79,5 +128,15 @@ public class MWebPage
 	 */
 		
 	private String	pageInclude	= "";
+	
+	
+	
+	private Map<String, String> webSet;
+	
+	
+	
+	
+	
+	
 
 }

@@ -45,7 +45,7 @@ public class DataSupport extends BaseClass
 		{
 			String sColumn = (String) eKey.nextElement();
 			
-			if(mMap.contains(sColumn))
+			if(mMap.containsKey(sColumn))
 			{
 				mPut.put(sColumn, mMap.get(sColumn));
 			}

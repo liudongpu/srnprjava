@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- 主机: 127.0.0.1
--- 生成日期: 2013 年 04 月 15 日 19:21
+-- 生成日期: 2013 年 04 月 16 日 19:09
 -- 服务器版本: 5.5.27
 -- PHP 版本: 5.4.7
 
@@ -38,7 +38,7 @@ CREATE TABLE IF NOT EXISTS `zdata_column` (
   `note` varchar(100) DEFAULT '' COMMENT '名称',
   `orderid` int(11) DEFAULT '0' COMMENT '排序',
   PRIMARY KEY (`zid`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='数据列表' AUTO_INCREMENT=408 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='数据列表' AUTO_INCREMENT=399 ;
 
 --
 -- 转存表中的数据 `zdata_column`
@@ -122,7 +122,7 @@ CREATE TABLE IF NOT EXISTS `zdata_server` (
 --
 
 INSERT INTO `zdata_server` (`zid`, `name`, `jdbc_class`, `jdbc_url`, `jdbc_user`, `jdbc_password`, `note`) VALUES
-(1, 'zdata', 'com.mysql.jdbc.Driver', 'jdbc:mysql://127.0.0.1:3306/zdata', 'root', '', '0');
+(1, 'zdata', 'com.mysql.jdbc.Driver', 'jdbc:mysql://127.0.0.1:3306/zdata?useUnicode=true&characterEncoding=utf8', 'root', '', '0');
 
 -- --------------------------------------------------------
 
@@ -162,7 +162,7 @@ CREATE TABLE IF NOT EXISTS `zdata_table` (
   `note` varchar(100) NOT NULL COMMENT '描述',
   PRIMARY KEY (`zid`),
   UNIQUE KEY `name_UNIQUE` (`name`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='数据表' AUTO_INCREMENT=45 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='数据表' AUTO_INCREMENT=38 ;
 
 --
 -- 转存表中的数据 `zdata_table`
@@ -283,19 +283,19 @@ INSERT INTO `zweb_options` (`zid`, `gid`, `view_code`, `name`, `did_page_type`, 
 
 CREATE TABLE IF NOT EXISTS `zweb_view` (
   `zid` int(11) NOT NULL AUTO_INCREMENT,
-  `uid` varchar(32) DEFAULT NULL,
-  `code` varchar(45) DEFAULT NULL,
-  `view_name` varchar(100) DEFAULT NULL,
-  `table_name` varchar(100) DEFAULT NULL,
+  `uid` varchar(32) DEFAULT '',
+  `code` varchar(45) DEFAULT '' COMMENT '编码',
+  `view_name` varchar(100) DEFAULT '' COMMENT '视图名称',
+  `table_name` varchar(100) DEFAULT '' COMMENT '表名称',
   PRIMARY KEY (`zid`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='视图表' AUTO_INCREMENT=8 ;
 
 --
 -- 转存表中的数据 `zweb_view`
 --
 
 INSERT INTO `zweb_view` (`zid`, `uid`, `code`, `view_name`, `table_name`) VALUES
-(1, '1', 'system_table', '系统视图', 'zweb_view'),
+(1, '1', 'system_table', '系统视图2', 'zweb_view'),
 (2, NULL, 'system_fields', '视图字段', 'zweb_fields'),
 (3, NULL, 'system_options', '视图操作', 'zweb_options');
 

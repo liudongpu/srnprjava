@@ -8,11 +8,12 @@ import com.srnpr.zcom.enumer.EComConst;
 import com.srnpr.zcom.i.IBaseInit;
 import com.srnpr.zweb.common.WebConst;
 import com.srnpr.zweb.enumer.EWebConst;
+import com.srnpr.zweb.i.IWebInit;
 import com.srnpr.zweb.manager.WebViewManager;
 import com.srnpr.zweb.model.MWebConfig;
 import com.srnpr.zweb.page.PageProcess;
 
-public class InitZweb extends BaseInit implements IBaseInit {
+public class InitZweb extends BaseInit implements IBaseInit,IWebInit {
 
 	public synchronized void Init() {
 
@@ -30,7 +31,7 @@ public class InitZweb extends BaseInit implements IBaseInit {
 			
 			
 
-			InitPageConfig();
+			InitWeb();
 
 			
 			
@@ -42,7 +43,7 @@ public class InitZweb extends BaseInit implements IBaseInit {
 
 			
 			
-			WebConst.PutWebProcess("zweb", new PageProcess());
+			
 
 
 		} catch (Exception e) {
@@ -52,15 +53,15 @@ public class InitZweb extends BaseInit implements IBaseInit {
 	}
 
 
-	private void InitPageConfig() {
+	public void InitWeb() {
 
 		MWebConfig mConfig=new MWebConfig();
 
 		mConfig.setBaseInclude(BConfig("zweb.base_include"));
 
-		WebConst.PutWebCnfig("zcom", mConfig);
+		WebConst.PutWebCnfig("zweb", mConfig);
 
-		WebConst.PutWebProcess("zcom", new PageProcess());
+		WebConst.PutWebProcess("zweb", new PageProcess());
 
 	}
 
@@ -69,5 +70,8 @@ public class InitZweb extends BaseInit implements IBaseInit {
 		WebConst.Put(EWebConst.templete_path,BConfig("zweb.path_templete"));
 
 	}
+
+
+	
 
 }

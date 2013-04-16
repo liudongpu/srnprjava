@@ -5,7 +5,7 @@ import com.srnpr.zcom.manager.ConfigCacheManager;
 import com.srnpr.zdata.helper.DataHelper;
 import com.srnpr.zdata.manager.DataTableManager;
 import com.srnpr.zdata.support.DataSupport;
-import com.srnpr.zweb.enumer.EWebRequest;
+import com.srnpr.zweb.enumer.EWebSet;
 import com.srnpr.zweb.i.IWebProcess;
 import com.srnpr.zweb.manager.WebViewManager;
 import com.srnpr.zweb.model.MWebPage;
@@ -19,15 +19,20 @@ public class PageProcess extends BaseClass implements IWebProcess {
 		MWebPage mWebPage=new MWebPage();
 
 
-		String sPageView=wRequest.Get(EWebRequest.Url_View);
-		String sPageTarget=wRequest.Get(EWebRequest.Url_Target);
+		String sPageView=wRequest.GetSet(EWebSet.Url_View);
+		String sPageTarget=wRequest.GetSet(EWebSet.Url_Target);
 		
 		int iPageType=Integer.valueOf(ConfigCacheManager.GetHash("zdata.did_page_type").get(sPageTarget));
 		
+		
+		
 		if (iPageType==416103002)
 		{
+			
+			MWebView mView = WebViewManager.Get(sPageView);
+			
 			DataSupport dSupport=new DataSupport();
-			dSupport.Put("zdata_column", wRequest.getReqMap());
+			dSupport.Put(mView.getTableName(), wRequest.getReqMap());
 		}
 		else if (iPageType==416103003)
 		{

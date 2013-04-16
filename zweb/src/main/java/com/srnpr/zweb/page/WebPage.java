@@ -7,7 +7,7 @@ import com.srnpr.zcom.helper.FreemarkerHelper;
 import com.srnpr.zcom.model.MHashMap;
 import com.srnpr.zweb.common.WebConst;
 import com.srnpr.zweb.enumer.EWebConst;
-import com.srnpr.zweb.enumer.EWebRequest;
+import com.srnpr.zweb.enumer.EWebSet;
 import com.srnpr.zweb.model.MWebConfig;
 import com.srnpr.zweb.model.MWebPage;
 
@@ -23,12 +23,13 @@ public class WebPage extends BaseClass {
 
 
 
-		MWebConfig mConfig=WebConst.GetWebConfig(wRequest.Get(EWebRequest.Url_Path));
+		MWebConfig mConfig=WebConst.GetWebConfig(wRequest.GetSet(EWebSet.Url_Path));
 
 		hWebPage.put("WebConfig", mConfig);
 
 
-		MWebPage mPageInfo = WebConst.GetWebProcess(wRequest.Get(EWebRequest.Url_Path)).Process(wRequest);
+		MWebPage mPageInfo = WebConst.GetWebProcess(wRequest.GetSet(EWebSet.Url_Path)).Process(wRequest);
+		mPageInfo.setWebSet(wRequest.ConvertWebSet());
 
 
 		hWebPage.put("PageInfo", mPageInfo);
@@ -50,17 +51,17 @@ public class WebPage extends BaseClass {
 
 
 		PageRequest wRequest=new PageRequest(cMap);
-		wRequest.Put(EWebRequest.Url_Path, sPath);
+		wRequest.putSet(EWebSet.Url_Path, sPath);
 		String[] sParams=sUrl.split("-");
-		wRequest.Put(EWebRequest.Url_Target, sParams[0]);
-		wRequest.Put(EWebRequest.Url_View, sParams[1]);
+		wRequest.putSet(EWebSet.Url_Target, sParams[0]);
+		wRequest.putSet(EWebSet.Url_View, sParams[1]);
 
 		if(sParams.length>2)
 		{
-			wRequest.Put(EWebRequest.Url_Option, sParams[2]);
+			wRequest.putSet(EWebSet.Url_Option, sParams[2]);
 			if(sParams.length>3)
 			{
-				wRequest.Put(EWebRequest.Url_Param, sParams[3]);
+				wRequest.putSet(EWebSet.Url_Param, sParams[3]);
 			}
 		}
 		

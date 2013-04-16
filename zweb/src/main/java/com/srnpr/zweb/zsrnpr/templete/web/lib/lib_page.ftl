@@ -1,15 +1,5 @@
 
 
-
-
-
-
-
-
-
-
-
-
 <#macro m_page_table  p_list>
 	<table  class="table">
   <thead>
@@ -26,6 +16,7 @@
       	<td>${e_list[e]?if_exists}</td>
       </#list>
       <td> <a href="/zadmin/zyou/post-system_table-uuid-${e_list["zid"]}">edit</a> </td>
+      <td> <a href="/zadmin/zyou/list-system_fields-uuid-${e_list["zid"]}" target="blank">视图字段</a> </td>
     </tr>
 	</#list>
   </tbody>
@@ -45,7 +36,7 @@
 
 
 <#macro m_page_option  p_name  p_href  p_icon>
-<a class="btn  btn-small" href="${p_href!}"><i class="${p_icon!}"></i>&nbsp;&nbsp;${p_name!}</a>
+<a class="btn  btn-small" href="${p_href!}" target=“_blank”><i class="${p_icon!}"></i>&nbsp;&nbsp;${p_name!}</a>
 </#macro>
 
 

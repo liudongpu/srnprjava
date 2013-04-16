@@ -2,7 +2,7 @@
 
 
 
-<form id="page_form" class="form-horizontal"  action="/zadmin/zweb/put-aa" method="post">
+<form id="page_form" class="form-horizontal"  action="/zadmin/zweb/${pageinfo.getWebSet().Url_Target}-${pageinfo.getWebSet().Url_View}" method="post">
 
  <legend>系统所有表-修改
  <div class="btn-group pull-right">

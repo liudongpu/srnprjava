@@ -35,22 +35,23 @@ IBaseInit
 		for (Map<String, Object> map : listTableList)
 		{
 			String sTableName = (String) map.get(BConfig("zdata.db_column_column_tablename"));
-			MDataTable mTable = null;
-			if (!ConstStatic.CONST_DATATABLE_MAP.contains(sTableName))
+			
+			if (!ConstStatic.CONST_DATATABLE_MAP.containsKey(sTableName))
 			{
-				mTable = new MDataTable();
+				MDataTable mTable = new MDataTable();
 				mTable.setServerName((String) map.get(BConfig("zdata.db_column_column_servername")));
 				mTable.setTableName(sTableName);
 				ConstStatic.CONST_DATATABLE_MAP.put(sTableName, mTable);
 			}
-			mTable = ConstStatic.CONST_DATATABLE_MAP.get(sTableName);
+			
 
 			MTableColumn mColumn = new MTableColumn();
 			mColumn.setColumnName((String) map.get(BConfig("zdata.db_column_column_columnname")));
 		
 			mColumn.setLengthMax((int)Integer.parseInt(String.valueOf( map.get(BConfig("zdata.db_column_column_lengthmax")))));
 			mColumn.setNote((String) map.get(BConfig("zdata.db_column_column_note")));
-			mTable.getColumnsMap().put(mColumn.getColumnName(), mColumn);
+			
+			ConstStatic.CONST_DATATABLE_MAP.get(sTableName).getColumnsMap().put(mColumn.getColumnName(), mColumn);
 
 		}
 		

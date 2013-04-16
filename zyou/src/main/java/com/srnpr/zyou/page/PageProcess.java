@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Map;
 
 import com.srnpr.zdata.helper.DataHelper;
-import com.srnpr.zweb.enumer.EWebRequest;
+import com.srnpr.zweb.enumer.EWebSet;
 import com.srnpr.zweb.i.IWebProcess;
 import com.srnpr.zweb.model.MWebElement;
 import com.srnpr.zweb.model.MWebPage;
