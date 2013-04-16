@@ -3,6 +3,7 @@ package com.srnpr.zweb.testfreemarker;
 import org.junit.Test;
 
 import com.srnpr.zweb.TestBase;
+import com.srnpr.zweb.page.WebPage;
 
 public class FreeMarkerTest extends TestBase {
 
@@ -15,7 +16,7 @@ public class FreeMarkerTest extends TestBase {
 
 
 
-		//BDebug(0,new WebPage().GetPageHtml("zyou","put-afa"));
+		BDebug(0,new WebPage().GetPageHtml("zweb","post-system_table-aa-1"));
 
 
 

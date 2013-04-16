@@ -4,7 +4,7 @@
 
 <form id="page_form" class="form-horizontal"  action="/zadmin/zweb/put-aa" method="post">
 
- <legend>系统所有表
+ <legend>系统所有表-修改
  <div class="btn-group pull-right">
  
     <#list pageinfo.getPageOptions() as e_list>

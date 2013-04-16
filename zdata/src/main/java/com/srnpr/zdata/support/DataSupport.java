@@ -16,9 +16,21 @@ public class DataSupport extends BaseClass
 	
 	
 	
+	
+	
+	 /**
+	 * @param sTableName 新增数据操作
+	 * @param mMap
+	 * @return
+	 * @description 
+	 * @version 1.0
+	 * @author srnpr
+	 * @update 2013-4-16 下午9:57:24
+	 */
+		
 	public String Put(String sTableName,MHashMap mMap)
 	{
-		MResult m=new MResult();
+		
 		
 		DataHelper dHelper=DataTableManager.Get(sTableName);
 		
@@ -42,6 +54,19 @@ public class DataSupport extends BaseClass
 		dHelper.Put(mPut);
 		return "";
 
+	}
+	
+	
+	public String Post(String sTableName,MHashMap mMap,String sKeys)
+	{
+		
+		DataHelper dHelper=DataTableManager.Get(sTableName);
+		//ConcurrentHashMap<String, MTableColumn> mDataTable=dHelper.TableInfo().getColumnsMap();
+		
+		dHelper.Post(mMap, sKeys);
+		
+		
+		return "";
 	}
 	
 	

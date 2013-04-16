@@ -6,7 +6,7 @@
 
 
 
-<form class="form-horizontal">
+<form id="page_form" class="form-horizontal"   action="/zadmin/zweb/post-system_table-aa-1" method="post">
 
  <legend>系统所有表
  <div class="btn-group pull-right">
@@ -28,7 +28,7 @@
   <div class="control-group">
     <div class="controls">
      
-      <button type="submit" class="btn">提交</button>
+      <button type="button" class="btn" onclick="zen.page.submit('page_form')">提交</button>
     </div>
   </div>
 </form>

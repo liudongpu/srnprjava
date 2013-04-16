@@ -38,9 +38,11 @@ public class InitZweb extends BaseInit implements IBaseInit {
 			WebViewManager webViewManager=new WebViewManager();
 			webViewManager.Init();
 
-
 			InitClass("zweb.web_init");
 
+			
+			
+			WebConst.PutWebProcess("zweb", new PageProcess());
 
 
 		} catch (Exception e) {
