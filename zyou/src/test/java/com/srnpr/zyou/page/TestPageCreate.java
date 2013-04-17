@@ -10,10 +10,10 @@ public class TestPageCreate extends TestBase {
 
 	@Test
 	public void CreatePage()
-	{
+	{ 
 
 		//String sMeString=new WebPage().GetPageHtml("zyou", "list-system_table");
-		String sMeString=new WebPage().GetPageHtml("zyou", "post-system_table-122-1");
+		String sMeString=new WebPage().GetPageHtml("zyou", "list-system_fields-uuid-zid=44&ab=55");
 		BDebug(123, sMeString);
 
 	}

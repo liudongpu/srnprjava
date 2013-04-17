@@ -6,7 +6,6 @@ import java.util.concurrent.ConcurrentHashMap;
 import com.srnpr.zcom.base.BaseClass;
 import com.srnpr.zcom.model.MHashMap;
 import com.srnpr.zcom.model.MResult;
-import com.srnpr.zdata.helper.DataHelper;
 import com.srnpr.zdata.manager.DataTableManager;
 import com.srnpr.zdata.model.MTableColumn;
 
@@ -32,10 +31,10 @@ public class DataSupport extends BaseClass
 	{
 		
 		
-		DataHelper dHelper=DataTableManager.Get(sTableName);
+		TableSupport dHelper=DataTableManager.Get(sTableName);
 		
 		
-		ConcurrentHashMap<String, MTableColumn> mDataTable=dHelper.TableInfo().getColumnsMap();
+		ConcurrentHashMap<String, MTableColumn> mDataTable=dHelper.upDataTable().getColumnsMap();
 		
 		MHashMap mPut=new MHashMap();
 		
@@ -51,7 +50,7 @@ public class DataSupport extends BaseClass
 			}
 		}
 	
-		dHelper.Put(mPut);
+		dHelper.inPut(mPut);
 		return "";
 
 	}
@@ -60,10 +59,10 @@ public class DataSupport extends BaseClass
 	public String Post(String sTableName,MHashMap mMap,String sKeys)
 	{
 		
-		DataHelper dHelper=DataTableManager.Get(sTableName);
+		TableSupport dHelper=DataTableManager.Get(sTableName);
 		//ConcurrentHashMap<String, MTableColumn> mDataTable=dHelper.TableInfo().getColumnsMap();
 		
-		dHelper.Post(mMap, sKeys);
+		dHelper.inPost(mMap, sKeys);
 		
 		
 		return "";

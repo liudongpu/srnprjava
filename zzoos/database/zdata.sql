@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- 主机: 127.0.0.1
--- 生成日期: 2013 年 04 月 16 日 19:09
+-- 生成日期: 2013 年 04 月 17 日 20:05
 -- 服务器版本: 5.5.27
 -- PHP 版本: 5.4.7
 
@@ -38,67 +38,72 @@ CREATE TABLE IF NOT EXISTS `zdata_column` (
   `note` varchar(100) DEFAULT '' COMMENT '名称',
   `orderid` int(11) DEFAULT '0' COMMENT '排序',
   PRIMARY KEY (`zid`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='数据列表' AUTO_INCREMENT=399 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='数据列表' AUTO_INCREMENT=714 ;
 
 --
 -- 转存表中的数据 `zdata_column`
 --
 
 INSERT INTO `zdata_column` (`zid`, `server_name`, `table_name`, `column_name`, `did_null_able`, `did_column_type`, `length_max`, `length_scale`, `note`, `orderid`) VALUES
-(345, 'zdata', 'zdata_column', 'zid', 400001002, 404105001, 0, 0, '', 1),
-(346, 'zdata', 'zdata_column', 'server_name', 400001001, 404105002, 45, 0, '服务器名称', 2),
-(347, 'zdata', 'zdata_column', 'table_name', 400001001, 404105002, 45, 0, '表名', 3),
-(348, 'zdata', 'zdata_column', 'column_name', 400001002, 404105002, 45, 0, '列名', 4),
-(349, 'zdata', 'zdata_column', 'did_null_able', 400001002, 404105001, 0, 0, '是否为空', 5),
-(350, 'zdata', 'zdata_column', 'did_column_type', 400001002, 404105001, 0, 0, '列类型', 6),
-(351, 'zdata', 'zdata_column', 'length_max', 400001001, 404105001, 0, 0, '最大长度', 7),
-(352, 'zdata', 'zdata_column', 'length_scale', 400001001, 404105001, 0, 0, '第二长度', 8),
-(353, 'zdata', 'zdata_column', 'note', 400001001, 404105002, 100, 0, '名称', 9),
-(354, 'zdata', 'zdata_column', 'orderid', 400001001, 404105001, 0, 0, '排序', 10),
-(355, 'zdata', 'zdata_server', 'zid', 400001002, 404105001, 0, 0, '', 1),
-(356, 'zdata', 'zdata_server', 'name', 400001002, 404105002, 100, 0, '名称', 2),
-(357, 'zdata', 'zdata_server', 'jdbc_class', 400001002, 404105002, 100, 0, '类名', 3),
-(358, 'zdata', 'zdata_server', 'jdbc_url', 400001002, 404105002, 100, 0, '地址', 4),
-(359, 'zdata', 'zdata_server', 'jdbc_user', 400001002, 404105002, 100, 0, '用户名', 5),
-(360, 'zdata', 'zdata_server', 'jdbc_password', 400001002, 404105002, 100, 0, '密码', 6),
-(361, 'zdata', 'zdata_server', 'note', 400001002, 404105002, 1000, 0, '描述', 7),
-(362, 'zdata', 'zdata_source', 'zid', 400001002, 404105001, 0, 0, '', 1),
-(363, 'zdata', 'zdata_source', 'uid', 400001001, 404105004, 32, 0, '', 2),
-(364, 'zdata', 'zdata_source', 'did_source_type', 400001001, 404105001, 0, 0, '', 3),
-(365, 'zdata', 'zdata_source', 'source_code', 400001001, 404105002, 45, 0, '', 4),
-(366, 'zdata', 'zdata_source', 'source_name', 400001001, 404105002, 45, 0, '', 5),
-(367, 'zdata', 'zdata_source', 'fields', 400001001, 404105002, 500, 0, '', 6),
-(368, 'zdata', 'zdata_source', 'from', 400001001, 404105002, 500, 0, '', 7),
-(369, 'zdata', 'zdata_source', 'where', 400001001, 404105002, 500, 0, '', 8),
-(370, 'zdata', 'zdata_table', 'zid', 400001002, 404105001, 0, 0, '', 1),
-(371, 'zdata', 'zdata_table', 'code', 400001002, 404105002, 45, 0, '编码', 2),
-(372, 'zdata', 'zdata_table', 'name', 400001002, 404105002, 100, 0, '名称', 3),
-(373, 'zdata', 'zdata_table', 'note', 400001002, 404105002, 100, 0, '描述', 4),
-(374, 'zdata', 'zsrnpr_define', 'zid', 400001002, 404105001, 0, 0, '', 1),
-(375, 'zdata', 'zsrnpr_define', 'code', 400001002, 404105002, 100, 0, '', 2),
-(376, 'zdata', 'zsrnpr_define', 'name', 400001002, 404105002, 100, 0, '', 3),
-(377, 'zdata', 'zsrnpr_define', 'value', 400001002, 404105002, 100, 0, '', 4),
-(378, 'zdata', 'zsrnpr_define', 'note', 400001002, 404105002, 100, 0, '', 5),
-(379, 'zdata', 'zsrnpr_define', 'level', 400001002, 404105001, 0, 0, '', 6),
-(380, 'zdata', 'zweb_fields', 'zid', 400001002, 404105001, 0, 0, '', 1),
-(381, 'zdata', 'zweb_fields', 'view_code', 400001001, 404105002, 100, 0, '视图编码', 2),
-(382, 'zdata', 'zweb_fields', 'field_name', 400001001, 404105002, 100, 0, '字段名称', 3),
-(383, 'zdata', 'zweb_fields', 'did_field_type', 400001001, 404105001, 0, 0, '字段类型', 4),
-(384, 'zdata', 'zweb_fields', 'source_code', 400001001, 404105002, 100, 0, '数据源编码', 5),
-(385, 'zdata', 'zweb_fields', 'source_parameter', 400001001, 404105002, 500, 0, '数据源参数', 6),
-(386, 'zdata', 'zweb_fields', 'column_name', 400001001, 404105002, 100, 0, '数据列名称', 7),
-(387, 'zdata', 'zweb_options', 'zid', 400001002, 404105001, 0, 0, '', 1),
-(388, 'zdata', 'zweb_options', 'gid', 400001001, 404105004, 32, 0, '', 2),
-(389, 'zdata', 'zweb_options', 'view_code', 400001001, 404105002, 100, 0, '视图编号', 3),
-(390, 'zdata', 'zweb_options', 'name', 400001001, 404105002, 45, 0, '名称', 4),
-(391, 'zdata', 'zweb_options', 'did_page_type', 400001001, 404105001, 0, 0, '', 5),
-(392, 'zdata', 'zweb_options', 'did_option_type', 400001001, 404105001, 0, 0, '', 6),
-(393, 'zdata', 'zweb_options', 'params', 400001001, 404105002, 100, 0, '操作参数', 7),
-(394, 'zdata', 'zweb_view', 'zid', 400001002, 404105001, 0, 0, '', 1),
-(395, 'zdata', 'zweb_view', 'uid', 400001001, 404105002, 32, 0, '', 2),
-(396, 'zdata', 'zweb_view', 'code', 400001001, 404105002, 45, 0, '', 3),
-(397, 'zdata', 'zweb_view', 'view_name', 400001001, 404105002, 100, 0, '', 4),
-(398, 'zdata', 'zweb_view', 'table_name', 400001001, 404105002, 100, 0, '', 5);
+(651, 'zdata', 'zdata_column', 'zid', 400001002, 404105001, 0, 0, '', 1),
+(652, 'zdata', 'zdata_column', 'server_name', 400001001, 404105002, 45, 0, '服务器名称', 2),
+(653, 'zdata', 'zdata_column', 'table_name', 400001001, 404105002, 45, 0, '表名', 3),
+(654, 'zdata', 'zdata_column', 'column_name', 400001002, 404105002, 45, 0, '列名', 4),
+(655, 'zdata', 'zdata_column', 'did_null_able', 400001002, 404105001, 0, 0, '是否为空', 5),
+(656, 'zdata', 'zdata_column', 'did_column_type', 400001002, 404105001, 0, 0, '列类型', 6),
+(657, 'zdata', 'zdata_column', 'length_max', 400001001, 404105001, 0, 0, '最大长度', 7),
+(658, 'zdata', 'zdata_column', 'length_scale', 400001001, 404105001, 0, 0, '第二长度', 8),
+(659, 'zdata', 'zdata_column', 'note', 400001001, 404105002, 100, 0, '名称', 9),
+(660, 'zdata', 'zdata_column', 'orderid', 400001001, 404105001, 0, 0, '排序', 10),
+(661, 'zdata', 'zdata_server', 'zid', 400001002, 404105001, 0, 0, '', 1),
+(662, 'zdata', 'zdata_server', 'name', 400001002, 404105002, 100, 0, '名称', 2),
+(663, 'zdata', 'zdata_server', 'jdbc_class', 400001002, 404105002, 100, 0, '类名', 3),
+(664, 'zdata', 'zdata_server', 'jdbc_url', 400001002, 404105002, 100, 0, '地址', 4),
+(665, 'zdata', 'zdata_server', 'jdbc_user', 400001002, 404105002, 100, 0, '用户名', 5),
+(666, 'zdata', 'zdata_server', 'jdbc_password', 400001002, 404105002, 100, 0, '密码', 6),
+(667, 'zdata', 'zdata_server', 'note', 400001002, 404105002, 1000, 0, '描述', 7),
+(668, 'zdata', 'zdata_source', 'zid', 400001002, 404105001, 0, 0, '', 1),
+(669, 'zdata', 'zdata_source', 'uid', 400001001, 404105004, 32, 0, '', 2),
+(670, 'zdata', 'zdata_source', 'did_source_type', 400001001, 404105001, 0, 0, '', 3),
+(671, 'zdata', 'zdata_source', 'source_code', 400001001, 404105002, 45, 0, '', 4),
+(672, 'zdata', 'zdata_source', 'source_name', 400001001, 404105002, 45, 0, '', 5),
+(673, 'zdata', 'zdata_source', 'fields', 400001001, 404105002, 500, 0, '', 6),
+(674, 'zdata', 'zdata_source', 'from', 400001001, 404105002, 500, 0, '', 7),
+(675, 'zdata', 'zdata_source', 'where', 400001001, 404105002, 500, 0, '', 8),
+(676, 'zdata', 'zdata_table', 'zid', 400001002, 404105001, 0, 0, '', 1),
+(677, 'zdata', 'zdata_table', 'code', 400001002, 404105002, 45, 0, '编码', 2),
+(678, 'zdata', 'zdata_table', 'name', 400001002, 404105002, 100, 0, '名称', 3),
+(679, 'zdata', 'zdata_table', 'note', 400001002, 404105002, 100, 0, '描述', 4),
+(680, 'zdata', 'zsrnpr_define', 'zid', 400001002, 404105001, 0, 0, '', 1),
+(681, 'zdata', 'zsrnpr_define', 'code', 400001002, 404105002, 100, 0, '', 2),
+(682, 'zdata', 'zsrnpr_define', 'name', 400001002, 404105002, 100, 0, '', 3),
+(683, 'zdata', 'zsrnpr_define', 'value', 400001002, 404105002, 100, 0, '', 4),
+(684, 'zdata', 'zsrnpr_define', 'note', 400001002, 404105002, 100, 0, '', 5),
+(685, 'zdata', 'zsrnpr_define', 'level', 400001002, 404105001, 0, 0, '', 6),
+(686, 'zdata', 'zweb_fields', 'zid', 400001002, 404105001, 0, 0, '', 1),
+(687, 'zdata', 'zweb_fields', 'view_code', 400001001, 404105002, 100, 0, '视图编码', 2),
+(688, 'zdata', 'zweb_fields', 'column_name', 400001001, 404105002, 100, 0, '数据列名称', 3),
+(689, 'zdata', 'zweb_fields', 'field_name', 400001001, 404105002, 100, 0, '字段名称', 4),
+(690, 'zdata', 'zweb_fields', 'did_field_type', 400001001, 404105001, 0, 0, '字段类型', 5),
+(691, 'zdata', 'zweb_fields', 'source_code', 400001001, 404105002, 100, 0, '数据源编码', 6),
+(692, 'zdata', 'zweb_fields', 'source_parameter', 400001001, 404105002, 500, 0, '数据源参数', 7),
+(693, 'zdata', 'zweb_fields', 'level_list', 400001001, 404105001, 0, 0, '列表标记', 8),
+(694, 'zdata', 'zweb_fields', 'level_put', 400001001, 404105001, 0, 0, '插入标记', 9),
+(695, 'zdata', 'zweb_fields', 'level_post', 400001001, 404105001, 0, 0, '修改标记', 10),
+(696, 'zdata', 'zweb_fields', 'level_show', 400001001, 404105001, 0, 0, '展示标记', 11),
+(697, 'zdata', 'zweb_fields', 'level_query', 400001001, 404105001, 0, 0, '查询条件', 12),
+(698, 'zdata', 'zweb_options', 'zid', 400001002, 404105001, 0, 0, '', 1),
+(699, 'zdata', 'zweb_options', 'uid', 400001001, 404105004, 32, 0, '', 2),
+(700, 'zdata', 'zweb_options', 'view_code', 400001001, 404105002, 100, 0, '视图编号', 3),
+(701, 'zdata', 'zweb_options', 'name', 400001001, 404105002, 45, 0, '名称', 4),
+(702, 'zdata', 'zweb_options', 'did_page_type', 400001001, 404105001, 0, 0, '', 5),
+(703, 'zdata', 'zweb_options', 'did_option_type', 400001001, 404105001, 0, 0, '', 6),
+(704, 'zdata', 'zweb_options', 'params', 400001001, 404105002, 100, 0, '操作参数', 7),
+(705, 'zdata', 'zweb_view', 'zid', 400001002, 404105001, 0, 0, '', 1),
+(706, 'zdata', 'zweb_view', 'uid', 400001001, 404105002, 32, 0, '', 2),
+(707, 'zdata', 'zweb_view', 'code', 400001001, 404105002, 45, 0, '编码', 3),
+(708, 'zdata', 'zweb_view', 'view_name', 400001001, 404105002, 100, 0, '视图名称', 4),
+(709, 'zdata', 'zweb_view', 'table_name', 400001001, 404105002, 100, 0, '表名称', 5);
 
 -- --------------------------------------------------------
 
@@ -162,21 +167,21 @@ CREATE TABLE IF NOT EXISTS `zdata_table` (
   `note` varchar(100) NOT NULL COMMENT '描述',
   PRIMARY KEY (`zid`),
   UNIQUE KEY `name_UNIQUE` (`name`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='数据表' AUTO_INCREMENT=38 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='数据表' AUTO_INCREMENT=113 ;
 
 --
 -- 转存表中的数据 `zdata_table`
 --
 
 INSERT INTO `zdata_table` (`zid`, `code`, `name`, `note`) VALUES
-(30, 'zdata_column', 'zdata_column', '数据列表'),
-(31, 'zdata_server', 'zdata_server', '服务器表'),
-(32, 'zdata_source', 'zdata_source', '数据源定义'),
-(33, 'zdata_table', 'zdata_table', '数据表'),
-(34, 'zsrnpr_define', 'zsrnpr_define', ''),
-(35, 'zweb_fields', 'zweb_fields', ''),
-(36, 'zweb_options', 'zweb_options', '操作表'),
-(37, 'zweb_view', 'zweb_view', '');
+(98, 'zdata_column', 'zdata_column', '数据列表'),
+(99, 'zdata_server', 'zdata_server', '服务器表'),
+(100, 'zdata_source', 'zdata_source', '数据源定义'),
+(101, 'zdata_table', 'zdata_table', '数据表'),
+(102, 'zsrnpr_define', 'zsrnpr_define', ''),
+(103, 'zweb_fields', 'zweb_fields', '视图字段表'),
+(104, 'zweb_options', 'zweb_options', '操作表'),
+(105, 'zweb_view', 'zweb_view', '视图表');
 
 -- --------------------------------------------------------
 
@@ -194,7 +199,7 @@ CREATE TABLE IF NOT EXISTS `zsrnpr_define` (
   PRIMARY KEY (`zid`),
   UNIQUE KEY `code` (`code`),
   UNIQUE KEY `name` (`name`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=43 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=45 ;
 
 --
 -- 转存表中的数据 `zsrnpr_define`
@@ -214,8 +219,8 @@ INSERT INTO `zsrnpr_define` (`zid`, `code`, `name`, `value`, `note`, `level`) VA
 (14, '416101001', '提交', '', '', 3),
 (15, '404', '数据库定义', '', '', 1),
 (16, '416', '页面定义', '', '', 1),
-(19, '416102', '页面元素类型', '', '', 2),
-(20, '416102001', 'input', '', '', 3),
+(19, '416102', '页面元素类型', 'did_field_type', '', 2),
+(20, '416102001', '文本输入框', 'input', '', 3),
 (21, '404119', '数据源类型定义', '', '定义数据源用，用于zdata_source表', 2),
 (22, '404119001', '单表', '', '', 3),
 (23, '404119002', '关联表', '', '', 3),
@@ -228,7 +233,9 @@ INSERT INTO `zsrnpr_define` (`zid`, `code`, `name`, `value`, `note`, `level`) VA
 (38, '416101002', '新增', '', '', 3),
 (40, '416101003', '列表', '', '', 3),
 (41, '416103005', '删除页', 'delete', '', 3),
-(42, '416103101', '列表中字段', '', '', 3);
+(42, '416103101', '列表中字段', '', '', 3),
+(43, '416102002', '选择下拉框', 'select', '', 3),
+(44, '416103006', '查询结果内', 'table', '', 3);
 
 -- --------------------------------------------------------
 
@@ -239,13 +246,40 @@ INSERT INTO `zsrnpr_define` (`zid`, `code`, `name`, `value`, `note`, `level`) VA
 CREATE TABLE IF NOT EXISTS `zweb_fields` (
   `zid` int(11) NOT NULL AUTO_INCREMENT,
   `view_code` varchar(100) DEFAULT '' COMMENT '视图编码',
+  `column_name` varchar(100) DEFAULT '' COMMENT '数据列名称',
   `field_name` varchar(100) DEFAULT '' COMMENT '字段名称',
   `did_field_type` int(11) DEFAULT '0' COMMENT '字段类型',
   `source_code` varchar(100) DEFAULT '' COMMENT '数据源编码',
   `source_parameter` varchar(500) DEFAULT '' COMMENT '数据源参数',
-  `column_name` varchar(100) DEFAULT '' COMMENT '数据列名称',
+  `level_list` int(11) DEFAULT '0' COMMENT '列表标记',
+  `level_put` int(11) DEFAULT '0' COMMENT '插入标记',
+  `level_post` int(11) DEFAULT '0' COMMENT '修改标记',
+  `level_show` int(11) DEFAULT '0' COMMENT '展示标记',
+  `level_query` int(11) DEFAULT '0' COMMENT '查询条件',
   PRIMARY KEY (`zid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='视图字段表' AUTO_INCREMENT=45 ;
+
+--
+-- 转存表中的数据 `zweb_fields`
+--
+
+INSERT INTO `zweb_fields` (`zid`, `view_code`, `column_name`, `field_name`, `did_field_type`, `source_code`, `source_parameter`, `level_list`, `level_put`, `level_post`, `level_show`, `level_query`) VALUES
+(23, 'system_fields', 'zid', '', 0, '', '', 0, 0, 0, 0, 0),
+(24, 'system_fields', 'view_code', '视图编码', 0, '', '', 0, 0, 0, 0, 0),
+(25, 'system_fields', 'column_name', '数据列名称', 0, '', '', 0, 0, 0, 0, 0),
+(26, 'system_fields', 'field_name', '字段名称', 0, '', '', 0, 0, 0, 0, 0),
+(27, 'system_fields', 'did_field_type', '字段类型', 0, '', '', 0, 0, 0, 0, 0),
+(28, 'system_fields', 'source_code', '数据源编码', 0, '', '', 0, 0, 0, 0, 0),
+(29, 'system_fields', 'source_parameter', '数据源参数', 0, '', '', 0, 0, 0, 0, 0),
+(30, 'system_fields', 'deep_list', '列表标记', 0, '', '', 0, 0, 0, 0, 0),
+(31, 'system_fields', 'deep_put', '插入标记', 0, '', '', 0, 0, 0, 0, 0),
+(32, 'system_fields', 'deep_post', '修改标记', 0, '', '', 0, 0, 0, 0, 0),
+(33, 'system_fields', 'deep_show', '展示标记', 0, '', '', 0, 0, 0, 0, 0),
+(38, 'system_table', 'zid', '', 0, '', '', 0, 0, 0, 0, 0),
+(39, 'system_table', 'uid', '', 0, '', '', 0, 0, 0, 0, 0),
+(40, 'system_table', 'code', '编码', 0, '', '', 0, 0, 0, 0, 0),
+(41, 'system_table', 'view_name', '视图名称', 0, '', '', 0, 0, 0, 0, 0),
+(42, 'system_table', 'table_name', '表名称', 0, '', '', 0, 0, 0, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -255,25 +289,26 @@ CREATE TABLE IF NOT EXISTS `zweb_fields` (
 
 CREATE TABLE IF NOT EXISTS `zweb_options` (
   `zid` int(11) NOT NULL AUTO_INCREMENT,
-  `gid` char(32) DEFAULT '',
+  `uid` char(32) DEFAULT '',
   `view_code` varchar(100) DEFAULT '' COMMENT '视图编号',
   `name` varchar(45) DEFAULT '' COMMENT '名称',
   `did_page_type` int(11) DEFAULT '0',
   `did_option_type` int(11) DEFAULT '0',
   `params` varchar(100) DEFAULT '' COMMENT '操作参数',
   PRIMARY KEY (`zid`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='操作表' AUTO_INCREMENT=6 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='操作表' AUTO_INCREMENT=7 ;
 
 --
 -- 转存表中的数据 `zweb_options`
 --
 
-INSERT INTO `zweb_options` (`zid`, `gid`, `view_code`, `name`, `did_page_type`, `did_option_type`, `params`) VALUES
+INSERT INTO `zweb_options` (`zid`, `uid`, `view_code`, `name`, `did_page_type`, `did_option_type`, `params`) VALUES
 (1, '', 'system_table', '添加', 416103001, 416101002, ''),
 (2, '', 'system_table', '字段列表', 416103003, 416101003, ''),
 (3, '', 'system_table', '操作列表', 416103003, 416101003, ''),
 (4, '', 'system_table', '提交', 416103003, 0, ''),
-(5, '', 'system_table', '修改', 416103101, 416101002, '');
+(5, '', 'system_table', '修改', 416103101, 416101002, ''),
+(6, '42', 'system_table', '修改字段', 416103001, 416101002, '');
 
 -- --------------------------------------------------------
 
@@ -296,8 +331,8 @@ CREATE TABLE IF NOT EXISTS `zweb_view` (
 
 INSERT INTO `zweb_view` (`zid`, `uid`, `code`, `view_name`, `table_name`) VALUES
 (1, '1', 'system_table', '系统视图2', 'zweb_view'),
-(2, NULL, 'system_fields', '视图字段', 'zweb_fields'),
-(3, NULL, 'system_options', '视图操作', 'zweb_options');
+(2, '2', 'system_fields', '视图字段', 'zweb_fields'),
+(3, '3', 'system_options', '视图操作', 'zweb_options');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

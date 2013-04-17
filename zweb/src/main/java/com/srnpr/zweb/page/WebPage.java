@@ -23,13 +23,13 @@ public class WebPage extends BaseClass {
 
 
 
-		MWebConfig mConfig=WebConst.GetWebConfig(wRequest.GetSet(EWebSet.Url_Path));
+		MWebConfig mConfig=WebConst.GetWebConfig(wRequest.upSet(EWebSet.Url_Path));
 
 		hWebPage.put("WebConfig", mConfig);
 
 
-		MWebPage mPageInfo = WebConst.GetWebProcess(wRequest.GetSet(EWebSet.Url_Path)).Process(wRequest);
-		mPageInfo.setWebSet(wRequest.ConvertWebSet());
+		MWebPage mPageInfo = WebConst.GetWebProcess(wRequest.upSet(EWebSet.Url_Path)).Process(wRequest);
+		mPageInfo.setWebSet(wRequest.convertWebSet());
 
 
 		hWebPage.put("PageInfo", mPageInfo);
@@ -51,17 +51,17 @@ public class WebPage extends BaseClass {
 
 
 		PageRequest wRequest=new PageRequest(cMap);
-		wRequest.putSet(EWebSet.Url_Path, sPath);
+		wRequest.upSet(EWebSet.Url_Path, sPath);
 		String[] sParams=sUrl.split("-");
-		wRequest.putSet(EWebSet.Url_Target, sParams[0]);
-		wRequest.putSet(EWebSet.Url_View, sParams[1]);
+		wRequest.upSet(EWebSet.Url_Target, sParams[0]);
+		wRequest.upSet(EWebSet.Url_View, sParams[1]);
 
 		if(sParams.length>2)
 		{
-			wRequest.putSet(EWebSet.Url_Option, sParams[2]);
+			wRequest.upSet(EWebSet.Url_Option, sParams[2]);
 			if(sParams.length>3)
 			{
-				wRequest.putSet(EWebSet.Url_Param, sParams[3]);
+				wRequest.upSet(EWebSet.Url_Param, sParams[3]);
 			}
 		}
 		

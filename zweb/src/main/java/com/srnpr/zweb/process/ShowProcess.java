@@ -8,43 +8,93 @@ import java.util.Map;
 import com.srnpr.zcom.base.BaseClass;
 import com.srnpr.zcom.helper.FormatHelper;
 import com.srnpr.zcom.manager.ConfigCacheManager;
-import com.srnpr.zdata.helper.DataHelper;
+import com.srnpr.zdata.support.TableSupport;
 import com.srnpr.zdata.manager.DataTableManager;
 import com.srnpr.zweb.common.WebConst;
 import com.srnpr.zweb.enumer.EWebConst;
 import com.srnpr.zweb.enumer.EWebSet;
 import com.srnpr.zweb.manager.WebViewManager;
 import com.srnpr.zweb.model.MWebElement;
+import com.srnpr.zweb.model.MWebFields;
 import com.srnpr.zweb.model.MWebOptions;
 import com.srnpr.zweb.model.MWebPage;
 import com.srnpr.zweb.model.MWebView;
 import com.srnpr.zweb.page.PageRequest;
 
-public class ShowProcess extends BaseClass
+public class ShowProcess extends WebBaseProcess
 {
 	public MWebPage ShowHtml(PageRequest wRequest)
 	{
 
 		MWebPage mPageInfo = new MWebPage();
 
-		String sPageTarget = wRequest.GetSet(EWebSet.Url_Target);
+		String sPageTarget = wRequest.upSet(EWebSet.Url_Target);
 
-		String sPageView = wRequest.GetSet(EWebSet.Url_View);
+		String sPageView = wRequest.upSet(EWebSet.Url_View);
 		
 		
 		
 		int iPageType=Integer.valueOf(ConfigCacheManager.GetHash("zdata.did_page_type").get(sPageTarget));
 		
 
+		//列表页
 		if (iPageType==416103001)
 		{
 
 			MWebView mView = WebViewManager.Get(sPageView);
+			TableSupport dHelper = DataTableManager.Get(mView.getTableName());
 			
 			
-			DataHelper dHelper = DataTableManager.Get(mView.getTableName());
-			mPageInfo.setPageData(dHelper.Get());
 			
+			List<List<String>> listPageData=new ArrayList<List<String>>();
+			
+			
+			List<String> listTitle=new ArrayList<String>();
+			
+			
+			List<Map<String, Object>> listMaps=dHelper.upList();
+			
+			
+			List<MWebFields> listFields=upUseFields(mView, iPageType);
+			List<MWebOptions> listOptions=upUseOptions(mView, iPageType);
+			
+			for(MWebFields mFields: listFields)
+			{
+				listTitle.add(mFields.getFieldName());
+			}
+			for(MWebOptions mOptions:listOptions)
+			{
+				listTitle.add(mOptions.getName());
+			}
+
+			listPageData.add(listTitle);
+			
+			for(Map<String, Object> mData:listMaps)
+			{
+				List<String> listDataList=new ArrayList<String>();
+				for(MWebFields mFields: listFields)
+				{
+					if(mData.containsKey(mFields.getColumnName()))
+					{
+						listDataList.add(String.valueOf(mData.get(mFields.getColumnName())));
+					}
+				}
+				
+				for(MWebOptions mOptions:listOptions)
+				{
+					listDataList.add(mOptions.getName());
+				}
+				
+				
+				
+				listPageData.add(listDataList);
+				
+				
+			}
+			
+			
+			//mPageInfo.setPageData(dHelper.upList());
+			mPageInfo.setPageData(listPageData);
 			
 			mPageInfo.setPageOptions(ResetOptions(iPageType, mView,wRequest,mPageInfo));
 			
@@ -59,15 +109,15 @@ public class ShowProcess extends BaseClass
 
 			List<MWebElement> aElms = new ArrayList<MWebElement>();
 
-			for (Map<String, Object> mMap : DataTableManager.Get("zdata_column").GetListByQuery("table_name", mView.getTableName()))
+			for (Map<String, Object> mMap : DataTableManager.Get("zdata_column").upListListByQuery("table_name", mView.getTableName()))
 			{
 				MWebElement mElm = new MWebElement();
 				mElm.setTarget("m_page_input");
 				String sName = (String) mMap.get("column_name");
 				mElm.setName(sName);
-				if (wRequest.ContainsParam(sName))
+				if (wRequest.isContainsParam(sName))
 				{
-					mElm.setValue(wRequest.GetParam(sName));
+					mElm.setValue(wRequest.upParam(sName));
 				}
 
 				aElms.add(mElm);
@@ -83,14 +133,14 @@ public class ShowProcess extends BaseClass
 		else if (iPageType==416103003)
 		{
 			MWebView mView = WebViewManager.Get(sPageView);
-			DataHelper dHelper = DataTableManager.Get(mView.getTableName());
+			TableSupport dHelper = DataTableManager.Get(mView.getTableName());
 			
 			
-			Map<String, Object> mData=dHelper.GetOne("zid",wRequest.GetSet(EWebSet.Url_Param));
+			Map<String, Object> mData=dHelper.upOneMap("zid",wRequest.upSet(EWebSet.Url_Param));
 			
 			List<MWebElement> aElms = new ArrayList<MWebElement>();
 
-			for (Map<String, Object> mMap : DataTableManager.Get("zdata_column").GetListByQuery("table_name", mView.getTableName()))
+			for (Map<String, Object> mMap : DataTableManager.Get("zdata_column").upListListByQuery("table_name", mView.getTableName()))
 			{
 				MWebElement mElm = new MWebElement();
 				mElm.setTarget("m_page_input");
@@ -142,7 +192,7 @@ public class ShowProcess extends BaseClass
 				
 				if(mNewOptions.getDidOptionType()==416101002)
 				{
-					sParams=FormatHelper.FormatString(WebConst.Get(EWebConst.base_page_url), wRequest.GetSet(EWebSet.Url_Path),"put",wRequest.GetSet(EWebSet.Url_View),mOptions.getUid(),"");
+					sParams=FormatHelper.FormatString(WebConst.Get(EWebConst.base_page_url), wRequest.upSet(EWebSet.Url_Path),"put",wRequest.upSet(EWebSet.Url_View),mOptions.getUid(),"");
 				}
 				else if(mNewOptions.getDidOptionType()==416101003)
 				{

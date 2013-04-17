@@ -23,6 +23,30 @@ public class FreemarkerHelper extends BaseClass {
 	 * @update 2013-4-4 下午4:55:42
 	 */
 
+	
+	 /**
+	 * @param sTempPath
+	 * @param sTempName
+	 * @param oRootMap
+	 * @return
+	 * @description 
+	 * @version 1.0
+	 * @author srnpr
+	 * @update 2013-4-17 下午8:48:41
+	 */
+		
+	
+	 /**
+	 * @param sTempPath
+	 * @param sTempName
+	 * @param oRootMap
+	 * @return
+	 * @description 
+	 * @version 1.0
+	 * @author srnpr
+	 * @update 2013-4-17 下午8:48:43
+	 */
+		
 	public  String GetStringFromTemp(String sTempPath, String sTempName,
 			Object oRootMap) {
 
@@ -46,7 +70,10 @@ public class FreemarkerHelper extends BaseClass {
 			sReturn = sWriter.toString();
 
 		} catch (Exception e) {
-			BError(e,967901004,sTempPath,sTempName);
+			
+			
+			
+			BError(e,967901004,sTempPath,sTempName,oRootMap);
 		}
 
 		return sReturn;

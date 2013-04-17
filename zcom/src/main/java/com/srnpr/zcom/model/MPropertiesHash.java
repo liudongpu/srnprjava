@@ -2,6 +2,15 @@ package com.srnpr.zcom.model;
 
 import java.util.concurrent.ConcurrentHashMap;
 
+
+ /**
+ * @description 配置专用存储结构   综合支持父子关系
+ * @version 1.0
+ * @author srnpr
+ * @ClassName: MPropertiesHash
+ * @update 2013-4-17 下午10:42:52
+ */
+	
 public class MPropertiesHash {
 
 

@@ -26,10 +26,10 @@ public class InitZyou extends BaseInit implements IBaseInit {
 		HashHelper hashHelper=new HashHelper();
 
 
-		MPropertiesHash mTheamsHash = hashHelper.getMPropertiesHash(
+		MPropertiesHash mTheamsHash = hashHelper.upMPropertiesHash(
 				sAdminTheamsPath, "");
 
-		for (String s : hashHelper.GetStringFromCurrentHash(mTheamsHash
+		for (String s : hashHelper.upStringFromCurrentHash(mTheamsHash
 				.getChild().get("admin_css"))) {
 			mConfig.getSrcCss().add(BConfig("zweb.url_themes_admin") + s);
 		}

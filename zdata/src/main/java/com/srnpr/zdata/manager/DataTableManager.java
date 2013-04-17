@@ -9,7 +9,7 @@ import com.mchange.lang.IntegerUtils;
 import com.srnpr.zcom.base.BaseClass;
 import com.srnpr.zcom.i.IBaseInit;
 import com.srnpr.zcom.i.IBaseManager;
-import com.srnpr.zdata.helper.DataHelper;
+import com.srnpr.zdata.support.TableSupport;
 import com.srnpr.zdata.model.MDataTable;
 import com.srnpr.zdata.model.MTableColumn;
 import com.srnpr.zdata.process.DataProcess;
@@ -30,7 +30,7 @@ IBaseInit
 		DataProcess dProcess = new DataProcess();
 		dProcess.InitDataProcess(BConfig("zdata.base_database_name"), BConfig("zdata.db_table_column"));
 
-		List<Map<String, Object>> listTableList = dProcess.Get();
+		List<Map<String, Object>> listTableList = dProcess.upList();
 
 		for (Map<String, Object> map : listTableList)
 		{
@@ -61,8 +61,8 @@ IBaseInit
 		while (eKey.hasMoreElements())
 		{
 			String string = (String) eKey.nextElement();
-			DataHelper dHelper=new DataHelper(string);
-			ConstStatic.CONST_DATAHELPER_MAP.put(string, dHelper);
+			TableSupport dHelper=new TableSupport(string);
+			ConstStatic.CONST_TABLESUPPORT_MAP.put(string, dHelper);
 		}
 		
 		
@@ -72,9 +72,9 @@ IBaseInit
 	
 	
 	
-	public static DataHelper Get(String sTableName)
+	public static TableSupport Get(String sTableName)
 	{
-		return ConstStatic.CONST_DATAHELPER_MAP.get(sTableName);
+		return ConstStatic.CONST_TABLESUPPORT_MAP.get(sTableName);
 	}
 	
 	

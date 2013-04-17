@@ -47,7 +47,7 @@ public class InitZweb extends BaseInit implements IBaseInit,IWebInit {
 
 
 		} catch (Exception e) {
-			BError(e,967901001);
+			BError(e,967901001,e.getMessage());
 		}
 
 	}

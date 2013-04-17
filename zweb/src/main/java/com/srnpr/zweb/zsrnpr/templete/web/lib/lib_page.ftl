@@ -1,26 +1,38 @@
 
 
 <#macro m_page_table  p_list>
+
+<#if p_list?has_content>
+
+
+
 	<table  class="table">
   <thead>
     <tr>
-        <#list p_list[0]?keys as e>
+        <#list p_list[0] as e>
       	 <th>${e}</th>
       </#list>
     </tr>
   </thead>
   <tbody>
   <#list p_list as e_list>
+  
+  
+  	<#if (e_list_index>0)>
 	<tr>
-      <#list e_list?keys as e>
-      	<td>${e_list[e]?if_exists}</td>
+      <#list e_list as e>
+      	<td>${e}</td>
       </#list>
-      <td> <a href="/zadmin/zyou/post-system_table-uuid-${e_list["zid"]}">edit</a> </td>
-      <td> <a href="/zadmin/zyou/list-system_fields-uuid-${e_list["zid"]}" target="blank">视图字段</a> </td>
     </tr>
+    
+    </#if>
 	</#list>
   </tbody>
 </table>
+<#else>
+no result
+</#if>
+
 </#macro>
 
 <#macro m_page_input  p_info>

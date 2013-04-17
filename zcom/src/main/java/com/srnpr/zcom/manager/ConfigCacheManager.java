@@ -109,7 +109,7 @@ public class ConfigCacheManager extends BaseClass implements IBaseManager {
 					sFileNameString.lastIndexOf("."))
 					+ ".";
 
-			MPropertiesHash mHash = hashHelper.getMPropertiesHash(f,
+			MPropertiesHash mHash = hashHelper.upMPropertiesHash(f,
 					sLeftString);
 			Enumeration<String> eKey = mHash.getKeyValue().keys();
 			while (eKey.hasMoreElements()) {

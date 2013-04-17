@@ -12,6 +12,7 @@ import java.util.concurrent.ConcurrentHashMap;
 
 import org.apache.commons.configuration.PropertiesConfiguration;
 import org.apache.commons.io.FileUtils;
+import org.apache.commons.lang.StringUtils;
 
 import com.srnpr.zcom.base.BaseClass;
 import com.srnpr.zcom.common.CommonConst;
@@ -35,7 +36,7 @@ public class HashHelper extends BaseClass{
 	 * @update 2013-4-6 下午4:01:06
 	 */
 
-	public  String[] GetStringFromCurrentHash(ConcurrentHashMap<String, String> cMap)
+	public  String[] upStringFromCurrentHash(ConcurrentHashMap<String, String> cMap)
 	{
 
 
@@ -59,13 +60,35 @@ public class HashHelper extends BaseClass{
 
 
 
-	public MPropertiesHash getMPropertiesHash(String sFilePath,String sLeftPad)
+	
+	 /**
+	 * @param sFilePath
+	 * @param sLeftPad
+	 * @return
+	 * @description 根据文件得到配置
+	 * @version 1.0
+	 * @author srnpr
+	 * @update 2013-4-17 下午10:43:59
+	 */
+		
+	public MPropertiesHash upMPropertiesHash(String sFilePath,String sLeftPad)
 	{
-		return getMPropertiesHash(new File(sFilePath), sLeftPad);
+		return upMPropertiesHash(new File(sFilePath), sLeftPad);
 	}
 
 
-	public MPropertiesHash getMPropertiesHash(File fFile,String sLeftPad)
+	
+	 /**
+	 * @param fFile
+	 * @param sLeftPad
+	 * @return
+	 * @description 根据文件得到配置
+	 * @version 1.0
+	 * @author srnpr
+	 * @update 2013-4-17 下午10:43:43
+	 */
+		
+	public MPropertiesHash upMPropertiesHash(File fFile,String sLeftPad)
 	{
 
 		PropertiesConfiguration pConfiguration=new PropertiesConfiguration();
@@ -87,14 +110,25 @@ public class HashHelper extends BaseClass{
 
 		}
 
-		return getMPropertiesHash(pConfiguration, sLeftPad);
+		return upMPropertiesHash(pConfiguration, sLeftPad);
 
 
 	}
 
 
 
-	private  MPropertiesHash getMPropertiesHash(PropertiesConfiguration pConfiguration,String sLeftPad)
+	
+	 /**
+	 * @param pConfiguration
+	 * @param sLeftPad
+	 * @return
+	 * @description 根据配置文件得到配置
+	 * @version 1.0
+	 * @author srnpr
+	 * @update 2013-4-17 下午10:42:17
+	 */
+		
+	private  MPropertiesHash upMPropertiesHash(PropertiesConfiguration pConfiguration,String sLeftPad)
 	{
 		MPropertiesHash mHash=new MPropertiesHash();
 		Iterator<String> em=pConfiguration.getKeys();
@@ -156,6 +190,31 @@ public class HashHelper extends BaseClass{
 	
 	
 	
+	 /**
+	 * @param sInput  结构为a=b&c=d&e=f
+	 * @return
+	 * @description 
+	 * @version 1.0
+	 * @author srnpr
+	 * @update 2013-4-17 下午10:46:37
+	 */
+		
+	public static MHashMap atConvertStringToHash(String sInput)
+	{
+		
+		MHashMap mHashMap=new MHashMap();
+		
+		for(String s:sInput.split("&"))
+		{
+			String[] sTemps=s.split("=");
+			if(sTemps.length==2)
+			{
+				mHashMap.put(sTemps[0], sTemps[1]);
+			}
+		}
+		return mHashMap;
+		
+	}
 	
 	
 	

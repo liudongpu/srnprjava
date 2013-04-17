@@ -2,7 +2,7 @@ package com.srnpr.zweb.page;
 
 import com.srnpr.zcom.base.BaseClass;
 import com.srnpr.zcom.manager.ConfigCacheManager;
-import com.srnpr.zdata.helper.DataHelper;
+import com.srnpr.zdata.support.TableSupport;
 import com.srnpr.zdata.manager.DataTableManager;
 import com.srnpr.zdata.support.DataSupport;
 import com.srnpr.zweb.enumer.EWebSet;
@@ -17,10 +17,8 @@ public class PageProcess extends BaseClass implements IWebProcess {
 
 
 		MWebPage mWebPage=new MWebPage();
-
-
-		String sPageView=wRequest.GetSet(EWebSet.Url_View);
-		String sPageTarget=wRequest.GetSet(EWebSet.Url_Target);
+		String sPageView=wRequest.upSet(EWebSet.Url_View);
+		String sPageTarget=wRequest.upSet(EWebSet.Url_Target);
 		
 		int iPageType=Integer.valueOf(ConfigCacheManager.GetHash("zdata.did_page_type").get(sPageTarget));
 		
@@ -28,7 +26,6 @@ public class PageProcess extends BaseClass implements IWebProcess {
 		
 		if (iPageType==416103002)
 		{
-			
 			MWebView mView = WebViewManager.Get(sPageView);
 			
 			DataSupport dSupport=new DataSupport();

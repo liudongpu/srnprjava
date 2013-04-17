@@ -53,7 +53,7 @@ IBaseInit {
 
 		HashHelper hashHelper = new HashHelper();
 		for (File f : files) {
-			MPropertiesHash mHash = hashHelper.getMPropertiesHash(f,
+			MPropertiesHash mHash = hashHelper.upMPropertiesHash(f,
 					"");
 
 			Enumeration<String> eKey = mHash.getKeyValue().keys();

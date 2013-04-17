@@ -4,12 +4,18 @@ import java.util.Enumeration;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
+import com.srnpr.zcom.helper.HashHelper;
 import com.srnpr.zcom.model.MHashMap;
 import com.srnpr.zweb.enumer.EWebSet;
 
 public class PageRequest {
 
 
+	
+	 /**
+	 * @fields reqMap 输入参数
+	 */
+		
 	private MHashMap reqMap=new MHashMap();
 
 	public MHashMap getReqMap() {
@@ -35,13 +41,13 @@ public class PageRequest {
 	}
 
 
-	public Boolean ContainsParam(String sName)
+	public Boolean isContainsParam(String sName)
 	{
 		return reqMap!=null&&reqMap.containsKey(sName);
 	}
 
 
-	public String GetParam(String sName)
+	public String upParam(String sName)
 	{
 		return (String)reqMap.get(sName);
 
@@ -49,22 +55,36 @@ public class PageRequest {
 
 
 
+	
+	 /**
+	 * @fields setMap  设置参数  一般指Url设置
+	 */
+		
 	private ConcurrentHashMap<EWebSet, String> setMap=new ConcurrentHashMap<EWebSet, String>();
 
-	public String GetSet(EWebSet eKey)
+	public String upSet(EWebSet eKey)
 	{
 		return setMap.get(eKey);
 	}
 
 
-	public String putSet(EWebSet eKey,String sValue)
+	public String upSet(EWebSet eKey,String sValue)
 	{
 		return setMap.put(eKey,sValue);
 	}
 	
 	
 	
-	public Map<String, String> ConvertWebSet()
+	
+	 /**
+	 * @return
+	 * @description  转换配置为Map结构
+	 * @version 1.0
+	 * @author srnpr
+	 * @update 2013-4-17 下午10:41:09
+	 */
+		
+	public Map<String, String> convertWebSet()
 	{
 		Map<String, String> mReturnMap=new ConcurrentHashMap<String, String>();
 		
@@ -80,6 +100,13 @@ public class PageRequest {
 		
 		return mReturnMap;
 		
+		
+	}
+	
+	
+	public MHashMap upParamsHashMap()
+	{
+		return HashHelper.atConvertStringToHash(upSet(EWebSet.Url_Param));
 		
 	}
 	
