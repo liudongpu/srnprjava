@@ -24,14 +24,14 @@ public class PageProcess extends BaseClass implements IWebProcess {
 		
 		
 		
-		if (iPageType==416103002)
+		if (iPageType==416120101)
 		{
 			MWebView mView = WebViewManager.Get(sPageView);
 			
 			DataSupport dSupport=new DataSupport();
 			dSupport.Put(mView.getTableName(), wRequest.getReqMap());
 		}
-		else if (iPageType==416103003)
+		else if (iPageType==416120105)
 		{
 			MWebView mView = WebViewManager.Get(sPageView);
 			

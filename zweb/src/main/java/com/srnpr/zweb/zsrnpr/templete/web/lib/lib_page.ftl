@@ -22,9 +22,9 @@
 	<tr>
       <#list e_list as e>
       	<td>
-      	<#if (e?length>7)&&(e?substring(0,7)=="@416101")>
+      	<#if (e?length>7)&&(e?substring(0,7)=="@415101")>
       		<#local es=e?split("@")>
-      		<#-- <#if (es[1]=="416101638") > -->
+      		<#-- <#if (es[1]=="415101012") > -->
       			<@m_page_href es[2] es[3] />
       		<#--</#if> -->
       		
@@ -74,7 +74,7 @@ no result
 <#macro m_page_autorun p_info_auto>
 
 <#local m_page_autorun_id=p_info_auto.getTarget() />
-<#if m_page_autorun_id=="416102001">
+<#if m_page_autorun_id=="416108001">
 	<@m_page_input p_info_auto />
 <#elseif m_page_autorun_id=="">
 	<@m_page_input p_info_auto />
@@ -91,7 +91,7 @@ no result
 
 
 	<#local m_page_autorun_id=p_info_auto.getDidOptionType() />
-	<#if m_page_autorun_id==416101002>
+	<#if m_page_autorun_id==415101002>
 		 <@m_page_option p_name=p_info_auto.getName() p_href=p_info_auto.getParams()?default('')  p_icon="icon-pencil" />
 	<#elseif m_page_autorun_id==0>
 		

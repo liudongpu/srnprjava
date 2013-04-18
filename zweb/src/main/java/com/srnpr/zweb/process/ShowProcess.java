@@ -40,7 +40,7 @@ public class ShowProcess extends WebBaseProcess
 		
 
 		//列表页
-		if (iPageType==416103001)
+		if (iPageType==416120103)
 		{
 
 		
@@ -65,7 +65,7 @@ public class ShowProcess extends WebBaseProcess
 			}
 			
 			
-			for(MWebOptions mOptions:reloadOptions(416103006, mView, wRequest, mPageInfo, null))
+			for(MWebOptions mOptions:reloadOptions(416120107, mView, wRequest, mPageInfo, null))
 			{
 				listTitle.add(mOptions.getName());
 
@@ -85,7 +85,7 @@ public class ShowProcess extends WebBaseProcess
 					}
 				}
 				
-				for(MWebOptions mOptions:reloadOptions(416103006, mView, wRequest, mPageInfo, mData))
+				for(MWebOptions mOptions:reloadOptions(416120107, mView, wRequest, mPageInfo, mData))
 				{
 					listDataList.add(mOptions.getParams());
 
@@ -106,7 +106,7 @@ public class ShowProcess extends WebBaseProcess
 			
 
 		}
-		else if (iPageType==416103002)
+		else if (iPageType==416120101)
 		{
 
 			MWebView mView = WebViewManager.Get(sPageView);
@@ -136,7 +136,7 @@ public class ShowProcess extends WebBaseProcess
 			
 
 		}
-		else if (iPageType==416103003)
+		else if (iPageType==416120105)
 		{
 			MWebView mView = WebViewManager.Get(sPageView);
 			TableSupport dHelper = DataTableManager.Get(mView.getTableName());
@@ -196,11 +196,11 @@ public class ShowProcess extends WebBaseProcess
 				String sParams=mOptions.getParams();
 				
 				
-				if(mNewOptions.getDidOptionType()==416101002)
+				if(mNewOptions.getDidOptionType()==415101001)
 				{
 					sParams=FormatHelper.FormatString(WebConst.Get(EWebConst.base_page_url), wRequest.upSet(EWebSet.Url_Path),"put",wRequest.upSet(EWebSet.Url_View),mOptions.getUid(),"");
 				}
-				else if(mNewOptions.getDidOptionType()==416101603)
+				else if(mNewOptions.getDidOptionType()==415101305)
 				{
 					sParams=FormatHelper.FormatString(WebConst.Get(EWebConst.base_page_url), wRequest.upSet(EWebSet.Url_Path),"post",wRequest.upSet(EWebSet.Url_View),mOptions.getUid(),"zid=[zid]");
 					
@@ -237,7 +237,7 @@ public class ShowProcess extends WebBaseProcess
 				}
 				
 				//结果内页特殊处理
-				if(iPageType==416103006)
+				if(iPageType==416120107)
 				{
 					sParams="@"+mNewOptions.getDidOptionType()+"@"+mNewOptions.getName()+"@"+sParams;
 				}
