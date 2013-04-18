@@ -7,7 +7,9 @@ import java.util.Map;
 
 import com.srnpr.zcom.base.BaseClass;
 import com.srnpr.zcom.helper.FormatHelper;
+import com.srnpr.zcom.helper.HashHelper;
 import com.srnpr.zcom.manager.ConfigCacheManager;
+import com.srnpr.zcom.model.MHashMap;
 import com.srnpr.zdata.support.TableSupport;
 import com.srnpr.zdata.manager.DataTableManager;
 import com.srnpr.zweb.common.WebConst;
@@ -41,6 +43,9 @@ public class ShowProcess extends WebBaseProcess
 		if (iPageType==416103001)
 		{
 
+		
+			
+			
 			MWebView mView = WebViewManager.Get(sPageView);
 			TableSupport dHelper = DataTableManager.Get(mView.getTableName());
 			
@@ -52,7 +57,9 @@ public class ShowProcess extends WebBaseProcess
 			List<String> listTitle=new ArrayList<String>();
 			
 			
-			List<Map<String, Object>> listMaps=dHelper.upList();
+	
+			
+			List<Map<String, Object>> listMaps=dHelper.upListListByQuery(wRequest.upParamsHashMap());
 			
 			
 			List<MWebFields> listFields=upUseFields(mView, iPageType);

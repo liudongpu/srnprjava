@@ -1,6 +1,7 @@
 
 package com.srnpr.zdata.process;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -41,7 +42,31 @@ public class DataProcess extends BaseClass
 	{
 
 		return upList("*", "", -1, 0, (Object[]) args);
+		
+		
 	}
+	
+	
+	
+	public List<Map<String, Object>> upListListByQuery(MHashMap mHashMap)
+	{
+		
+		
+		
+		ArrayList<Object> aArgsArrayList=new ArrayList<Object>();
+		
+		
+		for(String s:mHashMap.GetKeys())
+		{
+			aArgsArrayList.add(s);
+			aArgsArrayList.add(mHashMap.get(s));
+		}
+		
+
+		return upList("*", "", -1, 0, aArgsArrayList.toArray());
+	}
+	
+	
 
 	public List<Map<String, Object>> upList(
 			String sRows,
