@@ -89,7 +89,15 @@ public class ShowProcess extends WebBaseProcess
 				
 				for(MWebOptions mOptions:listOptions)
 				{
+					
+					
+					
+					
 					listDataList.add(mOptions.getName());
+					
+					
+					
+					
 				}
 				
 				
@@ -192,11 +200,7 @@ public class ShowProcess extends WebBaseProcess
 				MWebOptions mNewOptions = new MWebOptions();
 				mNewOptions.setName(mOptions.getName());
 				mNewOptions.setDidOptionType(mOptions.getDidOptionType());
-				
-				
 				String sParams=mOptions.getParams();
-				
-				
 				if(mNewOptions.getDidOptionType()==416101002)
 				{
 					sParams=FormatHelper.FormatString(WebConst.Get(EWebConst.base_page_url), wRequest.upSet(EWebSet.Url_Path),"put",wRequest.upSet(EWebSet.Url_View),mOptions.getUid(),"");

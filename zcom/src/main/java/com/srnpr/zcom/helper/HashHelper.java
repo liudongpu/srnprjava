@@ -204,6 +204,9 @@ public class HashHelper extends BaseClass{
 		
 		MHashMap mHashMap=new MHashMap();
 		
+		if(sInput!=null)
+		{
+		
 		for(String s:sInput.split("&"))
 		{
 			String[] sTemps=s.split("=");
@@ -211,6 +214,7 @@ public class HashHelper extends BaseClass{
 			{
 				mHashMap.put(sTemps[0], sTemps[1]);
 			}
+		}
 		}
 		return mHashMap;
 		
