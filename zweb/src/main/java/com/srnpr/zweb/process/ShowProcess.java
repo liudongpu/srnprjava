@@ -48,16 +48,10 @@ public class ShowProcess extends WebBaseProcess
 			
 			MWebView mView = WebViewManager.Get(sPageView);
 			TableSupport dHelper = DataTableManager.Get(mView.getTableName());
-			
-			
-			
+
 			List<List<String>> listPageData=new ArrayList<List<String>>();
-			
-			
+
 			List<String> listTitle=new ArrayList<String>();
-			
-			
-	
 			
 			List<Map<String, Object>> listMaps=dHelper.upListListByQuery(wRequest.upParamsHashMap());
 			
@@ -69,10 +63,14 @@ public class ShowProcess extends WebBaseProcess
 			{
 				listTitle.add(mFields.getFieldName());
 			}
-			for(MWebOptions mOptions:listOptions)
+			
+			
+			for(MWebOptions mOptions:reloadOptions(416103006, mView, wRequest, mPageInfo, null))
 			{
 				listTitle.add(mOptions.getName());
+
 			}
+			
 
 			listPageData.add(listTitle);
 			
@@ -87,17 +85,10 @@ public class ShowProcess extends WebBaseProcess
 					}
 				}
 				
-				for(MWebOptions mOptions:listOptions)
+				for(MWebOptions mOptions:reloadOptions(416103006, mView, wRequest, mPageInfo, mData))
 				{
-					
-					
-					
-					
-					listDataList.add(mOptions.getName());
-					
-					
-					
-					
+					listDataList.add(mOptions.getParams());
+
 				}
 				
 				
@@ -111,7 +102,7 @@ public class ShowProcess extends WebBaseProcess
 			//mPageInfo.setPageData(dHelper.upList());
 			mPageInfo.setPageData(listPageData);
 			
-			mPageInfo.setPageOptions(ResetOptions(iPageType, mView,wRequest,mPageInfo));
+			mPageInfo.setPageOptions(reloadOptions(iPageType, mView,wRequest,mPageInfo,null));
 			
 
 		}
@@ -141,7 +132,7 @@ public class ShowProcess extends WebBaseProcess
 
 			mPageInfo.setPageData(aElms);
 			
-			mPageInfo.setPageOptions(ResetOptions(iPageType, mView,wRequest,mPageInfo));
+			mPageInfo.setPageOptions(reloadOptions(iPageType, mView,wRequest,mPageInfo,null));
 			
 
 		}
@@ -149,12 +140,14 @@ public class ShowProcess extends WebBaseProcess
 		{
 			MWebView mView = WebViewManager.Get(sPageView);
 			TableSupport dHelper = DataTableManager.Get(mView.getTableName());
-			
-			
-			Map<String, Object> mData=dHelper.upOneMap("zid",wRequest.upSet(EWebSet.Url_Param));
-			
+			Map<String, Object> mData=dHelper.upOneMap(wRequest.upParamsHashMap());
 			List<MWebElement> aElms = new ArrayList<MWebElement>();
-
+			
+			
+			
+			
+			
+			
 			for (Map<String, Object> mMap : DataTableManager.Get("zdata_column").upListListByQuery("table_name", mView.getTableName()))
 			{
 				MWebElement mElm = new MWebElement();
@@ -170,7 +163,7 @@ public class ShowProcess extends WebBaseProcess
 			}
 			mPageInfo.setPageData(aElms);
 			
-			mPageInfo.setPageOptions(ResetOptions(iPageType, mView,wRequest,mPageInfo));
+			mPageInfo.setPageOptions(reloadOptions(iPageType, mView,wRequest,mPageInfo,null));
 		}
 		else
 		{
@@ -188,7 +181,7 @@ public class ShowProcess extends WebBaseProcess
 	}
 	
 	
-	public List<MWebOptions> ResetOptions(int iPageType,MWebView mView,PageRequest wRequest,MWebPage mPageInfo)
+	public List<MWebOptions> reloadOptions(int iPageType,MWebView mView,PageRequest wRequest,MWebPage mPageInfo,Map<String, Object> mData)
 	{
 		List<MWebOptions> listOptions = new ArrayList<MWebOptions>();
 
@@ -201,14 +194,54 @@ public class ShowProcess extends WebBaseProcess
 				mNewOptions.setName(mOptions.getName());
 				mNewOptions.setDidOptionType(mOptions.getDidOptionType());
 				String sParams=mOptions.getParams();
+				
+				
 				if(mNewOptions.getDidOptionType()==416101002)
 				{
 					sParams=FormatHelper.FormatString(WebConst.Get(EWebConst.base_page_url), wRequest.upSet(EWebSet.Url_Path),"put",wRequest.upSet(EWebSet.Url_View),mOptions.getUid(),"");
 				}
-				else if(mNewOptions.getDidOptionType()==416101003)
+				else if(mNewOptions.getDidOptionType()==416101603)
 				{
+					sParams=FormatHelper.FormatString(WebConst.Get(EWebConst.base_page_url), wRequest.upSet(EWebSet.Url_Path),"post",wRequest.upSet(EWebSet.Url_View),mOptions.getUid(),"zid=[zid]");
 					
 				}
+				
+				
+				if(sParams.indexOf("]")>-1)
+				{
+					String[] sSplistsStrings=sParams.split("]");
+					MHashMap mHashMap=new MHashMap();
+					for(String sSpt:sSplistsStrings)
+					{
+						int iIndexLeft=sSpt.lastIndexOf("[");
+						if(iIndexLeft>-1)
+						{
+							String[] sKeysStrings=sSpt.substring(iIndexLeft+1).split("@");
+							
+							if(sKeysStrings.length==2)
+							{
+								
+								if(sKeysStrings[0].length()==0)
+								{
+									sParams=sParams.replace(sSpt.substring(iIndexLeft)+"]", String.valueOf(mData.get(sSpt.substring(iIndexLeft+1))));
+								}
+								
+							}
+							else {
+								if(mData!=null)
+								sParams=sParams.replace(sSpt.substring(iIndexLeft)+"]", String.valueOf(mData.get(sSpt.substring(iIndexLeft+1))));
+							}
+							
+						}
+					}
+				}
+				
+				//结果内页特殊处理
+				if(iPageType==416103006)
+				{
+					sParams="@"+mNewOptions.getDidOptionType()+"@"+mNewOptions.getName()+"@"+sParams;
+				}
+				
 				
 				
 				

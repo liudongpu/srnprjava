@@ -21,7 +21,18 @@
   	<#if (e_list_index>0)>
 	<tr>
       <#list e_list as e>
-      	<td>${e}</td>
+      	<td>
+      	<#if (e?length>7)&&(e?substring(0,7)=="@416101")>
+      		<#local es=e?split("@")>
+      		<#-- <#if (es[1]=="416101638") > -->
+      			<@m_page_href es[2] es[3] />
+      		<#--</#if> -->
+      		
+			
+      	<#else>
+      	${e}
+      	</#if>
+      	</td>
       </#list>
     </tr>
     
@@ -45,6 +56,11 @@ no result
 
 </#macro>
 
+
+
+<#macro m_page_href  p_name  p_href >
+<a  href="${p_href!}" target=“_blank”>${p_name!}</a>
+</#macro>
 
 
 <#macro m_page_option  p_name  p_href  p_icon>

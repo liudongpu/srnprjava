@@ -31,6 +31,14 @@ public class DataProcess extends BaseClass
 
 		return upList("*", "", 0, 1, (Object[]) args).get(0);
 	}
+	
+	public Map<String, Object> upOneMap(MHashMap mHashMap)
+	{
+
+		return upList("*", "", 0, 1, mHashMap).get(0);
+	}
+	
+	
 
 	public List<Map<String, Object>> upList()
 	{
@@ -50,9 +58,16 @@ public class DataProcess extends BaseClass
 	
 	public List<Map<String, Object>> upListListByQuery(MHashMap mHashMap)
 	{
-		
-		
-		
+		return upList("*", "", -1, 0, mHashMap);
+	}
+	
+	public List<Map<String, Object>> upList(
+			String sRows,
+			String sOrder,
+			int start,
+			int end,
+			MHashMap mHashMap)
+	{
 		ArrayList<Object> aArgsArrayList=new ArrayList<Object>();
 		
 		
@@ -63,10 +78,8 @@ public class DataProcess extends BaseClass
 		}
 		
 
-		return upList("*", "", -1, 0, aArgsArrayList.toArray());
+		return upList(sRows, sOrder, start, end, aArgsArrayList.toArray());
 	}
-	
-	
 
 	public List<Map<String, Object>> upList(
 			String sRows,

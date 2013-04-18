@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 3.5.2.2
+-- version 3.5.2
 -- http://www.phpmyadmin.net
 --
--- 主机: 127.0.0.1
--- 生成日期: 2013 年 04 月 17 日 20:05
--- 服务器版本: 5.5.27
--- PHP 版本: 5.4.7
+-- 主机: localhost
+-- 生成日期: 2013 年 04 月 18 日 23:49
+-- 服务器版本: 5.5.25a
+-- PHP 版本: 5.4.4
 
 SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -199,7 +199,7 @@ CREATE TABLE IF NOT EXISTS `zsrnpr_define` (
   PRIMARY KEY (`zid`),
   UNIQUE KEY `code` (`code`),
   UNIQUE KEY `name` (`name`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=45 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=49 ;
 
 --
 -- 转存表中的数据 `zsrnpr_define`
@@ -215,10 +215,10 @@ INSERT INTO `zsrnpr_define` (`zid`, `code`, `name`, `value`, `note`, `level`) VA
 (10, '404105001', 'int', 'int', '', 3),
 (11, '404105002', 'varchar', 'varchar', '', 3),
 (12, '404105003', 'decimal', 'decimal', '', 3),
-(13, '416101', '页面按钮工具栏', '', '', 2),
+(13, '416101', '页面按钮工具栏', 'options', '', 2),
 (14, '416101001', '提交', '', '', 3),
-(15, '404', '数据库定义', '', '', 1),
-(16, '416', '页面定义', '', '', 1),
+(15, '404', '数据库定义', 'data', '', 1),
+(16, '416', '页面定义', 'page', '', 1),
 (19, '416102', '页面元素类型', 'did_field_type', '', 2),
 (20, '416102001', '文本输入框', 'input', '', 3),
 (21, '404119', '数据源类型定义', '', '定义数据源用，用于zdata_source表', 2),
@@ -231,11 +231,15 @@ INSERT INTO `zsrnpr_define` (`zid`, `code`, `name`, `value`, `note`, `level`) VA
 (36, '416103003', '修改页', 'post', '', 3),
 (37, '416103004', '查看页', 'show', '', 3),
 (38, '416101002', '新增', '', '', 3),
-(40, '416101003', '列表', '', '', 3),
+(40, '416101003', '修改', '', '', 3),
 (41, '416103005', '删除页', 'delete', '', 3),
 (42, '416103101', '列表中字段', '', '', 3),
 (43, '416102002', '选择下拉框', 'select', '', 3),
-(44, '416103006', '查询结果内', 'table', '', 3);
+(44, '416103006', '查询结果内', 'grid', '', 3),
+(45, '416101638', '自定义链接', 'href', '自定义链接', 3),
+(46, '416101603', '列表页表格-修改', 'list-edit', '列表页表格-修改', 3),
+(47, '416103007', '执行专用', 'func', '', 3),
+(48, '415', '操作定义', 'options', '', 1);
 
 -- --------------------------------------------------------
 
@@ -277,7 +281,7 @@ INSERT INTO `zweb_fields` (`zid`, `view_code`, `column_name`, `field_name`, `did
 (33, 'system_fields', 'deep_show', '展示标记', 0, '', '', 0, 0, 0, 0, 0),
 (38, 'system_table', 'zid', '', 0, '', '', 0, 0, 0, 0, 0),
 (39, 'system_table', 'uid', '', 0, '', '', 0, 0, 0, 0, 0),
-(40, 'system_table', 'code', '编码', 0, '', '', 0, 0, 0, 0, 0),
+(40, 'system_table', 'code', '编码2', 0, '', '', 0, 0, 0, 0, 0),
 (41, 'system_table', 'view_name', '视图名称', 0, '', '', 0, 0, 0, 0, 0),
 (42, 'system_table', 'table_name', '表名称', 0, '', '', 0, 0, 0, 0, 0);
 
@@ -296,7 +300,7 @@ CREATE TABLE IF NOT EXISTS `zweb_options` (
   `did_option_type` int(11) DEFAULT '0',
   `params` varchar(100) DEFAULT '' COMMENT '操作参数',
   PRIMARY KEY (`zid`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='操作表' AUTO_INCREMENT=7 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='操作表' AUTO_INCREMENT=9 ;
 
 --
 -- 转存表中的数据 `zweb_options`
@@ -308,7 +312,9 @@ INSERT INTO `zweb_options` (`zid`, `uid`, `view_code`, `name`, `did_page_type`, 
 (3, '', 'system_table', '操作列表', 416103003, 416101003, ''),
 (4, '', 'system_table', '提交', 416103003, 0, ''),
 (5, '', 'system_table', '修改', 416103101, 416101002, ''),
-(6, '42', 'system_table', '修改字段', 416103001, 416101002, '');
+(6, '42', 'system_table', '修改字段', 416103006, 416101638, 'zyou/list-system_fields-42-view_code=[code]'),
+(7, '', 'system_fields', '修改', 416103006, 416101603, ''),
+(8, '', 'system_table', '修改', 416103006, 416101603, '');
 
 -- --------------------------------------------------------
 
@@ -330,7 +336,7 @@ CREATE TABLE IF NOT EXISTS `zweb_view` (
 --
 
 INSERT INTO `zweb_view` (`zid`, `uid`, `code`, `view_name`, `table_name`) VALUES
-(1, '1', 'system_table', '系统视图2', 'zweb_view'),
+(1, '1', 'system_table', '系统视图3', 'zweb_view'),
 (2, '2', 'system_fields', '视图字段', 'zweb_fields'),
 (3, '3', 'system_options', '视图操作', 'zweb_options');
 
