@@ -1,6 +1,7 @@
 
 package com.srnpr.zweb.manager;
 
+import java.util.Enumeration;
 import java.util.Map;
 
 import org.apache.commons.lang.StringUtils;
@@ -41,8 +42,12 @@ public class WebViewManager extends BaseClass implements IBaseManager,
 
 				MWebFields mFields = new MWebFields();
 
-				mFields.setFieldName(String.valueOf(mFieldMap.get("field_name")));
+				
 				mFields.setColumnName(String.valueOf(mFieldMap.get("column_name")));
+				
+				mFields.setFieldName(StringUtils.defaultIfEmpty(String.valueOf(mFieldMap.get("field_name")),mFields.getColumnName()));
+				
+				
 				mFields.setDidFieldType(Integer.valueOf(String.valueOf(mFieldMap.get("did_field_type"))));
 				mFields.setSourceCode(String.valueOf(mFieldMap.get("source_code")));
 				
@@ -80,6 +85,41 @@ public class WebViewManager extends BaseClass implements IBaseManager,
 		}
 
 	}
+	
+	
+	
+	public synchronized static void recheckData()
+	{
+		
+		
+			Enumeration<String> eKey=ConstStatic.CONST_WEBVIEW_HASH.keys();
+		
+			while (eKey.hasMoreElements()) {
+				String sCode = (String) eKey.nextElement();
+				
+				String sTableName=ConstStatic.CONST_WEBVIEW_HASH.get(sCode).getTableName();
+				
+				String sSql="insert into zweb_fields(uid,view_code,column_name,field_name) select replace(uuid(),'-',''),'"
+						+sCode+"',column_name,note from zdata_column where table_name={0} and column_name not in(select column_name from zweb_fields where view_code='"+sCode+"')"
+						;
+				
+				
+				DataTableManager.Get(sTableName).doExec(sSql, sTableName);
+				
+			
+				
+				
+			}
+		
+		
+			
+		
+	}
+	
+	
+	
+	
+	
 
 	public static MWebView Get(String sKey)
 	{

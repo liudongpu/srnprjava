@@ -4,6 +4,7 @@ import java.util.Enumeration;
 import java.util.concurrent.ConcurrentHashMap;
 
 import com.srnpr.zcom.base.BaseClass;
+import com.srnpr.zcom.common.ComFunction;
 import com.srnpr.zcom.model.MHashMap;
 import com.srnpr.zcom.model.MResult;
 import com.srnpr.zdata.manager.DataTableManager;
@@ -27,7 +28,7 @@ public class DataSupport extends BaseClass
 	 * @update 2013-4-16 下午9:57:24
 	 */
 		
-	public String Put(String sTableName,MHashMap mMap)
+	public String insertData(String sTableName,MHashMap mMap)
 	{
 		
 		
@@ -49,14 +50,39 @@ public class DataSupport extends BaseClass
 				mPut.put(sColumn, mMap.get(sColumn));
 			}
 		}
-	
+		
+		
+		
+		if(mDataTable.contains("uid"))
+		{
+			mPut.put("uid", ComFunction.upUuid());
+		}
+		if(mDataTable.contains("zid"))
+		{
+			mPut.remove("zid", mPut.get("zid"));
+		}
+		
+		
+		
 		dHelper.inPut(mPut);
 		return "";
 
 	}
 	
 	
-	public String Post(String sTableName,MHashMap mMap,String sKeys)
+	
+	 /**
+	 * @param sTableName  change data
+	 * @param mMap
+	 * @param sKeys
+	 * @return
+	 * @description 
+	 * @version 1.0
+	 * @author srnpr
+	 * @update 2013-4-20 上午12:51:14
+	 */
+		
+	public String updateData(String sTableName,MHashMap mMap,String sKeys)
 	{
 		
 		TableSupport dHelper=DataTableManager.Get(sTableName);

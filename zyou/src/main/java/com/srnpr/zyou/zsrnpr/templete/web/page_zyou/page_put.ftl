@@ -19,14 +19,7 @@
 </#list>
  
 
-  <div class="control-group">
-    <div class="controls">
-      <label class="checkbox">
-        <input type="checkbox"> Remember me
-      </label>
-      <button type="button" class="btn" onclick="zen.page.submit('page_form')">Sign in</button>
-    </div>
-  </div>
+ 
 </form>
 
 

@@ -1,1 +1,1 @@
-<#compress><#assign webconfig=WebPage["WebConfig"]><#assign pageinfo=WebPage["PageInfo"]>${pageinfo.getPageData()}</#compress>
+<#compress>${WebPage}</#compress>

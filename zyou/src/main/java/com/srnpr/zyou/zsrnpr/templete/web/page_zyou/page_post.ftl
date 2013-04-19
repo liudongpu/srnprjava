@@ -23,14 +23,7 @@
  <@m_page_input e_list />
 
 </#list>
- 
 
-  <div class="control-group">
-    <div class="controls">
-     
-      <button type="button" class="btn" onclick="zen.page.submit('page_form')">提交</button>
-    </div>
-  </div>
 </form>
 
 

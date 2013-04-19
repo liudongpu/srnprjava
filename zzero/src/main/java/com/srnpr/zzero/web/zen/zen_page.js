@@ -1,9 +1,13 @@
 zen.e({
 	page : {
 
-		submit : function(sFormId) {
-			$('#' + sFormId).ajaxSubmit(function(data) {
-
+		submit : function(sId,sAction) {
+			
+			var aForm=$(sId).parents('form');
+			
+			aForm.attr("action",sAction);
+			alert(aForm.html());
+			$(aForm).ajaxSubmit(function(data) {
 				
 				var obj=$.evalJSON(data);
 				
@@ -12,6 +16,17 @@ zen.e({
 			});
 
 		},
+		
+		call:function(sUrl)
+		{
+			$.getJSON(sUrl, function(data) {
+				
+				alert(data.flag);
+				
+			});
+		},
+		
+		
 		init : function() {
 			
 		}

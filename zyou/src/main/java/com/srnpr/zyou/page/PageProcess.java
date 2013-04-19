@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
+import com.srnpr.zcom.model.MResult;
 import com.srnpr.zdata.manager.DataTableManager;
 import com.srnpr.zdata.support.TableSupport;
 import com.srnpr.zweb.enumer.EWebSet;
@@ -14,46 +15,44 @@ import com.srnpr.zweb.model.MWebElement;
 import com.srnpr.zweb.model.MWebPage;
 import com.srnpr.zweb.model.MWebView;
 import com.srnpr.zweb.page.PageRequest;
-import com.srnpr.zweb.process.ShowProcess;
+import com.srnpr.zweb.process.WebBaseProcess;
 
-public class PageProcess extends ShowProcess implements IWebProcess
+public class PageProcess extends WebBaseProcess implements IWebProcess
 {
 
 	public MWebPage Process(PageRequest wRequest)
 	{
 
+		return super.ShowHtml(wRequest);
+	}
+
+	public MResult result(PageRequest pRequest) {
 		
-		if(wRequest.upSet(EWebSet.Url_View).equals("system_fields")&&wRequest.upSet(EWebSet.Url_Target).equals("list"))
+		
+		
+		if(pRequest.getParamsMap().containsKey("func_do"))
 		{
 			
-			
-			MWebView mView=WebViewManager.Get(wRequest.upSet(EWebSet.Url_View));
-			
-			String sTableName=mView.getTableName();
-			
-			String sSql="insert into zweb_fields(view_code,column_name,field_name) select '"
-			+mView.getCode()+"',column_name,note from zdata_column where table_name={0} and column_name not in(select column_name from zdata_column where view_code='"+mView.getCode()+"')"
-			;
-			
-			
-			//DataTableManager.Get(mView.getTableName()).doExec(sSql, sTableName);
-		
-			
-			
-			
-			/*
-			 * 
-			 * 
-insert into zweb_fields
-select 0,'system_fields',column_name,note,0,'','' from zdata_column where table_name=(select table_name from zweb_view where code='system_fields')
-			 */
+			if(pRequest.getParamsMap().get("func_do").equals("refreshdata"))
+			{
+				
+				
+				WebViewManager.recheckData();
+				
+				
+
+				
+			}
 			
 			
 		}
-		
-		
-		
-		return super.ShowHtml(wRequest);
+		else {
+			return super.showResult(pRequest);
+		}
+		MResult mResult=new MResult();
+		mResult.Error(111, "err");
+		return mResult;
+
 	}
 
 }

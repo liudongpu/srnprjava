@@ -48,7 +48,7 @@ public class HomeController {
 		}
 
 
-		model.addAttribute("serverTime", new WebPage().GetPageHtml(sPath,sUrl,cMap) );
+		model.addAttribute("serverTime", new WebPage().upPageHtml(sPath,sUrl,cMap) );
 		return "home";
 	}
 

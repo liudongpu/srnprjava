@@ -7,6 +7,7 @@ import java.util.List;
 import java.util.Map;
 
 import org.apache.commons.lang.StringUtils;
+import org.springframework.jdbc.core.JdbcTemplate;
 
 import com.srnpr.zcom.base.BaseClass;
 import com.srnpr.zcom.model.MHashMap;
@@ -150,7 +151,8 @@ public class DataProcess extends BaseClass
 		
 		
 		
-		return DataBaseManager.Get(sDataBase).execute(sSql, hParamHashMap, null);
+		
+		return DataBaseManager.Get(sDataBase).update(sSql, hParamHashMap);
 		
 		
 	}

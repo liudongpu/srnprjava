@@ -4,6 +4,7 @@ import java.util.UUID;
 
 import org.junit.Test;
 
+import com.srnpr.zcom.model.MHashMap;
 import com.srnpr.zweb.TestBase;
 import com.srnpr.zweb.page.WebPage;
 
@@ -18,7 +19,7 @@ public class FreeMarkerTest extends TestBase {
 
 
 
-		BDebug(0,new WebPage().GetPageHtml("zweb","post-system_table-aa-1"));
+		BDebug(0,new WebPage().upPageHtml("zweb","post-system_table-aa-1",new MHashMap()));
 
 		
 

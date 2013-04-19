@@ -12,11 +12,20 @@ public class PageRequest {
 
 
 	
+	private int didPageType=0;
+	
+	
+	
+	
 	 /**
 	 * @fields reqMap 输入参数
 	 */
 		
 	private MHashMap reqMap=new MHashMap();
+	
+	private MHashMap paramsMap=new MHashMap();
+	
+	
 
 	public MHashMap getReqMap() {
 		return reqMap;
@@ -41,13 +50,13 @@ public class PageRequest {
 	}
 
 
-	public Boolean isContainsParam(String sName)
+	public Boolean isContainsRequestParam(String sName)
 	{
 		return reqMap!=null&&reqMap.containsKey(sName);
 	}
 
 
-	public String upParam(String sName)
+	public String upRequestParam(String sName)
 	{
 		return (String)reqMap.get(sName);
 
@@ -68,7 +77,7 @@ public class PageRequest {
 	}
 
 
-	public String upSet(EWebSet eKey,String sValue)
+	public String inSet(EWebSet eKey,String sValue)
 	{
 		return setMap.put(eKey,sValue);
 	}
@@ -95,19 +104,36 @@ public class PageRequest {
 			mReturnMap.put(eWebRequest.name(), setMap.get(eWebRequest));
 		}
 		
-		
-		
-		
 		return mReturnMap;
 		
 		
 	}
 	
 	
-	public MHashMap upParamsHashMap()
+	public void upParamsHashMap()
 	{
-		return HashHelper.atConvertStringToHash(upSet(EWebSet.Url_Param));
+		paramsMap= HashHelper.atConvertStringToHash(upSet(EWebSet.Url_Param));
 		
+	}
+
+
+	public int getDidPageType() {
+		return didPageType;
+	}
+
+
+	public void setDidPageType(int didPageType) {
+		this.didPageType = didPageType;
+	}
+
+
+	public MHashMap getParamsMap() {
+		return paramsMap;
+	}
+
+
+	public void setParamsMap(MHashMap paramsMap) {
+		this.paramsMap = paramsMap;
 	}
 	
 	

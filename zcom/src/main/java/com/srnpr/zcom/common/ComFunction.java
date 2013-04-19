@@ -1,5 +1,6 @@
 package com.srnpr.zcom.common;
 
+import java.util.UUID;
 import java.util.concurrent.ConcurrentHashMap;
 
 import org.apache.commons.lang.StringUtils;
@@ -41,7 +42,7 @@ public class ComFunction {
 
 	public static ConcurrentHashMap<String, String> ConfigHash(String sKey)
 	{
-		return new ConfigCacheManager().GetHash(sKey);
+		return  ConfigCacheManager.GetHash(sKey);
 	}
 
 
@@ -60,6 +61,21 @@ public class ComFunction {
 
 
 
+	
+	
+	
+	 /**
+	 * @return 生成32位UUID
+	 * @description 
+	 * @version 1.0
+	 * @author srnpr
+	 * @update 2013-4-20 上午12:58:20
+	 */
+		
+	public static String upUuid()
+	{
+		return UUID.randomUUID().toString().replace("-", "");
+	}
 
 
 

@@ -68,6 +68,11 @@ no result
 </#macro>
 
 
+<#macro m_page_option_click  p_name  p_href  p_icon>
+<a class="btn  btn-small" onclick="${p_href!}" ><i class="${p_icon!}"></i>&nbsp;&nbsp;${p_name!}</a>
+</#macro>
+
+
 
 
 <#--   定义输出自动判断   -->
@@ -93,8 +98,11 @@ no result
 	<#local m_page_autorun_id=p_info_auto.getDidOptionType() />
 	<#if m_page_autorun_id==415101002>
 		 <@m_page_option p_name=p_info_auto.getName() p_href=p_info_auto.getParams()?default('')  p_icon="icon-pencil" />
-	<#elseif m_page_autorun_id==0>
-		
+	<#elseif m_page_autorun_id==415101019>
+		 <@m_page_option_click  p_name=p_info_auto.getName() p_href="zen.page.submit(this,'"+p_info_auto.getParams()?default('')+"')"  p_icon="icon-ok" />
+	<#elseif m_page_autorun_id==415101006>
+		 <@m_page_option_click  p_name=p_info_auto.getName() p_href="zen.page.call('"+p_info_auto.getParams()?default('')+"')"  p_icon="icon-ok" />
+	
 	<#else>
 		<@m_page_option p_name=p_info_auto.getName() p_href=p_info_auto.getParams()?default('')  p_icon="icon-pencil" />
 	</#if>
