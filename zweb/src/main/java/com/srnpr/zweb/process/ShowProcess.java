@@ -57,7 +57,7 @@ public class ShowProcess extends WebBaseProcess
 			
 			
 			List<MWebFields> listFields=upUseFields(mView, iPageType);
-			List<MWebOptions> listOptions=upUseOptions(mView, iPageType);
+			//List<MWebOptions> listOptions=upUseOptions(mView, iPageType);
 			
 			for(MWebFields mFields: listFields)
 			{
@@ -126,9 +126,34 @@ public class ShowProcess extends WebBaseProcess
 					mElm.setValue(wRequest.upParam(sName));
 				}
 
-				aElms.add(mElm);
+				//aElms.add(mElm);
 
 			}
+			
+			List<MWebFields> listFields=upUseFields(mView, iPageType);
+			for(MWebFields mFields:listFields)
+			{
+				
+				MWebElement mElement=new MWebElement();
+				
+				mElement.setName(mFields.getFieldName());
+				
+				mElement.setTarget(String.valueOf( mFields.getDidFieldType()));
+				
+				
+				if (wRequest.isContainsParam(mFields.getColumnName()))
+				{
+					mElement.setValue(wRequest.upParam(mFields.getColumnName()));
+				}
+				
+				aElms.add(mElement);
+
+			}
+			
+			
+			
+			
+			
 
 			mPageInfo.setPageData(aElms);
 			
