@@ -1,6 +1,6 @@
 package com.srnpr.zweb.model;
 
-public class MWebFields
+public class MWebFields implements Cloneable
 {
 	
 	
@@ -13,6 +13,11 @@ public class MWebFields
 	
 	private String sourceCode="";
 
+	
+	
+	private String fieldValue="";
+	
+	
 	public String getSourceCode()
 	{
 
@@ -129,5 +134,37 @@ public class MWebFields
 
 		this.columnName = columnName;
 	}
+	
+	
+	public MWebFields clone()
+	{
+
+		MWebFields o = null;
+		try
+		{
+			o = (MWebFields) super.clone();
+		}
+		catch (CloneNotSupportedException e)
+		{
+			e.printStackTrace();
+		}
+		return o;
+	}
+
+	
+
+	public String getFieldValue()
+	{
+
+		return fieldValue;
+	}
+
+	public void setFieldValue(String fieldValue)
+	{
+
+		this.fieldValue = fieldValue;
+	}
+	
+	
 
 }

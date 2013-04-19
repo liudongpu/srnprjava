@@ -48,9 +48,9 @@ no result
 
 <#macro m_page_input  p_info>
 <div class="control-group">
-    <label class="control-label" for="${p_info.getName()?default('')}">${p_info.getName()?default('')}</label>
+    <label class="control-label" for="${p_info.getColumnName()?default('')}">${p_info.getFieldName()?default('')}</label>
     <div class="controls">
-      <input type="text" id="${p_info.getName()?default('')}" name="${p_info.getName()?default('')}" value="${p_info.getValue()?default('')}"/>
+      <input type="text" id="${p_info.getColumnName()?default('')}" name="${p_info.getColumnName()?default('')}" value="${p_info.getFieldValue()?default('')}"  />
     </div>
   </div>
 
@@ -73,10 +73,10 @@ no result
 <#--   定义输出自动判断   -->
 <#macro m_page_autorun p_info_auto>
 
-<#local m_page_autorun_id=p_info_auto.getTarget() />
-<#if m_page_autorun_id=="416108001">
+<#local m_page_autorun_id=p_info_auto.getDidFieldType() />
+<#if m_page_autorun_id==416108001>
 	<@m_page_input p_info_auto />
-<#elseif m_page_autorun_id=="">
+<#elseif m_page_autorun_id==0>
 	<@m_page_input p_info_auto />
 <#else>
 	<@m_page_input p_info_auto />

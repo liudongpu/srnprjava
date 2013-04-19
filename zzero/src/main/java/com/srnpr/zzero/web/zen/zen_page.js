@@ -4,7 +4,10 @@ zen.e({
 		submit : function(sFormId) {
 			$('#' + sFormId).ajaxSubmit(function(data) {
 
-				alert(data);
+				
+				var obj=$.evalJSON(data);
+				
+				alert(obj.flag);
 
 			});
 

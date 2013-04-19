@@ -4,8 +4,8 @@
 
 
 ########  初始化表
-insert into zdata.zdata_table
-select 0,TABLE_NAME,TABLE_NAME,TABLE_COMMENT from information_schema.TABLES where TABLE_SCHEMA in
+insert into zdata.zdata_table (`uid`,`code`,`name`,`note`)
+select replace(uuid(),'-',''),TABLE_NAME,TABLE_NAME,TABLE_COMMENT from information_schema.TABLES where TABLE_SCHEMA in
 (select name from zdata.zdata_server)
 and TABLE_NAME not in(select name from zdata.zdata_table);
 
@@ -13,8 +13,9 @@ and TABLE_NAME not in(select name from zdata.zdata_table);
 
 
 insert into zdata.zdata_column
+(`uid`,`server_name`,`table_name`,`column_name`,`did_null_able`,`did_column_type`,`length_max`,`length_scale`,`note`,`orderid`)
 SELECT 
-0 zid,
+replace(uuid(),'-',''),
 a.TABLE_SCHEMA server_name,
 a.TABLE_NAME table_name,
 a.column_name column_name,

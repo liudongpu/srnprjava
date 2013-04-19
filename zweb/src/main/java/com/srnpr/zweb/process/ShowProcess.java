@@ -113,80 +113,54 @@ public class ShowProcess extends WebBaseProcess
 			
 		
 
-			List<MWebElement> aElms = new ArrayList<MWebElement>();
-
-			for (Map<String, Object> mMap : DataTableManager.Get("zdata_column").upListListByQuery("table_name", mView.getTableName()))
-			{
-				MWebElement mElm = new MWebElement();
-				mElm.setTarget("m_page_input");
-				String sName = (String) mMap.get("column_name");
-				mElm.setName(sName);
-				if (wRequest.isContainsParam(sName))
-				{
-					mElm.setValue(wRequest.upParam(sName));
-				}
-
-				//aElms.add(mElm);
-
-			}
+			
+			List<MWebFields> mPageDataFields=new ArrayList<MWebFields>();
+		
 			
 			List<MWebFields> listFields=upUseFields(mView, iPageType);
 			for(MWebFields mFields:listFields)
 			{
 				
-				MWebElement mElement=new MWebElement();
-				
-				mElement.setName(mFields.getFieldName());
-				
-				mElement.setTarget(String.valueOf( mFields.getDidFieldType()));
-				
-				
+				MWebFields mNewFields=mFields.clone();
 				if (wRequest.isContainsParam(mFields.getColumnName()))
 				{
-					mElement.setValue(wRequest.upParam(mFields.getColumnName()));
+					mNewFields.setFieldValue(wRequest.upParam(mFields.getColumnName()));
 				}
-				
-				aElms.add(mElement);
-
+				mPageDataFields.add(mNewFields);
 			}
 			
-			
-			
-			
-			
-
-			mPageInfo.setPageData(aElms);
-			
+			mPageInfo.setPageData(mPageDataFields);
 			mPageInfo.setPageOptions(reloadOptions(iPageType, mView,wRequest,mPageInfo,null));
 			
-
 		}
 		else if (iPageType==416120105)
 		{
 			MWebView mView = WebViewManager.Get(sPageView);
 			TableSupport dHelper = DataTableManager.Get(mView.getTableName());
+			
 			Map<String, Object> mData=dHelper.upOneMap(wRequest.upParamsHashMap());
-			List<MWebElement> aElms = new ArrayList<MWebElement>();
 			
 			
 			
-			
-			
-			
-			for (Map<String, Object> mMap : DataTableManager.Get("zdata_column").upListListByQuery("table_name", mView.getTableName()))
-			{
-				MWebElement mElm = new MWebElement();
-				mElm.setTarget("m_page_input");
-				String sName = (String) mMap.get("column_name");
-				mElm.setName(sName);
-				if (mData.containsKey(sName))
-				{
-					mElm.setValue(String.valueOf(mData.get(sName)));
-				}
 
-				aElms.add(mElm);
+			List<MWebFields> listFields=upUseFields(mView, iPageType);
+			
+			List<MWebFields> mPageDataFields=new ArrayList<MWebFields>();
+			
+			for(MWebFields mFields:listFields)
+			{
+				
+				MWebFields mNewFields=mFields.clone();
+				if (mData.containsKey(mFields.getColumnName()))
+				{
+					mNewFields.setFieldValue(String.valueOf(mData.get(mFields.getColumnName())));
+				}
+				mPageDataFields.add(mNewFields);
+				
+				
 			}
-			mPageInfo.setPageData(aElms);
+
+			mPageInfo.setPageData(mPageDataFields);
 			
 			mPageInfo.setPageOptions(reloadOptions(iPageType, mView,wRequest,mPageInfo,null));
 		}
@@ -235,7 +209,7 @@ public class ShowProcess extends WebBaseProcess
 				if(sParams.indexOf("]")>-1)
 				{
 					String[] sSplistsStrings=sParams.split("]");
-					MHashMap mHashMap=new MHashMap();
+					
 					for(String sSpt:sSplistsStrings)
 					{
 						int iIndexLeft=sSpt.lastIndexOf("[");
