@@ -11,6 +11,7 @@ import org.apache.commons.lang.StringUtils;
 import org.omg.CORBA.PUBLIC_MEMBER;
 
 import com.srnpr.zcom.base.BaseClass;
+import com.srnpr.zcom.helper.FormatHelper;
 import com.srnpr.zcom.helper.HashHelper;
 import com.srnpr.zcom.i.IBaseInit;
 import com.srnpr.zcom.i.IBaseManager;
@@ -21,6 +22,7 @@ import com.srnpr.zdata.manager.DataTableManager;
 import com.srnpr.zweb.fiter.WebFieldsComparator;
 import com.srnpr.zweb.model.MWebFields;
 import com.srnpr.zweb.model.MWebOptions;
+import com.srnpr.zweb.model.MWebSource;
 import com.srnpr.zweb.model.MWebView;
 
 public class WebViewManager extends BaseClass implements IBaseManager,
@@ -76,6 +78,45 @@ public class WebViewManager extends BaseClass implements IBaseManager,
 							.valueOf(mFieldMap.get("did_field_type"))));
 					mFields.setSourceCode(String.valueOf(mFieldMap
 							.get("source_code")));
+					
+					
+					
+					if(mFieldMap.containsKey("source_code"))
+					{
+						MWebSource mSource=WebSourceManager.upWebSource(String.valueOf( mFieldMap.get("source_code")));
+						if(mSource!=null)
+						{
+							
+								if(iDidPageType==416120102||iDidPageType==416120103||iDidPageType==416120107)
+								{
+									String sSqlString="select "+mSource.getFieldText()+" from "+mSource.getFrom()+" where "+mSource.getWhereBook();
+									
+									
+									sSqlString=FormatHelper.FormatString(sSqlString, mFields.getColumnName());
+									
+									mFields.setSourceparameter(sSqlString);
+									
+								}
+								else
+								{
+									String sSqlString="select "+mSource.getFieldText()+" from "+mSource.getFrom()+" where "+mSource.getWhereBook();
+									
+									
+									sSqlString=FormatHelper.FormatString(sSqlString, String.valueOf(mFieldMap.get("source_parameter")));
+									
+									mFields.setSourceparameter(sSqlString);
+								}
+							
+							
+							
+						}
+
+					}
+					
+					
+					
+					
+					
 					
 					if(!StringUtils.isEmpty(sOrderString)&&mFieldMap.containsKey(sOrderString))
 					{

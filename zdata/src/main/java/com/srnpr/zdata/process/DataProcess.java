@@ -65,6 +65,13 @@ public class DataProcess extends BaseClass
 		return upList("*", "", -1, 0, mHashMap);
 	}
 	
+	
+	public List<Map<String, Object>> upListListByQuery(String sField,MHashMap mHashMap)
+	{
+		return upList(sField, "", -1, 0, mHashMap);
+	}
+	
+	
 	public List<Map<String, Object>> upList(
 			String sRows,
 			String sOrder,
@@ -99,14 +106,16 @@ public class DataProcess extends BaseClass
 		StringBuffer sBuilder = new StringBuffer();
 
 		sBuilder.append("select ");
-		if (!sRows.isEmpty() && sRows.equals("*"))
-		{
-			sBuilder.append(sRows);
-		}
-		else
+		
+		if(StringUtils.isEmpty(sRows))
 		{
 			sBuilder.append(" * ");
 		}
+		else
+		{
+			sBuilder.append(sRows);
+		}
+		
 
 		sBuilder.append(" from " + sTableName);
 

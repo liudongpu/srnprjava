@@ -14,6 +14,7 @@ public class MWebFields implements Cloneable
 	private String sourceCode="";
 
 	
+	private String sourceparameter="";
 	
 	private String fieldValue="";
 	
@@ -106,6 +107,14 @@ public class MWebFields implements Cloneable
 
 	public void setLevel(int level) {
 		this.level = level;
+	}
+
+	public String getSourceparameter() {
+		return sourceparameter;
+	}
+
+	public void setSourceparameter(String sourceparameter) {
+		this.sourceparameter = sourceparameter;
 	}
 	
 	

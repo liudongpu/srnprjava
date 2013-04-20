@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
+import org.apache.commons.lang.StringUtils;
+
 import com.srnpr.zcom.base.BaseClass;
 import com.srnpr.zcom.helper.FormatHelper;
 import com.srnpr.zcom.manager.ConfigCacheManager;
@@ -94,9 +96,19 @@ public MResult showResult(PageRequest pRequest) {
 
 			List<MWebFields> listFields = WebViewManager.Get(sPageView,416120109).getFields();
 			// List<MWebOptions> listOptions=upUseOptions(mView, iPageType);
+			
+			StringBuffer sbField=new StringBuffer();
+			
+			sbField.append("*");
 
 			for (MWebFields mFields : listFields) {
 				listTitle.add(mFields.getFieldName());
+				
+				if(!StringUtils.isEmpty(mFields.getSourceparameter()))
+				{
+					sbField.append(",("+mFields.getSourceparameter()+") as "+mFields.getColumnName()+"-z ");
+				}
+				
 			}
 			
 
@@ -108,11 +120,8 @@ public MResult showResult(PageRequest pRequest) {
 
 			listPageData.add(listTitle);
 
-			
-
-			
 			List<Map<String, Object>> listMaps = dHelper
-					.upListListByQuery(wRequest.getParamsMap());
+					.upListListByQuery(sbField.toString(), wRequest.getParamsMap());
 			
 			for (Map<String, Object> mData : listMaps) {
 				
@@ -120,7 +129,13 @@ public MResult showResult(PageRequest pRequest) {
 				
 				List<String> listDataList = new ArrayList<String>();
 				for (MWebFields mFields : listFields) {
-					if (mData.containsKey(mFields.getColumnName())) {
+					
+					if(!StringUtils.isEmpty(mFields.getSourceparameter()))
+					{
+						listDataList.add(String.valueOf(mData.get(mFields
+								.getColumnName()+"-z")));
+					}
+					else if (mData.containsKey(mFields.getColumnName())) {
 						listDataList.add(String.valueOf(mData.get(mFields
 								.getColumnName())));
 					}
