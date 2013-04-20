@@ -55,73 +55,8 @@ public class MWebFields implements Cloneable
 	}
 	
 	
+	private int level=0;
 	
-	private int levelList;
-	private int levelPut;
-	private int levelPost;
-	private int levelShow;
-	private int levelQuery;
-	
-	
-	public int getLevelList()
-	{
-	
-		return levelList;
-	}
-
-	public void setLevelList(int levelList)
-	{
-	
-		this.levelList = levelList;
-	}
-
-	public int getLevelPut()
-	{
-	
-		return levelPut;
-	}
-
-	public void setLevelPut(int levelPut)
-	{
-	
-		this.levelPut = levelPut;
-	}
-
-	public int getLevelPost()
-	{
-	
-		return levelPost;
-	}
-
-	public void setLevelPost(int levelPost)
-	{
-	
-		this.levelPost = levelPost;
-	}
-
-	public int getLevelShow()
-	{
-	
-		return levelShow;
-	}
-
-	public void setLevelShow(int levelShow)
-	{
-	
-		this.levelShow = levelShow;
-	}
-
-	public int getLevelQuery()
-	{
-	
-		return levelQuery;
-	}
-
-	public void setLevelQuery(int levelQuery)
-	{
-	
-		this.levelQuery = levelQuery;
-	}
 
 	public String getColumnName()
 	{
@@ -163,6 +98,14 @@ public class MWebFields implements Cloneable
 	{
 
 		this.fieldValue = fieldValue;
+	}
+
+	public int getLevel() {
+		return level;
+	}
+
+	public void setLevel(int level) {
+		this.level = level;
 	}
 	
 	

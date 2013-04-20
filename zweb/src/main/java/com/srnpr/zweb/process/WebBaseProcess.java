@@ -34,7 +34,7 @@ public MResult showResult(PageRequest pRequest) {
 		int iPageType=Integer.valueOf( pRequest.upRequestParam("func_from_page_did"));
 		if (iPageType==416120101)
 		{
-			MWebView mView = WebViewManager.Get(sPageView);
+			MWebView mView = WebViewManager.Get(sPageView,iPageType);
 			
 			DataSupport dSupport=new DataSupport();
 			dSupport.insertData(mView.getTableName(), pRequest.getReqMap());
@@ -44,7 +44,7 @@ public MResult showResult(PageRequest pRequest) {
 		}
 		else if (iPageType==416120105)
 		{
-			MWebView mView = WebViewManager.Get(sPageView);
+			MWebView mView = WebViewManager.Get(sPageView,iPageType);
 			DataSupport dSupport=new DataSupport();
 			dSupport.updateData(mView.getTableName(), pRequest.getReqMap(),"uid");
 			
@@ -83,7 +83,7 @@ public MResult showResult(PageRequest pRequest) {
 		// 列表页
 		if (iPageType == 416120103) {
 
-			MWebView mView = WebViewManager.Get(sPageView);
+			MWebView mView = WebViewManager.Get(sPageView,iPageType);
 			TableSupport dHelper = DataTableManager.Get(mView.getTableName());
 
 			List<List<String>> listPageData = new ArrayList<List<String>>();
@@ -93,7 +93,7 @@ public MResult showResult(PageRequest pRequest) {
 			List<Map<String, Object>> listMaps = dHelper
 					.upListListByQuery(wRequest.getParamsMap());
 
-			List<MWebFields> listFields = upUseFields(mView, iPageType);
+			List<MWebFields> listFields = WebViewManager.Get(sPageView,416120109).getFields();
 			// List<MWebOptions> listOptions=upUseOptions(mView, iPageType);
 
 			for (MWebFields mFields : listFields) {
@@ -135,11 +135,11 @@ public MResult showResult(PageRequest pRequest) {
 
 		} else if (iPageType == 416120101) {
 
-			MWebView mView = WebViewManager.Get(sPageView);
+			MWebView mView = WebViewManager.Get(sPageView,iPageType);
 
 			List<MWebFields> mPageDataFields = new ArrayList<MWebFields>();
 
-			List<MWebFields> listFields = upUseFields(mView, iPageType);
+			List<MWebFields> listFields = mView.getFields();
 			for (MWebFields mFields : listFields) {
 
 				MWebFields mNewFields = mFields.clone();
@@ -155,13 +155,13 @@ public MResult showResult(PageRequest pRequest) {
 					mPageInfo, null));
 
 		} else if (iPageType == 416120105) {
-			MWebView mView = WebViewManager.Get(sPageView);
+			MWebView mView = WebViewManager.Get(sPageView,iPageType);
 			TableSupport dHelper = DataTableManager.Get(mView.getTableName());
 
 			Map<String, Object> mData = dHelper.upOneMap(wRequest
 					.getParamsMap());
 
-			List<MWebFields> listFields = upUseFields(mView, iPageType);
+			List<MWebFields> listFields = mView.getFields();
 
 			List<MWebFields> mPageDataFields = new ArrayList<MWebFields>();
 
@@ -290,34 +290,8 @@ public MResult showResult(PageRequest pRequest) {
 	
 	
 	
-	public List<MWebFields> upUseFields(MWebView mView,int iDidPageType)
-	{
-		
-		List<MWebFields> listReturnFields=new ArrayList<MWebFields>();
-		
-		for(MWebFields mFields:mView.getFields())
-		{
-			listReturnFields.add(mFields);
-		}
-		
-		return listReturnFields;
-	}
 	
 	
-	public List<MWebOptions> upUseOptions(MWebView mView,int iDidPageType)
-	{
-		List<MWebOptions> listReturnFields=new ArrayList<MWebOptions>();
-		
-		for(MWebOptions mFields:mView.getOptions())
-		{
-			if(mFields.getDidPageType()==iDidPageType)
-			{
-				listReturnFields.add(mFields);
-			}
-		}
-		
-		return listReturnFields;
-	}
 	
 	
 	

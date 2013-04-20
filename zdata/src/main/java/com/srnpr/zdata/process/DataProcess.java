@@ -12,6 +12,9 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import com.srnpr.zcom.base.BaseClass;
 import com.srnpr.zcom.model.MHashMap;
 import com.srnpr.zdata.manager.DataBaseManager;
+import com.srnpr.zdata.manager.DataTableManager;
+import com.srnpr.zdata.model.MDataTable;
+import com.srnpr.zdata.support.TableSupport;
 
 public class DataProcess extends BaseClass
 {
@@ -90,6 +93,9 @@ public class DataProcess extends BaseClass
 			Object... args)
 	{
 
+		
+		
+		
 		StringBuffer sBuilder = new StringBuffer();
 
 		sBuilder.append("select ");
@@ -117,10 +123,47 @@ public class DataProcess extends BaseClass
 			{
 				sBuilder.append(" " + args[i] + "=:" + args[i] + " ");
 				hParamHashMap.put((String) args[i], args[i + 1]);
-
 			}
-
 		}
+		
+		
+		if(!StringUtils.isEmpty(sOrder))
+		{
+			
+			
+			MDataTable mDataTable= DataTableManager.GetTable(sTableName);
+			
+			ArrayList<String> lOrderList=new ArrayList<String>();
+			
+			for(String s:sOrder.split(","))
+			{
+				
+				if(s.substring(0,1).equals("-"))
+				{
+					s=s.substring(1);
+					lOrderList.add(s+" desc ");
+				}
+				else
+				{
+					lOrderList.add(s);
+				}
+				
+				
+				if(!mDataTable.getColumnsMap().containsKey(s))
+				{
+					lOrderList.remove(lOrderList.size()-1);
+				}
+			}
+			
+			if(lOrderList.size()>0)
+			{
+
+				sBuilder.append(" order by "+StringUtils.join(lOrderList.toArray(),","));
+			}
+		}
+		
+		
+		
 
 		if (start > -1 && end > 0)
 		{

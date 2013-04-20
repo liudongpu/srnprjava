@@ -14,7 +14,7 @@ public class TestPageCreate extends TestBase {
 	{ 
 
 		//String sMeString=new WebPage().GetPageHtml("zyou", "list-system_table");
-		String sMeString=new WebPage().upPageHtml("zyou", "list-system_fields-uuid-zid=44&ab=55",new MHashMap());
+		String sMeString=new WebPage().upPageHtml("zyou", "list-system_fields-uuid-",new MHashMap());
 		BDebug(123, sMeString);
 
 	}
