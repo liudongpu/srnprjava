@@ -90,8 +90,7 @@ public MResult showResult(PageRequest pRequest) {
 
 			List<String> listTitle = new ArrayList<String>();
 
-			List<Map<String, Object>> listMaps = dHelper
-					.upListListByQuery(wRequest.getParamsMap());
+			
 
 			List<MWebFields> listFields = WebViewManager.Get(sPageView,416120109).getFields();
 			// List<MWebOptions> listOptions=upUseOptions(mView, iPageType);
@@ -99,6 +98,7 @@ public MResult showResult(PageRequest pRequest) {
 			for (MWebFields mFields : listFields) {
 				listTitle.add(mFields.getFieldName());
 			}
+			
 
 			for (MWebOptions mOptions : reloadOptions(416120107, mView,
 					wRequest, mPageInfo, null)) {
@@ -108,7 +108,16 @@ public MResult showResult(PageRequest pRequest) {
 
 			listPageData.add(listTitle);
 
+			
+
+			
+			List<Map<String, Object>> listMaps = dHelper
+					.upListListByQuery(wRequest.getParamsMap());
+			
 			for (Map<String, Object> mData : listMaps) {
+				
+				
+				
 				List<String> listDataList = new ArrayList<String>();
 				for (MWebFields mFields : listFields) {
 					if (mData.containsKey(mFields.getColumnName())) {
@@ -116,14 +125,15 @@ public MResult showResult(PageRequest pRequest) {
 								.getColumnName())));
 					}
 				}
+				
+				
 
 				for (MWebOptions mOptions : reloadOptions(416120107, mView,
 						wRequest, mPageInfo, mData)) {
 					listDataList.add(mOptions.getParams());
-
 				}
-
 				listPageData.add(listDataList);
+				
 
 			}
 
@@ -158,10 +168,14 @@ public MResult showResult(PageRequest pRequest) {
 			MWebView mView = WebViewManager.Get(sPageView,iPageType);
 			TableSupport dHelper = DataTableManager.Get(mView.getTableName());
 
+			List<MWebFields> listFields = mView.getFields();
+			
+			
+			
 			Map<String, Object> mData = dHelper.upOneMap(wRequest
 					.getParamsMap());
 
-			List<MWebFields> listFields = mView.getFields();
+			
 
 			List<MWebFields> mPageDataFields = new ArrayList<MWebFields>();
 
