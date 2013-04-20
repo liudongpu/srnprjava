@@ -22,6 +22,8 @@
 	<tr>
       <#list e_list as e>
       	<td>
+      	
+      	<#-- 如果操作列  -->
       	<#if (e?length>7)&&(e?substring(0,7)=="@415101")>
       		<#local es=e?split("@")>
       		<#-- <#if (es[1]=="415101012") > -->
@@ -57,6 +59,29 @@ no result
 </#macro>
 
 
+<#macro m_page_select  p_info>
+
+<div class="control-group">
+    <label class="control-label" for="${p_info.getColumnName()?default('')}">${p_info.getFieldName()?default('')}</label>
+    <div class="controls">
+    <select id="${p_info.getColumnName()?default('')}" name="${p_info.getColumnName()?default('')}">
+    <#local m_page_select_data=pageexec.upDataFromFieldParams(p_info.getSourceparameter()) >
+    	 <#list m_page_select_data as e_list>
+    	 	<option value="${e_list["source_value"]?default('')}"  <#if (p_info.getFieldValue()==e_list["source_value"]) >selected="selected" </#if>    >${e_list['source_text']?default('')}</option>
+    	 	
+    	 </#list>
+    
+    </select>
+      
+    </div>
+  </div>
+
+
+
+</#macro>
+
+
+
 
 <#macro m_page_href  p_name  p_href >
 <a  href="${p_href!}" target=“_blank”>${p_name!}</a>
@@ -79,10 +104,11 @@ no result
 <#macro m_page_autorun p_info_auto>
 
 <#local m_page_autorun_id=p_info_auto.getDidFieldType() />
+
 <#if m_page_autorun_id==416108001>
 	<@m_page_input p_info_auto />
-<#elseif m_page_autorun_id==0>
-	<@m_page_input p_info_auto />
+<#elseif m_page_autorun_id==416108119>
+	<@m_page_select p_info_auto />
 <#else>
 	<@m_page_input p_info_auto />
 </#if>

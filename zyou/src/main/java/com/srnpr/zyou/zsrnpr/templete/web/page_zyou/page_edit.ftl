@@ -20,7 +20,7 @@
 
 <#list pageinfo.getPageData() as e_list>
 
- <@m_page_input e_list />
+ <@m_page_autorun e_list />
 
 </#list>
 

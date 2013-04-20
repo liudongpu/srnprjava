@@ -59,6 +59,13 @@ public class DataProcess extends BaseClass
 	}
 	
 	
+	public List<Map<String, Object>> upListBySql(String sSql)
+	{
+		return DataBaseManager.Get(sDataBase).queryForList(sSql,new HashMap<String, String>());
+
+	}
+	
+	
 	
 	public List<Map<String, Object>> upListListByQuery(MHashMap mHashMap)
 	{

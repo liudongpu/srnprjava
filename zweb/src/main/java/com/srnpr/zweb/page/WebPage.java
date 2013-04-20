@@ -46,17 +46,23 @@ public class WebPage extends BaseClass {
 	}
 	
 	
+	private static PageExec pageExec=new PageExec();
+	
+	
 	private String upPageObj(PageRequest wRequest)
 	{
 		HashMap<Object, Object> hPageTemp = new HashMap<Object, Object>();
 		HashMap<Object, Object> hWebPage = new HashMap<Object, Object>();
 		MWebConfig mConfig = WebConst.GetWebConfig(wRequest
 				.upSet(EWebSet.Url_Path));
-		hWebPage.put("WebConfig", mConfig);
+		hWebPage.put("PageConfig", mConfig);
 		MWebPage mPageInfo = WebConst.GetWebProcess(
 				wRequest.upSet(EWebSet.Url_Path)).Process(wRequest);
 		mPageInfo.setWebSet(wRequest.convertWebSet());
 		hWebPage.put("PageInfo", mPageInfo);
+		hWebPage.put("PageExec", pageExec);
+		
+		
 		hPageTemp.put("WebPage", hWebPage);
 		return upConvert(mConfig.getBaseInclude(), hPageTemp);
 	}

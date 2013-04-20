@@ -2,8 +2,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-<#assign pageconfig=WebPage["WebConfig"]>
+<#assign pageconfig=WebPage["PageConfig"]>
 <#assign pageinfo=WebPage["PageInfo"]>
+<#assign pageexec=WebPage["PageExec"]>
 
 <#include "../lib/lib_html.ftl" />
 <#include "../lib/lib_page.ftl" />

@@ -9,7 +9,7 @@
 			<a class="brand" href="#">超级后台管理系统</a>
 			<div class="nav-collapse collapse">
 				<p class="navbar-text pull-right">
-					Logged in as <a href="#" class="navbar-link">Username</a>
+					Logged in as <a onclick="zen.page.call('/zadmin/zyou/func-system_table-97b1bcc3a90111e2bb7900241d8adc62-func_do=refreshdata')" class="navbar-link">Username</a>
 				</p>
 				<ul class="nav">
 					<li class="active"><a href="#">首页</a></li>

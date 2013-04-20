@@ -87,12 +87,15 @@ public class WebViewManager extends BaseClass implements IBaseManager,
 						if(mSource!=null)
 						{
 							
-								if(iDidPageType==416120102||iDidPageType==416120103||iDidPageType==416120107)
+								if(iDidPageType==416120101||iDidPageType==416120105)
 								{
-									String sSqlString="select "+mSource.getFieldText()+" from "+mSource.getFrom()+" where "+mSource.getWhereBook();
 									
 									
-									sSqlString=FormatHelper.FormatString(sSqlString, mFields.getColumnName());
+									
+										String sSqlString="select "+mSource.getFieldText()+" as source_text,"+mSource.getFieldValed()+" as source_value  from "+mSource.getFrom()+" where "+mSource.getWhereEdit();
+									
+									
+									sSqlString=FormatHelper.FormatString(sSqlString, String.valueOf(mFieldMap.get("source_parameter")));
 									
 									mFields.setSourceparameter(sSqlString);
 									
@@ -102,9 +105,10 @@ public class WebViewManager extends BaseClass implements IBaseManager,
 									String sSqlString="select "+mSource.getFieldText()+" from "+mSource.getFrom()+" where "+mSource.getWhereBook();
 									
 									
-									sSqlString=FormatHelper.FormatString(sSqlString, String.valueOf(mFieldMap.get("source_parameter")));
+									sSqlString=FormatHelper.FormatString(sSqlString, mFields.getColumnName());
 									
 									mFields.setSourceparameter(sSqlString);
+									
 								}
 							
 							
@@ -127,7 +131,8 @@ public class WebViewManager extends BaseClass implements IBaseManager,
 					}
 					
 					
-					if(mFields.getFieldName().length()>3)
+					//if(mFields.getFieldName().length()>3)
+					if(!mFields.getFieldName().equals("zid"))
 					listFields.add(mFields);
 				}
 				

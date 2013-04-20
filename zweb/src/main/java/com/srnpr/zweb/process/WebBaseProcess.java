@@ -24,53 +24,33 @@ import com.srnpr.zweb.model.MWebPage;
 import com.srnpr.zweb.model.MWebView;
 import com.srnpr.zweb.page.PageRequest;
 
-public class WebBaseProcess extends BaseClass
-{
-	
-	
-	
-public MResult showResult(PageRequest pRequest) {
-		
-		MResult mResult=new MResult();
-		String sPageView=pRequest.upSet(EWebSet.Url_View);
-		int iPageType=Integer.valueOf( pRequest.getParamsMap().get("func_from_page_did").toString());
-		if (iPageType==416120101)
-		{
-			MWebView mView = WebViewManager.Get(sPageView,iPageType);
-			
-			DataSupport dSupport=new DataSupport();
+public class WebBaseProcess extends BaseClass {
+
+	public MResult showResult(PageRequest pRequest) {
+
+		MResult mResult = new MResult();
+		String sPageView = pRequest.upSet(EWebSet.Url_View);
+		int iPageType = Integer.valueOf(pRequest.getParamsMap()
+				.get("func_from_page_did").toString());
+		if (iPageType == 416120101) {
+			MWebView mView = WebViewManager.Get(sPageView, iPageType);
+
+			DataSupport dSupport = new DataSupport();
 			dSupport.insertData(mView.getTableName(), pRequest.getReqMap());
-			
-		
-			
+
+		} else if (iPageType == 416120105) {
+			MWebView mView = WebViewManager.Get(sPageView, iPageType);
+			DataSupport dSupport = new DataSupport();
+			dSupport.updateData(mView.getTableName(), pRequest.getReqMap(),
+					"uid");
+
+		} else if (iPageType == 416120106) {
+
 		}
-		else if (iPageType==416120105)
-		{
-			MWebView mView = WebViewManager.Get(sPageView,iPageType);
-			DataSupport dSupport=new DataSupport();
-			dSupport.updateData(mView.getTableName(), pRequest.getReqMap(),"uid");
-			
-			
-			
-			
-			
-		
-			
-		}else if (iPageType==416120106)
-		{
-			
-			
-			
-			
-			
-		}
-		
+
 		return mResult;
 	}
-	
-	
 
-	
 	public MWebPage ShowHtml(PageRequest wRequest) {
 
 		MWebPage mPageInfo = new MWebPage();
@@ -85,32 +65,30 @@ public MResult showResult(PageRequest pRequest) {
 		// 列表页
 		if (iPageType == 416120103) {
 
-			MWebView mView = WebViewManager.Get(sPageView,iPageType);
+			MWebView mView = WebViewManager.Get(sPageView, iPageType);
 			TableSupport dHelper = DataTableManager.Get(mView.getTableName());
 
 			List<List<String>> listPageData = new ArrayList<List<String>>();
 
 			List<String> listTitle = new ArrayList<String>();
 
-			
-
-			List<MWebFields> listFields = WebViewManager.Get(sPageView,416120109).getFields();
+			List<MWebFields> listFields = WebViewManager.Get(sPageView,
+					416120109).getFields();
 			// List<MWebOptions> listOptions=upUseOptions(mView, iPageType);
-			
-			StringBuffer sbField=new StringBuffer();
-			
+
+			StringBuffer sbField = new StringBuffer();
+
 			sbField.append("*");
 
 			for (MWebFields mFields : listFields) {
 				listTitle.add(mFields.getFieldName());
-				
-				if(!StringUtils.isEmpty(mFields.getSourceparameter()))
-				{
-					sbField.append(",("+mFields.getSourceparameter()+") as "+mFields.getColumnName()+"-z ");
+
+				if (!StringUtils.isEmpty(mFields.getSourceparameter())) {
+					sbField.append(",(" + mFields.getSourceparameter()
+							+ ") as " + mFields.getColumnName() + "_zzz ");
 				}
-				
+
 			}
-			
 
 			for (MWebOptions mOptions : reloadOptions(416120107, mView,
 					wRequest, mPageInfo, null)) {
@@ -120,35 +98,28 @@ public MResult showResult(PageRequest pRequest) {
 
 			listPageData.add(listTitle);
 
-			List<Map<String, Object>> listMaps = dHelper
-					.upListListByQuery(sbField.toString(), wRequest.getParamsMap());
-			
+			List<Map<String, Object>> listMaps = dHelper.upListListByQuery(
+					sbField.toString(), wRequest.getParamsMap());
+
 			for (Map<String, Object> mData : listMaps) {
-				
-				
-				
+
 				List<String> listDataList = new ArrayList<String>();
 				for (MWebFields mFields : listFields) {
-					
-					if(!StringUtils.isEmpty(mFields.getSourceparameter()))
-					{
+
+					if (!StringUtils.isEmpty(mFields.getSourceparameter())) {
 						listDataList.add(String.valueOf(mData.get(mFields
-								.getColumnName()+"-z")));
-					}
-					else if (mData.containsKey(mFields.getColumnName())) {
+								.getColumnName() + "_zzz")));
+					} else if (mData.containsKey(mFields.getColumnName())) {
 						listDataList.add(String.valueOf(mData.get(mFields
 								.getColumnName())));
 					}
 				}
-				
-				
 
 				for (MWebOptions mOptions : reloadOptions(416120107, mView,
 						wRequest, mPageInfo, mData)) {
 					listDataList.add(mOptions.getParams());
 				}
 				listPageData.add(listDataList);
-				
 
 			}
 
@@ -160,7 +131,7 @@ public MResult showResult(PageRequest pRequest) {
 
 		} else if (iPageType == 416120101) {
 
-			MWebView mView = WebViewManager.Get(sPageView,iPageType);
+			MWebView mView = WebViewManager.Get(sPageView, iPageType);
 
 			List<MWebFields> mPageDataFields = new ArrayList<MWebFields>();
 
@@ -180,17 +151,13 @@ public MResult showResult(PageRequest pRequest) {
 					mPageInfo, null));
 
 		} else if (iPageType == 416120105) {
-			MWebView mView = WebViewManager.Get(sPageView,iPageType);
+			MWebView mView = WebViewManager.Get(sPageView, iPageType);
 			TableSupport dHelper = DataTableManager.Get(mView.getTableName());
 
 			List<MWebFields> listFields = mView.getFields();
-			
-			
-			
+
 			Map<String, Object> mData = dHelper.upOneMap(wRequest
 					.getParamsMap());
-
-			
 
 			List<MWebFields> mPageDataFields = new ArrayList<MWebFields>();
 
@@ -247,16 +214,14 @@ public MResult showResult(PageRequest pRequest) {
 							wRequest.upSet(EWebSet.Url_View),
 							mOptions.getUid(), "uid=[uid]");
 
-				}
-				else if(mNewOptions.getDidOptionType()==415101019)
-				{
+				} else if (mNewOptions.getDidOptionType() == 415101019) {
 					sParams = FormatHelper.FormatString(
 							WebConst.Get(EWebConst.base_page_url),
 							wRequest.upSet(EWebSet.Url_Path), "func",
 							wRequest.upSet(EWebSet.Url_View),
-							mOptions.getUid(), "func_from_page_did="+wRequest.getDidPageType());
+							mOptions.getUid(),
+							"func_from_page_did=" + wRequest.getDidPageType());
 				}
-				
 
 				// 判断如果有特殊标记则特殊处理
 				if (sParams.indexOf("]") > -1) {
@@ -315,13 +280,5 @@ public MResult showResult(PageRequest pRequest) {
 
 		return listOptions;
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
 }
