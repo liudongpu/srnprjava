@@ -92,7 +92,8 @@ public class WebViewManager extends BaseClass implements IBaseManager,
 									String sSqlString="select "+mSource.getFieldText()+" from "+mSource.getFrom()+" where "+mSource.getWhereBook();
 									
 									
-									sSqlString=FormatHelper.FormatString(sSqlString, mFields.getColumnName());
+									sSqlString=FormatHelper.FormatString(sSqlString, String.valueOf(mFieldMap
+											.get("column_name")));
 									
 									mFields.setSourceparameter(sSqlString);
 									
@@ -104,7 +105,8 @@ public class WebViewManager extends BaseClass implements IBaseManager,
 									
 									sSqlString=FormatHelper.FormatString(sSqlString, String.valueOf(mFieldMap.get("source_parameter")));
 									
-									mFields.setSourceparameter(sSqlString);
+									//mFields.setSourceparameter(sSqlString);
+									mFields.setSourceparameter("select name from zsrnpr_define where code=did_page_type ");
 								}
 							
 							
