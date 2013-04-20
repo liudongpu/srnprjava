@@ -31,7 +31,7 @@ public MResult showResult(PageRequest pRequest) {
 		
 		MResult mResult=new MResult();
 		String sPageView=pRequest.upSet(EWebSet.Url_View);
-		int iPageType=Integer.valueOf( pRequest.upRequestParam("func_from_page_did"));
+		int iPageType=Integer.valueOf( pRequest.getParamsMap().get("func_from_page_did").toString());
 		if (iPageType==416120101)
 		{
 			MWebView mView = WebViewManager.Get(sPageView,iPageType);
@@ -208,13 +208,13 @@ public MResult showResult(PageRequest pRequest) {
 				if (mNewOptions.getDidOptionType() == 415101001) {
 					sParams = FormatHelper.FormatString(
 							WebConst.Get(EWebConst.base_page_url),
-							wRequest.upSet(EWebSet.Url_Path), "put",
+							wRequest.upSet(EWebSet.Url_Path), "add",
 							wRequest.upSet(EWebSet.Url_View),
 							mOptions.getUid(), "");
 				} else if (mNewOptions.getDidOptionType() == 415101305) {
 					sParams = FormatHelper.FormatString(
 							WebConst.Get(EWebConst.base_page_url),
-							wRequest.upSet(EWebSet.Url_Path), "post",
+							wRequest.upSet(EWebSet.Url_Path), "edit",
 							wRequest.upSet(EWebSet.Url_View),
 							mOptions.getUid(), "uid=[uid]");
 

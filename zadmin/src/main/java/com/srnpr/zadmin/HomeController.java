@@ -30,7 +30,7 @@ public class HomeController {
 		//model.addAttribute("serverTime", new WebPage().GetPageHtml("zyou","center") );
 		//model.addAttribute("serverTime", new ConfigCacheManager().ShowAllConfig() );
 		//return "home";
-		return index("zyou", "list-system_table", model);
+		return index("zyou", "chart-system_table", model);
 	}
 
 	@RequestMapping(value = "/{path}/{url}")

@@ -19,7 +19,7 @@ public class FreeMarkerTest extends TestBase {
 
 
 
-		BDebug(0,new WebPage().upPageHtml("zweb","post-system_table-aa-1",new MHashMap()));
+		BDebug(0,new WebPage().upPageHtml("zweb","post-system_table-aa-",new MHashMap()));
 
 		
 

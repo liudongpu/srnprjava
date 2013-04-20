@@ -110,7 +110,7 @@ public class PageRequest {
 	}
 	
 	
-	public void upParamsHashMap()
+	public void refreshParamsHashMap()
 	{
 		paramsMap= HashHelper.atConvertStringToHash(upSet(EWebSet.Url_Param));
 		

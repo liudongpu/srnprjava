@@ -95,7 +95,7 @@ public class WebPage extends BaseClass {
 			if (sParams.length > 3) {
 				wRequest.inSet(EWebSet.Url_Param, sParams[3]);
 				
-				wRequest.upParamsHashMap();
+				wRequest.refreshParamsHashMap();
 			}
 		}
 		

@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
+import com.srnpr.zcom.init.InitRoot;
 import com.srnpr.zcom.model.MResult;
 import com.srnpr.zdata.manager.DataTableManager;
 import com.srnpr.zdata.support.TableSupport;
@@ -37,10 +38,10 @@ public class PageProcess extends WebBaseProcess implements IWebProcess
 			{
 				
 				
-				WebViewManager.recheckData();
+				//WebViewManager.recheckData();
 				
 				
-
+				new InitRoot().Init();
 				
 			}
 			

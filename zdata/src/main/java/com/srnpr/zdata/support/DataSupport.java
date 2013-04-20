@@ -53,11 +53,11 @@ public class DataSupport extends BaseClass
 		
 		
 		
-		if(mDataTable.contains("uid"))
+		if(mDataTable.containsKey("uid"))
 		{
 			mPut.put("uid", ComFunction.upUuid());
 		}
-		if(mDataTable.contains("zid"))
+		if(mDataTable.containsKey("zid"))
 		{
 			mPut.remove("zid", mPut.get("zid"));
 		}

@@ -4,9 +4,7 @@ zen.e({
 		submit : function(sId,sAction) {
 			
 			var aForm=$(sId).parents('form');
-			
 			aForm.attr("action",sAction);
-			alert(aForm.html());
 			$(aForm).ajaxSubmit(function(data) {
 				
 				var obj=$.evalJSON(data);

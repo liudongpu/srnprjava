@@ -86,14 +86,14 @@ public class WebViewManager extends BaseClass implements IBaseManager,
 					}
 					
 					
-
+					if(mFields.getFieldName().length()>3)
 					listFields.add(mFields);
 				}
 				
 				
-				  //WebFieldsComparator comp=new WebFieldsComparator();
+				  WebFieldsComparator comp=new WebFieldsComparator();
 				  //调用排序方法
-				  //Collections.sort(listFields,comp);
+				  Collections.sort(listFields,comp);
 				  
 				
 				
