@@ -29,6 +29,8 @@ a.ORDINAL_POSITION orderid
 FROM information_schema.COLUMNS a
 where a.TABLE_SCHEMA in
 (select name from zdata.zdata_server)
+and concat(a.TABLE_NAME,a.column_name) not in
+(select  concat(table_name,column_name)  from  zdata.zdata_column )
 
 
 

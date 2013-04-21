@@ -58,6 +58,21 @@ no result
 
 </#macro>
 
+<#macro m_page_textarea  p_info>
+<div class="control-group">
+    <label class="control-label" for="${p_info.getColumnName()?default('')}">${p_info.getFieldName()?default('')}</label>
+    <div class="controls">
+      <textarea id="${p_info.getColumnName()?default('')}" name="${p_info.getColumnName()?default('')}" rows="3"  >${p_info.getFieldValue()?default('')}</textarea>
+    </div>
+  </div>
+
+</#macro>
+
+<#macro m_page_hidden  p_info>
+      <input type="hidden" id="${p_info.getColumnName()?default('')}" name="${p_info.getColumnName()?default('')}" value="${p_info.getFieldValue()?default('')}"  />
+</#macro>
+
+
 
 <#macro m_page_select  p_info>
 
@@ -108,6 +123,12 @@ no result
 <#if m_page_autorun_id==416108001>
 	<@m_page_input p_info_auto />
 <#elseif m_page_autorun_id==416108119>
+	<@m_page_select p_info_auto />
+	<#elseif m_page_autorun_id==416108108>
+	<@m_page_hidden p_info_auto />
+	<#elseif m_page_autorun_id==416108120>
+	<@m_page_textarea p_info_auto />
+	<#elseif m_page_autorun_id==416108105>
 	<@m_page_select p_info_auto />
 <#else>
 	<@m_page_input p_info_auto />

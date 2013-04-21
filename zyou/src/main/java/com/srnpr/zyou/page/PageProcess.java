@@ -38,7 +38,7 @@ public class PageProcess extends WebBaseProcess implements IWebProcess
 			{
 				
 				
-				//WebViewManager.recheckData();
+				WebViewManager.recheckData();
 				
 				
 				new InitRoot().Init();

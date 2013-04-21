@@ -24,6 +24,12 @@ public class PageExec extends BaseClass {
 		
 		return rList;
 	}
+	
+	
+	public Object upConfigValue(String sConfigKey)
+	{
+		return BConfig(sConfigKey);
+	}
 
 
 

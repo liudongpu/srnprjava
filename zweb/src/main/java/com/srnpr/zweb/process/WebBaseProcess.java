@@ -139,9 +139,9 @@ public class WebBaseProcess extends BaseClass {
 			for (MWebFields mFields : listFields) {
 
 				MWebFields mNewFields = mFields.clone();
-				if (wRequest.isContainsRequestParam(mFields.getColumnName())) {
-					mNewFields.setFieldValue(wRequest.upRequestParam(mFields
-							.getColumnName()));
+				if (wRequest.getParamsMap().containsKey(mFields.getColumnName())) {
+					mNewFields.setFieldValue(String.valueOf( wRequest.getParamsMap().get(mFields
+							.getColumnName())));
 				}
 				mPageDataFields.add(mNewFields);
 			}
@@ -206,7 +206,7 @@ public class WebBaseProcess extends BaseClass {
 							WebConst.Get(EWebConst.base_page_url),
 							wRequest.upSet(EWebSet.Url_Path), "add",
 							wRequest.upSet(EWebSet.Url_View),
-							mOptions.getUid(), "");
+							mOptions.getUid(), mOptions.getParams());
 				} else if (mNewOptions.getDidOptionType() == 415101305) {
 					sParams = FormatHelper.FormatString(
 							WebConst.Get(EWebConst.base_page_url),
@@ -249,6 +249,13 @@ public class WebBaseProcess extends BaseClass {
 											sParams = sParams.replace("["
 													+ sSptKey + "]",
 													mOptions.getUid());
+										}
+									}else if (sKeysStrings[0].equals("p")) {
+										if(wRequest.getParamsMap().containsKey(sKeysStrings[1]))
+										{
+											sParams = sParams.replace("["
+													+ sSptKey + "]",
+													String.valueOf(wRequest.getParamsMap().get(sKeysStrings[1])));
 										}
 									}
 
