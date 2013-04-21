@@ -5,6 +5,9 @@ zen.e({
 			
 			var aForm=$(sId).parents('form');
 			aForm.attr("action",sAction);
+			
+			zen.r("zen.page.submit.beforesubmit");
+			
 			$(aForm).ajaxSubmit(function(data) {
 				
 				var obj=$.evalJSON(data);
@@ -25,21 +28,25 @@ zen.e({
 		},
 		
 		
+		
+		
+		
 		init : function() {
 			
+		},
+		
+		editorReload:function()
+		{
+				for ( instance in CKEDITOR.instances ){
+
+				  CKEDITOR.instances[instance].updateElement();
+
+				}
 		}
+		
 
 	}
 }
 
 );
 
-
-
-
-
-
-
-$.ready(function() {
-	zen.page.init();
-});

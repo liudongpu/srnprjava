@@ -11,3 +11,13 @@
 	<link type="text/css" href="${e}" rel="stylesheet">
 	</#list>
 </#macro>
+
+
+
+<#macro m_html_addscript m_html_addscript_info >
+
+<script language="javascript">
+	${m_html_addscript_info}
+</script>
+
+</#macro>

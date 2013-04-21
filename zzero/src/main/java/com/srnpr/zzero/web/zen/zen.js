@@ -1,14 +1,11 @@
 
-	var zen={},
-	
-	_zen= window.zen
-	;
+	var zen={};
 	
 	zen.fn = zen.prototype = {};
 	
 	window.zen  = zen;
 	
-	zen.extend=zen.e = zen.fn.extend = function() {
+	zen.e = zen.fn.extend = function() {
 		var options, name, src, copy, copyIsArray, clone,
 			target = arguments[0] || {},
 			i = 1,
@@ -71,5 +68,61 @@
 		// Return the modified object
 		return target;
 	};
+	
+	//定义通用标记变量
+	zen.t={ reginfunction:{} ,baseurl:'/'  };
+	
+	
+	
+	zen.i=function(oInit)
+	{
+		for(var p in oInit)
+			{
+				if(zen.t[p])
+				{
+					zen.t[p]=oInit[p];
+				}
+			}
+	}
+	
+	
+	
+	zen.r=function()
+	{
+		
+		
+		key = arguments[0] || {},
+		fun = arguments[1];
+		
+		if(!fun)
+		{
+			if(zen.t.reginfunction[key])
+			{
+			for(var i=0,j=zen.t.reginfunction[key].length;i<j;i++)
+				{
+					zen.t.reginfunction[key][i]();
+				}
+			}
+
+			return;
+		}
+		
+		
+		if(!zen.t.reginfunction[key])
+		{
+			zen.t.reginfunction[key]=[];
+		}
+		
+		zen.t.reginfunction[key].push(fun);
+
+		
+	}
+	
+	
+	
+	
+	
+	
+	
 	
 	

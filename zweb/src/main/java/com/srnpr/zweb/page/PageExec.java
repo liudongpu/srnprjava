@@ -4,6 +4,8 @@ import java.util.List;
 import java.util.Map;
 
 import com.srnpr.zcom.base.BaseClass;
+import com.srnpr.zcom.common.CommonConst;
+import com.srnpr.zcom.enumer.EComConst;
 import com.srnpr.zdata.manager.DataTableManager;
 import com.srnpr.zdata.support.DataSupport;
 import com.srnpr.zdata.support.TableSupport;
@@ -30,6 +32,8 @@ public class PageExec extends BaseClass {
 	{
 		return BConfig(sConfigKey);
 	}
+	
+	
 
 
 

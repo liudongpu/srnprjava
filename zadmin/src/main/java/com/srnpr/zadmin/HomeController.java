@@ -19,38 +19,46 @@ import com.srnpr.zweb.page.WebPage;
  * Handles requests for the application home page.
  */
 @Controller
-
 public class HomeController {
 
 	/**
 	 * Simply selects the home view to render by returning its name.
 	 */
 	@RequestMapping(value = "/", method = RequestMethod.GET)
-	public String home( Model model) {
-		//model.addAttribute("serverTime", new WebPage().GetPageHtml("zyou","center") );
-		//model.addAttribute("serverTime", new ConfigCacheManager().ShowAllConfig() );
-		//return "home";
+	public String home(Model model) {
+		// model.addAttribute("serverTime", new
+		// WebPage().GetPageHtml("zyou","center") );
+		// model.addAttribute("serverTime", new
+		// ConfigCacheManager().ShowAllConfig() );
+		// return "home";
 		return index("zyou", "chart-system_table", model);
 	}
 
 	@RequestMapping(value = "/{path}/{url}")
-	public String index(@PathVariable("path")String sPath,@PathVariable("url")String sUrl, Model model) {
+	public String index(@PathVariable("path") String sPath,
+			@PathVariable("url") String sUrl, Model model) {
 
-		HttpServletRequest request= ((ServletRequestAttributes)RequestContextHolder.getRequestAttributes()).getRequest();
+		HttpServletRequest request = ((ServletRequestAttributes) RequestContextHolder
+				.getRequestAttributes()).getRequest();
 
-		MHashMap cMap=new MHashMap();
-		@SuppressWarnings("unchecked")
-		Enumeration<String> eKey= request.getParameterNames();
-		while (eKey.hasMoreElements()) {
-			String string = eKey.nextElement();
-			cMap.put(string, request.getParameter(string));
+		if (sPath.equals("zweb-file")) {
 
+			model.addAttribute("serverTime","");
+			
+			
+		} else {
+
+			MHashMap cMap = new MHashMap();
+			@SuppressWarnings("unchecked")
+			Enumeration<String> eKey = request.getParameterNames();
+			while (eKey.hasMoreElements()) {
+				String string = eKey.nextElement();
+				cMap.put(string, request.getParameter(string));
+			}
+			model.addAttribute("serverTime",
+					new WebPage().upPageHtml(sPath, sUrl, cMap));
 		}
-
-
-		model.addAttribute("serverTime", new WebPage().upPageHtml(sPath,sUrl,cMap) );
 		return "home";
 	}
-
 
 }

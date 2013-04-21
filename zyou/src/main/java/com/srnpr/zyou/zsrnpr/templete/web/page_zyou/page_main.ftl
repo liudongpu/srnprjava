@@ -38,7 +38,7 @@
 			<div class="well sidebar-nav">
 				<ul class="nav nav-list">
 					<li class="nav-header">Sidebar</li>
-					<li class="active"><a href="">测试视图</a></li>
+					<li class="active"><a href="${base_url+"zyou/chart-test_view"}">测试视图</a></li>
 					<li><a href="/zadmin/zyou/post-fff">添加</a></li>
 					<li><a href="#">Link</a></li>
 					<li><a href="#">Link</a></li>
