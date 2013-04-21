@@ -11,11 +11,11 @@ public class InfoNumber extends BaseClass {
 	@Test
 	public void TestNumber()
 	{
-		long lNumber= FormatHelper.ConvertFormatStringNumber("dt", "abcdefghijklmnopqrstuvwxyz");
+		long lNumber= FormatHelper.ConvertFormatStringNumber("zw", "abcdefghijklmnopqrstuvwxyz");
 
 		BDebug(0,String.valueOf(lNumber));
 
-		String sFormatString=FormatHelper.ConvertFormatStringNumber((double)99999, "abcdefghijklmnopqrstuvwxyz");
+		String sFormatString=FormatHelper.ConvertFormatStringNumber((double)699, "abcdefghijklmnopqrstuvwxyz");
 
 
 		BDebug(0,sFormatString);

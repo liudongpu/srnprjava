@@ -27,11 +27,11 @@ DROP TABLE IF EXISTS `test_table`;
 CREATE TABLE `test_table` (
   `zid` int(11) NOT NULL AUTO_INCREMENT,
   `uid` char(32) DEFAULT '',
-  `inputtext` varchar(45) DEFAULT '' COMMENT '输入字段',
-  `selecttext` varchar(45) DEFAULT '' COMMENT '选择字段',
-  `url_file` varchar(45) DEFAULT '' COMMENT '文件上传',
-  `url_img` varchar(45) DEFAULT '',
-  `textarea` varchar(45) DEFAULT '',
+  `inputtext` varchar(4000) DEFAULT '' COMMENT '输入字段',
+  `selecttext` varchar(4000) DEFAULT '' COMMENT '选择字段',
+  `url_file` varchar(4000) DEFAULT '' COMMENT '文件上传',
+  `url_img` varchar(4000) DEFAULT '',
+  `textarea` varchar(4000) DEFAULT '',
   `checkbox` varchar(45) DEFAULT '' COMMENT '选择框',
   PRIMARY KEY (`zid`)
 ) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
@@ -43,7 +43,7 @@ CREATE TABLE `test_table` (
 
 LOCK TABLES `test_table` WRITE;
 /*!40000 ALTER TABLE `test_table` DISABLE KEYS */;
-INSERT INTO `test_table` VALUES (1,'99108b5f3d794086b7865cae87dd0612','<p>afdadf</p>\n','','','','<p>xxxxdd</p>\n',''),(2,'d7bc3f5902ca4ad593429a4f84ee25a2','<p>fdafdasfaafdafds</p>\n','aa','aa','dd','<p>acdfxxxxxxxxxxxxafdafdasfdfs</p>\n','afdasf');
+INSERT INTO `test_table` VALUES (1,'99108b5f3d794086b7865cae87dd0612','<p>afdadf</p>\n','','','','<p>xxxxdd</p>\n',''),(2,'d7bc3f5902ca4ad593429a4f84ee25a2','<p>adfa</p>\n','aa','aa','dd','<p>acdfxxxxxxxxxxxxafdafdasfdfs</p>\n','afdasf');
 /*!40000 ALTER TABLE `test_table` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -304,4 +304,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2013-04-21 23:54:05
+-- Dump completed on 2013-04-22  2:44:42

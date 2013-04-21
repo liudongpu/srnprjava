@@ -32,7 +32,7 @@ public class MResult
 	 * @fields errorMessage  失败消息
 	 */
 		
-	private String errorMessage="";
+	private String infoMessage="";
 	
 	
 	 /**
@@ -49,13 +49,23 @@ public class MResult
 	private int infoCode=1;
 	
 	
-	public void Error(int iInfoId,String... sParams)
+	public void error(int iInfoId,String... sParams)
 	{
-		setInfoCode(iInfoId);
+		
 		flag=false;
-		errorMessage=InfoCacheManager.Get(iInfoId,sParams);
+		info(iInfoId,sParams);
 		
 	}
+	
+	
+	public void info(int iInfoId,String... sParams)
+	{
+		setInfoCode(iInfoId);
+		setInfoMessage(InfoCacheManager.Get(iInfoId,sParams));
+	}
+	
+	
+	
 
 	public boolean getFlag()
 	{
@@ -69,17 +79,9 @@ public class MResult
 		this.flag = flag;
 	}
 
-	public String getErrorMessage()
-	{
 	
-		return errorMessage;
-	}
 
-	public void setErrorMessage(String errorMessage)
-	{
 	
-		this.errorMessage = errorMessage;
-	}
 
 	public Object getResult()
 	{
@@ -122,6 +124,16 @@ public class MResult
 	public String ToJsonString()
 	{
 		return new JsonHelper<MResult>().ObjToString(this);
+	}
+
+
+	public String getInfoMessage() {
+		return infoMessage;
+	}
+
+
+	public void setInfoMessage(String infoMessage) {
+		this.infoMessage = infoMessage;
 	}
 	
 	

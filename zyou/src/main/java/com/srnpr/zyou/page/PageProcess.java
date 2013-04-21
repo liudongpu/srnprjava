@@ -51,7 +51,7 @@ public class PageProcess extends WebBaseProcess implements IWebProcess
 			return super.showResult(pRequest);
 		}
 		MResult mResult=new MResult();
-		mResult.Error(111, "err");
+		mResult.error(111, "err");
 		return mResult;
 
 	}
