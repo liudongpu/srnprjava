@@ -11,8 +11,9 @@ zen.e({
 			$(aForm).ajaxSubmit(function(data) {
 				
 				var obj=$.evalJSON(data);
+
+				zen.page.model(obj.flag);
 				
-				alert(obj.flag);
 
 			});
 
@@ -20,17 +21,13 @@ zen.e({
 		
 		call:function(sUrl)
 		{
-			$.getJSON(sUrl, function(data) {
+			$.getJSON(sUrl, function(obj) {
 				
-				alert(data.flag);
-				
+			
+				zen.page.model(obj.flag);
 			});
 		},
-		
-		
-		
-		
-		
+
 		init : function() {
 			
 		},
@@ -42,7 +39,13 @@ zen.e({
 				  CKEDITOR.instances[instance].updateElement();
 
 				}
+		},
+		model:function(content)
+		{
+			
+			$('#zen_page_model_show').modal('show');
 		}
+		
 		
 
 	}

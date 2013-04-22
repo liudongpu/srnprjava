@@ -28,10 +28,6 @@
 	</div>
 </div>
 
-
-
-
-
 <div class="container-fluid">
 	<div class="row-fluid">
 		<div class="span2">
@@ -59,17 +55,28 @@
 		</div>
 		<!--/span-->
 		<div class="span10">
-			
-			
-			<#include pageinfo.getPageInclude() />
-			
-			
+			<#include pageinfo.getPageInclude() />		
 		</div>
 		<!--/span-->
 	</div>
 	<!--/row-->
-
 	<hr/>
+</div>
 
-	
+
+
+
+<div id="zen_page_model_show" class="modal hide fade">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+    <h3>提示消息</h3>
+  </div>
+  <div class="modal-body">
+    <p>操作成功!</p>
+  </div>
+  <div class="modal-footer">
+  	
+  	 <a href="javascript:history.go(-1)" >返回上一页</a>
+    <a href="#" class="btn btn-primary"  data-dismiss="modal"  aria-hidden="true">确认</a>
+  </div>
 </div>
