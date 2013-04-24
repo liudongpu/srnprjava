@@ -10,6 +10,11 @@ public enum EWebSet {
 		
 	Url_Path,
 	
+	/*
+	 * @fields Url_Show  展示方式 Path第二参数  默认为空
+	 */
+	Url_Show,
+	
 	
 	
 	 /**

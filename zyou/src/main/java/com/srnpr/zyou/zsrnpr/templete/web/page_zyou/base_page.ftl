@@ -23,6 +23,17 @@
 
 </head> 
 <body>
-<#include "page_main.ftl" />
+
+
+
+<#if (pageinfo.getWebSet()["Url_Show"]=="")>
+
+	<#include "page_main.ftl" />
+<#else>
+	<#include "page_iframe.ftl" />
+
+</#if>
+
+
 </body> 
 </html>

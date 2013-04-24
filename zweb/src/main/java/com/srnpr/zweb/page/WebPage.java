@@ -53,12 +53,16 @@ public class WebPage extends BaseClass {
 	{
 		HashMap<Object, Object> hPageTemp = new HashMap<Object, Object>();
 		HashMap<Object, Object> hWebPage = new HashMap<Object, Object>();
+		
+		
+		
 		MWebConfig mConfig = WebConst.GetWebConfig(wRequest
 				.upSet(EWebSet.Url_Path));
 		hWebPage.put("PageConfig", mConfig);
 		MWebPage mPageInfo = WebConst.GetWebProcess(
 				wRequest.upSet(EWebSet.Url_Path)).Process(wRequest);
 		mPageInfo.setWebSet(wRequest.convertWebSet());
+		
 		hWebPage.put("PageInfo", mPageInfo);
 		hWebPage.put("PageExec", pageExec);
 		
@@ -87,7 +91,22 @@ public class WebPage extends BaseClass {
 	public String upPageHtml(String sPath, String sUrl, MHashMap cMap) {
 
 		PageRequest wRequest = new PageRequest(cMap);
-		wRequest.inSet(EWebSet.Url_Path, sPath);
+		
+
+		if(sPath.indexOf('-')>-1)
+		{
+			String[] sSplitPaths=sPath.split("-");
+			wRequest.inSet(EWebSet.Url_Path, sSplitPaths[0]);
+			wRequest.inSet(EWebSet.Url_Show, sSplitPaths[1]);
+			
+		}
+		else
+		{
+			wRequest.inSet(EWebSet.Url_Path, sPath);
+			wRequest.inSet(EWebSet.Url_Show, "");
+		}
+	
+		
 		String[] sParams = sUrl.split("-");
 		wRequest.inSet(EWebSet.Url_Target, sParams[0]);
 		wRequest.inSet(EWebSet.Url_View, sParams[1]);
