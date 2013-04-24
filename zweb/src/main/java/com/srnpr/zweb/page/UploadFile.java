@@ -18,126 +18,128 @@ import com.srnpr.zcom.model.MResult;
 
 public class UploadFile extends BaseClass {
 
-	
-	
-	private boolean bAutoRename=true;
-	
-	private boolean bCheckName=true;
-	
-	private String filePath="empty";
-	
-	private String fileUrl="";
-	
-	private String fileName="";
-	
-	public String editorUpload(String sUrl,String sFileName,byte[] bFile,String sEditorFuncNum)
-	{
-		
-		if(sUrl.indexOf("?")>-1)
-		{
-			sUrl=sUrl.substring(0,sUrl.indexOf("?"));
-		}
-		
-		filePath=sUrl.split("-")[1];
-		fileName=sFileName;
-		
-		
-		MResult mResult=uploadFile(bFile);
-		
-		//FileCopyUtils.c
-		
-		if(mResult.getFlag())
-		{
-			return FormatHelper.FormatString(BConfig("zweb.upload_editor_success"),String.valueOf(sEditorFuncNum ),fileUrl,mResult.getInfoMessage());
-		}
-		else
-		{
+	private boolean bAutoRename = true;
 
-			return mResult.getInfoMessage();
+	private boolean bCheckName = true;
+
+	private String filePath = "empty";
+
+	private String fileUrl = "";
+
+	private String fileName = "";
+
+	public String editorUpload(String sUrl, String sFileName, byte[] bFile,
+			MHashMap cMap) {
+
+		if (sUrl.indexOf("?") > -1) {
+			sUrl = sUrl.substring(0, sUrl.indexOf("?"));
 		}
-		
-		
-		
-		
-	}
-	
-	private MResult uploadFile(byte[] bFile) 
-	{
-		MResult mResult=new MResult();
-		try
-		{
-		
-		String sFix="";
-		//校验文件名称
-		if(mResult.getFlag()&&bCheckName)
-		{
+
+		String[] sSplitUrl = sUrl.split("-");
+
+		String sFileTarget = sSplitUrl[0];
+
+		filePath = sSplitUrl[1];
+		fileName = sFileName;
+
+		MResult mResult = uploadFile(bFile);
+
+		// FileCopyUtils.c
+
+		String sReturn = "";
+
+		if (sFileTarget.equals("editor")) {
+
+			if (mResult.getFlag()) {
+				String sEditorFuncNum = cMap.get("CKEditorFuncNum").toString();
+
+				sReturn = FormatHelper.FormatString(
+						BConfig("zweb.upload_editor_success"),
+						String.valueOf(sEditorFuncNum), fileUrl,
+						mResult.getMessage());
+			} else {
+
+				sReturn = mResult.getMessage();
+			}
+		} else {
+
 			
-			String sAllowName=BConfig("zweb.upload_allow");
-			boolean bFlag=false;
-			if(fileName.length()>1)
-			{
-				sFix= StringUtils.substringAfter(fileName, ".").toLowerCase();
-				if(!StringUtils.isEmpty(sFix)&&sFix.length()>0)
-				{
-					if(StringUtils.contains(sAllowName,"."+ sFix+";"))
-					{
-						bFlag=true;
-					}
-				}
+			
+				mResult.setRun(BConfig("zweb.upload_file_success"));
+
+				mResult.setResult(fileUrl);
 				
-			}
-			
-			if(!bFlag)
-			{
-				mResult.error(969901002, fileName);
-			}
-			
-		}
-		
-		if(mResult.getFlag())
-		{
-			
-			Date date=new Date();
-			SimpleDateFormat formatter = new SimpleDateFormat("yyyyMMdd");
-			String sDate= formatter.format(date);
-			
-			filePath=filePath+"/"+sDate+"/";
-			
-			FileUtils.forceMkdir(new File( BConfig("zweb.upload_path")+filePath));
-			
-			if(bAutoRename)
-			{
-				fileName=ComFunction.upUuid()+"."+sFix;
-			}
-			
+					sReturn=mResult.ToJsonString();
 
-			FileCopyUtils.copy(bFile, new File(BConfig("zweb.upload_path")+filePath+fileName));
-			
-			fileUrl=BConfig("zweb.upload_url")+filePath+fileName;
-			mResult.info(969909002);
-			
-		}
-		
-		
-		}
-		catch(Exception e)
-		{
+				
 			
 			
 			
 		}
-		
-		
-		
-		
+
+		return sReturn;
+
+	}
+
+	private MResult uploadFile(byte[] bFile) {
+		MResult mResult = new MResult();
+		try {
+
+			String sFix = "";
+			// 校验文件名称
+			if (mResult.getFlag() && bCheckName) {
+
+				String sAllowName = BConfig("zweb.upload_allow");
+				boolean bFlag = false;
+				if (fileName.length() > 1) {
+					sFix = StringUtils.substringAfter(fileName, ".")
+							.toLowerCase();
+					if (!StringUtils.isEmpty(sFix) && sFix.length() > 0) {
+						if (StringUtils.contains(sAllowName, "." + sFix + ";")) {
+							bFlag = true;
+						}
+					}
+
+				}
+
+				if (!bFlag) {
+					mResult.error(969901002, fileName);
+				}
+
+			}
+
+			if (mResult.getFlag()) {
+
+				Date date = new Date();
+				SimpleDateFormat formatter = new SimpleDateFormat("yyyyMMdd");
+				String sDate = formatter.format(date);
+
+				filePath = filePath + "/" + sDate + "/";
+
+				FileUtils.forceMkdir(new File(BConfig("zweb.upload_path")
+						+ filePath));
+
+				if (bAutoRename) {
+					fileName = ComFunction.upUuid() + "." + sFix;
+				}
+
+				FileCopyUtils.copy(bFile, new File(BConfig("zweb.upload_path")
+						+ filePath + fileName));
+
+				fileUrl = BConfig("zweb.upload_url") + filePath + fileName;
+				
+				
+				
+				
+				mResult.info(969909002);
+
+			}
+
+		} catch (Exception e) {
+
+		}
+
 		return mResult;
 	}
-	
-	
-	
-	
-	
-	
-	
-	
+
 }

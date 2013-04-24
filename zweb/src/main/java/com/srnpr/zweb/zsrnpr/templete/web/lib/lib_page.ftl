@@ -80,7 +80,7 @@ no result
     <label class="control-label" for="${p_info.getColumnName()?default('')}">${p_info.getFieldName()?default('')}</label>
     <div class="controls">
       <input type="hidden" id="${p_info.getColumnName()?default('')}" name="${p_info.getColumnName()?default('')}" value="${p_info.getFieldValue()?default('')}"  />
-      <iframe src="${base_url}zyou-iframe/upload-images_upload" frameborder="0" height="30px"></iframe>
+      <iframe src="${base_url}zyou-iframe/upload-images_upload?parentid=${p_info.getColumnName()?default('')}" frameborder="0" height="30px" width="100%"></iframe>
       
     </div>
   </div>

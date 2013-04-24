@@ -11,6 +11,7 @@ import org.apache.commons.fileupload.FileItem;
 import org.apache.commons.fileupload.FileUploadException;
 import org.apache.commons.fileupload.disk.DiskFileItemFactory;
 import org.apache.commons.fileupload.servlet.ServletFileUpload;
+import org.apache.commons.lang.StringUtils;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -62,8 +63,14 @@ public class HomeController {
 			String string = eKey.nextElement();
 			cMap.put(string, request.getParameter(string));
 		}
+		
+		
+		String sContentType=request.getContentType();
+		
 
-		if (sPath.equals("zweb-file")) {
+		
+
+		if ( StringUtils.contains(sContentType, "multipart/form-data")) {
 			 DiskFileItemFactory factory = new DiskFileItemFactory();
 			 
 			 //factory.setSizeThreshold(4096); // 设置缓冲区大小，这里是4kb
@@ -73,14 +80,13 @@ public class HomeController {
 	           ServletFileUpload upload = new ServletFileUpload(factory);
 	 
 	           // Set overall request size constraint
-	           upload.setSizeMax(4194304); // 设置最大文件尺寸，这里是4MB
+	           //upload.setSizeMax(4194304); // 设置最大文件尺寸，这里是4MB
 	 
 	           List<FileItem> items = null;
 	           
 			try {
 				items = upload.parseRequest(request);
 			} catch (FileUploadException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}// 得到所有的文件
 	           Iterator<FileItem> i = items.iterator();
@@ -89,9 +95,7 @@ public class HomeController {
 	              String fileName = fi.getName();
 	              
 	              if (fileName != null) {
-
-	                  model.addAttribute("serverTime",new UploadFile().editorUpload(sUrl,  fileName,fi.get(),cMap.get("CKEditorFuncNum").toString()));
-
+	                  model.addAttribute("serverTime",new UploadFile().editorUpload(sUrl,  fileName,fi.get(),cMap));
 	              }
 	           }
 			

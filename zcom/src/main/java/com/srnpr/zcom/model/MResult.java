@@ -29,10 +29,10 @@ public class MResult
 	
 	
 	 /**
-	 * @fields errorMessage  失败消息
+	 * @fields message  执行消息
 	 */
 		
-	private String infoMessage="";
+	private String message="";
 	
 	
 	 /**
@@ -43,10 +43,18 @@ public class MResult
 	
 	
 	 /**
-	 * @fields infoCode  返回结果标识码  如果失败会返回失败编码
+	 * @fields code  返回结果标识码  如果失败会返回失败编码
 	 */
 		
-	private int infoCode=1;
+	private int code=1;
+	
+	
+	
+	/**
+	 * @fields Object  执行内容  特殊执行某些内容时指定
+	 */
+	private Object run;
+	
 	
 	
 	public void error(int iInfoId,String... sParams)
@@ -60,8 +68,8 @@ public class MResult
 	
 	public void info(int iInfoId,String... sParams)
 	{
-		setInfoCode(iInfoId);
-		setInfoMessage(InfoCacheManager.Get(iInfoId,sParams));
+		setCode(iInfoId);
+		setMessage(InfoCacheManager.Get(iInfoId,sParams));
 	}
 	
 	
@@ -98,21 +106,7 @@ public class MResult
 
 
 
-	public int getInfoCode()
-	{
-
-		return infoCode;
-	}
-
-
-
-
-	public void setInfoCode(int infoCode)
-	{
-
-		this.infoCode = infoCode;
-	}
-
+	
 
 
 
@@ -127,14 +121,37 @@ public class MResult
 	}
 
 
-	public String getInfoMessage() {
-		return infoMessage;
+	public String getMessage() {
+		return message;
 	}
 
 
-	public void setInfoMessage(String infoMessage) {
-		this.infoMessage = infoMessage;
+	public void setMessage(String message) {
+		this.message = message;
 	}
+
+
+	public int getCode() {
+		return code;
+	}
+
+
+	public void setCode(int code) {
+		this.code = code;
+	}
+
+
+	public Object getRun() {
+		return run;
+	}
+
+
+	public void setRun(Object run) {
+		this.run = run;
+	}
+
+
+	
 	
 	
 	

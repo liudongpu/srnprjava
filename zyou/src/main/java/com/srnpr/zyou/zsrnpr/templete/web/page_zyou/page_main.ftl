@@ -1,3 +1,4 @@
+<body class="webbase_body">
 <div class="navbar navbar-inverse navbar-fixed-top">
 	<div class="navbar-inner">
 		<div class="container-fluid">
@@ -80,3 +81,4 @@
     <a href="#" class="btn btn-primary"  data-dismiss="modal"  aria-hidden="true">确认</a>
   </div>
 </div>
+</body> 

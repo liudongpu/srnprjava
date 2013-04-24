@@ -20,7 +20,6 @@ public class PageRequest {
 	 /**
 	 * @fields reqMap 输入参数
 	 */
-		
 	private MHashMap reqMap=new MHashMap();
 	
 	private MHashMap paramsMap=new MHashMap();
