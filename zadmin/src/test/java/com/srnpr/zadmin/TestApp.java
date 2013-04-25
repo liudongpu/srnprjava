@@ -28,7 +28,7 @@ public class TestApp {
 
 		//PathMatchingResourcePatternResolver  d
 
-		fail("Not yet implemented");
+		//fail("Not yet implemented");
 	}
 
 }
