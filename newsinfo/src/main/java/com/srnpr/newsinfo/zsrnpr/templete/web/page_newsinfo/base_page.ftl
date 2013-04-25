@@ -26,13 +26,7 @@
 
 
 
-<#if (pageinfo.getWebSet()["Url_Show"]=="")>
 
-	<#include "page_main.ftl" />
-<#else>
-	<#include "page_iframe.ftl" />
-
-</#if>
 
 
 

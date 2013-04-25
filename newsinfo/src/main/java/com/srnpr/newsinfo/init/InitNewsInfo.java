@@ -22,7 +22,7 @@ public class InitNewsInfo extends BaseInit implements IBaseInit {
 		ConfigCacheManager cManager=new ConfigCacheManager();
 		mConfig.setPageInclude(cManager.GetHash("zyou.admin_include"));
 
-		String sAdminTheamsPath =BConfig("zyou.path_themes_admin_config");
+		String sAdminTheamsPath =BConfig("newsinfo.newsinfo_css_config");
 
 		HashHelper hashHelper=new HashHelper();
 
@@ -31,8 +31,8 @@ public class InitNewsInfo extends BaseInit implements IBaseInit {
 				sAdminTheamsPath, "");
 
 		for (String s : hashHelper.upStringFromCurrentHash(mTheamsHash
-				.getChild().get("admin_css"))) {
-			mConfig.getSrcCss().add(BConfig("zweb.url_themes_admin") + s);
+				.getChild().get("site_css"))) {
+			mConfig.getSrcCss().add(BConfig("zweb.url_themes_site") + s);
 		}
 
 		for (String s : cManager.GetStrings("zweb.lib_bootstrap_css")) {
@@ -51,7 +51,7 @@ public class InitNewsInfo extends BaseInit implements IBaseInit {
 
 
 
-		mConfig.setBaseInclude(BConfig("zyou.base_include"));
+		mConfig.setBaseInclude(BConfig("newsinfo.base_include"));
 
 
 
