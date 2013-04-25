@@ -10,7 +10,7 @@ import com.srnpr.zweb.page.WebPage;
 
 public class FreeMarkerTest extends TestBase {
 
-	@Test
+	
 	public void test() {
 
 
