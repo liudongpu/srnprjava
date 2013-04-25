@@ -67,7 +67,13 @@ public class UploadFile extends BaseClass {
 			
 				mResult.setRun(BConfig("zweb.upload_file_success"));
 
-				mResult.setResult(fileUrl);
+				
+				MHashMap mMap=new MHashMap();
+				mMap.put("fileurl", fileUrl);
+				mMap.put("parentid", cMap.get("parentid"));
+				
+				
+				mResult.setResult(mMap);
 				
 					sReturn=mResult.ToJsonString();
 

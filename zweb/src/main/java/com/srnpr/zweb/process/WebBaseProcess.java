@@ -179,6 +179,10 @@ public class WebBaseProcess extends BaseClass {
 		} else {
 
 		}
+		
+		
+		mPageInfo.setReq(wRequest);
+		
 
 		// hPageInfo.put("PageInclude", "page_"+sPageType+".ftl");
 

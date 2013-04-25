@@ -45,13 +45,22 @@ zen.e({
 
 			$('#zen_page_model_show').modal('show');
 		},
+		
+		inValue:function(sId,oValue)
+		{
+			$('#'+sId).val(oValue);
+		},
+		
 		upload : function(o) {
 			
 			if (o.flag) {
 				$("#page_upload_call").hide();
 				$('#page_upload_show').html(
-						'<a href="' + o.result + '" target="_blank">'
-								+ o.result + '</a>');
+						'<a href="' + o.result["fileurl"] + '" target="_blank">'
+								+ o.result["fileurl"]+ '</a>');
+				
+				parent.zen.page.inValue(o.result["parentid"],o.result["fileurl"]);
+				
 
 			} else {
 				parent.zen.page.model(o.message);
