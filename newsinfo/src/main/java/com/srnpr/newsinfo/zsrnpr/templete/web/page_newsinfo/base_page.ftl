@@ -20,7 +20,7 @@
 
 	<@m_html_addscript "zen.i({baseurl:'"+base_url+"'});" />
 	
-
+<#include "page_main.ftl" />
 </head> 
 
 
