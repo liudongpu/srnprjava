@@ -31,28 +31,8 @@ public class PageProcess extends WebBaseProcess implements IWebProcess
 		
 		
 		
-		if(pRequest.getParamsMap().containsKey("func_do"))
-		{
-			
-			if(pRequest.getParamsMap().get("func_do").equals("refreshdata"))
-			{
-				
-				
-				WebViewManager.recheckData();
-				
-				
-				new InitRoot().Init();
-				
-			}
-			
-			
-		}
-		else {
 			return super.showResult(pRequest);
-		}
-		MResult mResult=new MResult();
-		mResult.error(111, "err");
-		return mResult;
+		
 
 	}
 
