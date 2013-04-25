@@ -16,7 +16,7 @@
 
 <#macro m_html_addscript m_html_addscript_info >
 
-<script language="javascript">
+<script type="text/javascript">
 	${m_html_addscript_info}
 </script>
 
