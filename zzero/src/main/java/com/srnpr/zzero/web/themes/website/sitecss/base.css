@@ -1,14 +1,200 @@
+
+
 .website_body {
 	background-color:#cacaba;
+	
 }
 
-.header
+.website_center
+{
+	width:1100px;
+	margin:auto;
+}
+
+
+.layout_header
+{
+	height:198px;
+}
+
+
+.layout_bottom
+{
+	background-image:url("../images/website_repx.png");
+	background-position: 0px -60px;
+	height:230px;
+}
+
+
+
+
+
+.header_top
 {
 	
-	height:146px;
-	background-image:url(../images/bg_header_base.jpg);
-	background-position:center;
+	height:198px;
+	background-image:url("../images/website_header.png");
+	background-position:top center;
 	background-repeat: no-repeat;
 	
 	
 }
+
+.header_logo
+{
+	background-image:url("../images/website_png.png);
+	background-position:0px 0px;
+	width:250px;
+	height:100px;
+	position:relative;
+	top:25px;
+}
+
+.lay_header_position
+{
+	height:146px;
+}
+
+
+
+.lay_header_nav
+{
+	height:52px;
+}
+
+.header_nav_left
+{
+	width:800px;
+	
+	font-size:16px;
+	height:52px;
+	float:left;
+}
+
+.header_nav_left ul
+{
+	margin:0px;
+	padding:0px;
+	height:52px;
+	
+}
+
+.header_nav_left ul li
+{
+	float:left;
+	line-height:52px;
+	list-style-type:none;
+
+	height:52px;
+	font-weight:bold;
+}
+
+.header_nav_left ul li a
+{
+	color:#455e2e;
+	 display: inline-block;
+  	*display: inline;
+  	padding:0px 17px 0px 17px;margin:0px;
+  	height:52px;
+  	vertical-align: middle;
+  	
+}
+
+.header_nav_left ul li a:hover
+{
+	background-image:url("../images/website_repx.png");
+	background-position:0px 0px;
+	
+	color:#fff;
+}
+
+
+.header_nav_right
+{
+	float:right;
+	width:283px;
+}
+
+.header_nav_search
+{
+	background-image:url(../images/website_png.png);
+	background-position:0px -100px;
+	width:270px;
+	height:40px;
+	position:relative;
+	top:10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.main
+{
+	
+}
+
+.index_adv
+{
+	height:330px;
+}
+
+.index_banner
+{
+	height:480px;
+	overflow: hidden;
+}
+
+.index_banner_item
+{
+	position:relative;
+	top:4px;
+
+	width:266px;
+	height:466px;
+	float:left;
+	background-color:#fff;
+}
+.index_banner_split
+{
+	width:12px;
+	float:left;
+	height:100%;
+}
+
+
+.index_picnav
+{
+	background-image:url("../images/website_header.png");
+	height:55px;
+	background-position:0px -200px;
+}
+
+.index_piclist
+{
+	height:200px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
