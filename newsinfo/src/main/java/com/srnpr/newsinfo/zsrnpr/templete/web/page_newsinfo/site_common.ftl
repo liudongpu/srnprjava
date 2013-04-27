@@ -1,43 +1,14 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>dd</title>
-        <link type="text/css" href="sitecss/base.css" rel="stylesheet">
-        <link type="text/css" href="../../lib/bootstrap/css/bootstrap.min.css"
-        rel="stylesheet">
-        <link type="text/css" href="../../lib/jquery/jquery-site.css"
-        rel="stylesheet">
 
-        <script type="text/javascript" src="../../lib/jquery/jquery-last.min.js"></script>
-        <script type="text/javascript" src="../../lib/jquery/jquery-pluging.js"></script>
-        <script type="text/javascript"
-        src="../../lib/bootstrap/js/bootstrap.min.js"></script>
-        <script type="text/javascript" src="../../zen/zen.js"></script>
-        <script type="text/javascript" src="../../zen/zen_site.js"></script>
-        <script type="text/javascript" src="../../lib/jquery/jquery-site.js"></script>
-
-        <script type="text/javascript">
-            zen.i({
-                baseurl : '/zadmin/'
-            });
-        </script>
-
-    </head>
-    <body class="website_body">
-        <div class="layout_header">
+<#macro m_site_common_header>
+	<div class="layout_header">
             <div class="header_top">
                 <div class="website_center">
                     <div class="lay_header_position">
-                        <!--
                         <div class="header_logo"></div>
-                        -->
                     </div>
                     <div class="lay_header_nav">
                         <div class="header_nav_left">
-
                             <ul>
-                                <!--
                                 <li class="active"><a href="/">首 页</a></li>
                                 <li><a href="#">博观资讯</a></li>
                                 <li><a href="#">博观公告</a></li>
@@ -45,7 +16,6 @@
                                 <li><a href="#"> 博观书房 </a></li>
                                 <li><a href="#">博观俱乐部 </a></li>
                                 <li><a href="#">名家论道</a></li>
-                                -->
                             </ul>
                         </div>
                         <div class="header_nav_right">
@@ -55,65 +25,18 @@
                 </div>
             </div>
         </div>
+</#macro>
 
-        <div class="layout_main website_center">
-            <div class="index_body">
-                <div class="index_adv">
-                    <div class="slider-wrapper theme-default">
-                        <div id="index_adv_slider" class="nivoSlider">
+<#macro m_site_common_footer>
+<div class="layout_footer"></div>
+</#macro>
 
-                            <img
-                            src="http://f.hiphotos.baidu.com/album/w%3D2048/sign=fa96ff4b06082838680ddb148ca1a801/08f790529822720ed11ab6ae7acb0a46f31fab8a.jpg"
-                            alt="" title="#htmlcaption" /><a href="http://dev7studios.com"><img
-                            src="http://f.hiphotos.baidu.com/album/w%3D2048/sign=9258248ad000baa1ba2c40bb7328b812/0e2442a7d933c895dc26711dd01373f08202007f.jpg"
-                            alt="" title="#htmlcaption" /></a><img
-                            src="http://a.hiphotos.baidu.com/album/w%3D2048/sign=8b874907f91986184147e8847ed52f73/a1ec08fa513d26976172c43b54fbb2fb4316d837.jpg"
-                            alt="" title="#htmlcaption" /><img
-                            src="http://g.hiphotos.baidu.com/album/w%3D230/sign=da38f9fbcaef76093c0b9e9c1edca301/35a85edf8db1cb139f98c175dc54564e93584be7.jpg"
-                            alt="" title="#htmlcaption" />
-                        </div>
-                        <div id="htmlcaption" class="nivo-html-caption  index_adv_caption">
 
-                            <a class="nivo-prevNav"><div class="index_adv_caption_left"></div></a>
-                            <div class="index_adv_caption_center">
-                                <a href="">我轻轻地飘荡</a>
-                            </div>
 
-                            <a class="nivo-nextNav"><div class="index_adv_caption_right"></div></a>
 
-                        </div>
-                    </div>
-                    <script>
-                        // Can also be used with $(document).ready()
-                        $(window).load(function() {
-                            $('#index_adv_slider').nivoSlider({
+<#macro m_site_common_piclist>
 
-                                controlNav : false,
-                                controlNavThumbs : false
-                            });
-                        });
-                    </script>
-
-                </div>
-                <div class="index_banner">
-                    <div class="index_banner_item">
-                        <img src="http://www.isgo.com/userfiles/phtoto/img/0/1355811616465.jpg" alt=""/>
-                    </div>
-                    <div class="index_banner_split"></div>
-                    <div class="index_banner_item">
-                        <img src="http://www.isgo.com/userfiles/phtoto/img/1/1355811616481.jpg" alt=""/>
-                    </div>
-                    <div class="index_banner_split"></div>
-                    <div class="index_banner_item">
-                        <img src="http://www.isgo.com/userfiles/phtoto/img/2/1355811894482.jpg" alt=""/>
-                    </div>
-                    <div class="index_banner_split"></div>
-                    <div class="index_banner_item">
-                        <img src="http://www.isgo.com/userfiles/phtoto/img/0/1341454817172.jpg" alt=""/>
-                    </div>
-                </div>
-            </div>
-            <div class="index_picnav"></div>
+ 		<div class="index_picnav"></div>
             <div class="index_piclist">
                 <div class="index_piclist_position">
                     <div id="index_piclist_box" class="index_piclist_box">
@@ -171,10 +94,77 @@
                     });
                 </script>
             </div>
+
+</#macro>
+
+
+
+<#macro m_site_common_indexmain>
+<@m_html_addjs [base_zero+"lib/jquery/jquery-site.js"] />
+<@m_html_addcss [base_zero+"lib/jquery/jquery-site.css"] />
+
+<div class="layout_main website_center">
+            <div class="index_body">
+                <div class="index_adv">
+                    <div class="slider-wrapper theme-default">
+                        <div id="index_adv_slider" class="nivoSlider">
+
+                            <img
+                            src="http://www.boguanpaimai.com//Attach/pic/20130408/s_51629506e0e39.jpg"
+                            alt="" title="#htmlcaption" /><a href="http://dev7studios.com"><img
+                            src="http://www.boguanpaimai.com//Attach/pic/20130408/s_516295076cb05.jpg"
+                            alt="" title="#htmlcaption" /></a><img
+                            src="http://www.boguanpaimai.com//Attach/pic/20130422/s_5174f6e85884c.jpg"
+                            alt="" title="#htmlcaption" /><img
+                            src="http://www.boguanpaimai.com//Attach/pic/20130422/s_5174f6e87fa84.jpg"
+                            alt="" title="#htmlcaption" />
+                        </div>
+                        <div id="htmlcaption" class="nivo-html-caption  index_adv_caption">
+
+                            <a class="nivo-prevNav"><div class="index_adv_caption_left"></div></a>
+                            <div class="index_adv_caption_center">
+                                <a href="">我轻轻地飘荡</a>
+                            </div>
+
+                            <a class="nivo-nextNav"><div class="index_adv_caption_right"></div></a>
+
+                        </div>
+                    </div>
+                    <script>
+                        // Can also be used with $(document).ready()
+                        $(window).load(function() {
+                            $('#index_adv_slider').nivoSlider({
+
+                                controlNav : false,
+                                controlNavThumbs : false
+                            });
+                        });
+                    </script>
+
+                </div>
+                <div class="index_banner">
+                    <div class="index_banner_item">
+                        <img src="http://www.isgo.com/userfiles/phtoto/img/0/1355811616465.jpg" alt=""/>
+                    </div>
+                    <div class="index_banner_split"></div>
+                    <div class="index_banner_item">
+                        <img src="http://www.isgo.com/userfiles/phtoto/img/1/1355811616481.jpg" alt=""/>
+                    </div>
+                    <div class="index_banner_split"></div>
+                    <div class="index_banner_item">
+                        <img src="http://www.isgo.com/userfiles/phtoto/img/2/1355811894482.jpg" alt=""/>
+                    </div>
+                    <div class="index_banner_split"></div>
+                    <div class="index_banner_item">
+                        <img src="http://www.isgo.com/userfiles/phtoto/img/0/1341454817172.jpg" alt=""/>
+                    </div>
+                </div>
+            </div>
+            
+            <@m_site_common_piclist />
+            
+            
+            
         </div>
 
-        <div class="layout_footer"></div>
-
-    </body>
-
-</html>
+</#macro>
