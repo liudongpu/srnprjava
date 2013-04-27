@@ -1,5 +1,20 @@
 
 
+body
+{
+    text-align:center;
+    
+}
+
+form,ul,li,div
+{
+    margin:0px;
+    padding:0px;
+}
+
+
+
+
 .website_body {
 	background-color:#cacaba;
 	
@@ -8,7 +23,9 @@
 .website_center
 {
 	width:1100px;
-	margin:auto;
+	margin:0px auto;
+	margin-left:auto;
+	margin-right:auto; 
 }
 
 
@@ -23,6 +40,7 @@
 	background-image:url("../images/website_repx.png");
 	background-position: 0px -60px;
 	height:230px;
+	margin-top:10px;
 }
 
 
@@ -238,18 +256,113 @@ padding:0px 40px;
 .index_piclist
 {
 	height:200px;
+	background-color:#fff;
+	overflow: hidden;
+	position:relative;
 
 }
 
 
+.index_piclist_position
+{
+    position: relative;
+    top:11px;
+    left: 11px;
+}
+
+.index_piclist_box
+{
+	height:150px;
+	position: relative;
+    width:2500px;
+}
 
 
+.index_piclist_box ul
+{
+	margin:0px;
+	padding:0px;
+}
+
+.index_piclist_box ul li
+{
+	float:left;
+	margin-right:16px;
+	width:140px;
+	list-style-type:none;
+	height:100%;
+}
+.index_piclist_box ul li a
+{
+ color:#696d5a;
+ font-size:12px;
+ line-height: 20px;
+}
+
+.index_piclist_box img
+{
+	width:138px;
+	height:84px;
+	border:solid 1px #83876b;
+}
+.index_piclist_nav
+{
+    width:99%;
+}
+.index_piclist_nav ul
+{
+    position: relative;
+    right:0px;
+    float:right;
+}
+.index_piclist_nav ul li
+{
+    width:20px;
+    height:20px;
+    background-image:url("../images/website_png.png");
+    float:left;
+    list-style-type:none;
+    background-position:0px -140px;
+    cursor: pointer;
+   
+}
+
+.index_piclist_nav span
+{
+     width:20px;
+    height:20px;
+    background-image:url("../images/website_png.png");
+    display:inline-block;
+}
+
+.index_piclist_nav .c_prev
+{
+   
+     background-position:-60px -140px;
+}
+
+.index_piclist_nav .c_next
+{
+    background-position:-40px -140px;
+}
 
 
+.index_piclist_nav .c_select
+{
+    background-position:-20px -140px;
+}
 
+.index_piclist_nav .c_nav
+{
+    background-position:-80px -140px;
+     margin-right:5px;
+}
 
-
-
+.index_piclist_nav .c_nav_select
+{
+    background-position:-100px -140px;
+     margin-right:5px;
+}
 
 
 
