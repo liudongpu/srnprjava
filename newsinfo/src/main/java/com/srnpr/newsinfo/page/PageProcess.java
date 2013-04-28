@@ -18,20 +18,26 @@ import com.srnpr.zweb.model.MWebView;
 import com.srnpr.zweb.page.PageRequest;
 import com.srnpr.zweb.process.WebBaseProcess;
 
-public class PageProcess extends WebBaseProcess implements IWebProcess
+public class PageProcess  implements IWebProcess
 {
 
 	public MWebPage Process(PageRequest wRequest)
 	{
+		
+		MWebPage mPageInfo = new MWebPage();
+		
+		mPageInfo.setPageInclude(wRequest.upSet(EWebSet.Url_Target));
+		
 
-		return super.ShowHtml(wRequest);
+		return mPageInfo;
 	}
 
 	public MResult result(PageRequest pRequest) {
 		
 		
 		
-			return super.showResult(pRequest);
+			//return super.showResult(pRequest);
+		return new MResult();
 		
 
 	}

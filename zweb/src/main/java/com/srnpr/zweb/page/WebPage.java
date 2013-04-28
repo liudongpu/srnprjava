@@ -111,6 +111,7 @@ public class WebPage extends BaseClass {
 		wRequest.inSet(EWebSet.Url_Target, sParams[0]);
 		wRequest.inSet(EWebSet.Url_View, sParams[1]);
 		
+		if(ConfigCacheManager.GetHash("zdata.did_page_type").containsKey(wRequest.upSet(EWebSet.Url_Target)))
 		wRequest.setDidPageType(Integer.valueOf(ConfigCacheManager.GetHash("zdata.did_page_type").get(wRequest.upSet(EWebSet.Url_Target))));
 		
 		

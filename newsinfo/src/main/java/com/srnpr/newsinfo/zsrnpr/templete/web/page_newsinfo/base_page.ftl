@@ -22,7 +22,9 @@
 
 	<@m_html_addscript "zen.i({baseurl:'"+base_url+"'});" />
 </head> 	
-<#include "page_main.ftl" />
+
+<#include "page_"+pageinfo.getPageInclude()?default('main')+".ftl" />
+
 
 
 
