@@ -44,7 +44,7 @@
 					<li><a href="${base_url}zyou/chart-v_info_notice">博观公告</a></li>
 					<li><a href="#">Link</a></li>
 					<li><a href="#">Link</a></li>
-					<li><a href="#">Link</a></li>
+					<li><a href="#">Link</a></li> 
 					<li><a href="#">Link</a></li>
 					<li class="nav-header">Sidebar</li>
 					<li><a href="#">Link</a></li>

@@ -11,7 +11,7 @@
                             <ul>
                                 <li><a <#if (nav=="main")> class="active"</#if> href="/">首 页</a></li>
                                 <li><a <#if (nav=="info")> class="active"</#if> href="/newsinfo/info-list">博观资讯</a></li>
-                                <li><a href="#">博观公告</a></li>
+                                <li><a <#if (nav=="notice")> class="active"</#if> href="/newsinfo/notice-list">博观公告</a></li>
                                 <li><a href="#">预展及成交 </a></li>
                                 <li><a href="#"> 博观书房 </a></li>
                                 <li><a href="#">博观俱乐部 </a></li>

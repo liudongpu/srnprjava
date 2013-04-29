@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>dd</title>
+<link type="text/css" href="sitecss/base.css" rel="stylesheet">
+<link type="text/css" href="../../lib/bootstrap/css/bootstrap.min.css"
+	rel="stylesheet">
+<link type="text/css" href="../../lib/jquery/jquery-site.css"
+	rel="stylesheet">
+
+<script type="text/javascript" src="../../lib/jquery/jquery-last.min.js"></script>
+<script type="text/javascript" src="../../lib/jquery/jquery-pluging.js"></script>
+<script type="text/javascript" src="../../lib/jquery/jquery-pluging.js"></script>
+<script type="text/javascript"
+	src="../../lib/bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../zen/zen.js"></script>
+<script type="text/javascript" src="../../zen/zen_site.js"></script>
+
+<script type="text/javascript"
+	src="../../lib/jquery/jquery.masonry.min.js"></script>
+
+<script type="text/javascript">
+	zen.i({
+		baseurl : '/zadmin/'
+	});
+</script>
+
+</head>
+<body class="website_body">
+	<div class="layout_header">
+		<div class="header_top">
+			<div class="website_center">
+				<div class="lay_header_position">
+
+					<div class="header_logo"></div>
+
+				</div>
+				<div class="lay_header_nav">
+					<div class="header_nav_left">
+
+						<ul>
+
+							<li><a class="active" href="/">首 页</a></li>
+							<li><a href="#">博观资讯</a></li>
+							<li><a href="#">博观公告</a></li>
+							<li><a href="#">预展及成交 </a></li>
+							<li><a href="#"> 博观书房 </a></li>
+							<li><a href="#">博观俱乐部 </a></li>
+							<li><a href="#">名家论道</a></li>
+
+						</ul>
+					</div>
+					<div class="header_nav_right">
+						<div class="header_nav_search"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="layout_main website_center">
+
+		<div class="layout_height8"></div>
+
+
+		<script type="text/javascript">
+			$(function() {
+				// masonry plugin call
+				$('#container').masonry({
+					itemSelector : '.c_item'
+				});
+				//injecting arrow points
+				function Arrow_Points() {
+					
+					var dNowTime="2013-04-29";
+					
+					var iIndex=0;
+
+					var s = $("#container").find(".c_item");
+					
+					
+					
+					$.each(s, function(i, obj) {
+						var posLeft = $(obj).css("left");
+						
+						var sCss="c_left";
+						var sCssLine=($(obj).find(".c_flagprep").size()>0)?'c_prep':'c_success';
+						
+						var sTime=$(obj).find(".c_time").text();
+						
+						if (posLeft == "0px") {
+							
+						} else {
+							$(obj).css("left", parseInt(posLeft) + 100);
+							sCss="c_right";
+						}
+						var posTop = parseInt($(obj).css("top"));
+						
+						if(iIndex>0)
+							{
+							
+								
+							
+							
+								$("#container").append(
+								'<div class="c_box '+sCss+'" style="top:'
+										+ ((posTop + 100) + "px") + '"><div class="c_line"></div><div class="'+sCssLine+'"></div></div>');
+							}
+						else
+							{
+							
+							$("#container").append(
+									'<div class="c_box '+sCss+'" style="top:0px"><div class="c_target"></div></div>');
+							
+							}
+						
+						iIndex++;
+
+					});
+				}
+				Arrow_Points();
+			});
+		</script>
+
+
+		<div class="prep_timebox">
+			<div id="container" class="prep_timeline">
+
+				<!-- E TimeLine导航 -->
+				<div class="timeline_container">
+					<div class="timeline">
+						<div class="plus"></div>
+					</div>
+				</div>
+				<!-- E TimeLine导航 -->
+				<div class="c_item">
+					<div class="c_height"></div>
+				</div>
+
+				<div class="c_item">
+					<div class="c_inner">
+						<div class="c_image"></div>
+						<div class="c_time">2013-04-29</div>
+						<div class="c_flagprep">1</div>
+					</div>
+				</div>
+				<div class="c_item">
+					<div class="c_inner">
+						<div class="c_image"></div>
+						<div class="c_time">2013-04-29</div>
+					</div>
+				</div>
+				<div class="c_item">
+					<div class="c_inner">
+						<div class="c_image"></div>
+						<div class="c_time">2013-04-29</div>
+					</div>
+				</div>
+				<div class="c_item">
+					<div class="c_inner">
+						<div class="c_image"></div>
+						<div class="c_time">2013-04-29</div>
+					</div>
+				</div>
+				<div class="c_item">
+					<div class="c_inner">
+						<div class="c_image"></div>
+						<div class="c_time">2013-04-29</div>
+					</div>
+				</div>
+				<div class="c_item">
+					<div class="c_inner">
+						<div class="c_image"></div>
+						<div class="c_time">2013-04-29</div>
+					</div>
+				</div>
+				<div class="c_item">
+					<div class="c_inner">
+						<div class="c_image"></div>
+						<div class="c_time">2013-04-29</div>
+					</div>
+				</div>
+				<div class="c_item">
+					<div class="c_inner">
+						<div class="c_image"></div>
+						<div class="c_time">2013-04-29</div>
+					</div>
+				</div>
+			</div>
+
+
+			<div class="layout_height8" style="height: 100px;"></div>
+		</div>
+	</div>
+
+	<div class="layout_footer"></div>
+
+</body>
+
+</html>
