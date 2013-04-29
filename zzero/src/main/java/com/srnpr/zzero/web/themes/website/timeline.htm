@@ -105,8 +105,8 @@
 
 										if (iIndex > 0) {
 
-											var sTime = $(obj).find(".c_time")
-													.text();
+											var sTime = $(obj).find(
+													".c_time span").text();
 
 											var iNowYear = parseInt(sTime
 													.split('-')[0]);
@@ -124,13 +124,15 @@
 														.append(
 																'<div class="c_box" style="top:'
 																		+ (posTop + 20)
-																		+ 'px"><div class="c_year">'
+																		+ 'px"><div class="c_year" id="y'+iTempYear+'">'
 																		+ iTempYear
 																		+ '</div></div>');
 												posTop = posTop + 80;
 
 											} else if (iNowMonth != iTempMonth) {
-
+												if (sCss == "c_left") {
+													posTop = posTop + 80;
+												}
 												$("#container")
 														.append(
 																'<div class="c_box" style="top:'
@@ -193,57 +195,192 @@
 
 				<div class="c_item">
 					<div class="c_inner">
-						<div class="c_image"></div>
-						<div class="c_time">2013-04-29</div>
-						<div class="c_flagprep">1</div>
+						<div class="c_image">
+							<img
+								src="http://www.boguanpaimai.com/Attach/pic/20130407/b_51613118b0132.jpg" />
+						</div>
+						<div class="c_info">
+							<div class="c_title">拍卖会：a</div>
+							<div>专场：共1个专场</div>
+							<div class="c_time">
+								时间：<span>2013-04-29</span>
+							</div>
+							<div class="c_href">
+								<span class="c_flagprep"></span><a href="#">查看详情 ></a>
+							</div>
+						</div>
+
 					</div>
 				</div>
 				<div class="c_item">
 					<div class="c_inner">
-						<div class="c_image"></div>
-						<div class="c_time">2012-04-29</div>
+						<div class="c_image">
+							<img
+								src="http://www.boguanpaimai.com/Attach/pic/20130407/b_51613118b0132.jpg" />
+						</div>
+						<div class="c_info">
+							<div class="c_title">拍卖会：a</div>
+							<div>专场：共1个专场</div>
+							<div class="c_time">
+								时间：<span>2013-03-29</span>
+							</div>
+							<div class="c_href">
+								<span class="c_flagprep"></span><a href="#">查看详情 ></a>
+							</div>
+						</div>
+
 					</div>
 				</div>
 				<div class="c_item">
 					<div class="c_inner">
-						<div class="c_image"></div>
-						<div class="c_time">2012-03-29</div>
+						<div class="c_image">
+							<img
+								src="http://www.boguanpaimai.com/Attach/pic/20130407/b_51613118b0132.jpg" />
+						</div>
+						<div class="c_info">
+							<div class="c_title">拍卖会：a</div>
+							<div>专场：共1个专场</div>
+							<div class="c_time">
+								时间：<span>2012-04-29</span>
+							</div>
+							<div class="c_href">
+								<span class="c_flagprep"></span><a href="#">查看详情 ></a>
+							</div>
+						</div>
+
 					</div>
 				</div>
 				<div class="c_item">
 					<div class="c_inner">
-						<div class="c_image"></div>
-						<div class="c_time">2010-04-29</div>
+						<div class="c_image">
+							<img
+								src="http://www.boguanpaimai.com/Attach/pic/20130407/b_51613118b0132.jpg" />
+						</div>
+						<div class="c_info">
+							<div class="c_title">拍卖会：a</div>
+							<div>专场：共1个专场</div>
+							<div class="c_time">
+								时间：<span>2011-04-29</span>
+							</div>
+							<div class="c_href">
+								<span class="c_flagprep"></span><a href="#">查看详情 ></a>
+							</div>
+						</div>
+
 					</div>
 				</div>
 				<div class="c_item">
 					<div class="c_inner">
-						<div class="c_image"></div>
-						<div class="c_time">2010-03-29</div>
+						<div class="c_image">
+							<img
+								src="http://www.boguanpaimai.com/Attach/pic/20130407/b_51613118b0132.jpg" />
+						</div>
+						<div class="c_info">
+							<div class="c_title">拍卖会：a</div>
+							<div>专场：共1个专场</div>
+							<div class="c_time">
+								时间：<span>2010-04-29</span>
+							</div>
+							<div class="c_href">
+								<span class="c_flagprep"></span><a href="#">查看详情 ></a>
+							</div>
+						</div>
+
 					</div>
 				</div>
 				<div class="c_item">
 					<div class="c_inner">
-						<div class="c_image"></div>
-						<div class="c_time">2013-04-29</div>
+						<div class="c_image">
+							<img
+								src="http://www.boguanpaimai.com/Attach/pic/20130407/b_51613118b0132.jpg" />
+						</div>
+						<div class="c_info">
+							<div class="c_title">拍卖会：a</div>
+							<div>专场：共1个专场</div>
+							<div class="c_time">
+								时间：<span>2010-03-29</span>
+							</div>
+							<div class="c_href">
+								<span class="c_flagprep"></span><a href="#">查看详情 ></a>
+							</div>
+						</div>
+
 					</div>
 				</div>
 				<div class="c_item">
 					<div class="c_inner">
-						<div class="c_image"></div>
-						<div class="c_time">2013-04-29</div>
+						<div class="c_image">
+							<img
+								src="http://www.boguanpaimai.com/Attach/pic/20130407/b_51613118b0132.jpg" />
+						</div>
+						<div class="c_info">
+							<div class="c_title">拍卖会：a</div>
+							<div>专场：共1个专场</div>
+							<div class="c_time">
+								时间：<span>2010-02-29</span>
+							</div>
+							<div class="c_href">
+								<span class="c_flagprep"></span><a href="#">查看详情 ></a>
+							</div>
+						</div>
+
 					</div>
 				</div>
 				<div class="c_item">
 					<div class="c_inner">
-						<div class="c_image"></div>
-						<div class="c_time">2013-04-29</div>
+						<div class="c_image">
+							<img
+								src="http://www.boguanpaimai.com/Attach/pic/20130407/b_51613118b0132.jpg" />
+						</div>
+						<div class="c_info">
+							<div class="c_title">拍卖会：a</div>
+							<div>专场：共1个专场</div>
+							<div class="c_time">
+								时间：<span>2009-04-29</span>
+							</div>
+							<div class="c_href">
+								<span class="c_flagprep"></span><a href="#">查看详情 ></a>
+							</div>
+						</div>
+
 					</div>
 				</div>
 				<div class="c_item">
 					<div class="c_inner">
-						<div class="c_image"></div>
-						<div class="c_time">2013-03-29</div>
+						<div class="c_image">
+							<img
+								src="http://www.boguanpaimai.com/Attach/pic/20130407/b_51613118b0132.jpg" />
+						</div>
+						<div class="c_info">
+							<div class="c_title">拍卖会：a</div>
+							<div>专场：共1个专场</div>
+							<div class="c_time">
+								时间：<span>2008-02-29</span>
+							</div>
+							<div class="c_href">
+								<span class="c_flagprep"></span><a href="#">查看详情 ></a>
+							</div>
+						</div>
+
+					</div>
+				</div>
+				<div class="c_item">
+					<div class="c_inner">
+						<div class="c_image">
+							<img
+								src="http://www.boguanpaimai.com/Attach/pic/20130407/b_51613118b0132.jpg" />
+						</div>
+						<div class="c_info">
+							<div class="c_title">拍卖会：a</div>
+							<div>专场：共1个专场</div>
+							<div class="c_time">
+								时间：<span>2007-04-29</span>
+							</div>
+							<div class="c_href">
+								<span class="c_flagprep"></span><a href="#">查看详情 ></a>
+							</div>
+						</div>
+
 					</div>
 				</div>
 			</div>
