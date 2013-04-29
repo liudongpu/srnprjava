@@ -33,13 +33,13 @@ public class WebBaseProcess extends BaseClass {
 		int iPageType = Integer.valueOf(pRequest.getParamsMap()
 				.get("func_from_page_did").toString());
 		if (iPageType == 416120101) {
-			MWebView mView = WebViewManager.Get(sPageView, iPageType);
+			MWebView mView = WebViewManager.upView(sPageView, iPageType);
 
 			DataSupport dSupport = new DataSupport();
 			dSupport.insertData(mView.getTableName(), pRequest.getReqMap());
 
 		} else if (iPageType == 416120105) {
-			MWebView mView = WebViewManager.Get(sPageView, iPageType);
+			MWebView mView = WebViewManager.upView(sPageView, iPageType);
 			DataSupport dSupport = new DataSupport();
 			dSupport.updateData(mView.getTableName(), pRequest.getReqMap(),
 					"uid");
@@ -65,14 +65,14 @@ public class WebBaseProcess extends BaseClass {
 		// 列表页
 		if (iPageType == 416120103) {
 
-			MWebView mView = WebViewManager.Get(sPageView, iPageType);
+			MWebView mView = WebViewManager.upView(sPageView, iPageType);
 			TableSupport dHelper = DataTableManager.Get(mView.getTableName());
 
 			List<List<String>> listPageData = new ArrayList<List<String>>();
 
 			List<String> listTitle = new ArrayList<String>();
 
-			List<MWebFields> listFields = WebViewManager.Get(sPageView,
+			List<MWebFields> listFields = WebViewManager.upView(sPageView,
 					416120109).getFields();
 			// List<MWebOptions> listOptions=upUseOptions(mView, iPageType);
 
@@ -131,7 +131,7 @@ public class WebBaseProcess extends BaseClass {
 
 		} else if (iPageType == 416120101) {
 
-			MWebView mView = WebViewManager.Get(sPageView, iPageType);
+			MWebView mView = WebViewManager.upView(sPageView, iPageType);
 
 			List<MWebFields> mPageDataFields = new ArrayList<MWebFields>();
 
@@ -151,7 +151,7 @@ public class WebBaseProcess extends BaseClass {
 					mPageInfo, null));
 
 		} else if (iPageType == 416120105) {
-			MWebView mView = WebViewManager.Get(sPageView, iPageType);
+			MWebView mView = WebViewManager.upView(sPageView, iPageType);
 			TableSupport dHelper = DataTableManager.Get(mView.getTableName());
 
 			List<MWebFields> listFields = mView.getFields();

@@ -33,7 +33,10 @@ public class PageExec extends BaseClass {
 		return BConfig(sConfigKey);
 	}
 	
-	
+	public Object upData(String sTableName,String... sArgs)
+	{
+		return DataTableManager.Get(sTableName).upListListByQuery(sArgs);
+	}
 
 
 

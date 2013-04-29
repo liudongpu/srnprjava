@@ -8,7 +8,7 @@
 
 <form id="page_form" class="form-horizontal"   action="/zadmin/zweb/${pageinfo.getWebSet().Url_Target}-${pageinfo.getWebSet().Url_View}-aa-1" method="post">
 
- <legend>系统所有表
+ <legend>修改
  <div class="btn-group pull-right">
  
     <#list pageinfo.getPageOptions() as e_list>

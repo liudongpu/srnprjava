@@ -109,26 +109,32 @@
                     <div class="slider-wrapper theme-default">
                         <div id="index_adv_slider" class="nivoSlider">
 
-                            <img
-                            src="http://www.boguanpaimai.com//Attach/pic/20130408/s_51629506e0e39.jpg"
-                            alt="" title="#htmlcaption" /><a href="http://dev7studios.com"><img
-                            src="http://www.boguanpaimai.com//Attach/pic/20130408/s_516295076cb05.jpg"
-                            alt="" title="#htmlcaption" /></a><img
-                            src="http://www.boguanpaimai.com//Attach/pic/20130422/s_5174f6e85884c.jpg"
-                            alt="" title="#htmlcaption" /><img
-                            src="http://www.boguanpaimai.com//Attach/pic/20130422/s_5174f6e87fa84.jpg"
-                            alt="" title="#htmlcaption" />
+
+							 <#list pageexec.upData("info_adv") as el>
+							 
+								  <img
+	                            src="${el["file_url"]}"
+	                            alt="" title="#htmlcaption_${el_index}" />
+							 
+							 </#list>
+
+                           
                         </div>
-                        <div id="htmlcaption" class="nivo-html-caption  index_adv_caption">
-
-                            <a class="nivo-prevNav"><div class="index_adv_caption_left"></div></a>
-                            <div class="index_adv_caption_center">
-                                <a href="">我轻轻地飘荡</a>
-                            </div>
-
-                            <a class="nivo-nextNav"><div class="index_adv_caption_right"></div></a>
-
-                        </div>
+                        
+                         <#list pageexec.upData("info_adv") as el>
+	                         <div id="htmlcaption_${el_index}" class="nivo-html-caption  index_adv_caption">
+	                            <a class="nivo-prevNav"><div class="index_adv_caption_left"></div></a>
+	                            <div class="index_adv_caption_center">
+	                                <a href="">${el["title"]}</a>
+	                            </div>
+	                            <a class="nivo-nextNav"><div class="index_adv_caption_right"></div></a>
+	
+	                        </div>
+                         
+                         
+                        </#list>
+                        
+                       
                     </div>
                     <script>
                         // Can also be used with $(document).ready()

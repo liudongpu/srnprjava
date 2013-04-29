@@ -1,5 +1,5 @@
 
- <legend>系统所有表
+ <legend>列表
  <div class="btn-group pull-right">
  
     <#list pageinfo.getPageOptions() as e_list>

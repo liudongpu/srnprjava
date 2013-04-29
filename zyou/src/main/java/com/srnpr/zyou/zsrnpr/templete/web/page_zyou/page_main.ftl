@@ -10,7 +10,7 @@
 			<a class="brand" href="#">超级后台管理系统</a>
 			<div class="nav-collapse collapse">
 				<p class="navbar-text pull-right">
-					Logged in as <a onclick="zen.page.call('/zadmin/zyou/func-system_table-97b1bcc3a90111e2bb7900241d8adc62-func_do=refreshdata')" class="navbar-link">Username</a>
+					Logged in as <a onclick="zen.page.call('/zadmin/zyou/func-system_table-97b1bcc3a90111e2bb7900241d8adc62-func_do=refreshcache')" class="navbar-link">Username</a>
 				</p>
 				<ul class="nav">
 					<li class="active"><a href="#">首页</a></li>
@@ -32,12 +32,12 @@
 <div class="container-fluid">
 	<div class="row-fluid">
 		<div class="span2">
-			<div class="well sidebar-nav">
+			<div class="well sidebar-nav" id="page_main_menu">
 				<ul class="nav nav-list">
-					<li class="nav-header">Sidebar</li>
-					<li class="active"><a href="${base_url}zyou/chart-test_view">测试视图</a></li>
+					<li class="nav-header">广告设置</li>
+					<li><a href="${base_url}zyou/chart-test_view">测试视图</a></li>
 					<li><a href="${base_url}zyou/chart-v_you_class">分类设置</a></li>
-					<li><a href="#">Link</a></li>
+					<li><a href="${base_url}zyou/chart-v_info_adv">首页轮播广告</a></li>
 					<li><a href="#">Link</a></li>
 					<li class="nav-header">Sidebar</li>
 					<li><a href="#">Link</a></li>
@@ -64,6 +64,36 @@
 	<hr/>
 </div>
 
+
+<script>
+
+$(window).ready(
+function()
+{
+	var sUrl=location.href;
+	var sUrlSplit=sUrl.split('/');
+	var sTarget=sUrlSplit[sUrlSplit.length-1].split('-')[1];
+	
+		$('#page_main_menu li a').each(
+		function(n,el)
+		{
+			//alert(el);
+			
+			if($(el).attr('href').indexOf(sTarget)>-1)
+			{
+				$(el).parent().addClass('active');
+			}
+			
+		}
+	
+	);
+	
+}
+
+);
+
+
+</script>
 
 
 
