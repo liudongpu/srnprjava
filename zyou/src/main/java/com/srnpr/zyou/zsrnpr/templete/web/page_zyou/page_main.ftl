@@ -10,11 +10,11 @@
 			<a class="brand" href="#">超级后台管理系统</a>
 			<div class="nav-collapse collapse">
 				<p class="navbar-text pull-right">
-					Logged in as <a onclick="zen.page.call('/zadmin/zyou/func-system_table-97b1bcc3a90111e2bb7900241d8adc62-func_do=refreshcache')" class="navbar-link">Username</a>
+					Logged in as <a onclick="zen.page.call('${base_url}zyou/func-system_table-97b1bcc3a90111e2bb7900241d8adc62-func_do=refreshcache')" class="navbar-link">Username</a>
 				</p>
 				<ul class="nav">
 					<li class="active"><a href="#">首页</a></li>
-					<li><a href="/zadmin/">系统设置</a></li>
+					<li><a href="/manage">系统设置</a></li>
 					<li><a href="#contact">文章设置</a></li>
 				</ul>
 			</div>
@@ -39,9 +39,9 @@
 					<li><a href="${base_url}zyou/chart-v_you_class">分类设置</a></li>
 					<li><a href="${base_url}zyou/chart-v_info_adv">首页轮播广告</a></li>
 					<li><a href="#">Link</a></li>
-					<li class="nav-header">Sidebar</li>
-					<li><a href="#">Link</a></li>
-					<li><a href="#">Link</a></li>
+					<li class="nav-header">内容管理</li>
+					<li><a href="${base_url}zyou/chart-v_info_news">博观资讯</a></li>
+					<li><a href="${base_url}zyou/chart-v_info_notice">博观公告</a></li>
 					<li><a href="#">Link</a></li>
 					<li><a href="#">Link</a></li>
 					<li><a href="#">Link</a></li>

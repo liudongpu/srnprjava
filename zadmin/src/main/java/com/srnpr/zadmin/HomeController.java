@@ -39,15 +39,15 @@ public class HomeController {
 	 */
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home(Model model,HttpServletRequest request) {
-		// model.addAttribute("serverTime", new
-		// WebPage().GetPageHtml("zyou","center") );
-		// model.addAttribute("serverTime", new
-		// ConfigCacheManager().ShowAllConfig() );
-		// return "home";
-		return index("zyou", "chart-system_table", model,request);
+		
+		return index("newsinfo", "main-main", model,request);
 	}
 	
-	
+	@RequestMapping(value = "/manage", method = RequestMethod.GET)
+	public String manage(Model model,HttpServletRequest request) {
+		
+		return index("zyou", "chart-system_table", model,request);
+	}
 	
 	
 

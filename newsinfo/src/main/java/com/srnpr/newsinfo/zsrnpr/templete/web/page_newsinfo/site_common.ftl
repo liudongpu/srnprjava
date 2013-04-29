@@ -1,5 +1,5 @@
 
-<#macro m_site_common_header>
+<#macro m_site_common_header nav="">
 	<div class="layout_header">
             <div class="header_top">
                 <div class="website_center">
@@ -9,8 +9,8 @@
                     <div class="lay_header_nav">
                         <div class="header_nav_left">
                             <ul>
-                                <li class="active"><a href="/">首 页</a></li>
-                                <li><a href="#">博观资讯</a></li>
+                                <li><a <#if (nav=="main")> class="active"</#if> href="/">首 页</a></li>
+                                <li><a <#if (nav=="info")> class="active"</#if> href="/newsinfo/info-list">博观资讯</a></li>
                                 <li><a href="#">博观公告</a></li>
                                 <li><a href="#">预展及成交 </a></li>
                                 <li><a href="#"> 博观书房 </a></li>
