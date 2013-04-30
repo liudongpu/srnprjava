@@ -16,6 +16,21 @@ form, ul, li {
     background-image: url("../images/website_png.png");
     display: inline-block;
 }
+.b_sitenav
+{
+    background-color:#cfd4bd;
+    height:25px;
+    margin-bottom:5px;
+    width:100%;
+}
+
+.b_split {
+    background-image: url("../images/website_header.png");
+    background-position: 0px -260px;
+    height: 20px;
+}
+
+
 
 .website_body {
     background-color: #cacaba;
@@ -512,6 +527,106 @@ form, ul, li {
 {
     text-indent:280px;
 }
+
+/***************************************************************************************************************/
+.special_body
+{
+    background-color:#f6f7f5;
+    
+}
+
+.special_box_auction {
+    
+    position: relative;
+    width: 260px;
+    height:490px;
+    background-color:#eeeeee;
+    border:solid 1px #fff;
+    line-height:20px;
+
+}
+.special_box_auction .c_img
+{
+    margin:3px;
+}
+
+.special_box_auction .c_img img
+{
+    height:340px;
+    width:253px;
+}
+
+.special_box_auction .c_info
+{
+    width:96%;
+    margin-left:2%;
+}
+
+
+.special_box_auction  .c_title
+{
+    font-size:16px;
+    font-weight:bold;
+    margin-top:10px;
+}
+
+.special_box_list
+{
+    background-color:#eeeeee;
+   height:100%;
+   
+}
+.special_list
+{
+     
+}
+
+.special_list dl
+{
+    padding:10px;
+}
+
+.special_list dl dt
+{
+    float:left;
+    width:180px;
+    height:160px;
+}
+
+.special_list dl dt img
+{
+    width:160px;
+}
+
+
+.special_list dl dd
+{
+    flaot:left;
+    height:160px;
+    line-height:25px;
+   
+}
+.special_list dl dd h3
+{
+    line-height:80px;
+}
+
+.special_list dl dd .c_share
+{
+    background-position: -120px -140px;
+}
+.special_list dl dd .c_comment
+{
+    background-position: -140px -140px;
+}
+.special_list dl dd .c_collect
+{
+    background-position: -140px -140px;
+}
+
+
+
+
 
 
 

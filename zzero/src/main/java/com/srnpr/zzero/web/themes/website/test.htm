@@ -29,23 +29,37 @@
             <div class="header_top">
                 <div class="website_center">
                     <div class="lay_header_position">
-                        <!--
+
                         <div class="header_logo"></div>
-                        -->
+
                     </div>
                     <div class="lay_header_nav">
                         <div class="header_nav_left">
 
                             <ul>
-                              
-                                <li><a  class="active" href="/">首 页</a></li>
-                                <li><a href="#">博观资讯</a></li>
-                                <li><a href="#">博观公告</a></li>
-                                <li><a href="#">预展及成交 </a></li>
-                                <li><a href="#"> 博观书房 </a></li>
-                                <li><a href="#">博观俱乐部 </a></li>
-                                <li><a href="#">名家论道</a></li>
-                                
+
+                                <li>
+                                    <a  class="active" href="/">首 页</a>
+                                </li>
+                                <li>
+                                    <a href="#">博观资讯</a>
+                                </li>
+                                <li>
+                                    <a href="#">博观公告</a>
+                                </li>
+                                <li>
+                                    <a href="#">预展及成交 </a>
+                                </li>
+                                <li>
+                                    <a href="#"> 博观书房 </a>
+                                </li>
+                                <li>
+                                    <a href="#">博观俱乐部 </a>
+                                </li>
+                                <li>
+                                    <a href="#">名家论道</a>
+                                </li>
+
                             </ul>
                         </div>
                         <div class="header_nav_right">
@@ -57,120 +71,64 @@
         </div>
 
         <div class="layout_main website_center">
-            <div class="index_body">
-                <div class="index_adv">
-                    <div class="slider-wrapper theme-default">
-                        <div id="index_adv_slider" class="nivoSlider">
+            <div class="b_sitenav"></div>
+            <div class="special_body">
+                <div class="layout_height8"></div>
+                <div class="container-fluid">
+                    <div class="row-fluid">
+                        <div class="span3">
+                            <div class="special_box_auction">
+                                <div class="c_img">
+                                    <img src="${special_info['file_url']}"/>
+                                </div>
+                                <div class="c_info">
+                                    <div class="c_title">
+                                        ${special_info['title']}
+                                    </div>
 
-                            <img
-                            src="http://f.hiphotos.baidu.com/album/w%3D2048/sign=fa96ff4b06082838680ddb148ca1a801/08f790529822720ed11ab6ae7acb0a46f31fab8a.jpg"
-                            alt="" title="#htmlcaption" /><a href="http://dev7studios.com"><img
-                            src="http://f.hiphotos.baidu.com/album/w%3D2048/sign=9258248ad000baa1ba2c40bb7328b812/0e2442a7d933c895dc26711dd01373f08202007f.jpg"
-                            alt="" title="#htmlcaption" /></a><img
-                            src="http://a.hiphotos.baidu.com/album/w%3D2048/sign=8b874907f91986184147e8847ed52f73/a1ec08fa513d26976172c43b54fbb2fb4316d837.jpg"
-                            alt="" title="#htmlcaption" /><img
-                            src="http://g.hiphotos.baidu.com/album/w%3D230/sign=da38f9fbcaef76093c0b9e9c1edca301/35a85edf8db1cb139f98c175dc54564e93584be7.jpg"
-                            alt="" title="#htmlcaption" />
-                        </div>
-                        <div id="htmlcaption" class="nivo-html-caption  index_adv_caption">
+                                    <div class="c_time">
+                                        时间：<span>${special_info["time"]?date("yyyy-MM-dd")}</span>
+                                    </div>
+                                    <div class="c_time">
+                                        成交总金额：<span>${special_info["success_price"]?}</span>
+                                    </div>
 
-                            <a class="nivo-prevNav"><div class="index_adv_caption_left"></div></a>
-                            <div class="index_adv_caption_center">
-                                <a href="">我轻轻地飘荡</a>
+                                </div>
+
                             </div>
 
-                            <a class="nivo-nextNav"><div class="index_adv_caption_right"></div></a>
+                        </div>
+
+                        <div class="span9">
+                            <div class="special_box_list">
+
+                                <div class="special_list">
+                                    <dl>
+                                        <dt><img src="http://www.boguanpaimai.com/Attach/pic/20130407/b_51613118b0132.jpg"/></dt>
+                                        <dd>
+                                            <h3>dd</h3>
+                                            时间：
+                                            <br/>
+                                            成交总金额：
+                                            <div>
+                                                <span class="b_icon c_share"></span>&nbsp;&nbsp;分享&nbsp;&nbsp;&nbsp;&nbsp;
+                                                <span class="b_icon c_comment"></span>&nbsp;&nbsp;评论&nbsp;&nbsp;&nbsp;&nbsp;
+                                                <span class="b_icon c_collect"></span>&nbsp;&nbsp;收藏
+                                            </div>
+                                        </dd>
+                                    </dl>
+                                    <div class="b_split"></div>
+                                </div>
+
+                            </div>
 
                         </div>
-                    </div>
-                    <script>
-                        // Can also be used with $(document).ready()
-                        $(window).load(function() {
-                            $('#index_adv_slider').nivoSlider({
 
-                                controlNav : false,
-                                controlNavThumbs : false
-                            });
-                        });
-                    </script>
+                    </div>
 
-                </div>
-                <div class="index_banner">
-                    <div class="index_banner_item">
-                        <img src="http://www.isgo.com/userfiles/phtoto/img/0/1355811616465.jpg" alt=""/>
-                    </div>
-                    <div class="index_banner_split"></div>
-                    <div class="index_banner_item">
-                        <img src="http://www.isgo.com/userfiles/phtoto/img/1/1355811616481.jpg" alt=""/>
-                    </div>
-                    <div class="index_banner_split"></div>
-                    <div class="index_banner_item">
-                        <img src="http://www.isgo.com/userfiles/phtoto/img/2/1355811894482.jpg" alt=""/>
-                    </div>
-                    <div class="index_banner_split"></div>
-                    <div class="index_banner_item">
-                        <img src="http://www.isgo.com/userfiles/phtoto/img/0/1341454817172.jpg" alt=""/>
-                    </div>
                 </div>
             </div>
-            <div class="index_picnav"></div>
-            <div class="index_piclist">
-                <div class="index_piclist_position">
-                    <div id="index_piclist_box" class="index_piclist_box">
-                        <ul>
-                            <li>
-                                <a href=""> <img src="http://www.boguanpaimai.com/Attach/pic/20130417/b_516eb6f829898.jpg" alt=""> <span>我滚动，我快乐，我无趣，我来也</span> </a>
 
-                            </li>
-                            <li>
-                                <a href=""> <img src="http://www.boguanpaimai.com/Attach/pic/20130417/b_516eb6f8af7f6.jpg" alt=""> <span>我滚动，我快乐，我无趣，我来也</span> </a>
-                            </li>
-                            <li>
-                                <a href=""> <img src="http://www.boguanpaimai.com/Attach/pic/20130417/b_516eb6f93f3a8.jpg" alt=""> <span>我滚动，我快乐，我无趣，我来也</span> </a>
-                            </li>
-                            <li>
-                                <a href=""> <img src="http://www.boguanpaimai.com/Attach/pic/20121221/b_50d3c47a28086.jpg" alt=""> <span>我滚动，我快乐，我无趣，我来也</span> </a>
-                            </li>
-                            <li>
-                                <a href=""> <img src="http://www.boguanpaimai.com/Attach/pic/20121221/b_50d3c47b671a6.jpg" alt=""> <span>我滚动，我快乐，我无趣，我来也</span> </a>
-                            </li>
-                            <li>
-                                <a href=""> <img src="http://www.boguanpaimai.com/Attach/pic/20121221/b_50d3c47c7a89f.jpg" alt=""> <span>我滚动，我快乐，我无趣，我来也</span> </a>
-                            </li>
-                            <li>
-                                <a href=""> <img src="http://www.boguanpaimai.com/Attach/pic/20121221/b_50d3c47d2691b.jpg" alt=""> <span>我滚动，我快乐，我无趣，我来也</span> </a>
-                            </li>
-                            <li>
-                                <a href=""> <img src="http://www.boguanpaimai.com/Attach/pic/20121221/b_50d3c47dafadf.jpg" alt=""> <span>我滚动，我快乐，我无趣，我来也</span> </a>
-                            </li>
-                            <li>
-                                <a href=""> <img src="http://www.boguanpaimai.com/Attach/pic/20121221/b_50d3c47e4ca51.jpg" alt=""> <span>我滚动，我快乐，我无趣，我来也</span> </a>
-                            </li>
-                            <li>
-                                <a href=""> <img src="http://www.boguanpaimai.com/Attach/pic/20121221/b_50d3c482d4f0a.jpg" alt=""> <span>我滚动，我快乐，我无趣，我来也</span> </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div id="index_piclist_nav" class="index_piclist_nav">
-                    <ul>
-
-                        <li class="c_nav" onclick="zen.site.picnav('p')">
-                            <span class="c_prev"></span>
-                        </li>
-                        <li class="c_nav"  onclick="zen.site.picnav('n')">
-                            <span class="c_next"></span>
-                        </li>
-
-                    </ul>
-
-                </div>
-                <script type="text/javascript">
-                    $(window).load(function() {
-                        zen.site.picnav();
-                    });
-                </script>
-            </div>
         </div>
 
         <div class="layout_footer"></div>

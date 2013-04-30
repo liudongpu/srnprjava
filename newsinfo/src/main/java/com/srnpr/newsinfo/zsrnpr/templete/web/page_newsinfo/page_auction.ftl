@@ -154,7 +154,7 @@
 							</div>
 							<div class="c_href">
 							<#if el["auction_type_cid"]==30310001><span class="c_flagprep"></span></#if>
-								<a href="#">查看详情 ></a>
+								<a href="special-list-${el["uid"]}">查看详情 ></a>
 							</div>
 						</div>
 
