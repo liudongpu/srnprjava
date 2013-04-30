@@ -38,12 +38,12 @@
 					<li><a href="${base_url}zyou/chart-test_view">测试视图</a></li>
 					<li><a href="${base_url}zyou/chart-v_you_class">分类设置</a></li>
 					<li><a href="${base_url}zyou/chart-v_info_adv">首页轮播广告</a></li>
-					<li><a href="#">Link</a></li>
 					<li class="nav-header">内容管理</li>
 					<li><a href="${base_url}zyou/chart-v_info_news">博观资讯</a></li>
 					<li><a href="${base_url}zyou/chart-v_info_notice">博观公告</a></li>
-					<li><a href="#">Link</a></li>
-					<li><a href="#">Link</a></li>
+					<li class="nav-header">拍卖会管理</li>
+					<li><a href="${base_url}zyou/chart-v_info_auction">拍卖会列表</a></li>
+					<li><a href="${base_url}zyou/chart-v_info_special">专场列表</a></li>
 					<li><a href="#">Link</a></li> 
 					<li><a href="#">Link</a></li>
 					<li class="nav-header">Sidebar</li>
