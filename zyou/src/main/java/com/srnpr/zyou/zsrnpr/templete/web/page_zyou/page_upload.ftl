@@ -11,3 +11,6 @@
 <div id="page_upload_show">
 
 </div>
+
+
+<@m_html_addscript "zen.page.upcheck('"+pageinfo.getReq().upRequestParam("parentid")+"');" />

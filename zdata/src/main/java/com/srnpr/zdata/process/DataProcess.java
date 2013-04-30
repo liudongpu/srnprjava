@@ -79,6 +79,13 @@ public class DataProcess extends BaseClass
 	}
 	
 	
+	public List<Map<String, Object>> upListListOrder(String sField,String sOrder,String... sArgs)
+	{
+		return upList(sField, sOrder, -1, 0, (Object[])sArgs);
+	}
+	
+	
+	
 	public List<Map<String, Object>> upList(
 			String sRows,
 			String sOrder,
@@ -135,7 +142,7 @@ public class DataProcess extends BaseClass
 
 			sBuilder.append(" where ");
 
-			for (int i = 0, j = args.length / 2; i < j; i++)
+			for (int i = 0, j = args.length / 2; i < j; i=i+2)
 			{
 				sBuilder.append(" " + args[i] + "=:" + args[i] + " ");
 				hParamHashMap.put((String) args[i], args[i + 1]);

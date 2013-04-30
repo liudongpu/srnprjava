@@ -2,7 +2,7 @@
 
 
 <#macro m_site_info_listinfo>
-				<#list pageexec.upData("info_news") as el> 	 
+				<#list pageexec.upDataOrder("info_news","time") as el> 	 
 					<div class="info_item">
 						<div class="c_title">
 							<h3>${el["title"]}</h3>

@@ -38,7 +38,10 @@ public class PageExec extends BaseClass {
 		return DataTableManager.Get(sTableName).upListListByQuery(sArgs);
 	}
 
-
+	public Object upDataOrder(String sTableName,String sOrder,String... sArgs)
+	{
+		return DataTableManager.Get(sTableName).upListListOrder("", sOrder, sArgs);
+	}
 
 
 

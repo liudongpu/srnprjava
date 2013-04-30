@@ -98,7 +98,7 @@ public class WebBaseProcess extends BaseClass {
 
 			listPageData.add(listTitle);
 
-			List<Map<String, Object>> listMaps = dHelper.upListListByQuery(
+ 			List<Map<String, Object>> listMaps = dHelper.upListListByQuery(
 					sbField.toString(), wRequest.getParamsMap());
 
 			for (Map<String, Object> mData : listMaps) {

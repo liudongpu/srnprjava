@@ -45,25 +45,37 @@ zen.e({
 
 			$('#zen_page_model_show').modal('show');
 		},
-		
-		inValue:function(sId,oValue)
-		{
-			$('#'+sId).val(oValue);
+
+		inValue : function(sId, oValue) {
+			$('#' + sId).val(oValue);
 		},
-		
+		upValue : function(sId) {
+			return $('#' + sId).val();
+		},
+
 		upload : function(o) {
-			
+
 			if (o.flag) {
 				$("#page_upload_call").hide();
 				$('#page_upload_show').html(
-						'<a href="' + o.result["fileurl"] + '" target="_blank">'
-								+ o.result["fileurl"]+ '</a>');
-				
-				parent.zen.page.inValue(o.result["parentid"],o.result["fileurl"]);
-				
+						'<a href="' + o.result["fileurl"]
+								+ '" target="_blank">' + o.result["fileurl"]
+								+ '</a>');
+
+				parent.zen.page.inValue(o.result["parentid"],
+						o.result["fileurl"]);
 
 			} else {
 				parent.zen.page.model(o.message);
+			}
+		},
+		upcheck : function(sId) {
+			var sVal = parent.zen.page.upValue(sId);
+			if (sVal) {
+				$("#page_upload_call").hide();
+				$('#page_upload_show').html(
+						'<a href="' + sVal + '" target="_blank">' + sVal
+								+ '</a>');
 			}
 		}
 
