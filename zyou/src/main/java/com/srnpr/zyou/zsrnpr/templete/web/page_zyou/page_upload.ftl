@@ -8,8 +8,9 @@
 </div>
 </form>
 </div>
-<div id="page_upload_show">
-
+<div id="page_upload_show" style="display:none;">
+	<span id="page_upload_text"></span>
+	<a class="btn" onclick="zen.page.uploadreload(1)">重新上传</a>
 </div>
 
 

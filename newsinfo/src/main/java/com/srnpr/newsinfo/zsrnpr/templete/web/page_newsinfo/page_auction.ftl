@@ -1,6 +1,6 @@
 <body class="website_body">
 <@m_site_common_header nav="auction" />
-<@m_html_addjs [base_zero+"lib/jquery/jquery.masonry.min.js"] />
+
 
 
 

@@ -56,12 +56,8 @@ zen.e({
 		upload : function(o) {
 
 			if (o.flag) {
-				$("#page_upload_call").hide();
-				$('#page_upload_show').html(
-						'<a href="' + o.result["fileurl"]
-								+ '" target="_blank">' + o.result["fileurl"]
-								+ '</a>');
 
+				zen.page.uploadreload(0, o.result["fileurl"]);
 				parent.zen.page.inValue(o.result["parentid"],
 						o.result["fileurl"]);
 
@@ -72,11 +68,24 @@ zen.e({
 		upcheck : function(sId) {
 			var sVal = parent.zen.page.upValue(sId);
 			if (sVal) {
+				zen.page.uploadreload(0, sVal);
+
+			}
+		},
+		uploadreload : function(iIndex, sUrl) {
+			if (iIndex == 1) {
+				$("#page_upload_call").show();
+				$("#page_upload_show").hide();
+			} else {
+				$("#page_upload_show").show();
 				$("#page_upload_call").hide();
-				$('#page_upload_show').html(
-						'<a href="' + sVal + '" target="_blank">' + sVal
+			}
+			if (sUrl) {
+				$('#page_upload_text').html(
+						'<a href="' + sUrl + '" target="_blank">' + sUrl
 								+ '</a>');
 			}
+
 		}
 
 	}

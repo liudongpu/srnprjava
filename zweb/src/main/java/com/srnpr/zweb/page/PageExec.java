@@ -3,6 +3,8 @@ package com.srnpr.zweb.page;
 import java.util.List;
 import java.util.Map;
 
+import org.apache.commons.lang.StringUtils;
+
 import com.srnpr.zcom.base.BaseClass;
 import com.srnpr.zcom.common.CommonConst;
 import com.srnpr.zcom.enumer.EComConst;
@@ -37,6 +39,16 @@ public class PageExec extends BaseClass {
 	{
 		return DataTableManager.Get(sTableName).upListListByQuery(sArgs);
 	}
+	
+	public Object upDataOne(String sTableName,String... oArgs)
+	{
+		
+		
+		
+		
+		return DataTableManager.Get(sTableName).upListListByQuery(oArgs).get(0);
+	}
+	
 
 	public Object upDataOrder(String sTableName,String sOrder,String... sArgs)
 	{

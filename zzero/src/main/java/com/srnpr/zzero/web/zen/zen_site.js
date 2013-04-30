@@ -8,6 +8,16 @@ zen.e({
             picnav_size:0
             
         },
+        
+        
+        init:function()
+        {
+        	$('.b_corner').corner();
+        	
+        	
+        	
+        },
+        
 
         picnav : function(oTarget) {
             
@@ -77,3 +87,23 @@ zen.e({
         }
     }
 });
+
+
+
+
+
+
+
+
+$(window).ready(
+		function(){zen.site.init();}
+
+);
+
+
+
+
+
+
+
+
