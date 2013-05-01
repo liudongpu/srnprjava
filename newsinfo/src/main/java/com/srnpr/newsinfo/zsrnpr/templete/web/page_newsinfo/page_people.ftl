@@ -1,5 +1,5 @@
 <body class="website_body">
-<@m_site_common_header nav="info" />
+<@m_site_common_header nav="people" />
 
 
 	<div class="layout_main website_center">
@@ -13,11 +13,14 @@
 			</div>
 			
 			<div class="people_list">
-				<a class="c_item b_corner" href="opus-main">
-				<img class="b_corner" src="http://www.boguanpaimai.com/Attach/blog/20111009/s_4e91486058555.jpg"/>
-				<h4>a</h4>
+			
+				<#list pageexec.upData("info_people")	as el>
+				<a class="c_item b_corner" href="product-view-${el["uid"]}">
+				<img class="b_corner" src="${el["file_url"]}"/>
+				<h4>${el["name"]}</h4>
 				</a>
 				
+				</#list>
 				
 				<div class="clearfix"></div>
 				
