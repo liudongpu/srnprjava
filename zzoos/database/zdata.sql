@@ -221,7 +221,7 @@ CREATE TABLE `info_people` (
 
 LOCK TABLES `info_people` WRITE;
 /*!40000 ALTER TABLE `info_people` DISABLE KEYS */;
-INSERT INTO `info_people` VALUES (1,'c22511fa7ef34e7fbc34f66799e770c2','发发大','/zzero/file/images_upload/20130501/ae67db0d7bc94c698cd3e16d6d5eeeb1.jpg','大幅啊是否定','30320001');
+INSERT INTO `info_people` VALUES (1,'c22511fa7ef34e7fbc34f66799e770c2','发发大','/zzero/file/images_upload/20130501/d704fc362aae48cba4ec62d5b1308b99.jpg','大幅啊是否定','30320001');
 /*!40000 ALTER TABLE `info_people` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -279,7 +279,7 @@ CREATE TABLE `info_special` (
 
 LOCK TABLES `info_special` WRITE;
 /*!40000 ALTER TABLE `info_special` DISABLE KEYS */;
-INSERT INTO `info_special` VALUES (1,'a80abfef2e574a5faa251032337ee714','e465363abab54efeb2bceda2a0f20e62','1-1专场','444','45',''),(2,'6b38e7c84eaa4259aeb46cf3bf9db2e5','32c7af7b02714791a78fabd7e5c0385f','2-1专场','22','33',''),(3,'1f67925adb9f4f778f2cea8894b9ec42','32c7af7b02714791a78fabd7e5c0385f','2-2专场','4444','444','');
+INSERT INTO `info_special` VALUES (1,'a80abfef2e574a5faa251032337ee714','e465363abab54efeb2bceda2a0f20e62','1-1专场','444','2013-05-01 00:00:00',''),(2,'6b38e7c84eaa4259aeb46cf3bf9db2e5','32c7af7b02714791a78fabd7e5c0385f','2-1专场','22','2013-05-01 00:00:00',''),(3,'1f67925adb9f4f778f2cea8894b9ec42','32c7af7b02714791a78fabd7e5c0385f','2-2专场','4444','2013-05-01 00:00:00','');
 /*!40000 ALTER TABLE `info_special` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -658,4 +658,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2013-05-01 14:42:39
+-- Dump completed on 2013-05-01 16:02:31
