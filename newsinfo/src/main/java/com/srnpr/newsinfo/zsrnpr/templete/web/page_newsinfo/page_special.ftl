@@ -56,8 +56,10 @@
 										</div>
 									</dd>
 								</dl>
-								<div class="b_split"></div>
-
+								<div class="h_40"></div>
+								<div class="b_split" yle></div>
+								
+	
 
 
 								</#list>
@@ -79,6 +81,9 @@
 				</div>
 
 			</div>
+			
+			<div class="h_40"></div>
+			
 		</div>
 
 	</div>

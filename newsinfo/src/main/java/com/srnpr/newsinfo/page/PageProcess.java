@@ -28,16 +28,22 @@ public class PageProcess  implements IWebProcess
 		
 		mPageInfo.setPageInclude(wRequest.upSet(EWebSet.Url_Target));
 		
-
 		return mPageInfo;
 	}
 
 	public MResult result(PageRequest pRequest) {
+		MResult mResult=new MResult();
+		
+		String sView=String.valueOf(pRequest.upSet(EWebSet.Url_View));
+		if(sView=="reg")
+		{
+			
+		}
 		
 		
 		
-			//return super.showResult(pRequest);
-		return new MResult();
+		
+		return mResult;
 		
 
 	}

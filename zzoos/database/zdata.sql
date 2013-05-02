@@ -314,6 +314,35 @@ INSERT INTO `test_table` VALUES (1,'99108b5f3d794086b7865cae87dd0612','<p>afdadf
 UNLOCK TABLES;
 
 --
+-- Table structure for table `user_info`
+--
+
+DROP TABLE IF EXISTS `user_info`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `user_info` (
+  `zid` int(11) NOT NULL AUTO_INCREMENT,
+  `uid` char(32) DEFAULT '',
+  `login_name` varchar(200) DEFAULT '' COMMENT '用户名',
+  `login_pass` varchar(200) DEFAULT '' COMMENT '密码',
+  `user_email` varchar(200) DEFAULT '' COMMENT '邮箱',
+  `reg_date` char(19) DEFAULT '' COMMENT '注册日期',
+  `cookie_id` char(32) DEFAULT '' COMMENT '客户编号',
+  PRIMARY KEY (`zid`),
+  UNIQUE KEY `login_name_UNIQUE` (`login_name`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `user_info`
+--
+
+LOCK TABLES `user_info` WRITE;
+/*!40000 ALTER TABLE `user_info` DISABLE KEYS */;
+/*!40000 ALTER TABLE `user_info` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `you_class`
 --
 
@@ -658,4 +687,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2013-05-01 16:02:31
+-- Dump completed on 2013-05-03  1:18:40

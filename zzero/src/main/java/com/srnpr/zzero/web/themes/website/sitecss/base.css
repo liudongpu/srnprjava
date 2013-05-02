@@ -42,7 +42,11 @@ a.b_button {
     line-height: 30px;
     font-size: 16px;
 }
-
+a.b_button:hover
+{
+    color:#fff;
+    cursor: pointer;
+}
 
 
 .b_share {
@@ -57,10 +61,31 @@ a.b_button {
     background-position: -140px -140px;
 }
 
+
+
+
+
+
+
 /*圆角专用csss*/
 .b_corner {
 
 }
+
+.h_40
+{
+    height:40px;
+    clear:both;
+}
+
+
+
+
+
+
+
+
+
 
 .website_body {
     background-color: #cacaba;
@@ -810,16 +835,18 @@ a.b_button {
 
 .login_box {
     background-color: #f6f7f5;
+    
 }
 
 .login_box .c_box {
     padding: 40px;
-    height: 400px;
+    
 }
 
 .login_box .c_desc {
     color: #5d6c50;
     margin-bottom: 50px;
+    text-indent:40px;
 }
 .login_box .c_left {
     float: left;
@@ -830,6 +857,9 @@ a.b_button {
     color: #5d6c50;
     font-size: 16px;
     font-weight: bold;
+    display:inline-block;
+    width:100px;
+    text-align:right;
 }
 
 .login_box .c_right {
@@ -844,3 +874,7 @@ a.b_button {
     margin: 25px 0px 0px 160px;
 }
 
+.login_box .c_buttons
+{
+    padding-left:90px;
+}

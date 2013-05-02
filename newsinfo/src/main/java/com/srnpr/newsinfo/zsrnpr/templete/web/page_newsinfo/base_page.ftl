@@ -22,6 +22,7 @@
 	<@m_html_addjs [base_zero+"lib/jquery/jquery-site.js"] />
 
 	<@m_html_addscript "zen.i({baseurl:'"+base_url+"'});" />
+
 </head> 	
 
 <#include "page_"+pageinfo.getPageInclude()?default('main')+".ftl" />
