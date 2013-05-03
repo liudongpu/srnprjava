@@ -6,7 +6,7 @@
                     <div class="lay_header_position">
                         <div class="header_logo"></div>
                         <div id="header_user" class="header_user">
-							<a href="${base_url}newsinfo/login-login">登陆</a>|<a href="${base_url}newsinfo/reg-reg">注册</a>
+							<a href="${base_url}newsinfo/login-login">登&nbsp;陆</a>&nbsp;|&nbsp;<a href="${base_url}newsinfo/reg-reg">注&nbsp;册</a>
 						</div>
                     </div>
                     <div class="lay_header_nav">

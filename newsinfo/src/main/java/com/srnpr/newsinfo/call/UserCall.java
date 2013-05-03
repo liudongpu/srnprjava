@@ -1,5 +1,6 @@
 package com.srnpr.newsinfo.call;
 
+import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -42,7 +43,7 @@ public class UserCall extends BaseClass {
 
 			final String pattern1 = "^([a-z0-9A-Z]+[-|\\.]?)+[a-z0-9A-Z]@([a-z0-9A-Z]+(-[a-z0-9A-Z]+)?\\.)+[a-zA-Z]{2,}$";
 			Pattern pattern = Pattern.compile(pattern1);
-			Matcher mat = pattern.matcher((pRequest.getReqMap().get("reg_pass")
+			Matcher mat = pattern.matcher((pRequest.getReqMap().get("reg_name")
 					.toString()));
 			if (!mat.find()) {
 				result.error(937301004);
@@ -50,12 +51,10 @@ public class UserCall extends BaseClass {
 		}
 
 		if (result.getFlag()) {
-			
-			
-			if(DataTableManager.Get("user_info").upCount("login_name",pRequest.getReqMap().get("reg_name")
-					.toString())<1)
-			{
-				result.error(937301004);
+
+			if (DataTableManager.Get("user_info").upCount("login_name",
+					pRequest.getReqMap().get("reg_name").toString()) > 0) {
+				result.error(937301005);
 			}
 
 		}
@@ -64,21 +63,62 @@ public class UserCall extends BaseClass {
 
 			String sCookieId = ComFunction.upUuid();
 			String sUid = ComFunction.upUuid();
-			
-			MHashMap mHMap=new MHashMap();
-			
-			mHMap.inAdd("uid",sUid,
-					"login_name",pRequest.getReqMap().get("reg_name"),
-					"login_pass",pRequest.getReqMap().get("reg_pass"),
-					"user_email",pRequest.getReqMap().get("reg_name"),
-					"reg_date",FormatHelper.GetDateTime(),
-					"cookie_id",sCookieId
-					);
+
+			MHashMap mHMap = new MHashMap();
+
+			mHMap.inAdd("uid", sUid, "login_name",
+					pRequest.getReqMap().get("reg_name"), "login_pass",
+					pRequest.getReqMap().get("reg_pass"), "user_email",
+					pRequest.getReqMap().get("reg_name"), "reg_date",
+					FormatHelper.GetDateTime(), "cookie_id", sCookieId);
 			DataTableManager.Get("user_info").inPut(mHMap);
 
+			MHashMap mResult = new MHashMap();
+
+			mResult.put("bgpm_user_cookieid", sCookieId);
+			mResult.put("bgpm_user_name", pRequest.getReqMap().get("reg_name"));
+
+			result.setResult(mResult);
+
 		}
-		
+
 		return result;
 
 	}
+
+	public MResult Login() {
+
+		
+		if (!StringUtils.isNotEmpty(pRequest.getReqMap().get("login_name")
+				.toString())) {
+			result.error(937301002);
+		} else if (!StringUtils.isNotEmpty(pRequest.getReqMap().get("login_pass")
+				.toString())) {
+			result.error(937301003);
+		}
+		
+		if (result.getFlag()) {
+
+			Map<String, Object> mUserInfo = DataTableManager.Get("user_info")
+					.upOneMap("login_name",
+							pRequest.getReqMap().get("login_name").toString(),
+							"login_pass",
+							pRequest.getReqMap().get("login_pass").toString());
+
+			if (mUserInfo != null) {
+				MHashMap mHashMap = new MHashMap();
+
+				mHashMap.put("bgpm_user_cookieid", mUserInfo.get("cookie_id"));
+				mHashMap.put("bgpm_user_name", mUserInfo.get("login_name"));
+
+				result.setResult(mHashMap);
+
+			} else {
+				result.error(937301006);
+			}
+		}
+		return result;
+
+	}
+
 }

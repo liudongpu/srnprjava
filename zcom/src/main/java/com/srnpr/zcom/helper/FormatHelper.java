@@ -4,6 +4,8 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 
+import javax.security.sasl.SaslServer;
+
 import org.apache.commons.lang.StringUtils;
 
 public class FormatHelper {
@@ -51,6 +53,27 @@ public class FormatHelper {
 		return sFormat.format(dDate);
 	}
 
+	
+	
+	
+	
+	
+	
+	
+	public static String joinWhereStrings(String[] sStrings)
+	{
+		String[] sReturns=new String[sStrings.length];
+		for(int i=0,j=sStrings.length;i<j;i++)
+		{
+			sReturns[i]=sStrings[i]+"=:"+sStrings[i];
+		}
+		
+		
+		return StringUtils.join(sReturns," and ");
+		
+	}
+	
+	
 
 
 	/**

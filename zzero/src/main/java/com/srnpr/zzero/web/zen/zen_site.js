@@ -5,7 +5,8 @@ zen
 
 				temp : {
 					picnav_index : 0,
-					picnav_size : 0
+					picnav_size : 0,
+					user_cookieid : ''
 
 				},
 
@@ -41,7 +42,22 @@ zen
 
 					zen.site.model('错误消息', '调用失败，请稍后重试或者联系技术人员，谢谢！');
 				},
+
+				href : function(sUrl) {
+					top.location.href = zen.t.baseurl + sUrl;
+				},
+
 				initlogin : function() {
+
+					var sName = zen.f.cookie("bgpm_user_name");
+					if (sName != null) {
+						$('#header_user')
+								.html(
+										'欢迎你:'
+												+ sName
+												+ '&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" onclick="zen.site.href(\'newsinfo/usercenter-usercenter\')">[个人中心]</a>&nbsp;&nbsp;<a href="#" onclick="zen.site.logout()">[退出]</a>');
+
+					}
 
 				},
 				loginreg : function() {
@@ -57,10 +73,38 @@ zen
 
 				},
 				reg_success : function(o) {
-					zen.site.model('提示消息', '注册成功！');
+
+					zen.site.login_success(o);
+					zen.site.model('提示消息', '注册成功！', function() {
+						zen.site.href('newsinfo/usercenter-usercenter');
+					});
 				},
 
-				model : function(sTitle, sContent) {
+				login_login : function() {
+					zen.site.post('login', {
+						login_name : $('#login_loginname').val(),
+						login_pass : $('#login_loginpass').val()
+					}, zen.site.login_success);
+				},
+
+				login_success : function(o) {
+
+					zen.f.cookie("bgpm_user_cookieid",
+							o.result["bgpm_user_cookieid"], 365);
+					zen.f.cookie("bgpm_user_name", o.result["bgpm_user_name"],
+							365);
+
+					zen.site.href('newsinfo/usercenter-usercenter');
+				},
+				logout : function() {
+					zen.f.cookie("bgpm_user_cookieid", null);
+					zen.f.cookie("bgpm_user_name", null);
+
+					zen.site.href('');
+				},
+
+				model : function(sTitle, sContent, fHidden) {
+
 					if (!$('#zen_site_model').length > 0) {
 						var sModel = '<div id="zen_site_model" class="modal hide fade"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>'
 								+ '<h3>'
@@ -79,7 +123,11 @@ zen
 					$('#zen_site_model h3').html(sTitle);
 					$('#zen_site_model p').html(sContent);
 					$('#zen_site_model').modal('show');
-
+					if (fHidden != undefined) {
+						$('#zen_site_model').on('hide', function() {
+							fHidden();
+						})
+					}
 				},
 
 				picnav : function(oTarget) {

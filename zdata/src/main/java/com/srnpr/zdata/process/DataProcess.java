@@ -9,6 +9,7 @@ import org.apache.commons.lang.StringUtils;
 import org.springframework.jdbc.core.JdbcTemplate;
 
 import com.srnpr.zcom.base.BaseClass;
+import com.srnpr.zcom.helper.FormatHelper;
 import com.srnpr.zcom.model.MHashMap;
 import com.srnpr.zdata.manager.DataBaseManager;
 import com.srnpr.zdata.manager.DataTableManager;
@@ -29,7 +30,10 @@ public class DataProcess extends BaseClass {
 
 	public Map<String, Object> upOneMap(String... args) {
 
-		return upList("*", "", 0, 1, (Object[]) args).get(0);
+		List<Map<String, Object>> lReturns = upList("*", "", 0, 1,
+				(Object[]) args);
+
+		return lReturns.size() > 0 ? lReturns.get(0) : null;
 	}
 
 	public Map<String, Object> upOneMap(MHashMap mHashMap) {
@@ -54,23 +58,19 @@ public class DataProcess extends BaseClass {
 
 	}
 
-	public long upCount(String... sArgs) {
+	public long upCount(Object... oArgs) {
 
 		StringBuilder sBuilder = new StringBuilder();
 		sBuilder.append(" select count(1) from " + sTableName);
-		HashMap<String, Object> hParamHashMap = new HashMap<String, Object>();
+		MHashMap mHashMap = new MHashMap();
+		if (oArgs != null && oArgs.length > 0) {
+			mHashMap.inAdd(oArgs);
+			sBuilder.append(" where "
+					+ FormatHelper.joinWhereStrings(mHashMap.upKeys()) + " ");
 
-		if (sArgs != null && sArgs.length > 0) {
-
-			sBuilder.append(" where ");
-
-			for (int i = 0, j = sArgs.length / 2; i < j; i = i + 2) {
-				sBuilder.append(" " + sArgs[i] + "=:" + sArgs[i] + " ");
-				hParamHashMap.put((String) sArgs[i], sArgs[i + 1]);
-			}
 		}
 		return DataBaseManager.Get(sDataBase).queryForLong(sBuilder.toString(),
-				hParamHashMap);
+				mHashMap);
 	}
 
 	public List<Map<String, Object>> upListListByQuery(MHashMap mHashMap) {
@@ -91,7 +91,7 @@ public class DataProcess extends BaseClass {
 			int start, int end, MHashMap mHashMap) {
 		ArrayList<Object> aArgsArrayList = new ArrayList<Object>();
 
-		for (String s : mHashMap.GetKeys()) {
+		for (String s : mHashMap.upKeys()) {
 			aArgsArrayList.add(s);
 			aArgsArrayList.add(mHashMap.get(s));
 		}
@@ -100,7 +100,7 @@ public class DataProcess extends BaseClass {
 	}
 
 	public List<Map<String, Object>> upList(String sRows, String sOrder,
-			int start, int end, Object... args) {
+			int start, int end, Object... oArgs) {
 
 		StringBuffer sBuilder = new StringBuffer();
 
@@ -116,16 +116,14 @@ public class DataProcess extends BaseClass {
 
 		// Object[] oArgsObjects=new Object[0];
 
-		HashMap<String, Object> hParamHashMap = new HashMap<String, Object>();
+		MHashMap mHashMap = new MHashMap();
+		if (oArgs != null && oArgs.length > 0) {
 
-		if (args != null && args.length > 0) {
+			mHashMap.inAdd(oArgs);
 
-			sBuilder.append(" where ");
+			sBuilder.append(" where "
+					+ FormatHelper.joinWhereStrings(mHashMap.upKeys()) + " ");
 
-			for (int i = 0, j = args.length / 2; i < j; i = i + 2) {
-				sBuilder.append(" " + args[i] + "=:" + args[i] + " ");
-				hParamHashMap.put((String) args[i], args[i + 1]);
-			}
 		}
 
 		if (!StringUtils.isEmpty(sOrder)) {
@@ -160,7 +158,7 @@ public class DataProcess extends BaseClass {
 		}
 
 		return DataBaseManager.Get(sDataBase).queryForList(sBuilder.toString(),
-				hParamHashMap);
+				mHashMap);
 
 	}
 
@@ -195,13 +193,13 @@ public class DataProcess extends BaseClass {
 					mWhereMap.put(sWhere, mHashMap.get(sWhere));
 				}
 			} else {
-				for (int i = 0, j = sArgs.length / 2; i < j; i++) {
+				for (int i = 0, j = sArgs.length; i < j; i = i + 2) {
 					mHashMap.put((String) sArgs[i], sArgs[i + 1]);
 				}
 			}
 		}
 
-		for (String sKey : mHashMap.GetKeys()) {
+		for (String sKey : mHashMap.upKeys()) {
 			if (!mWhereMap.containsKey(sKey)) {
 				sSqlBuffer.append(sKey + "=:" + sKey + ",");
 			}
@@ -209,17 +207,13 @@ public class DataProcess extends BaseClass {
 		sSqlBuffer.delete(sSqlBuffer.length() - 1, sSqlBuffer.length());
 
 		if (mWhereMap.size() > 0) {
-			sSqlBuffer.append(" where ");
-
-			for (String sKey : mWhereMap.GetKeys()) {
-				sSqlBuffer.append(sKey + "=:" + sKey + " and");
-			}
-
-			sSqlBuffer.delete(sSqlBuffer.length() - 3, sSqlBuffer.length());
+			sSqlBuffer.append(" where "
+					+ FormatHelper.joinWhereStrings(mHashMap.upKeys()) + " ");
 
 		}
 
-		return DataBaseManager.Get(sDataBase).update(sSqlBuffer.toString(), mHashMap);
+		return DataBaseManager.Get(sDataBase).update(sSqlBuffer.toString(),
+				mHashMap);
 	}
 
 	public int inPut(MHashMap mHashMap) {
@@ -228,7 +222,7 @@ public class DataProcess extends BaseClass {
 
 		sSqlBuffer.append("insert into " + sTableName + "(");
 
-		String[] sKey = mHashMap.GetKeys();
+		String[] sKey = mHashMap.upKeys();
 
 		sSqlBuffer.append(StringUtils.join(sKey, ","));
 
@@ -236,7 +230,8 @@ public class DataProcess extends BaseClass {
 		sSqlBuffer.append(StringUtils.join(sKey, ",:"));
 		sSqlBuffer.append(")");
 
-		return DataBaseManager.Get(sDataBase).update(sSqlBuffer.toString(), mHashMap);
+		return DataBaseManager.Get(sDataBase).update(sSqlBuffer.toString(),
+				mHashMap);
 
 	}
 

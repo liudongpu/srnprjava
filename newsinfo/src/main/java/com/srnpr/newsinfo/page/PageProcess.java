@@ -40,6 +40,10 @@ public class PageProcess  implements IWebProcess
 		{
 			mResult=new UserCall(pRequest).Reg();
 		}
+		else if(sView.equals("login"))
+		{
+			mResult=new UserCall(pRequest).Login();
+		}
 		
 		
 		
