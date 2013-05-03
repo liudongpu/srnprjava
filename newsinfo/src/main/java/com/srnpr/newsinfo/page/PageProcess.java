@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
+import com.srnpr.newsinfo.call.UserCall;
 import com.srnpr.zcom.init.InitRoot;
 import com.srnpr.zcom.model.MResult;
 import com.srnpr.zdata.manager.DataTableManager;
@@ -35,9 +36,9 @@ public class PageProcess  implements IWebProcess
 		MResult mResult=new MResult();
 		
 		String sView=String.valueOf(pRequest.upSet(EWebSet.Url_View));
-		if(sView=="reg")
+		if(sView.equals("reg"))
 		{
-			
+			mResult=new UserCall(pRequest).Reg();
 		}
 		
 		
