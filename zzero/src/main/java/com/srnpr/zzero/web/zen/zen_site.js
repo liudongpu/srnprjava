@@ -55,7 +55,7 @@ zen
 								.html(
 										'欢迎你:'
 												+ sName
-												+ '&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" onclick="zen.site.href(\'newsinfo/usercenter-usercenter\')">[个人中心]</a>&nbsp;&nbsp;<a href="#" onclick="zen.site.logout()">[退出]</a>');
+												+ '&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" onclick="zen.site.href(\'newsinfo/usercenter-user\')">[个人中心]</a>&nbsp;&nbsp;<a href="#" onclick="zen.site.logout()">[退出]</a>');
 
 					}
 
@@ -76,7 +76,7 @@ zen
 
 					zen.site.login_success(o);
 					zen.site.model('提示消息', '注册成功！', function() {
-						zen.site.href('newsinfo/usercenter-usercenter');
+						zen.site.href('newsinfo/usercenter-user');
 					});
 				},
 
@@ -94,7 +94,7 @@ zen
 					zen.f.cookie("bgpm_user_name", o.result["bgpm_user_name"],
 							365);
 
-					zen.site.href('newsinfo/usercenter-usercenter');
+					zen.site.href('newsinfo/usercenter-user');
 				},
 				logout : function() {
 					zen.f.cookie("bgpm_user_cookieid", null);

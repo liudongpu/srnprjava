@@ -1,12 +1,18 @@
-
 package com.srnpr.newsinfo.page;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletRequest;
+
+import org.springframework.web.context.request.RequestContextHolder;
+import org.springframework.web.context.request.ServletRequestAttributes;
+
 import com.srnpr.newsinfo.call.UserCall;
 import com.srnpr.zcom.init.InitRoot;
+import com.srnpr.zcom.model.MHashMap;
 import com.srnpr.zcom.model.MResult;
 import com.srnpr.zdata.manager.DataTableManager;
 import com.srnpr.zdata.support.TableSupport;
@@ -19,37 +25,50 @@ import com.srnpr.zweb.model.MWebView;
 import com.srnpr.zweb.page.PageRequest;
 import com.srnpr.zweb.process.WebBaseProcess;
 
-public class PageProcess  implements IWebProcess
-{
+public class PageProcess implements IWebProcess {
 
-	public MWebPage Process(PageRequest wRequest)
-	{
-		
+	public MWebPage Process(PageRequest wRequest) {
+
 		MWebPage mPageInfo = new MWebPage();
-		
+
 		mPageInfo.setPageInclude(wRequest.upSet(EWebSet.Url_Target));
-		
+
+		// if user
+		if (wRequest.upSet(EWebSet.Url_View).equals("user")) {
+			HttpServletRequest hRequest = ((ServletRequestAttributes) RequestContextHolder
+					.getRequestAttributes()).getRequest();
+
+			if (hRequest != null && hRequest.getCookies() != null
+					&& hRequest.getCookies().length > 0) {
+
+				for (Cookie c : hRequest.getCookies()) {
+					if (c.getName().equals("bgpm_user_cookieid")) {
+
+						
+
+						mPageInfo.setPageOptions(DataTableManager.Get(
+								"user_info")
+								.upOneMap("cookie_id", c.getValue()));
+					}
+				}
+
+			}
+		}
+
 		return mPageInfo;
 	}
 
 	public MResult result(PageRequest pRequest) {
-		MResult mResult=new MResult();
-		
-		String sView=String.valueOf(pRequest.upSet(EWebSet.Url_View));
-		if(sView.equals("reg"))
-		{
-			mResult=new UserCall(pRequest).Reg();
+		MResult mResult = new MResult();
+
+		String sView = String.valueOf(pRequest.upSet(EWebSet.Url_View));
+		if (sView.equals("reg")) {
+			mResult = new UserCall(pRequest).Reg();
+		} else if (sView.equals("login")) {
+			mResult = new UserCall(pRequest).Login();
 		}
-		else if(sView.equals("login"))
-		{
-			mResult=new UserCall(pRequest).Login();
-		}
-		
-		
-		
-		
+
 		return mResult;
-		
 
 	}
 

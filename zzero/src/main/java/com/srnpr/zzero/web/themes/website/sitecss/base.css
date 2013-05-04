@@ -80,7 +80,7 @@ a.b_button:hover
 
 
 
-
+/**hack******************************************************************/
 
 
 
@@ -878,3 +878,55 @@ a.b_button:hover
 {
     padding-left:90px;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+.user_body
+{
+	background-color: #f6f6f4;
+}
+
+.user_header
+{
+	background-color:#5c6a50;
+	height:105px;
+	
+}
+
+.user_header a
+{
+	
+}
+.user_header a:hover
+{
+    
+	
+}
+
+.user_change .control-label
+{
+    color:#000;
+    font-size:14px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
