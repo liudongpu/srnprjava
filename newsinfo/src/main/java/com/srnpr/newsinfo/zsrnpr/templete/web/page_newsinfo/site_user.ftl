@@ -1,16 +1,20 @@
 
 
-<#assign site_user_cookie="" >
+<#macro m_site_user_nologin>
 
-<#assign request=pageexec.upRequest()>
+  not login
 
-<#assign cookies = request.getCookies()>
-<#list cookies as cookie>
-<#if cookie.name = "bgpm_user_cookieid">
+</#macro>
 
-	<#assign site_user_cookie=cookie.value >
 
-</#if>
-</#list>
 
-${site_user_cookie}
+
+
+
+
+
+
+
+
+
+
