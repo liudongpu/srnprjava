@@ -1,69 +1,13 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>dd</title>
-<link type="text/css" href="sitecss/base.css" rel="stylesheet">
-<link type="text/css" href="../../lib/bootstrap/css/bootstrap.min.css"
-	rel="stylesheet">
-<link type="text/css" href="../../lib/jquery/jquery-site.css"
-	rel="stylesheet">
-
-<script type="text/javascript" src="../../lib/jquery/jquery-last.min.js"></script>
-<script type="text/javascript" src="../../lib/jquery/jquery-pluging.js"></script>
-<script type="text/javascript" src="../../lib/jquery/jquery-pluging.js"></script>
-<script type="text/javascript"
-	src="../../lib/bootstrap/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="../../zen/zen.js"></script>
-<script type="text/javascript" src="../../zen/zen_site.js"></script>
-<script type="text/javascript" src="../../lib/jquery/jquery.corner.js"></script>
-<script type="text/javascript"
-	src="../../lib/jquery/jquery.masonry.min.js"></script>
-
-<script type="text/javascript">
-	zen.i({
-		baseurl : '/zadmin/'
-	});
-</script>
-
-</head>
 <body class="website_body">
-	<div class="layout_header">
-		<div class="header_top">
-			<div class="website_center">
-				<div class="lay_header_position">
-					<div class="header_logo"></div>
-					<div id="header_user" class="header_user">
-						<a href="">登陆</a>|<a href="">注册</a>
-					</div>
+<@m_site_common_header nav="club" />
 
-				</div>
-				<div class="lay_header_nav">
-					<div class="header_nav_left">
 
-						<ul>
 
-							<li><a class="active" href="/">首 页</a></li>
-							<li><a href="#">博观资讯</a></li>
-							<li><a href="#">博观公告</a></li>
-							<li><a href="#">预展及成交 </a></li>
-							<li><a href="#"> 博观书房 </a></li>
-							<li><a href="#">博观俱乐部 </a></li>
-							<li><a href="#">名家论道</a></li>
 
-						</ul>
-					</div>
-					<div class="header_nav_right">
-						<div class="header_nav_search"></div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
 
-	<div class="layout_main website_center">
+<div class="layout_main website_center">
 		<div class="b_sitenav"></div>
-		<div class="cloub_body">
+		<div class="club_body">
 
 			<div class="container-fluid">
 				<div class="row-fluid">
@@ -158,11 +102,10 @@
 
 		</div>
 
-
+<@m_site_common_piclist />
 
 	</div>
-	<div class="layout_footer"></div>
 
+
+<@m_site_common_footer />
 </body>
-
-</html>

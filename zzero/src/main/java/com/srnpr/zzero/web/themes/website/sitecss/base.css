@@ -42,12 +42,10 @@ a.b_button {
     line-height: 30px;
     font-size: 16px;
 }
-a.b_button:hover
-{
-    color:#fff;
+a.b_button:hover {
+    color: #fff;
     cursor: pointer;
 }
-
 
 .b_share {
     background-position: -120px -140px;
@@ -61,31 +59,21 @@ a.b_button:hover
     background-position: -140px -140px;
 }
 
-
-
-
-
-
-
 /*圆角专用csss*/
 .b_corner {
 
 }
 
-.h_40
-{
-    height:40px;
-    clear:both;
+.h_40 {
+    height: 40px;
+    clear: both;
+}
+.h_20 {
+    height: 40px;
+    clear: both;
 }
 
-
-
 /**hack******************************************************************/
-
-
-
-
-
 
 .website_body {
     background-color: #cacaba;
@@ -140,7 +128,6 @@ a.b_button:hover
     height: 20px;
     font-size: 14px;
     font-weight: bold;
-    
     margin-top: 110px;
 }
 
@@ -278,7 +265,7 @@ a.b_button:hover
     background-color: #fff;
 }
 
-.index_banner_1 ,.index_banner_2,.index_banner_3,.index_banner_4{
+.index_banner_1, .index_banner_2, .index_banner_3, .index_banner_4 {
     width: 260px;
     height: 460px;
     position: relative;
@@ -286,22 +273,18 @@ a.b_button:hover
     left: 5px;
     background-image: url("../images/website_img.png");
 }
-.index_banner_1
-{
-    background-position:0px 0px;
+.index_banner_1 {
+    background-position: 0px 0px;
 }
 
-.index_banner_2
-{
-    background-position:-260px 0px;
+.index_banner_2 {
+    background-position: -260px 0px;
 }
-.index_banner_3
-{
-    background-position:-520px 0px;
+.index_banner_3 {
+    background-position: -520px 0px;
 }
-.index_banner_4
-{
-    background-position:-780px 0px;
+.index_banner_4 {
+    background-position: -780px 0px;
 }
 
 .index_banner_split {
@@ -853,18 +836,16 @@ a.b_button:hover
 
 .login_box {
     background-color: #f6f7f5;
-    
 }
 
 .login_box .c_box {
     padding: 40px;
-    
 }
 
 .login_box .c_desc {
     color: #5d6c50;
     margin-bottom: 50px;
-    text-indent:40px;
+    text-indent: 40px;
 }
 .login_box .c_left {
     float: left;
@@ -875,9 +856,9 @@ a.b_button:hover
     color: #5d6c50;
     font-size: 16px;
     font-weight: bold;
-    display:inline-block;
-    width:100px;
-    text-align:right;
+    display: inline-block;
+    width: 100px;
+    text-align: right;
 }
 
 .login_box .c_right {
@@ -892,53 +873,83 @@ a.b_button:hover
     margin: 25px 0px 0px 160px;
 }
 
-.login_box .c_buttons
-{
-    padding-left:90px;
+.login_box .c_buttons {
+    padding-left: 90px;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-.user_body
-{
-	background-color: #f6f6f4;
+.user_body {
+    background-color: #f6f6f4;
 }
 
-.user_header
-{
-	background-color:#5c6a50;
-	height:105px;
-	
+.user_header {
+    background-color: #5c6a50;
+    height: 105px;
 }
 
-.user_header a
-{
-	
+.user_header a {
+
 }
-.user_header a:hover
-{
+.user_header a:hover {
+
+}
+
+.user_change .control-label {
+    color: #000;
+    font-size: 14px;
+}
+
+.club_body {
+
+    background-color: #f6f6f4;
+}
+
+.club_body .container-fluid {
+    padding: 0px;
+}
+
+.club_body .c_right {
+    background-color: #d7ddd3;
+    padding:10px;
+}
+.club_body .c_right .c_flash {
     
-	
 }
 
-.user_change .control-label
+.club_body .c_left {
+    padding: 20px;
+}
+.club_body .c_left .c_box {
+    border: solid 1px #eeeeee;
+    border-top: solid 3px #cdd5bd;
+    padding: 20px;
+    word-break: break-all;
+}
+
+.club_body .c_title {
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 40px;
+    color: #505948;
+}
+.club_body h3 {
+    color: #505948;
+}
+
+
+.club_body .c_right .c_allnote
 {
-    color:#000;
-    font-size:14px;
+   
+    border-bottom:dashed 1px #b2b8ae;
+    line-height:30px;
+    font-size:16px;
+    margin-bottom:10px;
+  
 }
 
-
-
+.club_body .c_right li
+{
+    line-height:30px;
+}
 
 
 
