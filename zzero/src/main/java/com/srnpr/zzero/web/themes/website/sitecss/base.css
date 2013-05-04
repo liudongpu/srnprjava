@@ -299,11 +299,18 @@ a.b_button:hover {
     background-position: 0px -200px;
 }
 
-.index_piclist {
-    height: 200px;
+.main_pics
+{
+     height: 200px;
     background-color: #fff;
+}
+
+.index_piclist {
+    height:100%;
     overflow: hidden;
     position: relative;
+    width:100%;
+   
 }
 
 .index_piclist_position {
@@ -315,26 +322,32 @@ a.b_button:hover {
 .index_piclist_box {
     height: 150px;
     position: relative;
-    width: 2500px;
+    overflow: hidden;
+   
 }
 
 .index_piclist_box ul {
     margin: 0px;
     padding: 0px;
+    height:100%;
 }
 
 .index_piclist_box ul li {
     float: left;
-    margin-right: 16px;
-    width: 140px;
+    
+    width: 156px;
     list-style-type: none;
-    height: 100%;
+    height: 100%; 
 }
 
 .index_piclist_box ul li a {
     color: #696d5a;
     font-size: 12px;
     line-height: 20px;
+    display:inline-block;
+    padding-right: 16px;
+   
+   
 }
 
 .index_piclist_box img {
@@ -951,9 +964,15 @@ a.b_button:hover {
     line-height:30px;
 }
 
+.club_body .index_piclist_position
+{
+    width:100%;
+}
 
-
-
+.club_body .index_piclist_box ul li
+{
+    width:194px;
+}
 
 
 

@@ -130,13 +130,25 @@ zen
 					}
 				},
 
-				picnav : function(oTarget) {
+				picnav : function(sId,oTarget) {
 
-					var iEverySize = 156;
+					 
+					
+					
+					
+					
+					
+					
 
-					if (oTarget != undefined) {
+					if (oTarget != "i") {
 
-						var iNow = zen.site.temp.picnav_index;
+						
+						
+						var iNow=parseInt($('#'+sId).attr('zen_picnav_index'));
+						var iSize=parseInt($('#'+sId).attr('zen_picnav_size'));
+						
+						var iEverySize=parseInt($('#'+sId).attr('zen_picnav_itemwidth'));
+						
 
 						if (oTarget == "p") {
 							oTarget = iNow - 1;
@@ -144,58 +156,87 @@ zen
 						} else if (oTarget == "n") {
 							oTarget = iNow + 1;
 
+						}else if (oTarget == "a") {
+							oTarget = iNow + 1;
+							if (oTarget > iSize) {
+								oTarget=0;
+							}
 						}
 
 						if (oTarget <= 0) {
 							oTarget = 0;
-							$('#index_piclist_nav .c_prev').parent().addClass(
+							$('#'+sId+' .c_prev').parent().addClass(
 									'c_nav');
-							$('#index_piclist_nav .c_prev').parent()
+							$('#'+sId+' .c_prev').parent()
 									.removeClass('c_nav_select');
 						} else {
-							$('#index_piclist_nav .c_prev').parent().addClass(
+							$('#'+sId+' .c_prev').parent().addClass(
 									'c_nav_select');
 						}
 
-						if (oTarget >= zen.site.temp.picnav_size) {
-							oTarget = zen.site.temp.picnav_size;
-							$('#index_piclist_nav .c_next').parent().addClass(
+						if (oTarget >= iSize) {
+							oTarget = iSize;
+							$('#'+sId+' .c_next').parent().addClass(
 									'c_nav');
-							$('#index_piclist_nav .c_next').parent()
+							$('#'+sId+' .c_next').parent()
 									.removeClass('c_nav_select');
 						} else {
-							$('#index_piclist_nav .c_next').parent().addClass(
+							$('#'+sId+' .c_next').parent().addClass(
 									'c_nav_select');
 						}
 
-						$('#index_piclist_box_item_' + iNow).removeClass(
+						$('#'+sId+'_item_' + iNow).removeClass(
 								'c_select');
-						zen.site.temp.picnav_index = oTarget;
-						$("#index_piclist_box").animate(
+						
+						
+						$('#'+sId).attr('zen_picnav_index',oTarget);
+						
+						$('#'+sId+' .zen_picnav_list').animate(
 								{
 									left : '-'
 											+ (oTarget * iEverySize).toString()
 											+ "px"
 								});
-						$('#index_piclist_box_item_' + oTarget).addClass(
+						$('#'+sId+'_item_' + oTarget).addClass(
 								'c_select');
 
 					} else {
-						var iSize = $('#index_piclist_box ul li').size();
-						if (iSize > 7) {
-							for ( var i = iSize - 7, j = 0; i >= j; i--) {
-								$('#index_piclist_nav ul').prepend(
-										'<li id="index_piclist_box_item_'
+						var iSize = $('#'+sId+' .zen_picnav_list ul li').size();
+						
+						
+						var iItemSize=parseInt( $('#'+sId+' .zen_picnav_list ul li').width());
+						
+						var iShowSize=Math.floor( $('#'+sId).width()/iItemSize);
+						
+						
+						
+						
+						
+						$('#'+sId+' .zen_picnav_list').css('width',(iSize*iItemSize)+'px');
+						
+						if (iSize > iShowSize) {
+							for ( var i = iSize - iShowSize, j = 0; i >= j; i--) {
+								$('#'+sId+' .zen_picnav_nav ul').prepend(
+										'<li id="'+sId+'_item_'
 												+ i
-												+ '" onclick="zen.site.picnav('
+												+ '" onclick="zen.site.picnav(\''+sId+'\','
 												+ (i.toString())
 												+ ')"'
 												+ (i == 0 ? 'class="c_select"'
 														: '') + '></li>');
 							}
-
-							zen.site.temp.picnav_size = iSize - 7;
-							zen.site.picnav(0);
+							
+							$('#'+sId+' .zen_picnav_nav ul').append('<li class="c_nav" onclick="zen.site.picnav(\''+sId+'\',\'p\')"><span class="c_prev"></span></li>');
+							$('#'+sId+' .zen_picnav_nav ul').append('<li class="c_nav" onclick="zen.site.picnav(\''+sId+'\',\'n\')"><span class="c_next"></span></li>');
+							
+							
+							$('#'+sId).attr('zen_picnav_size',iSize - iShowSize);
+							$('#'+sId).attr('zen_picnav_itemwidth',iItemSize);
+							zen.site.picnav(sId,0);
+							$('#'+sId).show();
+							
+							//setInterval(function(){zen.site.picnav(sId,'a');},5000);
+							
 						}
 
 					}
