@@ -14,6 +14,23 @@ zen
 					zen.site.initlogin();
 					$('.b_corner').corner();
 				},
+				
+				search:function()
+				{
+					
+					var sVal=$('#site_common_search_box').val();
+					if(sVal!="")
+						{
+							zen.site.href('newsinfo/search-search-'+sVal);
+						}
+					else
+						{
+						zen.site.model('错误消息','请输入关键字后重试，谢谢！');
+						}
+					
+					
+				},
+				
 
 				post : function(url, data, success) {
 					$.ajax({

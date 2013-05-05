@@ -22,7 +22,10 @@
                             </ul>
                         </div>
                         <div class="header_nav_right">
-                            <div class="header_nav_search"></div>
+                            <div class="header_nav_search">
+								<input type="text" id="site_common_search_box" />
+								<div onclick="zen.site.search()"></div>
+							</div>
                         </div>
                     </div>
                 </div>

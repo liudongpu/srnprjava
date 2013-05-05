@@ -222,6 +222,22 @@ a.b_button:hover {
     top: 10px;
 }
 
+
+
+.header_nav_search input,.header_nav_search input[type="text"]
+{
+    border:0;
+    margin:2px;
+}
+.header_nav_search div
+{
+    float:right;
+    width:40px;
+    cursor:pointer;
+    height:100%;
+}
+
+
 .main {
 
 }
