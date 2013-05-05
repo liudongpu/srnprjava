@@ -3,6 +3,7 @@
 	<div class="layout_header">
             <div class="header_top">
                 <div class="website_center">
+                <div class="header_box">
                     <div class="lay_header_position">
                         <div class="header_logo"></div>
                         <div id="header_user" class="header_user">
@@ -28,6 +29,9 @@
 							</div>
                         </div>
                     </div>
+                    
+                    <div class="header_regtip"></div>
+                </div>
                 </div>
             </div>
         </div>

@@ -17,25 +17,25 @@
 						<div class="control-group">
 							<label class="control-label" for="inputPassword">原密码</label>
 							<div class="controls">
-								<input type="password" id="user_phone" placeholder="" value="">
+								<input type="password" id="old_login_pass" placeholder="" value="">
 							</div>
 						</div>
 						<div class="control-group">
 							<label class="control-label" for="inputPassword">新密码</label>
 							<div class="controls">
-								<input type="password" id="real_name" placeholder="" value="">
+								<input type="password" id="login_pass" placeholder="" value="">
 							</div>
 						</div>
 						<div class="control-group">
 							<label class="control-label" for="inputPassword">重复密码</label>
 							<div class="controls">
-								<input type="password" id="real_name" placeholder="" value="">
+								<input type="password" id="login_pass2" placeholder="" value="">
 							</div>
 						</div>
 						<div class="control-group">
 							<div class="controls">
 								
-								<a class="b_button">Sign in</a>
+								<a class="b_button" onclick="zen.site.change_pass()">确认提交</a>
 							</div>
 						</div>
 					</form>
