@@ -44,11 +44,9 @@ zen
 					if (obj.flag == true) {
 						if (fSuc != undefined) {
 							fSuc(obj);
-						}
-						else
-							{
+						} else {
 							zen.site.model("提示消息", "操作成功！");
-							}
+						}
 
 					} else {
 						zen.site.model("错误消息", obj.message);
@@ -121,19 +119,29 @@ zen
 
 					zen.site.href('');
 				},
-				
+
 				change_info : function() {
 					zen.site.post('change_info', {
-						cookie_id:zen.site.temp.user_cookieid,
+						cookie_id : zen.site.temp.user_cookieid,
 						user_email : $('#user_email').val(),
 						phone_num : $('#phone_num').val(),
 						real_name : $('#real_name').val()
 					});
 				},
-				
-				
-				
-				
+
+				change_pass : function() {
+
+					if ($('#login_pass').val() != $('#login_pass2').val()) {
+						zen.site.model('错误消息', '密码与重复密码输入不一致！');
+					} else {
+
+						zen.site.post('change_pass', {
+							cookie_id : zen.site.temp.user_cookieid,
+							old_login_pass : $('#old_login_pass').val(),
+							login_pass : $('#login_pass').val()
+						});
+					}
+				},
 
 				model : function(sTitle, sContent, fHidden) {
 

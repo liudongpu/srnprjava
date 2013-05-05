@@ -121,6 +121,21 @@ a.b_button:hover {
     background-repeat: no-repeat;
     position: relative;
 }
+.header_box
+{
+    position: relative;
+}
+.header_regtip
+{
+    background-image: url("../images/website_png.png");
+    width:80px;
+    height:40px;
+    background-position: -300px -100px;
+    position:absolute;
+    top:135px;
+    left:545px;
+}
+
 
 .header_logo {
     background-image: url("../images/website_png.png");

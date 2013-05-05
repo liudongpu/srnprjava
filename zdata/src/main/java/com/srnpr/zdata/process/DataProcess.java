@@ -208,7 +208,7 @@ public class DataProcess extends BaseClass {
 
 		if (mWhereMap.size() > 0) {
 			sSqlBuffer.append(" where "
-					+ FormatHelper.joinWhereStrings(mHashMap.upKeys()) + " ");
+					+ FormatHelper.joinWhereStrings(mWhereMap.upKeys()) + " ");
 
 		}
 
