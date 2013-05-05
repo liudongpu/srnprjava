@@ -98,7 +98,27 @@ a.b_button:hover {
     background-position: 0px -60px;
     height: 230px;
     margin-top: 10px;
+    text-align:center;
+    color:#647569;
 }
+
+
+
+
+
+
+.layout_footer  .c_link 
+{
+    line-height:40px;
+    color:#637268;
+    font-size:14px;
+    font-weight:bold;
+}
+
+
+
+
+
 
 .layout_height8 {
     height: 8px;

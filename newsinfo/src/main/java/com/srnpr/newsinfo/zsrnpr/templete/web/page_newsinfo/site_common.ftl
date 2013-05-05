@@ -31,7 +31,21 @@
 </#macro>
 
 <#macro m_site_common_footer>
-<div class="layout_footer"></div>
+	<div class="layout_footer">
+
+			<div class="website_center">
+				
+				<div class="c_link">
+					博观简介&nbsp;&nbsp;|&nbsp;&nbsp; 竞买流程&nbsp;&nbsp; |&nbsp;&nbsp;竞买须知&nbsp;&nbsp;|&nbsp;&nbsp;委托须知&nbsp;&nbsp;|&nbsp;&nbsp;拍卖规则&nbsp;&nbsp;|&nbsp;&nbsp;联系方式&nbsp;&nbsp;|&nbsp;&nbsp;友情链接
+					
+				</div>
+				<div class="h_40"></div>
+				北京市朝阳区三间房东路1号（懋隆文化产业创意园）10栋<br/> 贵宾专线：86-10-51695556/7 <br/>邮箱：pm@boguanpaimai.com
+				<br/><br/>
+				Copyright @2013               北京博观国际拍卖有限公司            版权所有
+			</div>
+
+	</div>
 </#macro>
 
 
