@@ -43,7 +43,14 @@
 			<div class="website_center">
 				
 				<div class="c_link">
-					博观简介&nbsp;&nbsp;|&nbsp;&nbsp; 竞买流程&nbsp;&nbsp; |&nbsp;&nbsp;竞买须知&nbsp;&nbsp;|&nbsp;&nbsp;委托须知&nbsp;&nbsp;|&nbsp;&nbsp;拍卖规则&nbsp;&nbsp;|&nbsp;&nbsp;联系方式&nbsp;&nbsp;|&nbsp;&nbsp;友情链接
+					
+					<#list pageexec.upDataOrder("info_static","order_index","system_cid","30330001") as el>
+	                           <a href="${base_url}newsinfo/static-static-${el["code"]}"> ${el["title"]}</a>
+	                           <#if el_has_next>
+	                           &nbsp;&nbsp;|&nbsp;&nbsp;
+	                           </#if>
+							 </#list>
+					
 					
 				</div>
 				<div class="h_40"></div>
@@ -66,46 +73,18 @@
 				<div class="index_piclist_position">
 					<div class="index_piclist_box zen_picnav_list">
 						<ul>
-							<li><a href=""> <img
-									src="http://www.boguanpaimai.com/Attach/pic/20130417/b_516eb6f829898.jpg"
-									alt=""> <span>我滚动，我快乐，我无趣，我来也</span>
+						 	<#list pageexec.upDataOrder("info_images","order_id") as el>
+	                            <li><a href="${base_url}newsinfo/img-img-${el["uid"]}"> <img
+									src="${el["file_url"]}"
+									alt="${el["title"]}"> <span>${el["title"]}</span>
 							</a></li>
-							<li><a href=""> <img
-									src="http://www.boguanpaimai.com/Attach/pic/20130417/b_516eb6f8af7f6.jpg"
-									alt=""> <span>我滚动，我快乐，我无趣，我来也</span>
-							</a></li>
-							<li><a href=""> <img
-									src="http://www.boguanpaimai.com/Attach/pic/20130417/b_516eb6f93f3a8.jpg"
-									alt=""> <span>我滚动，我快乐，我无趣，我来也</span>
-							</a></li>
-							<li><a href=""> <img
-									src="http://www.boguanpaimai.com/Attach/pic/20121221/b_50d3c47a28086.jpg"
-									alt=""> <span>我滚动，我快乐，我无趣，我来也</span>
-							</a></li>
-							<li><a href=""> <img
-									src="http://www.boguanpaimai.com/Attach/pic/20121221/b_50d3c47b671a6.jpg"
-									alt=""> <span>我滚动，我快乐，我无趣，我来也</span>
-							</a></li>
-							<li><a href=""> <img
-									src="http://www.boguanpaimai.com/Attach/pic/20121221/b_50d3c47c7a89f.jpg"
-									alt=""> <span>我滚动，我快乐，我无趣，我来也</span>
-							</a></li>
-							<li><a href=""> <img
-									src="http://www.boguanpaimai.com/Attach/pic/20121221/b_50d3c47d2691b.jpg"
-									alt=""> <span>我滚动，我快乐，我无趣，我来也</span>
-							</a></li>
-							<li><a href=""> <img
-									src="http://www.boguanpaimai.com/Attach/pic/20121221/b_50d3c47dafadf.jpg"
-									alt=""> <span>我滚动，我快乐，我无趣，我来也</span>
-							</a></li>
-							<li><a href=""> <img
-									src="http://www.boguanpaimai.com/Attach/pic/20121221/b_50d3c47e4ca51.jpg"
-									alt=""> <span>我滚动，我快乐，我无趣，我来也</span>
-							</a></li>
-							<li><a href=""> <img
-									src="http://www.boguanpaimai.com/Attach/pic/20121221/b_50d3c482d4f0a.jpg"
-									alt=""> <span>我滚动，我快乐，我无趣，我来也</span>
-							</a></li>
+							 
+							 </#list>
+						
+						
+						
+						
+						
 						</ul>
 					</div>
 				</div>

@@ -152,7 +152,7 @@ CREATE TABLE `info_images` (
   `file_url` varchar(450) DEFAULT '' COMMENT '缩略图',
   `order_id` varchar(45) DEFAULT '' COMMENT '排序',
   PRIMARY KEY (`zid`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -161,7 +161,7 @@ CREATE TABLE `info_images` (
 
 LOCK TABLES `info_images` WRITE;
 /*!40000 ALTER TABLE `info_images` DISABLE KEYS */;
-INSERT INTO `info_images` VALUES (1,'3ad1ed7faf8c488fa7335a5ce769272b','我图片我快乐','/zzero/file/images_upload/20130505/6561ba11f5a74628a2fc8ee4dedbe289.jpg','1');
+INSERT INTO `info_images` VALUES (1,'3ad1ed7faf8c488fa7335a5ce769272b','我图片我快乐','/zzero/file/images_upload/20130506/ff1ed694df2546a2b25d62523fc903bb.jpg','1'),(2,'3827fe42927f4141a8cc3597e7200c26','aafa','/zzero/file/images_upload/20130506/c7e1cd64c92141b6815af73ea0aa9f8b.jpg',''),(3,'b260335968f9487ca5cfd7ebf2e1b79f','22','/zzero/file/images_upload/20130506/da655111f54141ff9f0b5ead084b78cb.jpg','');
 /*!40000 ALTER TABLE `info_images` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -180,7 +180,7 @@ CREATE TABLE `info_img` (
   `file_url` varchar(450) DEFAULT '' COMMENT '图片地址',
   `order_id` varchar(45) DEFAULT '' COMMENT '排序',
   PRIMARY KEY (`zid`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -189,7 +189,7 @@ CREATE TABLE `info_img` (
 
 LOCK TABLES `info_img` WRITE;
 /*!40000 ALTER TABLE `info_img` DISABLE KEYS */;
-INSERT INTO `info_img` VALUES (1,'7a15e19939d54e3dbfb4650e3863fb23','','啊的','',''),(2,'80e877535f074076b2c0766f42f278fa','3ad1ed7faf8c488fa7335a5ce769272b','fda','','fd');
+INSERT INTO `info_img` VALUES (2,'80e877535f074076b2c0766f42f278fa','3ad1ed7faf8c488fa7335a5ce769272b','fda','/zzero/file/images_upload/20130506/8bace5bd6f734fce94fe354ead893d7a.jpg','fd'),(3,'0bb5368ab44d4838b2c5b49fd1fe5305','3ad1ed7faf8c488fa7335a5ce769272b','ss','/zzero/file/images_upload/20130506/6fae4b432f18423ba758745740e745f0.jpg','');
 /*!40000 ALTER TABLE `info_img` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -210,7 +210,7 @@ CREATE TABLE `info_news` (
   `orderid` int(11) DEFAULT '0' COMMENT '排序',
   `create_time` char(19) DEFAULT '' COMMENT '时间',
   PRIMARY KEY (`zid`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -219,7 +219,7 @@ CREATE TABLE `info_news` (
 
 LOCK TABLES `info_news` WRITE;
 /*!40000 ALTER TABLE `info_news` DISABLE KEYS */;
-INSERT INTO `info_news` VALUES (1,'a8f441234e854a0885fb3a53608a3c9f','我广告我快乐','我广告我快乐我广告我快乐我广告我快乐我广告我快乐我广告我快乐我广告我快乐','/zzero/file/images_upload/20130429/4e2ed9b6640342d481f72f9894e5e1fa.jpg','',1,''),(2,'4a22bf084f4f467a9e184010c47db407','第二张广告','','/zzero/file/images_upload/20130429/5199623271bc452fa5b19688505b86d5.jpg','',2,'');
+INSERT INTO `info_news` VALUES (1,'a8f441234e854a0885fb3a53608a3c9f','我广告我快乐','我广告我快乐我广告我快乐我广告我快乐我广告我快乐我广告我快乐我广告我快乐','/zzero/file/images_upload/20130429/4e2ed9b6640342d481f72f9894e5e1fa.jpg','',1,''),(2,'4a22bf084f4f467a9e184010c47db407','第二张广告','','/zzero/file/images_upload/20130429/5199623271bc452fa5b19688505b86d5.jpg','',2,''),(3,'1dd6ea42a58a4e30bd9fa3b720b178d0','d','fda','','fda',2,'');
 /*!40000 ALTER TABLE `info_news` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -354,8 +354,9 @@ CREATE TABLE `info_static` (
   `file_url` varchar(450) DEFAULT '' COMMENT '文件',
   `system_cid` int(11) DEFAULT '0' COMMENT '系统编码',
   `link` varchar(450) DEFAULT '' COMMENT '链接',
+  `order_index` varchar(45) DEFAULT '' COMMENT '排序',
   PRIMARY KEY (`zid`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -364,6 +365,7 @@ CREATE TABLE `info_static` (
 
 LOCK TABLES `info_static` WRITE;
 /*!40000 ALTER TABLE `info_static` DISABLE KEYS */;
+INSERT INTO `info_static` VALUES (1,'e874cec8b57e11e28f1b00241d8adc62','303300010001','博观简介',NULL,'',30330001,'',''),(2,'e874cec8b57e11e28f1b00241d8adc62','303300010002','竞买流程',NULL,'',30330001,'',''),(3,'e874cec8b57e11e28f1b00241d8adc62','303300010003','竞买须知',NULL,'',30330001,'',''),(4,'e874cec8b57e11e28f1b00241d8adc62','303300010004','委托须知',NULL,'',30330001,'',''),(5,'e874cec8b57e11e28f1b00241d8adc62','303300010005','拍卖规则',NULL,'',30330001,'',''),(6,'e874cec8b57e11e28f1b00241d8adc62','303300010006','联系方式',NULL,'',30330001,'',''),(7,'e874cec8b57e11e28f1b00241d8adc62','303300010007','友情链接',NULL,'',30330001,'','');
 /*!40000 ALTER TABLE `info_static` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -504,7 +506,7 @@ CREATE TABLE `you_class` (
   `parent_code` varchar(200) DEFAULT '' COMMENT '父编码',
   PRIMARY KEY (`zid`),
   UNIQUE KEY `code_UNIQUE` (`code`)
-) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -513,7 +515,7 @@ CREATE TABLE `you_class` (
 
 LOCK TABLES `you_class` WRITE;
 /*!40000 ALTER TABLE `you_class` DISABLE KEYS */;
-INSERT INTO `you_class` VALUES (1,'09e561b8b47f4d45aa3309145231b54b','3009','info_class','1','1',1,''),(2,'','3013','系统菜单分组','','',0,''),(3,'','30130001','广告设置','','',0,'3013'),(5,'','30130002','内容管理','','',100,'3013'),(6,'','3039','内容分类','','',1,''),(7,'','30390001','博观资讯','','',0,'3039'),(8,'','30390002','博观公告','','',0,'3039'),(9,'','3031','拍卖会类型','','',0,''),(10,'','30310001','预展','','',0,'3031'),(11,'','30310002','成交','','',0,'3031'),(12,'','3032','名家类型','','',0,''),(13,'','30320001','中国玉石雕刻名家','','',0,'3032'),(14,'','30320002','中国玉石雕刻大师','','',0,'3032'),(15,'','30320003','中国工艺美术大师','','',0,'3032'),(16,'','30320004','玉界名人堂','','',0,'3032');
+INSERT INTO `you_class` VALUES (1,'09e561b8b47f4d45aa3309145231b54b','3009','info_class','1','1',1,''),(2,'','3013','系统菜单分组','','',0,''),(3,'','30130001','广告设置','','',0,'3013'),(5,'','30130002','内容管理','','',100,'3013'),(6,'','3039','内容分类','','',1,''),(7,'','30390001','博观资讯','','',0,'3039'),(8,'','30390002','博观公告','','',0,'3039'),(9,'','3031','拍卖会类型','','',0,''),(10,'','30310001','预展','','',0,'3031'),(11,'','30310002','成交','','',0,'3031'),(12,'','3032','名家类型','','',0,''),(13,'','30320001','中国玉石雕刻名家','','',0,'3032'),(14,'','30320002','中国玉石雕刻大师','','',0,'3032'),(15,'','30320003','中国工艺美术大师','','',0,'3032'),(16,'','30320004','玉界名人堂','','',0,'3032'),(17,'','3033','静态内容','','',0,''),(18,'','30330001','网站底部导航','','',0,'3033');
 /*!40000 ALTER TABLE `you_class` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -831,4 +833,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2013-05-05 18:47:13
+-- Dump completed on 2013-05-06  2:25:27

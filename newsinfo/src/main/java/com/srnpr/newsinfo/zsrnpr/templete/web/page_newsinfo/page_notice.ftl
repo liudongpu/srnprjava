@@ -8,7 +8,7 @@
 		<div class="info_body  container-fluid">
 			<div class="row-fluid">
 				<div class="info_body_left span9">
-				 <@m_site_info_listinfo />
+				 <@m_site_info_listnotice />
 				</div>
 				<div class=" span3">
 

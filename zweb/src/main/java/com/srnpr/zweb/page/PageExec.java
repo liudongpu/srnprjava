@@ -44,6 +44,13 @@ public class PageExec extends BaseClass {
 		return DataTableManager.Get(sTableName).upListListByQuery(sArgs);
 	}
 	
+	public Object upDataList(String sTableName,String sFields,String sOrder,int start,int end,Object... oArgs)
+	{
+		return DataTableManager.Get(sTableName).upList(sFields, sOrder, start, end, oArgs);
+	}
+	
+	
+	
 	public Object upDataOne(String sTableName,String... oArgs)
 	{
 		
@@ -58,7 +65,9 @@ public class PageExec extends BaseClass {
 	{
 		return DataTableManager.Get(sTableName).upListListOrder("", sOrder, sArgs);
 	}
-
+	public Map<String, Object> upDataOneQuery(String sTableName,String sWhere,String... args) {
+		return DataTableManager.Get(sTableName).upOneQuery(sWhere, args);
+	}
 
 	
 	

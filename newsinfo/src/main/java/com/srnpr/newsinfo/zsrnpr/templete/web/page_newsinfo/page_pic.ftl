@@ -1,5 +1,5 @@
 <body class="website_body">
-<@m_site_common_header nav="info" />
+<@m_site_common_header nav="auction" />
 
 
 <#assign
