@@ -7,7 +7,7 @@
 
 	<div class="layout_main website_center">
 		<div class="user_body">
-			<div class="user_header"></div>
+			<div class="user_header"><@m_site_user_header nav="pass" /></div>
 			<div class="user_main">
 
 				<div class="user_change">
@@ -15,21 +15,21 @@
 					<form class="form-horizontal">
 						
 						<div class="control-group">
-							<label class="control-label" for="inputPassword">Password</label>
+							<label class="control-label" for="inputPassword">原密码</label>
 							<div class="controls">
 								<input type="password" id="user_phone" placeholder="" value="">
 							</div>
 						</div>
 						<div class="control-group">
-							<label class="control-label" for="inputPassword">New Password</label>
+							<label class="control-label" for="inputPassword">新密码</label>
 							<div class="controls">
-								<input type="text" id="real_name" placeholder="" value="">
+								<input type="password" id="real_name" placeholder="" value="">
 							</div>
 						</div>
 						<div class="control-group">
-							<label class="control-label" for="inputPassword">New Password2</label>
+							<label class="control-label" for="inputPassword">重复密码</label>
 							<div class="controls">
-								<input type="text" id="real_name" placeholder="" value="">
+								<input type="password" id="real_name" placeholder="" value="">
 							</div>
 						</div>
 						<div class="control-group">

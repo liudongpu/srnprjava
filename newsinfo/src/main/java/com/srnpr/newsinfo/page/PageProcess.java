@@ -35,27 +35,30 @@ public class PageProcess implements IWebProcess {
 
 		// if user
 		if (wRequest.upSet(EWebSet.Url_View).equals("user")) {
-			HttpServletRequest hRequest = ((ServletRequestAttributes) RequestContextHolder
-					.getRequestAttributes()).getRequest();
-
-			if (hRequest != null && hRequest.getCookies() != null
-					&& hRequest.getCookies().length > 0) {
-
-				for (Cookie c : hRequest.getCookies()) {
-					if (c.getName().equals("bgpm_user_cookieid")) {
-
-						
-
-						mPageInfo.setPageOptions(DataTableManager.Get(
-								"user_info")
-								.upOneMap("cookie_id", c.getValue()));
-					}
-				}
-
-			}
+			mPageInfo.setPageOptions(upUserInfo());
 		}
-
 		return mPageInfo;
+	}
+
+	private Map<String, Object> upUserInfo() {
+		Map<String, Object> mReturn = null;
+
+		HttpServletRequest hRequest = ((ServletRequestAttributes) RequestContextHolder
+				.getRequestAttributes()).getRequest();
+
+		if (hRequest != null && hRequest.getCookies() != null
+				&& hRequest.getCookies().length > 0) {
+
+			for (Cookie c : hRequest.getCookies()) {
+				if (c.getName().equals("bgpm_user_cookieid")) {
+
+					mReturn = DataTableManager.Get("user_info").upOneMap(
+							"cookie_id", c.getValue());
+				}
+			}
+
+		}
+		return mReturn;
 	}
 
 	public MResult result(PageRequest pRequest) {
@@ -66,6 +69,9 @@ public class PageProcess implements IWebProcess {
 			mResult = new UserCall(pRequest).Reg();
 		} else if (sView.equals("login")) {
 			mResult = new UserCall(pRequest).Login();
+		}
+		else if (sView.equals("change_info")) {
+			mResult = new UserCall(pRequest).ChangeInfo(upUserInfo());
 		}
 
 		return mResult;

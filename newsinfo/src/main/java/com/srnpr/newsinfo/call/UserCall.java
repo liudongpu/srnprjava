@@ -12,6 +12,7 @@ import com.srnpr.zcom.helper.FormatHelper;
 import com.srnpr.zcom.model.MHashMap;
 import com.srnpr.zcom.model.MResult;
 import com.srnpr.zdata.manager.DataTableManager;
+import com.srnpr.zweb.page.PageExec;
 import com.srnpr.zweb.page.PageRequest;
 
 public class UserCall extends BaseClass {
@@ -88,15 +89,14 @@ public class UserCall extends BaseClass {
 
 	public MResult Login() {
 
-		
 		if (!StringUtils.isNotEmpty(pRequest.getReqMap().get("login_name")
 				.toString())) {
 			result.error(937301002);
-		} else if (!StringUtils.isNotEmpty(pRequest.getReqMap().get("login_pass")
-				.toString())) {
+		} else if (!StringUtils.isNotEmpty(pRequest.getReqMap()
+				.get("login_pass").toString())) {
 			result.error(937301003);
 		}
-		
+
 		if (result.getFlag()) {
 
 			Map<String, Object> mUserInfo = DataTableManager.Get("user_info")
@@ -119,6 +119,31 @@ public class UserCall extends BaseClass {
 		}
 		return result;
 
+	}
+
+	public MResult ChangeInfo(Map<String, Object> mUserInfo) {
+
+		PageExec pExec = new PageExec();
+
+		if (mUserInfo != null) {
+
+			MHashMap mMap=new MHashMap();
+			mMap.put("cookie_id", mUserInfo.get("cookie_id"));
+			
+			mMap.put("user_email", pRequest.getReqMap().get("user_email").toString());
+			mMap.put("phone_num", pRequest.getReqMap().get("phone_num").toString());
+			mMap.put("real_name", pRequest.getReqMap().get("real_name").toString());
+			
+			DataTableManager.Get("user_info").inPost(mMap, "cookie_id");
+			
+			
+		} else
+
+		{
+			result.error(937301007);
+		}
+
+		return result;
 	}
 
 }

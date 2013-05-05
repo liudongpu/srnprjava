@@ -98,27 +98,16 @@ a.b_button:hover {
     background-position: 0px -60px;
     height: 230px;
     margin-top: 10px;
-    text-align:center;
-    color:#647569;
+    text-align: center;
+    color: #647569;
 }
 
-
-
-
-
-
-.layout_footer  .c_link 
-{
-    line-height:40px;
-    color:#637268;
-    font-size:14px;
-    font-weight:bold;
+.layout_footer  .c_link {
+    line-height: 40px;
+    color: #637268;
+    font-size: 14px;
+    font-weight: bold;
 }
-
-
-
-
-
 
 .layout_height8 {
     height: 8px;
@@ -222,21 +211,16 @@ a.b_button:hover {
     top: 10px;
 }
 
-
-
-.header_nav_search input,.header_nav_search input[type="text"]
-{
-    border:0;
-    margin:2px;
+.header_nav_search input, .header_nav_search input[type="text"] {
+    border: 0;
+    margin: 2px;
 }
-.header_nav_search div
-{
-    float:right;
-    width:40px;
-    cursor:pointer;
-    height:100%;
+.header_nav_search div {
+    float: right;
+    width: 40px;
+    cursor: pointer;
+    height: 100%;
 }
-
 
 .main {
 
@@ -335,18 +319,16 @@ a.b_button:hover {
     background-position: 0px -200px;
 }
 
-.main_pics
-{
-     height: 200px;
+.main_pics {
+    height: 200px;
     background-color: #fff;
 }
 
 .index_piclist {
-    height:100%;
+    height: 100%;
     overflow: hidden;
     position: relative;
-    width:100%;
-   
+    width: 100%;
 }
 
 .index_piclist_position {
@@ -359,35 +341,31 @@ a.b_button:hover {
     height: 150px;
     position: relative;
     overflow: hidden;
-   
 }
 
 .index_piclist_box ul {
     margin: 0px;
     padding: 0px;
-    height:100%;
+    height: 100%;
 }
 
 .index_piclist_box ul li {
     float: left;
-    
     width: 156px;
     list-style-type: none;
-    height: 100%; 
+    height: 100%;
 }
 
 .index_piclist_box ul li a {
     color: #696d5a;
     font-size: 12px;
     line-height: 20px;
-    display:inline-block;
+    display: inline-block;
     padding-right: 16px;
-   
-   
 }
 
 .index_piclist_box img {
-    width:100%;
+    width: 100%;
     height: 84px;
     border: solid 1px #83876b;
 }
@@ -934,12 +912,47 @@ a.b_button:hover {
     background-color: #5c6a50;
     height: 105px;
 }
-
-.user_header a {
-
+.user_header_nav {
+    padding: 20px 0px 0px 50px;
 }
-.user_header a:hover {
+.user_header_nav div {
+    float: left;
+}
+.user_header_nav a
+{
+    display: inline-block;
+    padding:0px 20px 0px 20px;
+    margin-right:20px;
+}
+.user_header_nav a:hover {
+    background-color: #69785d;
+}
+.user_header_nav  .c_back {
+    background-image: url("../images/website_png.png");
+    width: 60px;
+    height: 60px;
+}
 
+
+
+.user_header_nav .c_nav1 {
+    background-position: -320px -140px;
+}
+.user_header_nav .c_nav2 {
+    background-position: -380px -140px;
+}
+.user_header_nav .c_nav3 {
+    background-position: -440px -140px;
+}
+.user_header_nav .c_nav4 {
+    background-position: -500px -140px;
+}
+
+.user_header_nav  .c_title {
+    font-size: 18px;
+    color: #d7ddd2;
+    font-weight: bold;
+    padding: 30px 0px 0px 20px;
 }
 
 .user_change .control-label {
@@ -958,10 +971,10 @@ a.b_button:hover {
 
 .club_body .c_right {
     background-color: #d7ddd3;
-    padding:10px;
+    padding: 10px;
 }
 .club_body .c_right .c_flash {
-    
+
 }
 
 .club_body .c_left {
@@ -984,80 +997,42 @@ a.b_button:hover {
     color: #505948;
 }
 
+.club_body .c_right .c_allnote {
 
-.club_body .c_right .c_allnote
-{
-   
-    border-bottom:dashed 1px #b2b8ae;
-    line-height:30px;
-    font-size:16px;
-    margin-bottom:10px;
-  
+    border-bottom: dashed 1px #b2b8ae;
+    line-height: 30px;
+    font-size: 16px;
+    margin-bottom: 10px;
 }
 
-.club_body .c_right li
-{
-    line-height:30px;
+.club_body .c_right li {
+    line-height: 30px;
 }
 
-.club_body .index_piclist_position
-{
-    width:100%;
+.club_body .index_piclist_position {
+    width: 100%;
 }
 
-.club_body .index_piclist_box ul li
-{
-    width:194px;
+.club_body .index_piclist_box ul li {
+    width: 194px;
 }
 
-
-.book_adv_top
-{
-    height:630px;
-    width:100%;
+.book_adv_top {
+    height: 630px;
+    width: 100%;
 }
 
-
-.book_center .c_left
-{
-    float:left;
-    width:50%;
+.book_center .c_left {
+    float: left;
+    width: 50%;
 }
 
-.book_center .c_right
-{
-    float:right;
-    width:50%;
+.book_center .c_right {
+    float: right;
+    width: 50%;
 }
 
-.book_pic
-{
-    background-color:#fff;
+.book_pic {
+    background-color: #fff;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 

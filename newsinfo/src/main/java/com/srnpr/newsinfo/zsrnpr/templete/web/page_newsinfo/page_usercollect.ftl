@@ -10,7 +10,7 @@
 
 	<div class="layout_main website_center">
 		<div class="user_body">
-			<div class="user_header"></div>
+			<div class="user_header"><@m_site_user_header nav="collect" /></div>
 			<div class="user_main">
 
 				
