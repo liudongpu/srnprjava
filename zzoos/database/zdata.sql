@@ -139,6 +139,31 @@ INSERT INTO `info_good` VALUES (1,'bc6ad0cba8ff4108a0d5f08213475a9a','拍品一�
 UNLOCK TABLES;
 
 --
+-- Table structure for table `info_images`
+--
+
+DROP TABLE IF EXISTS `info_images`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `info_images` (
+  `zid` int(11) NOT NULL AUTO_INCREMENT,
+  `uid` char(32) DEFAULT NULL,
+  `title` varchar(450) DEFAULT NULL COMMENT '标题',
+  `file_url` varchar(450) DEFAULT NULL COMMENT '缩略图',
+  PRIMARY KEY (`zid`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `info_images`
+--
+
+LOCK TABLES `info_images` WRITE;
+/*!40000 ALTER TABLE `info_images` DISABLE KEYS */;
+/*!40000 ALTER TABLE `info_images` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `info_news`
 --
 
@@ -284,13 +309,13 @@ INSERT INTO `info_special` VALUES (1,'a80abfef2e574a5faa251032337ee714','e465363
 UNLOCK TABLES;
 
 --
--- Table structure for table `new_table`
+-- Table structure for table `info_static`
 --
 
-DROP TABLE IF EXISTS `new_table`;
+DROP TABLE IF EXISTS `info_static`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `new_table` (
+CREATE TABLE `info_static` (
   `zid` int(11) NOT NULL AUTO_INCREMENT,
   `uid` char(32) DEFAULT '',
   `code` varchar(45) DEFAULT '' COMMENT '编码',
@@ -304,12 +329,12 @@ CREATE TABLE `new_table` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `new_table`
+-- Dumping data for table `info_static`
 --
 
-LOCK TABLES `new_table` WRITE;
-/*!40000 ALTER TABLE `new_table` DISABLE KEYS */;
-/*!40000 ALTER TABLE `new_table` ENABLE KEYS */;
+LOCK TABLES `info_static` WRITE;
+/*!40000 ALTER TABLE `info_static` DISABLE KEYS */;
+/*!40000 ALTER TABLE `info_static` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -776,4 +801,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2013-05-05  2:04:58
+-- Dump completed on 2013-05-05 14:17:46

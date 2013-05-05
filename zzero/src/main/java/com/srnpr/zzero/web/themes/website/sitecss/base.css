@@ -975,6 +975,53 @@ a.b_button:hover {
 }
 
 
+.book_adv_top
+{
+    height:630px;
+    width:100%;
+}
+
+
+.book_center .c_left
+{
+    float:left;
+    width:50%;
+}
+
+.book_center .c_right
+{
+    float:right;
+    width:50%;
+}
+
+.book_pic
+{
+    background-color:#fff;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
