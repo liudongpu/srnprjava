@@ -112,3 +112,48 @@
 
 
 </#macro>
+
+
+<#macro m_site_common_share_text text="分享" title="" url="">
+<span onmouseover="jathis_setfunc('${title}','${url}')">
+<a href="http://www.jiathis.com/share?uid=1771750"  class="jiathis jiathis_txt jiathis_separator " target="_blank">${text}</a>
+</span>
+</#macro>
+
+<#macro m_site_common_share_script>
+
+<script type="text/javascript">
+
+function jathis_setfunc(title,url)
+{
+	jiathis_config.title = title;
+	
+	var sShareUrl=location.href;
+	
+	if(url!=undefined)
+	{
+		sShareUrl=sShareUrl.substring(0,sShareUrl.lastIndexOf('/'))+'/'+url;
+	}
+	
+	
+	jiathis_config.url = sShareUrl;
+	
+}
+
+
+
+var jiathis_config = {};
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code_mini/jia.js?uid=1362787344359325" charset="utf-8"></script>
+
+</#macro>
+
+
+
+
+
+
+
+
+
+

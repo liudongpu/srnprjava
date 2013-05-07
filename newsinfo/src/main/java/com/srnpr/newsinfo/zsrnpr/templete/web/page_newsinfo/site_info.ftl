@@ -17,7 +17,7 @@
 						<div class="c_des">导 语：
 							${el["note"]}</div>
 						<div class="c_tips">
-							<span class="b_icon c_share"></span>分享<span
+							<span class="b_icon c_share"></span><@m_site_common_share_text title=el["title"] url="content-content-"+el["uid"] /><span
 								class="b_icon c_comment"></span>&nbsp;&nbsp;&nbsp;&nbsp;评论&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="content-content-${el["uid"]}">阅读全文〉</a>
 						</div>
 						<div class="c_split"></div>
@@ -45,7 +45,7 @@
 						<div class="c_des">导 语：
 							${el["note"]}</div>
 						<div class="c_tips">
-							<span class="b_icon c_share"></span>分享<span
+							<span class="b_icon c_share"></span><@m_site_common_share_text /><span
 								class="b_icon c_comment"></span>&nbsp;&nbsp;&nbsp;&nbsp;评论&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="affiche-affiche-${el["uid"]}">阅读全文〉</a>
 						</div>
 						<div class="c_split"></div>
