@@ -142,7 +142,8 @@ function jathis_setfunc(title,url)
 
 
 
-var jiathis_config = {};
+var jiathis_config = {siteNum:6,
+	sm:"tsina,tqq,weixin,qzone,copy,email"};
 </script>
 <script type="text/javascript" src="http://v3.jiathis.com/code_mini/jia.js?uid=1362787344359325" charset="utf-8"></script>
 
