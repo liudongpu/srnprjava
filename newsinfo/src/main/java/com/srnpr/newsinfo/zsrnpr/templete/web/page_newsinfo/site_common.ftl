@@ -122,6 +122,13 @@
 
 <#macro m_site_common_share_script>
 
+<style>
+.ckepopBottom
+{
+	display:none;
+}
+</style>
+
 <script type="text/javascript">
 
 function jathis_setfunc(title,url)
@@ -150,9 +157,13 @@ var jiathis_config = {siteNum:6,
 </#macro>
 
 
+<#macro m_site_common_comment_text text="评论" title="" url="">
 
+<span>
+${text}
+</span>
 
-
+</#macro>
 
 
 
