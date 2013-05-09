@@ -134,17 +134,7 @@
 function jathis_setfunc(title,url)
 {
 	jiathis_config.title = title;
-	
-	var sShareUrl=location.href;
-	
-	if(url!=undefined)
-	{
-		sShareUrl=sShareUrl.substring(0,sShareUrl.lastIndexOf('/'))+'/'+url;
-	}
-	
-	
-	jiathis_config.url = sShareUrl;
-	
+	jiathis_config.url = zen.site.upurl(url);
 }
 
 

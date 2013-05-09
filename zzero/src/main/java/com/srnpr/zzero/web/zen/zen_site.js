@@ -38,6 +38,15 @@ zen
 					});
 
 				},
+				
+				upurl:function(sUrl)
+				{
+					var sShareUrl=location.href;
+					sShareUrl=sShareUrl.substring(0,sShareUrl.lastIndexOf('/'))+'/'+sUrl;
+					
+					return sShareUrl;
+				},
+				
 				success : function(data, fSuc) {
 					// alert(o);
 					var obj = $.evalJSON(data);

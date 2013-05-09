@@ -75,6 +75,10 @@ public class PageProcess implements IWebProcess {
 		}else if (sView.equals("change_pass")) {
 			mResult = new UserCall(pRequest).ChangePass(upUserInfo());
 		}
+		else if(sView.equals("comment_info"))
+		{
+			
+		}
 
 		return mResult;
 

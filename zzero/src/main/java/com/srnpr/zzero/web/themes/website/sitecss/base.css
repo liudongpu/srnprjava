@@ -1166,3 +1166,31 @@ a.b_button:hover {
     height:75px;
     margin:4px 0px 0px 8px;
 }
+.index_comment
+{
+    color:#696d5a;
+}
+
+.index_comment .c_head
+{
+    margin-top:40px;
+    color: #696d5a;
+    font-size:14px;
+    font-weight: bold;
+    
+}
+.index_comment .c_item
+{
+    border-top:dashed 1px #cdcdcc;
+    padding:10px 0px 0px 10px;
+    margin:10px 0px 10px 0px;
+}
+.index_comment .c_item .c_title
+{
+    color:#696d5a;
+}
+.index_comment .c_item .c_title span
+{
+    font-weight:bold;
+}
+
