@@ -1169,6 +1169,8 @@ a.b_button:hover {
 .index_comment
 {
     color:#696d5a;
+    line-hegiht:20px;
+    width:95%;
 }
 
 .index_comment .c_head
