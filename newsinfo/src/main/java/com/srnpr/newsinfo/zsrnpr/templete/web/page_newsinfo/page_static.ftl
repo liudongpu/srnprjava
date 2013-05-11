@@ -6,7 +6,7 @@
 	static_info=pageexec.upDataOne("info_static","code",pageinfo.getWebSet()["Url_Option"])>
 
 	<div class="layout_main website_center">
-		<div class="b_sitenav"></div>
+		<div class="b_sitenav"><@m_site_common_breadcrumb [static_info["title"],""] /></div>
 		<div class="static_body">
 			<div class="c_body">
 				<div class="c_left">
@@ -16,7 +16,7 @@
 						</div>
 						<ul>
 						
-						<#list pageexec.upDataOrder("info_static","order_index","system_cid","30330001") as el>
+						<#list pageexec.upDataOrder("info_static","order_index","system_cid",static_info["system_cid"]) as el>
 	                         
 	                           
 	                           <li><a <#if (static_info["code"]==el["code"]) >class="c_select"<#else> href="${base_url}newsinfo/static-static-${el["code"]}" </#if>>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${el["title"]}</a></li>
@@ -34,7 +34,7 @@
 				</div>
 				<div class="c_right">
 					<div class="c_info_title">${static_info["title"]}</div>
-					<div>
+					<div class="b_info">
 					${static_info["content"]?default('')}
 					</div>
 					

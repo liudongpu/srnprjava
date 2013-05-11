@@ -8,7 +8,7 @@
 
 
 	<div class="layout_main website_center">
-		<div class="b_sitenav"></div>
+		<div class="b_sitenav"><@m_site_common_breadcrumb ["预展及成交","auction-list",special_info["name"],""] /></div>
 		
 		<script>
 			$(function() {

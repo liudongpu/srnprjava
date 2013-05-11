@@ -3,7 +3,7 @@
 	special_info=pageexec.upDataOne("info_auction","uid",pageinfo.getWebSet()["Url_Option"])>
 
 	<div class="layout_main website_center">
-		<div class="b_sitenav"></div>
+		<div class="b_sitenav"><@m_site_common_breadcrumb ["预展及成交","auction-list",special_info["name"],""] /></div>
 		<div class="special_body">
 			<div class="layout_height8"></div>
 			<div class="container-fluid">

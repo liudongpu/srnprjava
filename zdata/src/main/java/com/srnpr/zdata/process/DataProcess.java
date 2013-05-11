@@ -91,7 +91,7 @@ public class DataProcess extends BaseClass {
 	}
 
 	public List<Map<String, Object>> upListListOrder(String sField,
-			String sOrder, String... sArgs) {
+			String sOrder, Object... sArgs) {
 		return upList(sField, sOrder, -1, 0, (Object[]) sArgs);
 	}
 

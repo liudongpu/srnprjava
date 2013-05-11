@@ -8,7 +8,7 @@
 
 
 <div class="layout_main website_center">
-		<div class="b_sitenav"></div>
+		<div class="b_sitenav"><@m_site_common_breadcrumb ["博观资讯","info-list",note_info["title"],""] /></div>
 		<div class="content_body  container-fluid">
 			<div class="row-fluid">
 				<div class=" span9">
@@ -17,7 +17,7 @@
 						<div class="h_20"></div>
 						<div class="content_title">${note_info["title"]}</div>
 						<div class="content_desc">发表时间:${note_info["create_time"]}|文章出处:博观拍卖</div>
-						<div>${note_info["content"]}</div>
+						<div  class="b_info">${note_info["content"]}</div>
 					</div>
 					
 					<div>

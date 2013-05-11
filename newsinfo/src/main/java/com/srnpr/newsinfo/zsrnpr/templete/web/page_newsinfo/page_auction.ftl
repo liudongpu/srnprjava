@@ -38,10 +38,11 @@
 				<#list pageexec.upData("info_auction") as el> 	 
 					<div class="c_item">
 					<div class="c_inner">
+					<a href="special-list-${el["uid"]}">
 						<div class="c_image">
 							<img
 								src="${el["file_url"]}" />
-						</div>
+						</div></a>
 						<div class="c_info">
 							<div class="c_title">拍卖会：${el["name"]}</div>
 							<div>专场：共${el["special_num"]}个专场</div>
@@ -53,7 +54,7 @@
 								<a href="special-list-${el["uid"]}">查看详情 ></a>
 							</div>
 						</div>
-
+						
 					</div>
 				</div>
 							 

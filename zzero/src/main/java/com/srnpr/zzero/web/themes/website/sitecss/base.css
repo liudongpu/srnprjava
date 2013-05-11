@@ -17,12 +17,22 @@ form, ul, li {
     background-image: url("../images/website_png.png");
     display: inline-block;
 }
-
+.b_info
+{
+    margin:20px 0px 20px 0px;
+}
 .b_sitenav {
     background-color: #cfd4bd;
     height: 25px;
     margin-bottom: 5px;
     width: 100%;
+    text-indent:30px;
+    line-height: 25px;
+    letter-spacing: 2px;
+}
+.b_sitenav a
+{
+    color: #000;
 }
 
 .b_split {
@@ -995,7 +1005,10 @@ a.b_button:hover {
     padding: 20px;
     word-break: break-all;
 }
-
+.club_body .c_linkbox
+{
+    margin-top:30px;
+}
 .club_body .c_title {
     font-size: 18px;
     font-weight: bold;

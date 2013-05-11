@@ -2,6 +2,8 @@ package com.srnpr.zweb.page;
 
 import java.util.List;
 import java.util.Map;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -51,7 +53,7 @@ public class PageExec extends BaseClass {
 		return DataTableManager.Get(sTableName).upListListByQuery(oArgs).get(0);
 	}
 
-	public Object upDataOrder(String sTableName, String sOrder, String... sArgs) {
+	public Object upDataOrder(String sTableName, String sOrder, Object... sArgs) {
 		return DataTableManager.Get(sTableName).upListListOrder("", sOrder,
 				sArgs);
 	}
@@ -104,5 +106,30 @@ public class PageExec extends BaseClass {
 				.getRequestAttributes()).getRequest();
 
 	}
+	
+	
+	
+	public String upHtmlTag(Object oHtml,int iLength)
+	{
+		String htmlStr=oHtml.toString();
+		 String regEx_html="<[^>]+>"; //定义HTML标签的正则表达式 
+		 Pattern p_html=Pattern.compile(regEx_html,Pattern.CASE_INSENSITIVE); 
+         Matcher m_html=p_html.matcher(htmlStr); 
+         htmlStr=m_html.replaceAll(""); //过滤html标签 
+         
+         htmlStr=htmlStr.trim();
+         
+         
+         if(iLength>0)
+         {
+        	 htmlStr=StringUtils.left(htmlStr, iLength);
+         }
+         
+         
+
+        return htmlStr; //返回文本字符串 
+	}
+	
+	
 
 }

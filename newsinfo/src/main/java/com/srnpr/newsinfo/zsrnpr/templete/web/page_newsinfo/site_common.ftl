@@ -165,6 +165,21 @@ $(window).ready(function(){zen.site.comment_show('${uid}')});
 
 </#macro>
 
+<#macro m_site_common_breadcrumb crumb>
+<a href="/">返回首页</a>
+<#list crumb as el>
+	
+	<#if (el_index%2==0)>
+		&gt;  <a href="${crumb[el_index+1]?default("")}">${el}</a>
+	</#if>
+
+
+</#list>
+
+
+</#macro>
+
+
 
 <#macro m_site_common_site_nav pageNav>
 
