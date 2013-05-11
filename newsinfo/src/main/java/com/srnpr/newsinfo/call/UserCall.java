@@ -67,11 +67,20 @@ public class UserCall extends BaseClass {
 
 			MHashMap mHMap = new MHashMap();
 
+			String sRegName=pRequest.getReqMap().get("reg_name").toString();
+			
 			mHMap.inAdd("uid", sUid, "login_name",
-					pRequest.getReqMap().get("reg_name"), "login_pass",
+					sRegName, "login_pass",
 					pRequest.getReqMap().get("reg_pass"), "user_email",
-					pRequest.getReqMap().get("reg_name"), "reg_date",
+					sRegName, "reg_date",
 					FormatHelper.GetDateTime(), "cookie_id", sCookieId);
+			
+			
+				mHMap.inAdd("real_name",StringUtils.substringBefore(sRegName, "@"));
+			
+			
+			
+			
 			DataTableManager.Get("user_info").inPut(mHMap);
 
 			MHashMap mResult = new MHashMap();

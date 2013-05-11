@@ -117,15 +117,14 @@ zen
 				login_success : function(o) {
 
 					zen.f.cookie("bgpm_user_cookieid",
-							o.result["bgpm_user_cookieid"], 365);
-					zen.f.cookie("bgpm_user_name", o.result["bgpm_user_name"],
-							365);
+							o.result["bgpm_user_cookieid"],{path:'/', expires:365});
+					zen.f.cookie("bgpm_user_name", o.result["bgpm_user_name"],{path:'/', expires:365});
 
 					zen.site.href('newsinfo/usercenter-user');
 				},
 				logout : function() {
-					zen.f.cookie("bgpm_user_cookieid", null);
-					zen.f.cookie("bgpm_user_name", null);
+					zen.f.cookie("bgpm_user_cookieid", null,{path:'/'});
+					zen.f.cookie("bgpm_user_name", null,{path:'/'});
 
 					zen.site.href('');
 				},
@@ -167,10 +166,13 @@ zen
 					aHtml
 							.push('<div class="index_comment"><div class="c_head">文章评论</div>');
 
-					if (oSuccess.Result && oSuccess.result.length > 0) {
+					if (oSuccess.result && oSuccess.result.length > 0) {
 						for ( var i = 0, j = oSuccess.result.length; i < j; i++) {
+							
+							var oItem=oSuccess.result[i];
+							
 							aHtml
-									.push('<div class="c_item"><div class="c_title"><span>月色幻想</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2013-05-10 00:37 </br/> </br/></div><div class="c_content">ccc</div></div>');
+									.push('<div class="c_item"><div class="c_title"><span>'+oItem["username"]+'</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'+oItem["comment_date"]+' </br/> </br/></div><div class="c_content">'+oItem["note"]+'</div></div>');
 						}
 
 					} else {
@@ -179,10 +181,10 @@ zen
 
 					if (zen.site.temp.user_cookieid != "") {
 						aHtml
-								.push('<div class="c_text"><div class="c_top"><div class="c_head">发表评论</div></div><div class="c_area"><textarea id="zen_site_common_comment_text_'+sUid+'"></textarea></div><div class="c_label"><input onclick="zen.site.comment-submit(\''+sUid+'\')" type="button" value="发表"/></div></div>');
+								.push('<div class="c_text"><div class="c_top"><div class="c_head">发表评论</div></div><div class="c_area"><textarea id="zen_site_common_comment_text_'+sUid+'"></textarea></div><div class="c_label"><input onclick="zen.site.comment_submit(\''+sUid+'\')" type="button" value="发表"/></div></div>');
 					} else {
 						aHtml
-								.push('<div class="c_show"><div class="c_login">游客您好，<a href="">登录</a>后可以发表评论，如果您还没有帐号可以现在<a href="">注册</a>。</div></div>');
+								.push('<div class="c_show"><div class="c_login">游客您好，<a href="login-login">登录</a>后可以发表评论，如果您还没有帐号可以现在<a href="reg-reg">注册</a>。</div></div>');
 					}
 
 					aHtml.push('</div>');
@@ -195,7 +197,7 @@ zen
 
 					} else {
 						$('#zen_site_common_comment_url_' + sUid).parent('div')
-								.after('<div id="zen_site_common_comment_box_' + sUid+">'+aHtml.join('')+'</div>');
+								.after('<div id="zen_site_common_comment_box_' + sUid+'">'+aHtml.join('')+'</div>');
 					}
 
 				},
@@ -205,12 +207,16 @@ zen
 					zen.site.post('comment_submit', {
 						uid : sUid,
 						title:$('#zen_site_common_comment_title_'+sUid).val(),
-						url:$('#zen_site_common_comment_title_'+url).val(),
+						url:$('#zen_site_common_comment_url_'+sUid).val(),
 						text:$('#zen_site_common_comment_text_'+sUid).val()
-					}, zen.site.comment_show_success);
+					}, zen.site.comment_submit_success);
 					
 				},
-				
+				comment_submit_success:function(oSuccess)
+				{
+					zen.site.model('提示消息','评论发表成功！');
+					zen.site.comment_show(oSuccess.result);
+				},
 
 				model : function(sTitle, sContent, fHidden) {
 

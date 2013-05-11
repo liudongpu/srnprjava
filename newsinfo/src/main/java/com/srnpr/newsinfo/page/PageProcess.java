@@ -80,9 +80,9 @@ public class PageProcess implements IWebProcess {
 			mResult=new InfoCall(pRequest).CommentList();
 		}
 		
-		else if(sView.equals("comment_info"))
+		else if(sView.equals("comment_submit"))
 		{
-			
+			mResult=new InfoCall(pRequest).CommentSubmit(upUserInfo());
 		}
 
 		return mResult;

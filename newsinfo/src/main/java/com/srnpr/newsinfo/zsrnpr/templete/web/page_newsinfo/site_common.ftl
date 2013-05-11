@@ -151,26 +151,13 @@ var jiathis_config = {siteNum:6,
 <input type="hidden" id="zen_site_common_comment_url_${uid}" value="${url}" />
 
 <span onclick="zen.site.comment_show('${uid}')">
-<a>${text}</a>
+<a href="#this">${text}</a>
 </span>
 </#macro>
 
 
 
 
-<#macro m_site_common_comment_script url="">
-
-<span>
-${text}
-</span>
-
-
-
-
-
-
-
-</#macro>
 
 
 
