@@ -1169,7 +1169,7 @@ a.b_button:hover {
 .index_comment
 {
     color:#696d5a;
-    line-hegiht:20px;
+    line-height:20px;
     width:95%;
    word-break:break-all;
 }
@@ -1199,7 +1199,7 @@ a.b_button:hover {
 .index_comment  .c_login
 {
 	margin-top:40px;
-	bordre:solid 1px #dedede;
+	border:solid 1px #dedede;
 	background-color:#ebeee7;
 	height:70px;
 	text-align:center;
@@ -1257,5 +1257,24 @@ a.b_button:hover {
 	height:30px;
 	line-height:30px;
 	margin-top:20px;
+}
+
+
+.index_pagenav
+{
+    text-align:right;
+    margin:30px 0px 30px 0px;
+    width:95%;
+}
+.index_pagenav a
+{
+   
+    background-color: #f2f2f2;
+    border:solid 1px #cccccc;
+    padding: 3px 5px 3px 5px;
+}
+.index_pagenav span
+{
+    padding: 3px 15px 3px 15px;
 }
 

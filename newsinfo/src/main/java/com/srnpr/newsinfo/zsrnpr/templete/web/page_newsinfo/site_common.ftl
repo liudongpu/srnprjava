@@ -156,7 +156,19 @@ var jiathis_config = {siteNum:6,
 </#macro>
 
 
+<#macro m_site_common_site_nav pageNav>
 
+<#if (pageNav.getPageIndex()>1)>
+<a href="?z_page_index=${pageNav.getPageIndex()-1}&z_page_count=${pageNav.getPageCount()}">上一页</a>
+</#if>
+
+<span>第${pageNav.getPageIndex()}页</span>
+
+<#if (pageNav.getPageIndex()*pageNav.getPageSize()<pageNav.getPageCount())>
+<a href="?z_page_index=${pageNav.getPageIndex()+1}&z_page_count=${pageNav.getPageCount()}">下一页</a>
+</#if>
+
+</#macro>
 
 
 

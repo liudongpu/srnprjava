@@ -13,14 +13,12 @@
 
 
 							 <#list pageexec.upData("info_adv") as el>
-							 
+							 <a href="${el["link_url"]}">
 								  <img
 	                            src="${el["file_url"]}"
 	                            alt="" title="#htmlcaption_${el_index}" />
-							 
+							 </a>
 							 </#list>
-
-                           
                         </div>
                         
                          <#list pageexec.upData("info_adv") as el>

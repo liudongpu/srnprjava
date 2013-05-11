@@ -40,16 +40,14 @@ public class DataProcess extends BaseClass {
 
 		return upList("*", "", 0, 1, mHashMap).get(0);
 	}
-	
-	public Map<String, Object> upOneQuery(String sWhere,String... args) {
 
-		List<Map<String, Object>> lReturns = upListAll("*",sWhere, "", 0, 1,
+	public Map<String, Object> upOneQuery(String sWhere, String... args) {
+
+		List<Map<String, Object>> lReturns = upListAll("*", sWhere, "", 0, 1,
 				(Object[]) args);
 
 		return lReturns.size() > 0 ? lReturns.get(0) : null;
 	}
-	
-	
 
 	public List<Map<String, Object>> upList() {
 
@@ -108,14 +106,14 @@ public class DataProcess extends BaseClass {
 
 		return upList(sRows, sOrder, start, end, aArgsArrayList.toArray());
 	}
-	
+
 	public List<Map<String, Object>> upList(String sRows, String sOrder,
 			int start, int end, Object... oArgs) {
 		return upListAll(sRows, "", sOrder, start, end, oArgs);
 	}
 
-	public List<Map<String, Object>> upListAll(String sRows,String sWhere, String sOrder,
-			int start, int end, Object... oArgs) {
+	public List<Map<String, Object>> upListAll(String sRows, String sWhere,
+			String sOrder, int start, int end, Object... oArgs) {
 
 		StringBuffer sBuilder = new StringBuffer();
 
@@ -134,11 +132,12 @@ public class DataProcess extends BaseClass {
 		MHashMap mHashMap = new MHashMap();
 		if (oArgs != null && oArgs.length > 0) {
 
-
 			mHashMap.inAdd(oArgs);
 
 			sBuilder.append(" where "
-					+(StringUtils.isEmpty(sWhere)? FormatHelper.joinWhereStrings(mHashMap.upKeys()):sWhere) + " ");
+					+ (StringUtils.isEmpty(sWhere) ? FormatHelper
+							.joinWhereStrings(mHashMap.upKeys()) : sWhere)
+					+ " ");
 
 		}
 
@@ -174,6 +173,33 @@ public class DataProcess extends BaseClass {
 		}
 
 		return DataBaseManager.Get(sDataBase).queryForList(sBuilder.toString(),
+				mHashMap);
+
+	}
+
+	public int upListCount(Object... oArgs) {
+		return upListCountWhere("", oArgs);
+	}
+
+	public int upListCountWhere(String sWhere, Object... oArgs) {
+		StringBuffer sBuilder = new StringBuffer();
+
+		sBuilder.append("select count(1) ");
+		sBuilder.append(" from " + sTableName);
+
+		MHashMap mHashMap = new MHashMap();
+		if (oArgs != null && oArgs.length > 0) {
+
+			mHashMap.inAdd(oArgs);
+
+			sBuilder.append(" where "
+					+ (StringUtils.isEmpty(sWhere) ? FormatHelper
+							.joinWhereStrings(mHashMap.upKeys()) : sWhere)
+					+ " ");
+
+		}
+
+		return DataBaseManager.Get(sDataBase).queryForInt(sBuilder.toString(),
 				mHashMap);
 
 	}
