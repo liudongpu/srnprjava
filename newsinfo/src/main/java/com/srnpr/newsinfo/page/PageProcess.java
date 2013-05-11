@@ -11,6 +11,7 @@ import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
 
 import com.srnpr.newsinfo.call.UserCall;
+import com.srnpr.newsinfo.call.InfoCall;
 import com.srnpr.zcom.init.InitRoot;
 import com.srnpr.zcom.model.MHashMap;
 import com.srnpr.zcom.model.MResult;
@@ -74,7 +75,11 @@ public class PageProcess implements IWebProcess {
 			mResult = new UserCall(pRequest).ChangeInfo(upUserInfo());
 		}else if (sView.equals("change_pass")) {
 			mResult = new UserCall(pRequest).ChangePass(upUserInfo());
+		}else if(sView.equals("comment_show"))
+		{
+			mResult=new InfoCall(pRequest).CommentList();
 		}
+		
 		else if(sView.equals("comment_info"))
 		{
 			

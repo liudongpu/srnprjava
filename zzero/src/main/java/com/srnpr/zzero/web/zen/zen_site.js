@@ -38,15 +38,16 @@ zen
 					});
 
 				},
-				
-				upurl:function(sUrl)
-				{
-					var sShareUrl=location.href;
-					sShareUrl=sShareUrl.substring(0,sShareUrl.lastIndexOf('/'))+'/'+sUrl;
-					
+
+				upurl : function(sUrl) {
+					var sShareUrl = location.href;
+					sShareUrl = sShareUrl.substring(0, sShareUrl
+							.lastIndexOf('/'))
+							+ '/' + sUrl;
+
 					return sShareUrl;
 				},
-				
+
 				success : function(data, fSuc) {
 					// alert(o);
 					var obj = $.evalJSON(data);
@@ -150,6 +151,39 @@ zen
 							login_pass : $('#login_pass').val()
 						});
 					}
+				},
+
+				comment_show : function(oElm, sId) {
+
+					zen.site.post('comment_show', {
+						uid : sId
+					}, zen.site.comment_show_success);
+				},
+				comment_show_success : function(oSuccess) {
+					var aHtml = [];
+					aHtml
+							.push('<div class="index_comment"><div class="c_head">文章评论</div>');
+
+					if (oSuccess.Result && oSuccess.result.length > 0) {
+						for ( var i = 0, j = oSuccess.result.length; i < j; i++) {
+							aHtml
+									.push('<div class="c_item"><div class="c_title"><span>月色幻想</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2013-05-10 00:37 </br/> </br/></div><div class="c_content">ccc</div></div>');
+						}
+
+					} else {
+						aHtml.push('<div class="c_noreplay">暂无回复</div>');
+					}
+
+					if (zen.site.temp.user_cookieid != "") {
+						aHtml.push('<div class="c_text"><div class="c_top"><div class="c_head">发表评论</div></div><div class="c_area"><textarea></textarea></div><div class="c_label"><input type="button" value="发表"/></div></div>');
+					} else {
+						aHtml.push('<div class="c_show"><div class="c_login">游客您好，<a href="">登录</a>后可以发表评论，如果您还没有帐号可以现在<a href="">注册</a>。</div></div>');
+					}
+
+					aHtml.push('</div>');
+					$('#zen_site_common_comment_url_' + oSuccess.message)
+							.parent('div').after(aHtml.join(''));
+
 				},
 
 				model : function(sTitle, sContent, fHidden) {

@@ -18,7 +18,7 @@
 							${el["note"]}</div>
 						<div class="c_tips">
 							<span class="b_icon c_share"></span><@m_site_common_share_text title=el["title"] url="content-content-"+el["uid"] /><span
-								class="b_icon c_comment"></span>&nbsp;&nbsp;&nbsp;&nbsp;<@m_site_common_comment_text title=el["title"] url="content-content-"+el["uid"] />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="content-content-${el["uid"]}">阅读全文〉</a>
+								class="b_icon c_comment"></span>&nbsp;&nbsp;&nbsp;&nbsp;<@m_site_common_comment_text uid=el["uid"] title=el["title"] url="content-content-"+el["uid"] />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="content-content-${el["uid"]}">阅读全文〉</a>
 						</div>
 						<div class="c_split"></div>
 					</div>
@@ -46,7 +46,7 @@
 							${el["note"]}</div>
 						<div class="c_tips">
 							<span class="b_icon c_share"></span><@m_site_common_share_text title=el["title"] url="content-content-"+el["uid"] /><span
-								class="b_icon c_comment"></span>&nbsp;&nbsp;&nbsp;&nbsp;<@m_site_common_comment_text title=el["title"] url="content-content-"+el["uid"] />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="affiche-affiche-${el["uid"]}">阅读全文〉</a>
+								class="b_icon c_comment"></span>&nbsp;&nbsp;&nbsp;&nbsp;<@m_site_common_comment_text uid=el["uid"] title=el["title"] url="content-content-"+el["uid"] />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="affiche-affiche-${el["uid"]}">阅读全文〉</a>
 						</div>
 						<div class="c_split"></div>
 					</div>

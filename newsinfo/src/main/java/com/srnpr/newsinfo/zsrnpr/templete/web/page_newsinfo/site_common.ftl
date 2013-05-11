@@ -137,8 +137,6 @@ function jathis_setfunc(title,url)
 	jiathis_config.url = zen.site.upurl(url);
 }
 
-
-
 var jiathis_config = {siteNum:6,
 	sm:"tsina,tqq,weixin,qzone,copy,email"};
 </script>
@@ -147,13 +145,43 @@ var jiathis_config = {siteNum:6,
 </#macro>
 
 
-<#macro m_site_common_comment_text text="评论" title="" url="">
+<#macro m_site_common_comment_text text="评论" uid="" title="" url="">
+
+<input type="hidden" id="zen_site_common_comment_title_${uid}" value="${title}" />
+<input type="hidden" id="zen_site_common_comment_url_${uid}" value="${url}" />
+
+<span onclick="zen.site.comment_show(this,'${uid}')">
+<a>${text}</a>
+</span>
+</#macro>
+
+
+
+
+<#macro m_site_common_comment_script url="">
 
 <span>
 ${text}
 </span>
 
+
+
+
+
+
+
 </#macro>
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -1249,4 +1249,13 @@ a.b_button:hover {
 	margin:3px 20px 0px 0px;
 }
 
+.index_comment .c_noreplay
+{
+	border:dashed 1px #cdcdcc;
+	width:100%;
+	text-align:center;
+	height:30px;
+	line-height:30px;
+	margin-top:20px;
+}
 
