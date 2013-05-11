@@ -14,7 +14,7 @@ public class MPageNav {
 	
 	private List<Map<String,Object>> pageData;
 	
-	private int pageSize=2;
+	private int pageSize=8;
 	
 	private int pageIndex=1;
 	

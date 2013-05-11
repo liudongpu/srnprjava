@@ -19,6 +19,13 @@
 						<div class="content_desc">发表时间:${note_info["create_time"]}|文章出处:博观拍卖</div>
 						<div>${note_info["content"]}</div>
 					</div>
+					
+					<div>
+					<hr/>
+						<@m_site_common_comment_text text="" uid=note_info["uid"] title=note_info["title"] url="content-content-"+note_info["uid"] />
+			
+					</div>
+					
 				</div>
 				<div class=" span3">
 

@@ -23,8 +23,8 @@
                             </ul>
                         </div>
                         <div class="header_nav_right">
-                            <div class="header_nav_search">
-								<input type="text" id="site_common_search_box" />
+                            <div class="header_nav_search" onmouseover="$('#site_common_search_box').show()">
+								<input type="text" id="site_common_search_box" style="display:none;" />
 								<div onclick="zen.site.search()"></div>
 							</div>
                         </div>
@@ -150,22 +150,32 @@ var jiathis_config = {siteNum:6,
 <input type="hidden" id="zen_site_common_comment_title_${uid}" value="${title}" />
 <input type="hidden" id="zen_site_common_comment_url_${uid}" value="${url}" />
 
+
+<#if text=="">
+<script>
+$(window).ready(function(){zen.site.comment_show('${uid}')});
+</script>
+<#else>
+
 <span onclick="zen.site.comment_show('${uid}')">
 <a href="#this">${text}</a>
 </span>
+
+</#if>
+
 </#macro>
 
 
 <#macro m_site_common_site_nav pageNav>
 
 <#if (pageNav.getPageIndex()>1)>
-<a href="?z_page_index=${pageNav.getPageIndex()-1}&z_page_count=${pageNav.getPageCount()}">上一页</a>
+<a href="?z_page_index=${pageNav.getPageIndex()-1}&z_page_count=${pageNav.getPageCount()}&z_page_size=${pageNav.getPageSize()}">上一页</a>
 </#if>
 
 <span>第${pageNav.getPageIndex()}页</span>
 
 <#if (pageNav.getPageIndex()*pageNav.getPageSize()<pageNav.getPageCount())>
-<a href="?z_page_index=${pageNav.getPageIndex()+1}&z_page_count=${pageNav.getPageCount()}">下一页</a>
+<a href="?z_page_index=${pageNav.getPageIndex()+1}&z_page_count=${pageNav.getPageCount()}&z_page_size=${pageNav.getPageSize()}">下一页</a>
 </#if>
 
 </#macro>

@@ -61,7 +61,15 @@ public class PageExec extends BaseClass {
 		return DataTableManager.Get(sTableName).upOneQuery(sWhere, args);
 	}
 
+	
+	
 	public MPageNav upPageNav(String sTableName, String sFields, String sOrder,
+			Object... oArgs) {
+		return upPageNavQuery(sTableName,sFields,"",sOrder,oArgs);
+	}
+	
+	
+	public MPageNav upPageNavQuery(String sTableName, String sFields,String sWhere, String sOrder,
 			Object... oArgs) {
 		MPageNav mPageNav = new MPageNav();
 
@@ -84,7 +92,7 @@ public class PageExec extends BaseClass {
 		}
 		
 		mPageNav.setPageData(
-		DataTableManager.Get(sTableName).upList(sFields, sOrder, (mPageNav.getPageIndex()-1)*mPageNav.getPageSize(),
+		DataTableManager.Get(sTableName).upListAll(sFields,sWhere, sOrder, (mPageNav.getPageIndex()-1)*mPageNav.getPageSize(),
 				mPageNav.getPageIndex()*mPageNav.getPageSize(), oArgs));
 		
 

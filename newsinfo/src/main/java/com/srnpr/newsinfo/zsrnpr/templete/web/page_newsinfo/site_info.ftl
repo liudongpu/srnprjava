@@ -36,7 +36,10 @@
 
 
 <#macro m_site_info_listnotice>
-				<#list pageexec.upDataOrder("info_notice","-time") as el> 	 
+
+<#local  pageNav=pageexec.upPageNav("info_notice","","-time")  >
+
+				<#list pageNav.getPageData() as el> 	
 					<div class="info_item">
 						<div class="c_title">
 							<h3>${el["title"]}</h3>
@@ -58,7 +61,9 @@
 					</div>
 							 
 					</#list>
-
+				<div class="index_pagenav">
+				<@m_site_common_site_nav pageNav />
+				</div>
 </#macro>
 
 

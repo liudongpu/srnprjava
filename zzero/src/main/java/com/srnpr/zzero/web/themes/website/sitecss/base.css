@@ -1278,3 +1278,34 @@ a.b_button:hover {
     padding: 3px 15px 3px 15px;
 }
 
+
+
+.search_body
+{
+    background-color: #f6f7f5;
+   
+    padding:30px;
+    
+}
+.search_table
+{
+    
+    background-color:#fff;
+}
+
+.search_table img
+{
+    width:30px;
+    height:30px;
+}
+
+
+
+
+
+
+
+
+
+
+
