@@ -153,13 +153,16 @@ zen
 					}
 				},
 
-				comment_show : function(oElm, sId) {
+				comment_show : function(sId) {
 
 					zen.site.post('comment_show', {
 						uid : sId
 					}, zen.site.comment_show_success);
 				},
 				comment_show_success : function(oSuccess) {
+
+					var sUid = oSuccess.message;
+
 					var aHtml = [];
 					aHtml
 							.push('<div class="index_comment"><div class="c_head">文章评论</div>');
@@ -175,16 +178,39 @@ zen
 					}
 
 					if (zen.site.temp.user_cookieid != "") {
-						aHtml.push('<div class="c_text"><div class="c_top"><div class="c_head">发表评论</div></div><div class="c_area"><textarea></textarea></div><div class="c_label"><input type="button" value="发表"/></div></div>');
+						aHtml
+								.push('<div class="c_text"><div class="c_top"><div class="c_head">发表评论</div></div><div class="c_area"><textarea id="zen_site_common_comment_text_'+sUid+'"></textarea></div><div class="c_label"><input onclick="zen.site.comment-submit(\''+sUid+'\')" type="button" value="发表"/></div></div>');
 					} else {
-						aHtml.push('<div class="c_show"><div class="c_login">游客您好，<a href="">登录</a>后可以发表评论，如果您还没有帐号可以现在<a href="">注册</a>。</div></div>');
+						aHtml
+								.push('<div class="c_show"><div class="c_login">游客您好，<a href="">登录</a>后可以发表评论，如果您还没有帐号可以现在<a href="">注册</a>。</div></div>');
 					}
 
 					aHtml.push('</div>');
-					$('#zen_site_common_comment_url_' + oSuccess.message)
-							.parent('div').after(aHtml.join(''));
+
+					
+					
+					if ($('#zen_site_common_comment_box_' + sUid).length > 0) {
+						
+						$('#zen_site_common_comment_box_' + sUid).html(aHtml.join(''));
+
+					} else {
+						$('#zen_site_common_comment_url_' + sUid).parent('div')
+								.after('<div id="zen_site_common_comment_box_' + sUid+">'+aHtml.join('')+'</div>');
+					}
 
 				},
+				comment_submit:function(sUid)
+				{
+					
+					zen.site.post('comment_submit', {
+						uid : sUid,
+						title:$('#zen_site_common_comment_title_'+sUid).val(),
+						url:$('#zen_site_common_comment_title_'+url).val(),
+						text:$('#zen_site_common_comment_text_'+sUid).val()
+					}, zen.site.comment_show_success);
+					
+				},
+				
 
 				model : function(sTitle, sContent, fHidden) {
 
