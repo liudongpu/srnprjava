@@ -43,8 +43,8 @@
 
                                 controlNav : false,
                                 controlNavThumbs : false,
-                                animSpeed:1000,
-					        	pauseTime:7000
+                                
+					        	pauseTime:5000
                             });
                         });
                     </script>
