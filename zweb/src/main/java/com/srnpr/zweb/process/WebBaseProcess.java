@@ -73,7 +73,7 @@ public class WebBaseProcess extends BaseClass {
 			List<String> listTitle = new ArrayList<String>();
 
 			List<MWebFields> listFields = WebViewManager.upView(sPageView,
-					416120109).getFields();
+					416120107).getFields();
 			// List<MWebOptions> listOptions=upUseOptions(mView, iPageType);
 
 			StringBuffer sbField = new StringBuffer();

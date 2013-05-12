@@ -135,9 +135,21 @@ public class WebViewManager extends BaseClass implements IBaseManager,
 					}
 					
 					
+					
+					
+					
+					
+					
 					//if(mFields.getFieldName().length()>3)
-					if(!mFields.getFieldName().equals("zid"))
-					listFields.add(mFields);
+					//if(!mFields.getFieldName().equals("zid"))
+					//listFields.add(mFields);
+					
+					
+					
+					if(mFields.getLevel()>0 )
+					{
+						listFields.add(mFields);
+					}
 				}
 				
 				
