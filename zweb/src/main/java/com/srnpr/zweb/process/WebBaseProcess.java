@@ -110,8 +110,19 @@ public class WebBaseProcess extends BaseClass {
 						listDataList.add(String.valueOf(mData.get(mFields
 								.getColumnName() + "_zzz")));
 					} else if (mData.containsKey(mFields.getColumnName())) {
-						listDataList.add(String.valueOf(mData.get(mFields
-								.getColumnName())));
+						
+						String sText=String.valueOf(mData.get(mFields
+								.getColumnName()));
+						
+						
+						if(mFields.getDidFieldType()==416108121)
+						{
+							//sText="<a href=\"\" target=\"\"></a>";
+							
+							sText=FormatHelper.FormatString(BConfig("zweb.replace_list_url"), sText);
+						}
+						
+						listDataList.add(sText);
 					}
 				}
 
