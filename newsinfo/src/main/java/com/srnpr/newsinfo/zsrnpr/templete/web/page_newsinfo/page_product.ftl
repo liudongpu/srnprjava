@@ -7,7 +7,7 @@
 <div class="layout_main website_center">
 <#assign product_people=pageexec.upDataOne("info_people","uid",pageinfo.getWebSet()["Url_Option"])>
 
-		<div class="b_sitenav"></div>
+		<div class="b_sitenav"><@m_site_common_breadcrumb ["名家论道","people-list",product_people["name"],""] /></div>
 		
 		<div class="product_body">
 		

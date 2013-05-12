@@ -1,6 +1,6 @@
 
 <body class="website_body">
-<@m_site_common_header nav="info" />
+<@m_site_common_header nav="auction" />
 
 
 <#assign good_info=pageexec.upDataList("info_good","*,(select name from info_auction where uid=auction_uid) as auction_uid_name,(select time from info_auction where uid=auction_uid) as auction_uid_time,(select name from info_special where uid=special_uid) as special_uid_name","",0,1,"uid",pageinfo.getWebSet()["Url_Option"])[0]>
