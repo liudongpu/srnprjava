@@ -767,7 +767,7 @@ a.b_button:hover {
 }
 
 .pic_listbox .c_text {
-    padding-left: 10px;
+    margin: 10px;
 }
 
 .pic_listbox .c_item img {
