@@ -10,12 +10,12 @@
 			<a class="brand" href="#">博观拍卖后台管理系统</a>
 			<div class="nav-collapse collapse">
 				<p class="navbar-text pull-right">
-					Logged in as <a onclick="zen.page.call('${base_url}zyou/func-system_table-97b1bcc3a90111e2bb7900241d8adc62-func_do=refreshcache')" class="navbar-link">Username</a>
+					欢迎您：<span id="page_main_user_name"></span>，<a onclick="zen.page.logout()">退出系统</a>
 				</p>
 				<ul class="nav">
-					<li class="active"><a href="#">首页</a></li>
-					<li><a href="/manage">系统设置</a></li>
-					<li><a href="#contact">文章设置</a></li>
+					<li class="active"><a href="/" target="_blank">网站首页</a></li>
+					<li><a href="${base_url}zyou/chart-system_table">系统设置</a></li>
+					<li><a onclick="zen.page.call('${base_url}zyou/func-system_table-97b1bcc3a90111e2bb7900241d8adc62-func_do=refreshcache')" class="navbar-link">刷新缓存</a></li>
 				</ul>
 			</div>
 			<!--/.nav-collapse -->

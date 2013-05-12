@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
+import com.mchange.v2.c3p0.impl.NewPooledConnection;
 import com.srnpr.zcom.init.InitRoot;
 import com.srnpr.zcom.model.MResult;
 import com.srnpr.zdata.manager.DataTableManager;
@@ -36,16 +37,18 @@ public class PageProcess extends WebBaseProcess implements IWebProcess
 			
 			if(pRequest.getParamsMap().get("func_do").equals("refreshdata"))
 			{
-				
 				String sViewNameString=String.valueOf(pRequest.getParamsMap().get("view_code"));
-				
 				WebViewManager.recheckData(sViewNameString);
-				
-				
+
 			}
 			else if(pRequest.getParamsMap().get("func_do").equals("refreshcache"))
 			{
 				new InitRoot().Init();
+			}else if(pRequest.getParamsMap().get("func_do").equals("login"))
+			{
+				return new PageLogin().UserLogin(pRequest.getReqMap());
+				
+				//new InitRoot().Init();
 			}
 			
 			
@@ -54,7 +57,7 @@ public class PageProcess extends WebBaseProcess implements IWebProcess
 			return super.showResult(pRequest);
 		}
 		MResult mResult=new MResult();
-		mResult.error(111, "err");
+		//mResult.error(111, "err");
 		return mResult;
 
 	}

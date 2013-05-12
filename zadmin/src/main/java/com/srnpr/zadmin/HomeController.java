@@ -46,7 +46,10 @@ public class HomeController {
 	@RequestMapping(value = "/manage", method = RequestMethod.GET)
 	public String manage(Model model,HttpServletRequest request) {
 		
-		return index("zyou", "chart-system_table", model,request);
+		//return index("zyou", "chart-system_table", model,request);
+		
+		return index("zyou-login", "login-login", model,request);
+		
 	}
 	
 	
