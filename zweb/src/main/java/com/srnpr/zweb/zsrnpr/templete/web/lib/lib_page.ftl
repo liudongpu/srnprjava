@@ -71,6 +71,18 @@ no result
 </#macro>
 
 
+<#macro m_page_date  p_info>
+     
+<div class="control-group">
+    <label class="control-label" for="${p_info.getColumnName()?default('')}">${p_info.getFieldName()?default('')}</label>
+    <div class="controls">
+      <input type="text"  onClick="WdatePicker()" id="${p_info.getColumnName()?default('')}" name="${p_info.getColumnName()?default('')}" value="${p_info.getFieldValue()?default('')}"  />
+    </div>
+  </div>
+
+</#macro>
+
+
 <#macro m_page_upload  p_info>
       
       
@@ -164,6 +176,8 @@ no result
 	<@m_page_textarea p_info_auto />
 	<#elseif m_page_autorun_id==416108105>
 	<@m_page_editor p_info_auto />
+	<#elseif m_page_autorun_id==416108104>
+	<@m_page_date p_info_auto />
 	<#elseif m_page_autorun_id==416108121>
 	<@m_page_upload p_info_auto />
 <#else>

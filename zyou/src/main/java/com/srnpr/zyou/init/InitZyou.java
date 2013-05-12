@@ -42,6 +42,7 @@ public class InitZyou extends BaseInit implements IBaseInit {
 		for (String s : cManager.GetStrings(
 				"zweb.lib_jquery_js",
 				"zyou.lib_jquery_pluging_js",
+				"zyou.lib_datepicker_js",
 				"zweb.lib_bootstrap_js",
 				"zweb.lib_zen_js"
 				)) {

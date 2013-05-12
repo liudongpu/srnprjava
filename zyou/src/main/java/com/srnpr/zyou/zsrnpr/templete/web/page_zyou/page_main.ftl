@@ -7,7 +7,7 @@
 				<span class="icon-bar"></span> <span class="icon-bar"></span> <span
 					class="icon-bar"></span>
 			</button>
-			<a class="brand" href="#">超级后台管理系统</a>
+			<a class="brand" href="#">博观拍卖后台管理系统</a>
 			<div class="nav-collapse collapse">
 				<p class="navbar-text pull-right">
 					Logged in as <a onclick="zen.page.call('${base_url}zyou/func-system_table-97b1bcc3a90111e2bb7900241d8adc62-func_do=refreshcache')" class="navbar-link">Username</a>
@@ -25,7 +25,7 @@
 
 <div class="navbar  navbar-fixed-bottom">
 	<div class="navbar-inner">
-		<div class="container-fluid">aaa</div>
+		<div class="container-fluid">Copy Right @ All </div>
 	</div>
 </div>
 
@@ -35,25 +35,22 @@
 			<div class="well sidebar-nav" id="page_main_menu">
 				<ul class="nav nav-list">
 					<li class="nav-header">广告设置</li>
-					<li><a href="${base_url}zyou/chart-test_view">测试视图</a></li>
-					<li><a href="${base_url}zyou/chart-v_you_class">分类设置</a></li>
 					<li><a href="${base_url}zyou/chart-v_info_adv">首页轮播广告</a></li>
+					<li><a href="${base_url}zyou/chart-v_info_static_books--system_cid=30330003">固定位置广告</a></li>
 					<li class="nav-header">内容管理</li>
 					<li><a href="${base_url}zyou/chart-v_info_news">博观资讯</a></li>
 					<li><a href="${base_url}zyou/chart-v_info_notice">博观公告</a></li>
 					<li><a href="${base_url}zyou/chart-v_info_people">名家论道</a></li>
 					<li><a href="${base_url}zyou/chart-v_info_images">图片集</a></li>
-					
+					<li><a href="${base_url}zyou/chart-v_info_book">博观书房</a></li>
 					<li><a href="${base_url}zyou/chart-v_info_video">俱乐部课程</a></li>
 					<li class="nav-header">拍卖会管理</li>
 					<li><a href="${base_url}zyou/chart-v_info_auction">拍卖会列表</a></li>
 					<li><a href="${base_url}zyou/chart-v_info_special">专场列表</a></li>
-					<li><a href="#">Link</a></li> 
-					<li><a href="#">Link</a></li>
 					<li class="nav-header">静态内容维护</li>
 					<li><a href="${base_url}zyou/chart-v_info_static_nav--system_cid=30330001">网站底部导航</a></li>
 					<li><a href="${base_url}zyou/chart-v_info_static_club--system_cid=30330002">俱乐部信息</a></li>
-					<li><a href="${base_url}zyou/chart-v_info_static_books--system_cid=30330003">博观书房广告</a></li>
+					
 				</ul>
 			</div>
 			<!--/.well -->
