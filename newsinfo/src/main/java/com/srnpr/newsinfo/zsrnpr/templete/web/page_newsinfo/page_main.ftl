@@ -42,7 +42,9 @@
                             $('#index_adv_slider').nivoSlider({
 
                                 controlNav : false,
-                                controlNavThumbs : false
+                                controlNavThumbs : false,
+                                animSpeed:1000,
+					        	pauseTime:7000
                             });
                         });
                     </script>
