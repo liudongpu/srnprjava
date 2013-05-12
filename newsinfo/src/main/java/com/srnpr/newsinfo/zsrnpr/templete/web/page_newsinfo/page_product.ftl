@@ -12,7 +12,7 @@
 		<div class="product_body">
 		
 		<div class="product_people">
-			<div class="c_note"><h3>${product_people["name"]}</h3>${product_people["note"]}</div>
+			<div class="c_note"><h3>${product_people["name"]}</h3><div class="c_note_info">${product_people["note"]}</div></div>
 			<div class="c_img"><img src="${product_people["file_url"]}"/></div>
 			
 		</div>

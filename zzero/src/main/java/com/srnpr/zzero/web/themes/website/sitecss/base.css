@@ -840,6 +840,14 @@ a.b_button:hover {
     color: #fff;
     line-height: 30px;
 }
+
+.product_people .c_note .c_note_info
+{
+    margin-right:20px;
+}
+
+
+
 .product_people .c_note h3 {
     padding-top: 30px;
 }
