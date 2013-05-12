@@ -65,5 +65,27 @@ public class InfoCall extends BaseClass {
 
 		return result;
 	}
+	
+	
+	public MResult CollectSubmit(Map<String, Object> mUserInfo) {
+
+		String sUid = pRequest.getReqMap().get("uid").toString();
+
+		if (result.getFlag()) {
+
+			MHashMap mHMap = new MHashMap();
+
+			mHMap.inAdd("uid", ComFunction.upUuid(), "user_uid", mUserInfo
+					.get("uid"), "info_title",
+					pRequest.getReqMap().get("title"), "info_url",
+					pRequest.getReqMap().get("url"), "collect_date",
+					FormatHelper.GetDateTime(), "info_uid", pRequest.getReqMap().get("uid"));
+			DataTableManager.Get("user_collect").inPut(mHMap);
+			result.setResult(sUid);
+		}
+
+		return result;
+	}
+	
 
 }

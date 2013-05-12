@@ -41,16 +41,16 @@
 
 								<dl>
 									<dt>
-										<img src="${el["file_url"]}"/>
+										<a href="pic-list-${el["uid"]}"><img src="${el["file_url"]}"/></a>
 									</dt>
 									<dd>
-										<h3>${el["name"]}</h3>
+										<h3><a href="pic-list-${el["uid"]}">${el["name"]}</a></h3>
 										时间：${el["time"]?date("yyyy-MM-dd")} <br />
 										成交总金额：${el["success_price"]}
 										<div>
-											<span class="b_icon c_share"></span>&nbsp;&nbsp;分享&nbsp;&nbsp;&nbsp;&nbsp;
-											<span class="b_icon c_comment"></span>&nbsp;&nbsp;评论&nbsp;&nbsp;&nbsp;&nbsp;
-											<span class="b_icon c_collect"></span>&nbsp;&nbsp;收藏&nbsp;&nbsp;&nbsp;&nbsp;
+											<span class="b_icon c_share"></span>&nbsp;&nbsp;<@m_site_common_share_text title=el["name"] url="pic-list-"+el["uid"] />&nbsp;&nbsp;&nbsp;&nbsp;
+											<span class="b_icon c_comment"></span>&nbsp;&nbsp;<@m_site_common_comment_text uid=el["uid"] title=el["name"] url="pic-list-"+el["uid"] />&nbsp;&nbsp;&nbsp;&nbsp;
+											<span class="b_icon c_collect"></span>&nbsp;&nbsp;<@m_site_common_collect_text uid=el["uid"] title=el["name"] url="pic-list-"+el["uid"] />&nbsp;&nbsp;&nbsp;&nbsp;
 											&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 											<a href="pic-list-${el["uid"]}">查看详细&nbsp;&nbsp;></a>
 										</div>
@@ -85,6 +85,9 @@
 			<div class="h_40"></div>
 			
 		</div>
+
+
+	<@m_site_common_share_script />
 
 	</div>
 

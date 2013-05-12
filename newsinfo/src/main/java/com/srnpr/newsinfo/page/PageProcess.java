@@ -84,7 +84,10 @@ public class PageProcess implements IWebProcess {
 		{
 			mResult=new InfoCall(pRequest).CommentSubmit(upUserInfo());
 		}
-
+		else if(sView.equals("collect_submit"))
+		{
+			mResult=new InfoCall(pRequest).CollectSubmit(upUserInfo());
+		}
 		return mResult;
 
 	}

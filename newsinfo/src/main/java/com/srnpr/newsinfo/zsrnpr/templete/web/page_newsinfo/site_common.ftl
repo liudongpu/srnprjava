@@ -165,6 +165,26 @@ $(window).ready(function(){zen.site.comment_show('${uid}')});
 
 </#macro>
 
+
+
+<#macro m_site_common_collect_text text="收藏" uid="" title="" url="">
+
+<input type="hidden" id="zen_site_common_collect_title_${uid}" value="${title}" />
+<input type="hidden" id="zen_site_common_collect_url_${uid}" value="${url}" />
+
+<span onclick="zen.site.collect_submit('${uid}')">
+<a href="#this">${text}</a>
+</span>
+
+</#macro>
+
+
+
+
+
+
+
+
 <#macro m_site_common_breadcrumb crumb>
 <a href="/">返回首页</a>
 <#list crumb as el>

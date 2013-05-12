@@ -38,7 +38,7 @@
 						src="${el["file_url"]}" />
 					<div class="c_text">
 						<h3>${el["name"]}</h3>
-						图录号：${el["code"]}<br /> 参考价：${el["assess_price"]}<br /> <span class="b_icon b_share"></span>
+						图录号：${el["code"]}<br /> 参考价：${el["assess_price"]}<br /> 
 					</div>
 				</div>
 				

@@ -217,6 +217,22 @@ zen
 					zen.site.model('提示消息','评论发表成功！');
 					zen.site.comment_show(oSuccess.result);
 				},
+				
+				collect_submit:function(sUid)
+				{
+					zen.site.post('collect_submit', {
+						uid : sUid,
+						title:$('#zen_site_common_collect_title_'+sUid).val(),
+						url:$('#zen_site_common_collect_url_'+sUid).val()
+					}, zen.site.collect_submit_success);
+					
+				},
+				collect_submit_success:function(oSuccess)
+				{
+					zen.site.model('提示消息','收藏成功！');
+				},
+				
+				
 
 				model : function(sTitle, sContent, fHidden) {
 
