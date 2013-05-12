@@ -58,46 +58,16 @@
 									<div class="index_piclist_position">
 										<div class="index_piclist_box zen_picnav_list">
 											<ul>
-												<li><a href=""> <img
-														src="http://www.boguanpaimai.com/Attach/pic/20130417/b_516eb6f829898.jpg"
-														alt=""> <span>我滚动，我快乐，我无趣，我来也</span>
+											
+											<#list pageexec.upDataOrder("info_video","-sort_index") as el> 
+											
+												<li><a href="<#if (el["type_cid"]==30340001)>${el["ppt_url"]} <#else>${el["video_url"]} </#if> " target="_blank"> <img
+														src="${el["file_url"]}"
+														alt=""> <span>${el["title"]}</span>
 												</a></li>
-												<li><a href=""> <img
-														src="http://www.boguanpaimai.com/Attach/pic/20130417/b_516eb6f8af7f6.jpg"
-														alt=""> <span>我滚动，我快乐，我无趣，我来也</span>
-												</a></li>
-												<li><a href=""> <img
-														src="http://www.boguanpaimai.com/Attach/pic/20130417/b_516eb6f93f3a8.jpg"
-														alt=""> <span>我滚动，我快乐，我无趣，我来也</span>
-												</a></li>
-												<li><a href=""> <img
-														src="http://www.boguanpaimai.com/Attach/pic/20121221/b_50d3c47a28086.jpg"
-														alt=""> <span>我滚动，我快乐，我无趣，我来也</span>
-												</a></li>
-												<li><a href=""> <img
-														src="http://www.boguanpaimai.com/Attach/pic/20121221/b_50d3c47b671a6.jpg"
-														alt=""> <span>我滚动，我快乐，我无趣，我来也</span>
-												</a></li>
-												<li><a href=""> <img
-														src="http://www.boguanpaimai.com/Attach/pic/20121221/b_50d3c47c7a89f.jpg"
-														alt=""> <span>我滚动，我快乐，我无趣，我来也</span>
-												</a></li>
-												<li><a href=""> <img
-														src="http://www.boguanpaimai.com/Attach/pic/20121221/b_50d3c47d2691b.jpg"
-														alt=""> <span>我滚动，我快乐，我无趣，我来也</span>
-												</a></li>
-												<li><a href=""> <img
-														src="http://www.boguanpaimai.com/Attach/pic/20121221/b_50d3c47dafadf.jpg"
-														alt=""> <span>我滚动，我快乐，我无趣，我来也</span>
-												</a></li>
-												<li><a href=""> <img
-														src="http://www.boguanpaimai.com/Attach/pic/20121221/b_50d3c47e4ca51.jpg"
-														alt=""> <span>我滚动，我快乐，我无趣，我来也</span>
-												</a></li>
-												<li><a href=""> <img
-														src="http://www.boguanpaimai.com/Attach/pic/20121221/b_50d3c482d4f0a.jpg"
-														alt=""> <span>我滚动，我快乐，我无趣，我来也</span>
-												</a></li>
+											
+											</#list>
+											
 											</ul>
 										</div>
 									</div>
@@ -147,11 +117,13 @@
 						<div class="h_20"></div>
 						<div class="c_allnote">更多免费视频</div>
 						<ul>
-
-							<li><a href="">11111111111111</a></li>
+							<#list pageexec.upDataList("info_video","","-sort_index",0,10,"type_cid","30340002") as el>
+							<li><a href="${el["video_url"]}" target="_blank">${el["title"]}</a></li>
+							</#list>
+							
 						</ul>
 						<div class="c_more">
-							<a href="">查看全部</a>
+							<!--<a href="">查看全部</a>-->
 						</div>
 
 					</div>
