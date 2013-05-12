@@ -34,11 +34,12 @@
 								
 			
 				<div class="c_item b_corner">
-					<img class="b_corner"
-						src="${el["file_url"]}" />
+					<a href="good-good-${el["uid"]}"><img class="b_corner"
+						src="${el["file_url"]}" /></a>
 					<div class="c_text">
-						<h4>${el["name"]}</h4>
+						<h4><a href="good-good-${el["uid"]}">${el["name"]}</a></h4>
 						图录号：${el["code"]}<br /> 参考价：${el["assess_price"]}<br /> 
+						<a href="good-good-${el["uid"]}"> 查看详细</a>
 					</div>
 				</div>
 				

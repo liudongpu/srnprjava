@@ -28,7 +28,7 @@
 							<td>${el["name"]}</td>
 							<td><img class="b_corner"
 						src="${el["file_url"]}" /></td>
-							<td><a href="">查看</a></td>
+							<td><a href="good-good-${el["uid"]}">查看</a></td>
 						</tr>
 					</#list>
 					</tbody>
