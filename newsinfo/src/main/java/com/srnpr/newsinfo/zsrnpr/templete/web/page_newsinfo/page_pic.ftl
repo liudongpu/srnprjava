@@ -37,7 +37,7 @@
 					<img class="b_corner"
 						src="${el["file_url"]}" />
 					<div class="c_text">
-						<h3>${el["name"]}</h3>
+						<h4>${el["name"]}</h4>
 						图录号：${el["code"]}<br /> 参考价：${el["assess_price"]}<br /> 
 					</div>
 				</div>
