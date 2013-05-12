@@ -660,6 +660,7 @@ a.b_button:hover {
     top: 40px;
     left: 30px;
     line-height: 25px;
+    width:350px;
 }
 
 .prep_timeline  .c_title {
