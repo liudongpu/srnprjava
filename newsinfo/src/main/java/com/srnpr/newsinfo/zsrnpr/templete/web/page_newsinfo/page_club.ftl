@@ -17,12 +17,13 @@
 							<div class="c_box">
 								<div class="span6">
 									<div class="c_title">简介</div>
-									<div>
-										
+									<div class="c_info">
+										<div>
 										${pageexec.upHtmlTag( pageexec.upDataOne("info_static","code","303300020001")["content"]?default(''),200)}
-										<br/>
+										</div>
 										<a href="static-static-303300020001">查看全文</a>
 									</div>
+									
 									<div class="c_linkbox">
 									<a href="static-static-303300020001">俱乐部简介</a>
 									<a href="static-static-303300020003">俱乐部章程</a>
@@ -31,11 +32,14 @@
 
 								<div class="span6">
 									<div class="c_title">通知</div>
+									<div class="c_info">
 									<div>
 										${pageexec.upHtmlTag( pageexec.upDataOne("info_static","code","303300020002")["content"]?default(''),200)}
-										<br/>
-										<a href="static-static-303300020002">查看全文</a>
 									</div>
+									<a href="static-static-303300020002">查看全文</a>	
+									</div>
+									
+										
 									<div class="c_linkbox">
 									<a href="notice-list">查看全部公告</a>
 									</div>
