@@ -1,9 +1,13 @@
 
-<#macro m_site_common_header nav="" title="">
+<#macro m_site_common_header nav="" title="" >
+
+<title><@m_site_common_title nav title /></title> 
+<meta name="keywords" content="博观拍卖,拍卖,博观,珠宝,玉石,机构" />
+<meta name="description" content="${title}-博观拍卖 - 中国珠宝玉石专业拍卖机构" />
 
 
-
-
+</head>
+<body class="website_body">
 	<div class="layout_header">
             <div class="header_top">
                 <div class="website_center">
@@ -40,6 +44,28 @@
             </div>
         </div>
 </#macro>
+
+<#macro m_site_common_title nav="" title="">
+	<@compress single_line=true>
+	
+	<#if (nav=="main")>博观拍卖 - 中国珠宝玉石专业拍卖机构
+	<#else>
+			${title}
+			<#if (title?length>0)>_</#if>
+			
+			<#if (nav=="info")>博观资讯</#if>
+			<#if (nav=="notice")>博观公告</#if>
+            <#if (nav=="auction")>预展及成交</#if>
+            <#if (nav=="book")>博观书房 </#if>
+            <#if (nav=="club")>博观俱乐部 </#if>
+            <#if (nav=="people")>名家论道</#if>
+			_博观拍卖
+	</#if>
+			
+	</@compress>
+</#macro>
+
+
 
 <#macro m_site_common_footer>
 	<div class="layout_footer">

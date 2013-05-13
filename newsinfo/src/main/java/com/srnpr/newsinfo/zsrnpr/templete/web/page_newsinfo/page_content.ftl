@@ -1,10 +1,6 @@
-
-
-<body class="website_body">
-<@m_site_common_header nav="info" />
-<#include "site_info.ftl"  />
-
 <#assign note_info=pageexec.upDataOne("info_news","uid",pageinfo.getWebSet()["Url_Option"])>
+<@m_site_common_header nav="info" title=note_info["title"] />
+<#include "site_info.ftl"  />
 
 
 <div class="layout_main website_center">

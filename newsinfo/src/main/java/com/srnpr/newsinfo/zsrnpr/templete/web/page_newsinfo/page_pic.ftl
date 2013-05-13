@@ -1,9 +1,8 @@
-<body class="website_body">
-<@m_site_common_header nav="auction" />
+<#assign special_info=pageexec.upDataOne("info_special","uid",pageinfo.getWebSet()["Url_Option"])>
+<@m_site_common_header nav="auction" title=special_info["name"] />
 
 
-<#assign
-	special_info=pageexec.upDataOne("info_special","uid",pageinfo.getWebSet()["Url_Option"])>
+
 
 
 

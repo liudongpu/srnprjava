@@ -1,12 +1,12 @@
 
-<body class="website_body">
-<@m_site_common_header nav="" />
+<#assign images_info=pageexec.upDataOne("info_images","uid",pageinfo.getWebSet()["Url_Option"])>
+<@m_site_common_header nav="" title=images_info["title"] />
 
 <@m_html_addjs [base_zero+"lib/jquery/jquery.showcase.js"] />
 <@m_html_addcss [base_zero+"themes/website/jplug/showcase/css/showcase.css"] />
 
 
-<#assign images_info=pageexec.upDataOne("info_images","uid",pageinfo.getWebSet()["Url_Option"])>
+
 
 	<div class="layout_main website_center">
 		<div class="b_sitenav"></div>

@@ -1,9 +1,7 @@
-
-
-<body class="website_body">
-	<@m_site_common_header nav="" />
- <#assign
+<#assign
 	static_info=pageexec.upDataOne("info_static","code",pageinfo.getWebSet()["Url_Option"])>
+	<@m_site_common_header nav="" title=static_info["title"] />
+ 
 
 	<div class="layout_main website_center">
 		<div class="b_sitenav"><@m_site_common_breadcrumb [static_info["title"],""] /></div>

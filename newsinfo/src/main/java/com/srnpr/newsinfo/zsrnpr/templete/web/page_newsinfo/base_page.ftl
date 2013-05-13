@@ -14,7 +14,7 @@
 <#include "site_common.ftl" />
 
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
-<title></title> 
+
 
 	<@m_html_addcss pageconfig.getSrcCss() />
 	<@m_html_addjs pageconfig.getSrcJs() />
@@ -23,7 +23,7 @@
 
 	<@m_html_addscript "zen.i({baseurl:'"+base_url+"'});" />
 
-</head> 	
+	
 
 <#include "page_"+pageinfo.getPageInclude()?default('main')+".ftl" />
 

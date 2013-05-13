@@ -1,5 +1,5 @@
-<body class="website_body">
-<@m_site_common_header nav="" />
+
+<@m_site_common_header nav=""  title="会员中心" />
 
 <#include "site_user.ftl" />
 

@@ -1,11 +1,8 @@
 
-
-<body class="website_body">
-<@m_site_common_header nav="notice" />
-<#include "site_info.ftl"  />
-
 <#assign note_info=pageexec.upDataOne("info_notice","uid",pageinfo.getWebSet()["Url_Option"])>
 
+<@m_site_common_header nav="notice" title=note_info["title"] />
+<#include "site_info.ftl"  />
 
 <div class="layout_main website_center">
 		<div class="b_sitenav"><@m_site_common_breadcrumb ["博观公告","notice-list",note_info["title"],""] /></div>

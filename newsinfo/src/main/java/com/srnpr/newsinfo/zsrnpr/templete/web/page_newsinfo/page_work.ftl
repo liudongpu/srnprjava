@@ -1,11 +1,11 @@
-
-
-<body class="website_body">
-<@m_site_common_header nav="people" />
-
-
 <#assign work_info=pageexec.upDataOne("info_product","uid",pageinfo.getWebSet()["Url_Option"])>
 <#assign product_people=pageexec.upDataOne("info_people","uid",work_info["product_people_uid"])>
+
+
+<@m_site_common_header nav="people" title=work_info["product_name"] />
+
+
+
 
 <div class="layout_main website_center">
 		<div class="b_sitenav"><@m_site_common_breadcrumb

@@ -1,6 +1,5 @@
-<body class="website_body">
-	<@m_site_common_header nav="auction" /> <#assign
-	special_info=pageexec.upDataOne("info_auction","uid",pageinfo.getWebSet()["Url_Option"])>
+ <#assign special_info=pageexec.upDataOne("info_auction","uid",pageinfo.getWebSet()["Url_Option"])>
+	<@m_site_common_header nav="auction" title=special_info["name"] />
 
 	<div class="layout_main website_center">
 		<div class="b_sitenav"><@m_site_common_breadcrumb ["预展及成交","auction-list",special_info["name"],""] /></div>

@@ -1,5 +1,5 @@
-<body class="website_body">
-<@m_site_common_header nav="" />
+
+<@m_site_common_header nav="" title="搜索结果:"+pageinfo.getWebSet()["Url_Option"] />
 
 
 <div class="layout_main website_center">
