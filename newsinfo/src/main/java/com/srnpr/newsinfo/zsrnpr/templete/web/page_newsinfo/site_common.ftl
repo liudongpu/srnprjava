@@ -1,5 +1,9 @@
 
-<#macro m_site_common_header nav="">
+<#macro m_site_common_header nav="" title="">
+
+
+
+
 	<div class="layout_header">
             <div class="header_top">
                 <div class="website_center">

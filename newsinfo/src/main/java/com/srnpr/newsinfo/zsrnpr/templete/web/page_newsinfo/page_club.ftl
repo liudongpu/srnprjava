@@ -70,7 +70,7 @@
 														alt=""> <span>${el["title"]}</span>
 												</a>
 												
-												<span class="club_tools"><a href="<#if (el["type_cid"]==30340001)>${el["ppt_url"]} <#else>${el["video_url"]}</#if>"  target="_blank"><span class="club_icon <#if (el["type_cid"]==30340001)>club_download <#else>club_play</#if>"></span>
+												<span class="club_tools"><a class="b_corner" href="<#if (el["type_cid"]==30340001)>${el["ppt_url"]} <#else>${el["video_url"]}</#if>"  target="_blank"><span class="club_icon <#if (el["type_cid"]==30340001)>club_download <#else>club_play</#if>"></span>
 												<#if (el["type_cid"]==30340001)>下载课件 <#else>观看视频</#if></a></span>
 												</li>
 											

@@ -8,7 +8,7 @@
 				<#list pageNav.getPageData() as el> 	 
 					<div class="info_item">
 						<div class="c_title">
-							<h3>${el["title"]}</h3>
+							<h3><a href="content-content-${el["uid"]}">${el["title"]}</a></h3>
 						</div>
 						<div class="c_time">发表时间：${el["create_time"]} | 文章出处：博观拍卖</div>
 						<#if (el["file_url"]??)&&(el["file_url"]!="")>
@@ -42,7 +42,7 @@
 				<#list pageNav.getPageData() as el> 	
 					<div class="info_item">
 						<div class="c_title">
-							<h3>${el["title"]}</h3>
+							<h3><a href="affiche-affiche-${el["uid"]}">${el["title"]}</a></h3>
 						</div>
 						<div class="c_time">发表时间：${el["create_time"]} | 文章出处：博观拍卖</div>
 						<#if (el["file_url"]??)&&(el["file_url"]!="")>
