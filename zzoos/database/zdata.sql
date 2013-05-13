@@ -1,10 +1,10 @@
-CREATE DATABASE  IF NOT EXISTS `zdata` /*!40100 DEFAULT CHARACTER SET utf8 */;
+CREATE DATABASE  IF NOT EXISTS `zdata` /*!40100 DEFAULT CHARACTER SET latin1 */;
 USE `zdata`;
 -- MySQL dump 10.13  Distrib 5.5.16, for Win32 (x86)
 --
 -- Host: localhost    Database: zdata
 -- ------------------------------------------------------
--- Server version	5.5.27
+-- Server version	5.5.25a
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -40,7 +40,7 @@ CREATE TABLE `info_adv` (
 
 LOCK TABLES `info_adv` WRITE;
 /*!40000 ALTER TABLE `info_adv` DISABLE KEYS */;
-INSERT INTO `info_adv` VALUES (1,'8ea851536e9b4435a0c5cdfa7183cde7','博观拍卖新版网站上线','/zzero/file/images_upload/20130512/85645ed019654ddc8ab53069251c84b3.jpg','/newsinfo/main-main'),(2,'102b0843e09e4d4ea5026cb10932afa5','博观拍卖新版网站上线','/zzero/file/images_upload/20130512/e1202454ac254fa1a27d2819294b712f.jpg','');
+INSERT INTO `info_adv` VALUES (1,'8ea851536e9b4435a0c5cdfa7183cde7','博观拍卖新版网站上线','/zzero/file/images_upload/20130512/85645ed019654ddc8ab53069251c84b3.jpg','newsinfo/info-list'),(2,'102b0843e09e4d4ea5026cb10932afa5','博观拍卖新版网站上线','/zzero/file/images_upload/20130512/e1202454ac254fa1a27d2819294b712f.jpg','');
 /*!40000 ALTER TABLE `info_adv` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -98,7 +98,7 @@ CREATE TABLE `info_book` (
 
 LOCK TABLES `info_book` WRITE;
 /*!40000 ALTER TABLE `info_book` DISABLE KEYS */;
-INSERT INTO `info_book` VALUES (1,'3e4142d2369c49e4a26c3780a8ed6bca','111','/zzero/file/images_upload/20130512/245fa193510a494fa610a3f0549a46f8.jpg','/zzero/file/images_upload/20130512/491dab56e99b47f8ab33990d5d608254.jpg','2');
+INSERT INTO `info_book` VALUES (1,'3e4142d2369c49e4a26c3780a8ed6bca','111','/zzero/file/images_upload/20130513/5422d74f22bf46cd9ede2d85f6a6b7f4.jpg','/zzero/file/images_upload/20130513/3b9d7ae62005413aa8a5d505b934649e.swf','2');
 /*!40000 ALTER TABLE `info_book` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -475,7 +475,7 @@ CREATE TABLE `user_collect` (
   `info_type` int(11) DEFAULT '0' COMMENT '类型',
   `info_uid` char(32) DEFAULT '',
   PRIMARY KEY (`zid`)
-) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -484,7 +484,7 @@ CREATE TABLE `user_collect` (
 
 LOCK TABLES `user_collect` WRITE;
 /*!40000 ALTER TABLE `user_collect` DISABLE KEYS */;
-INSERT INTO `user_collect` VALUES (1,'0abc287d25f24a2d8e4ebeb07b368d98','6786149106e4466d96470ccd54d9b7b6','pic-list-6b38e7c84eaa4259aeb46cf3bf9db2e5','2-1专场','2013-05-12 16:04:43',0,'6b38e7c84eaa4259aeb46cf3bf9db2e5'),(2,'ca7487c3b433423b847280de3dd6a82b','6786149106e4466d96470ccd54d9b7b6','pic-list-6b38e7c84eaa4259aeb46cf3bf9db2e5','2-1专场','2013-05-12 16:04:49',0,'6b38e7c84eaa4259aeb46cf3bf9db2e5'),(3,'0baacd29d2b24d51b5409f0208e946d2','6786149106e4466d96470ccd54d9b7b6','pic-list-6b38e7c84eaa4259aeb46cf3bf9db2e5','2-1专场','2013-05-12 16:05:58',0,'6b38e7c84eaa4259aeb46cf3bf9db2e5'),(4,'1d6e7ab6a39e4f2f82cfe8cf5d8fbe35','6786149106e4466d96470ccd54d9b7b6','pic-list-6b38e7c84eaa4259aeb46cf3bf9db2e5','2-1专场','2013-05-12 16:06:01',0,'6b38e7c84eaa4259aeb46cf3bf9db2e5'),(5,'b1c199ff1d144095bcf26800492fb910','6786149106e4466d96470ccd54d9b7b6','pic-list-a80abfef2e574a5faa251032337ee714','1-1专场','2013-05-12 16:09:11',0,'a80abfef2e574a5faa251032337ee714'),(6,'f8018beccbab4d0a819910db761acf7c','6786149106e4466d96470ccd54d9b7b6','pic-list-6b38e7c84eaa4259aeb46cf3bf9db2e5','2-1专场','2013-05-12 16:46:11',0,'6b38e7c84eaa4259aeb46cf3bf9db2e5');
+INSERT INTO `user_collect` VALUES (1,'0abc287d25f24a2d8e4ebeb07b368d98','6786149106e4466d96470ccd54d9b7b6','pic-list-6b38e7c84eaa4259aeb46cf3bf9db2e5','2-1专场','2013-05-12 16:04:43',0,'6b38e7c84eaa4259aeb46cf3bf9db2e5'),(2,'ca7487c3b433423b847280de3dd6a82b','6786149106e4466d96470ccd54d9b7b6','pic-list-6b38e7c84eaa4259aeb46cf3bf9db2e5','2-1专场','2013-05-12 16:04:49',0,'6b38e7c84eaa4259aeb46cf3bf9db2e5'),(3,'0baacd29d2b24d51b5409f0208e946d2','6786149106e4466d96470ccd54d9b7b6','pic-list-6b38e7c84eaa4259aeb46cf3bf9db2e5','2-1专场','2013-05-12 16:05:58',0,'6b38e7c84eaa4259aeb46cf3bf9db2e5'),(4,'1d6e7ab6a39e4f2f82cfe8cf5d8fbe35','6786149106e4466d96470ccd54d9b7b6','pic-list-6b38e7c84eaa4259aeb46cf3bf9db2e5','2-1专场','2013-05-12 16:06:01',0,'6b38e7c84eaa4259aeb46cf3bf9db2e5'),(5,'b1c199ff1d144095bcf26800492fb910','6786149106e4466d96470ccd54d9b7b6','pic-list-a80abfef2e574a5faa251032337ee714','1-1专场','2013-05-12 16:09:11',0,'a80abfef2e574a5faa251032337ee714'),(6,'f8018beccbab4d0a819910db761acf7c','6786149106e4466d96470ccd54d9b7b6','pic-list-6b38e7c84eaa4259aeb46cf3bf9db2e5','2-1专场','2013-05-12 16:46:11',0,'6b38e7c84eaa4259aeb46cf3bf9db2e5'),(7,'e8a9776d344e40ec9c68f7cc4d323c14','da1feff4d46a458e92b143962a4f9d6f','pic-list-a80abfef2e574a5faa251032337ee714','玲珑美玉--当代玉雕精品无底价拍卖会（三）','2013-05-13 16:11:21',0,'a80abfef2e574a5faa251032337ee714');
 /*!40000 ALTER TABLE `user_collect` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -506,7 +506,7 @@ CREATE TABLE `user_comment` (
   `note` varchar(4000) DEFAULT '' COMMENT '内容',
   `info_uid` char(32) DEFAULT '',
   PRIMARY KEY (`zid`)
-) ENGINE=MyISAM AUTO_INCREMENT=16 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=20 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -515,6 +515,7 @@ CREATE TABLE `user_comment` (
 
 LOCK TABLES `user_comment` WRITE;
 /*!40000 ALTER TABLE `user_comment` DISABLE KEYS */;
+INSERT INTO `user_comment` VALUES (16,'8800a25058a94a088b1a9cb046c25ad6','9225f1c1568a47ba9cb2b3c2dfd45d72','第三期玲珑美玉——当代玉雕精品无底价拍卖会','content-content-a8f441234e854a0885fb3a53608a3c9f','2013-05-13 13:26:33',0,'不错哈：）','a8f441234e854a0885fb3a53608a3c9f'),(17,'38eb08b606f447c2a0e6a07494cde292','9225f1c1568a47ba9cb2b3c2dfd45d72','第三期玲珑美玉——当代玉雕精品无底价拍卖会','content-content-a8f441234e854a0885fb3a53608a3c9f','2013-05-13 13:45:32',0,'夺 地 3245252','a8f441234e854a0885fb3a53608a3c9f'),(18,'7f0e4431649d407bb9f2d991debe384a','da1feff4d46a458e92b143962a4f9d6f','第三期玲珑美玉——当代玉雕精品无底价拍卖会','content-content-a8f441234e854a0885fb3a53608a3c9f','2013-05-13 16:10:19',0,'阿斯顿法师的','a8f441234e854a0885fb3a53608a3c9f'),(19,'fd9652bb87244e469fbbd417ee3a6187','da1feff4d46a458e92b143962a4f9d6f','范同生　和田玉籽料莲藕挂件','good-good-bb7a92700f1c4cdd9d0c3eef2a1c2ef2','2013-05-13 16:11:51',0,'阿斯顿法师的飞飞飞飞','bb7a92700f1c4cdd9d0c3eef2a1c2ef2');
 /*!40000 ALTER TABLE `user_comment` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -537,7 +538,7 @@ CREATE TABLE `user_info` (
   `real_name` varchar(200) DEFAULT '',
   PRIMARY KEY (`zid`),
   UNIQUE KEY `login_name_UNIQUE` (`login_name`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -546,7 +547,7 @@ CREATE TABLE `user_info` (
 
 LOCK TABLES `user_info` WRITE;
 /*!40000 ALTER TABLE `user_info` DISABLE KEYS */;
-INSERT INTO `user_info` VALUES (8,'6786149106e4466d96470ccd54d9b7b6','s','s','s5@ss.ss','2013-05-03 23:51:56','012b2a0a3c4c48afa0181bf7df0fac90','33','sss'),(9,'6371c752ba6d450db3d67650beed0390','srnpr@sina.com','s','srnpr@sina.com','2013-05-11 15:35:42','057c948698344f42af11ae1957054c5e','','srnpr');
+INSERT INTO `user_info` VALUES (8,'6786149106e4466d96470ccd54d9b7b6','s','s','s5@ss.ss','2013-05-03 23:51:56','012b2a0a3c4c48afa0181bf7df0fac90','33','sss'),(9,'6371c752ba6d450db3d67650beed0390','srnpr@sina.com','s','srnpr@sina.com','2013-05-11 15:35:42','057c948698344f42af11ae1957054c5e','','srnpr'),(10,'f51fd9e641424b1582e54d5e391a9b3f','saya1202@126.com','841202','saya1202@126.com','2013-05-13 10:50:08','d866074c51354c9a93d0cd05209d09b8','','saya1202'),(11,'9225f1c1568a47ba9cb2b3c2dfd45d72','afanok@163.com','boguan','afanok@163.com','2013-05-13 10:57:33','1cb6580b0cd342a3baaf70f4edfd5a1d','13683665376','afanok'),(12,'da1feff4d46a458e92b143962a4f9d6f','greatjoshuama@gmail.com','000000','greatjoshuama@gmail.com','2013-05-13 16:05:29','261e5102ff16452db2f024658d2cc050','','greatjoshuama');
 /*!40000 ALTER TABLE `user_info` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -922,4 +923,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2013-05-13  1:41:32
+-- Dump completed on 2013-05-13 21:38:55
