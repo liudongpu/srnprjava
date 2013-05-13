@@ -53,11 +53,11 @@
 					<div class="c_item">
 					<div class="c_inner">
 						<div class="c_image">
-							<img
-								src="${el["file_url"]}" />
+							<a href="work-work-${el["uid"]}"><img
+								src="${el["file_url"]}" /></a>
 						</div>
 						<div class="c_info">
-							<div class="c_title">名称：${el["product_name"]}</div>
+							<div class="c_title">名称：<a href="work-work-${el["uid"]}">${el["product_name"]}</a></div>
 							
 							<div class="c_time">
 								时间：<span>${el["product_time"]?date("yyyy-MM-dd")}</span>

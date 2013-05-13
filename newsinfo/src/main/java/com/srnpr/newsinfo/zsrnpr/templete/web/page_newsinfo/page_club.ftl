@@ -65,10 +65,14 @@
 											
 											<#list pageexec.upDataOrder("info_video","-sort_index") as el> 
 											
-												<li><a href="<#if (el["type_cid"]==30340001)>${el["ppt_url"]} <#else>${el["video_url"]} </#if> " target="_blank"> <img
+												<li><a href="<#if (el["type_cid"]==30340001)>${el["ppt_url"]} <#else>${el["video_url"]}</#if>" target="_blank"> <img
 														src="${el["file_url"]}"
 														alt=""> <span>${el["title"]}</span>
-												</a></li>
+												</a>
+												
+												<span class="club_tools"><a href="<#if (el["type_cid"]==30340001)>${el["ppt_url"]} <#else>${el["video_url"]}</#if>"  target="_blank"><span class="club_icon <#if (el["type_cid"]==30340001)>club_download <#else>club_play</#if>"></span>
+												<#if (el["type_cid"]==30340001)>下载课件 <#else>观看视频</#if></a></span>
+												</li>
 											
 											</#list>
 											
@@ -87,7 +91,7 @@
 								
 								<script type="text/javascript">
 									$(window)
-											.load(
+											.ready(
 													function() {
 														zen.site
 																.picnav(
