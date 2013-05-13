@@ -48,7 +48,7 @@
 <#macro m_site_common_title nav="" title="">
 	<@compress single_line=true>
 	
-	<#if (nav=="main")>博观拍卖 - 中国珠宝玉石专业拍卖机构
+	<#if (nav=="main")>博观拍卖 - 中国珠宝玉石专业拍卖机构 
 	<#else>
 			${title}
 			<#if (title?length>0)>_</#if>
