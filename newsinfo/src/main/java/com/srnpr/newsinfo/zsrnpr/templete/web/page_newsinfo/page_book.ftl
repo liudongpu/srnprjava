@@ -35,7 +35,7 @@
 								
 								<#list pageexec.upDataOrder("info_book","-sort_index") as el> 	
 						 			<li>
-						 				<a href="${el["book_url"]}" target="_blank"> 
+						 				<a href="${base_url}books/${el["book_url"]}" target="_blank"> 
 						 					<img src="${el["file_url"]}" alt="${el["title"]}" />
 						 					<span>${el["title"]}</span>
 										</a>

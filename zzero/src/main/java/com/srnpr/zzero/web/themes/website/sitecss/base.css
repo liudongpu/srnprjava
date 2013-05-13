@@ -214,6 +214,7 @@ a.b_button:hover {
 
 .header_nav_left ul li a.active {
     color: #fff;
+    font-size:18px;
 }
 
 .header_nav_left ul  .active {
