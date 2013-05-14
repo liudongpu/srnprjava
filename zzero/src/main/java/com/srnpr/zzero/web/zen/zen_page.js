@@ -107,7 +107,7 @@ zen
 										}
 										
 										aArr[0] = iMaxPage;
-										$(eUL).append('<li '+ (iIndex == iMaxPage ? ('class="disabled"><a'): '><a <a href="'+ zen.page.urlreplace(4,aArr.join('_')) + '" ')+ ' >«</a></li>');
+										$(eUL).append('<li '+ (iIndex == iMaxPage ? ('class="disabled"><a'): '><a <a href="'+ zen.page.urlreplace(4,aArr.join('_')) + '" ')+ ' >»</a></li>');
 
 
 									}

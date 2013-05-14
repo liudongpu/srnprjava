@@ -10,7 +10,7 @@ public class MPagePagination {
 	
 	
 	
-	private int pageSize=8;
+	private int pageSize=10;
 	
 	private int pageIndex=1;
 	
