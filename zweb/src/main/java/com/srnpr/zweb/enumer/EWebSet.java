@@ -43,6 +43,14 @@ public enum EWebSet {
 	 */
 		
 	Url_Param,
+	
+	 /**
+	  * @fields Url_Pagination  Url第五参数  分页设置  格式为   页码_总条数_每页数字
+	 */
+			
+	Url_Pagination,
+	
+	
 
 
 	Request_Method

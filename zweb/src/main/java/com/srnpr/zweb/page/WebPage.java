@@ -120,8 +120,13 @@ public class WebPage extends BaseClass {
 			wRequest.inSet(EWebSet.Url_Option, sParams[2]);
 			if (sParams.length > 3) {
 				wRequest.inSet(EWebSet.Url_Param, sParams[3]);
-				
 				wRequest.refreshParamsHashMap();
+
+				if(sParams.length>4)
+				{
+					wRequest.inSet(EWebSet.Url_Pagination, sParams[4]);
+				}
+				
 			}
 		}
 		

@@ -208,9 +208,15 @@ no result
 
 
 
-
-
-
+<#macro m_lib_page_page_pagination  p_pagination>
+<div class="pagination" zen_page_pagination_size="${p_pagination.getPageSize()}"  zen_page_pagination_index="${p_pagination.getPageIndex()}"  zen_page_pagination_count="${p_pagination.getPageCount()}">
+  <ul>
+  </ul>
+</div>
+<script>
+$(document).ready(function(){zen.page.pagination()});
+</script>
+</#macro>
 
 
 

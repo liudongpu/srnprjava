@@ -109,6 +109,39 @@ public class MWebPage
 
 
 
+
+
+
+
+
+
+
+
+
+	public MPagePagination getPagePagination() {
+		return pagePagination;
+	}
+
+	public void setPagePagination(MPagePagination pagePagination) {
+		this.pagePagination = pagePagination;
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 	/**
 	 * @fields pageData
 	 */
@@ -136,7 +169,7 @@ public class MWebPage
 	
 	
 	
-	
+	private MPagePagination pagePagination;
 	
 
 }

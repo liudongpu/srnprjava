@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
+import org.apache.commons.lang.NumberUtils;
 import org.apache.commons.lang.StringUtils;
 
 import com.srnpr.zcom.base.BaseClass;
@@ -18,6 +19,8 @@ import com.srnpr.zweb.common.WebConst;
 import com.srnpr.zweb.enumer.EWebConst;
 import com.srnpr.zweb.enumer.EWebSet;
 import com.srnpr.zweb.manager.WebViewManager;
+import com.srnpr.zweb.model.MPageNav;
+import com.srnpr.zweb.model.MPagePagination;
 import com.srnpr.zweb.model.MWebFields;
 import com.srnpr.zweb.model.MWebOptions;
 import com.srnpr.zweb.model.MWebPage;
@@ -98,8 +101,40 @@ public class WebBaseProcess extends BaseClass {
 
 			listPageData.add(listTitle);
 
- 			List<Map<String, Object>> listMaps = dHelper.upListListByQuery(
-					sbField.toString(), wRequest.getParamsMap());
+			MPagePagination mPagePagination = new MPagePagination();
+
+			if (StringUtils.isNotEmpty(wRequest.upSet(EWebSet.Url_Pagination))) {
+				String[] sPaginations = wRequest.upSet(EWebSet.Url_Pagination)
+						.toString().split("_");
+
+				if (sPaginations.length == 3) {
+					mPagePagination.setPageIndex(Integer
+							.valueOf(sPaginations[0]));
+					mPagePagination.setPageCount(Integer
+							.valueOf(sPaginations[1]));
+					mPagePagination.setPageSize(Integer
+							.valueOf(sPaginations[2]));
+				}
+
+			}
+
+			
+			if (mPagePagination.getPageCount() < 0) {
+				mPagePagination.setPageCount(dHelper.upCount(wRequest
+						.getParamsMap().upObjs()));
+			}
+
+			List<Map<String, Object>> listMaps = dHelper.upList(
+					sbField.toString(),
+					"",
+					(mPagePagination.getPageIndex() - 1)
+							* mPagePagination.getPageSize(),
+					 mPagePagination.getPageSize(),
+					wRequest.getParamsMap());
+
+			// List<Map<String, Object>> listMaps =
+			// dHelper.upListListByQuery(sbField.toString(),
+			// wRequest.getParamsMap());
 
 			for (Map<String, Object> mData : listMaps) {
 
@@ -110,18 +145,17 @@ public class WebBaseProcess extends BaseClass {
 						listDataList.add(String.valueOf(mData.get(mFields
 								.getColumnName() + "_zzz")));
 					} else if (mData.containsKey(mFields.getColumnName())) {
-						
-						String sText=String.valueOf(mData.get(mFields
+
+						String sText = String.valueOf(mData.get(mFields
 								.getColumnName()));
-						
-						
-						if(mFields.getDidFieldType()==416108121)
-						{
-							//sText="<a href=\"\" target=\"\"></a>";
-							
-							sText=FormatHelper.FormatString(BConfig("zweb.replace_list_url"), sText);
+
+						if (mFields.getDidFieldType() == 416108121) {
+							// sText="<a href=\"\" target=\"\"></a>";
+
+							sText = FormatHelper.FormatString(
+									BConfig("zweb.replace_list_url"), sText);
 						}
-						
+
 						listDataList.add(sText);
 					}
 				}
@@ -135,6 +169,9 @@ public class WebBaseProcess extends BaseClass {
 			}
 
 			// mPageInfo.setPageData(dHelper.upList());
+
+			mPageInfo.setPagePagination(mPagePagination);
+
 			mPageInfo.setPageData(listPageData);
 
 			mPageInfo.setPageOptions(reloadOptions(iPageType, mView, wRequest,
@@ -150,9 +187,10 @@ public class WebBaseProcess extends BaseClass {
 			for (MWebFields mFields : listFields) {
 
 				MWebFields mNewFields = mFields.clone();
-				if (wRequest.getParamsMap().containsKey(mFields.getColumnName())) {
-					mNewFields.setFieldValue(String.valueOf( wRequest.getParamsMap().get(mFields
-							.getColumnName())));
+				if (wRequest.getParamsMap()
+						.containsKey(mFields.getColumnName())) {
+					mNewFields.setFieldValue(String.valueOf(wRequest
+							.getParamsMap().get(mFields.getColumnName())));
 				}
 				mPageDataFields.add(mNewFields);
 			}
@@ -190,10 +228,8 @@ public class WebBaseProcess extends BaseClass {
 		} else {
 
 		}
-		
-		
+
 		mPageInfo.setReq(wRequest);
-		
 
 		// hPageInfo.put("PageInclude", "page_"+sPageType+".ftl");
 
@@ -201,6 +237,8 @@ public class WebBaseProcess extends BaseClass {
 
 		return mPageInfo;
 	}
+	
+	
 
 	public List<MWebOptions> reloadOptions(int iPageType, MWebView mView,
 			PageRequest wRequest, MWebPage mPageInfo, Map<String, Object> mData) {
@@ -265,12 +303,15 @@ public class WebBaseProcess extends BaseClass {
 													+ sSptKey + "]",
 													mOptions.getUid());
 										}
-									}else if (sKeysStrings[0].equals("p")) {
-										if(wRequest.getParamsMap().containsKey(sKeysStrings[1]))
-										{
-											sParams = sParams.replace("["
-													+ sSptKey + "]",
-													String.valueOf(wRequest.getParamsMap().get(sKeysStrings[1])));
+									} else if (sKeysStrings[0].equals("p")) {
+										if (wRequest.getParamsMap()
+												.containsKey(sKeysStrings[1])) {
+											sParams = sParams
+													.replace(
+															"[" + sSptKey + "]",
+															String.valueOf(wRequest
+																	.getParamsMap()
+																	.get(sKeysStrings[1])));
 										}
 									}
 

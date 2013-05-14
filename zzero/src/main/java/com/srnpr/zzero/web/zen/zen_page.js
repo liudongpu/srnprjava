@@ -33,26 +33,111 @@ zen
 				},
 
 				login_success : function(o) {
-					zen.f.cookie("bgpm_zyou_user_cookieid",
-							o.result["uid"],{path:'/', expires:365});
-					zen.f.cookie("bgpm_zyou_user_name", o.result["user_name"],{path:'/', expires:365});
-					
+					zen.f.cookie("bgpm_zyou_user_cookieid", o.result["uid"], {
+						path : '/',
+						expires : 365
+					});
+					zen.f.cookie("bgpm_zyou_user_name", o.result["user_name"],
+							{
+								path : '/',
+								expires : 365
+							});
+
 					zen.page.href("zyou/chart-v_info_news");
 
 				},
-				
+
 				logout : function() {
-					zen.f.cookie("bgpm_zyou_user_cookieid", null,{path:'/'});
-					zen.f.cookie("bgpm_zyou_user_name", null,{path:'/'});
+					zen.f.cookie("bgpm_zyou_user_cookieid", null, {
+						path : '/'
+					});
+					zen.f.cookie("bgpm_zyou_user_name", null, {
+						path : '/'
+					});
 
 					zen.page.href('manage');
 				},
-				
+
 				href : function(sUrl) {
 					top.location.href = zen.t.baseurl + sUrl;
 				},
-				
-				
+
+				pagination : function() {
+					$(".pagination")
+							.each(
+
+									function(n, el) {
+										var iSize = parseInt($(el).attr(
+												"zen_page_pagination_size"));
+										var iIndex = parseInt($(el).attr(
+												"zen_page_pagination_index"));
+										var iCount = parseInt($(el).attr(
+												"zen_page_pagination_count"));
+
+										var iMaxPage = Math
+												.ceil(iCount / iSize);
+										var eUL = $(el).children('ul');
+										if (eUL.children().length > 0)
+											return;
+
+										var aArr = [ iIndex, iCount, iSize ];
+										aArr[0] = 1;
+										$(eUL).append('<li '+ (iIndex == 1 ? ('class="disabled"><a '): '><a href="'+ zen.page.urlreplace(4,aArr.join('_')) + '" ')+ ' >«</a></li>');
+
+										var aNav = [];
+										var iNavSize = 5;
+
+										aNav.push(iIndex);
+
+										for ( var i = 1; i <= iNavSize; i++) {
+											if (aNav.length < iNavSize) {
+												if (iIndex - i > 0) {
+													aNav.splice(0, 0, iIndex- i);
+												}
+												if (iIndex + i <= iMaxPage) {
+													aNav.push(iIndex + i);
+												}
+											}
+
+										}
+
+										for ( var i = 0, j = aNav.length; i < j; i++) {
+											aArr[0]=aNav[i];
+											$(eUL).append('<li '+ ( aNav[i]==iIndex?'class="active"':'') +' ><a href="'+ zen.page.urlreplace(4,aArr.join('_')) + '">'+aNav[i]+'</a></li>');
+										}
+										
+										aArr[0] = iMaxPage;
+										$(eUL).append('<li '+ (iIndex == iMaxPage ? ('class="disabled"><a'): '><a <a href="'+ zen.page.urlreplace(4,aArr.join('_')) + '" ')+ ' >«</a></li>');
+
+
+									}
+
+							);
+
+				},
+
+				urlreplace : function(iIndex, sTo) {
+					var sShareUrl = location.href;
+					var iQuery = sShareUrl.indexOf('?');
+					var sQuery = "";
+					if (iQuery > -1) {
+						sQuery = sShareUrl.substring(iQuery);
+						sShareUrl = sShareUrl.substring(0, iQuery);
+					}
+					var iLeft = sShareUrl.lastIndexOf('/');
+					var sPageUrl = sShareUrl.substring(iLeft);
+					sShareUrl = sShareUrl.substring(0, iLeft);
+
+					var aUrls = sPageUrl.split('-');
+
+					for ( var i = aUrls.length; i <= iIndex; i++) {
+						aUrls.push('');
+					}
+
+					aUrls[iIndex] = sTo;
+					return sShareUrl + aUrls.join('-') + sQuery;
+
+				},
 
 				call : function(sUrl) {
 					$.getJSON(sUrl, function(obj) {

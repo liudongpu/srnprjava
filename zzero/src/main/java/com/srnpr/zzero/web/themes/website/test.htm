@@ -15,6 +15,7 @@
 <script type="text/javascript"
 	src="../../lib/bootstrap/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="../../zen/zen.js"></script>
+<script type="text/javascript" src="../../zen/zen_page.js"></script>
 <script type="text/javascript" src="../../zen/zen_site.js"></script>
 <script type="text/javascript" src="../../lib/jquery/jquery.corner.js"></script>
 <script type="text/javascript"
@@ -64,7 +65,13 @@
 	<div class="layout_main website_center">
 		<div class="b_sitenav"></div>
 		<div class="cloub_body">
-
+<div class="pagination"  zen_page_pagination_index="6" zen_page_pagination_size="2"  zen_page_pagination_count="11">
+  <ul>
+  </ul>
+</div>
+<script>
+$(document).ready(function(){zen.page.pagination()});
+</script>
 			<div class="container-fluid">
 				<div class="row-fluid">
 					<div class="span9">

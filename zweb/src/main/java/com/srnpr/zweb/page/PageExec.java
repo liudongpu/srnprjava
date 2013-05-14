@@ -95,7 +95,7 @@ public class PageExec extends BaseClass {
 		
 		mPageNav.setPageData(
 		DataTableManager.Get(sTableName).upListAll(sFields,sWhere, sOrder, (mPageNav.getPageIndex()-1)*mPageNav.getPageSize(),
-				mPageNav.getPageIndex()*mPageNav.getPageSize(), oArgs));
+				mPageNav.getPageSize(), oArgs));
 		
 
 		return mPageNav;

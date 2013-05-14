@@ -16,3 +16,6 @@
 
 <@m_page_table pageinfo.getPageData() />
 
+
+
+<@m_lib_page_page_pagination pageinfo.getPagePagination() />
