@@ -1,8 +1,10 @@
 
 
-<#macro m_site_user_nologin>
+<#macro m_site_user_nologin from="">
 
-  not login
+  <script>
+  location.href="login-login?zen_site_url_login_from=${from}";
+  </script>
 
 </#macro>
 

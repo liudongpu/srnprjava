@@ -95,7 +95,7 @@ public class PageExec extends BaseClass {
 		
 		mPageNav.setPageData(
 		DataTableManager.Get(sTableName).upListAll(sFields,sWhere, sOrder, (mPageNav.getPageIndex()-1)*mPageNav.getPageSize(),
-				mPageNav.getPageIndex()*mPageNav.getPageSize(), oArgs));
+				mPageNav.getPageSize(), oArgs));
 		
 
 		return mPageNav;
@@ -105,6 +105,19 @@ public class PageExec extends BaseClass {
 		return ((ServletRequestAttributes) RequestContextHolder
 				.getRequestAttributes()).getRequest();
 
+	}
+	
+	public String upRequestParameter(String sKey)
+	{
+		String sValueString="";
+		
+		if(upRequest().getParameter(sKey)!=null)
+		{
+			sValueString=upRequest().getParameter(sKey).toString();
+		}
+		
+		
+		return sValueString;
 	}
 	
 	
