@@ -119,8 +119,15 @@ zen
 					zen.f.cookie("bgpm_user_cookieid",
 							o.result["bgpm_user_cookieid"],{path:'/', expires:365});
 					zen.f.cookie("bgpm_user_name", o.result["bgpm_user_name"],{path:'/', expires:365});
+					
+					var sFromUrl="newsinfo/usercenter-user";
+					if($('#zen_site_url_login_from').length>0&&$('#zen_site_url_login_from').val()!="")
+						{
+						sFromUrl="newsinfo/"+$('#zen_site_url_login_from').val();
+						}
+					
 
-					zen.site.href('newsinfo/usercenter-user');
+					zen.site.href(sFromUrl);
 				},
 				logout : function() {
 					zen.f.cookie("bgpm_user_cookieid", null,{path:'/'});

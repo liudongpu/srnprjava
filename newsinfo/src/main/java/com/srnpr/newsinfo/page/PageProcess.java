@@ -35,7 +35,7 @@ public class PageProcess implements IWebProcess {
 		mPageInfo.setPageInclude(wRequest.upSet(EWebSet.Url_Target));
 
 		// if user
-		if (wRequest.upSet(EWebSet.Url_View).equals("user")) {
+		if (wRequest.upSet(EWebSet.Url_View).equals("user")||wRequest.upSet(EWebSet.Url_Target).equals("club")) {
 			mPageInfo.setPageOptions(upUserInfo());
 		}
 		return mPageInfo;

@@ -3,7 +3,7 @@
 
 
 	<div class="layout_main website_center">
-
+			<input type="hidden" id="zen_site_url_login_from" value="${pageexec.upRequestParameter("zen_site_url_login_from")}" />
 			<div class="layout_height8">
 
 			</div>

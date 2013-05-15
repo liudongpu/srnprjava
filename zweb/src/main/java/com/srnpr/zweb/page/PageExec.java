@@ -107,6 +107,19 @@ public class PageExec extends BaseClass {
 
 	}
 	
+	public String upRequestParameter(String sKey)
+	{
+		String sValueString="";
+		
+		if(upRequest().getParameter(sKey)!=null)
+		{
+			sValueString=upRequest().getParameter(sKey).toString();
+		}
+		
+		
+		return sValueString;
+	}
+	
 	
 	
 	public String upHtmlTag(Object oHtml,int iLength)

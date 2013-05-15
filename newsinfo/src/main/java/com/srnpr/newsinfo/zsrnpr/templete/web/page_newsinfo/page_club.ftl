@@ -1,8 +1,8 @@
 
 <@m_site_common_header nav="club" />
 
-
-
+<#include "site_user.ftl" />
+<#if ((pageinfo.getPageOptions()?exists)&&pageinfo.getPageOptions()["uid"]??) >
 
 
 <div class="layout_main website_center">
@@ -149,6 +149,8 @@
 
 	</div>
 
-
+<#else>
+		<@m_site_user_nologin from="club-list" />
+</#if>
 <@m_site_common_footer />
 </body>
