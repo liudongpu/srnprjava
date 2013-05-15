@@ -11,16 +11,12 @@
 
 <script type="text/javascript" src="../../lib/jquery/jquery-last.min.js"></script>
 <script type="text/javascript" src="../../lib/jquery/jquery-pluging.js"></script>
-<script type="text/javascript" src="../../lib/jquery/jquery-pluging.js"></script>
 <script type="text/javascript"
 	src="../../lib/bootstrap/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="../../zen/zen.js"></script>
-<script type="text/javascript" src="../../zen/zen_page.js"></script>
 <script type="text/javascript" src="../../zen/zen_site.js"></script>
-<script type="text/javascript" src="../../lib/jquery/jquery.corner.js"></script>
-<script type="text/javascript"
-	src="../../lib/jquery/jquery.masonry.min.js"></script>
-
+<script type="text/javascript" src="../../lib/jquery/jquery-site.js"></script>
+<script type="text/javascript" src="../../lib/jquery/jquery.jfade.js"></script>
 <script type="text/javascript">
 	zen.i({
 		baseurl : '/zadmin/'
@@ -30,146 +26,250 @@
 </head>
 <body class="website_body">
 	<div class="layout_header">
-		<div class="header_top">
-			<div class="website_center">
-				<div class="lay_header_position">
-					<div class="header_logo"></div>
-					<div id="header_user" class="header_user">
-						<a href="">登陆</a>|<a href="">注册</a>
-					</div>
+            <div class="header_top">
+                <div class="website_center">
+                <div class="header_box">
+                    <div class="lay_header_position">
+                        <div class="header_logo"></div>
+                        <div id="header_user" class="header_user">
+							<a href="/newsinfo/login-login">登&nbsp;陆</a>&nbsp;|&nbsp;<a href="/newsinfo/reg-reg">注&nbsp;册</a>
+						</div>
+                    </div>
+                    <div class="lay_header_nav">
+                        <div class="header_nav_left">
+                            <ul>
+                                <li><a  class="active" href="/">首 页</a></li>
+                                <li><a  href="/newsinfo/info-list">博观资讯</a></li>
+                                <li><a  href="/newsinfo/notice-list">博观公告</a></li>
+                                <li><a  href="/newsinfo/auction-list">预展及成交 </a></li>
+                                <li><a  href="/newsinfo/book-list"> 博观书房 </a></li>
+                                <li><a  href="/newsinfo/club-list">博观俱乐部 </a></li>
+                                <li><a  href="/newsinfo/people-list">名家论道</a></li>
+                            </ul>
+                        </div>
+                        <div class="header_nav_right">
+                            <div class="header_nav_search" onmouseover="$('#site_common_search_box').show()">
+								<input type="text" id="site_common_search_box" style="display:none;" />
+								<div onclick="zen.site.search()"></div>
+							</div>
+                        </div>
+                    </div>
+                    
+                    <div class="header_regtip"></div>
+                </div>
+                </div>
+            </div>
+        </div>
 
-				</div>
-				<div class="lay_header_nav">
-					<div class="header_nav_left">
 
-						<ul>
-
-							<li><a class="active" href="/">首 页</a></li>
-							<li><a href="#">博观资讯</a></li>
-							<li><a href="#">博观公告</a></li>
-							<li><a href="#">预展及成交 </a></li>
-							<li><a href="#"> 博观书房 </a></li>
-							<li><a href="#">博观俱乐部 </a></li>
-							<li><a href="#">名家论道</a></li>
-
-						</ul>
-					</div>
-					<div class="header_nav_right">
-						<div class="header_nav_search"></div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+	<link type="text/css" href="/zzero/web/lib/jquery/jquery-site.css" rel="stylesheet">
 
 	<div class="layout_main website_center">
-		<div class="b_sitenav"></div>
-		<div class="cloub_body">
-<div class="pagination"  zen_page_pagination_index="6" zen_page_pagination_size="2"  zen_page_pagination_count="11">
-  <ul>
-  </ul>
-</div>
-<script>
-$(document).ready(function(){zen.page.pagination()});
-</script>
-			<div class="container-fluid">
-				<div class="row-fluid">
-					<div class="span9">
-
-						<div class="c_left">
-							<div class="c_box">
-								<div class="span6">
-									<div class="c_title">简介</div>
-									<div>
-										dddddddddddddddddddddddddddddddddddddddddddaaaaaaaaaaaaaaaaaaaaaaaaaaa
-									</div>
-								</div>
-
-								<div class="span6">
-									<div class="c_title">通知</div>
-									<div>
-										dddddddddddddddddddddddddddddddddddddddddddaaaaaaaaaaaaaaaaaaaaaaaaaaa
-									</div>
-								</div>
+            <div class="index_body">
+                <div class="index_adv">
+                    <div class="slider-wrapper theme-default">
+                        <div id="index_adv_slider" class="nivoSlider">
 
 
-								<div class="clearfix"></div>
+							 <a href="newsinfo/info-list">
+								  <img
+	                            src="/zzero/file/images_upload/20130512/85645ed019654ddc8ab53069251c84b3.jpg"
+	                            alt="" title="#htmlcaption_0" />
+							 </a>
+							 <a href="">
+								  <img
+	                            src="/zzero/file/images_upload/20130512/e1202454ac254fa1a27d2819294b712f.jpg"
+	                            alt="" title="#htmlcaption_1" />
+							 </a>
+                        </div>
+                        
+	                         <div id="htmlcaption_0" class="nivo-html-caption  index_adv_caption">
+	                            <a class="nivo-prevNav"><div class="index_adv_caption_left"></div></a>
+	                            <div class="index_adv_caption_center">
+	                                <a href="">博观拍卖新版网站上线</a>
+	                            </div>
+	                            <a class="nivo-nextNav"><div class="index_adv_caption_right"></div></a>
+	
+	                        </div>
+                         
+                         
+	                         <div id="htmlcaption_1" class="nivo-html-caption  index_adv_caption">
+	                            <a class="nivo-prevNav"><div class="index_adv_caption_left"></div></a>
+	                            <div class="index_adv_caption_center">
+	                                <a href="">博观拍卖新版网站上线</a>
+	                            </div>
+	                            <a class="nivo-nextNav"><div class="index_adv_caption_right"></div></a>
+	
+	                        </div>
+                         
+                         
+                        
+                       
+                    </div>
+                    <script>
+                        // Can also be used with $(document).ready()
+                        $(window).load(function() {
+                            $('#index_adv_slider').nivoSlider({
 
+                                controlNav : false,
+                                controlNavThumbs : false,
+                                
+					        	pauseTime:5000
+                            });
+                        });
+                    </script>
 
+                </div>
+                <div class="index_banner">
+                    <div class="index_banner_item">
+                        <a href="/newsinfo/notice-list">
+                        <img src="images/index_banner_1.jpg"/>
+                        </a>
+                    </div>
+                    <div class="index_banner_split"></div>
+                    <div class="index_banner_item">
+                          <a href="/newsinfo/auction-list">
+                       <img src="images/index_banner_2.jpg"/>
+                        </a>
+                    </div>
+                    <div class="index_banner_split"></div>
+                    <div class="index_banner_item">
+                          <a href="/newsinfo/book-list">
+                        <img src="images/index_banner_3.jpg"/>
+                        </a>
+                    </div>
+                    <div class="index_banner_split"></div>
+                    <div class="index_banner_item">
+                         <a href="/newsinfo/people-list">
+                        <img src="images/index_banner_4.jpg"/>
+                        </a>
+                    </div>
+                </div>
+                
+                 <script>
+                 $(window).load(function() {
+                 $('.index_banner .index_banner_item').jfade({
+                	 start_opacity: "1",
+                	 high_opacity: "1",
+                	 low_opacity: ".4",
+                	 timing: "500"
+                	 });
+                 });
 
-							</div>
-							<div class="h_20"></div>
-							<div>
+                 </script>
+                
+            </div>
+            
 
-								<h3>精彩课程</h3>
-							</div>
-							<div>
-
-								<div class="span3">
-									<a href=""> <img
-										src="http://www.boguanpaimai.com/Attach/pic/20121221/b_50d3c482d4f0a.jpg"
-										alt=""> <span>我滚动，我快乐，我无趣，我来也</span>
-									</a>
-									<span class="club_tools"><a href=""><span class="club_icon club_play"></span>观看视频</a></span>
-								</div>
-								<div class="span3">
-									<a href=""> <img
-										src="http://www.boguanpaimai.com/Attach/pic/20121221/b_50d3c482d4f0a.jpg"
-										alt=""> <span>我滚动，我快乐，我无趣，我来也</span>
-									</a>
-									<span class="club_tools"><a href=""><span class="club_icon club_download"></span>观看视频</a></span>
-								</div>
-								<div class="span3">
-									<a href=""> <img
-										src="http://www.boguanpaimai.com/Attach/pic/20121221/b_50d3c482d4f0a.jpg"
-										alt=""> <span>我滚动，我快乐，我无趣，我来也</span>
-									</a>
-								</div>
-								<div class="span3">
-									<a href=""> <img
-										src="http://www.boguanpaimai.com/Attach/pic/20121221/b_50d3c482d4f0a.jpg"
-										alt=""> <span>我滚动，我快乐，我无趣，我来也</span>
-									</a>
-								</div>
-							</div>
-
-
-						</div>
-
-
-					</div>
-					<div class="span3 c_right">
-						<div class="c_flash">
-							<embed
-								src="http://player.youku.com/player.php/sid/XMzU5Njg1NTU2/v.swf"
-								allowFullScreen="true" quality="high" width="240" height="200"
-								align="middle" allowScriptAccess="always"
-								type="application/x-shockwave-flash"></embed>
-						</div>
-						<div class="h_20"></div>
-						<div class="c_allnote">更多免费视频</div>
+ 		<div class="index_picnav"></div>
+		<div class="main_pics">
+			<div class="index_piclist" id="zen_picnav_images">
+				<div class="index_piclist_position">
+					<div class="index_piclist_box zen_picnav_list">
 						<ul>
-
-							<li><a href="">11111111111111</a></li>
+	                            <li><a href="/newsinfo/img-img-3827fe42927f4141a8cc3597e7200c26"> <img
+									src="/zzero/file/images_upload/20130512/5cd4b773dbcf4d0d9034afe4f809aa4b.jpg"
+									alt="博观摄影作品"> <span>博观摄影作品</span>
+							</a></li>
+							 
+	                            <li><a href="/newsinfo/img-img-b260335968f9487ca5cfd7ebf2e1b79f"> <img
+									src="/zzero/file/images_upload/20130512/3cce9864e27e4aa49b46a7e559d97117.jpg"
+									alt="南红-博观摄影作品"> <span>南红-博观摄影作品</span>
+							</a></li>
+							 
+	                            <li><a href="/newsinfo/img-img-4eaa618f25aa4cfa9d877a3ab29fe6ef"> <img
+									src="/zzero/file/images_upload/20130512/de9532b51cd24363a8b5d091b80183bf.jpg"
+									alt="第五届“大玩家”拍品赏析(二)"> <span>第五届“大玩家”拍品赏析(二)</span>
+							</a></li>
+							 
+	                            <li><a href="/newsinfo/img-img-7238fba1d66c45269b6a969bf0c3ddaa"> <img
+									src="/zzero/file/images_upload/20130512/34e0f6df11014a99bd41bfd90ee1c6a9.jpg"
+									alt="2012年北京博观秋拍拍品赏析"> <span>2012年北京博观秋拍拍品赏析</span>
+							</a></li>
+							 
+	                            <li><a href="/newsinfo/img-img-853a1f1a627a49ed852affc2b08b21de"> <img
+									src="/zzero/file/images_upload/20130512/32216de089fd4b6d8250e27b4b31dae4.jpg"
+									alt="第二届“玲珑美玉”精品"> <span>第二届“玲珑美玉”精品</span>
+							</a></li>
+							 
+	                            <li><a href="/newsinfo/img-img-59b574ab2d7d4939bb431360bae7a7df"> <img
+									src="/zzero/file/images_upload/20130512/08b519a79bdc4e7d92a775eac6d2ba8f.jpg"
+									alt="博观摄影-保利珠宝"> <span>博观摄影-保利珠宝</span>
+							</a></li>
+							 
+	                            <li><a href="/newsinfo/img-img-96ce26d45ab3462b9455ddfc270ffa0c"> <img
+									src="/zzero/file/images_upload/20130512/1007b3d0874c4808abf20f4cf40b58cb.jpg"
+									alt="北京博观拍卖2012年春季拍卖会精品赏析"> <span>北京博观拍卖2012年春季拍卖会精品赏析</span>
+							</a></li>
+							 
+	                            <li><a href="/newsinfo/img-img-3ad1ed7faf8c488fa7335a5ce769272b"> <img
+									src="/zzero/file/images_upload/20130512/8bab758be30d4a9e91ea3196f4738efb.jpg"
+									alt="第三期“玲珑美玉”拍卖会精品赏析"> <span>第三期“玲珑美玉”拍卖会精品赏析</span>
+							</a></li>
+							 
+	                            <li><a href="/newsinfo/img-img-af366e5093f343d3a2585a401958b180"> <img
+									src="/zzero/file/images_upload/20130515/96659107826d48bb8ee3030be8f6434f.jpg"
+									alt="摄影作品"> <span>摄影作品</span>
+							</a></li>
+							 
+						
+						
+						
+						
+						
 						</ul>
-						<div class="c_more"><a href="">查看全部</a></div>
-
 					</div>
+				</div>
+				<div class="index_piclist_nav zen_picnav_nav">
+					<ul>
+					</ul>
+				</div>
+			</div>
+		</div>
+            
+            
+            
+             <script type="text/javascript">
+                   $(window).load(function() {
+					zen.site.picnav('zen_picnav_images','i');
+				});
+                </script>
 
-					<div class="clearfix"></div>
+            
+            
+            
+        </div>
+
+	<div class="layout_footer">
+
+			<div class="website_center">
+				
+				<div class="c_link">
+					
+	                           <a href="/newsinfo/static-static-303300010001"> 博观简介</a>
+	                           &nbsp;&nbsp;|&nbsp;&nbsp;
+	                           <a href="/newsinfo/static-static-303300010002"> 竞买流程</a>
+	                           &nbsp;&nbsp;|&nbsp;&nbsp;
+	                           <a href="/newsinfo/static-static-303300010003"> 竞买须知</a>
+	                           &nbsp;&nbsp;|&nbsp;&nbsp;
+	                           <a href="/newsinfo/static-static-303300010004"> 委托须知</a>
+	                           &nbsp;&nbsp;|&nbsp;&nbsp;
+	                           <a href="/newsinfo/static-static-303300010005"> 拍卖规则</a>
+	                           &nbsp;&nbsp;|&nbsp;&nbsp;
+	                           <a href="/newsinfo/static-static-303300010006"> 联系方式</a>
+	                           &nbsp;&nbsp;|&nbsp;&nbsp;
+	                           <a href="/newsinfo/static-static-303300010007"> 友情链接</a>
+					
+					
 				</div>
 				<div class="h_40"></div>
-
+				北京市朝阳区三间房东路1号（懋隆文化产业创意园）10栋<br/> 贵宾专线：86-10-51695556/7 <br/>邮箱：pm@boguanpaimai.com
+				<br/><br/>
+				Copyright @2013               北京博观国际拍卖有限公司            版权所有
 			</div>
 
-
-		</div>
-
-
-
 	</div>
-	<div class="layout_footer"></div>
-
 </body>
+
 
 </html>

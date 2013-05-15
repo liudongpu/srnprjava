@@ -49,31 +49,46 @@
                     </script>
 
                 </div>
+                
+                <@m_html_addjs [base_zero+"lib/jquery/jquery.jfade.js"] />
+                
                 <div class="index_banner">
                     <div class="index_banner_item">
-                        <a href="${base_url}newsinfo/notice-list">
-                        <div class="index_banner_1"></div>
+                        <a href="/newsinfo/notice-list">
+                        <img src="${base_zero}themes/website/images/index_banner_1.jpg"/>
                         </a>
                     </div>
                     <div class="index_banner_split"></div>
                     <div class="index_banner_item">
-                          <a href="${base_url}newsinfo/auction-list">
-                        <div class="index_banner_2"></div>
+                          <a href="/newsinfo/auction-list">
+                       <img src="${base_zero}themes/website/images/index_banner_2.jpg"/>
                         </a>
                     </div>
                     <div class="index_banner_split"></div>
                     <div class="index_banner_item">
-                          <a href="${base_url}newsinfo/book-list">
-                        <div class="index_banner_3"></div>
+                          <a href="/newsinfo/book-list">
+                        <img src="${base_zero}themes/website/images/index_banner_3.jpg"/>
                         </a>
                     </div>
                     <div class="index_banner_split"></div>
                     <div class="index_banner_item">
-                         <a href="${base_url}newsinfo/people-list">
-                        <div class="index_banner_4"></div>
+                         <a href="/newsinfo/people-list">
+                        <img src="${base_zero}themes/website/images/index_banner_4.jpg"/>
                         </a>
                     </div>
                 </div>
+                
+                 <script>
+                 $(window).load(function() {
+                 $('.index_banner .index_banner_item').jfade({
+                	 start_opacity: "1",
+                	 high_opacity: "1",
+                	 low_opacity: ".4",
+                	 timing: "500"
+                	 });
+                 });
+
+                 </script>
             </div>
             
             <@m_site_common_piclist />

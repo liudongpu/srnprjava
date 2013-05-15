@@ -126,7 +126,7 @@ public class WebBaseProcess extends BaseClass {
 
 			List<Map<String, Object>> listMaps = dHelper.upList(
 					sbField.toString(),
-					"",
+					"-zid",
 					(mPagePagination.getPageIndex() - 1)
 							* mPagePagination.getPageSize(),
 					 mPagePagination.getPageSize(),

@@ -204,7 +204,7 @@ a.b_button:hover {
 .header_nav_left ul li a {
     color: #455e2e;
     display: inline-block;
-    *display: inline;
+   
     padding: 0px 17px 0px 17px;
     margin: 0px;
     height: 52px;
@@ -303,37 +303,19 @@ a.b_button:hover {
 
 .index_banner_item {
     position: relative;
-    top: 4px;
-    width: 266px;
-    height: 466px;
-    float: left;
-    background-color: #fff;
-}
-
-.index_banner_1, .index_banner_2, .index_banner_3, .index_banner_4 {
-    width: 260px;
-    height: 460px;
-    position: relative;
     top: 3px;
-    left: 5px;
-    background-image: url("../images/website_img.png");
-}
-.index_banner_1 {
-    background-position: 0px 0px;
+    width: 256px;
+    height: 460px;
+    float: left;
+    border:solid 4px #fff;
+     background-image: url("../images/website_repx.png");
+     background-position: 0px -300px;
 }
 
-.index_banner_2 {
-    background-position: -260px 0px;
-}
-.index_banner_3 {
-    background-position: -520px 0px;
-}
-.index_banner_4 {
-    background-position: -780px 0px;
-}
+
 
 .index_banner_split {
-    width: 12px;
+    width: 13px;
     float: left;
     height: 100%;
 }
