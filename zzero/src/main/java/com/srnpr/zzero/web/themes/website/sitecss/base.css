@@ -8,7 +8,7 @@ form, ul, li {
 }
 
 .website_body, .website_body a {
-    color: #656565;
+    color: #656565;font-family:"Microsoft YaHei","微软雅黑","Microsoft JhengHei","华文细黑",STHeiti,MingLiu;
 }
 
 .b_tools {
@@ -204,11 +204,21 @@ a.b_button:hover {
 .header_nav_left ul li a {
     color: #455e2e;
     display: inline-block;
-   
+    
     padding: 0px 17px 0px 17px;
     margin: 0px;
-    height: 52px;
+    height: 50px;
     vertical-align: middle;
+}
+
+.header_nav_left ul li a:hover
+{
+    background-color:#bdc7b4;
+    border-right:solid 1px #4f693b;
+    border-left:solid 1px #4f693b;
+    color: #4f5f41;
+    text-decoration: none;
+    
 }
 
 .header_nav_left ul li a.active {
