@@ -94,7 +94,8 @@ zen
 					} else {
 						zen.site.post('reg', {
 							reg_name : $('#reg_name').val(),
-							reg_pass : $('#reg_pass').val()
+							reg_pass : $('#reg_pass').val(),
+							reg_phone:$('#reg_phone').val(),
 						}, zen.site.reg_success);
 					}
 

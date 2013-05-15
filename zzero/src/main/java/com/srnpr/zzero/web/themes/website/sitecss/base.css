@@ -143,7 +143,7 @@ a.b_button:hover {
     background-position: -300px -100px;
     position: absolute;
     top: 135px;
-    left: 545px;
+    left: 510px;
 }
 
 .header_logo {
@@ -212,7 +212,7 @@ a.b_button:hover {
 }
 
 .header_nav_left ul li a:hover
-{
+{padding: 0px 16px 0px 16px;
     background-color:#bdc7b4;
     border-right:solid 1px #4f693b;
     border-left:solid 1px #4f693b;

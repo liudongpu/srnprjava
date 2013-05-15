@@ -17,6 +17,7 @@
 					</div>
 					<div class="c_left">
 						<span>邮箱：</span><input type="text" id="reg_name" />&nbsp;&nbsp;请输入您常用的邮箱<br/><br/>
+						<span>手机号码：</span><input type="text" id="reg_phone" />&nbsp;&nbsp;请输入您的手机号码<br/><br/>
 						<span>密码：</span><input type="password" id="reg_pass"/>&nbsp;&nbsp;请输入密码<br/><br/>
 						<span>重复密码：</span><input type="password" id="reg_pass2"/>&nbsp;&nbsp;请输入密码
 					</div>

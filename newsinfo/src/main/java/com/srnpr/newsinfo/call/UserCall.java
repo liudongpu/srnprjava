@@ -50,6 +50,26 @@ public class UserCall extends BaseClass {
 				result.error(937301004);
 			}
 		}
+		
+		String sPhoneNUmber="";
+		
+		if(result.getFlag())
+		{
+			if(StringUtils.isNotEmpty(pRequest.upRequestParam("reg_phone")))
+			{
+				sPhoneNUmber=pRequest.upRequestParam("reg_phone");
+				
+				if(!StringUtils.isNumeric(sPhoneNUmber)||sPhoneNUmber.length()!=11)
+				{
+					result.error(937301009);
+				}
+				
+			}
+			
+			
+		}
+		
+		
 
 		if (result.getFlag()) {
 
