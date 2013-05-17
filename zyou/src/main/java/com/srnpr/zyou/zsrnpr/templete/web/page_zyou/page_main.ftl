@@ -43,7 +43,9 @@
 					<li><a href="${base_url}zyou/chart-v_info_people">名家论道</a></li>
 					<li><a href="${base_url}zyou/chart-v_info_images">图片集</a></li>
 					<li><a href="${base_url}zyou/chart-v_info_book">博观书房</a></li>
+					<li class="nav-header">俱乐部管理</li>
 					<li><a href="${base_url}zyou/chart-v_info_video">俱乐部课程</a></li>
+					<li><a href="${base_url}zyou/chart-v_info_notify">俱乐部通知</a></li>
 					<li class="nav-header">拍卖会管理</li>
 					<li><a href="${base_url}zyou/chart-v_info_auction">拍卖会列表</a></li>
 					<li><a href="${base_url}zyou/chart-v_info_special">专场列表</a></li>

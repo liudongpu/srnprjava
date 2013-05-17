@@ -211,13 +211,14 @@ public class WebViewManager extends BaseClass implements IBaseManager,
 	public synchronized static void recheckData(String sViewCode) {
 
 			String sCode = (String) sViewCode;
-			MWebView mView= upView(sCode,416120103);
-			String sTableName = mView
-					.getTableName();
+			
+			String sTableName = DataTableManager.Get("zweb_view").upOneMap("code",sCode).get("table_name").toString();
+			
+			
 			String sSql = "insert into zweb_fields(uid,view_code,column_name,field_name,level_grid,level_add,level_edit,level_book,level_inquire) select replace(uuid(),'-',''),'"
-					+ mView.getCode()
+					+ sCode
 					+ "',column_name,note,100+orderid,100+orderid,100+orderid,100+orderid,100+orderid from zdata_column where table_name={0} and column_name not in(select column_name from zweb_fields where view_code='"
-					+ mView.getCode() + "')";
+					+ sCode + "')";
 			DataTableManager.Get(sTableName).doExec(sSql, sTableName);
 
 		

@@ -41,7 +41,7 @@
 									
 										
 									<div class="c_linkbox">
-									<a href="notice-list">查看全部公告</a>
+									<a href="notify-list">查看全部通知</a>
 									</div>
 								</div>
 
