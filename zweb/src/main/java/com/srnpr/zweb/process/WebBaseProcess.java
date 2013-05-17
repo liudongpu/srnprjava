@@ -47,7 +47,7 @@ public class WebBaseProcess extends BaseClass {
 			dSupport.updateData(mView.getTableName(), pRequest.getReqMap(),
 					"uid");
 
-		} else if (iPageType == 416120106) {
+		} else if (iPageType == 416120104) {
 
 		}
 
@@ -274,6 +274,13 @@ public class WebBaseProcess extends BaseClass {
 							wRequest.upSet(EWebSet.Url_View),
 							mOptions.getUid(),
 							"func_from_page_did=" + wRequest.getDidPageType());
+				}else if (mNewOptions.getDidOptionType() == 415101304) {
+					sParams = FormatHelper.FormatString(
+							WebConst.Get(EWebConst.base_page_url),
+							wRequest.upSet(EWebSet.Url_Path), "func",
+							wRequest.upSet(EWebSet.Url_View),
+							mOptions.getUid(),
+							"func_from_page_did=416120104&uid=[uid]");
 				}
 
 				// 判断如果有特殊标记则特殊处理

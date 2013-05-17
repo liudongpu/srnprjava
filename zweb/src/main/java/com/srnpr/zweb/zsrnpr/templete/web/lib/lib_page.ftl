@@ -26,9 +26,13 @@
       	<#-- 如果操作列  -->
       	<#if (e?length>7)&&(e?substring(0,7)=="@415101")>
       		<#local es=e?split("@")>
-      		<#-- <#if (es[1]=="415101012") > -->
+      		
+      		<#if (es[1]=="415101304")>
+      		${e}
+      			<@m_page_table_delete es[2] es[3] />
+      		<#else> 
       			<@m_page_href es[2] es[3] />
-      		<#--</#if> -->		
+      		</#if> 	
       	<#else>
       	${e}
       	</#if>
@@ -147,7 +151,9 @@ no result
 <#macro m_page_href  p_name  p_href >
 <a  href="${p_href!}" target=“_blank”>${p_name!}</a>
 </#macro>
-
+<#macro m_page_table_delete  p_name  p_func >
+<a  onclick="${p_href!}" >${p_name!}</a>
+</#macro>
 
 <#macro m_page_option  p_name  p_href  p_icon>
 <a class="btn  btn-small" href="${p_href!}" target=“_blank”><i class="${p_icon!}"></i>&nbsp;&nbsp;${p_name!}</a>
@@ -198,7 +204,7 @@ no result
 	<#elseif m_page_autorun_id==415101019>
 		 <@m_page_option_click  p_name=p_info_auto.getName() p_href="zen.page.submit(this,'"+p_info_auto.getParams()?default('')+"')"  p_icon="icon-ok" />
 	<#elseif m_page_autorun_id==415101006>
-		 <@m_page_option_click  p_name=p_info_auto.getName() p_href="zen.page.call('"+base_url+p_info_auto.getParams()?default('')+"')"  p_icon="icon-ok" />
+		 <@m_page_option_click  p_name=p_info_auto.getName() p_href="     "  p_icon="icon-ok" />
 	
 	<#else>
 		<@m_page_option p_name=p_info_auto.getName() p_href=p_info_auto.getParams()?default('')  p_icon="icon-pencil" />
