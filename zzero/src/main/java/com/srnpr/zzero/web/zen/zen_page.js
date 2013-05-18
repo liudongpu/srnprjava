@@ -188,6 +188,15 @@ zen
 						}
 					});
 				},
+				
+				dialog:function(sUrl)
+				{
+					
+					zen.page.model('操作','<iframe src="'+zen.t.baseurl +sUrl+'" frameborder="0" style="width:100%;"/>');
+					
+					
+				},
+				
 
 				init : function() {
 
@@ -282,8 +291,7 @@ zen
 					}
 					if (sUrl) {
 						$('#page_upload_text').html(
-								'<a href="' + sUrl + '" target="_blank">'
-										+ sUrl + '</a>');
+								'<a href="' + sUrl + '" target="_blank">查看</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;');
 					}
 
 				}

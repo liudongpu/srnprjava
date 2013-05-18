@@ -88,6 +88,10 @@ public class PageProcess implements IWebProcess {
 		{
 			mResult=new InfoCall(pRequest).CollectSubmit(upUserInfo());
 		}
+		else if(sView.equals("update_goods"))
+		{
+			mResult=new InfoCall(pRequest).updateGoods();
+		}
 		return mResult;
 
 	}

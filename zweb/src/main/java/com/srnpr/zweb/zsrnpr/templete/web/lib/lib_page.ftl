@@ -204,7 +204,7 @@ no result
 	<#elseif m_page_autorun_id==415101019>
 		 <@m_page_option_click  p_name=p_info_auto.getName() p_href="zen.page.submit(this,'"+p_info_auto.getParams()?default('')+"')"  p_icon="icon-ok" />
 	<#elseif m_page_autorun_id==415101006>
-		 <@m_page_option_click  p_name=p_info_auto.getName() p_href="     "  p_icon="icon-ok" />
+		 <@m_page_option_click  p_name=p_info_auto.getName() p_href=p_info_auto.getParams()?default('')  p_icon="icon-ok" />
 	
 	<#else>
 		<@m_page_option p_name=p_info_auto.getName() p_href=p_info_auto.getParams()?default('')  p_icon="icon-pencil" />

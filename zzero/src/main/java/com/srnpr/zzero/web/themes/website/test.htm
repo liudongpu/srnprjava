@@ -14,6 +14,7 @@
 <script type="text/javascript"
 	src="../../lib/bootstrap/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="../../zen/zen.js"></script>
+<script type="text/javascript" src="../../zen/zen_page.js"></script>
 <script type="text/javascript" src="../../zen/zen_site.js"></script>
 <script type="text/javascript" src="../../lib/jquery/jquery-site.js"></script>
 <script type="text/javascript" src="../../lib/jquery/jquery.jfade.js"></script>
@@ -21,6 +22,10 @@
 	zen.i({
 		baseurl : '/zadmin/'
 	});
+	
+	$(function(){
+	zen.page.model('a','<iframe src="http://www.baidu.com" frameborder="0" style="width:100%;"/>');}
+	)
 </script>
 
 </head>
