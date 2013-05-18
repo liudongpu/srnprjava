@@ -68,8 +68,15 @@ a.b_button:hover {
 }
 
 .b_collect {
-    background-position: -140px -140px;
+    background-position: -160px -140px;
 }
+
+.b_vip
+{
+    background-position: -240px -140px;
+    height:14px;
+}
+
 
 /*圆角专用csss*/
 .b_corner {

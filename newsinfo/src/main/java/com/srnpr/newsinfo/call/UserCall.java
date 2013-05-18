@@ -139,6 +139,7 @@ public class UserCall extends BaseClass {
 
 				mHashMap.put("bgpm_user_cookieid", mUserInfo.get("cookie_id"));
 				mHashMap.put("bgpm_user_name", mUserInfo.get("login_name"));
+				mHashMap.put("bgpm_user_levelid", mUserInfo.get("userlevel_cid"));
 
 				result.setResult(mHashMap);
 

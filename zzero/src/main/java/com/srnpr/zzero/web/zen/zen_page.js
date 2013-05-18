@@ -70,91 +70,78 @@ zen
 				},
 
 				pagination : function() {
-					$(".pagination")
-							.each(
+					$(".pagination").each(
 
-									function(n, el) {
-										var iSize = parseInt($(el).attr(
-												"zen_page_pagination_size"));
-										var iIndex = parseInt($(el).attr(
-												"zen_page_pagination_index"));
-										var iCount = parseInt($(el).attr(
-												"zen_page_pagination_count"));
+					function(n, el) {
+						zen.page.navel(el);
 
-										var iMaxPage = Math
-												.ceil(iCount / iSize);
-										var eUL = $(el).children('ul');
-										if (eUL.children().length > 0)
-											return;
+					}
 
-										var aArr = [ iIndex, iCount, iSize ];
-										aArr[0] = 1;
-										$(eUL)
-												.append(
-														'<li '
-																+ (iIndex == 1 ? ('class="disabled"><a ')
-																		: '><a href="'
-																				+ zen.page
-																						.urlreplace(
-																								4,
-																								aArr
-																										.join('_'))
-																				+ '" ')
-																+ ' >«</a></li>');
+					);
 
-										var aNav = [];
-										var iNavSize = 5;
+				},
 
-										aNav.push(iIndex);
+				navel : function(el) {
 
-										for ( var i = 1; i <= iNavSize; i++) {
-											if (aNav.length < iNavSize) {
-												if (iIndex - i > 0) {
-													aNav.splice(0, 0, iIndex
-															- i);
-												}
-												if (iIndex + i <= iMaxPage) {
-													aNav.push(iIndex + i);
-												}
-											}
+					var iSize = parseInt($(el).attr("zen_page_pagination_size"));
+					var iIndex = parseInt($(el).attr(
+							"zen_page_pagination_index"));
+					var iCount = parseInt($(el).attr(
+							"zen_page_pagination_count"));
 
-										}
+					var iMaxPage = Math.ceil(iCount / iSize);
+					var eUL = $(el).children('ul');
+					if (eUL.children().length > 0)
+						return;
 
-										for ( var i = 0, j = aNav.length; i < j; i++) {
-											aArr[0] = aNav[i];
-											$(eUL)
-													.append(
-															'<li '
-																	+ (aNav[i] == iIndex ? 'class="active"'
-																			: '')
-																	+ ' ><a href="'
-																	+ zen.page
-																			.urlreplace(
-																					4,
-																					aArr
-																							.join('_'))
-																	+ '">'
-																	+ aNav[i]
-																	+ '</a></li>');
-										}
+					var aArr = [ iIndex, iCount, iSize ];
+					aArr[0] = 1;
 
-										aArr[0] = iMaxPage;
-										$(eUL)
-												.append(
-														'<li '
-																+ (iIndex == iMaxPage ? ('class="disabled"><a')
-																		: '><a <a href="'
-																				+ zen.page
-																						.urlreplace(
-																								4,
-																								aArr
-																										.join('_'))
-																				+ '" ')
-																+ ' >»</a></li>');
+					var aHtml = [];
 
-									}
+					aHtml.push('<li '
+							+ (iIndex == 1 ? ('class="disabled"><a ')
+									: '><a href="'
+											+ zen.page.urlreplace(4, aArr
+													.join('_')) + '" ')
+							+ ' >«</a></li>');
 
-							);
+					var aNav = [];
+					var iNavSize = 5;
+
+					aNav.push(iIndex);
+
+					for ( var i = 1; i <= iNavSize; i++) {
+						if (aNav.length < iNavSize) {
+							if (iIndex - i > 0) {
+								aNav.splice(0, 0, iIndex - i);
+							}
+							if (iIndex + i <= iMaxPage) {
+								aNav.push(iIndex + i);
+							}
+						}
+
+					}
+
+					for ( var i = 0, j = aNav.length; i < j; i++) {
+						aArr[0] = aNav[i];
+						aHtml.push('<li '
+								+ (aNav[i] == iIndex ? 'class="active"' : '')
+								+ ' ><a href="'
+								+ zen.page.urlreplace(4, aArr.join('_')) + '">'
+								+ aNav[i] + '</a></li>');
+					}
+
+					aArr[0] = iMaxPage;
+
+					aHtml.push('<li '
+							+ (iIndex == iMaxPage ? ('class="disabled"><a')
+									: '><a <a href="'
+											+ zen.page.urlreplace(4, aArr
+													.join('_')) + '" ')
+							+ ' >»</a></li>');
+
+					$(eUL).append(aHtml.join(''));
 
 				},
 
@@ -182,10 +169,10 @@ zen
 				},
 
 				del : function(sUrl) {
-					
-					zen.page.model('提示消息','确认要删除该内容吗？','',("zen.page.call('"+sUrl+"', zen.page.del_success)"));
-					
-					
+
+					zen.page.model('提示消息', '确认要删除该内容吗？', '', ("zen.page.call('"
+							+ sUrl + "', zen.page.del_success)"));
+
 				},
 				del_success : function(oSu) {
 					zen.page.href();
@@ -220,7 +207,6 @@ zen
 
 				model : function(sTitle, sContent, fHidden, fOk) {
 
-					
 					if (!($('#zen_page_model_box').length > 0)) {
 						var sModel = '<div id="zen_page_model_box" class="modal hide fade"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>'
 								+ '<h3>'
@@ -230,8 +216,7 @@ zen
 								+ sContent
 								+ '</p>'
 								+ '</div>'
-								+ '<div class="modal-footer">'
-								+ '</div></div>';
+								+ '<div class="modal-footer">' + '</div></div>';
 						$(document.body).append(sModel);
 
 					}
@@ -242,20 +227,23 @@ zen
 					var aFuncHtml = [];
 
 					if (fOk != undefined) {
-						aFuncHtml.push('<a  class="btn btn-primary" data-dismiss="modal" onclick="'
-							+ fOk + '" aria-hidden="true">确认</a>');
+						aFuncHtml
+								.push('<a  class="btn btn-primary" data-dismiss="modal" onclick="'
+										+ fOk + '" aria-hidden="true">确认</a>');
 					}
-					
+
 					if (fHidden == undefined) {
 						fHidden = '';
 					}
-					aFuncHtml.push('<a  class="btn" data-dismiss="modal" onclick="'
-							+ fHidden + '" aria-hidden="true">关闭</a>');
-					
-					$('#zen_page_model_box .modal-footer').html(aFuncHtml.join(''));
+					aFuncHtml
+							.push('<a  class="btn" data-dismiss="modal" onclick="'
+									+ fHidden + '" aria-hidden="true">关闭</a>');
+
+					$('#zen_page_model_box .modal-footer').html(
+							aFuncHtml.join(''));
 
 					$('#zen_page_model_box').modal('show');
-					
+
 				},
 
 				inValue : function(sId, oValue) {

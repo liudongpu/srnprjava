@@ -36,7 +36,7 @@ public class InfoCall extends BaseClass {
 
 		if (result.getFlag()) {
 			result.setResult(DataTableManager.Get("user_comment")
-					.upListListOrder("*,(select real_name from user_info where uid=user_comment.user_uid) as username", "-comment_date","info_uid", sUid));
+					.upListListOrder("*,(select real_name from user_info where uid=user_comment.user_uid) as username,(select userlevel_cid from user_info where uid=user_comment.user_uid) as userlevel", "-comment_date","info_uid", sUid));
 			result.setMessage(sUid);
 			
 			
