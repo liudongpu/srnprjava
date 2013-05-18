@@ -59,7 +59,14 @@ zen
 				},
 
 				href : function(sUrl) {
-					top.location.href = zen.t.baseurl + sUrl;
+
+					if (sUrl != undefined) {
+						sUrl = zen.t.baseurl + sUrl;
+					} else {
+						sUrl = location.href;
+					}
+
+					location.href = sUrl;
 				},
 
 				pagination : function() {
@@ -82,7 +89,18 @@ zen
 
 										var aArr = [ iIndex, iCount, iSize ];
 										aArr[0] = 1;
-										$(eUL).append('<li '+ (iIndex == 1 ? ('class="disabled"><a '): '><a href="'+ zen.page.urlreplace(4,aArr.join('_')) + '" ')+ ' >«</a></li>');
+										$(eUL)
+												.append(
+														'<li '
+																+ (iIndex == 1 ? ('class="disabled"><a ')
+																		: '><a href="'
+																				+ zen.page
+																						.urlreplace(
+																								4,
+																								aArr
+																										.join('_'))
+																				+ '" ')
+																+ ' >«</a></li>');
 
 										var aNav = [];
 										var iNavSize = 5;
@@ -92,7 +110,8 @@ zen
 										for ( var i = 1; i <= iNavSize; i++) {
 											if (aNav.length < iNavSize) {
 												if (iIndex - i > 0) {
-													aNav.splice(0, 0, iIndex- i);
+													aNav.splice(0, 0, iIndex
+															- i);
 												}
 												if (iIndex + i <= iMaxPage) {
 													aNav.push(iIndex + i);
@@ -102,13 +121,36 @@ zen
 										}
 
 										for ( var i = 0, j = aNav.length; i < j; i++) {
-											aArr[0]=aNav[i];
-											$(eUL).append('<li '+ ( aNav[i]==iIndex?'class="active"':'') +' ><a href="'+ zen.page.urlreplace(4,aArr.join('_')) + '">'+aNav[i]+'</a></li>');
+											aArr[0] = aNav[i];
+											$(eUL)
+													.append(
+															'<li '
+																	+ (aNav[i] == iIndex ? 'class="active"'
+																			: '')
+																	+ ' ><a href="'
+																	+ zen.page
+																			.urlreplace(
+																					4,
+																					aArr
+																							.join('_'))
+																	+ '">'
+																	+ aNav[i]
+																	+ '</a></li>');
 										}
-										
-										aArr[0] = iMaxPage;
-										$(eUL).append('<li '+ (iIndex == iMaxPage ? ('class="disabled"><a'): '><a <a href="'+ zen.page.urlreplace(4,aArr.join('_')) + '" ')+ ' >»</a></li>');
 
+										aArr[0] = iMaxPage;
+										$(eUL)
+												.append(
+														'<li '
+																+ (iIndex == iMaxPage ? ('class="disabled"><a')
+																		: '><a <a href="'
+																				+ zen.page
+																						.urlreplace(
+																								4,
+																								aArr
+																										.join('_'))
+																				+ '" ')
+																+ ' >»</a></li>');
 
 									}
 
@@ -139,10 +181,24 @@ zen
 
 				},
 
-				call : function(sUrl) {
-					$.getJSON(sUrl, function(obj) {
+				del : function(sUrl) {
+					
+					zen.page.model('提示消息','确认要删除该内容吗？','',("zen.page.call('"+sUrl+"', zen.page.del_success)"));
+					
+					
+				},
+				del_success : function(oSu) {
+					zen.page.href();
 
-						zen.page.okdo(obj.flag);
+				},
+
+				call : function(sUrl, fCallBack) {
+					$.getJSON(sUrl, function(obj) {
+						if (fCallBack != undefined && fCallBack) {
+							fCallBack(obj);
+						} else {
+							zen.page.okdo(obj.flag);
+						}
 					});
 				},
 
@@ -162,9 +218,10 @@ zen
 					$('#zen_page_model_show').modal('show');
 				},
 
-				model : function(sTitle, sContent, fHidden) {
+				model : function(sTitle, sContent, fHidden, fOk) {
 
-					if (!$('#zen_page_model_box').length > 0) {
+					
+					if (!($('#zen_page_model_box').length > 0)) {
 						var sModel = '<div id="zen_page_model_box" class="modal hide fade"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>'
 								+ '<h3>'
 								+ sTitle
@@ -173,7 +230,7 @@ zen
 								+ sContent
 								+ '</p>'
 								+ '</div>'
-								+ '<div class="modal-footer"><a  class="btn" data-dismiss="modal" aria-hidden="true">关闭</a>'
+								+ '<div class="modal-footer">'
 								+ '</div></div>';
 						$(document.body).append(sModel);
 
@@ -181,12 +238,24 @@ zen
 
 					$('#zen_page_model_box h3').html(sTitle);
 					$('#zen_page_model_box p').html(sContent);
-					$('#zen_page_model_box').modal('show');
-					if (fHidden != undefined) {
-						$('#zen_page_model_box').on('hide', function() {
-							fHidden();
-						})
+
+					var aFuncHtml = [];
+
+					if (fOk != undefined) {
+						aFuncHtml.push('<a  class="btn btn-primary" data-dismiss="modal" onclick="'
+							+ fOk + '" aria-hidden="true">确认</a>');
 					}
+					
+					if (fHidden == undefined) {
+						fHidden = '';
+					}
+					aFuncHtml.push('<a  class="btn" data-dismiss="modal" onclick="'
+							+ fHidden + '" aria-hidden="true">关闭</a>');
+					
+					$('#zen_page_model_box .modal-footer').html(aFuncHtml.join(''));
+
+					$('#zen_page_model_box').modal('show');
+					
 				},
 
 				inValue : function(sId, oValue) {

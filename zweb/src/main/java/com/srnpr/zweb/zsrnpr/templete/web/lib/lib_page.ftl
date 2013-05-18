@@ -28,7 +28,7 @@
       		<#local es=e?split("@")>
       		
       		<#if (es[1]=="415101304")>
-      		${e}
+      		
       			<@m_page_table_delete es[2] es[3] />
       		<#else> 
       			<@m_page_href es[2] es[3] />
@@ -152,7 +152,7 @@ no result
 <a  href="${p_href!}" target=“_blank”>${p_name!}</a>
 </#macro>
 <#macro m_page_table_delete  p_name  p_func >
-<a  onclick="${p_href!}" >${p_name!}</a>
+<a  onclick="zen.page.del('${p_func!}')" >${p_name!}</a>
 </#macro>
 
 <#macro m_page_option  p_name  p_href  p_icon>

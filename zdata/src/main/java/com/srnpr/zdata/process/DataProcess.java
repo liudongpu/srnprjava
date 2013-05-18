@@ -277,4 +277,29 @@ public class DataProcess extends BaseClass {
 
 	}
 
+	public int inDelete(Object... oArgs) {
+
+		MHashMap mHashMap = new MHashMap();
+
+		if (oArgs.length == 1) {
+			mHashMap.put("uid", oArgs[0]);
+		} else {
+			mHashMap.inAdd(oArgs);
+		}
+
+		StringBuffer sSqlBuffer = new StringBuffer();
+
+		sSqlBuffer.append(" delete from " + sTableName);
+
+		if (mHashMap.size() > 0) {
+			sSqlBuffer.append(" where "
+					+ FormatHelper.joinWhereStrings(mHashMap.upKeys()) + " ");
+
+		}
+
+		return DataBaseManager.Get(sDataBase).update(sSqlBuffer.toString(),
+				mHashMap);
+
+	}
+
 }

@@ -48,7 +48,11 @@ public class WebBaseProcess extends BaseClass {
 					"uid");
 
 		} else if (iPageType == 416120104) {
-
+			MWebView mView = WebViewManager.upView(sPageView, iPageType);
+			
+			DataSupport dSupport = new DataSupport();
+			dSupport.deleteData(mView.getTableName(), "uid",pRequest.getParamsMap()
+				.get("uid").toString());
 		}
 
 		return mResult;

@@ -28,7 +28,7 @@ public class DataSupport extends BaseClass
 	 * @update 2013-4-16 下午9:57:24
 	 */
 		
-	public String insertData(String sTableName,MHashMap mMap)
+	public int insertData(String sTableName,MHashMap mMap)
 	{
 		
 		
@@ -64,8 +64,8 @@ public class DataSupport extends BaseClass
 		
 		
 		
-		dHelper.inPut(mPut);
-		return "";
+		return dHelper.inPut(mPut);
+		
 
 	}
 	
@@ -82,19 +82,25 @@ public class DataSupport extends BaseClass
 	 * @update 2013-4-20 上午12:51:14
 	 */
 		
-	public String updateData(String sTableName,MHashMap mMap,String sKeys)
+	public int updateData(String sTableName,MHashMap mMap,String sKeys)
 	{
 		
 		TableSupport dHelper=DataTableManager.Get(sTableName);
 		//ConcurrentHashMap<String, MTableColumn> mDataTable=dHelper.TableInfo().getColumnsMap();
 		
-		dHelper.inPost(mMap, sKeys);
-		
-		
-		return "";
+		return dHelper.inPost(mMap, sKeys);
+
 	}
 	
 	
+	
+	public int deleteData(String sTableName,Object... oArgs)
+	{
+		
+		TableSupport dHelper=DataTableManager.Get(sTableName);
+		return dHelper.inDelete(oArgs);
+		
+	}
 	
 	
 	
