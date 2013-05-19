@@ -19,7 +19,6 @@ public class PoiHelper extends BaseClass {
 
 	public List<List<String>> upExcelData(String sFileName) {
 		List<List<String>> lReturns = new ArrayList<List<String>>();
-		ArrayList<String> aList = new ArrayList<String>();
 
 		try {
 
@@ -36,12 +35,27 @@ public class PoiHelper extends BaseClass {
 				BError(969901003, sFileName);
 			}
 			Sheet sheet1 = wb.getSheetAt(0);
+
+			int iLength = sheet1.getRow(0).getPhysicalNumberOfCells();
+
 			for (Row row : sheet1) {
-				for (Cell cell : row) {
-					
-					
+				ArrayList<String> aList = new ArrayList<String>();
+
+				for (int i = 0, j = iLength; i < j; i++) {
+					Cell cell = row.getCell(i);
+					if(cell!=null)
+					{
+					cell.setCellType(1);
+
 					aList.add(cell.getStringCellValue());
+					}
+					else
+					{
+						aList.add("");
+					}
+
 				}
+
 				lReturns.add(aList);
 
 			}

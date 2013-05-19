@@ -5,6 +5,7 @@
 
 
 <input type="hidden" name="speuid" value="${pageinfo.getWebSet()["Url_Option"]}"/>
+<input type="hidden" name="auctionid" value="${pageinfo.getWebSet()["Url_Param"]}"/>
  <div class="control-group">
     <label class="control-label" for="excel">Excel文件</label>
     <div class="controls">
@@ -17,7 +18,8 @@
 
 	<div class="control-group">
     <div class="controls">
-    
+    <a href="${base_zero}themes/website/temp/bgpmgoods.xls" target="_blank">下载模版文件</a>
+    <br/>
       <button type="button" id="bt" class="btn btn-warning" onclick="page_dialoggoods_func_submit()">确认要批量更新</button>
       <label></label>
     </div>

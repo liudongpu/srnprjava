@@ -1,5 +1,6 @@
 package com.srnpr.newsinfo.call;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -13,6 +14,7 @@ import com.srnpr.zcom.helper.FormatHelper;
 import com.srnpr.zcom.model.MHashMap;
 import com.srnpr.zcom.model.MResult;
 import com.srnpr.zdata.manager.DataTableManager;
+import com.srnpr.zdata.support.TableSupport;
 import com.srnpr.zweb.common.WebFunction;
 import com.srnpr.zweb.helper.PoiHelper;
 import com.srnpr.zweb.page.PageRequest;
@@ -99,11 +101,39 @@ public class InfoCall extends BaseClass {
 				+ pRequest.upRequestParam("excel");
 
 		String sUid = pRequest.upRequestParam("speuid");
+		String sAuctionId= pRequest.upRequestParam("auctionid");
 
 		List<List<String>> lData = new PoiHelper().upExcelData(sFileUrl);
 
-		for (int i = 0, j = lData.size(); i < j; i++) {
+		
+		TableSupport ts=DataTableManager.Get("info_good");
+		
+		//Object oTop=ts.upOneMap("special_uid",sUid);
+		
+		ts.inDelete("special_uid",sUid);
+		
+		for (int i = 1, j = lData.size(); i < j; i++) {
 
+			List<String> lCell=lData.get(i);
+			MHashMap mIns=new MHashMap();
+			
+			mIns.put("uid",ComFunction.upUuid());
+			
+			mIns.put("code", lCell.get(0));
+			mIns.put("name", lCell.get(1));
+			mIns.put("special_uid", sUid);
+			mIns.put("auction_uid", sAuctionId);
+			mIns.put("texture", lCell.get(2));
+			mIns.put("size", lCell.get(3));
+			mIns.put("assess_price", lCell.get(4));
+			mIns.put("success_price", lCell.get(5));
+			mIns.put("note", lCell.get(6));
+			
+			
+			ts.inPut(mIns);
+			
+			
+			
 		}
 
 		return result;
