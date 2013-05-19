@@ -95,7 +95,7 @@
 
 
 
-<#macro m_site_common_piclist>
+<#macro m_site_common_piclist cid="30350001">
 
  		<div class="index_picnav"></div>
 		<div class="main_pics">
@@ -103,7 +103,7 @@
 				<div class="index_piclist_position">
 					<div class="index_piclist_box zen_picnav_list">
 						<ul>
-						 	<#list pageexec.upDataOrder("info_images","order_id") as el>
+						 	<#list pageexec.upDataOrder("info_images","order_id","position_cid",cid) as el>
 	                            <li><a href="${base_url}newsinfo/img-img-${el["uid"]}"> <img
 									src="${el["file_url"]}"
 									alt="${el["title"]}"> <span>${el["title"]}</span>

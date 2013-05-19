@@ -145,7 +145,7 @@
 
 		</div>
 
-<@m_site_common_piclist />
+<@m_site_common_piclist cid="30350002" />
 
 	</div>
 
