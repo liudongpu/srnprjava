@@ -23,6 +23,9 @@
       
     </div>
  </div>
+ <div class="clearfix">
+ zip文件中图片名字需与图录号相同
+ </div>
 <div class="clearfix">
 	
 	<input type="checkbox" name="flag" id="flag" value="1"/>删除所有

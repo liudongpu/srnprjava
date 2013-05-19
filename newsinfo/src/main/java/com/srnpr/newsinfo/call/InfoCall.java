@@ -149,6 +149,8 @@ public class InfoCall extends BaseClass {
 			
 			
 			
+			
+			
 			String sPath=CommonConst.Get(EComConst.root_realpath_baseweb)+"/zzero/file/images_zip/";
 			
 			List<String> lFiles= zipHelper.upZipFiles(sFileUrl, sPath+sUid+"/");
