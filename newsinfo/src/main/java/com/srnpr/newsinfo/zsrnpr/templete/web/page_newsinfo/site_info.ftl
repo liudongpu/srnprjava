@@ -42,7 +42,7 @@
 				<#list pageNav.getPageData() as el> 	
 					<div class="info_item">
 						<div class="c_title">
-							<h3><a href="affiche-affiche-${el["uid"]}">${el["title"]}</a></h3>
+							<h3>${el["title"]}</h3>
 						</div>
 						<div class="c_time">发表时间：${el["create_time"]} | 文章出处：博观拍卖</div>
 						<#if (el["file_url"]??)&&(el["file_url"]!="")>
@@ -55,7 +55,7 @@
 							${el["content"]}</div>
 						<div class="c_tips">
 							<span class="b_icon c_share"></span><@m_site_common_share_text title=el["title"] url="content-content-"+el["uid"] /><span
-								class="b_icon c_comment"></span>&nbsp;&nbsp;&nbsp;&nbsp;<@m_site_common_comment_text uid=el["uid"] title=el["title"] url="content-content-"+el["uid"] />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="affiche-affiche-${el["uid"]}">阅读全文〉</a>
+								class="b_icon c_comment"></span>&nbsp;&nbsp;&nbsp;&nbsp;<@m_site_common_comment_text uid=el["uid"] title=el["title"] url="content-content-"+el["uid"] />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 						</div>
 						<div class="c_split"></div>
 					</div>
