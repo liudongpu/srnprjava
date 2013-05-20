@@ -68,17 +68,30 @@ public class DataProcess extends BaseClass {
 
 	public long upCount(Object... oArgs) {
 
+		return upCountAll("", oArgs);
+	}
+
+	public long upCountAll(String sWhere, Object... oArgs) {
+
 		StringBuilder sBuilder = new StringBuilder();
 		sBuilder.append(" select count(1) from " + sTableName);
 		MHashMap mHashMap = new MHashMap();
 		if (oArgs != null && oArgs.length > 0) {
 			mHashMap.inAdd(oArgs);
-			sBuilder.append(" where "
-					+ FormatHelper.joinWhereStrings(mHashMap.upKeys()) + " ");
+
+			if (StringUtils.isNotEmpty(sWhere)) {
+				sBuilder.append(" where "+ sWhere);
+			} else {
+
+				sBuilder.append(" where "
+						+ FormatHelper.joinWhereStrings(mHashMap.upKeys())
+						+ " ");
+			}
 
 		}
 		return DataBaseManager.Get(sDataBase).queryForLong(sBuilder.toString(),
 				mHashMap);
+
 	}
 
 	public List<Map<String, Object>> upListListByQuery(MHashMap mHashMap) {
@@ -134,6 +147,8 @@ public class DataProcess extends BaseClass {
 
 			mHashMap.inAdd(oArgs);
 
+			
+			
 			sBuilder.append(" where "
 					+ (StringUtils.isEmpty(sWhere) ? FormatHelper
 							.joinWhereStrings(mHashMap.upKeys()) : sWhere)

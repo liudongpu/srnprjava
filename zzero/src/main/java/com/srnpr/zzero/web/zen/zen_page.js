@@ -68,6 +68,30 @@ zen
 
 					location.href = sUrl;
 				},
+				
+				query:function(oEl)
+				{
+					var aQuery=[];
+					
+					$('input').each(
+							
+					function(n,el)
+					{
+						if($(el).val()!='')
+							{
+							aQuery.push($(el).attr('name')+'='+$(el).val());
+							
+							}
+						
+					}
+					);
+					
+					location.href=zen.page.urlreplace(5, aQuery
+							.join('&'));
+					
+				},
+				
+				
 
 				pagination : function() {
 					$(".pagination").each(

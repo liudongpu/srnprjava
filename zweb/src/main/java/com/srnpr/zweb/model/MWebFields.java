@@ -18,6 +18,8 @@ public class MWebFields implements Cloneable
 	
 	private String fieldValue="";
 	
+	private int didQueryType=0;
+	
 	
 	public String getSourceCode()
 	{
@@ -115,6 +117,14 @@ public class MWebFields implements Cloneable
 
 	public void setSourceparameter(String sourceparameter) {
 		this.sourceparameter = sourceparameter;
+	}
+
+	public int getDidQueryType() {
+		return didQueryType;
+	}
+
+	public void setDidQueryType(int didQueryType) {
+		this.didQueryType = didQueryType;
 	}
 	
 	

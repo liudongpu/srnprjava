@@ -85,7 +85,7 @@ public class MWebPage
 
 
 
-
+	private Object pageQuery;
 
 
 
@@ -139,6 +139,16 @@ public class MWebPage
 
 
 
+
+
+
+	public Object getPageQuery() {
+		return pageQuery;
+	}
+
+	public void setPageQuery(Object pageQuery) {
+		this.pageQuery = pageQuery;
+	}
 
 
 

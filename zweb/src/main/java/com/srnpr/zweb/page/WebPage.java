@@ -125,6 +125,12 @@ public class WebPage extends BaseClass {
 				if(sParams.length>4)
 				{
 					wRequest.inSet(EWebSet.Url_Pagination, sParams[4]);
+					
+					
+					if(sParams.length>5)
+					{
+						wRequest.inSet(EWebSet.Url_Query, sParams[5]);
+					}
 				}
 				
 			}

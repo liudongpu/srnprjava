@@ -78,7 +78,8 @@ public class WebViewManager extends BaseClass implements IBaseManager,
 							.valueOf(mFieldMap.get("did_field_type"))));
 					mFields.setSourceCode(String.valueOf(mFieldMap
 							.get("source_code")));
-					
+					mFields.setDidQueryType(Integer.valueOf(String
+							.valueOf(mFieldMap.get("did_query_type"))));
 					
 					
 					if(mFieldMap.containsKey("source_code"))

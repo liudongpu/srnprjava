@@ -51,6 +51,12 @@ public enum EWebSet {
 	Url_Pagination,
 	
 	
+	
+	/**
+	  * @fields Url_Query  Url第六参数  格式为a=a&b=b
+	 */
+			
+	Url_Query,
 
 
 	Request_Method

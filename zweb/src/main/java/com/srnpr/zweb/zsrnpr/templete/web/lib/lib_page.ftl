@@ -160,8 +160,8 @@ no result
 </#macro>
 
 
-<#macro m_page_option_click  p_name  p_href  p_icon>
-<a class="btn  btn-small" onclick="${p_href!}" ><i class="${p_icon!}"></i>&nbsp;&nbsp;${p_name!}</a>
+<#macro m_page_option_click  p_name  p_href  p_icon p_class="btn-small">
+<a class="btn  ${p_class}" onclick="${p_href!}" ><i class="${p_icon!}"></i>&nbsp;&nbsp;${p_name!}</a>
 </#macro>
 
 

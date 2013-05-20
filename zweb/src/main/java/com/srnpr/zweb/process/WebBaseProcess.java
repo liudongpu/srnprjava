@@ -9,6 +9,7 @@ import org.apache.commons.lang.StringUtils;
 
 import com.srnpr.zcom.base.BaseClass;
 import com.srnpr.zcom.helper.FormatHelper;
+import com.srnpr.zcom.helper.HashHelper;
 import com.srnpr.zcom.manager.ConfigCacheManager;
 import com.srnpr.zcom.model.MHashMap;
 import com.srnpr.zcom.model.MResult;
@@ -49,10 +50,10 @@ public class WebBaseProcess extends BaseClass {
 
 		} else if (iPageType == 416120104) {
 			MWebView mView = WebViewManager.upView(sPageView, iPageType);
-			
+
 			DataSupport dSupport = new DataSupport();
-			dSupport.deleteData(mView.getTableName(), "uid",pRequest.getParamsMap()
-				.get("uid").toString());
+			dSupport.deleteData(mView.getTableName(), "uid", pRequest
+					.getParamsMap().get("uid").toString());
 		}
 
 		return mResult;
@@ -87,12 +88,18 @@ public class WebBaseProcess extends BaseClass {
 
 			sbField.append("*");
 
+			List<MWebFields> listQuery = new ArrayList<MWebFields>();
+
 			for (MWebFields mFields : listFields) {
 				listTitle.add(mFields.getFieldName());
 
 				if (!StringUtils.isEmpty(mFields.getSourceparameter())) {
 					sbField.append(",(" + mFields.getSourceparameter()
 							+ ") as " + mFields.getColumnName() + "_zzz ");
+				}
+
+				if (mFields.getDidQueryType() > 0) {
+					listQuery.add(mFields.clone());
 				}
 
 			}
@@ -122,19 +129,58 @@ public class WebBaseProcess extends BaseClass {
 
 			}
 
+			MHashMap mWhereMap = wRequest.getParamsMap();
 			
-			if (mPagePagination.getPageCount() < 0) {
-				mPagePagination.setPageCount(dHelper.upCount(wRequest
-						.getParamsMap().upObjs()));
+			String sQuery="";
+
+			if (listQuery.size() > 0) {
+
+				if (StringUtils.isNotEmpty(wRequest.upSet(EWebSet.Url_Query))) {
+					MHashMap mQueryMap = HashHelper
+							.atConvertStringToHash(wRequest
+									.upSet(EWebSet.Url_Query));
+
+					for (MWebFields mFields : listQuery) {
+
+						String sFieldName=mFields.getColumnName();
+						
+						if (mQueryMap.containsKey(sFieldName)) {
+
+							
+							mFields.setFieldValue(mQueryMap.get(sFieldName).toString());
+							
+							if(StringUtils.isNotEmpty(sQuery))
+							{
+								sQuery=sQuery+" and ";
+							}
+							
+							if(mFields.getDidQueryType()==417020012)
+							{
+								mWhereMap.put(sFieldName, "%"+mQueryMap.get(sFieldName)+"%");
+								sQuery=sQuery+" "+sFieldName+" like :"+sFieldName+" ";
+							}
+							
+							
+						}
+
+					}
+				}
+
+				mPageInfo.setPageQuery(listQuery);
+
 			}
 
-			List<Map<String, Object>> listMaps = dHelper.upList(
-					sbField.toString(),
+			if (mPagePagination.getPageCount() < 0) {
+				mPagePagination
+						.setPageCount(dHelper.upCountAll(sQuery,mWhereMap.upObjs()));
+			}
+
+			List<Map<String, Object>> listMaps = dHelper.upListAll(
+					sbField.toString(),sQuery,
 					"-zid",
 					(mPagePagination.getPageIndex() - 1)
 							* mPagePagination.getPageSize(),
-					 mPagePagination.getPageSize(),
-					wRequest.getParamsMap());
+					mPagePagination.getPageSize(), mWhereMap.upObjs());
 
 			// List<Map<String, Object>> listMaps =
 			// dHelper.upListListByQuery(sbField.toString(),
@@ -241,8 +287,6 @@ public class WebBaseProcess extends BaseClass {
 
 		return mPageInfo;
 	}
-	
-	
 
 	public List<MWebOptions> reloadOptions(int iPageType, MWebView mView,
 			PageRequest wRequest, MWebPage mPageInfo, Map<String, Object> mData) {
@@ -278,7 +322,7 @@ public class WebBaseProcess extends BaseClass {
 							wRequest.upSet(EWebSet.Url_View),
 							mOptions.getUid(),
 							"func_from_page_did=" + wRequest.getDidPageType());
-				}else if (mNewOptions.getDidOptionType() == 415101304) {
+				} else if (mNewOptions.getDidOptionType() == 415101304) {
 					sParams = FormatHelper.FormatString(
 							WebConst.Get(EWebConst.base_page_url),
 							wRequest.upSet(EWebSet.Url_Path), "func",
