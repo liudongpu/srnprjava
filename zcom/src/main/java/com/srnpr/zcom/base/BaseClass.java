@@ -71,6 +71,7 @@ public class BaseClass {
 		
 	public void BError(Exception e, int lKey, String... oLogInfo) {
 		BError(lKey, oLogInfo);
+		e.printStackTrace();
 	}
 	
 	
