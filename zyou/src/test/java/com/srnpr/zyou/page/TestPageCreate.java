@@ -9,7 +9,7 @@ import com.srnpr.zyou.TestBase;
 public class TestPageCreate extends TestBase {
 
 
-	@Test
+	
 	public void CreatePage()
 	{ 
 
