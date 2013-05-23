@@ -3,16 +3,19 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>yinfo</title>
-<link type="text/css" href="../css/yinfo.css" rel="stylesheet">
+
 <link type="text/css"
 	href="../../../lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link type="text/css" href="../css/yinfo.css" rel="stylesheet">
 <script type="text/javascript"
 	src="../../../lib/jquery/jquery-last.min.js"></script>
+<script type="text/javascript" src="../../../lib/jquery/jquery.srnpr.js"></script>
 <script type="text/javascript"
 	src="../../../lib/jquery/jquery.corner.js"></script>
 <script type="text/javascript"
 	src="../../../lib/bootstrap/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="../../../zen/zen.js"></script>
+<script type="text/javascript" src="../../../zen/zen_yinfo.js"></script>
 
 
 </head>
@@ -21,26 +24,161 @@
 	<div class="yinfo_header y_center"></div>
 	<div class="yinfo_nav">
 		<div class="y_center">
-			<div class="c_tip"></div>
-			<div class="c_nav">
-				<ul>
-					<li class="c_active"><a href="#">首页</a></li>
-					<li><a href="#">海淀区</a></li>
-					<li><a href="#">东城区</a></li>
-				</ul>
+			<div class="yinfo_nav_box">
+				<div class="c_tip"></div>
+				<div class="c_nav">
+					<ul>
+						<li class="c_active"><a href="#">首页</a></li>
+						<li><a href="#">海淀区</a></li>
+						<li><a href="#">东城区</a></li>
+					</ul>
+				</div>
+
+				<div class="yinfo_nav_query">
+					<div class="c_box"></div>
+					<div class="c_bg">
+						<div class="c_info b_corner">
+							<div class="c_margin">
+								<dl>
+									<dt>
+										<i>1/</i>您希望养老院位于：
+									</dt>
+									<dd>
+										<input name="dept" type="radio" value="1" id="dept_0" /><label
+											for="dept_0">海淀</label> <input name="dept" type="radio"
+											value="1" /><label for="dept_0">海淀</label> <input
+											name="dept" type="radio" value="1" /><label for="dept_0">海淀</label>
+										<input name="dept" type="radio" value="1" /><label
+											for="dept_0">海淀</label> <input name="dept" type="radio"
+											value="1" /><label for="dept_0">海淀</label> <input
+											name="dept" type="radio" value="1" /><label for="dept_0">海淀</label>
+									</dd>
+								</dl>
+								<dl>
+									<dt>
+										<i>1/</i>您希望养老院位于：
+									</dt>
+									<dd>
+										<input name="dept" type="radio" value="1" id="dept_0" /><label
+											for="dept_0">海淀</label> <input name="dept" type="radio"
+											value="1" /><label for="dept_0">海淀</label> <input
+											name="dept" type="radio" value="1" /><label for="dept_0">海淀</label>
+										<input name="dept" type="radio" value="1" /><label
+											for="dept_0">海淀</label> <input name="dept" type="radio"
+											value="1" /><label for="dept_0">海淀</label> <input
+											name="dept" type="radio" value="1" /><label for="dept_0">海淀</label>
+									</dd>
+								</dl>
+								<dl>
+									<dt>
+										<i>1/</i>您希望养老院位于：
+									</dt>
+									<dd>
+										<input name="dept" type="radio" value="1" id="dept_0" /><label
+											for="dept_0">海淀</label> <input name="dept" type="radio"
+											value="1" /><label for="dept_0">海淀</label> <input
+											name="dept" type="radio" value="1" /><label for="dept_0">海淀</label>
+										<input name="dept" type="radio" value="1" /><label
+											for="dept_0">海淀</label> <input name="dept" type="radio"
+											value="1" /><label for="dept_0">海淀</label> <input
+											name="dept" type="radio" value="1" /><label for="dept_0">海淀</label>
+									</dd>
+								</dl>
+							</div>
+
+						</div>
+						<div class="c_bottons">
+							<div class="c_btn b_corner">立即查看</div>
+
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="y_center">
+		<div class="yinfo_main">
+			<div class="index_center">
+				<div class="index_adv">
+					<div id="myCarousel" class="carousel slide">
+						<ol class="carousel-indicators">
+							<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+							<li data-target="#myCarousel" data-slide-to="1" class=""></li>
+							<li data-target="#myCarousel" data-slide-to="2" class=""></li>
+						</ol>
+						<div class="carousel-inner">
+							<div class="item active">
+								<img
+									src="http://www.bootcss.com/assets/img/bootstrap-mdo-sfmoma-01.jpg"
+									alt="">
+								<div class="carousel-caption">
+
+									<p>
+										<a href="">Cras justo odio, dapibus ac facilisis in,
+											egestas eget quam. </a>
+									</p>
+								</div>
+							</div>
+							<div class="item">
+								<img
+									src="http://www.bootcss.com/assets/img/bootstrap-mdo-sfmoma-02.jpg"
+									alt="">
+								<div class="carousel-caption">
+
+									<p>Cras justo odio, dapibus ac facilisis in, egestas eget
+										quam.</p>
+								</div>
+							</div>
+							<div class="item">
+								<img
+									src="http://www.bootcss.com/assets/img/bootstrap-mdo-sfmoma-03.jpg"
+									alt="">
+								<div class="carousel-caption">
+
+									<p>Cras justo odio, dapibus ac facilisis in, egestas eget
+										quam.</p>
+								</div>
+							</div>
+						</div>
+						<a class="left carousel-control b_none" href="#myCarousel"
+							data-slide="prev">‹</a> <a class="right carousel-control b_none"
+							href="#myCarousel" data-slide="next">›</a>
+					</div>
+				</div>
+				<div class="index_todo"></div>
 			</div>
 
+			<div class="clearfix"></div>
+			<div>
+				<h3>本周热门</h3>
+			</div>
+			<div class="index_list">
+
+				<div class="c_item"></div>
+
+				<div class="c_item"></div>
+				<div class="c_item"></div>
+				<div class="c_item"></div>
+			</div>
 		</div>
 	</div>
 
-	<div class="yinfo_main y_center">
-		<div class="yinfo_callbox">
-			<div class="c_box"></div>
-			<div class="c_bg"></div>
-		</div>
-	
-	</div>
+	<script>
+		$('.yinfo_nav_box .c_tip').srnprtip({
+			target : '.yinfo_nav_query'
+		});
 
+		$('.carousel').hover(function() {
+			$(this).find('.carousel-control').show()
+		}, function() {
+			$(this).find('.carousel-control').hide()
+		});
+
+		$('.carousel').carousel({
+			interval : 4000
+		})
+	</script>
 
 </body>
 
