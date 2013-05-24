@@ -158,7 +158,8 @@ ul {
 	left: 0px;
 	height: 370px;
 	width: 290px;
-	
+	z-index:1;
+	display:none;
 }
 
 .yinfo_nav_query .c_box {

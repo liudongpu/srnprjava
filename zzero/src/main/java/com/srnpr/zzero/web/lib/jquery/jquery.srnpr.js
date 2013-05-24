@@ -28,6 +28,7 @@
 			clearTimeout(oTimer);
 			oFunc.flag = false;
 		}, function() {
+			oFunc.flag = true;
 			oFunc.close();
 		});
 
