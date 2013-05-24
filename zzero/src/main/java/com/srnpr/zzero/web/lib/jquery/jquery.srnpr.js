@@ -4,7 +4,7 @@
 		var defaults = {
 			target : '',
 			timer : 10,
-			show : true
+			show : false
 		};
 		var s = $.extend({}, defaults, options || {});
 
