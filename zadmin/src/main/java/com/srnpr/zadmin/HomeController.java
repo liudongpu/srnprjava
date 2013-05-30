@@ -25,6 +25,7 @@ import org.springframework.web.multipart.MultipartHttpServletRequest;
 import org.springframework.web.multipart.commons.CommonsMultipartFile;
 
 import com.srnpr.zcom.model.MHashMap;
+import com.srnpr.zweb.common.WebConst;
 import com.srnpr.zweb.page.UploadFile;
 import com.srnpr.zweb.page.WebPage;
 
@@ -51,6 +52,23 @@ public class HomeController {
 		return index("zyou-login", "login-login", model,request);
 		
 	}
+	
+	
+	
+	@RequestMapping(value = "/y", method = RequestMethod.GET)
+	public String yin(Model model,HttpServletRequest request) {
+		
+		//return index("zyou", "chart-system_table", model,request);
+		
+		
+		//WebConst.PutWebCnfig("zyou", mConfig);
+
+		
+		return index("zyou-y", "chart-system_table", model,request);
+		
+	}
+	
+	
 	
 	
 

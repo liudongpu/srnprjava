@@ -80,7 +80,7 @@ public class DataProcess extends BaseClass {
 			mHashMap.inAdd(oArgs);
 
 			if (StringUtils.isNotEmpty(sWhere)) {
-				sBuilder.append(" where "+ sWhere);
+				sBuilder.append(" where " + sWhere);
 			} else {
 
 				sBuilder.append(" where "
@@ -145,10 +145,14 @@ public class DataProcess extends BaseClass {
 		MHashMap mHashMap = new MHashMap();
 		if (oArgs != null && oArgs.length > 0) {
 
-			mHashMap.inAdd(oArgs);
+			if (oArgs.length == 1) {
+				sWhere=oArgs[0].toString();
 
-			
-			
+			} else {
+
+				mHashMap.inAdd(oArgs);
+			}
+
 			sBuilder.append(" where "
 					+ (StringUtils.isEmpty(sWhere) ? FormatHelper
 							.joinWhereStrings(mHashMap.upKeys()) : sWhere)

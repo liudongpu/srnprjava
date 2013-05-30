@@ -29,6 +29,8 @@
 <#if (pageinfo.getWebSet()["Url_Show"]=="")>
 
 	<#include "page_main.ftl" />
+<#elseif (pageinfo.getWebSet()["Url_Show"]=="y")>
+	<#include "page_y.ftl" />
 <#else>
 	<#include "page_iframe.ftl" />
 
