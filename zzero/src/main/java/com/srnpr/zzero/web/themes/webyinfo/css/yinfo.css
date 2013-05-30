@@ -299,7 +299,7 @@ ul {
 	position: relative;
 }
 
-.index_list .c_text h4 {
+.index_list .c_text h4 a{
 	color: #008a17;
 }
 
