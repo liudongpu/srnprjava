@@ -41,6 +41,16 @@ public class PageProcess extends WebBaseProcess implements IWebProcess
 				WebViewManager.recheckData(sViewNameString);
 
 			}
+			else if(pRequest.getParamsMap().get("func_do").equals("refreshoptions"))
+			{
+				String sViewNameString=String.valueOf(pRequest.getParamsMap().get("view_code"));
+				WebViewManager.recheckOptions(sViewNameString);
+				
+				
+				
+				
+				
+			}
 			else if(pRequest.getParamsMap().get("func_do").equals("refreshcache"))
 			{
 				new InitRoot().Init();
