@@ -60,6 +60,26 @@ public class ComFunction {
 	}
 
 
+	
+	public static void upUrl(String sBaseUrl,String sPath,String sTarget,Object... oParams)
+	{
+		
+		StringBuffer sBuffer=new StringBuffer();
+		
+		sBuffer.append(sPath);
+		if(!StringUtils.isEmpty(sTarget))
+		{
+			sBuffer.append("-"+sTarget);
+		}
+		
+		sBuffer.append("/");
+		
+		sBuffer.append(StringUtils.join(oParams,"-"));
+		
+		
+		
+		
+	}
 
 	
 	

@@ -19,6 +19,13 @@ public class FormatHelper {
 	
 	
 	
+	public static String upSplit(Object... oParams)
+	{
+		return StringUtils.join(oParams,"-");
+	}
+	
+	
+	
 	 /**
 	 * @param sBaseString  
 	 * @param sFromStrings

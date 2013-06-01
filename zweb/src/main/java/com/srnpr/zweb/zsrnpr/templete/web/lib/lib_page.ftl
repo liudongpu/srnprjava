@@ -126,6 +126,30 @@ no result
 </#macro>
 
 
+<#macro m_page_checkboxs  p_info>
+
+<div class="control-group">
+    <label class="control-label" for="${p_info.getColumnName()?default('')}">${p_info.getFieldName()?default('')}</label>
+    <div class="controls">
+    	<#local m_page_select_data=pageexec.upDataFromFieldParams(p_info.getSourceparameter()) >
+    	 <#list m_page_select_data as e_list>
+    	 	<input type="checkbox" id="${p_info.getColumnName()?default('')}_${e_list_index}" name="${p_info.getColumnName()?default('')}" value="${e_list["source_value"]?default('')}" <#if (p_info.getFieldValue()?contains(e_list["source_value"])) >checked="checked" </#if>  />
+    	 	<label for="${p_info.getColumnName()?default('')}_${e_list_index}">${e_list['source_text']?default('')}</label>
+    	 </#list>
+      
+    </div>
+  </div>
+
+
+
+</#macro>
+
+
+
+
+
+
+
 <#macro m_page_editor  p_info>
 
 <@m_html_addjs [pageexec.upConfigValue("zweb.lib_editor_url")] />
@@ -176,6 +200,8 @@ no result
 	<@m_page_input p_info_auto />
 <#elseif m_page_autorun_id==416108119>
 	<@m_page_select p_info_auto />
+	<#elseif m_page_autorun_id==416108103>
+	<@m_page_checkboxs p_info_auto />
 	<#elseif m_page_autorun_id==416108108>
 	<@m_page_hidden p_info_auto />
 	<#elseif m_page_autorun_id==416108120>

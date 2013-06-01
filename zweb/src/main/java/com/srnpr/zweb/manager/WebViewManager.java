@@ -11,6 +11,7 @@ import org.apache.commons.lang.StringUtils;
 import org.omg.CORBA.PUBLIC_MEMBER;
 
 import com.srnpr.zcom.base.BaseClass;
+import com.srnpr.zcom.common.ComFunction;
 import com.srnpr.zcom.helper.FormatHelper;
 import com.srnpr.zcom.helper.HashHelper;
 import com.srnpr.zcom.i.IBaseInit;
@@ -36,24 +37,24 @@ public class WebViewManager extends BaseClass implements IBaseManager,
 
 		TableSupport dOptionsHelper = DataTableManager.Get("zweb_options");
 
-
-		ConcurrentHashMap<String, String> mHashMap=ConfigCacheManager.GetHash("zdata.did_page_type");
-		
+		ConcurrentHashMap<String, String> mHashMap = ConfigCacheManager
+				.GetHash("zdata.did_page_type");
 
 		Enumeration<String> eViewEnumeration = mHashMap.keys();
 
 		while (eViewEnumeration.hasMoreElements()) {
 			String sViewKey = (String) eViewEnumeration.nextElement();
 
-			String sOrderString="";
-			int iDidPageType=Integer.valueOf(String.valueOf(mHashMap.get(sViewKey)));
-			
-			if(iDidPageType==416120101||iDidPageType==416120102||iDidPageType==416120105||iDidPageType==416120107||iDidPageType==416120109)
-			{
-				sOrderString="level_"+sViewKey;
+			String sOrderString = "";
+			int iDidPageType = Integer.valueOf(String.valueOf(mHashMap
+					.get(sViewKey)));
+
+			if (iDidPageType == 416120101 || iDidPageType == 416120102
+					|| iDidPageType == 416120105 || iDidPageType == 416120107
+					|| iDidPageType == 416120109) {
+				sOrderString = "level_" + sViewKey;
 			}
-			
-			
+
 			for (Map<String, Object> mViewMap : dViewHelper.upList()) {
 				MWebView mWebView = new MWebView();
 
@@ -61,11 +62,10 @@ public class WebViewManager extends BaseClass implements IBaseManager,
 				mWebView.setTableName((String) mViewMap.get("table_name"));
 				mWebView.setViewName((String) mViewMap.get("view_name"));
 
-				
-				List<MWebFields> listFields=new ArrayList<MWebFields>();
-				
-				for (Map<String, Object> mFieldMap : dFieldsHelper
-						.upList("*", sOrderString, -1, 0, "view_code", mWebView.getCode())) {
+				List<MWebFields> listFields = new ArrayList<MWebFields>();
+
+				for (Map<String, Object> mFieldMap : dFieldsHelper.upList("*",
+						sOrderString, -1, 0, "view_code", mWebView.getCode())) {
 
 					MWebFields mFields = new MWebFields();
 
@@ -80,90 +80,70 @@ public class WebViewManager extends BaseClass implements IBaseManager,
 							.get("source_code")));
 					mFields.setDidQueryType(Integer.valueOf(String
 							.valueOf(mFieldMap.get("did_query_type"))));
-					
-					
-					if(mFieldMap.containsKey("source_code"))
-					{
-						MWebSource mSource=WebSourceManager.upWebSource(String.valueOf( mFieldMap.get("source_code")));
-						if(mSource!=null)
-						{
-							
-								if(iDidPageType==416120101||iDidPageType==416120105)
-								{
-									
-									
 
-									
-										String sSqlString="select "+mSource.getFieldText()+" as source_text,"+mSource.getFieldValed()+" as source_value  from "+mSource.getFrom()+" where "+mSource.getWhereEdit();
-									
-									
-									sSqlString=FormatHelper.FormatString(sSqlString, String.valueOf(mFieldMap.get("source_parameter")));
+					if (mFieldMap.containsKey("source_code")) {
+						MWebSource mSource = WebSourceManager
+								.upWebSource(String.valueOf(mFieldMap
+										.get("source_code")));
+						if (mSource != null) {
 
-									
-									mFields.setSourceparameter(sSqlString);
-									
-								}
-								else
-								{
-									String sSqlString="select "+mSource.getFieldText()+" from "+mSource.getFrom()+" where "+mSource.getWhereBook();
-									
-									
-									sSqlString=FormatHelper.FormatString(sSqlString, mFields.getColumnName());
-									
+							if (iDidPageType == 416120101
+									|| iDidPageType == 416120105) {
 
-									mFields.setSourceparameter(sSqlString);
-									
+								String sSqlString = "select "
+										+ mSource.getFieldText()
+										+ " as source_text,"
+										+ mSource.getFieldValed()
+										+ " as source_value  from "
+										+ mSource.getFrom() + " where "
+										+ mSource.getWhereEdit();
 
-								}
-							
-							
-							
+								sSqlString = FormatHelper.FormatString(
+										sSqlString, String.valueOf(mFieldMap
+												.get("source_parameter")));
+
+								mFields.setSourceparameter(sSqlString);
+
+							} else {
+								String sSqlString = "select "
+										+ mSource.getFieldText() + " from "
+										+ mSource.getFrom() + " where "
+										+ mSource.getWhereBook();
+
+								sSqlString = FormatHelper.FormatString(
+										sSqlString, mFields.getColumnName());
+
+								mFields.setSourceparameter(sSqlString);
+
+							}
+
 						}
 
 					}
-					
-					
-					
-					
-					
-					
-					if(!StringUtils.isEmpty(sOrderString)&&mFieldMap.containsKey(sOrderString))
-					{
-						mFields.setLevel(Integer.valueOf(String.valueOf( mFieldMap.get(sOrderString))));
-					}
-					else {
+
+					if (!StringUtils.isEmpty(sOrderString)
+							&& mFieldMap.containsKey(sOrderString)) {
+						mFields.setLevel(Integer.valueOf(String
+								.valueOf(mFieldMap.get(sOrderString))));
+					} else {
 						mFields.setLevel(0);
 					}
-					
-					
-					
-					
-					
-					
-					
-					//if(mFields.getFieldName().length()>3)
-					//if(!mFields.getFieldName().equals("zid"))
-					//listFields.add(mFields);
-					
-					
-					
-					if(mFields.getLevel()>0 )
-					{
+
+					// if(mFields.getFieldName().length()>3)
+					// if(!mFields.getFieldName().equals("zid"))
+					// listFields.add(mFields);
+
+					if (mFields.getLevel() > 0) {
 						listFields.add(mFields);
 					}
 				}
-				
-				
-				  WebFieldsComparator comp=new WebFieldsComparator();
-				  //调用排序方法
-				  Collections.sort(listFields,comp);
-				  
-				
-				
-				
-				
+
+				WebFieldsComparator comp = new WebFieldsComparator();
+				// 调用排序方法
+				Collections.sort(listFields, comp);
+
 				mWebView.setFields(listFields);
-				
+
 				for (Map<String, Object> mOptionView : dOptionsHelper
 						.upListListByQuery("view_code", mWebView.getCode())) {
 
@@ -178,8 +158,8 @@ public class WebViewManager extends BaseClass implements IBaseManager,
 					mWebView.getOptions().add(mOptions);
 				}
 
-				ConstStatic.CONST_WEBVIEW_HASH
-						.put(mWebView.getCode()+":"+iDidPageType, mWebView);
+				ConstStatic.CONST_WEBVIEW_HASH.put(mWebView.getCode() + ":"
+						+ iDidPageType, mWebView);
 
 			}
 		}
@@ -192,11 +172,10 @@ public class WebViewManager extends BaseClass implements IBaseManager,
 
 		while (eKey.hasMoreElements()) {
 			String sCode = (String) eKey.nextElement();
-			
-			MWebView mView= ConstStatic.CONST_WEBVIEW_HASH.get(sCode);
 
-			String sTableName = mView
-					.getTableName();
+			MWebView mView = ConstStatic.CONST_WEBVIEW_HASH.get(sCode);
+
+			String sTableName = mView.getTableName();
 
 			String sSql = "insert into zweb_fields(uid,view_code,column_name,field_name,level_grid,level_add,level_edit,level_book,level_inquire) select replace(uuid(),'-',''),'"
 					+ mView.getCode()
@@ -208,27 +187,64 @@ public class WebViewManager extends BaseClass implements IBaseManager,
 		}
 
 	}
-	
+
 	public synchronized static void recheckData(String sViewCode) {
 
-			String sCode = (String) sViewCode;
-			
-			String sTableName = DataTableManager.Get("zweb_view").upOneMap("code",sCode).get("table_name").toString();
-			
-			
-			String sSql = "insert into zweb_fields(uid,view_code,column_name,field_name,level_grid,level_add,level_edit,level_book,level_inquire) select replace(uuid(),'-',''),'"
-					+ sCode
-					+ "',column_name,note,100+orderid,100+orderid,100+orderid,100+orderid,100+orderid from zdata_column where table_name={0} and column_name not in(select column_name from zweb_fields where view_code='"
-					+ sCode + "')";
-			DataTableManager.Get(sTableName).doExec(sSql, sTableName);
+		String sCode = (String) sViewCode;
 
-		
+		String sTableName = DataTableManager.Get("zweb_view")
+				.upOneMap("code", sCode).get("table_name").toString();
+
+		String sSql = "insert into zweb_fields(uid,view_code,column_name,field_name,level_grid,level_add,level_edit,level_book,level_inquire) select replace(uuid(),'-',''),'"
+				+ sCode
+				+ "',column_name,note,100+orderid,100+orderid,100+orderid,100+orderid,100+orderid from zdata_column where table_name={0} and column_name not in(select column_name from zweb_fields where view_code='"
+				+ sCode + "')";
+		DataTableManager.Get(sTableName).doExec(sSql, sTableName);
 
 	}
+
+	public synchronized static void recheckOptions(String sViewCode) {
+
+		
+		String sCode = (String) sViewCode;
+		
+		
+		inOption(sCode,"添加","416120103","415101001");
+		inOption(sCode,"修改","416120107","415101305");
+		inOption(sCode,"提交","416120101","415101019");
+		inOption(sCode,"提交","416120105","415101019");
+
+		
+	}
 	
-	
-	
-	
+	private static void inOption(String sCode,String sName,String sDidPt,String sDidOt)
+	{
+		String sTableName = DataTableManager.Get("zweb_view")
+				.upOneMap("code", sCode).get("table_name").toString();
+		
+		MHashMap mHashMap=new MHashMap();
+		
+		mHashMap.put("view_code", sCode);
+		mHashMap.put("name", sName);
+		mHashMap.put("did_page_type", sDidPt);
+		mHashMap.put("did_option_type", sDidOt);
+		
+		
+		
+		long lCout=DataTableManager.Get("zweb_options").upCount(mHashMap.upObjs());
+		
+		
+		if(lCout==0)
+		{
+			mHashMap.put("uid", ComFunction.upUuid());
+			
+			DataTableManager.Get("zweb_options").inPut(mHashMap);
+			
+		}
+		
+		
+		
+	}
 	
 	
 	
@@ -236,10 +252,8 @@ public class WebViewManager extends BaseClass implements IBaseManager,
 
 	public static MWebView upView(String sKey, int iPageType) {
 
-		return ConstStatic.CONST_WEBVIEW_HASH.get(sKey+":"+iPageType);
+		return ConstStatic.CONST_WEBVIEW_HASH.get(sKey + ":" + iPageType);
 	}
-
-	
 
 	public boolean Refresh() {
 

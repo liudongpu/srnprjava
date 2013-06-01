@@ -64,7 +64,7 @@ public class HomeController {
 		//WebConst.PutWebCnfig("zyou", mConfig);
 
 		
-		return index("zyou-y", "chart-system_table", model,request);
+		return index("zyou-y", "login-ylogin", model,request);
 		
 	}
 	
@@ -82,7 +82,11 @@ public class HomeController {
 		Enumeration<String> eKey = request.getParameterNames();
 		while (eKey.hasMoreElements()) {
 			String string = eKey.nextElement();
-			cMap.put(string, request.getParameter(string));
+			cMap.put(string, StringUtils.join(request.getParameterValues(string),","));
+			
+			
+			
+			
 		}
 		
 		

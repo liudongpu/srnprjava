@@ -10,7 +10,7 @@ zen
 					}
 
 					zen.r("zen.page.submit.beforesubmit");
-
+					$(aForm).ajaxForm();
 					$(aForm).ajaxSubmit(function(data) {
 						var obj = $.evalJSON(data);
 						if (obj.run) {
