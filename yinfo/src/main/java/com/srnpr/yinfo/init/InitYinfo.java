@@ -19,6 +19,9 @@ public class InitYinfo extends BaseInit implements IBaseInit {
 
 			ConfigCacheManager cManager = new ConfigCacheManager();
 
+			for (String s : cManager.GetStrings("zweb.lib_bootstrap_css")) {
+				mConfig.getSrcCss().add(s);
+			}
 			String sAdminTheamsPath = BConfig("yinfo.yinfo_css_config");
 
 			HashHelper hashHelper = new HashHelper();
@@ -28,12 +31,10 @@ public class InitYinfo extends BaseInit implements IBaseInit {
 
 			for (String s : hashHelper.upStringFromCurrentHash(mTheamsHash
 					.getChild().get("site_css"))) {
-				mConfig.getSrcCss().add(BConfig("zweb.url_themes_site") + s);
+				mConfig.getSrcCss().add(BConfig("yinfo.url_themes_site") + s);
 			}
 
-			for (String s : cManager.GetStrings("zweb.lib_bootstrap_css")) {
-				mConfig.getSrcCss().add(s);
-			}
+			
 
 			for (String s : cManager.GetStrings("zweb.lib_jquery_js",
 					"zyou.lib_jquery_pluging_js", "zweb.lib_bootstrap_js",

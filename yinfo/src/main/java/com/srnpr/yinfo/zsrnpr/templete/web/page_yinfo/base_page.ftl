@@ -19,7 +19,8 @@
 	<@m_html_addcss pageconfig.getSrcCss() />
 	<@m_html_addjs pageconfig.getSrcJs() />
 	<@m_html_addjs [base_zero+"zen/zen_yinfo.js"] />
-	
+	<@m_html_addjs [base_zero+"lib/jquery/jquery.corner.js"] />
+	<@m_html_addjs [base_zero+"lib/jquery/jquery.srnpr.js"] />
 
 	<@m_html_addscript "zen.i({baseurl:'"+base_url+"'});" />
 

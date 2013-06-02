@@ -1,4 +1,4 @@
-body {
+body,.yinfo_body {
 	background-image: url("../images/yinfo_bg.png");
 	font-size: 12px;
 	font-family: "Microsoft YaHei", "微软雅黑", "Microsoft JhengHei", "华文细黑",
