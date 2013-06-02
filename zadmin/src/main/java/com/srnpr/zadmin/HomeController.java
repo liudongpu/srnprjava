@@ -55,7 +55,7 @@ public class HomeController {
 	
 	
 	
-	@RequestMapping(value = "/y", method = RequestMethod.GET)
+	@RequestMapping(value = "/ym", method = RequestMethod.GET)
 	public String yin(Model model,HttpServletRequest request) {
 		
 		//return index("zyou", "chart-system_table", model,request);
@@ -68,7 +68,11 @@ public class HomeController {
 		
 	}
 	
-	
+	@RequestMapping(value = "/y", method = RequestMethod.GET)
+	public String defy(Model model,HttpServletRequest request) {
+		
+		return index("yinfo", "main-main", model,request);
+	}
 	
 	
 

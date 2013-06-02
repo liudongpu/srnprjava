@@ -202,8 +202,11 @@ public class WebBaseProcess extends BaseClass {
 						if (mFields.getDidFieldType() == 416108121) {
 							// sText="<a href=\"\" target=\"\"></a>";
 
+							if(StringUtils.isNotEmpty(sText))
+							{
 							sText = FormatHelper.FormatString(
 									BConfig("zweb.replace_list_url"), sText);
+							}
 						}
 
 						listDataList.add(sText);
