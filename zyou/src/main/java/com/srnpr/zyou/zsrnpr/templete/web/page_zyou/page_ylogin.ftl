@@ -49,6 +49,6 @@
 		
     </div> <!-- /container -->
 
-<script>location.href="zyou-y/chart-system_table"; </script>
+<script>location.href="zyou-y/chart-v_y_info"; </script>
 
 

@@ -60,59 +60,61 @@
 			</div>
 			<div class="index_list">
 				<div class="c_box">
-					<div class="c_item c_first">
-						<div class="c_img">
-							<a href=""><img src="http://new.lao800.com/up/20120918113740_75777.jpg" /></a>
-						</div>
-						<div class="c_text">
-							<h4><a href="">北京养老呀un</a></h4>
-							<div class="c_in">
-								<div class="c_left">保障：</div>
-								<div class="c_right">
-									<div class="yinfo_keep">
-										<ul>
-											<li class="c_0 c_a"></li>
-											<li class="c_1 c_a"></li>
-											<li class="c_2 c_a"></li>
-											<li class="c_3 c_a"></li>
-											<li class="c_4 c_a"></li>
-											<li class="c_5 c_a"></li>
-										</ul>
+				
+					<#list pageexec.upDataOrder("y_info","-zid") as el>
+					
+						<div class="c_item <#if (el_index%3==0)>c_first</#if>">
+							<div class="c_img">
+								<a href="yinfo/home-home-${el["uid"]}" target="_blank"><img src="${el["main_img"]}" /></a>
+							</div>
+							<div class="c_text">
+								<h4><a href="yinfo/home-home-${el["uid"]}" target="_blank">${el["name"]}</a></h4>
+								<div class="c_in">
+									<div class="c_left">保障：</div>
+									<div class="c_right">
+										<div class="yinfo_keep">
+											<ul>
+												<li class="c_0 c_a"></li>
+												<li class="c_1 c_a"></li>
+												<li class="c_2 c_a"></li>
+												<li class="c_3 c_a"></li>
+												<li class="c_4 c_a"></li>
+												<li class="c_5 c_a"></li>
+											</ul>
+										</div>
 									</div>
 								</div>
-							</div>
-							<div class="c_in">
-								<div class="c_left">评价：</div>
-								<div class="c_right">
-									<div class="yinfo_star">
-										<div class="c_line" style="width: 70%;"></div>
+								<div class="c_in">
+									<div class="c_left">评价：</div>
+									<div class="c_right">
+										<div class="yinfo_star">
+											<div class="c_line" style="width: 70%;"></div>
+										</div>
+										<div class="c_tips">好评率：10%</div>
 									</div>
-									<div class="c_tips">好评率：10%</div>
+								</div>
+								<div class="c_in">
+									<div class="c_left">地区：</div>
+									<div class="c_right">北京 昌平区 回龙观</div>
+								</div>
+								<div class="c_in">
+									<div class="c_left">床位：</div>
+									<div class="c_right">${el["q_bednumber"]}</div>
+								</div>
+								<div class="clearfix"></div>
+								<div class="c_buttons">
+									<a href="yinfo/home-home-${el["uid"]}" target="_blank" class="btn btn-success">去看看</a>
 								</div>
 							</div>
-							<div class="c_in">
-								<div class="c_left">地区：</div>
-								<div class="c_right">北京 昌平区 回龙观</div>
-							</div>
-							<div class="c_in">
-								<div class="c_left">床位：</div>
-								<div class="c_right">200</div>
-							</div>
-							<div class="clearfix"></div>
-							<div class="c_buttons">
-								<a class="btn btn-success">去看看</a>
-							</div>
+	
 						</div>
-
-					</div>
-					<div class="c_item"></div>
-					<div class="c_item"></div>
-					<div class="c_item c_first"></div>
-					<div class="c_item"></div>
-					<div class="c_item"></div>
-					<div class="c_item c_first"></div>
-					<div class="c_item"></div>
-					<div class="c_item"></div>
+					
+					
+					
+					
+					</#list>
+				
+					
 				</div>
 			</div>
 		</div>

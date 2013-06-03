@@ -92,6 +92,41 @@
 
 </#macro>
 
+
+<#macro m_site_common_oldhead title="" >
+<title>${title}</title> 
+<meta name="keywords" content="银杏林" />
+<meta name="description" content="${title}-银杏林" />
+</head>
+<body class="yinfo_body">
+	<div class="yold_header y_center"></div>
+	<div class="yold_headadv ">
+		<div class="y_center">
+			<img
+				src="http://image.daoxila.com/opx/db6cc95103789500a9b93a3f1ed7d8ed.jpg" />
+		</div>
+
+	</div>
+	<div class="yold_nav">
+		<div class="y_center">
+			<div class="yold_nav_box">
+
+				<ul>
+					<li><a class="c_active" href="">首页</a></li>
+					<li><a href="">养老院简介</a></li>
+					<li><a href="">收费标准</a></li>
+					<li><a href="">入住须知</a></li>
+					<li><a href="">服务指南</a></li>
+					<li><a href="">优惠信息</a></li>
+					<li><a href="">联系方式</a></li>
+					<li><a href="">机构位置</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</#macro>
+
+
 <#macro m_site_common_footer>
 
 	<div class="yinfo_footer">
