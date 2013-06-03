@@ -279,7 +279,7 @@ CREATE TABLE `info_notice` (
 
 LOCK TABLES `info_notice` WRITE;
 /*!40000 ALTER TABLE `info_notice` DISABLE KEYS */;
-INSERT INTO `info_notice` VALUES (3,'2198548cc01042999e6a9eabee11326d','北京国际珠宝交易中心商铺租赁权拍卖公告',' 拍卖标的：北京国际珠宝交易中心所属19间商铺及八组柜台的一年期租赁权','<p><strong>北京国际珠宝交易中心商铺租赁权拍卖公告</strong>&nbsp;</p>\n\n<p>&nbsp;</p>\n\n<p style=\"margin-left:18pt\">&nbsp;拍卖标的：北京国际珠宝交易中心所属19间商铺及八组柜台的一年期租赁权</p>\n\n<p style=\"margin-left:18pt\">预展时间：2013年4月25日-27日9:00-17:00</p>\n\n<p style=\"margin-left:18pt\">预展地点：北京国际珠宝交易中心三楼会议室（朝阳区惠新东街2号）</p>\n\n<p style=\"margin-left:18pt\">&nbsp;拍卖时间：2013年4月28日14:00</p>\n\n<p style=\"margin-left:18pt\">拍卖地点：北京国际会议中心二层第二会议厅A（朝阳区北辰东路8号）</p>\n\n<p style=\"margin-left:18pt\">&nbsp;咨询电话：010-84646745</p>\n','1',''),(4,'37703a49b3e14a218d263c70e34dffce','第三期\"玲珑美玉\"--当代玉雕石雕精品无底价拍卖会','第三期\"玲珑美玉\"--当代玉雕石雕精品无底价拍卖会','<p>预展时间：2013年4月17日-20日10:00-19:00<br />\n拍卖时间：2013年4月21日13:00<br />\n预展地点：北京天安天地珠宝艺术汇（北京西城区西绒线胡同28号天安国汇大厦）</p>\n','1','');
+INSERT INTO `info_notice` VALUES (3,'2198548cc01042999e6a9eabee11326d','北京国际交易中心商铺租赁权拍卖公告',' 拍卖标的：北京国际珠宝交易中心所属19间商铺及八组柜台的一年期租赁权','<p><strong>北京国际珠宝交易中心商铺租赁权拍卖公告</strong>&nbsp;</p>\n\n<p>&nbsp;</p>\n\n<p style=\"margin-left:18pt\">&nbsp;拍卖标的：北京国际珠宝交易中心所属19间商铺及八组柜台的一年期租赁权</p>\n\n<p style=\"margin-left:18pt\">预展时间：2013年4月25日-27日9:00-17:00</p>\n\n<p style=\"margin-left:18pt\">预展地点：北京国际珠宝交易中心三楼会议室（朝阳区惠新东街2号）</p>\n\n<p style=\"margin-left:18pt\">&nbsp;拍卖时间：2013年4月28日14:00</p>\n\n<p style=\"margin-left:18pt\">拍卖地点：北京国际会议中心二层第二会议厅A（朝阳区北辰东路8号）</p>\n\n<p style=\"margin-left:18pt\">&nbsp;咨询电话：010-84646745</p>\n','1',''),(4,'37703a49b3e14a218d263c70e34dffce','第三期\"玲珑美玉\"--当代玉雕石雕精品无底价拍卖会','第三期\"玲珑美玉\"--当代玉雕石雕精品无底价拍卖会','<p>预展时间：2013年4月17日-20日10:00-19:00<br />\n拍卖时间：2013年4月21日13:00<br />\n预展地点：北京天安天地珠宝艺术汇（北京西城区西绒线胡同28号天安国汇大厦）</p>\n','1','');
 /*!40000 ALTER TABLE `info_notice` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -455,7 +455,7 @@ CREATE TABLE `info_video` (
 
 LOCK TABLES `info_video` WRITE;
 /*!40000 ALTER TABLE `info_video` DISABLE KEYS */;
-INSERT INTO `info_video` VALUES (1,'4ea645ec2156467eb1c2a452d7f6ba3e','如何鉴别真假和田玉','/zzero/file/images_upload/20130512/d4a73bdeb37c4b35bc34546874de562c.jpg',30340001,'11','','/zzero/file/images_upload/20130512/566ca70bbe8f4ba7a82e0b8ef938ed5a.ppt'),(2,'018efcc70ca0429ca6f8b65c22aca6c8','珠宝玉石鉴定方法精品课程','/zzero/file/images_upload/20130512/1560e8a4e1534e94bee8986d7b09848b.jpg',30340001,'22','','/zzero/file/images_upload/20130512/c928a7369cfd4537bb33b595a831a6ae.ppt'),(3,'759f7246d54a4629996b048bda5ac6e8','玉器雕刻加工-玉雕大师杨老师','/zzero/file/images_upload/20130512/8c8a55640f9b459fa67eb817528217b2.jpg',30340002,'','http://v.youku.com/v_show/id_XMzU5ODQyODIw.html',''),(4,'4aaa28ef39d5462aafe4e8c0dfca32af','《中国古代玉器》课程参考资料','/zzero/file/images_upload/20130512/e2a5bb164d794e418baaf0e679474cb0.jpg',30340002,'','http://v.youku.com/v_show/id_XMzU5ODQyODIw.html',''),(5,'f490cc7f69934bdfbe279b6b39c26102','养玉学习俱乐部网络','/zzero/file/images_upload/20130512/78619b918c544f87af157d95e45dee73.jpg',30340002,'','http://v.youku.com/v_show/id_XMzU5ODQyODIw.html',''),(6,'fa630c6b96aa47c981d6d25316ee944e','玉器抛光简介','/zzero/file/images_upload/20130512/191c63a93e21499ea6c893f27c264989.jpg',30340002,'','http://v.youku.com/v_show/id_XMzU5ODQyODIw.html','');
+INSERT INTO `info_video` VALUES (1,'4ea645ec2156467eb1c2a452d7f6ba3e','如何鉴真假和田玉','/zzero/file/images_upload/20130512/d4a73bdeb37c4b35bc34546874de562c.jpg',30340001,'11','','/zzero/file/images_upload/20130512/566ca70bbe8f4ba7a82e0b8ef938ed5a.ppt'),(2,'018efcc70ca0429ca6f8b65c22aca6c8','珠宝玉石鉴定方法精品课程','/zzero/file/images_upload/20130512/1560e8a4e1534e94bee8986d7b09848b.jpg',30340001,'22','','/zzero/file/images_upload/20130512/c928a7369cfd4537bb33b595a831a6ae.ppt'),(3,'759f7246d54a4629996b048bda5ac6e8','玉器雕刻加工-玉雕大师杨老师','/zzero/file/images_upload/20130512/8c8a55640f9b459fa67eb817528217b2.jpg',30340002,'','http://v.youku.com/v_show/id_XMzU5ODQyODIw.html',''),(4,'4aaa28ef39d5462aafe4e8c0dfca32af','《中国古代玉器》课程参考资料','/zzero/file/images_upload/20130512/e2a5bb164d794e418baaf0e679474cb0.jpg',30340002,'','http://v.youku.com/v_show/id_XMzU5ODQyODIw.html',''),(5,'f490cc7f69934bdfbe279b6b39c26102','养玉学习俱乐部网络','/zzero/file/images_upload/20130512/78619b918c544f87af157d95e45dee73.jpg',30340002,'','http://v.youku.com/v_show/id_XMzU5ODQyODIw.html',''),(6,'fa630c6b96aa47c981d6d25316ee944e','玉器抛光简介','/zzero/file/images_upload/20130512/191c63a93e21499ea6c893f27c264989.jpg',30340002,'','http://v.youku.com/v_show/id_XMzU5ODQyODIw.html','');
 /*!40000 ALTER TABLE `info_video` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -919,7 +919,7 @@ CREATE TABLE `zdata_server` (
 
 LOCK TABLES `zdata_server` WRITE;
 /*!40000 ALTER TABLE `zdata_server` DISABLE KEYS */;
-INSERT INTO `zdata_server` VALUES (1,'87421629a90111e2bb7900241d8adc62','ndata','com.mysql.jdbc.Driver','jdbc:mysql://127.0.0.1:3306/zdata?useUnicode=true&characterEncoding=utf8','root','','0');
+INSERT INTO `zdata_server` VALUES (1,'87421629a90111e2bb7900241d8adc62','zdata','com.mysql.jdbc.Driver','jdbc:mysql://127.0.0.1:3306/ndata?useUnicode=true&characterEncoding=utf8','root','','0');
 /*!40000 ALTER TABLE `zdata_server` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1147,4 +1147,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2013-06-04  0:14:41
+-- Dump completed on 2013-06-04  0:28:41

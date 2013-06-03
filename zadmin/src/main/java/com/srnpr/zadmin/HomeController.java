@@ -41,7 +41,9 @@ public class HomeController {
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home(Model model,HttpServletRequest request) {
 		
-		return index("newsinfo", "main-main", model,request);
+		//return index("newsinfo", "main-main", model,request);
+		
+		return index("yinfo", "main-main", model,request);
 	}
 	
 	@RequestMapping(value = "/manage", method = RequestMethod.GET)
@@ -52,7 +54,6 @@ public class HomeController {
 		return index("zyou-login", "login-login", model,request);
 		
 	}
-	
 	
 	
 	@RequestMapping(value = "/ym", method = RequestMethod.GET)
