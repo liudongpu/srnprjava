@@ -127,10 +127,8 @@
 
 
 	<script>
-		$('.yinfo_nav_box .c_tip').srnprtip({
-			target : '.yinfo_nav_query'
-			,show:true
-
+		$(document).ready(function() {
+			zen.yinfo.headernav(true);
 		});
 
 		$('.carousel').hover(function() {

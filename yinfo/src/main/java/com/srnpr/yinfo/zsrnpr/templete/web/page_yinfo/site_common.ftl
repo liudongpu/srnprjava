@@ -19,7 +19,27 @@
 					<ul>
 						<li class="c_active"><a href="#">首页</a></li>
 						<li><a href="#">海淀区</a></li>
+						<li><a href="#">朝阳区</a></li>
+						<li><a href="#">西城区</a></li>
 						<li><a href="#">东城区</a></li>
+						<li><a href="#">昌平区</a></li>
+						<li><a href="#">石景山区</a></li>
+						<li id="yinfo_nav_box_address_other"><a href="#">其他区县</a></li>
+					</ul>
+				</div>
+
+				<div class="yinfo_nav_address">
+					<ul>
+						<li><a href="#">·通州区</a></li>
+						<li><a href="#">·顺义区</a></li>
+						<li><a href="#">·丰台区</a></li>
+						<li><a href="#">·门头沟区</a></li>
+						<li><a href="#">·房山区</a></li>
+						<li><a href="#">·大兴区</a></li>
+						<li><a href="#">·怀柔区</a></li>
+						<li><a href="#">·平谷区</a></li>
+						<li><a href="#">·密云县</a></li>
+						<li><a href="#">·延庆县</a></li>
 					</ul>
 				</div>
 
@@ -33,44 +53,59 @@
 										<i>1/</i>您希望养老院位于：
 									</dt>
 									<dd>
-										<input name="dept" type="radio" value="1" id="dept_0" /><label
-											for="dept_0">海淀</label> <input name="dept" type="radio"
-											value="1" /><label for="dept_0">海淀</label> <input
-											name="dept" type="radio" value="1" /><label for="dept_0">海淀</label>
-										<input name="dept" type="radio" value="1" /><label
-											for="dept_0">海淀</label> <input name="dept" type="radio"
-											value="1" /><label for="dept_0">海淀</label> <input
-											name="dept" type="radio" value="1" /><label for="dept_0">海淀</label>
+										<input name="query_dept" type="radio" value=""
+											id="query_dept_0" checked="checked" /><label
+											for="query_dept_0">不限</label> <input name="query_dept"
+											type="radio" value="110108" id="query_dept_110108" /><label
+											for="query_dept_110108">海淀</label> <input name="query_dept"
+											type="radio" value="110105" id="query_dept_110105" /><label
+											for="query_dept_110105">朝阳</label> <input name="query_dept"
+											type="radio" value="110102" id="query_dept_110102" /><label
+											for="query_dept_110102">西城</label> <br />
+										<input name="query_dept" type="radio" value="110101"
+											id="query_dept_110101" /><label for="query_dept_110101">东城</label>
+										<input name="query_dept" type="radio" value="110114"
+											id="query_dept_110114" /><label for="query_dept_110114">昌平</label>
+											<input name="query_dept" type="radio" value="110107"
+											id="query_dept_110107" /><label for="query_dept_110107">石景山</label>
 									</dd>
 								</dl>
 								<dl>
 									<dt>
-										<i>1/</i>您希望养老院位于：
+										<i>2/</i>您希望价格范围是：
 									</dt>
 									<dd>
-										<input name="dept" type="radio" value="1" id="dept_0" /><label
-											for="dept_0">海淀</label> <input name="dept" type="radio"
-											value="1" /><label for="dept_0">海淀</label> <input
-											name="dept" type="radio" value="1" /><label for="dept_0">海淀</label>
-										<input name="dept" type="radio" value="1" /><label
-											for="dept_0">海淀</label> <input name="dept" type="radio"
-											value="1" /><label for="dept_0">海淀</label> <input
-											name="dept" type="radio" value="1" /><label for="dept_0">海淀</label>
+										<input name="query_price" id="query_price_0" type="radio"
+											value="" /><label for="query_price_0">不限</label> <input
+											name="query_price" type="radio" id="query_price_32510001"
+											value="32510001" /><label for="query_price_32510001">2000元以下</label>
+										<input name="query_price" type="radio" value="32510002"
+											id="query_price_32510002" /><label
+											for="query_price_32510002">2000-3000</label> <input
+											name="query_price" type="radio" value="32510003"
+											id="query_price_32510003" /><label
+											for="query_price_32510003">3000-4000</label> <input
+											name="query_price" type="radio" value="32510004"
+											id="query_price_32510004" /><label
+											for="query_price_32510004">4000元以上</label>
 									</dd>
 								</dl>
 								<dl>
 									<dt>
-										<i>1/</i>您希望养老院位于：
+										<i>3/</i>老人的情况是：
 									</dt>
 									<dd>
-										<input name="dept" type="radio" value="1" id="dept_0" /><label
-											for="dept_0">海淀</label> <input name="dept" type="radio"
-											value="1" /><label for="dept_0">海淀</label> <input
-											name="dept" type="radio" value="1" /><label for="dept_0">海淀</label>
-										<input name="dept" type="radio" value="1" /><label
-											for="dept_0">海淀</label> <input name="dept" type="radio"
-											value="1" /><label for="dept_0">海淀</label> <input
-											name="dept" type="radio" value="1" /><label for="dept_0">海淀</label>
+										<input name="query_type" type="radio" id="query_type_32510001"
+											value="32510001" /><label for="query_type_32510001">自理老人</label>
+										<input name="query_type" type="radio" value="32510002"
+											id="query_type_32510002" /><label for="query_type_32510002">半护理老人</label><br />
+										<input name="query_type" type="radio" value="32510003"
+											id="query_type_32510003" /><label for="query_type_32510003">全护理老人</label>
+										<input name="query_type" type="radio" value="32510004"
+											id="query_type_32510004" /><label for="query_type_32510004">特护</label>
+										<input name="query_type" id="query_type_0" type="radio"
+											value="" /><label for="query_type_0">不限</label>
+
 									</dd>
 								</dl>
 							</div>

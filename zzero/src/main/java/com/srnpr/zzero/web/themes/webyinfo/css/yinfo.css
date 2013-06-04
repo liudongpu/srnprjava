@@ -9,6 +9,12 @@ label,input,button,select,textarea {
 	font-size: 13px;
 }
 
+input,select,button {
+	vertical-align: middle;
+	margin: 0;
+padding: 0;
+}
+
 ul {
 	margin: 0px;
 	padding: 0px;
@@ -145,22 +151,56 @@ ul {
 .yinfo_nav .c_nav ul li a {
 	font-size: 14px;
 	line-height: 45px;
-	padding: 12px 20px 12px 20px;
+	padding: 14px 21px 16px 20px;
 	color: #fff;
 }
 
 .yinfo_nav .c_nav ul li.c_active a {
 	background-color: #36770e;
-	border-left: solid 1px #296113;
 	border-right: solid 1px #296113;
 }
 
 .yinfo_nav .c_nav ul li a:hover {
 	background-color: #36770e;
+	border-right: solid 1px #296113;
 }
 
 .yinfo_main {
 	position: relative;
+}
+
+.yinfo_nav_address {
+	position: absolute;
+	background-color: #36770e; top : 45px;
+	right: 0px;
+	height: 200px;
+	width: 200px;
+	z-index: 99;
+	display: none;
+	top: 45px;
+}
+
+.yinfo_nav_address ul {
+	margin-top: 20px;
+}
+
+.yinfo_nav_address ul li {
+	width: 39%;
+	margin-left: 10%;
+	float: left;
+	list-style-type: none;
+	height: 30px;
+	line-height: 30px;
+	border-bottom: dashed 1px #5e923e;
+}
+
+.yinfo_nav_address ul li a {
+	color: #c0da6d;
+}
+
+.yinfo_nav_address ul li a:hover {
+	text-decoration: none;
+	color: #fff;
 }
 
 .yinfo_nav_query {
@@ -386,7 +426,7 @@ ul {
 	width: 100%;
 	height: 45px;
 	line-height: 45px;
-	font-size:15px;
+	font-size: 15px;
 }
 
 .yold_nav ul li .c_active,.yold_nav ul li a:hover {
@@ -408,7 +448,7 @@ ul {
 	border: solid 1px #99cb7a;
 	background-color: #fff;
 	min-height: 100px;
-	position:relative;
+	position: relative;
 }
 
 .yold_info_left {
@@ -421,76 +461,71 @@ ul {
 	width: 440px;
 	height: 310px;
 }
-.yold_info_right
-{
-	float:left;
-	margin-left:25px;
-	width:460px;
-	
-}
-.yold_info_right .c_top 
-{
-	height:120px;
-}
-.yold_info_right .c_top .c_left
-{
-	float:left;
-	padding-top:50px;
-}
-.yold_info_right .c_top .c_right
-{
-	float:right;
-	width:50px;
+
+.yold_info_right {
+	float: left;
+	margin-left: 25px;
+	width: 460px;
 }
 
-.yold_info_right .c_icontip
-{
+.yold_info_right .c_top {
+	height: 120px;
+}
+
+.yold_info_right .c_top .c_left {
+	float: left;
+	padding-top: 50px;
+}
+
+.yold_info_right .c_top .c_right {
+	float: right;
+	width: 50px;
+}
+
+.yold_info_right .c_icontip {
 	background-image: url("../images/yinfo_png.png");
 	background-position: 0px -310px;
-	width:50px;
-	height:100px;
+	width: 50px;
+	height: 100px;
 }
-.yold_info_right .c_item
-{
-	height:30px;
-	line-height:30px;
-	color:#000;
-	font-size:13px;
+
+.yold_info_right .c_item {
+	height: 30px;
+	line-height: 30px;
+	color: #000;
+	font-size: 13px;
 }
-.yold_info_right .c_item span
-{
-	display:inline-block;
-	width:70px;
-	font-weight:bold;
-	
+
+.yold_info_right .c_item span {
+	display: inline-block;
+	width: 70px;
+	font-weight: bold;
 }
-.yold_show
-{
-	position:relative;
-	min-height:300px;
-	background-color:#fff;
+
+.yold_show {
+	position: relative;
+	min-height: 300px;
+	background-color: #fff;
 }
-.yold_show .c_item
-{
-	position:relative;
-	padding:80px 10px 10px 10px;
+
+.yold_show .c_item {
+	position: relative;
+	padding: 80px 10px 10px 10px;
 }
-.yold_show .c_title
-{
-	position:absolute;
-	width:100px;
-	height:40px;
-	left:-10px;
-	top:20px;
+
+.yold_show .c_title {
+	position: absolute;
+	width: 100px;
+	height: 40px;
+	left: -10px;
+	top: 20px;
 	background-image: url("../images/yinfo_png.png");
 	background-position: -50px -310px;
-	color:#fff;
-	line-height:30px;
-	text-indent:15px;
-	font-size:15px;
+	color: #fff;
+	line-height: 30px;
+	text-indent: 15px;
+	font-size: 15px;
 }
-
-
 
 .yinfo_footer {
 	clear: both;
