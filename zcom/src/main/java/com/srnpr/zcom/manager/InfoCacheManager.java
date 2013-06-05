@@ -22,7 +22,16 @@ IBaseInit {
 
 	public static String Get(String sKey)
 	{
-		return ConstStatic.CONST_COM_MESSAGE.get(sKey);
+		String sValueString=ConstStatic.CONST_COM_MESSAGE.get(sKey);
+		if(!StringUtils.isNotEmpty(sValueString))
+		{
+			new InfoCacheManager().Init();
+			sValueString=ConstStatic.CONST_COM_MESSAGE.get(sKey);
+		}
+		
+		
+		
+		return sValueString;
 	}
 
 	public static String Get(int lKey, String... sKeys)
