@@ -4,6 +4,7 @@
 <#assign pageconfig=WebPage["PageConfig"]>
 <#assign pageinfo=WebPage["PageInfo"]>
 <#assign pageexec=WebPage["PageExec"]>
+<#assign pagemethod=WebPage["PageMethod"]>
 
 <#assign base_url=pageexec.upConfigValue("zweb.url_home")>
 <#assign base_zero=pageexec.upConfigValue("zweb.url_home")+"zzero/web/">

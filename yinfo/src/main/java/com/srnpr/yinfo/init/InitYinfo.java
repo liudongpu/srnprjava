@@ -1,5 +1,6 @@
 package com.srnpr.yinfo.init;
 
+import com.srnpr.yinfo.page.PageMethod;
 import com.srnpr.yinfo.page.PageProcess;
 import com.srnpr.zcom.base.BaseInit;
 import com.srnpr.zcom.helper.HashHelper;
@@ -43,6 +44,9 @@ public class InitYinfo extends BaseInit implements IBaseInit {
 			}
 
 			mConfig.setBaseInclude(BConfig("yinfo.base_include"));
+			
+			
+			mConfig.setPageMethod(new PageMethod());
 
 			WebConst.PutWebCnfig("yinfo", mConfig);
 

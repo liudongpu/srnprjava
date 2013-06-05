@@ -66,6 +66,7 @@ public class WebPage extends BaseClass {
 		hWebPage.put("PageInfo", mPageInfo);
 		hWebPage.put("PageExec", pageExec);
 		
+		hWebPage.put("PageMethod", mConfig.getPageMethod());
 		
 		hPageTemp.put("WebPage", hWebPage);
 		return upConvert(mConfig.getBaseInclude(), hPageTemp);

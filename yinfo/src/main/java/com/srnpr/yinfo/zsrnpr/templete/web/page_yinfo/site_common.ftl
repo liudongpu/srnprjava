@@ -162,6 +162,69 @@
 </#macro>
 
 
+<#macro m_site_common_site_nav pageNav>
+
+<#if (pageNav.getPageIndex()>1)>
+<a href="?z_page_index=${pageNav.getPageIndex()-1}&z_page_count=${pageNav.getPageCount()}&z_page_size=${pageNav.getPageSize()}">上一页</a>
+</#if>
+
+<span>第${pageNav.getPageIndex()}页</span>
+
+<#if (pageNav.getPageIndex()*pageNav.getPageSize()<pageNav.getPageCount())>
+<a href="?z_page_index=${pageNav.getPageIndex()+1}&z_page_count=${pageNav.getPageCount()}&z_page_size=${pageNav.getPageSize()}">下一页</a>
+</#if>
+
+</#macro>
+
+
+<#macro m_site_common_site_list el fromtype>
+
+							<div class="c_img">
+								<a href="yinfo/home-home-${el["uid"]}" target="_blank"><img src="${el["main_img"]}" /></a>
+							</div>
+							<div class="yinfo_item_box">
+								<h4><a href="yinfo/home-home-${el["uid"]}" target="_blank">${el["name"]}</a></h4>
+								<div class="c_in">
+									<div class="c_left">保障：</div>
+									<div class="c_right">
+										<div class="yinfo_keep">
+											<ul>
+												<li class="c_0 c_a"></li>
+												<li class="c_1 c_a"></li>
+												<li class="c_2 c_a"></li>
+												<li class="c_3 c_a"></li>
+												<li class="c_4 c_a"></li>
+												<li class="c_5 c_a"></li>
+											</ul>
+										</div>
+									</div>
+								</div>
+								<div class="c_in">
+									<div class="c_left">评价：</div>
+									<div class="c_right">
+										<div class="yinfo_star">
+											<div class="c_line" style="width: 70%;"></div>
+										</div>
+										<div class="c_tips">好评率：10%</div>
+									</div>
+								</div>
+								<div class="c_in">
+									<div class="c_left">地区：</div>
+									<div class="c_right">北京 昌平区 回龙观</div>
+								</div>
+								<div class="c_in">
+									<div class="c_left">床位：</div>
+									<div class="c_right">${el["q_bednumber"]}</div>
+								</div>
+								<div class="clearfix"></div>
+								<div class="c_buttons">
+									<#if (fromtype=="list")><input type="checkbox"/><label>加入对比</label></#if>
+									<a href="yinfo/home-home-${el["uid"]}" target="_blank" class="btn btn-success">去看看</a>
+								</div>
+							</div>
+
+</#macro>
+
 <#macro m_site_common_footer>
 
 	<div class="yinfo_footer">

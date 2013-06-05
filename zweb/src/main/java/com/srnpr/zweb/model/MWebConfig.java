@@ -3,6 +3,8 @@ package com.srnpr.zweb.model;
 import java.util.ArrayList;
 import java.util.concurrent.ConcurrentHashMap;
 
+import com.srnpr.zweb.i.IPageMethod;
+
 public class MWebConfig {
 
 
@@ -55,7 +57,22 @@ public class MWebConfig {
 	}
 
 
+	
 
+
+	public IPageMethod getPageMethod() {
+		return pageMethod;
+	}
+
+	public void setPageMethod(IPageMethod pageMethod) {
+		this.pageMethod = pageMethod;
+	}
+
+
+
+
+
+	private IPageMethod pageMethod;
 
 
 
