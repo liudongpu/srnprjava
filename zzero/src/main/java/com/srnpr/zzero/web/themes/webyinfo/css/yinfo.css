@@ -579,9 +579,13 @@ ul {
 .yinfo_list_query .c_item
 {
     border-bottom:solid 1px #dbdbdb;
-    height:40px;
+    min-height:40px;
     line-height:40px;
+    clear:both;
 }
+
+
+
 .yinfo_list_query .c_order
 {height:40px;
     line-height:40px;

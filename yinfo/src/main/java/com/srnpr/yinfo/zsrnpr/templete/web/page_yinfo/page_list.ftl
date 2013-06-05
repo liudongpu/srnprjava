@@ -11,7 +11,12 @@
 			<div class="yinfo_list_query">
 
 				<div class="c_item">
-					<span>所在区域：</span> <a href="" class="c_active">不限</a><a href="">北京</a>
+					<span>所在区域：</span> <a href="" class="c_active">不限</a>
+					
+					<@m_page_list_query title="不限" source="area_11" now=0/>
+					
+					
+					
 				</div>
 				<div class="c_item">
 					<span>老人情况：</span> <a href="" class="c_active">不限</a><a href="">北京</a>
@@ -75,3 +80,14 @@
 
 
 <@m_site_common_footer />
+
+<#macro m_page_list_query  title="不限" source="area_11" now=0 >
+	<#assign maps=pagemethod.upClassByFather(source) >
+	<#list maps?keys as key>
+	
+	<a href="${key}">${maps[key]}</a>
+	</#list>
+
+
+</#macro>
+
