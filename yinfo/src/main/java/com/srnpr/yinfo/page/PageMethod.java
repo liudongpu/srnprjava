@@ -16,6 +16,7 @@ import com.srnpr.zcom.base.BaseClass;
 import com.srnpr.zcom.model.MHashMap;
 import com.srnpr.zdata.manager.DataTableManager;
 import com.srnpr.zweb.i.IPageMethod;
+import com.srnpr.zweb.model.MPageNav;
 import com.srnpr.zweb.page.PageExec;
 
 public class PageMethod extends BaseClass implements IPageMethod {
@@ -57,16 +58,62 @@ public class PageMethod extends BaseClass implements IPageMethod {
 		return mReturnHashMap;
 
 	}
-
-	public String upListLink(String sUrl, String sTitle, String sSource,
-			int iNow) {
-
+	
+	
+	
+	
+	public MPageNav upListPage(String sUrl)
+	{
+		
+		
+		PageExec pExec=new PageExec();
+		
+		
+		MHashMap mHashMap=new MHashMap();
+		
+		String[] sUrlStrings = upUrlList(sUrl);
+		
+		String[] sKeysStrings=new String[]{"area","money_cid","peopletype_cid"};
+		
+		ArrayList<String> aWhere=new ArrayList<String>();
+		
+		for(int i=0,j=sKeysStrings.length;i<j;i++)
+		{
+			if(StringUtils.isNotEmpty(sUrlStrings[i])&&!sUrlStrings[i].trim().equals("0"))
+			{
+				aWhere.add(sKeysStrings[i]+" like :"+sKeysStrings[i]+" ");
+				
+				mHashMap.put(sKeysStrings[i], "%"+sUrlStrings[i].trim()+"%");
+				
+			}
+		}
+		
+		
+		
+		return pExec.upPageNavQuery("y_info","",StringUtils.join( aWhere," and "),"-zid",mHashMap.upObjs());
+		
+		
+		
+	}
+	
+	private String[] upUrlList(String sUrl)
+	{
 		int iNowSize = StringUtils.countMatches(sUrl, "_");
 		for (int i = 0; i < 4 - iNowSize; i++) {
 			sUrl = sUrl + "_0";
 		}
 
 		String[] sUrlStrings = sUrl.split("_");
+		return sUrlStrings;
+	}
+	
+	
+	
+
+	public String upListLink(String sUrl, String sTitle, String sSource,
+			int iNow) {
+
+		String[] sUrlStrings = upUrlList(sUrl);
 
 		String sNnowKey = sUrlStrings[iNow];
 

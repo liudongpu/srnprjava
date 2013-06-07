@@ -43,7 +43,7 @@
 
 			<div>
 			
-				<#assign  pageSearchNav=pageexec.upPageNav("y_info","","-zid")  >
+				<#assign  pageSearchNav=pagemethod.upListPage(pageinfo.getWebSet()["Url_View"]?default(""))  >
 				
 
 				<div class="yinfo_list_left">

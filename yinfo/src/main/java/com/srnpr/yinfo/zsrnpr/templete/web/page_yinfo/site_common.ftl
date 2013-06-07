@@ -17,29 +17,29 @@
 				<div class="c_tip"></div>
 				<div class="c_nav">
 					<ul>
-						<li class="c_active"><a href="#">首页</a></li>
-						<li><a href="#">海淀区</a></li>
-						<li><a href="#">朝阳区</a></li>
-						<li><a href="#">西城区</a></li>
-						<li><a href="#">东城区</a></li>
-						<li><a href="#">昌平区</a></li>
-						<li><a href="#">石景山区</a></li>
+						<li class="c_active"><a href="${base_url}">首页</a></li>
+						<li><a href="${base_url}yinfo/list-110108_0_0_0">海淀区</a></li>
+						<li><a href="${base_url}yinfo/list-110105_0_0_0">朝阳区</a></li>
+						<li><a href="${base_url}yinfo/list-110102_0_0_0">西城区</a></li>
+						<li><a href="${base_url}yinfo/list-110101_0_0_0">东城区</a></li>
+						<li><a href="${base_url}yinfo/list-110114_0_0_0">昌平区</a></li>
+						<li><a href="${base_url}yinfo/list-110107_0_0_0">石景山区</a></li>
 						<li id="yinfo_nav_box_address_other"><a href="#">其他区县</a></li>
 					</ul>
 				</div>
 
 				<div class="yinfo_nav_address">
 					<ul>
-						<li><a href="#">·通州区</a></li>
-						<li><a href="#">·顺义区</a></li>
-						<li><a href="#">·丰台区</a></li>
-						<li><a href="#">·门头沟区</a></li>
-						<li><a href="#">·房山区</a></li>
-						<li><a href="#">·大兴区</a></li>
-						<li><a href="#">·怀柔区</a></li>
-						<li><a href="#">·平谷区</a></li>
-						<li><a href="#">·密云县</a></li>
-						<li><a href="#">·延庆县</a></li>
+						<li><a href="${base_url}yinfo/list-110112_0_0_0">·通州区</a></li>
+						<li><a href="${base_url}yinfo/list-110113_0_0_0">·顺义区</a></li>
+						<li><a href="${base_url}yinfo/list-110106_0_0_0">·丰台区</a></li>
+						<li><a href="${base_url}yinfo/list-110109_0_0_0">·门头沟区</a></li>
+						<li><a href="${base_url}yinfo/list-110111_0_0_0">·房山区</a></li>
+						<li><a href="${base_url}yinfo/list-110115_0_0_0">·大兴区</a></li>
+						<li><a href="${base_url}yinfo/list-110116_0_0_0">·怀柔区</a></li>
+						<li><a href="${base_url}yinfo/list-110117_0_0_0">·平谷区</a></li>
+						<li><a href="${base_url}yinfo/list-110228_0_0_0">·密云县</a></li>
+						<li><a href="${base_url}yinfo/list-110229_0_0_0">·延庆县</a></li>
 					</ul>
 				</div>
 
