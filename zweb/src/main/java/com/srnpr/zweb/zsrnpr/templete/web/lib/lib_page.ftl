@@ -205,8 +205,7 @@ no result
 	<#elseif m_page_autorun_id==416108108>
 	<@m_page_hidden p_info_auto />
 	<#elseif m_page_autorun_id==416108120>
-	<@m_page_textarea p_info_auto />
-	<#elseif m_page_autorun_id==416108105>
+	<@m_page_textarea p_info_auto /> 
 	<@m_page_editor p_info_auto />
 	<#elseif m_page_autorun_id==416108104>
 	<@m_page_date p_info_auto />

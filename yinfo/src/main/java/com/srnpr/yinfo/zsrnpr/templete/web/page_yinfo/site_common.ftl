@@ -180,10 +180,10 @@
 <#macro m_site_common_site_list el fromtype>
 
 							<div class="c_img">
-								<a href="yinfo/home-home-${el["uid"]}" target="_blank"><img src="${el["main_img"]}" /></a>
+								<a href="${base_url}yinfo/home-home-${el["uid"]}" target="_blank"><img src="${el["main_img"]}" /></a>
 							</div>
 							<div class="yinfo_item_box">
-								<h4><a href="yinfo/home-home-${el["uid"]}" target="_blank">${el["name"]}</a></h4>
+								<h4><a href="${base_url}yinfo/home-home-${el["uid"]}" target="_blank">${el["name"]}</a></h4>
 								<div class="c_in">
 									<div class="c_left">保障：</div>
 									<div class="c_right">
@@ -219,7 +219,7 @@
 								<div class="clearfix"></div>
 								<div class="c_buttons">
 									<#if (fromtype=="list")><input type="checkbox"/><label>加入对比</label></#if>
-									<a href="yinfo/home-home-${el["uid"]}" target="_blank" class="btn btn-success">去看看</a>
+									<a href="${base_url}yinfo/home-home-${el["uid"]}" target="_blank" class="btn btn-success">去看看</a>
 								</div>
 							</div>
 

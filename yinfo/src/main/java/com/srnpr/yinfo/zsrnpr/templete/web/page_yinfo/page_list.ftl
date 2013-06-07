@@ -19,10 +19,12 @@
 					
 				</div>
 				<div class="c_item">
-					<span>老人情况：</span> <a href="" class="c_active">不限</a><a href="">北京</a>
+					<span>老人情况：</span> <a href="" class="c_active">不限</a>
+					<@m_page_list_query title="不限" source="3252" now=1/>
 				</div>
 				<div class="c_item">
-					<span>价格范围：</span> <a href="" class="c_active">不限</a><a href="">北京</a>
+					<span>价格范围：</span> <a href="" class="c_active">不限</a>
+					<@m_page_list_query title="不限" source="3251" now=2/>
 				</div>
 				<div class="c_order">
 					<span>排序方式：</span><a href="" class="c_active">默认</a><a href="">认证</a>
