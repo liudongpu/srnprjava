@@ -584,6 +584,18 @@ ul {
     clear:both;
 }
 
+.yinfo_list_query .c_left
+{
+    float:left;
+    width:10%;
+}
+
+.yinfo_list_query .c_right
+{
+    float:left;
+    width:86%;
+}
+
 
 
 .yinfo_list_query .c_order
@@ -674,4 +686,8 @@ min-height:50px;
 .yinfo_list_right .c_item img
 {
     width:100%;
+}
+.yinfo_list_pagintion
+{
+    text-align:center;
 }

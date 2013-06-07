@@ -162,18 +162,14 @@
 </#macro>
 
 
-<#macro m_site_common_site_nav pageNav>
-
-<#if (pageNav.getPageIndex()>1)>
-<a href="?z_page_index=${pageNav.getPageIndex()-1}&z_page_count=${pageNav.getPageCount()}&z_page_size=${pageNav.getPageSize()}">上一页</a>
-</#if>
-
-<span>第${pageNav.getPageIndex()}页</span>
-
-<#if (pageNav.getPageIndex()*pageNav.getPageSize()<pageNav.getPageCount())>
-<a href="?z_page_index=${pageNav.getPageIndex()+1}&z_page_count=${pageNav.getPageCount()}&z_page_size=${pageNav.getPageSize()}">下一页</a>
-</#if>
-
+<#macro m_site_common_site_nav p_pagination>
+<div class="pagination" zen_page_pagination_size="${p_pagination.getPageSize()}"  zen_page_pagination_index="${p_pagination.getPageIndex()}"  zen_page_pagination_count="${p_pagination.getPageCount()}">
+  <ul>
+  </ul>
+</div>
+<script>
+$(document).ready(function(){zen.yinfo.pagination()});
+</script>
 </#macro>
 
 

@@ -58,8 +58,7 @@ zen.e({
 			aHtml.push('<li '
 					+ (iIndex == 1 ? ('class="disabled"><a ')
 							: '><a href="'
-									+ zen.yinfo.urlreplace(4, aArr
-											.join('_')) + '" ')
+									+ zen.yinfo.urlpager( aArr) + '" ')
 					+ ' >«</a></li>');
 
 			var aNav = [];
@@ -84,7 +83,7 @@ zen.e({
 				aHtml.push('<li '
 						+ (aNav[i] == iIndex ? 'class="active"' : '')
 						+ ' ><a href="'
-						+ zen.yinfo.urlreplace(4, aArr.join('_')) + '">'
+						+ zen.yinfo.urlpager( aArr) + '">'
 						+ aNav[i] + '</a></li>');
 			}
 
@@ -93,13 +92,20 @@ zen.e({
 			aHtml.push('<li '
 					+ (iIndex == iMaxPage ? ('class="disabled"><a')
 							: '><a <a href="'
-									+ zen.yinfo.urlreplace(4, aArr
-											.join('_')) + '" ')
+									+ zen.yinfo.urlpager(aArr) + '" ')
 					+ ' >»</a></li>');
 
-			$(eUL).append(aHtml.join(''));
+			$(eUL).append(aHtml.join('')); 
 
 		},
+		
+		urlpager:function(aPager)
+		{
+			return '?z_page_index='+aPager[0]+'&z_page_count='+aPager[1]+'&z_page_size='+aPager[2];
+			
+			
+		},
+		
 
 		urlreplace : function(iIndex, sTo) {
 			var sShareUrl = location.href;

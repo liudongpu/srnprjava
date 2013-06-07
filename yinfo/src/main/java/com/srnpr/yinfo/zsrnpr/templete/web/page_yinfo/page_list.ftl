@@ -11,23 +11,32 @@
 			<div class="yinfo_list_query">
 
 				<div class="c_item">
-					<span>所在区域：</span> <a href="" class="c_active">不限</a>
+					<div class="c_left">
+					<span>所在区域：</span></div> <div class="c_right">
 					
-					<@m_page_list_query title="不限" source="area_11" now=0/>
-					
+					<@m_page_list_query title="不限" source="area_11" now=0/></div>
+					<div class="clearfix"></div>
 					
 					
 				</div>
 				<div class="c_item">
-					<span>老人情况：</span> <a href="" class="c_active">不限</a>
-					<@m_page_list_query title="不限" source="3252" now=1/>
+					<div class="c_left">
+					<span>价格范围：</span></div> <div class="c_right">
+					<@m_page_list_query title="不限" source="3251" now=1/>
+					</div>
+					<div class="clearfix"></div>
 				</div>
 				<div class="c_item">
-					<span>价格范围：</span> <a href="" class="c_active">不限</a>
-					<@m_page_list_query title="不限" source="3251" now=2/>
+					<div class="c_left">
+					<span>老人情况：</span></div> <div class="c_right"> 
+					<@m_page_list_query title="不限" source="3252" now=2/>
+					</div>
+					<div class="clearfix"></div>
 				</div>
+				
 				<div class="c_order">
-					<span>排序方式：</span><a href="" class="c_active">默认</a><a href="">认证</a>
+					<span>排序方式：</span>
+					<@m_page_list_query title="默认" source="3260" now=3/>
 				</div>
 			</div>
 			<div class="b_h20"></div>
@@ -46,7 +55,7 @@
 					
 					
 					<div class="clearfix"></div>
-					<div class="index_pagenav">
+					<div class="yinfo_list_pagintion">
 					<@m_site_common_site_nav pageSearchNav />
 					</div>
 				</div>
@@ -84,12 +93,7 @@
 <@m_site_common_footer />
 
 <#macro m_page_list_query  title="不限" source="area_11" now=0 >
-	<#assign maps=pagemethod.upClassByFather(source) >
-	<#list maps?keys as key>
 	
-	<a href="${key}">${maps[key]}</a>
-	</#list>
-
-
+	${pagemethod.upListLink(pageinfo.getWebSet()["Url_View"]?default(""),title,source,now)}
 </#macro>
 
