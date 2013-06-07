@@ -527,6 +527,12 @@ ul {
 	font-size: 15px;
 }
 
+.yold_show_map {
+    width: 100%; height: 500px; border: solid 1px #999;
+   
+}
+
+
 .yinfo_footer {
 	clear: both;
 	background-color: #fafafa;

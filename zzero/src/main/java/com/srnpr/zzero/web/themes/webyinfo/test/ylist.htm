@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>yinfo</title>
+
+<link type="text/css"
+	href="../../../lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link type="text/css" href="../css/yinfo.css" rel="stylesheet">
+<script type="text/javascript"
+	src="../../../lib/jquery/jquery-last.min.js"></script>
+<script type="text/javascript" src="../../../lib/jquery/jquery.srnpr.js"></script>
+<script type="text/javascript"
+	src="../../../lib/jquery/jquery.corner.js"></script>
+<script type="text/javascript"
+	src="../../../lib/bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../../zen/zen.js"></script>
+<script type="text/javascript" src="../../../zen/zen_yinfo.js"></script>
+
+
+</head>
+<body class="yinfo_body">
+
+	<div class="yinfo_header y_center"></div>
+	<div class="yinfo_nav">
+		<div class="y_center">
+			<div class="yinfo_nav_box">
+				<div class="c_tip"></div>
+				<div class="c_nav">
+					<ul>
+						<li class="c_active"><a href="#">首页</a></li>
+						<li><a href="#">海淀区</a></li>
+						<li><a href="#">朝阳区</a></li>
+						<li><a href="#">西城区</a></li>
+						<li><a href="#">东城区</a></li>
+						<li><a href="#">昌平区</a></li>
+						<li><a href="#">石景山区</a></li>
+						<li id="yinfo_nav_box_address_other"><a href="#">其他区县</a></li>
+					</ul>
+				</div>
+
+				<div class="yinfo_nav_address">
+					<ul>
+						<li><a href="#">·通州区</a></li>
+						<li><a href="#">·顺义区</a></li>
+						<li><a href="#">·丰台区</a></li>
+						<li><a href="#">·门头沟区</a></li>
+						<li><a href="#">·房山区</a></li>
+						<li><a href="#">·大兴区</a></li>
+						<li><a href="#">·怀柔区</a></li>
+						<li><a href="#">·平谷区</a></li>
+						<li><a href="#">·密云县</a></li>
+						<li><a href="#">·延庆县</a></li>
+					</ul>
+				</div>
+
+				<div class="yinfo_nav_query">
+					<div class="c_box"></div>
+					<div class="c_bg">
+						<div class="c_info b_corner">
+							<div class="c_margin">
+								<dl>
+									<dt>
+										<i>1/</i>您希望养老院位于：
+									</dt>
+									<dd>
+										<input name="query_dept" type="radio" value=""
+											id="query_dept_0" checked="checked" /><label
+											for="query_dept_0">不限</label> <input name="query_dept"
+											type="radio" value="110108" id="query_dept_110108" /><label
+											for="query_dept_110108">海淀</label> <input name="query_dept"
+											type="radio" value="110105" id="query_dept_110105" /><label
+											for="query_dept_110105">朝阳</label> <input name="query_dept"
+											type="radio" value="110102" id="query_dept_110102" /><label
+											for="query_dept_110102">西城</label> <br /> <input
+											name="query_dept" type="radio" value="110101"
+											id="query_dept_110101" /><label for="query_dept_110101">东城</label>
+										<input name="query_dept" type="radio" value="110114"
+											id="query_dept_110114" /><label for="query_dept_110114">昌平</label>
+										<input name="query_dept" type="radio" value="110107"
+											id="query_dept_110107" /><label for="query_dept_110107">石景山</label>
+									</dd>
+								</dl>
+								<dl>
+									<dt>
+										<i>2/</i>您希望价格范围是：
+									</dt>
+									<dd>
+										<input name="query_price" id="query_price_0" type="radio"
+											value="" /><label for="query_price_0">不限</label> <input
+											name="query_price" type="radio" id="query_price_32510001"
+											value="32510001" /><label for="query_price_32510001">2000元以下</label>
+										<input name="query_price" type="radio" value="32510002"
+											id="query_price_32510002" /><label
+											for="query_price_32510002">2000-3000</label> <input
+											name="query_price" type="radio" value="32510003"
+											id="query_price_32510003" /><label
+											for="query_price_32510003">3000-4000</label> <input
+											name="query_price" type="radio" value="32510004"
+											id="query_price_32510004" /><label
+											for="query_price_32510004">4000元以上</label>
+									</dd>
+								</dl>
+								<dl>
+									<dt>
+										<i>3/</i>老人的情况是：
+									</dt>
+									<dd>
+										<input name="query_type" type="radio" id="query_type_32510001"
+											value="32510001" /><label for="query_type_32510001">自理老人</label>
+										<input name="query_type" type="radio" value="32510002"
+											id="query_type_32510002" /><label for="query_type_32510002">半护理老人</label><br />
+										<input name="query_type" type="radio" value="32510003"
+											id="query_type_32510003" /><label for="query_type_32510003">全护理老人</label>
+										<input name="query_type" type="radio" value="32510004"
+											id="query_type_32510004" /><label for="query_type_32510004">特护</label>
+										<input name="query_type" id="query_type_0" type="radio"
+											value="" /><label for="query_type_0">不限</label>
+
+									</dd>
+								</dl>
+							</div>
+
+						</div>
+						<div class="c_bottons">
+							<div class="c_btn b_corner">立即查看</div>
+
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="y_center">
+		<div class="yinfo_list">
+
+			<div class="yinfo_list_nav">
+				<a href="/">回到首页</a>&nbsp;&nbsp;&gt;&nbsp;&nbsp;<a href="/">列表页</a>
+			</div>
+			<div class="yinfo_list_query">
+
+				<div class="c_item">
+					
+					<div class="c_left"><span>所在区域：</span></div>
+					<div class="c_right">
+						<a href="" class="c_active">不限</a><a href="">北京</a> <a href="110108">海淀区</a> <a href="110107">石景山区</a>
+
+						<a href="110109">门头沟区</a> <a href="110106">丰台区</a> <a
+							href="110105">朝阳区</a> <a href="110102">西城区</a> <a href="110101">东城区</a>
+
+						<a href="110114">昌平区</a> <a href="110115">大兴区</a> <a href="110116">怀柔区</a>
+
+						<a href="110117">平谷区</a> <a href="110111">房山区</a> <a href="110112">通州区</a>
+
+						<a href="110113">顺义区</a> <a href="110228">密云县</a>
+
+					</div>
+					<div class="clearfix"></div>
+				</div>
+				<div class="c_item">
+					<span>老人情况：</span> <a href="" class="c_active">不限</a><a href="">北京</a>
+				</div>
+				<div class="c_item">
+					<span>价格范围：</span> <a href="" class="c_active">不限</a><a href="">北京</a>
+				</div>
+				<div class="c_order">
+					<span>排序方式：</span><a href="" class="c_active">默认</a><a href="">认证</a>
+				</div>
+			</div>
+			<div class="b_h20"></div>
+
+			<div>
+
+				<div class="yinfo_list_left">
+					<div class="c_item">
+						<div class="c_img">
+							<img
+								src="http://image.daoxila.com/hotel/medium/2012-07/20120717162835.jpg" />
+						</div>
+						<div class="yinfo_item_box">
+							<h4>
+								<a href="">北京养老呀un</a>
+							</h4>
+							<div class="c_in">
+								<div class="c_left">保障：</div>
+								<div class="c_right">
+									<div class="yinfo_keep">
+										<ul>
+											<li class="c_0 c_a"></li>
+											<li class="c_1 c_a"></li>
+											<li class="c_2 c_a"></li>
+											<li class="c_3 c_a"></li>
+											<li class="c_4 c_a"></li>
+											<li class="c_5 c_a"></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+							<div class="c_in">
+								<div class="c_left">评价：</div>
+								<div class="c_right">
+									<div class="yinfo_star">
+										<div class="c_line" style="width: 70%;"></div>
+									</div>
+									<div class="c_tips">好评率：10%</div>
+								</div>
+							</div>
+							<div class="c_in">
+								<div class="c_left">地区：</div>
+								<div class="c_right">北京 昌平区 回龙观</div>
+							</div>
+							<div class="c_in">
+								<div class="c_left">床位：</div>
+								<div class="c_right">200</div>
+							</div>
+							<div class="clearfix"></div>
+							<div class="c_buttons">
+								<input type="checkbox" /><label>加入对比</label> <a
+									class="btn btn-success">去看看</a>
+							</div>
+						</div>
+					</div>
+					<div class="c_item"></div>
+					<div class="c_item"></div>
+					<div class="c_item"></div>
+
+
+
+
+				</div>
+				<div class="yinfo_list_right">
+					<div class="c_item">
+						<img
+							src="http://script.daoxila.com/root/img/img_20111201/service_pic.gif" />
+					</div>
+					<div class="c_item">
+						<img
+							src="http://image.daoxila.com/hotel/small/2012-07/20120717162835.jpg" />
+					</div>
+				</div>
+			</div>
+			<div class="clearfix"></div>
+		</div>
+	</div>
+
+	<div class="yinfo_footer">
+		<div class="c_border"></div>
+		<div class="y_center">
+			<div class="c_nav">
+				<span>免费注册</span>|<span>免费注册</span>|<span>免费注册</span>|<span>免费注册</span>
+			</div>
+			<div class="b_h20"></div>
+			<div class="c_text">CopyRight 2013</div>
+			<div class="b_h40"></div>
+		</div>
+	</div>
+
+
+	<script>
+		$(document).ready(function() {
+			zen.yinfo.headernav(false);
+		});
+	</script>
+
+</body>
+
+
+</html>
