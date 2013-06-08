@@ -61,7 +61,7 @@
 			<div class="index_list">
 				<div class="c_box">
 				
-					<#list pageexec.upDataOrder("y_info","-zid") as el>
+					<#list pageexec.upDataTop("y_info","","-zid",9) as el>
 					
 						<div class="c_item <#if (el_index%3==0)>c_first</#if>">
 							<@m_site_common_site_list el "main"/>

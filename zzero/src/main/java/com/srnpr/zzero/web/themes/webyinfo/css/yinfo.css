@@ -5,6 +5,11 @@ body,.yinfo_body {
 		STHeiti, MingLiu;
 }
 
+.modal-backdrop, .modal-backdrop.fade.in {
+opacity: .6;
+filter: alpha(opacity=60);
+}
+
 label,input,button,select,textarea {
 	font-size: 13px;
 }
@@ -115,7 +120,24 @@ ul {
 .yinfo_header {
 	height: 90px;
 	background-image: url("../images/yinfo_png.png");
+	position: relative;
 }
+.yinfo_header_search
+{
+    position: absolute;
+    top:10px;
+    left:300px;
+}
+.yinfo_header_search input,.yinfo_header_search a
+{
+border:solid 1px #9cc813;
+padding:2px 6px;
+font-size:12px;
+color:#000;
+}
+
+
+
 
 .yinfo_nav {
 	height: 45px;
@@ -475,6 +497,7 @@ ul {
 .yold_info_right .c_top .c_left {
 	float: left;
 	padding-top: 50px;
+	width:400px;
 }
 
 .yold_info_right .c_top .c_right {
@@ -494,6 +517,7 @@ ul {
 	line-height: 30px;
 	color: #000;
 	font-size: 13px;
+	clear:both;
 }
 
 .yold_info_right .c_item span {
@@ -696,4 +720,117 @@ min-height:50px;
 .yinfo_list_pagintion
 {
     text-align:center;
+}
+
+
+.yinfo_query_for
+{
+    background-image: url("../images/yinfo_png.png");
+    background-position: 0px -410px;
+    width:602px;
+}
+.yinfo_query_for .c_box
+{
+    width:100%;
+    height:400px;
+    position:relative;
+
+}
+.yinfo_query_for .c_box .c_top
+{
+    height:130px;
+}
+.yinfo_query_for .c_box .c_info
+{
+    
+    width:80%;
+    margin-left:9%;
+    height:100px;
+   
+   
+}
+.yinfo_query_for .c_box .c_info span
+{
+    text-decoration: underline;
+}
+
+.yinfo_query_for .c_box .c_input
+{
+    height:60px;
+    margin-left:162px;
+}
+.yinfo_query_for .c_box .c_input input
+{
+    height:28px;
+    width:190px;
+    border:0px;
+    background-color:#fafafa;
+    line-height:28px;
+    font-size:20px;
+}
+.yinfo_query_for .c_button
+{
+    height:45px;
+    margin-left:160px;
+}
+.yinfo_query_for .c_desc
+{
+margin-left:160px;
+}
+.yinfo_query_for .c_skip
+{
+    margin-left:550px;
+}
+.yinfo_query_for .c_box .c_notice
+{
+   border:solid 5px #b2b2b2;
+ position:absolute;
+ top:100px;
+ left:180px;
+ width:270px;
+ height:220px;
+ background-color:#fff;
+ display:none;
+
+}
+.yinfo_query_for .c_box .c_notice_body
+{
+    height:120px;
+    width:220px;
+    border-bottom:dashed 1px #999999;
+    margin-left:25px;
+}
+.yinfo_query_for .c_box .c_notice_body ul
+{
+    margin-left:20px;
+}
+
+.yinfo_query_for .c_box .c_notice_head
+{
+    height:30px;
+    background-color:#f8f8f8;
+    text-indent:10px;
+    line-height:30px;
+    font-weight:bold;
+}
+.yinfo_query_for .c_box .c_notice_skip
+{
+    height:30px;
+    line-height:30px;
+    margin-left:25px;
+}
+.yinfo_query_for .c_box .c_notice_buttons
+{
+margin-left:80px;
+}
+
+.yinfo_query_for .c_box .c_close
+{
+ 
+ position:absolute;
+ top:5px;
+ right:5px;
+ width:30px;
+ height:30px;
+ cursor:pointer;
 }

@@ -128,7 +128,28 @@ zen.e({
 			aUrls[iIndex] = sTo;
 			return sShareUrl + aUrls.join('-') + sQuery;
 
+		},
+		
+		search:function()
+		{
+			
+			
+		},
+		
+		query:function()
+		{
+
+			var aText='您希望在 <span>'+$('#yinfo_nav_query_address input:radio:checked').next('label').text()
+			+'</span> 寻找 <span>'+$('#yinfo_nav_query_money input:radio:checked').next('label').text()
+			+'</span> 能照顾 <span>'+$('#yinfo_nav_query_older input:radio:checked').next('label').text()
+			+'</span> 的养老院 <br/>系统显示共有 <b></b> 家养老院符合您的要求';	
+			$('#yinfo_query_for .c_info').html(aText);			
+			var sQuery=$('#yinfo_nav_query_address input:radio:checked').val()+'_'+
+			$('#yinfo_nav_query_money input:radio:checked').val()+'_'+
+			$('#yinfo_nav_query_older input:radio:checked').val();
+			$(function(){$('#yinfo_query_for').modal('show')});			
 		}
+		
 		
 		
 	}

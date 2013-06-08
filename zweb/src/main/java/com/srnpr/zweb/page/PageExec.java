@@ -64,6 +64,14 @@ public class PageExec extends BaseClass {
 	}
 
 	
+	public Object upDataTop(String sTableName, String sWhere,
+			String sOrder,int iTopSize,Object... oArgs) {
+		return DataTableManager.Get(sTableName).upListAll("",sWhere, sOrder,0,
+				iTopSize, oArgs);
+		
+	}
+	
+	
 	
 	public MPageNav upPageNav(String sTableName, String sFields, String sOrder,
 			Object... oArgs) {

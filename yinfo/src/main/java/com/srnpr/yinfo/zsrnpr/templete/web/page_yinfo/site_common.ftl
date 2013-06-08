@@ -10,7 +10,16 @@
 
 
 
-	<div class="yinfo_header y_center"></div>
+	<div class="yinfo_header y_center">
+		<div id="yinfo_header_search" class="yinfo_header_search">
+			<div class="input-append">
+				<input type="text" class="span4" placeholder="搜索城市、地区、或者养老院名称">
+				<a class="btn" onclick="zen.yinfo.search(this)">
+					<i class="icon-search"></i>
+				</a>
+			</div>
+		</div>
+	</div>
 	<div class="yinfo_nav">
 		<div class="y_center">
 			<div class="yinfo_nav_box">
@@ -52,8 +61,8 @@
 									<dt>
 										<i>1/</i>您希望养老院位于：
 									</dt>
-									<dd>
-										<input name="query_dept" type="radio" value=""
+									<dd id="yinfo_nav_query_address">
+										<input name="query_dept" type="radio" value="0"
 											id="query_dept_0" checked="checked" /><label
 											for="query_dept_0">不限</label> <input name="query_dept"
 											type="radio" value="110108" id="query_dept_110108" /><label
@@ -74,9 +83,9 @@
 									<dt>
 										<i>2/</i>您希望价格范围是：
 									</dt>
-									<dd>
+									<dd id="yinfo_nav_query_money">
 										<input name="query_price" id="query_price_0" type="radio"
-											value="" /><label for="query_price_0">不限</label> <input
+											value="0" checked="checked" /><label for="query_price_0">不限</label> <input
 											name="query_price" type="radio" id="query_price_32510001"
 											value="32510001" /><label for="query_price_32510001">2000元以下</label>
 										<input name="query_price" type="radio" value="32510002"
@@ -94,9 +103,9 @@
 									<dt>
 										<i>3/</i>老人的情况是：
 									</dt>
-									<dd>
+									<dd id="yinfo_nav_query_older">
 										<input name="query_type" type="radio" id="query_type_32510001"
-											value="32510001" /><label for="query_type_32510001">自理老人</label>
+											value="32510001" checked="checked" /><label for="query_type_32510001">自理老人</label>
 										<input name="query_type" type="radio" value="32510002"
 											id="query_type_32510002" /><label for="query_type_32510002">半护理老人</label><br />
 										<input name="query_type" type="radio" value="32510003"
@@ -104,7 +113,7 @@
 										<input name="query_type" type="radio" value="32510004"
 											id="query_type_32510004" /><label for="query_type_32510004">特护</label>
 										<input name="query_type" id="query_type_0" type="radio"
-											value="" /><label for="query_type_0">不限</label>
+											value="0"  /><label for="query_type_0">不限</label>
 
 									</dd>
 								</dl>
@@ -112,7 +121,7 @@
 
 						</div>
 						<div class="c_bottons">
-							<div class="c_btn b_corner">立即查看</div>
+							<div class="c_btn b_corner" onclick="zen.yinfo.query()">立即查看</div>
 
 						</div>
 
@@ -234,6 +243,51 @@ $(document).ready(function(){zen.yinfo.pagination()});
 			<div class="b_h40"></div>
 		</div>
 	</div>
+
+
+<div id="yinfo_query_for" class="modal hide fade yinfo_query_for">
+  <div class="c_box">
+  	<div class="c_top"></div>
+  	<div class="c_info">
+  		
+  	</div>
+  	<div class="c_input">
+  		<input type="text" name="yinfo_query_for_phone" id="yinfo_query_for_phone" maxlength="11" />
+  	</div>
+  	<div class="c_button">
+  		<a class="btn  btn-success">&nbsp;&nbsp;提&nbsp;&nbsp;交&nbsp;&nbsp;</a>
+  	</div>
+  	<div class="c_desc">
+  	您的重要信息不会被泄露,详见隐私条款</div>
+  	<div class="c_skip"><a href="#" onclick="$('#yinfo_query_for_notice').show();">跳过</a></div>
+  	
+  	<div class="c_close" data-dismiss="modal" aria-hidden="true"></div>
+  	
+  	<div id="yinfo_query_for_notice" class="c_notice">
+  		<div class="c_notice_head">
+  			确定要跳过吗？
+  		</div>
+  		<div class="c_notice_body">
+  		<br/>
+  		 这样您将无法获得： <ul>
+  		 <li>您需要的养老院最新折扣优惠信息</li>
+  		 <li>银杏林赠送的超值大礼</li>
+  		 <li>养老院免费一对一贴心顾问</li>
+  		 </ul>
+  		 
+  		</div>
+  		<div class="c_notice_skip">
+  		确定要跳过吗？
+  		</div>
+  		<div class="c_notice_buttons">
+  			<a class="btn btn-small" onclick="">&nbsp;&nbsp;是&nbsp;&nbsp;</a>&nbsp;&nbsp;&nbsp;&nbsp;
+  			<a class="btn btn-small" onclick="$('#yinfo_query_for_notice').hide();">&nbsp;&nbsp;否&nbsp;&nbsp;</a>
+  		</div>
+  	</div>
+  	
+  </div>
+</div>
+
 
 </body>
 </html>
