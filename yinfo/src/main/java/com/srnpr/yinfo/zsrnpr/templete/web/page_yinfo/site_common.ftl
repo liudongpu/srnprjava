@@ -11,9 +11,12 @@
 
 
 	<div class="yinfo_header y_center">
+		<div class="yinfo_header_logo"><a href="/"></a></div>
+		<div class="yinfo_header_area">北京</div>
 		<div id="yinfo_header_search" class="yinfo_header_search">
+			
 			<div class="input-append">
-				<input type="text" class="span4" placeholder="搜索城市、地区、或者养老院名称">
+				<input type="text" id="yinfo_header_search_input" class="span4" placeholder="搜索城市、地区、或者养老院名称">
 				<a class="btn" onclick="zen.yinfo.search(this)">
 					<i class="icon-search"></i>
 				</a>

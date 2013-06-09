@@ -62,7 +62,7 @@ public class PageMethod extends BaseClass implements IPageMethod {
 	
 	
 	
-	public MPageNav upListPage(String sUrl)
+	public MPageNav upListPage(String sUrl,String sSearch)
 	{
 		
 		
@@ -77,6 +77,8 @@ public class PageMethod extends BaseClass implements IPageMethod {
 		
 		ArrayList<String> aWhere=new ArrayList<String>();
 		
+		String sWhereString="";
+		
 		for(int i=0,j=sKeysStrings.length;i<j;i++)
 		{
 			if(StringUtils.isNotEmpty(sUrlStrings[i])&&!sUrlStrings[i].trim().equals("0"))
@@ -90,7 +92,21 @@ public class PageMethod extends BaseClass implements IPageMethod {
 		
 		
 		
-		return pExec.upPageNavQuery("y_info","",StringUtils.join( aWhere," and "),"-zid",mHashMap.upObjs());
+		
+		//搜索
+		if(StringUtils.isNotEmpty(sSearch))
+		{
+			aWhere.add(" ( name like :key ) ");
+			
+			mHashMap.put("key", "%"+sSearch+"%");
+		}
+		
+		
+		sWhereString=StringUtils.join( aWhere," and ");
+		
+		
+		
+		return pExec.upPageNavQuery("y_info","",sWhereString,"-zid",mHashMap.upObjs());
 		
 		
 		

@@ -97,7 +97,7 @@ public class PageExec extends BaseClass {
 		}
 
 		if (mPageNav.getPageCount() < 0) {
-			mPageNav.setPageCount(DataTableManager.Get(sTableName).upListCount(
+			mPageNav.setPageCount(DataTableManager.Get(sTableName).upListCountWhere(sWhere,
 					oArgs));
 		}
 		
