@@ -11,7 +11,7 @@
 
 
 	<div class="yinfo_header y_center">
-		<div class="yinfo_header_logo"><a href="/"></a></div>
+		<div class="yinfo_header_logo"><a href="${base_url}"></a></div>
 		<div class="yinfo_header_area">北京</div>
 		<div id="yinfo_header_search" class="yinfo_header_search">
 			
@@ -21,6 +21,10 @@
 					<i class="icon-search"></i>
 				</a>
 			</div>
+		</div>
+		<div id="yinfo_header_user" class="yinfo_header_user">
+			<a href="${base_url}yinfo/login-login">登陆</a>
+			&nbsp;&nbsp;<a href="${base_url}yinfo/reg-reg">免费注册</a>
 		</div>
 	</div>
 	<div class="yinfo_nav">
@@ -160,13 +164,13 @@
 
 				<ul>
 					<li><a class="c_active" href="">首页</a></li>
-					<li><a href="">养老院简介</a></li>
-					<li><a href="">收费标准</a></li>
-					<li><a href="">入住须知</a></li>
-					<li><a href="">服务指南</a></li>
-					<li><a href="">优惠信息</a></li>
-					<li><a href="">联系方式</a></li>
-					<li><a href="">机构位置</a></li>
+					<li><a href="#yinfo_home_t1">养老院简介</a></li>
+					<li><a href="#yinfo_home_t2">收费标准</a></li>
+					<li><a href="#yinfo_home_t3">入住须知</a></li>
+					<li><a href="#yinfo_home_t4">服务指南</a></li>
+					<li><a href="#yinfo_home_t5">优惠信息</a></li>
+					<li><a href="#yinfo_home_t6">联系方式</a></li>
+					<li><a href="#yinfo_home_t7">机构位置</a></li>
 				</ul>
 			</div>
 		</div>
@@ -191,18 +195,18 @@ $(document).ready(function(){zen.yinfo.pagination()});
 								<a href="${base_url}yinfo/home-home-${el["uid"]}" target="_blank"><img src="${el["main_img"]}" /></a>
 							</div>
 							<div class="yinfo_item_box">
-								<h4><a href="${base_url}yinfo/home-home-${el["uid"]}" target="_blank">${el["name"]}</a></h4>
+								<div class="c_title"><a href="${base_url}yinfo/home-home-${el["uid"]}" target="_blank">${el["name"]}</a></div>
 								<div class="c_in">
 									<div class="c_left">保障：</div>
 									<div class="c_right">
 										<div class="yinfo_keep">
 											<ul>
-												<li class="c_0 c_a"></li>
-												<li class="c_1 c_a"></li>
-												<li class="c_2 c_a"></li>
-												<li class="c_3 c_a"></li>
-												<li class="c_4 c_a"></li>
-												<li class="c_5 c_a"></li>
+												<li class="c_0  <#if (el["icon_cids"]?index_of("32590001")>-1)>c_a</#if>"></li>
+												<li class="c_1  <#if (el["icon_cids"]?index_of("32590002")>-1)>c_a</#if>"></li>
+												<li class="c_2  <#if (el["icon_cids"]?index_of("32590003")>-1)>c_a</#if>"></li>
+												<li class="c_3  <#if (el["icon_cids"]?index_of("32590004")>-1)>c_a</#if>"></li>
+												<li class="c_4  <#if (el["icon_cids"]?index_of("32590005")>-1)>c_a</#if>"></li>
+												<li class="c_5  <#if (el["icon_cids"]?index_of("32590006")>-1)>c_a</#if>"></li>
 											</ul>
 										</div>
 									</div>
@@ -218,7 +222,7 @@ $(document).ready(function(){zen.yinfo.pagination()});
 								</div>
 								<div class="c_in">
 									<div class="c_left">地区：</div>
-									<div class="c_right">北京 昌平区 回龙观</div>
+									<div class="c_right">北京 ${pagemethod.upClassName("area_"+el["area"])}</div>
 								</div>
 								<div class="c_in">
 									<div class="c_left">床位：</div>

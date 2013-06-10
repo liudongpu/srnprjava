@@ -47,31 +47,31 @@
 			<div class="b_h10"></div>
 			<div class="yold_show">
 
-				<div class="c_item">
+				<div id="yinfo_home_t1" class="c_item">
 					<div class="c_title">养老院简介</div>
 					<div>${page_obj["field_description"]}</div>
 				</div>
-				<div class="c_item">
+				<div id="yinfo_home_t2" class="c_item">
 					<div class="c_title">收费标准</div>
 					<div>信息</div>
 				</div>
-				<div class="c_item">
+				<div id="yinfo_home_t3" class="c_item">
 					<div class="c_title">入住须知</div>
 					<div>${page_obj["field_live"]}</div>
 				</div>
-				<div class="c_item">
+				<div id="yinfo_home_t4" class="c_item">
 					<div class="c_title">服务指南</div>
 					<div>${page_obj["field_service"]}</div>
 				</div>
-				<div class="c_item">
+				<div id="yinfo_home_t5" class="c_item">
 					<div class="c_title">优惠信息</div>
 					<div>${page_obj["field_coupon"]}</div>
 				</div>
-				<div class="c_item">
+				<div id="yinfo_home_t6" class="c_item">
 					<div class="c_title">联系方式</div>
 					<div>${page_obj["field_description"]}</div>
 				</div>
-				<div class="c_item">
+				<div id="yinfo_home_t7" class="c_item">
 					<div class="c_title">机构位置</div>
 					<div>${page_obj["link_address"]}</div>
 					<div class="b_h10"></div>

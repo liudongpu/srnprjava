@@ -60,6 +60,22 @@ public class PageMethod extends BaseClass implements IPageMethod {
 	}
 	
 	
+	public String upClassName(String sCode)
+	{
+		checkClassMap();
+		String sReturnString="";
+		if(hClassMap.containsKey(sCode))
+		{
+			sReturnString=hClassMap.get(sCode).toString();
+		}
+		
+		
+		return sReturnString;
+		
+	}
+	
+	
+	
 	
 	
 	public MPageNav upListPage(String sUrl,String sSearch)

@@ -94,7 +94,7 @@ zen
 					aArr[0] = iMaxPage;
 
 					aHtml.push('<li '
-							+ (iIndex == iMaxPage ? ('class="disabled"><a')
+							+ ((iIndex == iMaxPage||iMaxPage==0) ? ('class="disabled"><a')
 									: '><a <a href="'
 											+ zen.yinfo.urlpager(aArr) + '" ')
 							+ ' >»</a></li>');

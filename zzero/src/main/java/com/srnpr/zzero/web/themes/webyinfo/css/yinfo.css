@@ -159,9 +159,17 @@ padding:2px 6px;
 font-size:12px;
 color:#000;
 }
+.yinfo_header_user
+{
+    position: absolute;
+    top:15px;
+    left:640px;
+}
 
-
-
+.yinfo_header_user a
+{
+    color: #000;
+}
 
 .yinfo_nav {
 	height: 45px;
@@ -396,9 +404,19 @@ color:#000;
 	position: relative;
 }
 
-.yinfo_item_box h4 a {
-	color: #008a17;
+.yinfo_item_box .c_title
+{
+    height: 45px;
+    overflow: hidden;
 }
+.yinfo_item_box .c_title a
+{
+    color: #008a17;
+    font-size:20px;
+    font-weight:bold;
+}
+
+
 
 .yinfo_item_box .c_left {
 	width: 40px;

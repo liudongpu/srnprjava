@@ -21,7 +21,23 @@
 </head>
 <body class="yinfo_body">
 
-	<div class="yinfo_header y_center"></div>
+	<div class="yinfo_header y_center">
+		<div class="yinfo_header_logo"><a href="/"></a></div>
+		<div class="yinfo_header_area">北京</div>
+		<div id="yinfo_header_search" class="yinfo_header_search">
+			
+			<div class="input-append">
+				<input type="text" id="yinfo_header_search_input" class="span4" placeholder="搜索城市、地区、或者养老院名称">
+				<a class="btn" onclick="zen.yinfo.search(this)">
+					<i class="icon-search"></i>
+				</a>
+			</div>
+		</div>
+		<div id="yinfo_header_user" class="yinfo_header_user">
+			<a href="">登陆</a>&nbsp;&nbsp;
+			<a href="">免费注册</a>
+		</div>
+	</div>
 	<div class="yinfo_nav">
 		<div class="y_center">
 			<div class="yinfo_nav_box">
@@ -63,8 +79,8 @@
 									<dt>
 										<i>1/</i>您希望养老院位于：
 									</dt>
-									<dd>
-										<input name="query_dept" type="radio" value=""
+									<dd id="yinfo_nav_query_address">
+										<input name="query_dept" type="radio" value="0"
 											id="query_dept_0" checked="checked" /><label
 											for="query_dept_0">不限</label> <input name="query_dept"
 											type="radio" value="110108" id="query_dept_110108" /><label
@@ -85,12 +101,13 @@
 									<dt>
 										<i>2/</i>您希望价格范围是：
 									</dt>
-									<dd>
+									<dd id="yinfo_nav_query_money">
 										<input name="query_price" id="query_price_0" type="radio"
-											value="" /><label for="query_price_0">不限</label> <input
-											name="query_price" type="radio" id="query_price_32510001"
-											value="32510001" /><label for="query_price_32510001">2000元以下</label>
-										<input name="query_price" type="radio" value="32510002"
+											value="0" checked="checked" /><label for="query_price_0">不限</label>
+										<input name="query_price" type="radio"
+											id="query_price_32510001" value="32510001" /><label
+											for="query_price_32510001">2000元以下</label> <input
+											name="query_price" type="radio" value="32510002"
 											id="query_price_32510002" /><label
 											for="query_price_32510002">2000-3000</label> <input
 											name="query_price" type="radio" value="32510003"
@@ -105,17 +122,18 @@
 									<dt>
 										<i>3/</i>老人的情况是：
 									</dt>
-									<dd>
+									<dd id="yinfo_nav_query_older">
 										<input name="query_type" type="radio" id="query_type_32510001"
-											value="32510001" /><label for="query_type_32510001">自理老人</label>
-										<input name="query_type" type="radio" value="32510002"
+											value="32510001" checked="checked" /><label
+											for="query_type_32510001">自理老人</label> <input
+											name="query_type" type="radio" value="32510002"
 											id="query_type_32510002" /><label for="query_type_32510002">半护理老人</label><br />
 										<input name="query_type" type="radio" value="32510003"
 											id="query_type_32510003" /><label for="query_type_32510003">全护理老人</label>
 										<input name="query_type" type="radio" value="32510004"
 											id="query_type_32510004" /><label for="query_type_32510004">特护</label>
 										<input name="query_type" id="query_type_0" type="radio"
-											value="" /><label for="query_type_0">不限</label>
+											value="0" /><label for="query_type_0">不限</label>
 
 									</dd>
 								</dl>
@@ -123,7 +141,7 @@
 
 						</div>
 						<div class="c_bottons">
-							<div class="c_btn b_corner">立即查看</div>
+							<div class="c_btn b_corner" onclick="zen.yinfo.query()">立即查看</div>
 
 						</div>
 
@@ -133,72 +151,67 @@
 		</div>
 	</div>
 	<div class="y_center">
-		<div class="yinfo_list">
-			<div class="yinfo_list_fox b_none">
-				<div class="yinfo_list_nav">
-					<a href="/">回到首页</a>&nbsp;&nbsp;&gt;&nbsp;&nbsp;<a href="/">列表页</a>
-				</div>
-				<div class="yinfo_list_query">
+		<div class="yinfo_main">
+			<div class="index_center">
+				<div class="index_adv">
+					<div id="myCarousel" class="carousel slide">
+						<ol class="carousel-indicators">
+							<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+							<li data-target="#myCarousel" data-slide-to="1" class=""></li>
+							<li data-target="#myCarousel" data-slide-to="2" class=""></li>
+						</ol>
+						<div class="carousel-inner">
+							<div class="item active">
+								<img
+									src="http://www.bootcss.com/assets/img/bootstrap-mdo-sfmoma-01.jpg"
+									alt="">
+								<div class="carousel-caption">
 
-					<div class="c_item">
+									<p>
+										<a href="">Cras justo odio, dapibus ac facilisis in,
+											egestas eget quam. </a>
+									</p>
+								</div>
+							</div>
+							<div class="item">
+								<img
+									src="http://www.bootcss.com/assets/img/bootstrap-mdo-sfmoma-02.jpg"
+									alt="">
+								<div class="carousel-caption">
 
-						<div class="c_left">
-							<span>所在区域：</span>
+									<p>Cras justo odio, dapibus ac facilisis in, egestas eget
+										quam.</p>
+								</div>
+							</div>
+							<div class="item">
+								<img
+									src="http://www.bootcss.com/assets/img/bootstrap-mdo-sfmoma-03.jpg"
+									alt="">
+								<div class="carousel-caption">
+
+									<p>Cras justo odio, dapibus ac facilisis in, egestas eget
+										quam.</p>
+								</div>
+							</div>
 						</div>
-						<div class="c_right">
-							<a href="" class="c_active">不限</a><a href="">北京</a> <a
-								href="110108">海淀区</a> <a href="110107">石景山区</a> <a href="110109">门头沟区</a>
-							<a href="110106">丰台区</a> <a href="110105">朝阳区</a> <a
-								href="110102">西城区</a> <a href="110101">东城区</a> <a href="110114">昌平区</a>
-							<a href="110115">大兴区</a> <a href="110116">怀柔区</a> <a
-								href="110117">平谷区</a> <a href="110111">房山区</a> <a href="110112">通州区</a>
-
-							<a href="110113">顺义区</a> <a href="110228">密云县</a>
-
-						</div>
-						<div class="clearfix"></div>
-					</div>
-					<div class="c_item">
-						<span>老人情况：</span> <a href="" class="c_active">不限</a><a href="">北京</a>
-					</div>
-					<div class="c_item">
-						<span>价格范围：</span> <a href="" class="c_active">不限</a><a href="">北京</a>
-					</div>
-					<div class="c_order">
-						<span>排序方式：</span><a href="" class="c_active">默认</a><a href="">认证</a>
+						<a class="left carousel-control b_none" href="#myCarousel"
+							data-slide="prev">‹</a> <a class="right carousel-control b_none"
+							href="#myCarousel" data-slide="next">›</a>
 					</div>
 				</div>
-				<div class="b_h20"></div>
-			</div>
-			<div class="yinfo_list_search">
-				<div class="yinfo_list_nav">
-					<a href="/">回到首页</a>&nbsp;&nbsp;&gt;&nbsp;&nbsp;<a href="">养老机构搜索</a>
-				</div>
-				<div class="yinfo_list_search_nav">
-					<span class="c_blue">您搜索的是
-						<span class="c_red">北京</span>
-						共有
-						<span class="c_red">2</span>
-						家养老院符合您的要求
-					</span>
-					<span class="c_hot"><b>热门搜索：</b></span>
-					<a href="${base_url}yinfo/list--昌平 养老院">昌平 养老院</a>
-					<a href="${base_url}yinfo/list--特护">特护</a>
-					<a href="${base_url}yinfo/list--全护理老人">全护理老人</a>
-					<a href="${base_url}yinfo/list--海淀">海淀</a>
-					<a href="${base_url}yinfo/list--机构中心">机构中心</a>
-					<a href="${base_url}yinfo/list--优惠">优惠</a>
-				</div>
+				<div class="index_todo"></div>
 			</div>
 
-
+			<div class="clearfix"></div>
 			<div>
-
-				<div class="yinfo_list_left">
-					<div class="c_item">
+				<h3>本周热门</h3>
+			</div>
+			<div class="index_list">
+				<div class="c_box">
+					<div class="c_item c_first">
 						<div class="c_img">
-							<img
-								src="http://image.daoxila.com/hotel/medium/2012-07/20120717162835.jpg" />
+							<a href=""><img
+								src="http://new.lao800.com/up/20120918113740_75777.jpg" /></a>
 						</div>
 						<div class="yinfo_item_box">
 							<h4>
@@ -238,31 +251,21 @@
 							</div>
 							<div class="clearfix"></div>
 							<div class="c_buttons">
-								<input type="checkbox" /><label>加入对比</label> <a
-									class="btn btn-success">去看看</a>
+								<a class="btn btn-success">去看看</a>
 							</div>
 						</div>
+
 					</div>
 					<div class="c_item"></div>
 					<div class="c_item"></div>
+					<div class="c_item c_first"></div>
 					<div class="c_item"></div>
-
-
-
-
-				</div>
-				<div class="yinfo_list_right">
-					<div class="c_item">
-						<img
-							src="http://script.daoxila.com/root/img/img_20111201/service_pic.gif" />
-					</div>
-					<div class="c_item">
-						<img
-							src="http://image.daoxila.com/hotel/small/2012-07/20120717162835.jpg" />
-					</div>
+					<div class="c_item"></div>
+					<div class="c_item c_first"></div>
+					<div class="c_item"></div>
+					<div class="c_item"></div>
 				</div>
 			</div>
-			<div class="clearfix"></div>
 		</div>
 	</div>
 
@@ -281,9 +284,63 @@
 
 	<script>
 		$(document).ready(function() {
-			zen.yinfo.headernav(false);
+			zen.yinfo.headernav(true);
 		});
+
+		$('.carousel').hover(function() {
+			$(this).find('.carousel-control').show()
+		}, function() {
+			$(this).find('.carousel-control').hide()
+		});
+
+		$('.carousel').carousel({
+			interval : 4000
+		});
+
+		//$(function(){zen.yinfo.query()});
 	</script>
+
+
+
+	<div id="yinfo_query_for" class="modal hide fade yinfo_query_for">
+		<div class="c_box">
+			<div class="c_top"></div>
+			<div class="c_info"></div>
+			<div class="c_input">
+				<input type="text" name="yinfo_query_for_phone"
+					id="yinfo_query_for_phone" maxlength="11" />
+			</div>
+			<div class="c_button">
+				<a class="btn  btn-success">&nbsp;&nbsp;提&nbsp;&nbsp;交&nbsp;&nbsp;</a>
+			</div>
+			<div class="c_desc">您的重要信息不会被泄露,详见隐私条款</div>
+			<div class="c_skip">
+				<a href="#" onclick="$('#yinfo_query_for_notice').show();">跳过</a>
+			</div>
+
+			<div class="c_close" data-dismiss="modal" aria-hidden="true"></div>
+
+			<div id="yinfo_query_for_notice" class="c_notice">
+				<div class="c_notice_head">确定要跳过吗？</div>
+				<div class="c_notice_body">
+					<br /> 这样您将无法获得：
+					<ul>
+						<li>您需要的养老院最新折扣优惠信息</li>
+						<li>银杏林赠送的超值大礼</li>
+						<li>养老院免费一对一贴心顾问</li>
+					</ul>
+
+				</div>
+				<div class="c_notice_skip">确定要跳过吗？</div>
+				<div class="c_notice_buttons">
+					<a class="btn btn-small" onclick="">&nbsp;&nbsp;是&nbsp;&nbsp;</a>&nbsp;&nbsp;&nbsp;&nbsp;
+					<a class="btn btn-small"
+						onclick="$('#yinfo_query_for_notice').hide();">&nbsp;&nbsp;否&nbsp;&nbsp;</a>
+				</div>
+			</div>
+
+		</div>
+	</div>
 
 </body>
 
