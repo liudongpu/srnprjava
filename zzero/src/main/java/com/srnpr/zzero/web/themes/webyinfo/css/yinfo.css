@@ -46,7 +46,9 @@ ul {
 .b_h20 {
 	height: 20px;
 }
-
+.b_h30 {
+    height: 30px;
+}
 .b_h40 {
 	height: 40px;
 }
@@ -902,3 +904,49 @@ margin-left:80px;
  height:30px;
  cursor:pointer;
 }
+
+
+.yinfo_login_bg
+{
+    background-color: #d7e5ce;
+    margin-bottom:100px;
+    padding:5px;
+}
+.yinfo_login_show
+{
+    border:solid 1px #99cb7a;
+    background-color: #fff;
+    min-height:100px;
+}
+.yinfo_login_show .c_title
+{
+    color:#36770e;
+    font-size: 24px;
+    font-weight: bold;
+}
+.yinfo_login_show .c_weight
+{
+    font-size: 16px;
+    color:#36770e;
+    display:inline-block;
+    width:90px;
+}
+.yinfo_login_show .c_help
+{
+    color:#7e7e7e;
+}
+.yinfo_login_show .c_help ul
+{
+    margin-left:10px;
+}
+
+.yinfo_login_show .help-inline a
+{
+    color:#656565;
+}
+
+.yinfo_login_show .c_not
+{
+    color:#6c965a;
+}
+
