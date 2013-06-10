@@ -5,6 +5,30 @@ zen
 					$('.b_corner').corner();
 
 				},
+				
+				submit : function(sId,fCall, sAction) {
+
+					var aForm = $(sId).parents('form');
+					if (sAction) {
+						aForm.attr("action", sAction);
+					}
+
+					$(aForm).ajaxSubmit(function(data) {
+						var obj = $.evalJSON(data);
+						if (fCall) {
+							fCall(obj);
+						} else {
+							zen.yinfo.model('错误消息',obj.message);
+						}
+
+					});
+
+				},
+				regsuccess:function(oResult)
+				{
+					alert('');
+				},
+
 				// 参数bFlagShow 表示是否固定位置
 				headernav : function(bFlagShow) {
 

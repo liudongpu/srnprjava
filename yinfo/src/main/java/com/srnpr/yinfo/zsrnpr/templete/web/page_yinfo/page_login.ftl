@@ -18,7 +18,7 @@
 						<div class="b_h40"></div>
 						<div class="span8">
 							<div class="c_title">欢迎登录银杏林</div>
-							<form class="form-horizontal">
+							<form class="form-horizontal" action=${base_url}yinfo/func-login" method="post">
 								<div class="b_h40"></div>
 								<div class="c_item">
 									<span class="c_weight">注册邮箱：</span> <input type="text" /> <span

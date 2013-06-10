@@ -1,10 +1,10 @@
-CREATE DATABASE  IF NOT EXISTS `zdata` /*!40100 DEFAULT CHARACTER SET latin1 */;
+CREATE DATABASE  IF NOT EXISTS `zdata` /*!40100 DEFAULT CHARACTER SET utf8 */;
 USE `zdata`;
--- MySQL dump 10.13  Distrib 5.5.16, for Win32 (x86)
+-- MySQL dump 10.13  Distrib 5.5.24, for osx10.5 (i386)
 --
 -- Host: localhost    Database: zdata
 -- ------------------------------------------------------
--- Server version	5.5.25a
+-- Server version	5.5.31
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -460,6 +460,32 @@ INSERT INTO `info_video` VALUES (1,'4ea645ec2156467eb1c2a452d7f6ba3e','如何鉴
 UNLOCK TABLES;
 
 --
+-- Table structure for table `new_table`
+--
+
+DROP TABLE IF EXISTS `new_table`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `new_table` (
+  `zid` int(11) NOT NULL AUTO_INCREMENT,
+  `uid` char(32) DEFAULT '',
+  `user_uid` char(32) DEFAULT '' COMMENT '用户编号',
+  `info_uid` char(32) DEFAULT '' COMMENT '养老院编号',
+  `createtime` char(19) DEFAULT '',
+  PRIMARY KEY (`zid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `new_table`
+--
+
+LOCK TABLES `new_table` WRITE;
+/*!40000 ALTER TABLE `new_table` DISABLE KEYS */;
+/*!40000 ALTER TABLE `new_table` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `test_table`
 --
 
@@ -772,6 +798,38 @@ LOCK TABLES `y_menu` WRITE;
 /*!40000 ALTER TABLE `y_menu` DISABLE KEYS */;
 INSERT INTO `y_menu` VALUES (1,'','413001','银杏林后台菜单','',1,'413'),(2,'','413001001','功能列表','',2,'413001'),(3,'','413001002','系统设置','',2,'413001'),(4,'','413001001001','养老院维护','chart-v_y_info',3,'413001001'),(5,'','413001001002','广告设置','',3,'413001001');
 /*!40000 ALTER TABLE `y_menu` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `y_user`
+--
+
+DROP TABLE IF EXISTS `y_user`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `y_user` (
+  `zid` int(11) NOT NULL AUTO_INCREMENT,
+  `uid` char(32) DEFAULT '',
+  `name` varchar(450) DEFAULT '' COMMENT '用户名',
+  `pass` varchar(450) DEFAULT '' COMMENT '密码',
+  `phone` varchar(45) DEFAULT '' COMMENT '电话',
+  `email` varchar(450) DEFAULT '' COMMENT '邮箱',
+  `username` varchar(45) DEFAULT '' COMMENT '用户姓名',
+  `regdate` char(19) DEFAULT '' COMMENT '注册时间',
+  `cookieid` char(32) DEFAULT '' COMMENT '客户端编码',
+  `forgetid` char(32) DEFAULT '' COMMENT '忘记编号',
+  PRIMARY KEY (`zid`),
+  UNIQUE KEY `uid_UNIQUE` (`uid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `y_user`
+--
+
+LOCK TABLES `y_user` WRITE;
+/*!40000 ALTER TABLE `y_user` DISABLE KEYS */;
+/*!40000 ALTER TABLE `y_user` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -1148,4 +1206,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2013-06-11  2:21:51
+-- Dump completed on 2013-06-11  3:47:52
