@@ -3,10 +3,11 @@ zen
 			yinfo : {
 				init : function() {
 					$('.b_corner').corner();
+					zen.yinfo.checklogin();
 
 				},
-				
-				submit : function(sId,fCall, sAction) {
+
+				submit : function(sId, fCall, sAction) {
 
 					var aForm = $(sId).parents('form');
 					if (sAction) {
@@ -18,15 +19,77 @@ zen
 						if (fCall) {
 							fCall(obj);
 						} else {
-							zen.yinfo.model('错误消息',obj.message);
+							if (obj.flag) {
+								zen.yinfo.model('提示消息', '操作成功');
+							} else {
+								zen.yinfo.model('错误消息', obj.message);
+							}
+
 						}
 
 					});
 
 				},
-				regsuccess:function(oResult)
-				{
-					alert('');
+				
+				logout : function() {
+					zen.f.cookie("yinxl_user_cookieid", null, {
+						path : '/'
+					});
+					zen.f.cookie("yinxl_user_name", null, {
+						path : '/'
+					});
+
+					zen.yinfo.href('');
+				},
+				
+
+				checklogin : function() {
+					var sName = zen.f.cookie("yinxl_user_name");
+					if (sName != null) {
+						$('#yinfo_header_user')
+								.html(
+										'欢迎，'
+												+ sName
+												+ '&nbsp;&nbsp;<a href="#" onclick="zen.yinfo.href(\'yinfo/ucenter-user\')">[个人中心]</a>');
+
+					}
+
+				},
+
+				regsuccess : function(oResult) {
+					if (oResult.flag) {
+
+					} else {
+						zen.yinfo.model('错误消息', oResult.message);
+					}
+				},
+				loginsuccess : function(oResult) {
+					if (oResult.flag) {
+						zen.yinfo.logindo(oResult);
+					} else {
+						zen.yinfo.model('错误消息', oResult.message);
+					}
+				},
+
+				logindo : function(o) {
+					zen.f.cookie("yinxl_user_cookieid",
+							o.result["yinxl_user_cookieid"], {
+								path : '/',
+								expires : 365
+							});
+					zen.f.cookie("yinxl_user_name",
+							o.result["yinxl_user_name"], {
+								path : '/',
+								expires : 365
+							});
+
+					zen.f.cookie("yinxl_user_levelid",
+							o.result["yinxl_user_levelid"], {
+								path : '/',
+								expires : 365
+							});
+					zen.yinfo.href('yinfo/ucenter-user');
+
 				},
 
 				// 参数bFlagShow 表示是否固定位置
@@ -117,11 +180,12 @@ zen
 
 					aArr[0] = iMaxPage;
 
-					aHtml.push('<li '
-							+ ((iIndex == iMaxPage||iMaxPage==0) ? ('class="disabled"><a')
-									: '><a <a href="'
-											+ zen.yinfo.urlpager(aArr) + '" ')
-							+ ' >»</a></li>');
+					aHtml
+							.push('<li '
+									+ ((iIndex == iMaxPage || iMaxPage == 0) ? ('class="disabled"><a')
+											: '><a <a href="'
+													+ zen.yinfo.urlpager(aArr)
+													+ '" ') + ' >»</a></li>');
 
 					$(eUL).append(aHtml.join(''));
 
@@ -161,14 +225,14 @@ zen
 					if ($('#yinfo_header_search_input').val() == "") {
 						zen.yinfo.model('错误消息', '请输入搜索关键字！');
 					} else {
-						this.href("yinfo/list-0_0_0_0-"+$('#yinfo_header_search_input').val() );
+						this.href("yinfo/list-0_0_0_0-"
+								+ $('#yinfo_header_search_input').val());
 
 					}
 
 				},
-				
-				searchtext:function(sText)
-				{
+
+				searchtext : function(sText) {
 					$('#yinfo_header_search_input').val(sText);
 				},
 

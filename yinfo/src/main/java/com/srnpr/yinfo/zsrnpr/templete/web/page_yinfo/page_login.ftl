@@ -18,20 +18,20 @@
 						<div class="b_h40"></div>
 						<div class="span8">
 							<div class="c_title">欢迎登录银杏林</div>
-							<form class="form-horizontal" action=${base_url}yinfo/func-login" method="post">
+							<form class="form-horizontal" action="${base_url}yinfo/func-login" method="post">
 								<div class="b_h40"></div>
-								<div class="c_item">
-									<span class="c_weight">注册邮箱：</span> <input type="text" /> <span
+								<div class="control-group">
+									<span class="c_weight">注册邮箱：</span> <input type="text" name="login_name" /> <span
 										class="help-inline">请输入注册时的邮箱</span>
 								</div>
-								<div class="b_h30"></div>
-								<div class="c_item">
+								<div class="b_h10"></div>
+								<div class="control-group">
 									<span class="c_weight">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;密码：</span>
-									<input type="text" /> <span class="help-inline">请输入账户密码</span>
+									<input type="password"  name="login_pass" /> <span class="help-inline">请输入账户密码</span>
 								</div>
-								<div class="b_h30"></div>
-								<div class="c_item">
-									<span class="c_weight"></span> <a class="btn  btn-success">&nbsp;&nbsp;登&nbsp;&nbsp;录&nbsp;&nbsp;</a>
+								<div class="b_h10"></div>
+								<div class="control-group">
+									<span class="c_weight"></span> <a class="btn  btn-success" onclick="zen.yinfo.submit(this,zen.yinfo.loginsuccess)">&nbsp;&nbsp;登&nbsp;&nbsp;录&nbsp;&nbsp;</a>
 									<span class="help-inline">&nbsp;&nbsp;&nbsp;&nbsp;<a
 										href="">忘记密码</a></span>
 								</div>

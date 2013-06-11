@@ -150,7 +150,17 @@
 <meta name="description" content="${title}-银杏林" />
 </head>
 <body class="yinfo_body">
-	<div class="yold_header y_center"></div>
+	<div class="yold_header y_center">
+		<div class="yold_header_logo">
+			<a href="${base_url}"></a>
+		</div>
+		<div class="yold_header_user">
+			<div id="yinfo_header_user" class="yold_header_user_text">
+				<a href="${base_url}yinfo/login-login">登录</a> &nbsp;&nbsp;<a
+					href="${base_url}yinfo/reg-reg">免费注册</a>
+			</div>
+		</div>
+	</div>
 	<div class="yold_headadv ">
 		<div class="y_center">
 			<img
@@ -299,3 +309,39 @@ $(document).ready(function(){zen.yinfo.pagination()});
 </body>
 </html>
 </#macro>
+
+<#macro m_site_common_user_menu>
+			<div class="yinfo_user_menu">
+				<div class="yinfo_user_menu_show">
+					<div class="c_title">会员中心</div>
+					<div class="c_label">&gt;&nbsp;&nbsp;个人用户</div>
+					<div class="c_sub">
+						<ul>
+							<li><a href="${base_url}yinfo/ucenter-user">·我的资料</a></li>
+							<li><a href="${base_url}yinfo/uaccess-user">·我的收藏</a></li>
+							<li><a href="${base_url}yinfo/uaccess-user">·我入住过的机构/评价</a></li>
+						</ul>
+					</div>
+					<div class="b_h10"></div>
+					<div class="c_label">&gt;&nbsp;&nbsp;养老机构</div>
+					<div class="c_sub">
+						<ul>
+							<li><a href="${base_url}yinfo/uaccess-user">·机构认证申请</a></li>
+							<li><a href="${base_url}yinfo/uaccess-user">·机构资料编辑</a></li>
+
+						</ul>
+					</div>
+					<div class="b_h10"></div>
+					<div class="c_label">&gt;&nbsp;&nbsp;账户设置</div>
+					<div class="c_sub">
+						<ul>
+							<li><a href="${base_url}yinfo/upassword-user">·修改密码</a></li>
+							<li><a href="#" onclick="zen.yinfo.logout()">·退出系统</a></li>
+
+						</ul>
+					</div>
+				</div>
+			</div>
+</#macro>
+
+
