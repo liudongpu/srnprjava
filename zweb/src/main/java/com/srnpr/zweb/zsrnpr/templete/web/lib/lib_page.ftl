@@ -94,7 +94,23 @@ no result
     <label class="control-label" for="${p_info.getColumnName()?default('')}">${p_info.getFieldName()?default('')}</label>
     <div class="controls">
       <input type="hidden" id="${p_info.getColumnName()?default('')}" name="${p_info.getColumnName()?default('')}" value="${p_info.getFieldValue()?default('')}"  />
-      <iframe src="${base_url}zyou-iframe/upload-images_upload?parentid=${p_info.getColumnName()?default('')}" frameborder="0" height="30px" width="100%"></iframe>
+      <iframe src="${base_url}zyou-iframe/upload-images_upload?parentid=${p_info.getColumnName()?default('')}" frameborder="0" height="40px" width="100%"></iframe>
+      
+    </div>
+  </div>
+      
+      
+</#macro>
+
+
+<#macro m_page_muliupload  p_info>
+      
+      
+      <div class="control-group">
+    <label class="control-label" for="${p_info.getColumnName()?default('')}">${p_info.getFieldName()?default('')}</label>
+    <div class="controls">
+      <input type="hidden" id="${p_info.getColumnName()?default('')}" name="${p_info.getColumnName()?default('')}" value="${p_info.getFieldValue()?default('')}"  />
+      <iframe src="${base_url}zyou-iframe/upload-muli_upload?parentid=${p_info.getColumnName()?default('')}" frameborder="0" height="40px" width="100%"></iframe>
       
     </div>
   </div>
@@ -212,6 +228,8 @@ no result
 	<@m_page_date p_info_auto />
 	<#elseif m_page_autorun_id==416108121>
 	<@m_page_upload p_info_auto />
+	<#elseif m_page_autorun_id==416108221>
+	<@m_page_muliupload p_info_auto />
 <#else>
 	<@m_page_input p_info_auto />
 </#if>

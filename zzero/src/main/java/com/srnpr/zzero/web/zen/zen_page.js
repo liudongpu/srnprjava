@@ -68,30 +68,24 @@ zen
 
 					location.href = sUrl;
 				},
-				
-				query:function(oEl)
-				{
-					var aQuery=[];
-					
+
+				query : function(oEl) {
+					var aQuery = [];
+
 					$('input').each(
-							
-					function(n,el)
-					{
-						if($(el).val()!='')
-							{
-							aQuery.push($(el).attr('name')+'='+$(el).val());
-							
-							}
-						
-					}
-					);
-					
-					location.href=zen.page.urlreplace(5, aQuery
-							.join('&'));
-					
+
+							function(n, el) {
+								if ($(el).val() != '') {
+									aQuery.push($(el).attr('name') + '='
+											+ $(el).val());
+
+								}
+
+							});
+
+					location.href = zen.page.urlreplace(5, aQuery.join('&'));
+
 				},
-				
-				
 
 				pagination : function() {
 					$(".pagination").each(
@@ -212,15 +206,13 @@ zen
 						}
 					});
 				},
-				
-				dialog:function(sUrl)
-				{
-					
-					zen.page.model('操作','<iframe src="'+zen.t.baseurl +sUrl+'" frameborder="0" style="width:100%;"/>');
-					
-					
+
+				dialog : function(sUrl) {
+
+					zen.page.model('操作', '<iframe src="' + zen.t.baseurl + sUrl
+							+ '" frameborder="0" style="width:100%;"/>');
+
 				},
-				
 
 				init : function() {
 
@@ -282,17 +274,31 @@ zen
 				inValue : function(sId, oValue) {
 					$('#' + sId).val(oValue);
 				},
-				upValue : function(sId) {
-					return $('#' + sId).val();
+				upValue : function(sId, sAttr) {
+					if (sAttr) {
+						return $('#' + sId).attr(sAttr);
+					} else {
+						return $('#' + sId).val();
+					}
 				},
 
 				upload : function(o) {
 
 					if (o.flag) {
 
-						zen.page.uploadreload(0, o.result["fileurl"]);
-						parent.zen.page.inValue(o.result["parentid"],
-								o.result["fileurl"]);
+						var bFlagMuli = ($('#zen_page_upload_type').val() == "muli_upload");
+
+						var sValue = parent.zen.page
+								.upValue(o.result["parentid"]);
+
+						sValue = sValue + (sValue ? ',' : '')
+								+ o.result["fileurl"];
+
+						parent.zen.page.inValue(o.result["parentid"], sValue);
+
+						zen.page.uploadreload(0);
+
+						location.href = location.href;
 
 					} else {
 						parent.zen.page.okdo(o.message);
@@ -301,23 +307,70 @@ zen
 				upcheck : function(sId) {
 					var sVal = parent.zen.page.upValue(sId);
 					if (sVal) {
-						zen.page.uploadreload(0, sVal);
+						zen.page.uploadreload(0);
 
 					}
 				},
+
+				upresize : function(sId) {
+					var iLength = $('#' + sId).val().split(',').length;
+					$('#' + sId).next().height((iLength + 1) * 50 + 'px');
+				},
+
 				uploadreload : function(iIndex, sUrl) {
+
+					var bFlagMuli = ($('#zen_page_upload_type').val() == "muli_upload");
+
 					if (iIndex == 1) {
-						$("#page_upload_call").show();
+
 						$("#page_upload_show").hide();
+						if (!bFlagMuli)
+							$("#page_upload_call").show();
 					} else {
 						$("#page_upload_show").show();
-						$("#page_upload_call").hide();
-					}
-					if (sUrl) {
-						$('#page_upload_text').html(
-								'<a href="' + sUrl + '" target="_blank">查看</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;');
+						if (!bFlagMuli)
+							$("#page_upload_call").hide();
 					}
 
+					sUrl = parent.zen.page.upValue($('#zen_page_upload_parent')
+							.val());
+
+					if (sUrl) {
+
+						var aUrls = sUrl.split(',');
+						var aHtml = [];
+						for ( var i = 0, j = aUrls.length; i < j; i++) {
+							aHtml.push('<div class="c_item">');
+							aHtml
+									.push('<img  src="'
+											+ aUrls[i]
+											+ '"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="'
+											+ aUrls[i]
+											+ '" target="_blank" class="btn">查看大图</a>');
+							aHtml
+									.push('&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="btn" onclick="zen.page.uploaddel('
+											+ i
+											+ ',\''
+											+ aUrls[i]
+											+ '\')">删除</a></div>');
+
+						}
+
+						$('#page_upload_text').html(aHtml.join(''));
+					}
+					parent.zen.page
+							.upresize($('#zen_page_upload_parent').val());
+
+				},
+				uploaddel : function(iIndex, oDel) {
+					var sUrl = parent.zen.page.upValue($(
+							'#zen_page_upload_parent').val());
+					var aUrls = sUrl.split(',');
+					aUrls.splice(iIndex, 1);
+					sUrl = aUrls.join(',');
+					parent.zen.page.inValue($('#zen_page_upload_parent').val(),
+							sUrl);
+					location.href=location.href;
 				}
 
 			}

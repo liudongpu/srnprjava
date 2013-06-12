@@ -1,6 +1,6 @@
 
-<#assign page_obj=pageexec.upDataOne("y_info","uid",pageinfo.getWebSet()["Url_Option"])>
-<@m_site_common_oldhead />
+<#assign page_obj=pageexec.upDataOne("y_info","domain",pageinfo.getWebSet()["Url_View"])>
+<@m_site_common_oldhead title=page_obj["name"] />
 
 	<div class="y_center">
 		<div class="yinfo_main">
@@ -11,36 +11,93 @@
 						<div class="yold_info_left">
 							<div class="c_pic">
 								<img
-									src="http://image.daoxila.com/hotel/medium/2013-01/20130108135925.jpg" />
+									/>
 							</div>
 							<div class="b_h10"></div>
-							<div class="c_imgs"></div>
+							<div class="c_imgs">
+								<div class="c_left c_prev"></div>
+								<div class="c_center">
+									<div class="c_over c_scroll">
+										<ul>
+											<#list page_obj["list_img"]?split(",") as el>
+												<li><img
+												src="${el}" /></li>
+											</#list>
+											
+											
+										</ul>
+									</div>
+								</div>
+								<div class="c_right c_next"></div>
+							</div>
+							<script>
+								$('.yold_info_left .c_imgs').srnprscroll({
+									target : '.yold_info_left .c_pic img'
+								});
+							</script>
+
 						</div>
 						<div class="yold_info_right">
-							<div class="c_top">
-								<div class="c_left">
-									<h2>${page_obj["name"]}</h2>
+							<div class="c_box">
+								<div class="c_top">
+									<div class="c_left">
+										<h2>${page_obj["name"]}</h2>
+									</div>
+									<div class="c_right">
+										<div class="c_icontip"></div>
+									</div>
 								</div>
-								<div class="c_right">
-									<div class="c_icontip"></div>
+								<div class="c_item">
+									<span>地&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;区：</span>北京
+									${pagemethod.upClassName("area_"+page_obj["area"])}
+	
+	
+								</div>
+								<div class="c_item">
+									<span>床&nbsp;&nbsp;位&nbsp;&nbsp;数：</span>${page_obj["q_bednumber"]}
+								</div>
+								<div class="c_item">
+									<span>收住对象：</span>
+									<#list page_obj["peopletype_cid"]?split(",") as el>
+										${pagemethod.upClassName(el)}
+									</#list>
+									
+								</div>
+								<div class="c_item">
+									<span>机构地址：</span>${page_obj["link_address"]}<a class="c_link" href="#yinfo_home_t7">【查看地图】</a>
+								</div>
+								<div class="clearfix"></div>
+								<div class="b_h20"></div>
+								<div>
+									<div class="c_float">
+										<a class="btn btn-success">免费预约参观</a>
+									</div>
+									<div class="c_float">
+										<a class="c_gift" href="#"></a>
+									</div>
+									<div class="c_float">
+										<a class="c_collect" href="#"></a>
+									</div>
 								</div>
 							</div>
-							<div class="c_item">
-								<span>地&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;区：</span>北京
-								海淀
-
-
+							<div class="c_share">
+								<!-- JiaThis Button BEGIN -->
+								<div class="jiathis_style">
+									<span class="jiathis_txt">分享到：</span>
+									<a class="jiathis_button_tools_1"></a>
+									<a class="jiathis_button_tools_2"></a>
+									<a class="jiathis_button_tools_3"></a>
+									<a class="jiathis_button_tools_4"></a>
+									<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
+									<a class="jiathis_counter_style"></a>
+								</div>
+								<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1369568754104639" charset="utf-8"></script>
+								<!-- JiaThis Button END -->
+							
 							</div>
-							<div class="c_item">
-								<span>床&nbsp;&nbsp;位&nbsp;&nbsp;数：</span>${page_obj["q_bednumber"]}
-							</div>
-							<div class="c_item">
-								<span>收住对象：</span>
-							</div>
-							<div class="b_h20"></div>
-							<div></div>
 						</div>
 						<div class="clearfix"></div>
+						<div class="b_h20"></div>
 					</div>
 				</div>
 			</div>

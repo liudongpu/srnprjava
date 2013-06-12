@@ -556,16 +556,86 @@ color:#000;
 
 .yold_info_left .c_pic img {
 	width: 440px;
-	height: 310px;
+	height: 330px;
 }
+
+.yold_info_left .c_imgs
+{
+    height:60px;
+}
+.yold_info_left .c_left
+{
+    background-image: url("../images/yinfo_png.png");
+    background-position: -200px -340px;
+    float:left;
+    width:20px;
+    height:60px;
+    cursor: pointer;
+}
+.yold_info_left .c_center
+{
+    float:left;
+    width:402px;
+    height:60px;
+    position: relative;
+     overflow: hidden;
+}
+
+.yold_info_left .c_over
+{
+    height:100%;
+   
+    
+     position: relative;
+}
+
+.yold_info_left .c_over ul
+{
+    margin:0px;
+    padding:0px;
+}
+.yold_info_left .c_over ul li
+{
+    list-style-type: none;
+    float:left;
+    width:100px;
+}
+
+.yold_info_left .c_center img
+{
+    width:90px;
+    height:60px;
+    margin:0px 4px 0px 5px;
+    cursor: pointer;
+}
+
+.yold_info_left .c_right
+{
+    background-image: url("../images/yinfo_png.png");
+    background-position: -220px -340px;
+    float:left;
+    width:20px;
+    height:60px;
+    cursor: pointer;
+}
+
 
 .yold_info_right {
 	float: left;
 	margin-left: 25px;
 	width: 455px;
-	height:315px;
-	border-bottom: dashed 1px #e6e6e6;
+	
 }
+.yold_info_right .c_box
+{
+    height:335px;
+    border-bottom: dashed 1px #e6e6e6;
+}
+.yold_info_right .c_share
+{
+    padding-top:20px;
+}
+
 
 .yold_info_right .c_top {
 	height: 120px;
@@ -573,7 +643,7 @@ color:#000;
 
 .yold_info_right .c_top .c_left {
 	float: left;
-	padding-top: 50px;
+	padding-top: 30px;
 	width:400px;
 }
 
@@ -638,7 +708,7 @@ color:#000;
 
 .yold_show .c_item {
 	position: relative;
-	padding: 80px 10px 10px 10px;
+	padding: 80px 20px 10px 20px;
 }
 
 .yold_show .c_title {

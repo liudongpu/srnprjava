@@ -202,10 +202,10 @@ $(document).ready(function(){zen.yinfo.pagination()});
 <#macro m_site_common_site_list el fromtype>
 
 							<div class="c_img">
-								<a href="${base_url}yinfo/home-home-${el["uid"]}" target="_blank"><img src="${el["main_img"]}" /></a>
+								<a href="${base_url}yinfo/home-${el["domain"]}" target="_blank"><img src="${el["main_img"]}" /></a>
 							</div>
 							<div class="yinfo_item_box">
-								<div class="c_title"><a href="${base_url}yinfo/home-home-${el["uid"]}" target="_blank">${el["name"]}</a></div>
+								<div class="c_title"><a href="${base_url}yinfo/home-${el["domain"]}" target="_blank">${el["name"]}</a></div>
 								<div class="c_in">
 									<div class="c_left">保障：</div>
 									<div class="c_right">
