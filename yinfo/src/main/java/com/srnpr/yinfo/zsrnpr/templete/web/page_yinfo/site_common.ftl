@@ -262,48 +262,45 @@ $(document).ready(function(){zen.yinfo.pagination()});
 	</div>
 
 
-<div id="yinfo_query_for" class="modal hide fade yinfo_query_for">
-  <div class="c_box">
-  	<div class="c_top"></div>
-  	<div class="c_info">
-  		
-  	</div>
-  	<div class="c_input">
-  		<input type="text" name="yinfo_query_for_phone" id="yinfo_query_for_phone" maxlength="11" />
-  	</div>
-  	<div class="c_button">
-  		<a class="btn  btn-success">&nbsp;&nbsp;提&nbsp;&nbsp;交&nbsp;&nbsp;</a>
-  	</div>
-  	<div class="c_desc">
-  	您的重要信息不会被泄露,详见隐私条款</div>
-  	<div class="c_skip"><a href="#" onclick="$('#yinfo_query_for_notice').show();">跳过</a></div>
-  	
-  	<div class="c_close" data-dismiss="modal" aria-hidden="true"></div>
-  	
-  	<div id="yinfo_query_for_notice" class="c_notice">
-  		<div class="c_notice_head">
-  			确定要跳过吗？
-  		</div>
-  		<div class="c_notice_body">
-  		<br/>
-  		 这样您将无法获得： <ul>
-  		 <li>您需要的养老院最新折扣优惠信息</li>
-  		 <li>银杏林赠送的超值大礼</li>
-  		 <li>养老院免费一对一贴心顾问</li>
-  		 </ul>
-  		 
-  		</div>
-  		<div class="c_notice_skip">
-  		确定要跳过吗？
-  		</div>
-  		<div class="c_notice_buttons">
-  			<a class="btn btn-small" onclick="zen.yinfo.queryskip()">&nbsp;&nbsp;是&nbsp;&nbsp;</a>&nbsp;&nbsp;&nbsp;&nbsp;
-  			<a class="btn btn-small" onclick="$('#yinfo_query_for_notice').hide();">&nbsp;&nbsp;否&nbsp;&nbsp;</a>
-  		</div>
-  	</div>
-  	
-  </div>
-</div>
+	<div id="yinfo_query_for" class="modal hide fade yinfo_query_for">
+		<div class="c_box">
+			<div class="c_top"></div>
+			<div class="c_info"></div>
+			<div class="c_input">
+				<input type="text" name="yinfo_query_for_phone"
+					id="yinfo_query_for_phone" maxlength="11" />
+			</div>
+			<div class="c_button">
+				<a class="btn  btn-success" onclick="zen.yinfo.querysubmit()">&nbsp;&nbsp;提&nbsp;&nbsp;交&nbsp;&nbsp;</a>
+			</div>
+			<div class="c_desc">您的重要信息不会被泄露,详见隐私条款</div>
+			<div class="c_skip">
+				<a href="#" onclick="$('#yinfo_query_for_notice').show();">跳过</a>
+			</div>
+
+			<div class="c_close" data-dismiss="modal" aria-hidden="true"></div>
+
+			<div id="yinfo_query_for_notice" class="c_notice">
+				<div class="c_notice_head">确定要跳过吗？</div>
+				<div class="c_notice_body">
+					<br /> 这样您将无法获得：
+					<ul>
+						<li>您需要的养老院最新折扣优惠信息</li>
+						<li>银杏林赠送的超值大礼</li>
+						<li>养老院免费一对一贴心顾问</li>
+					</ul>
+
+				</div>
+				<div class="c_notice_skip">确定要跳过吗？</div>
+				<div class="c_notice_buttons">
+					<a class="btn btn-small" onclick="zen.yinfo.queryskip()">&nbsp;&nbsp;是&nbsp;&nbsp;</a>&nbsp;&nbsp;&nbsp;&nbsp;
+					<a class="btn btn-small"
+						onclick="$('#yinfo_query_for_notice').hide();">&nbsp;&nbsp;否&nbsp;&nbsp;</a>
+				</div>
+			</div>
+			<input type="hidden" id="yinfo_query_for_query" name="yinfo_query_for_query"/>
+		</div>
+	</div>
 
 
 </body>

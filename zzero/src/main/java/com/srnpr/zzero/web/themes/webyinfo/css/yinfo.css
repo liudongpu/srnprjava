@@ -39,7 +39,7 @@ ul {
 }
 
 .b_h10 {
-	height: 15px;
+	height: 10px;
 	line-height: 1px;
 }
 
@@ -347,6 +347,7 @@ color:#000;
 
 .index_adv {
 	margin-top: 12px;
+	height:270px;
 }
 
 .index_adv img {

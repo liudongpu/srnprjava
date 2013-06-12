@@ -7,50 +7,37 @@
 			<div class="index_center">
 				<div class="index_adv">
 					<div id="myCarousel" class="carousel slide">
+						<#assign page_main_listadv=pageexec.upData("y_adv","position_cid","32620001")>
+					
 						<ol class="carousel-indicators">
-							<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-							<li data-target="#myCarousel" data-slide-to="1" class=""></li>
-							<li data-target="#myCarousel" data-slide-to="2" class=""></li>
+							<#list page_main_listadv as el>
+							<li data-target="#myCarousel" data-slide-to="${el_index}" class="<#if el_index==0>active</#if>"></li>
+							</#list>
 						</ol>
 						<div class="carousel-inner">
-							<div class="item active">
+						
+							<#list page_main_listadv as el>
+							
+							<div class="item <#if el_index==0>active</#if>">
 								<img
-									src="http://www.bootcss.com/assets/img/bootstrap-mdo-sfmoma-01.jpg"
+									src="${el["file_url"]}"
 									alt="">
 								<div class="carousel-caption">
-
 									<p>
-										<a href="">Cras justo odio, dapibus ac facilisis in,
-											egestas eget quam. </a>
+										<a href="${el["link_url"]}">${el["name"]}</a>
 									</p>
 								</div>
 							</div>
-							<div class="item">
-								<img
-									src="http://www.bootcss.com/assets/img/bootstrap-mdo-sfmoma-02.jpg"
-									alt="">
-								<div class="carousel-caption">
-
-									<p>Cras justo odio, dapibus ac facilisis in, egestas eget
-										quam.</p>
-								</div>
-							</div>
-							<div class="item">
-								<img
-									src="http://www.bootcss.com/assets/img/bootstrap-mdo-sfmoma-03.jpg"
-									alt="">
-								<div class="carousel-caption">
-
-									<p>Cras justo odio, dapibus ac facilisis in, egestas eget
-										quam.</p>
-								</div>
-							</div>
+							</#list>
+						
+							
 						</div>
 						<a class="left carousel-control b_none" href="#myCarousel"
 							data-slide="prev">‹</a> <a class="right carousel-control b_none"
 							href="#myCarousel" data-slide="next">›</a>
 					</div>
 				</div>
+				<div class="b_h10"></div>
 				<div class="index_todo"></div>
 			</div>
 
