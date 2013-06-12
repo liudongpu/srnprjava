@@ -173,33 +173,27 @@ public class UserCall extends BaseClass {
 
 		return result;
 	}
-	
-	
+
 	public MResult callChangePass(Map<String, Object> mUserInfo) {
-		
+
 		if (!StringUtils.isNotEmpty(pRequest.getReqMap().get("oldpass")
 				.toString())) {
 			result.error(965901011);
-		} else if (!StringUtils.isNotEmpty(pRequest.getReqMap()
-				.get("userpass").toString())) {
+		} else if (!StringUtils.isNotEmpty(pRequest.getReqMap().get("userpass")
+				.toString())) {
 			result.error(965901012);
-		}
-		else if (!pRequest.getReqMap()
-				.get("userpass").toString().equals(pRequest.getReqMap()
-				.get("userpass2").toString())) {
+		} else if (!pRequest.getReqMap().get("userpass").toString()
+				.equals(pRequest.getReqMap().get("userpass2").toString())) {
 			result.error(965901013);
 		}
-		if(result.getFlag())
-		{
-			
-			if(!mUserInfo.get("pass").equals(pRequest.getReqMap().get("oldpass")
-					.toString()))
-			{
+		if (result.getFlag()) {
+
+			if (!mUserInfo.get("pass").equals(
+					pRequest.getReqMap().get("oldpass").toString())) {
 				result.error(965901008);
 			}
-			
+
 		}
-		
 
 		if (result.getFlag()) {
 
@@ -212,9 +206,19 @@ public class UserCall extends BaseClass {
 
 		return result;
 	}
-	
-	
-	
-	
+
+	public MResult callPostPhone(Map<String, Object> mUserInfo) {
+
+		if (result.getFlag()) {
+
+			MHashMap mHashMap = new MHashMap();
+			mHashMap.put("phone", pRequest.upRequestParam("phone"));
+			mHashMap.put("cookieid", mUserInfo.get("cookieid").toString());
+			DataTableManager.Get("y_user").inPost(mHashMap, "cookieid");
+
+		}
+
+		return result;
+	}
 
 }

@@ -30,7 +30,7 @@ zen
 					});
 
 				},
-				
+
 				logout : function() {
 					zen.f.cookie("yinxl_user_cookieid", null, {
 						path : '/'
@@ -41,7 +41,6 @@ zen
 
 					zen.yinfo.href('');
 				},
-				
 
 				checklogin : function() {
 					var sName = zen.f.cookie("yinxl_user_name");
@@ -285,9 +284,75 @@ zen
 							+ '_'
 							+ $('#yinfo_nav_query_older input:radio:checked')
 									.val();
+
+					$('#yinfo_query_for_query').val(sQuery);
+
 					$(function() {
-						$('#yinfo_query_for').modal('show')
+						$('#yinfo_query_for').modal('show');
+
+						$('#yinfo_query_for').on('shown', function() {
+							$('#yinfo_query_for_phone').focus();
+						});
+
 					});
+				},
+				querysubmit : function() {
+					var sUserCookie = zen.f.cookie("yinxl_user_cookieid");
+
+					if ($('#yinfo_query_for_phone').val() == ""
+							|| $('#yinfo_query_for_phone').val().length != 11) {
+						alert('请输入正确的手机号码');
+						return;
+					}
+
+					if (sUserCookie) {
+						zen.yinfo.post('postphone', {
+							cookieid : sUserCookie,
+							phone : $('#yinfo_query_for_phone').val()
+						}, zen.yinfo.querysuccess);
+					} else {
+						alert('请先登录，谢谢！');
+					}
+				},
+				querysuccess : function(o) {
+					$('#yinfo_query_for').modal('hidden');
+
+				},
+
+				queryskip : function() {
+					zen.yinfo.href('yinfo/list-'
+							+ $('#yinfo_query_for_query').val());
+				},
+				post : function(url, data, success) {
+					$.ajax({
+						type : 'POST',
+						url : zen.t.baseurl + 'yinfo/func-' + url,
+						data : data,
+						success : function(data) {
+							zen.yinfo.success(data, success)
+						},
+						error : zen.yinfo.error
+					});
+
+				},
+				success : function(data, fSuc) {
+					// alert(o);
+					var obj = $.evalJSON(data);
+					if (obj.flag == true) {
+						if (fSuc != undefined) {
+							fSuc(obj);
+						} else {
+							zen.yinfo.model("提示消息", "操作成功！");
+						}
+
+					} else {
+						zen.yinfo.model("错误消息", obj.message);
+					}
+
+				},
+				error : function(o) {
+
+					zen.yinfo.model('错误消息', '调用失败，请稍后重试或者联系技术人员，谢谢！');
 				}
 
 			}

@@ -297,7 +297,7 @@ $(document).ready(function(){zen.yinfo.pagination()});
   		确定要跳过吗？
   		</div>
   		<div class="c_notice_buttons">
-  			<a class="btn btn-small" onclick="">&nbsp;&nbsp;是&nbsp;&nbsp;</a>&nbsp;&nbsp;&nbsp;&nbsp;
+  			<a class="btn btn-small" onclick="zen.yinfo.queryskip()">&nbsp;&nbsp;是&nbsp;&nbsp;</a>&nbsp;&nbsp;&nbsp;&nbsp;
   			<a class="btn btn-small" onclick="$('#yinfo_query_for_notice').hide();">&nbsp;&nbsp;否&nbsp;&nbsp;</a>
   		</div>
   	</div>
@@ -318,8 +318,8 @@ $(document).ready(function(){zen.yinfo.pagination()});
 					<div class="c_sub">
 						<ul>
 							<li><a href="${base_url}yinfo/ucenter-user">·我的资料</a></li>
-							<li><a href="${base_url}yinfo/uaccess-user">·我的收藏</a></li>
-							<li><a href="${base_url}yinfo/uaccess-user">·我入住过的机构/评价</a></li>
+							<li><a href="${base_url}yinfo/ulike-user">·我的收藏</a></li>
+							<li><a href="${base_url}yinfo/ucomment-user">·我入住过的机构/评价</a></li>
 						</ul>
 					</div>
 					<div class="b_h10"></div>
