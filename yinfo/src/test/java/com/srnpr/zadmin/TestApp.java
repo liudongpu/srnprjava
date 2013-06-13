@@ -26,9 +26,7 @@ public class TestApp {
 
 		//fail("Not yet implemented");
 		
-		SmsSend smsSend=new SmsSend();
 		
-		smsSend.inSend("13522283810","测试内容");
 		
 		
 	}

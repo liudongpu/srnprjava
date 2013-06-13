@@ -94,6 +94,8 @@ public class UserCall extends BaseClass {
 			}
 
 			mHMap.inAdd("username", StringUtils.substringBefore(sRegName, "@"));
+			
+			mHMap.inAdd("level_cid","32610001");
 
 			DataTableManager.Get("y_user").inPut(mHMap);
 
