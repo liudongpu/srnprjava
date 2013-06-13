@@ -42,6 +42,7 @@
 								<div class="c_top">
 									<div class="c_left">
 										<h2>${page_obj["name"]}</h2>
+										<input type="hidden" id="yold_info_home_uid" name="yold_info_home_uid" value="${page_obj["uid"]}"/>
 									</div>
 									<div class="c_right">
 										<div class="c_icontip"></div>
@@ -70,7 +71,7 @@
 								<div class="b_h20"></div>
 								<div>
 									<div class="c_float">
-										<a class="btn btn-success">免费预约参观</a>
+										<a class="btn btn-success"  onclick="zen.yinfo.callhome()">免费预约参观</a>
 									</div>
 									<div class="c_float">
 										<a class="c_gift" href="#"></a>

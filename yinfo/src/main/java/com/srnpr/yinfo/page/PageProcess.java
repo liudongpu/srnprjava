@@ -76,6 +76,8 @@ public class PageProcess implements IWebProcess {
 			mResult = new UserCall(pRequest).callChangePass(upUserInfo());
 		} else if (sView.equals("postphone")) {
 			mResult = new UserCall(pRequest).callPostPhone(upUserInfo());
+		}else if (sView.equals("postcall")) {
+			mResult = new UserCall(pRequest).callPostCall(upUserInfo());
 		}
 
 		return mResult;

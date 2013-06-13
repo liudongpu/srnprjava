@@ -6,6 +6,7 @@ import java.util.regex.Pattern;
 
 import org.apache.commons.lang.StringUtils;
 
+import com.srnpr.yinfo.send.SmsSend;
 import com.srnpr.zcom.base.BaseClass;
 import com.srnpr.zcom.common.ComFunction;
 import com.srnpr.zcom.helper.FormatHelper;
@@ -222,5 +223,60 @@ public class UserCall extends BaseClass {
 
 		return result;
 	}
+	
+	
+	
+	public MResult callPostCall(Map<String, Object> mUserInfo) {
+
+		String sPhoneNUmber=pRequest.upRequestParam("phone");
+
+		if (result.getFlag()) {
+			if (!StringUtils.isNumeric(sPhoneNUmber)
+					|| sPhoneNUmber.length() != 11) {
+				result.error(965901009);
+			}
+
+		}
+		
+		
+		if (result.getFlag()) {
+			if (StringUtils.isNotEmpty(pRequest.upRequestParam("phone"))) {
+				if (DataTableManager.Get("y_call").upCount("phone",
+						pRequest.getReqMap().get("phone").toString()) > 3) {
+					result.error(965901015);
+				}
+
+			}
+
+		}
+		
+		if (result.getFlag()) {
+			
+			
+			Map<String, Object> mInfoMap= DataTableManager.Get("y_info").upOneMap("uid",pRequest.getReqMap().get("info_uid").toString().trim());
+			String sTextString=mInfoMap.get("name")+"地址"+mInfoMap.get("link_address")+"电话"+mInfoMap.get("link_telephone")+"联系人"+mInfoMap.get("link_people_one")+" "+mInfoMap.get("link_phone_one")+"请提前预约。";
+			new SmsSend().send(sPhoneNUmber, sTextString);
+			MHashMap mHashMap = new MHashMap();
+			mHashMap.put("uid", ComFunction.upUuid());
+			mHashMap.put("user_uid", mUserInfo.get("uid").toString());
+			mHashMap.put("phone", sPhoneNUmber);
+			mHashMap.put("info_uid", mInfoMap.get("uid").toString());
+			mHashMap.put("info_title", mInfoMap.get("name").toString());
+			mHashMap.put("status_cid", "32640001");
+			mHashMap.put("create_time", FormatHelper.GetDateTime());
+			mHashMap.put("user_email", mUserInfo.get("email").toString());
+			DataTableManager.Get("y_call").inPut(mHashMap);
+
+		}
+
+		return result;
+	}
+	
+	
+	
+	
+	
+	
+	
 
 }

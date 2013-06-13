@@ -304,17 +304,56 @@ zen
 						alert('请输入正确的手机号码');
 						return;
 					}
-
 					if (sUserCookie) {
-						zen.yinfo.post('postphone', {
-							cookieid : sUserCookie,
-							phone : $('#yinfo_query_for_phone').val()
-						}, zen.yinfo.querysuccess);
+
+						var sHomeUid = $('#yold_info_home_uid').val();
+
+						if (sHomeUid && sHomeUid != "") {
+							zen.yinfo.callpost(sUserCookie);
+						} else {
+							zen.yinfo.post('postphone', {
+								cookieid : sUserCookie,
+								phone : $('#yinfo_query_for_phone').val()
+							}, zen.yinfo.querysuccess);
+						}
 					} else {
 						alert('请先登录，谢谢！');
 					}
 				},
+
 				querysuccess : function(o) {
+					$('#yinfo_query_for').modal('hide');
+					zen.yinfo.model("提示消息", "操作成功，稍后会有工作人员与您联系，谢谢！");
+				},
+				callhome : function() {
+					var sUserCookie = zen.f.cookie("yinxl_user_cookieid");
+					if (sUserCookie) {
+						var aText = '您希望预约参观：'
+								+ $('.yold_info_right .c_top .c_left ').text();
+						$('#yinfo_query_for .c_info').html(aText);
+
+						$('#yinfo_query_for').modal('show');
+						$('#yinfo_query_for').on('shown', function() {
+							$('#yinfo_query_for_phone').focus();
+						});
+					}
+					else
+						{
+						zen.yinfo.model("提示消息", "请先登录后再执行该操作，谢谢！");
+						}
+
+				},
+				callpost : function(sUserCookie) {
+
+					zen.yinfo.post('postcall', {
+						cookieid : sUserCookie,
+						info_uid : $('#yold_info_home_uid').val(),
+						info_title : $('.yold_info_right .c_top .c_left ')
+								.text(),
+						phone : $('#yinfo_query_for_phone').val()
+					}, zen.yinfo.callsuccess);
+				},
+				callsuccess : function() {
 					$('#yinfo_query_for').modal('hide');
 					zen.yinfo.model("提示消息", "操作成功，稍后会有工作人员与您联系，谢谢！");
 				},
