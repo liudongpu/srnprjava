@@ -127,7 +127,7 @@
 				</div>
 				<div id="yinfo_home_t6" class="c_item">
 					<div class="c_title">联系方式</div>
-					<div>${page_obj["field_description"]}</div>
+					<div>${page_obj["link_travel"]}</div>
 				</div>
 				<div id="yinfo_home_t7" class="c_item">
 					<div class="c_title">机构位置</div>

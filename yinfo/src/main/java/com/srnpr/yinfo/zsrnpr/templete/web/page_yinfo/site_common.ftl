@@ -111,16 +111,17 @@
 										<i>3/</i>老人的情况是：
 									</dt>
 									<dd id="yinfo_nav_query_older">
-										<input name="query_type" type="radio" id="query_type_32510001"
-											value="32510001" checked="checked" /><label for="query_type_32510001">自理老人</label>
-										<input name="query_type" type="radio" value="32510002"
-											id="query_type_32510002" /><label for="query_type_32510002">半护理老人</label><br />
-										<input name="query_type" type="radio" value="32510003"
-											id="query_type_32510003" /><label for="query_type_32510003">全护理老人</label>
-										<input name="query_type" type="radio" value="32510004"
-											id="query_type_32510004" /><label for="query_type_32510004">特护</label>
 										<input name="query_type" id="query_type_0" type="radio"
-											value="0"  /><label for="query_type_0">不限</label>
+											value="0"  checked="checked" /><label for="query_type_0">不限</label>
+										<input name="query_type" type="radio" id="query_type_32520001"
+											value="32520001" /><label for="query_type_32520001">自理老人</label>
+										<input name="query_type" type="radio" value="32520002"
+											id="query_type_32520002" /><label for="query_type_32520002">半护理老人</label><br />
+										<input name="query_type" type="radio" value="32520003"
+											id="query_type_32520003" /><label for="query_type_32520003">全护理老人</label>
+										<input name="query_type" type="radio" value="32520004"
+											id="query_type_32520004" /><label for="query_type_32520004">特护</label>
+										
 
 									</dd>
 								</dl>
