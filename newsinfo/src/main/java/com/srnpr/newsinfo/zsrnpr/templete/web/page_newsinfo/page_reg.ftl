@@ -23,7 +23,7 @@
 					</div>
 					<div class="c_right">
 						<div class="c_info">
-							已有账号，<a href="${base_url}newsinfo/login-login" class="b_button">登陆</a>
+							已有账号，<a href="${base_url}newsinfo/login-login" class="b_button">登录</a>
 							
 						</div>
 						

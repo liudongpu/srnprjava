@@ -23,7 +23,7 @@
 			</div>
 		</div>
 		<div id="yinfo_header_user" class="yinfo_header_user">
-			<a href="${base_url}yinfo/login-login">登陆</a>
+			<a href="${base_url}yinfo/login-login">登录</a>
 			&nbsp;&nbsp;<a href="${base_url}yinfo/reg-reg">免费注册</a>
 		</div>
 	</div>

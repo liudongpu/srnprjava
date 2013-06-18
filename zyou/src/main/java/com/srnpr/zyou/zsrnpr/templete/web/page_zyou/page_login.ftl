@@ -44,7 +44,7 @@
         <label class="checkbox">
           <input type="checkbox" value="remember-me" checked="checked"> 默认都为s
         </label>
-        <button class="btn btn-large btn-primary" type="button" onclick="zen.page.submit(this)" >登陆</button>
+        <button class="btn btn-large btn-primary" type="button" onclick="zen.page.submit(this)" >登录</button>
       </form>
 
     </div> <!-- /container -->

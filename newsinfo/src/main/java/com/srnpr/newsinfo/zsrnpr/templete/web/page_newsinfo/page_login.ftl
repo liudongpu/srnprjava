@@ -1,5 +1,5 @@
 
-<@m_site_common_header nav="" title="会员登陆" />
+<@m_site_common_header nav="" title="会员登录" />
 
 
 	<div class="layout_main website_center">

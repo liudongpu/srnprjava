@@ -3,7 +3,7 @@
 
 <#macro m_site_info_listinfo>
 
-<#local  pageNav=pageexec.upPageNav("info_news","","-time")  >
+<#local  pageNav=pageexec.upPageNav("info_news","","-orderid,-create_time")  >
 
 				<#list pageNav.getPageData() as el> 	 
 					<div class="info_item">
@@ -37,7 +37,7 @@
 
 <#macro m_site_info_listnotice>
 
-<#local  pageNav=pageexec.upPageNav("info_notice","","-time")  >
+<#local  pageNav=pageexec.upPageNav("info_notice","","-orderid,-create_time")  >
 
 				<#list pageNav.getPageData() as el> 	
 					<div class="info_item">
@@ -83,7 +83,7 @@
 						<div class="c_title">最新文章</div>
 						<ul>
 						
-						<#list pageexec.upDataList("info_news","uid,title","orderid",0,10) as el> 	
+						<#list pageexec.upDataList("info_news","uid,title","-create_time",0,10) as el> 	
 						<li><a href="content-content-${el["uid"]}">${el["title"]} </a></li>
 						 
 						</#list>
@@ -102,7 +102,7 @@
 				<div class="info_sort">
 						<div class="c_title">最近公告</div>
 						<ul>
-						<#list pageexec.upDataList("info_notice","uid,title","orderid",0,10) as el> 	
+						<#list pageexec.upDataList("info_notice","uid,title","-create_time",0,10) as el> 	
 						<li><a href="affiche-affiche-${el["uid"]}">${el["title"]} </a></li>
 						 
 						</#list>

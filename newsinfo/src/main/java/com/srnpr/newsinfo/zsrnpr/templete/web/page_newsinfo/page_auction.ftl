@@ -35,7 +35,7 @@
 				</div>
 
 
-				<#list pageexec.upData("info_auction") as el> 	 
+				<#list pageexec.upDataOrder("info_auction","-time") as el> 	 
 					<div class="c_item">
 					<div class="c_inner">
 					<a href="special-list-${el["uid"]}">

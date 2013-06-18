@@ -9,7 +9,7 @@
 	<div class="y_center">
 		<div class="yinfo_login">
 			<div class="yinfo_list_nav">
-				<a href="/">回到首页</a>&nbsp;&nbsp;&gt;&nbsp;&nbsp;<a href="">用户登陆</a>
+				<a href="/">回到首页</a>&nbsp;&nbsp;&gt;&nbsp;&nbsp;<a href="">用户登录</a>
 			</div>
 			<div class="b_h20"></div>
 			<div class="yinfo_login_box">
