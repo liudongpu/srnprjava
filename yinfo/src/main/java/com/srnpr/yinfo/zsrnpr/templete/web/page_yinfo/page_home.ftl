@@ -111,7 +111,42 @@
 				</div>
 				<div id="yinfo_home_t2" class="c_item">
 					<div class="c_title">收费标准</div>
-					<div>信息</div>
+					<div>
+						<table class="table table-bordered">
+							<tbody>
+								<tr class="success">
+									<td>项目</td>
+									<td>费用</td>
+									<td>项目</td>
+									<td>费用</td>
+								</tr>
+								<tr>
+									<td>单人间（元/月）</td>
+									<td>${page_obj["q_money_room_one"]}</td>
+									<td>双人间（元/月）</td>
+									<td>${page_obj["q_money_room_two"]}</td>
+								</tr>
+								<tr>
+									<td>单人间（元/月）</td>
+									<td>${page_obj["q_money_room_three"]}</td>
+									<td>双人间（元/月）</td>
+									<td>${page_obj["q_money_room_more"]}</td>
+								</tr>
+								<tr>
+									<td>一对一护理费（元/天）</td>
+									<td>${page_obj["q_money_service_one"]}</td>
+									<td>一对二护理费（元/天）</td>
+									<td>${page_obj["q_money_service_two"]}</td>
+								</tr>
+								<tr>
+									<td>一对多护理费（元/天）</td>
+									<td>${page_obj["q_money_service_more"]}</td>
+									<td>伙食费（元/月）</td>
+									<td>${page_obj["q_eat_money_month"]}</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
 				</div>
 				<div id="yinfo_home_t3" class="c_item">
 					<div class="c_title">入住须知</div>
