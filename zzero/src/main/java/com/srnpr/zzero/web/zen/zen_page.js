@@ -25,7 +25,7 @@ zen
 
 				submit_result : function(oResult) {
 					if (oResult.flag) {
-						zen.page.okdo(oResult.flag);
+						zen.page.model('提示消息', '操作成功！');
 					} else {
 						zen.page.model('错误消息', oResult.message);
 					}

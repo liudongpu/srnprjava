@@ -1164,3 +1164,13 @@ min-height:500px;
 {
     
 }
+
+.yinfo_user_body_edit
+{
+    width:96%;
+}
+.yinfo_user_body_edit label
+{
+    display: inline-block;
+}
+

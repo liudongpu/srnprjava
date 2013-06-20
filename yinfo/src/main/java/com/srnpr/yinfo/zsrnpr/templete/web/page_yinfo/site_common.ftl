@@ -325,7 +325,7 @@ $(document).ready(function(){zen.yinfo.pagination()});
 					<div class="c_sub">
 						<ul>
 							<li><a href="${base_url}yinfo/uaccess-user">·机构认证申请</a></li>
-							<li><a href="${base_url}yinfo/uaccess-user">·机构资料编辑</a></li>
+							<li><a href="${base_url}yinfo/uedit-user">·机构资料编辑</a></li>
 
 						</ul>
 					</div>
