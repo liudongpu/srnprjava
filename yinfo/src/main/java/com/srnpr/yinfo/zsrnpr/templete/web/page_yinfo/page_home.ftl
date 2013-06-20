@@ -1,6 +1,6 @@
 
 <#assign page_obj=pageexec.upDataOne("y_info","domain",pageinfo.getWebSet()["Url_View"])>
-<@m_site_common_oldhead title=page_obj["name"] />
+<@m_site_common_oldhead title=page_obj["name"] imgurl=page_obj["home_img"] />
 
 	<div class="y_center">
 		<div class="yinfo_main">

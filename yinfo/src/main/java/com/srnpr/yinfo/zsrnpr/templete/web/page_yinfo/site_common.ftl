@@ -145,7 +145,7 @@
 </#macro>
 
 
-<#macro m_site_common_oldhead title="" >
+<#macro m_site_common_oldhead title="" imgurl="" >
 <title>${title}</title> 
 <meta name="keywords" content="银杏林" />
 <meta name="description" content="${title}-银杏林" />
@@ -165,7 +165,7 @@
 	<div class="yold_headadv ">
 		<div class="y_center">
 			<img
-				src="http://image.daoxila.com/opx/db6cc95103789500a9b93a3f1ed7d8ed.jpg" />
+				src="<#if imgurl!="">imgurl<#else>/zzero/web/themes/webyinfo/images/topad.jpg</#if>" />
 		</div>
 
 	</div>
@@ -254,7 +254,7 @@ $(document).ready(function(){zen.yinfo.pagination()});
 		<div class="c_border"></div>
 		<div class="y_center">
 			<div class="c_nav">
-				<span>免费注册</span>|<span>免费注册</span>|<span>免费注册</span>|<span>免费注册</span>
+				<span>免费注册</span>|<span>会员登录</span>|<span>关于我们</span>|<span>联系我们</span>|<span>网站帮助</span>
 			</div>
 			<div class="b_h20"></div>
 			<div class="c_text">CopyRight 2013</div>
