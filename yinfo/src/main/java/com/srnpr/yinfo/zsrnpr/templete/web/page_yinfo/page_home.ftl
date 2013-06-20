@@ -181,6 +181,6 @@
 		</div>
 	</div>
 
-
+<div class="b_h40"></div>
 
 <@m_site_common_footer />
