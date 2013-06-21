@@ -127,9 +127,9 @@
 									<td>${page_obj["q_money_room_two"]}</td>
 								</tr>
 								<tr>
-									<td>单人间（元/月）</td>
+									<td>三人间（元/月）</td>
 									<td>${page_obj["q_money_room_three"]}</td>
-									<td>双人间（元/月）</td>
+									<td>多人间（元/月）</td>
 									<td>${page_obj["q_money_room_more"]}</td>
 								</tr>
 								<tr>
@@ -162,6 +162,10 @@
 				</div>
 				<div id="yinfo_home_t6" class="c_item">
 					<div class="c_title">联系方式</div>
+					<div>联系地址：${page_obj["link_address"]}
+					<br/>邮编：${page_obj["link_zipcode"]}
+					<br/>固定电话：${page_obj["link_telephone"]}
+					</div>
 					<div>${page_obj["link_travel"]}</div>
 				</div>
 				<div id="yinfo_home_t7" class="c_item">
