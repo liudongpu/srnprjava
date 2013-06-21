@@ -172,6 +172,15 @@ color:#000;
 {
     color: #000;
 }
+.yinfo_header_link
+{
+    position: absolute;
+    top:12px;
+    left:880px;
+    width:100px;
+}
+
+
 
 .yinfo_nav {
 	height: 45px;
@@ -490,7 +499,12 @@ color:#000;
 {
     color:#000;
 }
-
+.yold_header_link
+{
+    float:right;
+    margin-top:18px;
+    width:80px;
+}
 
 .yold_headadv {
 	background-color: #36770e;

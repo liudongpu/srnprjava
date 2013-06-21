@@ -26,6 +26,9 @@
 			<a href="${base_url}yinfo/login-login">登录</a>
 			&nbsp;&nbsp;<a href="${base_url}yinfo/reg-reg">免费注册</a>
 		</div>
+		<div  class="yinfo_header_link">
+			<a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=508681688&site=qq&menu=yes"><img border="0" src="http://wpa.qq.com/pa?p=2:508681688:41" alt="点击这里给我发消息" title="点击这里给我发消息"/></a>
+		</div>
 	</div>
 	<div class="yinfo_nav">
 		<div class="y_center">
@@ -160,6 +163,13 @@
 				<a href="${base_url}yinfo/login-login">登录</a> &nbsp;&nbsp;<a
 					href="${base_url}yinfo/reg-reg">免费注册</a>
 			</div>
+		</div>
+		
+		<div class="yold_header_link">
+			<a target="_blank"
+				href="http://wpa.qq.com/msgrd?v=3&uin=508681688&site=qq&menu=yes"><img
+				border="0" src="http://wpa.qq.com/pa?p=2:508681688:41"
+				alt="点击这里给我发消息" title="点击这里给我发消息" /></a>
 		</div>
 	</div>
 	<div class="yold_headadv ">
