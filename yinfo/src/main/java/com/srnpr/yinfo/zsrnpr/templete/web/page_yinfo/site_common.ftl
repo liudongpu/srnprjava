@@ -264,7 +264,12 @@ $(document).ready(function(){zen.yinfo.pagination()});
 		<div class="c_border"></div>
 		<div class="y_center">
 			<div class="c_nav">
-				<span>免费注册</span>|<span>会员登录</span>|<span>关于我们</span>|<span>联系我们</span>|<span>网站帮助</span>
+				
+				<#list pageexec.upData("y_static","type_cid","32630001") as el> 
+					<span><a href="${base_url}yinfo/static-static-${el["uid"]}">${el["title"]}</a></span>|
+				</#list>
+				
+				
 			</div>
 			<div class="b_h20"></div>
 			<div class="c_text">CopyRight 2013</div>

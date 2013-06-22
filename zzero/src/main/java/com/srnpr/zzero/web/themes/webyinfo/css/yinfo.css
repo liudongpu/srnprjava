@@ -760,7 +760,10 @@ color:#000;
 .yinfo_footer .c_nav {
 	text-align: center;
 }
-
+.yinfo_footer a
+{
+    color:#000;
+}
 .yinfo_footer .c_nav span {
 	padding: 0px 10px 0px 10px;
 }
