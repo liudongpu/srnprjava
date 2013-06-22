@@ -57,7 +57,7 @@ zen
 
 				regsuccess : function(oResult) {
 					if (oResult.flag) {
-
+						zen.yinfo.model('提示消息', '注册成功',function(){zen.yinfo.logindo(oResult);});
 					} else {
 						zen.yinfo.model('错误消息', oResult.message);
 					}
