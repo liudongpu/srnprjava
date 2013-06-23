@@ -1115,6 +1115,20 @@ a.b_button:hover {
     background-color: #fff;
 }
 
+.book_pic .index_piclist_box
+{
+	height:auto;
+}
+.book_pic .index_piclist_box ul li 
+{
+	padding-bottom:20px;
+}
+.book_pic .index_piclist_box ul li a img
+{
+	height:150px;
+}
+
+
 .static_body .c_body {
     background-color: #f6f7f5;
     width: 100%;
