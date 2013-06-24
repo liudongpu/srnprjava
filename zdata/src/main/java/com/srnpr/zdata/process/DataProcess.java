@@ -48,6 +48,16 @@ public class DataProcess extends BaseClass {
 
 		return lReturns.size() > 0 ? lReturns.get(0) : null;
 	}
+	
+	public Map<String, Object> upOneOrder(String sWhere,String sOrder, String... args) {
+
+		List<Map<String, Object>> lReturns = upListAll("*", sWhere, sOrder, 0, 1,
+				(Object[]) args);
+
+		return lReturns.size() > 0 ? lReturns.get(0) : null;
+	}
+	
+	
 
 	public List<Map<String, Object>> upList() {
 

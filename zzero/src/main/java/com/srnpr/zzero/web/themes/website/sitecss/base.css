@@ -823,6 +823,24 @@ a.b_button:hover {
     margin: 5px;
 }
 
+.people_word{
+	height:40px;
+	line-height:40px;
+	background-color: #f5f5f3;
+	padding-left:10px;
+}
+.people_word a
+{
+	padding-left:5px;
+	font-size:16px;
+	color:#365D7E;
+}
+
+.people_word a.c_active
+{
+	color:#ff0000;
+}
+
 .product_body {
     background-color: #f6f6f4;
 }

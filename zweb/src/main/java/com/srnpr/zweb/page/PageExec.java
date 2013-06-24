@@ -62,6 +62,13 @@ public class PageExec extends BaseClass {
 			String... args) {
 		return DataTableManager.Get(sTableName).upOneQuery(sWhere, args);
 	}
+	
+	
+	public Map<String, Object> upDataOneOrder(String sTableName, String sWhere,String sOrder,
+			String... args) {
+		return DataTableManager.Get(sTableName).upOneOrder(sWhere,sOrder, args);
+	}
+	
 
 	
 	public Object upDataTop(String sTableName, String sWhere,

@@ -21,7 +21,7 @@
 
 					<div class="c_nav">
 					
-					<#assign images_last=pageexec.upDataOneQuery("info_images","zid<:ozid","ozid",images_info["zid"]?upper_case)?default('')>
+					<#assign images_last=pageexec.upDataOneOrder("info_images","zid>:ozid","zid","ozid",images_info["zid"]?upper_case)?default('')>
 						<#if images_last?is_hash>
 						<a   href="img-img-${images_last["uid"]}" >
 							<div class="c_img">
@@ -68,7 +68,7 @@
 
 				<div class=c_right>
 					<div class="c_nav">
-					<#assign images_next=pageexec.upDataOneQuery("info_images","zid>:ozid","ozid",images_info["zid"]?upper_case)?default('')>
+					<#assign images_next=pageexec.upDataOneOrder("info_images","zid<:ozid","-zid","ozid",images_info["zid"]?upper_case)?default('')>
 						<#if images_next?is_hash>
 						<a   href="img-img-${images_next["uid"]}" >
 							<div class="c_img">

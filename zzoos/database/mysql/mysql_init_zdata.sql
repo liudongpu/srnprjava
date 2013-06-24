@@ -1,18 +1,18 @@
 
-#delete from zdata.zdata_table;
-#delete from zdata.zdata_column;
+#delete from zdata_table;
+#delete from zdata_column;
 
 
 ########  初始化表
-insert into zdata.zdata_table (`uid`,`code`,`name`,`note`)
+insert into zdata_table (`uid`,`code`,`name`,`note`)
 select replace(uuid(),'-',''),TABLE_NAME,TABLE_NAME,TABLE_COMMENT from information_schema.TABLES where TABLE_SCHEMA in
-(select name from zdata.zdata_server)
-and TABLE_NAME not in(select name from zdata.zdata_table);
+(select name from zdata_server)
+and TABLE_NAME not in(select name from zdata_table);
 
 
 
 
-insert into zdata.zdata_column
+insert into zdata_column
 (`uid`,`server_name`,`table_name`,`column_name`,`did_null_able`,`did_column_type`,`length_max`,`length_scale`,`note`,`orderid`)
 SELECT 
 replace(uuid(),'-',''),
@@ -28,9 +28,9 @@ a.ORDINAL_POSITION orderid
 
 FROM information_schema.COLUMNS a
 where a.TABLE_SCHEMA in
-(select name from zdata.zdata_server)
+(select name from zdata_server)
 and concat(a.TABLE_NAME,a.column_name) not in
-(select  concat(table_name,column_name)  from  zdata.zdata_column )
+(select  concat(table_name,column_name)  from  zdata_column )
 
 
 

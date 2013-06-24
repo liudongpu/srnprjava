@@ -103,7 +103,7 @@
 				<div class="index_piclist_position">
 					<div class="index_piclist_box zen_picnav_list">
 						<ul>
-						 	<#list pageexec.upDataOrder("info_images","order_id","position_cid",cid) as el>
+						 	<#list pageexec.upDataOrder("info_images","-zid","position_cid",cid) as el>
 	                            <li><a href="${base_url}newsinfo/img-img-${el["uid"]}"> <img
 									src="${el["file_url"]}"
 									alt="${el["title"]}"> <span>${el["title"]}</span>
@@ -234,6 +234,7 @@ $(window).ready(function(){zen.site.comment_show('${uid}')});
 <#macro m_site_common_site_nav pageNav>
 
 <#if (pageNav.getPageIndex()>1)>
+<a href="?z_page_index=1&z_page_count=${pageNav.getPageCount()}&z_page_size=${pageNav.getPageSize()}">首页</a>
 <a href="?z_page_index=${pageNav.getPageIndex()-1}&z_page_count=${pageNav.getPageCount()}&z_page_size=${pageNav.getPageSize()}">上一页</a>
 </#if>
 
@@ -241,6 +242,7 @@ $(window).ready(function(){zen.site.comment_show('${uid}')});
 
 <#if (pageNav.getPageIndex()*pageNav.getPageSize()<pageNav.getPageCount())>
 <a href="?z_page_index=${pageNav.getPageIndex()+1}&z_page_count=${pageNav.getPageCount()}&z_page_size=${pageNav.getPageSize()}">下一页</a>
+<a href="?z_page_index=${(pageNav.getPageCount()/pageNav.getPageSize())?ceiling}&z_page_count=${pageNav.getPageCount()}&z_page_size=${pageNav.getPageSize()}">尾页</a>
 </#if>
 
 </#macro>

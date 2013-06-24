@@ -19,7 +19,8 @@
 						<span>邮箱：</span><input type="text" id="reg_name" />&nbsp;&nbsp;请输入您常用的邮箱<br/><br/>
 						<span>手机号码：</span><input type="text" id="reg_phone" />&nbsp;&nbsp;请输入您的手机号码<br/><br/>
 						<span>密码：</span><input type="password" id="reg_pass"/>&nbsp;&nbsp;请输入密码<br/><br/>
-						<span>重复密码：</span><input type="password" id="reg_pass2"/>&nbsp;&nbsp;请输入密码
+						<span>重复密码：</span><input type="password" id="reg_pass2"/>&nbsp;&nbsp;请输入密码<br/><br/>
+						<span></span><input type="checkbox" id="reg_talt" checked="checked"/>&nbsp;&nbsp;愿意接收博观拍卖手机报
 					</div>
 					<div class="c_right">
 						<div class="c_info">
