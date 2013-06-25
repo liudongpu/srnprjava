@@ -154,7 +154,7 @@
 <meta name="description" content="${title}-银杏林" />
 </head>
 <body class="yinfo_body">
-	<div class="yold_header y_center">
+	<div id="yold_header" class="yold_header y_center">
 		<div class="yold_header_logo">
 			<a href="${base_url}"></a>
 		</div>
@@ -184,7 +184,7 @@
 			<div class="yold_nav_box">
 
 				<ul>
-					<li><a class="c_active" href="">首页</a></li>
+					<li><a class="c_active" href="#yold_header">首页</a></li>
 					<li><a href="#yinfo_home_t1">养老院简介</a></li>
 					<li><a href="#yinfo_home_t2">收费标准</a></li>
 					<li><a href="#yinfo_home_t3">入住须知</a></li>

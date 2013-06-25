@@ -212,7 +212,7 @@
 						
 						
 						showbaidumap("${page_obj["link_address"]}");
-						
+						$('.yold_nav').pin();
 					</script>
 					
 				</div>
