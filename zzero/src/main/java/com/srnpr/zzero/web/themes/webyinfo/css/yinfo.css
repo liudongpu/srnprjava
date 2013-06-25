@@ -519,6 +519,8 @@ color:#000;
 .yold_nav {
 	background-color: #5b9a34;
 	height: 45px;
+	position:relative;
+	z-index: 22;
 }
 
 .yold_nav_box {
@@ -723,7 +725,7 @@ color:#000;
 
 .yold_show .c_item {
 	position: relative;
-	padding: 80px 20px 10px 20px;
+	padding: 110px 20px 0px 20px;
 }
 
 .yold_show .c_title {
@@ -731,7 +733,7 @@ color:#000;
 	width: 100px;
 	height: 40px;
 	left: -10px;
-	top: 20px;
+	top: 50px;
 	background-image: url("../images/yinfo_png.png");
 	background-position: -50px -310px;
 	color: #fff;
