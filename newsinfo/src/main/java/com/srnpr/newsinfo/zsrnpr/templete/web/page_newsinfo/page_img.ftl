@@ -55,7 +55,7 @@
 							<div class="showcase-thumbnail">
 								<img
 									src="${el["file_url"]}"
-									alt="" width="140px" />
+									alt=""  />
 								<div class="showcase-thumbnail-cover"></div>
 							</div>
 						</div>

@@ -1242,6 +1242,22 @@ a.b_button:hover {
     float: left;
     width: 800px;
 }
+
+.img_body .img_main .img_show .showcase-content img
+{
+	height:470px;
+}
+.img_body .img_main .img_show .showcase-thumbnail
+{
+	text-align:center;
+}
+
+.img_body .img_main .img_show .showcase-thumbnail img
+{
+	height:90px;
+}
+
+
 .img_body  .c_nav {
 
     margin: 480px 0px 0px 20px;
