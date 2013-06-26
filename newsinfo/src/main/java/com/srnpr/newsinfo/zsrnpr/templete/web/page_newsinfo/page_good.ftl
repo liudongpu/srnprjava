@@ -18,6 +18,23 @@
 				<div class="good_tools"></div>
 
 				<div class="container-fluid">
+				
+					<div class="row-fluid">
+						<div class="span6">
+					
+							<#assign good_info_last=pageexec.upDataOneOrder("info_good","special_uid=:ospecial_uid and code<:ocode","-code","ocode",good_info["code"],"ospecial_uid",good_info["special_uid"])?default('') >
+							<#if good_info_last?is_hash>
+							上一拍品&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;<a href="good-good-${good_info_last["uid"]}">${good_info_last["name"]}</a>
+							</#if>
+						</div>
+						<div class="span6 good_text_right">
+							<#assign good_info_last=pageexec.upDataOneOrder("info_good","special_uid=:ospecial_uid and code>:ocode","code","ocode",good_info["code"],"ospecial_uid",good_info["special_uid"])?default('') >
+							<#if good_info_last?is_hash>
+							下一拍品&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;<a href="good-good-${good_info_last["uid"]}">${good_info_last["name"]}</a>
+							</#if>
+						</div>
+					</div>
+				
 					<div class="row-fluid">
 						<div class="span7">
 							<div class="good_inner">

@@ -771,7 +771,11 @@ a.b_button:hover {
 .pic_listbox .c_text {
     margin: 10px;
 }
-
+.pic_listbox .c_text h4
+{
+	height:20px;
+	overflow: hidden;
+}
 .pic_listbox .c_item img {
     max-width: 96%;
     display: block;
@@ -1401,9 +1405,12 @@ a.b_button:hover {
 }
 
 .good_tools {
-    height: 40px;
+    height: 10px;
 }
-
+.good_text_right
+{
+	text-align:right;
+}
 .good_inner {
     background-color: #fafafa;
     border: solid 1px #e8e8e8;
