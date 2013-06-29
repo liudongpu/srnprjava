@@ -19,12 +19,24 @@
 								<div class="c_center">
 									<div class="c_over c_scroll">
 										<ul>
-											<li><img
-												src="${page_obj["main_img"]?default("")}" /></li>
-											<#list page_obj["list_img"]?split(",") as el>
+										
+											<#assign page_listimg=page_obj["list_img"]?split(",")>
+										
+											<#if ((page_listimg?size)>0)>
+											
+												<#list page_listimg as el>
+													<li><img
+													src="${el}" /></li>
+												</#list>
+											
+											<#else>
 												<li><img
-												src="${el}" /></li>
-											</#list>
+												src="${page_obj["main_img"]?default("")}" /></li>
+											</#if>
+										
+										
+											
+											
 											
 											
 										</ul>
