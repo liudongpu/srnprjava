@@ -19,6 +19,8 @@
 								<div class="c_center">
 									<div class="c_over c_scroll">
 										<ul>
+											<li><img
+												src="${page_obj["main_img"]?default("")}" /></li>
 											<#list page_obj["list_img"]?split(",") as el>
 												<li><img
 												src="${el}" /></li>
@@ -178,6 +180,10 @@
 						
 					</script>
 					<script type="text/javascript">
+					
+					
+						var bSecond=true;
+					
 						function showbaidumap(sAddress) {
 							var map = new BMap.Map("yold_show_map"); // 创建地图实例  
 							// 创建地址解析器实例
@@ -206,6 +212,15 @@
 											.getCenter()); //开启信息窗口
 
 								}
+								else
+								{
+									if(bSecond)
+									{
+										showbaidumap("${page_obj["name"]}");
+										bSecond=false;
+									}
+								}
+								
 							}, "北京市");
 
 						}
