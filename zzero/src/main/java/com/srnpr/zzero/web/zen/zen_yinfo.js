@@ -57,7 +57,9 @@ zen
 
 				regsuccess : function(oResult) {
 					if (oResult.flag) {
-						zen.yinfo.model('提示消息', '注册成功',function(){zen.yinfo.logindo(oResult);});
+						zen.yinfo.model('提示消息', '注册成功', function() {
+							zen.yinfo.logindo(oResult);
+						});
 					} else {
 						zen.yinfo.model('错误消息', oResult.message);
 					}
@@ -336,11 +338,9 @@ zen
 						$('#yinfo_query_for').on('shown', function() {
 							$('#yinfo_query_for_phone').focus();
 						});
-					}
-					else
-						{
+					} else {
 						zen.yinfo.model("提示消息", "请先登录后再执行该操作，谢谢！");
-						}
+					}
 
 				},
 				callpost : function(sUserCookie) {
@@ -389,6 +389,122 @@ zen
 					}
 
 				},
+
+				compare_in : function(oCompare) {
+					zen.f.cookie("yinxl_cookie_compare", $.toJSON(oCompare), {
+						path : '/',
+						expires : 365
+					});
+				},
+				compare_up : function() {
+					return $.evalJSON(zen.f.cookie("yinxl_cookie_compare"));
+				},
+
+				compare_add : function(oTarget) {
+
+					var oCom = zen.yinfo.compare_up();
+
+					var obj = $(oTarget);
+
+					if (obj.prop("checked")) {
+
+						if (oCom && oCom.length >= 4) {
+							obj.prop("checked", false);
+							zen.yinfo.model("错误消息", "无法添加更多的养老院进行比较！");
+							return;
+						}
+
+						var oNew = {
+							y_zid : obj.attr('y_zid'),
+							y_name : obj.attr('y_name'),
+							y_link : obj.attr('y_link'),
+							y_img : obj.attr('y_img')
+						};
+
+						if (!oCom) {
+							oCom = [];
+						}
+						oCom.push(oNew);
+						zen.yinfo.compare_in(oCom);
+						zen.yinfo.compare_init();
+
+					} else {
+						zen.yinfo.compare_del(obj.attr('y_zid'));
+					}
+
+				},
+				compare_clear : function() {
+					zen.yinfo.compare_in(null);
+					zen.yinfo.compare_init();
+				},
+
+				compare_del : function(yzid) {
+
+					var oCom = zen.yinfo.compare_up();
+					var iDel = -1;
+					for ( var i = 0, j = oCom.length; i < j; i++) {
+						if (oCom[i]["y_zid"] == yzid) {
+							iDel = i;
+						}
+					}
+
+					oCom.splice(iDel, 1);
+					zen.yinfo.compare_in(oCom);
+					zen.yinfo.compare_init();
+
+				},
+				compare_goto : function() {
+					var oCom = zen.yinfo.compare_up();
+					if (oCom.length < 2) {
+						zen.yinfo.model("错误消息", "请选择两个以上养老院比较！");
+						return;
+					}
+					else
+						{
+						
+						}
+
+				},
+
+				compare_init : function() {
+					$('.yinfo_compare_checkbox').prop('checked', false);
+					var oCom = zen.yinfo.compare_up();
+					if (oCom && oCom.length > 0) {
+
+						for ( var i = 0, j = oCom.length; i < j; i++) {
+							var aHtml = [];
+							aHtml.push('<div class="b_fl"><a href="'
+									+ oCom[i]["y_link"] + '"><img src="'
+									+ oCom[i]["y_img"] + '"></a></div>');
+							aHtml
+									.push('<div class="b_fl c_text"><a href="'
+											+ oCom[i]["y_link"]
+											+ '">'
+											+ oCom[i]["y_name"]
+											+ '</a><br/><span onclick="zen.yinfo.compare_del('
+											+ oCom[i]["y_zid"]
+											+ ')">删除</span></div>');
+							$('#yinfo_compare_show_' + i).html(aHtml.join(''));
+
+							$('#yinfo_compare_cb_' + oCom[i]["y_zid"]).prop(
+									'checked', true);
+						}
+
+						for ( var i = oCom.length; i <= 4; i++) {
+							$('#yinfo_compare_show_' + i)
+									.html(
+											'<div class="b_fl c_number">'
+													+ (i + 1)
+													+ '</div><div class="b_fl c_add">您还可以继续添加</div>');
+						}
+
+						$('#yinfo_compare_for').show();
+					} else {
+						$('#yinfo_compare_for').hide();
+					}
+
+				},
+
 				error : function(o) {
 
 					zen.yinfo.model('错误消息', '调用失败，请稍后重试或者联系技术人员，谢谢！');

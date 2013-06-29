@@ -251,7 +251,7 @@ $(document).ready(function(){zen.yinfo.pagination()});
 								</div>
 								<div class="clearfix"></div>
 								<div class="c_buttons">
-									<#if (fromtype=="list")><input type="checkbox"/><label>加入对比</label></#if>
+									<#if (fromtype=="list")><input type="checkbox" id="yinfo_compare_cb_${el["zid"]}" class="yinfo_compare_checkbox" y_name="${el["name"]}"  y_zid="${el["zid"]}" y_img="${el["main_img"]?default("")}" y_link="${base_url}yinfo/home-${el["domain"]}" onclick="zen.yinfo.compare_add(this)" /><label for="yinfo_compare_cb_${el["zid"]}">加入对比</label></#if>
 									<a href="${base_url}yinfo/home-home-${el["uid"]}" target="_blank" class="btn btn-success">去看看</a>
 								</div>
 							</div>
@@ -321,6 +321,52 @@ $(document).ready(function(){zen.yinfo.pagination()});
 
 </body>
 </html>
+</#macro>
+
+
+
+<#macro m_site_common_compare>
+
+
+
+	<div id="yinfo_compare_for" class="yinfo_compare_for y_center">
+		<div class="c_box">
+			<div class="c_title">
+				<div class="b_fl c_bold">对比栏</div>
+				<div class="b_fr">[隐藏]</div>
+			</div>
+			<div class="c_list">
+				<div id="yinfo_compare_show_0" class="c_item b_fl">
+					<div class="b_fl c_number">1</div>
+					<div class="b_fl c_add">您还可以继续添加</div>
+				</div>
+				<div id="yinfo_compare_show_1" class="c_item b_fl">
+					<div class="b_fl c_number">2</div>
+					<div class="b_fl c_add">您还可以继续添加</div>
+				</div>
+				<div id="yinfo_compare_show_2" class="c_item b_fl">
+					<div class="b_fl c_number">3</div>
+					<div class="b_fl c_add">您还可以继续添加</div>
+				</div>
+				<div id="yinfo_compare_show_3" class="c_item b_fl">
+					<div class="b_fl c_number">4</div>
+					<div class="b_fl c_add">您还可以继续添加</div>
+				</div>
+				
+				<div class="c_buttons b_fr">
+					<a class="btn btn-success">对比</a>
+					<br/>
+					<a onclick="zen.yinfo.compare_clear()">清空对比栏</a>
+				</div>
+				
+			</div>
+		</div>
+	</div>
+
+
+<script>
+$(document).ready(function(){zen.yinfo.compare_init()});
+</script>
 </#macro>
 
 <#macro m_site_common_user_menu>
