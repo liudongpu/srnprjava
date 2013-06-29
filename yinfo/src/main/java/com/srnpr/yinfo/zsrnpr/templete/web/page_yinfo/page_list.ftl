@@ -93,12 +93,40 @@
 				</div>
 				<div class="yinfo_list_right">
 					<div class="c_item">
+					<a target="_blank" href="http://wpa.qq.com/msgrd?v=3&amp;uin=508681688&amp;site=qq&amp;menu=yes">
 						<img
 							src="http://script.daoxila.com/root/img/img_20111201/service_pic.gif" />
+					</a>
+						
 					</div>
 					<div class="c_item">
-						<img
-							src="http://image.daoxila.com/hotel/small/2012-07/20120717162835.jpg" />
+						<div class="yinfo_list_newst">
+							<h4>最新加入的养老院</h4>
+							
+							<#list pageexec.upDataTop("y_info","","-zid",8) as el>
+							
+							<#if (el_index==0)>
+							
+							<div class="c_top">
+								<a href="home-${el["domain"]}">
+									<div class="c_topimg">
+										<img
+											src="${el["main_img"]}" />
+									</div>
+									<div class="c_toptext">
+										<b>${el["name"]}</b> <br />床位数：${el["q_bednumber"]}
+									</div>
+								</a>
+							</div>
+							<div class="clearfix"></div>
+							<div class="b_h10"></div>
+							<ul>
+							<#else>
+								<li><a href="home-${el["domain"]}">${el_index+1}、${el["name"]}</a></li>
+							</#if>
+							</#list>
+							</ul>
+						</div>
 					</div>
 				</div>
 			</div>
