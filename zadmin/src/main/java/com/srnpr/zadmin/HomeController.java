@@ -43,6 +43,29 @@ public class HomeController {
 		
 		//return index("newsinfo", "main-main", model,request);
 		
+		
+		
+		
+		
+		
+		
+		String[] sUrls=StringUtils.split(request.getRequestURL().toString(),".");
+		
+		if(sUrls.length>1&&sUrls[1].equals("yinxl"))
+		{
+			String sSubString= StringUtils.substringBetween(request.getRequestURL().toString(), "//", ".");
+			
+			if(StringUtils.isNotEmpty(sSubString)&&!sSubString.equals("www"))
+			{
+				return index("yinfo", "home-"+sSubString, model,request);
+			}
+		}
+		
+		
+		
+		
+		
+		
 		return index("yinfo", "main-main", model,request);
 	}
 	

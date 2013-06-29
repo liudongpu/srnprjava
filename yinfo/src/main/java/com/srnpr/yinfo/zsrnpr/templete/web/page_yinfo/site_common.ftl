@@ -236,9 +236,9 @@ $(document).ready(function(){zen.yinfo.pagination()});
 									<div class="c_left">评价：</div>
 									<div class="c_right">
 										<div class="yinfo_star">
-											<div class="c_line" style="width: 70%;"></div>
+											<div class="c_line" style="width: 90%;"></div>
 										</div>
-										<div class="c_tips">好评率：10%</div>
+										<div class="c_tips">好评率：90%</div>
 									</div>
 								</div>
 								<div class="c_in">
