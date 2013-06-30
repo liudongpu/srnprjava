@@ -1326,3 +1326,28 @@ cursor: pointer;
 {
     margin:20px 40px 0px 0px;
 }
+
+
+.yinfo_diff
+{
+    background-color: #fff;
+}
+.yinfo_diff_box
+{
+    padding:30px;
+}
+.yinfo_diff_box table
+{
+    width:100%;
+}
+.yinfo_diff_box table caption
+{
+    height:30px;
+    font-size:16px;
+}
+
+.yinfo_diff_box table tr th
+{
+   width:10%;
+}
+

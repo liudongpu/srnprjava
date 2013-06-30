@@ -75,6 +75,29 @@ public class PageMethod extends BaseClass implements IPageMethod {
 	}
 	
 	
+	public String upDiffContent(String sCode)
+	{
+		
+		StringBuffer sBuffer=new StringBuffer();
+		
+		
+		PageExec pExec=new PageExec();
+		
+		
+		//pExec.upDataOneQuery("y_info", "", );
+		
+		
+		
+		
+		
+		
+		
+		return sBuffer.toString();
+		
+		
+		
+	}
+	
 	
 	
 	
