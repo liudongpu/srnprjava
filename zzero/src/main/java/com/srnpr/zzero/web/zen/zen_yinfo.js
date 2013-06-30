@@ -465,6 +465,10 @@ zen
 						}
 
 				},
+				compare_hide:function()
+				{
+					$('#yinfo_compare_for').hide();
+				},
 
 				compare_init : function() {
 					$('.yinfo_compare_checkbox').prop('checked', false);

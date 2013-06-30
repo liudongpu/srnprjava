@@ -13,7 +13,7 @@
 
 			<@m_site_common_user_menu />
 			<div class="yinfo_user_body">
-				<div class="yinfo_user_body_title">我的资料</div>
+				<div class="yinfo_user_body_title">修改密码</div>
 				<div class="b_h10"></div>
 				<div class="yinfo_user_body_show">
 					<form class="form-horizontal" method="post" action="${base_url}yinfo/func-changepass">

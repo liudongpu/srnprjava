@@ -1,8 +1,8 @@
 
-<#macro m_site_common_header title="" >
+<#macro m_site_common_header title="专业的养老机构网站" keywords="" description="" >
 
 
-<title>${title}</title> 
+<title>${title}-银杏林</title> 
 <meta name="keywords" content="银杏林" />
 <meta name="description" content="${title}-银杏林" />
 </head>
@@ -148,8 +148,8 @@
 </#macro>
 
 
-<#macro m_site_common_oldhead title="" imgurl="" >
-<title>${title}</title> 
+<#macro m_site_common_oldhead title="专业的养老机构网站" imgurl="" keywords="" description="">
+<title>${title}-银杏林</title> 
 <meta name="keywords" content="银杏林" />
 <meta name="description" content="${title}-银杏林" />
 </head>
@@ -333,7 +333,7 @@ $(document).ready(function(){zen.yinfo.pagination()});
 		<div class="c_box">
 			<div class="c_title">
 				<div class="b_fl c_bold">对比栏</div>
-				<div class="b_fr">[隐藏]</div>
+				<div class="b_fr" ><a  onclick="zen.yinfo.compare_hide()">[隐藏]</a></div>
 			</div>
 			<div class="c_list">
 				<div id="yinfo_compare_show_0" class="c_item b_fl">
@@ -354,7 +354,7 @@ $(document).ready(function(){zen.yinfo.pagination()});
 				</div>
 				
 				<div class="c_buttons b_fr">
-					<a class="btn btn-success">对比</a>
+					<a class="btn btn-success" onclick="zen.yinfo.compare_goto()">对比</a>
 					<br/>
 					<a onclick="zen.yinfo.compare_clear()">清空对比栏</a>
 				</div>

@@ -243,7 +243,9 @@
 					</script>
 					
 				</div>
+				<div class="b_h40 clearfix"></div>
 			</div>
+			
 		</div>
 	</div>
 
