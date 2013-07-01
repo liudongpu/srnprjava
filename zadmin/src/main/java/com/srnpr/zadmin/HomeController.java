@@ -41,6 +41,7 @@ public class HomeController {
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home(Model model,HttpServletRequest request) {
 		
+		
 		//return index("newsinfo", "main-main", model,request);
 		
 		
