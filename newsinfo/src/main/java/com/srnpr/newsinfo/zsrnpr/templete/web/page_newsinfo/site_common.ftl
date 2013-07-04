@@ -103,10 +103,10 @@
 				<div class="index_piclist_position">
 					<div class="index_piclist_box zen_picnav_list">
 						<ul>
-						 	<#list pageexec.upDataOrder("info_images","-zid","position_cid",cid) as el>
-	                            <li><a href="${base_url}newsinfo/img-img-${el["uid"]}"> <img
+						 	<#list pageexec.upDataTop("info_images","","-zid",12,"position_cid",cid) as el>
+	                            <li><a href="${base_url}newsinfo/img-img-${el["uid"]}" title="${el["title"]}"> <img
 									src="${el["file_url"]}"
-									alt="${el["title"]}"> <span>${el["title"]}</span>
+									alt="${el["title"]}"> <span><#if (el["title"]?length>22)>${el["title"]?substring(0,22)}<#else> ${el["title"]}</#if></span>
 							</a></li>
 							 
 							 </#list>
