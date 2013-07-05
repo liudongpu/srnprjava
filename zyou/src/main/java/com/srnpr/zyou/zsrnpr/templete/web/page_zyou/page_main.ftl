@@ -52,6 +52,7 @@
 					<li class="nav-header">静态内容维护</li>
 					<li><a href="${base_url}zyou/chart-v_info_static_nav--system_cid=30330001">网站底部导航</a></li>
 					<li><a href="${base_url}zyou/chart-v_info_static_club--system_cid=30330002">俱乐部信息</a></li>
+					<li><a href="${base_url}zyou/chart-v_you_user">管理员管理</a></li>
 					<li class="nav-header">会员管理</li>
 					<li><a href="${base_url}zyou/chart-v_user_info">会员列表</a></li>
 					<li><a href="${base_url}zyou/chart-v_user_comment">评论列表</a></li>
