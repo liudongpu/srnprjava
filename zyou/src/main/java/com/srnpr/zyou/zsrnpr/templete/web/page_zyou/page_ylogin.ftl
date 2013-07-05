@@ -32,6 +32,15 @@
         padding: 7px 9px;
       }
 
+
+
+#page_main_menu,.navbar
+{
+	display:none;
+}
+
+
+
     </style>
 
 
@@ -48,7 +57,7 @@
       </form>
 		
     </div> <!-- /container -->
+<input type="hidden" id="login_success_href" value="zyou-y/chart-v_y_info"/>
 
-<script>location.href="zyou-y/chart-v_y_info"; </script>
 
 

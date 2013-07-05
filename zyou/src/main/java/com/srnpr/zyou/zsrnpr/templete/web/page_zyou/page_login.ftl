@@ -49,5 +49,5 @@
 
     </div> <!-- /container -->
 
-
+<input type="hidden" id="login_success_href" value="zyou/chart-v_info_news"/>
 

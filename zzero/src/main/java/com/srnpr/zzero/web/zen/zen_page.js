@@ -43,7 +43,7 @@ zen
 								expires : 365
 							});
 
-					zen.page.href("zyou/chart-v_info_news");
+					zen.page.href($('#login_success_href').val());
 
 				},
 
