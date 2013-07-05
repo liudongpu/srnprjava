@@ -20,22 +20,7 @@ public class TestBase extends BaseClass {
 	}
 	
 	
-	@Test
-	public void testCache()
-	{
-		
-		
-		
-		 Configuration configuration=new Configuration();
-		 
-		 
-		CacheManager cacheManager=new CacheManager(configuration);
-		 
-		Cache memoryOnlyCache = new Cache("testCache", 5000, false, false, 5, 2);
-		
-		
-		
-	}
+	
 	
 	
 

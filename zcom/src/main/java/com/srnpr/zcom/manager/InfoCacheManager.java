@@ -23,12 +23,14 @@ IBaseInit {
 	public static String Get(String sKey)
 	{
 		String sValueString=ConstStatic.CONST_COM_MESSAGE.get(sKey);
+		
+		/*
 		if(!StringUtils.isNotEmpty(sValueString))
 		{
 			new InfoCacheManager().Init();
 			sValueString=ConstStatic.CONST_COM_MESSAGE.get(sKey);
 		}
-		
+		*/
 		
 		
 		return sValueString;
