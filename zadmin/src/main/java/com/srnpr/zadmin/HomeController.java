@@ -58,7 +58,14 @@ public class HomeController {
 			
 			if(StringUtils.isNotEmpty(sSubString)&&!sSubString.equals("www"))
 			{
-				return index("yinfo", "home-"+sSubString, model,request);
+				if(sSubString.equals("ym"))
+				{
+					return index("zyou-y", "login-ylogin", model,request); 
+				}
+				else
+				{
+					return index("yinfo", "home-"+sSubString, model,request);
+				}
 			}
 		}
 		
