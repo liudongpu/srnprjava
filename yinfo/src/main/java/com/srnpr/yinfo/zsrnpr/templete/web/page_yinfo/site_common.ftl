@@ -272,7 +272,7 @@ $(document).ready(function(){zen.yinfo.pagination()});
 				
 			</div>
 			<div class="b_h20"></div>
-			<div class="c_text">CopyRight 2013</div>
+			<div class="c_text">CopyRight 2013 京ICP备11035185号-2 </div>
 			<div class="b_h40"></div>
 		</div>
 	</div>
