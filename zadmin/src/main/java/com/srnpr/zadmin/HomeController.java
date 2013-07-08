@@ -82,7 +82,14 @@ public class HomeController {
 		
 		//return index("zyou", "chart-system_table", model,request);
 		
-		return index("zyou-login", "login-login", model,request);
+		if(request.getRequestURL().toString().indexOf("yinxl")>-1)
+		{
+			return index("zyou-y", "login-ylogin", model,request);
+		}
+		else
+		{
+			return index("zyou-login", "login-login", model,request);
+		}
 		
 	}
 	
