@@ -31,7 +31,7 @@ public class PageProcess extends WebBaseProcess implements IWebProcess
 			if(pExec.upSession("zyou_login_user_name")==null)
 			{
 				wRequest.inSet(EWebSet.Url_Target, "login");
-				wRequest.inSet(EWebSet.Url_View, "login");
+				wRequest.inSet(EWebSet.Url_View, "notlogin");
 			}
 		}
 		return super.ShowHtml(wRequest);

@@ -43,11 +43,11 @@
 
     </style>
 
-
+${pageexec.inSession("zyou_login_user_name",null)}
 	<div class="container">
 
       <form class="form-signin" method="post" action="${base_url}zyou/func-login-login-func_do=login">
-        <h2 class="form-signin-heading">博观管理后台</h2>
+        <h2 class="form-signin-heading">银杏林管理后台</h2>
         <input type="text" id="user_name" name="user_name" class="input-block-level" placeholder="用户名">
         <input type="password"  id="user_pass" name="user_pass" class="input-block-level" placeholder="密码">
         <label class="checkbox">
