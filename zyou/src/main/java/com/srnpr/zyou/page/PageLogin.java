@@ -4,11 +4,14 @@ import java.util.HashMap;
 import java.util.Map;
 
 import org.apache.commons.lang.StringUtils;
+import org.springframework.web.context.request.RequestContextHolder;
+import org.springframework.web.context.request.ServletRequestAttributes;
 
 import com.srnpr.zcom.base.BaseClass;
 import com.srnpr.zcom.model.MHashMap;
 import com.srnpr.zcom.model.MResult;
 import com.srnpr.zdata.manager.DataTableManager;
+import com.srnpr.zweb.page.PageExec;
 
 public class PageLogin extends BaseClass {
 
@@ -54,6 +57,12 @@ public class PageLogin extends BaseClass {
 				mReturn.setResult(mRHashMap);
 				
 				mReturn.setRun("login_success");
+				
+				
+				PageExec peExec=new PageExec();
+				
+				peExec.inSession("zyou_login_user_name",mRHashMap.get("user_name"));
+				
 			}
 			else
 			{

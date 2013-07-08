@@ -158,6 +158,32 @@ public class PageExec extends BaseClass {
         return htmlStr; //返回文本字符串 
 	}
 	
+	public void inSession(String sKey,Object oValue)
+	{
+		HttpServletRequest hRequest = ((ServletRequestAttributes) RequestContextHolder
+				.getRequestAttributes()).getRequest();
+
+		if (hRequest != null 
+				) {
+			hRequest.getSession().setAttribute(sKey, oValue);
+			
+		}
+	}
 	
+	
+	public Object upSession(String sKey)
+	{
+		Object oReturnObject=null;
+		HttpServletRequest hRequest = ((ServletRequestAttributes) RequestContextHolder
+				.getRequestAttributes()).getRequest();
+
+		if (hRequest != null 
+				) {
+			
+			oReturnObject= hRequest.getSession().getAttribute(sKey);
+			
+		}
+		return oReturnObject;
+	}
 
 }

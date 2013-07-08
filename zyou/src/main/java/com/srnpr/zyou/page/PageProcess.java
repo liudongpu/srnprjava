@@ -16,6 +16,7 @@ import com.srnpr.zweb.manager.WebViewManager;
 import com.srnpr.zweb.model.MWebElement;
 import com.srnpr.zweb.model.MWebPage;
 import com.srnpr.zweb.model.MWebView;
+import com.srnpr.zweb.page.PageExec;
 import com.srnpr.zweb.page.PageRequest;
 import com.srnpr.zweb.process.WebBaseProcess;
 
@@ -24,7 +25,15 @@ public class PageProcess extends WebBaseProcess implements IWebProcess
 
 	public MWebPage Process(PageRequest wRequest)
 	{
-
+		if(wRequest.upSet(EWebSet.Url_Target).indexOf("login")<0)
+		{
+			PageExec pExec=new PageExec();
+			if(pExec.upSession("zyou_login_user_name")==null)
+			{
+				wRequest.inSet(EWebSet.Url_Target, "login");
+				wRequest.inSet(EWebSet.Url_View, "login");
+			}
+		}
 		return super.ShowHtml(wRequest);
 	}
 

@@ -14,7 +14,7 @@
 				</p>
 				<ul class="nav">
 					<li class="active"><a href="/" target="_blank">网站首页</a></li>
-					<li><a href="${base_url}zyou/chart-system_table">系统设置</a></li>
+					
 					<li><a onclick="zen.page.call('${base_url}zyou/func-system_table-97b1bcc3a90111e2bb7900241d8adc62-func_do=refreshcache')" class="navbar-link">刷新缓存</a></li>
 				</ul>
 			</div>

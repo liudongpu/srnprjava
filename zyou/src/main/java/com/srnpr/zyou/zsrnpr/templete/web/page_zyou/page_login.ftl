@@ -36,7 +36,7 @@
 
 
 	<div class="container">
-
+${pageexec.inSession("zyou_login_user_name",null)}
       <form class="form-signin" method="post" action="${base_url}zyou/func-login-login-func_do=login">
         <h2 class="form-signin-heading">博观管理后台</h2>
         <input type="text" id="user_name" name="user_name" class="input-block-level" placeholder="用户名">
