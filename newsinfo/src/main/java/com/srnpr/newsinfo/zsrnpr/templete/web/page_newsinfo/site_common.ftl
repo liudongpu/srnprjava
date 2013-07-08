@@ -68,6 +68,10 @@
 
 
 <#macro m_site_common_footer>
+
+
+<script src="http://s25.cnzz.com/stat.php?id=5501354&web_id=5501354&show=pic" language="JavaScript"></script>
+
 	<div class="layout_footer">
 
 			<div class="website_center">
