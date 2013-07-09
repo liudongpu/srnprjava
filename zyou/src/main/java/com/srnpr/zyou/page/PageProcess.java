@@ -25,7 +25,7 @@ public class PageProcess extends WebBaseProcess implements IWebProcess
 
 	public MWebPage Process(PageRequest wRequest)
 	{
-		if(wRequest.upSet(EWebSet.Url_Target).indexOf("login")<0)
+		if(wRequest.upSet(EWebSet.Url_Target).indexOf("upload")<0&& wRequest.upSet(EWebSet.Url_Target).indexOf("login")<0)
 		{
 			PageExec pExec=new PageExec();
 			if(pExec.upSession("zyou_login_user_name")==null)
