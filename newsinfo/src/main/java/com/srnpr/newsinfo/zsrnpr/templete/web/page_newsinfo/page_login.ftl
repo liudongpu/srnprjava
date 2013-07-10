@@ -17,7 +17,7 @@
 					</div>
 					<div class="c_left">
 						<span>邮箱：</span><input type="text" id="login_loginname" />&nbsp;&nbsp;请输入注册时的邮箱<br/><br/>
-						<span>密码：</span><input type="password" id="login_loginpass" />&nbsp;&nbsp;请输入注册时的邮箱
+						<span>密码：</span><input type="password" id="login_loginpass" />&nbsp;&nbsp;请输入注册时的密码
 					</div>
 					<div class="c_right">
 						<div class="c_info">

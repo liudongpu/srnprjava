@@ -332,7 +332,7 @@ a.b_button:hover {
 
 
 .index_banner_split {
-    width: 13px;
+    width: 14px;
     float: left;
     height: 100%;
 }
@@ -761,7 +761,7 @@ a.b_button:hover {
 
 .pic_listbox .c_item {
     width: 260px;
-    margin: 5px 0px 10px 10px;
+    margin: 5px 0px 10px 12px;
     text-align: justify;
     word-wrap: break-word;
     float: left;
@@ -1395,9 +1395,9 @@ a.b_button:hover {
     background-color: #f6f7f5;
 }
 .good_image {
-    background-color: #000;
+    
     text-align: center;
-    padding: 20px;
+    padding: 20px 28px 20px 20px;
 }
 
 .good_image img {

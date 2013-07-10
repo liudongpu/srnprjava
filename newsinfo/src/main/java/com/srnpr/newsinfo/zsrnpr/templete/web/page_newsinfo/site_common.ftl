@@ -70,7 +70,7 @@
 <#macro m_site_common_footer>
 
 
-<script src="http://s25.cnzz.com/stat.php?id=5501354&web_id=5501354&show=pic" language="JavaScript"></script>
+
 
 	<div class="layout_footer">
 
@@ -90,6 +90,7 @@
 				<div class="h_40"></div>
 				北京市朝阳区三间房东路1号（懋隆文化产业创意园）10栋<br/> 贵宾专线：86-10-65760069\65769969<br/>传真：86-10-65760969 <br/>邮箱：pm@boguanpaimai.com
 				<br/><br/>
+				<div style="display:none;"><script src="http://s25.cnzz.com/stat.php?id=5501354&web_id=5501354&show=pic" language="JavaScript"></script></div>
 				Copyright @2013               北京博观国际拍卖有限公司            版权所有
 			</div>
 

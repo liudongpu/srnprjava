@@ -63,7 +63,7 @@
 										<div class="index_piclist_box zen_picnav_list">
 											<ul>
 											
-											<#list pageexec.upDataOrder("info_video","-sort_index") as el> 
+											<#list pageexec.upDataOrder("info_video","-zid") as el> 
 											
 												<li><a href="<#if (el["type_cid"]==30340001)>${el["ppt_url"]} <#else>${el["video_url"]}</#if>" target="_blank"> <img
 														src="${el["file_url"]}"
@@ -116,16 +116,17 @@
 					</div>
 					<div class="span3 c_right">
 						<div class="c_flash">
+						<#assign page_club_adv_top= pageexec.upDataOne("info_static","code","303300030004") >
 							<embed
-								src="http://player.youku.com/player.php/sid/XMzU5Njg1NTU2/v.swf"
+								src="${page_club_adv_top["link"]}"
 								allowFullScreen="true" quality="high" width="240" height="200"
 								align="middle" allowScriptAccess="always"
 								type="application/x-shockwave-flash"></embed>
 						</div>
 						<div class="h_20"></div>
-						<div class="c_allnote">更多免费视频</div>
+						<div class="c_allnote">更多视频</div>
 						<ul>
-							<#list pageexec.upDataList("info_video","","-sort_index",0,10,"type_cid","30340002") as el>
+							<#list pageexec.upDataList("info_video","","-zid",0,10,"type_cid","30340002") as el>
 							<li><a href="${el["video_url"]}" target="_blank">${el["title"]}</a></li>
 							</#list>
 							
