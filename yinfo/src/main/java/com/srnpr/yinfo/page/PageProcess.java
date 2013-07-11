@@ -57,7 +57,7 @@ public class PageProcess implements IWebProcess {
 					List<MWebFields> mPageDataFields = (List<MWebFields>) mPageInfo
 							.getPageData();
 
-					String sEngStrings = ",domain,area,money_cid,peopletype_cid,score,icon_cids,adv_cid";
+					String sEngStrings = ",domain,area,money_cid,peopletype_cid,score,icon_cids,adv_cid,show_flag";
 
 					for (int i = mPageDataFields.size() - 1; i >= 0; i--) {
 						if (StringUtils.contains(sEngStrings, ","
