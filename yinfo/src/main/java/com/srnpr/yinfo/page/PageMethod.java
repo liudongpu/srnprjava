@@ -140,6 +140,8 @@ public class PageMethod extends BaseClass implements IPageMethod {
 			mHashMap.put("key", "%"+sSearch+"%");
 		}
 		
+		aWhere.add(" show_flag=30010001 ");
+		
 		
 		sWhereString=StringUtils.join( aWhere," and ");
 		

@@ -120,14 +120,20 @@ no result
 
 
 
-<#macro m_page_select  p_info>
+<#macro m_page_select  p_info e_defauletext="" e_defaultvalue="">
 
 <div class="control-group">
     <label class="control-label" for="${p_info.getColumnName()?default('')}">${p_info.getFieldName()?default('')}</label>
     <div class="controls">
     <select id="${p_info.getColumnName()?default('')}" name="${p_info.getColumnName()?default('')}">
     <#local m_page_select_data=pageexec.upDataFromFieldParams(p_info.getSourceparameter()) >
+    
+    	<#if e_defauletext!="">
+    		<option value="${e_defaultvalue}">${e_defauletext}</option>
+    	</#if>
+    
     	 <#list m_page_select_data as e_list>
+    	 	
     	 	<option value="${e_list["source_value"]?default('')}"  <#if (p_info.getFieldValue()==e_list["source_value"]) >selected="selected" </#if>    >${e_list['source_text']?default('')}</option>
     	 	
     	 </#list>

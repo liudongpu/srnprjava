@@ -88,7 +88,7 @@ public class WebViewManager extends BaseClass implements IBaseManager,
 						if (mSource != null) {
 
 							if (iDidPageType == 416120101
-									|| iDidPageType == 416120105) {
+									|| iDidPageType == 416120105|| iDidPageType == 416120109) {
 
 								String sSqlString = "select "
 										+ mSource.getFieldText()

@@ -72,7 +72,7 @@ zen
 				query : function(oEl) {
 					var aQuery = [];
 
-					$('input').each(
+					$('input,select').each(
 
 							function(n, el) {
 								if ($(el).val() != '') {

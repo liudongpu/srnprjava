@@ -90,6 +90,8 @@ public class WebBaseProcess extends BaseClass {
 
 			List<MWebFields> listQuery = new ArrayList<MWebFields>();
 
+			boolean bInquery = false;
+
 			for (MWebFields mFields : listFields) {
 				listTitle.add(mFields.getFieldName());
 
@@ -99,9 +101,19 @@ public class WebBaseProcess extends BaseClass {
 				}
 
 				if (mFields.getDidQueryType() > 0) {
-					listQuery.add(mFields.clone());
+					// listQuery.add(mFields.clone());
+					bInquery = true;
 				}
 
+			}
+
+			if (bInquery) {
+				for (MWebFields mQueryField : WebViewManager.upView(sPageView,
+						416120109).getFields()) {
+					if (mQueryField.getDidQueryType() > 0) {
+						listQuery.add(mQueryField.clone());
+					}
+				}
 			}
 
 			for (MWebOptions mOptions : reloadOptions(416120107, mView,
@@ -130,8 +142,8 @@ public class WebBaseProcess extends BaseClass {
 			}
 
 			MHashMap mWhereMap = wRequest.getParamsMap();
-			
-			String sQuery="";
+
+			String sQuery = "";
 
 			if (listQuery.size() > 0) {
 
@@ -142,25 +154,24 @@ public class WebBaseProcess extends BaseClass {
 
 					for (MWebFields mFields : listQuery) {
 
-						String sFieldName=mFields.getColumnName();
-						
+						String sFieldName = mFields.getColumnName();
+
 						if (mQueryMap.containsKey(sFieldName)) {
 
-							
-							mFields.setFieldValue(mQueryMap.get(sFieldName).toString());
-							
-							if(StringUtils.isNotEmpty(sQuery))
-							{
-								sQuery=sQuery+" and ";
+							mFields.setFieldValue(mQueryMap.get(sFieldName)
+									.toString());
+
+							if (StringUtils.isNotEmpty(sQuery)) {
+								sQuery = sQuery + " and ";
 							}
-							
-							if(mFields.getDidQueryType()==417020012)
-							{
-								mWhereMap.put(sFieldName, "%"+mQueryMap.get(sFieldName)+"%");
-								sQuery=sQuery+" "+sFieldName+" like :"+sFieldName+" ";
+
+							if (mFields.getDidQueryType() == 417020012) {
+								mWhereMap.put(sFieldName,
+										"%" + mQueryMap.get(sFieldName) + "%");
+								sQuery = sQuery + " " + sFieldName + " like :"
+										+ sFieldName + " ";
 							}
-							
-							
+
 						}
 
 					}
@@ -171,12 +182,13 @@ public class WebBaseProcess extends BaseClass {
 			}
 
 			if (mPagePagination.getPageCount() < 0) {
-				mPagePagination
-						.setPageCount(dHelper.upCountAll(sQuery,mWhereMap.upObjs()));
+				mPagePagination.setPageCount(dHelper.upCountAll(sQuery,
+						mWhereMap.upObjs()));
 			}
 
 			List<Map<String, Object>> listMaps = dHelper.upListAll(
-					sbField.toString(),sQuery,
+					sbField.toString(),
+					sQuery,
 					"-zid",
 					(mPagePagination.getPageIndex() - 1)
 							* mPagePagination.getPageSize(),
@@ -202,10 +214,11 @@ public class WebBaseProcess extends BaseClass {
 						if (mFields.getDidFieldType() == 416108121) {
 							// sText="<a href=\"\" target=\"\"></a>";
 
-							if(StringUtils.isNotEmpty(sText))
-							{
-							sText = FormatHelper.FormatString(
-									BConfig("zweb.replace_list_url"), sText);
+							if (StringUtils.isNotEmpty(sText)) {
+								sText = FormatHelper
+										.FormatString(
+												BConfig("zweb.replace_list_url"),
+												sText);
 							}
 						}
 
@@ -307,59 +320,56 @@ public class WebBaseProcess extends BaseClass {
 
 				if (mNewOptions.getDidOptionType() == 415101001) {
 					/*
-					sParams = FormatHelper.FormatString(
-							WebConst.Get(EWebConst.base_page_url),
-							wRequest.upSet(EWebSet.Url_Path), "add",
+					 * sParams = FormatHelper.FormatString(
+					 * WebConst.Get(EWebConst.base_page_url),
+					 * wRequest.upSet(EWebSet.Url_Path), "add",
+					 * wRequest.upSet(EWebSet.Url_View), mOptions.getUid(),
+					 * mOptions.getParams());
+					 */
+
+					sParams = FormatHelper.upSplit("add",
 							wRequest.upSet(EWebSet.Url_View),
 							mOptions.getUid(), mOptions.getParams());
-							*/
-					
-					sParams=FormatHelper.upSplit("add",
-							wRequest.upSet(EWebSet.Url_View),
-							mOptions.getUid(), mOptions.getParams());
-					
+
 				} else if (mNewOptions.getDidOptionType() == 415101305) {
 					/*
-					sParams = FormatHelper.FormatString(
-							WebConst.Get(EWebConst.base_page_url),
-							wRequest.upSet(EWebSet.Url_Path), "edit",
-							wRequest.upSet(EWebSet.Url_View),
-							mOptions.getUid(), "uid=[uid]");
-							*/
-					
-					sParams=FormatHelper.upSplit("edit",
+					 * sParams = FormatHelper.FormatString(
+					 * WebConst.Get(EWebConst.base_page_url),
+					 * wRequest.upSet(EWebSet.Url_Path), "edit",
+					 * wRequest.upSet(EWebSet.Url_View), mOptions.getUid(),
+					 * "uid=[uid]");
+					 */
+
+					sParams = FormatHelper.upSplit("edit",
 							wRequest.upSet(EWebSet.Url_View),
 							mOptions.getUid(), "uid=[uid]");
 
 				} else if (mNewOptions.getDidOptionType() == 415101019) {
 					/*
-					sParams = FormatHelper.FormatString(
-							WebConst.Get(EWebConst.base_page_url),
-							wRequest.upSet(EWebSet.Url_Path), "func",
+					 * sParams = FormatHelper.FormatString(
+					 * WebConst.Get(EWebConst.base_page_url),
+					 * wRequest.upSet(EWebSet.Url_Path), "func",
+					 * wRequest.upSet(EWebSet.Url_View), mOptions.getUid(),
+					 * "func_from_page_did=" + wRequest.getDidPageType());
+					 */
+					sParams = FormatHelper.upSplit("func",
 							wRequest.upSet(EWebSet.Url_View),
 							mOptions.getUid(),
 							"func_from_page_did=" + wRequest.getDidPageType());
-					*/
-					sParams=FormatHelper.upSplit("func",
-							wRequest.upSet(EWebSet.Url_View),
-							mOptions.getUid(),
-							"func_from_page_did=" + wRequest.getDidPageType());
-					
+
 				} else if (mNewOptions.getDidOptionType() == 415101304) {
 					/*
-					sParams = FormatHelper.FormatString(
-							WebConst.Get(EWebConst.base_page_url),
-							wRequest.upSet(EWebSet.Url_Path), "func",
+					 * sParams = FormatHelper.FormatString(
+					 * WebConst.Get(EWebConst.base_page_url),
+					 * wRequest.upSet(EWebSet.Url_Path), "func",
+					 * wRequest.upSet(EWebSet.Url_View), mOptions.getUid(),
+					 * "func_from_page_did=416120104&uid=[uid]");
+					 */
+					sParams = FormatHelper.upSplit("func",
 							wRequest.upSet(EWebSet.Url_View),
 							mOptions.getUid(),
 							"func_from_page_did=416120104&uid=[uid]");
-							*/
-					sParams=FormatHelper.upSplit("func",
-							wRequest.upSet(EWebSet.Url_View),
-							mOptions.getUid(),
-							"func_from_page_did=416120104&uid=[uid]");
-					
-					
+
 				}
 
 				// 判断如果有特殊标记则特殊处理
