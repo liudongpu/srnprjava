@@ -14,7 +14,9 @@
 				</p>
 				<ul class="nav">
 					<li class="active"><a href="/" target="_blank">网站首页</a></li>
+					<#if (((pageexec.upSession("zyou_login_user_group")??)&& (pageexec.upSession("zyou_login_user_group")=="32670001"))) >
 					<li><a href="chart-system_table">系统设置</a></li>
+					</#if>
 					<li><a onclick="zen.page.call('${base_url}zyou/func-system_table-97b1bcc3a90111e2bb7900241d8adc62-func_do=refreshcache')" class="navbar-link">刷新缓存</a></li>
 				</ul>
 			</div>
@@ -34,15 +36,28 @@
 		<div class="span2">
 			<div class="well sidebar-nav" id="page_main_menu">
 				<ul class="nav nav-list">
-					 <#list pageexec.upDataOrder("y_menu","code","left(code,6)='413001'") as e_list>
+					 <#list pageexec.upDataOrder("y_menu","code","left(code,6)='413001' and user_group='' ") as e_list>
 					 	<#if (e_list["code"]?length==9)>
 					 	
 					 	<li class="nav-header">${e_list["name"]}</li>
 					 	<#elseif (e_list["code"]?length==12) > 
-					<li><a href="${base_url}zyou-y/${e_list["link_url"]}">${e_list["name"]}</a></li>
+							<li><a href="${base_url}zyou-y/${e_list["link_url"]}">${e_list["name"]}</a></li>
 						</#if>
 					 	
 					 </#list>
+					 
+					 <#if (((pageexec.upSession("zyou_login_user_group")??)&& (pageexec.upSession("zyou_login_user_group")!=""))) >
+					 	<#list pageexec.upDataOrder("y_menu","code","left(code,6)='413001' and user_group='"+pageexec.upSession("zyou_login_user_group")+"' ") as e_list>
+					 	<#if (e_list["code"]?length==9)>
+					 	
+					 	<li class="nav-header">${e_list["name"]}</li>
+					 	<#elseif (e_list["code"]?length==12) > 
+							<li><a href="${base_url}zyou-y/${e_list["link_url"]}">${e_list["name"]}</a></li>
+						</#if>
+					 	
+					 </#list>
+					 </#if>
+					 
 				</ul>
 			</div>
 			<!--/.well -->

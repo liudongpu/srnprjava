@@ -63,6 +63,12 @@ public class PageLogin extends BaseClass {
 				
 				peExec.inSession("zyou_login_user_name",mRHashMap.get("user_name"));
 				
+				if(mRHashMap.containsKey("user_group"))
+				{
+					peExec.inSession("zyou_login_user_group",mRHashMap.get("user_group"));
+				}
+				
+				
 			}
 			else
 			{
