@@ -49,7 +49,7 @@ zen
 								.html(
 										'欢迎，'
 												+ sName
-												+ '&nbsp;&nbsp;<a href="#" onclick="zen.yinfo.href(\'yinfo/ucenter-user\')">[个人中心]</a>');
+												+ '&nbsp;&nbsp;<a href="#" onclick="zen.yinfo.href(\'yinfo/ucenter-user\')">[个人中心]</a>&nbsp;&nbsp;<a href="#" onclick="zen.yinfo.logout()">[退出]</a>');
 
 					}
 

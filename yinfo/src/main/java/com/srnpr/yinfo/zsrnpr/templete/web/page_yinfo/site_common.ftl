@@ -252,7 +252,7 @@ $(document).ready(function(){zen.yinfo.pagination()});
 								<div class="clearfix"></div>
 								<div class="c_buttons">
 									<#if (fromtype=="list")><input type="checkbox" id="yinfo_compare_cb_${el["zid"]}" class="yinfo_compare_checkbox" y_name="${el["name"]}"  y_zid="${el["zid"]}" y_img="${el["main_img"]?default("")}" y_link="${base_url}yinfo/home-${el["domain"]}" onclick="zen.yinfo.compare_add(this)" /><label for="yinfo_compare_cb_${el["zid"]}">加入对比</label></#if>
-									<a href="${base_url}yinfo/home-home-${el["uid"]}" target="_blank" class="btn btn-success">去看看</a>
+									<a href="${base_url}yinfo/home-${el["domain"]}" target="_blank" class="btn btn-success">去看看</a>
 								</div>
 							</div>
 
