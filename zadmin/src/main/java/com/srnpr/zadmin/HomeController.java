@@ -56,7 +56,7 @@ public class HomeController {
 		{
 			String sSubString= StringUtils.substringBetween(request.getRequestURL().toString(), "//", ".");
 			
-			if(StringUtils.isNotEmpty(sSubString)&&!sSubString.equals("www"))
+			if(StringUtils.isNotEmpty(sSubString)&&!sSubString.equals("www")&&!sSubString.equals("jiasule"))
 			{
 				if(sSubString.equals("ym"))
 				{

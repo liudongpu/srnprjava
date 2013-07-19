@@ -57,7 +57,7 @@ ${pageexec.inSession("zyou_login_user_name",null)}
       </form>
 		
     </div> <!-- /container -->
-<input type="hidden" id="login_success_href" value="zyou-y/chart-v_y_info"/>
+<input type="hidden" id="login_success_href" value="zyou-y/login-haslogin"/>
 
 
 
