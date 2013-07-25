@@ -1,0 +1,33 @@
+
+.ahinfo_body
+{
+    background-color: #051937;
+}
+
+
+
+.ahinfo_pageback
+{
+    background-image: url("../images/pagebg.jpg");
+    width:100%;
+    background-position: top center;
+    min-height:884px;
+}
+
+
+.ahinfo_width
+{
+    width:1020px;
+    margin:auto;
+}
+
+.ahinfo_head
+{
+    height:120px;
+}
+
+.ahinfo_center
+{
+    background-color:#fff;
+    min-height:700px;
+}
