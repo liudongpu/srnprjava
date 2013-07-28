@@ -23,8 +23,37 @@
 
 .ahinfo_head
 {
+    
+}
+.ahinfo_head .c_top
+{
     height:120px;
 }
+.ahinfo_head .c_nav
+{
+    height:40px;
+    background-color:#fff;
+    border-bottom:solid 4px #e5e5e5;
+    color:#542900;
+}
+
+.ahinfo_head .c_nav ul 
+{
+    margin-left:20%;
+    width:60%;
+}
+
+.ahinfo_head .c_nav ul li
+{
+    width:20%;
+    float:left;
+    list-style-type:none;
+    line-height:40px;
+    font-size:18px;
+    font-weight:bold;
+    
+}
+
 
 .ahinfo_center
 {
