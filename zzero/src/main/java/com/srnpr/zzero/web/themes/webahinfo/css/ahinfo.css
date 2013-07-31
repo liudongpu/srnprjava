@@ -119,7 +119,13 @@
     overflow: hidden;
 }
 
-
+.ahinfo_default_adv_change
+{
+    background-color:#000;
+    height:20px;
+    position: absolute;
+    top:400px;
+}
 
 
 
