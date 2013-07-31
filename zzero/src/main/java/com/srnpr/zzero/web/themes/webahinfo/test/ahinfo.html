@@ -128,13 +128,13 @@
 									alt="">
 
 							</div>
-							<div class="item ">
+							<div class="item">
 								<img
 									src="http://pic6.nipic.com/20100327/428967_140634099899_2.jpg"
 									alt="">
 							</div>
 
-							<div class="item ">
+							<div class="item">
 								<img
 									src="http://blogfile.ifeng.com/uploadfiles/blog_attachment/1008/21/3629921_a97c6970b707a4d99375811a2f838b40.jpg"
 									alt="">
@@ -143,20 +143,90 @@
 						<a class="left carousel-control b_none" href="#myCarousel"
 							data-slide="prev">‹</a> <a class="right carousel-control b_none"
 							href="#myCarousel" data-slide="next">›</a>
-							
-							
+
+
 						<div class="ahinfo_default_adv_change">
-						
-							aaa
+							<ul>
+								<li data-target="#myCarousel" data-slide-to="0" class="active">
+									<div class="c_img b_none">
+										<img
+											src="http://pic9.nipic.com/20100912/5587070_001247485386_2.jpg" />
+									</div>
+									<div class="c_title">NB-1明星抗老产品 盛誉满载</div>
+								</li>
+								<li data-target="#myCarousel" data-slide-to="1"><div
+										class="c_img b_none">
+										<img
+											src="http://pic9.nipic.com/20100912/5587070_001247485386_2.jpg" />
+									</div>
+									<div class="c_title">NB-1明星抗老产品 盛誉满载</div></li>
+								<li data-target="#myCarousel" data-slide-to="2"><div
+										class="c_img b_none">
+										<img
+											src="http://pic9.nipic.com/20100912/5587070_001247485386_2.jpg" />
+									</div>
+									<div class="c_title">NB-1明星抗老产品 盛誉满载</div></li>
+								<li data-target="#myCarousel" data-slide-to="3"><div
+										class="c_img b_none">
+										<img
+											src="http://pic9.nipic.com/20100912/5587070_001247485386_2.jpg" />
+									</div>
+									<div class="c_title">NB-1明星抗老产品 盛誉满载</div></li>
+							</ul>
+
+
+
+
 						</div>
 					</div>
 
 
 				</div>
 
+				<div class="ahinfo_default_list">
+					<div class="c_title">
+						<span>顾客口碑&nbsp;·&nbsp;</span>奥华专业十一年
+					</div>
+					<div class="c_center">
+
+						<div class="c_left"></div>
+						<div class="c_right">
+							<img
+								src="http://www.wierchomla.com.pl/uploads/thumbs/1001x408/201109191105480.spa1120_2_bann.jpg" />
+						</div>
+					</div>
+
+
+
+				</div>
+				<div class="b_h_30"></div>
+
 			</div>
 
-			<div class="ahinfo_foot"></div>
+			<div class="ahinfo_foot">
+				<div class="ahinfo_foot_link">
+
+					<div class="ahinfo_foot_line">
+						<div class="c_line3"></div>
+						<div class="c_line1"></div>
+					</div>
+					<div class="b_h_30">
+						<ul>
+
+							<li><a href="#">法律声明</a></li>
+							<li><a href="#">联系我们</a></li>
+							<li><a href="#">网站地图</a></li>
+							<li><a href="#">诚聘英才</a></li>
+							<li><a href="#">微信关注</a></li>
+						</ul>
+
+					</div>
+				</div>
+				<div class="ahinfo_foot_info">
+					© copyright 2010-2012 奥华国际. All rights reserved. <br />
+					京ICP备10000000号-0
+				</div>
+			</div>
 		</div>
 
 	</div>
@@ -193,6 +263,16 @@
 
 			$('.carousel').carousel({
 				interval : 6000
+			});
+
+			$('.ahinfo_default_adv_change li').each(function(n, el) {
+				$(this).hover(function() {
+					$(this).addClass('c_active');
+					$(this).find('.c_img').removeClass('b_none');
+				}, function() {
+					$(this).removeClass('c_active');
+					$(this).find('.c_img').addClass('b_none');
+				});
 			});
 
 		});
