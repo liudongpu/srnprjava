@@ -45,7 +45,7 @@
 								<br />
 								尺寸：${good_info["size"]}
 								<br />
-								估价：${good_info["assess_price"]}
+								参考价：${good_info["assess_price"]}
 								<br />
 								成交价：${good_info["success_price"]}
 							</div>

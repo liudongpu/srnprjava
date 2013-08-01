@@ -38,6 +38,7 @@
 					<div class="c_text">
 						<h4><a href="good-good-${el["uid"]}" title="${el["name"]}">${el["name"]}</a></h4>
 						图录号：${el["code"]}<br /> 参考价：${el["assess_price"]}<br /> 
+						成交价：${el["success_price"]}<br /> 
 						<a href="good-good-${el["uid"]}"> 查看详细</a>
 					</div>
 				</div>
