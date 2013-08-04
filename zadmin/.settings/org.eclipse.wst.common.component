@@ -25,6 +25,9 @@
         <dependent-module archiveName="yinfo-0.0.1-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/yinfo/yinfo">
             <dependency-type>uses</dependency-type>
         </dependent-module>
+        <dependent-module archiveName="ahinfo-0.0.1-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/ahinfo/ahinfo">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
 		<property name="java-output-path" value="target/classes"/>
         <property name="context-root" value="zadmin"/>
 	</wb-module>
