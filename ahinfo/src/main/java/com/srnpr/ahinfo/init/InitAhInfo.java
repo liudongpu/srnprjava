@@ -29,10 +29,12 @@ public class InitAhInfo extends BaseInit implements IBaseInit {
 		MPropertiesHash mTheamsHash = hashHelper.upMPropertiesHash(
 				sAdminTheamsPath, "");
 
+		/*
 		for (String s : hashHelper.upStringFromCurrentHash(mTheamsHash
 				.getChild().get("site_css"))) {
 			mConfig.getSrcCss().add(BConfig("zweb.url_themes_site") + s);
 		}
+		*/
 
 		for (String s : cManager.GetStrings("zweb.lib_bootstrap_css")) {
 			mConfig.getSrcCss().add(s);
