@@ -42,9 +42,9 @@ public class HomeController {
 	public String home(Model model,HttpServletRequest request) {
 		
 		
+		//return index("newsinfo", "main-main", model,request);
+		
 		return index("ahinfo", "main-main", model,request);
-		
-		
 		
 		
 		/*
@@ -107,6 +107,23 @@ public class HomeController {
 		return index("zyou-y", "login-ylogin", model,request);
 		
 	}
+	
+	
+	@RequestMapping(value = "am", method = RequestMethod.GET)
+	public String am(Model model,HttpServletRequest request) {
+		
+		//return index("zyou", "chart-system_table", model,request);
+		
+		
+		//WebConst.PutWebCnfig("zyou", mConfig);
+
+		
+		return index("zyou-ah", "login-ahlogin", model,request);
+		
+	}
+	
+	
+	
 	
 	@RequestMapping(value = "/y", method = RequestMethod.GET)
 	public String defy(Model model,HttpServletRequest request) {

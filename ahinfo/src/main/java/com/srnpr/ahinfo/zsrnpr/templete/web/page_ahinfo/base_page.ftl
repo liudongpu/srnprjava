@@ -18,8 +18,10 @@
 
 	<@m_html_addcss pageconfig.getSrcCss() />
 	<@m_html_addjs pageconfig.getSrcJs() />
-	<@m_html_addjs [base_zero+"zen/zen_site.js"] />
+	<@m_html_addjs [base_zero+"zen/zen_ahinfo.js"] />
 	<@m_html_addjs [base_zero+"lib/jquery/jquery-site.js"] />
+	<@m_html_addjs [base_zero+"lib/jquery/jquery.srnpr.js"] />
+	<@m_html_addcss [base_zero+"themes/webahinfo/css/ahinfo.css"] />
 
 	<@m_html_addscript "zen.i({baseurl:'"+base_url+"'});" />
 

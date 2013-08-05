@@ -31,6 +31,8 @@
 	<#include "page_main.ftl" />
 <#elseif (pageinfo.getWebSet()["Url_Show"]=="y")>
 	<#include "page_y.ftl" />
+<#elseif (pageinfo.getWebSet()["Url_Show"]=="ah")>
+	<#include "page_ah.ftl" />
 <#else>
 	<#include "page_iframe.ftl" />
 
