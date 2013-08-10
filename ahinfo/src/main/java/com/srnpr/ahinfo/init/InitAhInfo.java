@@ -36,9 +36,6 @@ public class InitAhInfo extends BaseInit implements IBaseInit {
 		}
 		*/
 
-		for (String s : cManager.GetStrings("zweb.lib_bootstrap_css")) {
-			mConfig.getSrcCss().add(s);
-		}
 
 
 		for (String s : cManager.GetStrings(

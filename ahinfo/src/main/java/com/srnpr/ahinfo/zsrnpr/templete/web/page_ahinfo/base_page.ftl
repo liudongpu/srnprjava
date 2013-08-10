@@ -16,7 +16,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
 
 
-	<@m_html_addcss pageconfig.getSrcCss() />
+	<@m_html_addcss [base_zero+"lib/bootstrap/css/bootstrap.ah.min.css"] />
 	<@m_html_addjs pageconfig.getSrcJs() />
 	<@m_html_addjs [base_zero+"zen/zen_ahinfo.js"] />
 	<@m_html_addjs [base_zero+"lib/jquery/jquery-site.js"] />

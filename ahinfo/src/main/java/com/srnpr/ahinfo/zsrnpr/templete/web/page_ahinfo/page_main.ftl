@@ -1,8 +1,5 @@
 <title>yinfo</title>
 
-
-
-
 </head>
 <body class="ahinfo_body">
 
@@ -125,8 +122,8 @@
 
 
 						<div class="ahinfo_default_adv_change ">
-							<ul>
-								<li data-target="#myCarousel" data-slide-to="0">
+							<ul class="carousel-indicators">
+								<li data-target="#myCarousel" data-slide-to="0" class="active">
 									<div class="c_img b_none">
 										<img
 											src="http://pic9.nipic.com/20100912/5587070_001247485386_2.jpg" />
