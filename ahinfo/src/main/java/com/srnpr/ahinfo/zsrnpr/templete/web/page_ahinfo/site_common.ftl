@@ -27,59 +27,50 @@
 						<div class="c_split"></div>
 						<ul>
 							<li><a href="/ahinfo/static-1001">公司概况</a></li>
-							<li><a href="#">品牌理念</a></li>
-							<li><a href="#">品牌广告</a></li>
-							<li><a href="#">管理团队</a></li>
-							<li><a href="#">奥华历程</a></li>
-							<li><a href="#">企业投资者</a></li>
+							<li><a href="/ahinfo/static-1002">品牌理念</a></li>
+							<li><a href="/ahinfo/static-1003">品牌广告</a></li>
+							<li><a href="/ahinfo/people-0">管理团队</a></li>
+							<li><a href="/ahinfo/static-1004">奥华历程</a></li>
+							<li><a href="/ahinfo/static-1005">企业投资者</a></li>
 						</ul>
 						<div class="c_bottom"></div>
 					</div>
 					<div class="c_item ahinfo_nav_item_1 b_none">
 						<div class="c_split"></div>
 						<ul>
-							<li><a href="#">公司概况</a></li>
-							<li><a href="#">品牌理念</a></li>
-							<li><a href="#">品牌广告</a></li>
-							<li><a href="#">管理团队</a></li>
-							<li><a href="#">奥华历程</a></li>
-							<li><a href="#">企业投资者</a></li>
+							<li><a href="#">新品速递</a></li>
+							<li><a href="#">最新护理</a></li>
+							<li><a href="#">热卖臻品</a></li>
+							<li><a href="#">本月特惠</a></li>
+							<li><a href="#">新店开业</a></li>
 						</ul>
 						<div class="c_bottom"></div>
 					</div>
 					<div class="c_item ahinfo_nav_item_2 b_none">
 						<div class="c_split"></div>
 						<ul>
-							<li><a href="#">公司概况</a></li>
-							<li><a href="#">品牌理念</a></li>
-							<li><a href="#">品牌广告</a></li>
-							<li><a href="#">管理团队</a></li>
-							<li><a href="#">奥华历程</a></li>
-							<li><a href="#">企业投资者</a></li>
+							<li><a href="#">服务项目</a></li>
+							<li><a href="#">产品套装</a></li>
+
 						</ul>
 						<div class="c_bottom"></div>
 					</div>
 					<div class="c_item ahinfo_nav_item_3 b_none">
 						<div class="c_split"></div>
 						<ul>
-							<li><a href="#">公司概况</a></li>
-							<li><a href="#">品牌理念</a></li>
-							<li><a href="#">品牌广告</a></li>
-							<li><a href="#">管理团队</a></li>
-							<li><a href="#">奥华历程</a></li>
-							<li><a href="#">企业投资者</a></li>
+							<li><a href="ahinfo/static-1006">加盟优势</a></li>
+							<li><a href="ahinfo/static-1007">开店支持</a></li>
+							<li><a href="ahinfo/static-1008">伙伴证言</a></li>
+							<li><a href="ahinfo/static-1009">网点介绍</a></li>
+							<li><a href="ahinfo/joinus-new">加盟咨询</a></li>
 						</ul>
 						<div class="c_bottom"></div>
 					</div>
 					<div class="c_item ahinfo_nav_item_4 b_none">
 						<div class="c_split"></div>
 						<ul>
-							<li><a href="#">公司概况</a></li>
-							<li><a href="#">品牌理念</a></li>
-							<li><a href="#">品牌广告</a></li>
-							<li><a href="#">管理团队</a></li>
-							<li><a href="#">奥华历程</a></li>
-							<li><a href="#">企业投资者</a></li>
+							<li><a href="#">顾客口碑</a></li>
+
 						</ul>
 						<div class="c_bottom"></div>
 					</div>
@@ -89,8 +80,42 @@
 
 
 
+<#macro m_site_common_page_before>
+
+			<div class="ahinfo_center">
+
+				<div class="ahinfo_page_box">
+
+					<div class="ahinfo_page_nav">首页 &gt; 最新动态 &gt; 新品速递</div>
+					<div class="ahinfo_page_left">
+						<div class="c_nav">
+
+							<ul>
+								<li class="c_top">About/关于奥华</li>
+								<li><a href="/ahinfo/static-1001">&gt;公司概况</a></li>
+								<li><a href="#">品牌理念</a></li>
+								<li><a href="#">品牌广告</a></li>
+								<li><a href="#">管理团队</a></li>
+								<li><a href="#">奥华历程</a></li>
+								<li><a href="#">企业投资者</a></li>
+							</ul>
 
 
+						</div>
+					</div>
+					<div class="ahinfo_page_right">
+
+
+</#macro>
+
+<#macro m_site_common_page_after>
+					</div>
+					<div class="clearfix"></div>
+				</div>
+			</div>
+
+
+</#macro>
 
 
 <#macro m_site_common_footer>

@@ -2,6 +2,7 @@ package com.srnpr.ahinfo.init;
 
 
 import com.srnpr.ahinfo.page.PageProcess;
+import com.srnpr.ahinfo.page.PageMethod;
 import com.srnpr.zcom.base.BaseInit;
 import com.srnpr.zcom.helper.HashHelper;
 import com.srnpr.zcom.i.IBaseInit;
@@ -50,7 +51,7 @@ public class InitAhInfo extends BaseInit implements IBaseInit {
 
 
 		mConfig.setBaseInclude(BConfig("ahinfo.base_include"));
-
+		mConfig.setPageMethod(new PageMethod());
 
 
 		WebConst.PutWebCnfig("ahinfo", mConfig);

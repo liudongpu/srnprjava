@@ -261,28 +261,86 @@ a:hover {
     padding-top: 10px;
 }
 
-
-
-.ahinfo_page_box
-{
-    width:990px;
-    
+.ahinfo_page_box {
+    width: 990px;
 }
 
-.ahinfo_page_nav
-{
-    height:50px;
-    color:#656565;
+.ahinfo_page_nav {
+    height: 50px;
+    color: #656565;
     line-height: 30px;
-    width:100%;
-    text-indent:30px;
+    width: 100%;
+    text-indent: 30px;
 }
 
 .ahinfo_page_left {
     width: 290px;
     float: left;
 }
+
+.ahinfo_page_left .c_nav {
+    margin-left: 30px;
+}
+
+.ahinfo_page_left ul {
+    margin: 0px;
+    padding: 0px;
+    width: 200px;
+}
+.ahinfo_page_left ul li {
+    list-style-type: none;
+    height: 40px;
+    border-top: solid 1px #e8e9ed;
+    line-height: 40px;
+}
+
 .ahinfo_page_right {
     float: left;
     width: 700px;
 }
+
+.ahinfo_people_info img {
+    height: 180px;
+    width: 150px;
+    float: left;
+    margin-right: 10px;
+}
+
+.ahinfo_people_info b {
+    font-size: 24px;
+}
+.ahinfo_people_info span {
+    font-size: 18px;
+}
+
+.ahinfo_people_list {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    padding-top: 20px;
+    border-top: solid 1px #000;
+}
+
+.ahinfo_people_list img {
+    height: 180px;
+    width: 150px;
+}
+
+.ahinfo_people_list .c_item {
+    width: 172px;
+    float: left;
+}
+.ahinfo_people_list .c_name {
+    font-size: 18px;
+    height: 30px;
+    line-height: 30px;
+    width: 150px;
+    text-align: center;
+}
+.ahinfo_people_list .c_type {
+
+    height: 30px;
+    line-height: 30px;
+    width: 150px;
+    text-align: center;
+}
+
