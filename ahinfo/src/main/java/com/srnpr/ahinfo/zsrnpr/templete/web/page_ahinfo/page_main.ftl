@@ -1,89 +1,5 @@
-<title>yinfo</title>
 
-</head>
-<body class="ahinfo_body">
-
-	<div class="ahinfo_pageback">
-
-		<div class="ahinfo_width ahinfo_main b_static">
-			<div class="ahinfo_top">
-				<div class="ahinfo_head">
-					<div class="c_top"></div>
-					<div class="c_nav">
-						<ul>
-							<li class="ahinfo_head_item_0">关于奥华</li>
-							<li class="ahinfo_head_item_1">最新动态</li>
-							<li class="ahinfo_head_item_2">服务项目</li>
-							<li class="ahinfo_head_item_3">合作加盟</li>
-							<li class="ahinfo_head_item_4">顾客口碑</li>
-						</ul>
-					</div>
-				</div>
-				<div class="ahinfo_nav">
-					<div class="c_item ahinfo_nav_item_0 b_none">
-						<div class="c_split"></div>
-						<ul>
-							<li><a href="#">公司概况</a></li>
-							<li><a href="#">品牌理念</a></li>
-							<li><a href="#">品牌广告</a></li>
-							<li><a href="#">管理团队</a></li>
-							<li><a href="#">奥华历程</a></li>
-							<li><a href="#">企业投资者</a></li>
-						</ul>
-						<div class="c_bottom"></div>
-					</div>
-					<div class="c_item ahinfo_nav_item_1 b_none">
-						<div class="c_split"></div>
-						<ul>
-							<li><a href="#">公司概况</a></li>
-							<li><a href="#">品牌理念</a></li>
-							<li><a href="#">品牌广告</a></li>
-							<li><a href="#">管理团队</a></li>
-							<li><a href="#">奥华历程</a></li>
-							<li><a href="#">企业投资者</a></li>
-						</ul>
-						<div class="c_bottom"></div>
-					</div>
-					<div class="c_item ahinfo_nav_item_2 b_none">
-						<div class="c_split"></div>
-						<ul>
-							<li><a href="#">公司概况</a></li>
-							<li><a href="#">品牌理念</a></li>
-							<li><a href="#">品牌广告</a></li>
-							<li><a href="#">管理团队</a></li>
-							<li><a href="#">奥华历程</a></li>
-							<li><a href="#">企业投资者</a></li>
-						</ul>
-						<div class="c_bottom"></div>
-					</div>
-					<div class="c_item ahinfo_nav_item_3 b_none">
-						<div class="c_split"></div>
-						<ul>
-							<li><a href="#">公司概况</a></li>
-							<li><a href="#">品牌理念</a></li>
-							<li><a href="#">品牌广告</a></li>
-							<li><a href="#">管理团队</a></li>
-							<li><a href="#">奥华历程</a></li>
-							<li><a href="#">企业投资者</a></li>
-						</ul>
-						<div class="c_bottom"></div>
-					</div>
-					<div class="c_item ahinfo_nav_item_4 b_none">
-						<div class="c_split"></div>
-						<ul>
-							<li><a href="#">公司概况</a></li>
-							<li><a href="#">品牌理念</a></li>
-							<li><a href="#">品牌广告</a></li>
-							<li><a href="#">管理团队</a></li>
-							<li><a href="#">奥华历程</a></li>
-							<li><a href="#">企业投资者</a></li>
-						</ul>
-						<div class="c_bottom"></div>
-					</div>
-				</div>
-			</div>
-
-
+<@m_site_common_header />
 
 			<div class="ahinfo_center">
 
@@ -92,29 +8,16 @@
 					<div id="myCarousel" class="carousel slide">
 
 						<div class="carousel-inner">
-							<div class="item active">
+						
+							<#list pageexec.upDataTop("info_adv","","-zid",4) as el>
+							
+							
+							<div class="item <#if (el_index==0)>active</#if>">
 								<img
-									src="http://pic9.nipic.com/20100912/5587070_001247485386_2.jpg"
-									alt="">
-
-							</div>
-							<div class="item">
-								<img
-									src="http://pic5.bbzhi.com/qitabizhi/huazhuangpinguanggaobizhi/huazhuangpinguanggaobizhi_476103_9.jpg"
-									alt="">
-
-							</div>
-							<div class="item">
-								<img
-									src="http://pic6.nipic.com/20100327/428967_140634099899_2.jpg"
-									alt="">
-							</div>
-
-							<div class="item">
-								<img
-									src="http://blogfile.ifeng.com/uploadfiles/blog_attachment/1008/21/3629921_a97c6970b707a4d99375811a2f838b40.jpg"
-									alt="">
-							</div>
+									src="${el["file_url"]}"
+									alt="${el["title"]}">
+							</div>		
+							</#list>										
 						</div>
 						<a class="left carousel-control b_none" href="#myCarousel"
 							data-slide="prev">‹</a> <a class="right carousel-control b_none"
@@ -123,39 +26,21 @@
 
 						<div class="ahinfo_default_adv_change ">
 							<ul class="carousel-indicators">
-								<li data-target="#myCarousel" data-slide-to="0" class="active">
+							
+							<#list pageexec.upDataTop("info_adv","","-zid",4) as el>
+								<li data-target="#myCarousel" data-slide-to="${el_index}" class="<#if (el_index==0)>active</#if>">
 									<div class="c_img b_none">
 										<img
-											src="http://pic9.nipic.com/20100912/5587070_001247485386_2.jpg" />
+											src="${el["file_url"]}" />
 									</div>
 									<div class="c_title">
-										<i class="icon-th"></i><span>NB-1明星抗老产品 盛誉满载</span>
+										<i class="icon-th"></i><span>${el["title"]}</span>
 									</div>
 								</li>
-								<li data-target="#myCarousel" data-slide-to="1"><div
-										class="c_img b_none">
-										<img
-											src="http://pic9.nipic.com/20100912/5587070_001247485386_2.jpg" />
-									</div>
-									<div class="c_title">
-										<i class="icon-th"></i><span>NB-1明星抗老产品 盛誉满载</span>
-									</div></li>
-								<li data-target="#myCarousel" data-slide-to="2"><div
-										class="c_img b_none">
-										<img
-											src="http://pic9.nipic.com/20100912/5587070_001247485386_2.jpg" />
-									</div>
-									<div class="c_title">
-										<i class="icon-th"></i><span>NB-1明星抗老产品 盛誉满载</span>
-									</div></li>
-								<li data-target="#myCarousel" data-slide-to="3"><div
-										class="c_img b_none">
-										<img
-											src="http://pic9.nipic.com/20100912/5587070_001247485386_2.jpg" />
-									</div>
-									<div class="c_title">
-										<i class="icon-th"></i><span>NB-1明星抗老产品 盛誉满载</span>
-									</div></li>
+							
+							</#list>
+
+								
 							</ul>
 
 
@@ -187,57 +72,12 @@
 
 			</div>
 
-			<div class="ahinfo_foot">
-				<div class="ahinfo_foot_link">
-
-					<div class="ahinfo_foot_line">
-						<div class="c_line3"></div>
-						<div class="c_line1"></div>
-					</div>
-					<div class="b_h_30">
-						<ul>
-
-							<li><a href="#">法律声明</a></li>
-							<li><a href="#">联系我们</a></li>
-							<li><a href="#">网站地图</a></li>
-							<li><a href="#">诚聘英才</a></li>
-							<li><a href="#">微信关注</a></li>
-						</ul>
-
-					</div>
-				</div>
-				<div class="ahinfo_foot_info">
-					© copyright 2010-2012 奥华国际. All rights reserved. <br />
-					京ICP备10000000号-0
-				</div>
-			</div>
-		</div>
-
-	</div>
+			
 
 
 	<script>
 		$(document).ready(function() {
-			$('.ahinfo_head_item_0').srnprtip({
-				target : '.ahinfo_nav_item_0'
-
-			});
-			$('.ahinfo_head_item_1').srnprtip({
-				target : '.ahinfo_nav_item_1'
-
-			});
-			$('.ahinfo_head_item_2').srnprtip({
-				target : '.ahinfo_nav_item_2'
-
-			});
-			$('.ahinfo_head_item_3').srnprtip({
-				target : '.ahinfo_nav_item_3'
-
-			});
-			$('.ahinfo_head_item_4').srnprtip({
-				target : '.ahinfo_nav_item_4'
-
-			});
+			
 
 			$('.carousel').hover(function() {
 				$(this).find('.carousel-control').show()
@@ -265,7 +105,7 @@
 
 
 
+<@m_site_common_footer />
 
-</body>
 
 
