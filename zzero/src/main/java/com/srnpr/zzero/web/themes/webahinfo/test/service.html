@@ -1,7 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>yinfo</title>
 
-<#macro m_site_common_header nav="" title="" >
+<link type="text/css"
+	href="../../../lib/bootstrap/css/bootstrap.ah.min.css" rel="stylesheet">
+<link type="text/css" href="../css/ahinfo.css" rel="stylesheet">
+<script type="text/javascript"
+	src="../../../lib/jquery/jquery-last.min.js"></script>
+<script type="text/javascript" src="../../../lib/jquery/jquery.srnpr.js"></script>
+<script type="text/javascript"
+	src="../../../lib/jquery/jquery.corner.js"></script>
+<script type="text/javascript"
+	src="../../../lib/bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../../zen/zen.js"></script>
+<script type="text/javascript" src="../../../zen/zen_ahinfo.js"></script>
 
-<title>奥华</title>
 
 </head>
 <body class="ahinfo_body">
@@ -26,12 +41,12 @@
 					<div class="c_item ahinfo_nav_item_0 b_none">
 						<div class="c_split"></div>
 						<ul>
-							<li><a href="/ahinfo/static-1001">公司概况</a></li>
-							<li><a href="/ahinfo/static-1002">品牌理念</a></li>
-							<li><a href="/ahinfo/static-1003">品牌广告</a></li>
-							<li><a href="/ahinfo/people-0">管理团队</a></li>
-							<li><a href="/ahinfo/static-1004">奥华历程</a></li>
-							<li><a href="/ahinfo/static-1005">企业投资者</a></li>
+							<li><a href="ahinfo/static-1001">公司概况</a></li>
+							<li><a href="ahinfo/static-1002">品牌理念</a></li>
+							<li><a href="ahinfo/static-1003">品牌广告</a></li>
+							<li><a href="ahinfo/static-1001">管理团队</a></li>
+							<li><a href="ahinfo/static-1004">奥华历程</a></li>
+							<li><a href="ahinfo/static-1005">企业投资者</a></li>
 						</ul>
 						<div class="c_bottom"></div>
 					</div>
@@ -49,8 +64,8 @@
 					<div class="c_item ahinfo_nav_item_2 b_none">
 						<div class="c_split"></div>
 						<ul>
-							<li><a href="/ahinfo/service-0">服务项目</a></li>
-							<li><a href="/ahinfo/special-0">产品套装</a></li>
+							<li><a href="#">服务项目</a></li>
+							<li><a href="#">产品套装</a></li>
 
 						</ul>
 						<div class="c_bottom"></div>
@@ -58,11 +73,11 @@
 					<div class="c_item ahinfo_nav_item_3 b_none">
 						<div class="c_split"></div>
 						<ul>
-							<li><a href="/ahinfo/static-1006">加盟优势</a></li>
-							<li><a href="/ahinfo/static-1007">开店支持</a></li>
-							<li><a href="/ahinfo/static-1008">伙伴证言</a></li>
-							<li><a href="/ahinfo/static-1009">网点介绍</a></li>
-							<li><a href="/ahinfo/joinus-new">加盟咨询</a></li>
+							<li><a href="ahinfo/static-1006">加盟优势</a></li>
+							<li><a href="ahinfo/static-1007">开店支持</a></li>
+							<li><a href="ahinfo/static-1008">伙伴证言</a></li>
+							<li><a href="ahinfo/static-1009">网点介绍</a></li>
+							<li><a href="ahinfo/joinus-new">加盟咨询</a></li>
 						</ul>
 						<div class="c_bottom"></div>
 					</div>
@@ -76,11 +91,8 @@
 					</div>
 				</div>
 			</div>
-</#macro>
 
 
-
-<#macro m_site_common_page_before>
 
 			<div class="ahinfo_center">
 
@@ -105,20 +117,27 @@
 					</div>
 					<div class="ahinfo_page_right">
 
+						<div class="ahinfo_service">
+							<div class="c_item">
+								<div class="c_img">
+									<img
+										src="http://www.yinxl.com/zzero/file/images_upload/20130719/183d4d1fef04432a9b5469b5f8b2403c.png" />
+								</div>
+								<div class="c_title">title</div>
+								<div class="c_note">note</div>
+								<div class="c_more">
+									<span>现在了解更多&gt;</span> <a href="#">aa</a>
+								</div>
+							</div>
 
-</#macro>
+						</div>
 
-<#macro m_site_common_page_after>
+
 					</div>
 					<div class="clearfix"></div>
 				</div>
 			</div>
 
-
-</#macro>
-
-
-<#macro m_site_common_footer>
 			<div class="ahinfo_foot">
 				<div class="ahinfo_foot_link">
 
@@ -146,11 +165,8 @@
 		</div>
 
 	</div>
-	
-	
-	
-	
-	
+
+
 	<script>
 		$(document).ready(function() {
 			$('.ahinfo_head_item_0').srnprtip({
@@ -174,48 +190,35 @@
 
 			});
 
+			$('.carousel').hover(function() {
+				$(this).find('.carousel-control').show()
+			}, function() {
+				$(this).find('.carousel-control').hide()
+			});
+
+			$('.carousel').carousel({
+				interval : 6000
+			});
+
+			$('.ahinfo_default_adv_change li').each(function(n, el) {
+				$(this).hover(function() {
+					$(this).addClass('c_active');
+					$(this).find('.c_img').removeClass('b_none');
+				}, function() {
+					$(this).removeClass('c_active');
+					$(this).find('.c_img').addClass('b_none');
+				});
+			});
+
 		});
 	</script>
+
+
+
+
+
 </body>
-</#macro>
 
 
 
-
-
-
-
-
-
-<#macro m_site_common_site_nav pageNav>
-
-<#if (pageNav.getPageIndex()>1)>
-<a href="?z_page_index=1&z_page_count=${pageNav.getPageCount()}&z_page_size=${pageNav.getPageSize()}">首页</a>
-<a href="?z_page_index=${pageNav.getPageIndex()-1}&z_page_count=${pageNav.getPageCount()}&z_page_size=${pageNav.getPageSize()}">上一页</a>
-</#if>
-
-<span>第${pageNav.getPageIndex()}页</span>
-
-<#if (pageNav.getPageIndex()*pageNav.getPageSize()<pageNav.getPageCount())>
-<a href="?z_page_index=${pageNav.getPageIndex()+1}&z_page_count=${pageNav.getPageCount()}&z_page_size=${pageNav.getPageSize()}">下一页</a>
-<a href="?z_page_index=${(pageNav.getPageCount()/pageNav.getPageSize())?ceiling}&z_page_count=${pageNav.getPageCount()}&z_page_size=${pageNav.getPageSize()}">尾页</a>
-</#if>
-
-</#macro>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+</html>
