@@ -11,6 +11,7 @@ import org.apache.commons.lang.StringUtils;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
 
+import com.srnpr.ahinfo.call.UserCall;
 import com.srnpr.zcom.model.MHashMap;
 import com.srnpr.zcom.model.MResult;
 import com.srnpr.zdata.manager.DataTableManager;
@@ -107,7 +108,14 @@ public class PageProcess implements IWebProcess {
 
 		String sView = String.valueOf(pRequest.upSet(EWebSet.Url_View));
 
-		
+
+		if (sView.equals("reg")) {
+			mResult = new UserCall(pRequest).callReg();
+
+		} else if (sView.equals("login")) {
+			mResult = new UserCall(pRequest).callLogin();
+
+		} 
 
 		return mResult;
 	}

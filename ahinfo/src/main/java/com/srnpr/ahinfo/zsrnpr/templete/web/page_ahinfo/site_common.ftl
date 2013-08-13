@@ -11,7 +11,11 @@
 		<div class="ahinfo_width ahinfo_main b_static">
 			<div class="ahinfo_top">
 				<div class="ahinfo_head">
-					<div class="c_top"></div>
+					<div class="c_top">
+						<div class="c_inline"></div>
+						<div class="c_user" id="ahinfo_header_user"><a href="/ahinfo/reg-reg">现在注册</a>&nbsp;|&nbsp;<a href="/ahinfo/login-login">立即登录</a></div>
+						<div class="c_phone">美丽专线：<span>400-888-8888</span></div>
+					</div>
 					<div class="c_nav">
 						<ul>
 							<li class="ahinfo_head_item_0">关于奥华</li>

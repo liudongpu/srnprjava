@@ -25,7 +25,7 @@
 									<#list pageexec.upData("ah_item","service_uid",el["uid"]) as ec>
 									
 									
-										<a href="#">${ec["name"]}</a>
+										<a href="/ahinfo/item-${ec["uid"]}">${ec["name"]}</a>
 									</#list>
 									
 									

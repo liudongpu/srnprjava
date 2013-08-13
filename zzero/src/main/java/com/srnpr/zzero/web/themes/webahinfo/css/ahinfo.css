@@ -61,9 +61,35 @@ a:hover {
     font-size: 18px;
     font-weight: bold;
 }
+.ahinfo_head .c_inline {
+    height: 50px;
+}
+.ahinfo_head .c_user {
+    clear: both;
+    float: right;
+    color: #c0e7fe;
+    height: 30px;
+}
+.ahinfo_head .c_user a {
+    color: #c0e7fe;
+}
+
+.ahinfo_head .c_phone {
+    clear: both;
+    float: right;
+    color: #c0e7fe;
+    line-height: 30px;
+}
+
+.ahinfo_head .c_phone span {
+    font-size: 18px;
+    font-family: Arial;
+    letter-spacing: 1px;
+}
 
 .ahinfo_center {
     background-color: #fff;
+    min-height: 600px;
 }
 
 .ahinfo_nav {
@@ -373,13 +399,12 @@ a:hover {
 
 .ahinfo_service .c_more span {
     background-color: #e4ddd6;
-    padding:5px 10px 5px 10px;
-    color:#542900;
+    padding: 5px 10px 5px 10px;
+    color: #542900;
 }
-.ahinfo_service .c_more a
-{
-    padding-left:5px;
-    padding-right:5px;
+.ahinfo_service .c_more a {
+    padding-left: 5px;
+    padding-right: 5px;
 }
 
 .ahinfo_special {
@@ -405,27 +430,82 @@ a:hover {
 .ahinfo_special .c_list {
     margin-bottom: 10px;
 }
-.ahinfo_special .c_list table
-{
-    width:100%;
+.ahinfo_special .c_list table {
+    width: 100%;
 }
 
-.ahinfo_special .c_list table tr
-{
-    height:30px;
-    background-image:url("../images/pagepng.png");
-    width:100%;
-     border:0px;
+.ahinfo_special .c_list table tr {
+    height: 30px;
+    background-image: url("../images/pagepng.png");
+    width: 100%;
+    border: 0px;
 }
 
-.ahinfo_special .c_list table tr.c_switch
-{
-     background-image:url("../images/pagepng.png");
-     background-position: 0px -30px;
+.ahinfo_special .c_list table tr.c_switch {
+    background-image: url("../images/pagepng.png");
+    background-position: 0px -30px;
 }
-.ahinfo_special .c_list table tr td
-{
-    border:0px;
+.ahinfo_special .c_list table tr td {
+    border: 0px;
+}
+
+.ahinfo_info .c_title {
+    font-size: 24px;
+    color: #542900;
+    margin-bottom: 10px;
+}
+
+.ahinfo_info .c_info {
+    height: 30px;
+    line-height: 30px;
+}
+
+.ahinfo_info .c_line {
+    border-top: dashed 1px #000;
+    height: 10px;
+    margin-top: 10px;
+}
+
+.ahinfo_info .c_tryprice {
+
+    padding: 0px 0px 10px 0px;
+}
+
+.ahinfo_info .c_realprice {
+    color: #542900;
+}
+
+.ahinfo_info .c_try {
+    background-image: url("../images/pagepng.png");
+    background-position: -150px -60px;
+    width: 100px;
+    height: 40px;
+    float: left;
+}
+
+.ahinfo_info .c_post {
+    color: #542900;
+    width: 100px;
+    height: 40px;
+    float: left;
+    line-height: 30px;
 }
 
 
+.ahinfo_user .c_title
+{
+    color: #542900;
+    font-size:18px;
+    height:60px;
+}
+
+.ahinfo_user .c_weight
+{
+    width:90px;
+    display:inline-block;
+}
+
+.ahinfo_user .b_h10
+{
+    height:10px;
+}
