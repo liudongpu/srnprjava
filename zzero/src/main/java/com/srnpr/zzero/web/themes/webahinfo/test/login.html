@@ -1,7 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>yinfo</title>
 
-<#macro m_site_common_header nav="" title="" >
+<link type="text/css"
+	href="../../../lib/bootstrap/css/bootstrap.ah.min.css" rel="stylesheet">
+<link type="text/css" href="../css/ahinfo.css" rel="stylesheet">
+<script type="text/javascript"
+	src="../../../lib/jquery/jquery-last.min.js"></script>
+<script type="text/javascript" src="../../../lib/jquery/jquery.srnpr.js"></script>
+<script type="text/javascript"
+	src="../../../lib/jquery/jquery.corner.js"></script>
+<script type="text/javascript"
+	src="../../../lib/bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../../zen/zen.js"></script>
+<script type="text/javascript" src="../../../zen/zen_ahinfo.js"></script>
 
-<title>奥华</title>
 
 </head>
 <body class="ahinfo_body">
@@ -13,8 +28,12 @@
 				<div class="ahinfo_head">
 					<div class="c_top">
 						<div class="c_inline"></div>
-						<div class="c_user" id="ahinfo_header_user"><a href="/ahinfo/reg-reg">现在注册</a>&nbsp;|&nbsp;<a href="/ahinfo/login-login">立即登录</a></div>
-						<div class="c_phone">美丽专线：<span>400-888-8888</span></div>
+						<div class="c_user">
+							<a href="">现在注册</a>&nbsp;|&nbsp;<a href="">立即登录</a>
+						</div>
+						<div class="c_phone">
+							美丽专线：<span>400-888-8888</span>
+						</div>
 					</div>
 					<div class="c_nav">
 						<ul>
@@ -30,12 +49,12 @@
 					<div class="c_item ahinfo_nav_item_0 b_none">
 						<div class="c_split"></div>
 						<ul>
-							<li><a href="/ahinfo/static-1001">公司概况</a></li>
-							<li><a href="/ahinfo/static-1002">品牌理念</a></li>
-							<li><a href="/ahinfo/static-1003">品牌广告</a></li>
-							<li><a href="/ahinfo/people-0">管理团队</a></li>
-							<li><a href="/ahinfo/static-1004">奥华历程</a></li>
-							<li><a href="/ahinfo/static-1005">企业投资者</a></li>
+							<li><a href="ahinfo/static-1001">公司概况</a></li>
+							<li><a href="ahinfo/static-1002">品牌理念</a></li>
+							<li><a href="ahinfo/static-1003">品牌广告</a></li>
+							<li><a href="ahinfo/static-1001">管理团队</a></li>
+							<li><a href="ahinfo/static-1004">奥华历程</a></li>
+							<li><a href="ahinfo/static-1005">企业投资者</a></li>
 						</ul>
 						<div class="c_bottom"></div>
 					</div>
@@ -53,8 +72,8 @@
 					<div class="c_item ahinfo_nav_item_2 b_none">
 						<div class="c_split"></div>
 						<ul>
-							<li><a href="/ahinfo/service-0">服务项目</a></li>
-							<li><a href="/ahinfo/special-0">产品套装</a></li>
+							<li><a href="#">服务项目</a></li>
+							<li><a href="#">产品套装</a></li>
 
 						</ul>
 						<div class="c_bottom"></div>
@@ -62,29 +81,26 @@
 					<div class="c_item ahinfo_nav_item_3 b_none">
 						<div class="c_split"></div>
 						<ul>
-							<li><a href="/ahinfo/static-1006">加盟优势</a></li>
-							<li><a href="/ahinfo/static-1007">开店支持</a></li>
-							<li><a href="/ahinfo/static-1008">伙伴证言</a></li>
-							<li><a href="/ahinfo/static-1009">网点介绍</a></li>
-							<li><a href="/ahinfo/joinus-new">加盟咨询</a></li>
+							<li><a href="ahinfo/static-1006">加盟优势</a></li>
+							<li><a href="ahinfo/static-1007">开店支持</a></li>
+							<li><a href="ahinfo/static-1008">伙伴证言</a></li>
+							<li><a href="ahinfo/static-1009">网点介绍</a></li>
+							<li><a href="ahinfo/joinus-new">加盟咨询</a></li>
 						</ul>
 						<div class="c_bottom"></div>
 					</div>
 					<div class="c_item ahinfo_nav_item_4 b_none">
 						<div class="c_split"></div>
 						<ul>
-							<li><a href="/ahinfo/post-post">顾客口碑</a></li>
+							<li><a href="#">顾客口碑</a></li>
 
 						</ul>
 						<div class="c_bottom"></div>
 					</div>
 				</div>
 			</div>
-</#macro>
 
 
-
-<#macro m_site_common_page_before>
 
 			<div class="ahinfo_center">
 
@@ -109,20 +125,35 @@
 					</div>
 					<div class="ahinfo_page_right">
 
+						<div class="ahinfo_user">
+							<div class="c_title">欢迎登录奥华官网</div>
+							<form class="form-horizontal"
+								action="${base_url}yinfo/func-login" method="post">
+								<div class="b_h40"></div>
+								<div class="control-group">
+									<span class="c_weight">注册邮箱：</span> <input type="text"
+										name="login_name" /> <span class="help-inline">请输入注册时的邮箱</span>
+								</div>
+								<div class="b_h10"></div>
+								<div class="control-group">
+									<span class="c_weight">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;密码：</span>
+									<input type="password" name="login_pass" /> <span
+										class="help-inline">请输入账户密码</span>
+								</div>
+								<div class="b_h10"></div>
+								<div class="control-group">
+									<span class="c_weight"></span> <a class="btn  "
+										onclick="zen.yinfo.submit(this,zen.yinfo.loginsuccess)">&nbsp;&nbsp;登&nbsp;&nbsp;录&nbsp;&nbsp;</a>
+									<span class="help-inline">&nbsp;&nbsp;&nbsp;&nbsp;<a href="/ahinfo/reg">注册新用户</a></span>
+								</div>
+							</form>
+						</div>
 
-</#macro>
-
-<#macro m_site_common_page_after>
 					</div>
 					<div class="clearfix"></div>
 				</div>
 			</div>
 
-
-</#macro>
-
-
-<#macro m_site_common_footer>
 			<div class="ahinfo_foot">
 				<div class="ahinfo_foot_link">
 
@@ -150,11 +181,8 @@
 		</div>
 
 	</div>
-	
-	
-	
-	
-	
+
+
 	<script>
 		$(document).ready(function() {
 			$('.ahinfo_head_item_0').srnprtip({
@@ -178,48 +206,35 @@
 
 			});
 
+			$('.carousel').hover(function() {
+				$(this).find('.carousel-control').show()
+			}, function() {
+				$(this).find('.carousel-control').hide()
+			});
+
+			$('.carousel').carousel({
+				interval : 6000
+			});
+
+			$('.ahinfo_default_adv_change li').each(function(n, el) {
+				$(this).hover(function() {
+					$(this).addClass('c_active');
+					$(this).find('.c_img').removeClass('b_none');
+				}, function() {
+					$(this).removeClass('c_active');
+					$(this).find('.c_img').addClass('b_none');
+				});
+			});
+
 		});
 	</script>
+
+
+
+
+
 </body>
-</#macro>
 
 
 
-
-
-
-
-
-
-<#macro m_site_common_site_nav pageNav>
-
-<#if (pageNav.getPageIndex()>1)>
-<a href="?z_page_index=1&z_page_count=${pageNav.getPageCount()}&z_page_size=${pageNav.getPageSize()}">首页</a>
-<a href="?z_page_index=${pageNav.getPageIndex()-1}&z_page_count=${pageNav.getPageCount()}&z_page_size=${pageNav.getPageSize()}">上一页</a>
-</#if>
-
-<span>第${pageNav.getPageIndex()}页</span>
-
-<#if (pageNav.getPageIndex()*pageNav.getPageSize()<pageNav.getPageCount())>
-<a href="?z_page_index=${pageNav.getPageIndex()+1}&z_page_count=${pageNav.getPageCount()}&z_page_size=${pageNav.getPageSize()}">下一页</a>
-<a href="?z_page_index=${(pageNav.getPageCount()/pageNav.getPageSize())?ceiling}&z_page_count=${pageNav.getPageCount()}&z_page_size=${pageNav.getPageSize()}">尾页</a>
-</#if>
-
-</#macro>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+</html>

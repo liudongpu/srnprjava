@@ -509,3 +509,81 @@ a:hover {
 {
     height:10px;
 }
+.ahinfo_post_left
+{
+    float:left;
+    width:470px;
+}
+
+.ahinfo_post_left .c_img
+{
+    background-image: url("../images/pagepost.jpg");
+    width:400px;
+    height:470px;
+    margin-left:30px;
+}
+
+
+.ahinfo_page_right
+{
+    float:left;
+    width:520px;
+}
+.ahinfo_page_right .c_top
+{
+    background-color:#f1f1f1;
+    width:100%;
+    border:solid 1px #d7d6d6;
+    height:30px;
+    line-height:30px;
+    text-indent:20px;
+    font-size:14px;
+    font-weight:bold;
+}
+.ahinfo_page_right .c_box
+{
+    width:100%;
+    border:solid 1px #eee;
+    min-height:500px;
+   
+}
+.ahinfo_page_right .c_item
+{
+    width:460px;
+    margin-left:20px;
+    border-bottom: dashed 1px #000;
+    padding-top:30px;
+    padding-bottom:10px;
+}
+
+.ahinfo_page_right .c_title
+{
+    color:#542900;
+    font-size: 14px;
+    height:40px;
+    
+}
+.ahinfo_page_right .c_info
+{
+    margin-bottom:10px;
+}
+
+.ahinfo_page_right .c_more
+{
+    width:100px;
+    background-color: #e4ddd6;
+    height:30px;
+    line-height: 30px;
+    text-align: center;
+    color:#542900;
+    float:left;
+    
+}
+
+.ahinfo_page_right .c_user
+{
+    float:right;
+    height:30px;
+    color:#656565;
+    line-height: 30px;
+}
