@@ -21,28 +21,24 @@
 								
 								<div class="c_list">
 									
-									<table border="0" cellpadding="0" cellspacing="0">
+									
 									
 									<#list pageexec.upData("ah_good","special_uid",el["uid"]) as ec>
 									
+										<div <#if ec_index%2==1> class="c_switch"<#else> class="c_one" </#if> >
 									
 										
-											<tr>
-												<td>a</td>
-												<td>a</td>
-												<td>a</td>
-												<td>a</td>
-											</tr>
-											<tr class="c_switch">
-												<td>a</td>
-												<td>a</td>
-												<td>a</td>
-												<td>a</td>
-											</tr>
 										
+												<span class="c_se c_s1">${ec["name"]}</span>
+												<span class="c_se c_s2">单价：${ec["one_price"]}</span>
+												<span class="c_se c_s3">疗程价：${ec["good_price"]}</span>
+												<span class="c_se c_s4">会员价：${ec["try_price"]}</span>
+											
+											
+										</div>
 									</#list>
 									
-									</table>
+									
 									
 								</div>
 							</div>

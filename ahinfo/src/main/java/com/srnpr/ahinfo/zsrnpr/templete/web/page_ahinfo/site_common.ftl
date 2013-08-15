@@ -53,8 +53,8 @@
 					<div class="c_item ahinfo_nav_item_2 b_none">
 						<div class="c_split"></div>
 						<ul>
-							<li><a href="/ahinfo/service-0">服务项目</a></li>
-							<li><a href="/ahinfo/special-0">产品套装</a></li>
+							<li><a href="/ahinfo/service-service">服务项目</a></li>
+							<li><a href="/ahinfo/special-special">产品套装</a></li>
 
 						</ul>
 						<div class="c_bottom"></div>
@@ -193,18 +193,30 @@
 
 <#macro m_site_common_site_nav pageNav>
 
-<#if (pageNav.getPageIndex()>1)>
-<a href="?z_page_index=1&z_page_count=${pageNav.getPageCount()}&z_page_size=${pageNav.getPageSize()}">首页</a>
-<a href="?z_page_index=${pageNav.getPageIndex()-1}&z_page_count=${pageNav.getPageCount()}&z_page_size=${pageNav.getPageSize()}">上一页</a>
-</#if>
+<div class="ahinfo_pagination_change">
 
-<span>第${pageNav.getPageIndex()}页</span>
 
 <#if (pageNav.getPageIndex()*pageNav.getPageSize()<pageNav.getPageCount())>
-<a href="?z_page_index=${pageNav.getPageIndex()+1}&z_page_count=${pageNav.getPageCount()}&z_page_size=${pageNav.getPageSize()}">下一页</a>
-<a href="?z_page_index=${(pageNav.getPageCount()/pageNav.getPageSize())?ceiling}&z_page_count=${pageNav.getPageCount()}&z_page_size=${pageNav.getPageSize()}">尾页</a>
+<a href="?z_page_index=${pageNav.getPageIndex()+1}&z_page_count=${pageNav.getPageCount()}&z_page_size=${pageNav.getPageSize()}">
+	<div class="c_next"></div>
+</a>
+
 </#if>
 
+
+<#if (pageNav.getPageIndex()>1)>
+
+<a href="?z_page_index=${pageNav.getPageIndex()-1}&z_page_count=${pageNav.getPageCount()}&z_page_size=${pageNav.getPageSize()}">
+	<div class="c_prev"></div>
+</a>
+</#if>
+
+
+
+
+
+<div class="clearfix"></div>
+</div>
 </#macro>
 
 
