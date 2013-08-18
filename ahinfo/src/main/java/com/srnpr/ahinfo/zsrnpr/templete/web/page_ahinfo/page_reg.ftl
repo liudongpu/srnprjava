@@ -4,7 +4,7 @@
 <@m_site_common_page_before />
 				
 			<div class="ahinfo_user">
-							<div class="c_title">欢迎注册银杏林</div>
+							<div class="c_title">欢迎注册奥华国际</div>
 							<form class="form-horizontal" action="/ahinfo/func-reg" method="post">
 								<div class="b_h40"></div>
 								<div class="control-group">

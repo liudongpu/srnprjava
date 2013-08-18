@@ -5,7 +5,81 @@ zen
 					$('.b_corner').corner();
 					zen.ahinfo.checklogin();
 
+					this.checkmenu();
+
 				},
+
+				checkmenu : function() {
+
+					if (document.getElementById('ahinfo_page_left')) {
+
+						var sUrl = location.href;
+						
+						var sIndex="0-0";
+
+						$('.ahinfo_top a').each(function(n, e) {
+
+							if ($(e).attr('href')) {
+
+								if (sUrl.indexOf($(e).attr('href')) > -1) {
+									
+									sIndex=$(this).attr('menu_id');
+									
+									
+									
+								}
+
+							}
+
+						});
+						
+						
+						zen.ahinfo.changemenu(sIndex);
+
+					}
+
+				},
+				
+				changemenu:function(sCode)
+				{
+					if(!sCode)
+						{
+						sCode="0-9";
+						}
+					var sSplit=sCode.split('-');
+					
+					var sName=$('.ahinfo_nav_item_'+sSplit[0]).attr('menu_name')+'</li>';
+					var sNav='';
+					
+					$('#ahinfo_page_left .c_nav ul').html('<li class="c_top">'+sName+$('.ahinfo_nav_item_'+sSplit[0]+' ul').html());
+					
+					$('#ahinfo_page_left .c_nav ul li a').each(
+					function(n,e)
+					{
+						
+						
+							if(n==sSplit[1])
+							{
+							
+								$(e).parent().addClass('c_active');
+								sNav=$(e).text();
+							
+							}
+						$(e).html('&nbsp;&nbsp;&gt;&nbsp;&nbsp;&nbsp;'+$(e).text());
+						
+						
+						
+					}
+					
+					);
+					
+					
+					$('.ahinfo_page_nav').html('<a href="/">首页</a>&nbsp;&nbsp;&gt;&nbsp;&nbsp;'+sName+'&nbsp;&nbsp;&gt;&nbsp;&nbsp;<a href="">'+sNav+"</a>");
+					
+					
+				},
+				
+				
 
 				submit : function(sId, fCall, sAction) {
 
@@ -30,13 +104,11 @@ zen
 					});
 
 				},
-				
-				showshop:function(o)
-				{
+
+				showshop : function(o) {
 					this.model("", $(o).next().html());
-					
+
 				},
-				
 
 				logout : function() {
 					zen.f.cookie("yinxl_user_cookieid", null, {
@@ -56,7 +128,7 @@ zen
 								.html(
 										'欢迎，'
 												+ sName
-												+ '&nbsp;&nbsp;<a href="#" onclick="zen.ahinfo.href(\'ahinfo/ucenter-user\')">[个人中心]</a>&nbsp;&nbsp;<a href="#" onclick="zen.ahinfo.logout()">[退出]</a>');
+												+ '&nbsp;&nbsp;<a href="#" onclick="zen.ahinfo.logout()">[退出]</a>');
 
 					}
 
@@ -96,9 +168,9 @@ zen
 								path : '/',
 								expires : 365
 							});
-					//zen.ahinfo.href('ahinfo/ucenter-user');
-				
-					location.href="/";
+					// zen.ahinfo.href('ahinfo/ucenter-user');
+
+					location.href = "/";
 
 				},
 
@@ -249,22 +321,23 @@ zen
 				model : function(sTitle, sContent, fHidden) {
 
 					if (!$('#zen_ahinfo_model').length > 0) {
-						var sModel = '<div id="zen_ahinfo_model" class="modal hide fade">'
-								
-								
-								+ '<div style="height:20px;"></div><div class="modalclose" data-dismiss="modal" aria-hidden="true"></div><div class="modal-body">'
-								+ '<p>'
-								
-								+ '</p>'
+						var sModel = '<div id="zen_ahinfo_model" class="modal hide fade '
+								+ sTitle
+								+ '">'
+
+								+ '<div></div><div class="modalclose" data-dismiss="modal" aria-hidden="true"></div><div class="modal-body">'
+								+ '<div id="zen_ahinfo_model_info">'
+
 								+ '</div>'
-								+ '<div style="height:20px;">'
+								+ '</div>'
+								+ '<div>'
 								+ '</div></div>';
 						$(document.body).append(sModel);
 
 					}
 
 					$('#zen_ahinfo_model h3').html(sTitle);
-					$('#zen_ahinfo_model p').html(sContent);
+					$('#zen_ahinfo_model_info').html(sContent);
 					$('#zen_ahinfo_model').modal('show');
 					if (fHidden != undefined) {
 						$('#zen_ahinfo_model').on('hide', function() {
@@ -467,15 +540,12 @@ zen
 					if (oCom.length < 2) {
 						zen.ahinfo.model("错误消息", "请选择两个以上养老院比较！");
 						return;
+					} else {
+
 					}
-					else
-						{
-						
-						}
 
 				},
-				compare_hide:function()
-				{
+				compare_hide : function() {
 					$('#ahinfo_compare_for').hide();
 				},
 
@@ -516,6 +586,21 @@ zen
 						$('#ahinfo_compare_for').hide();
 					}
 
+				},
+
+				comment_post : function() {
+					// document.writeln("<style></style>");
+					this
+							.model(
+									"zen_ahinfo_model_post",
+									'<div class="ahinfo_model_right">请在下方输入您的评论：<br/><br/><textarea rows="10" cell="15"></textarea><br/><br/><input type="button" class="btn" value="提交"/></div><div style="height:20px;clear:both;"></div>');
+				},
+				try_post : function() {
+					// document.writeln("<style></style>");
+					this
+							.model(
+									"zen_ahinfo_model_post",
+									'<div class="ahinfo_model_right"><br/>所在城市：<input type="text"/><br/><br/>您的电话：<input type="text"/><br/><br/><input type="button" class="btn" value="提交"/></div><div style="height:20px;clear:both;"></div>');
 				},
 
 				error : function(o) {

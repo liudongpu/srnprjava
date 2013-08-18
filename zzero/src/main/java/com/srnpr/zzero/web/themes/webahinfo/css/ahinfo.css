@@ -331,7 +331,20 @@ a:hover {
     height: 40px;
     border-top: solid 1px #e8e9ed;
     line-height: 40px;
+    text-indent:20px;
 }
+
+.ahinfo_page_left ul li.c_top
+{
+    font-size: 18px;
+}
+
+.ahinfo_page_left ul li.c_active a
+{
+    color:#e77864;
+}
+
+
 
 .ahinfo_page_right {
     float: left;
@@ -812,3 +825,36 @@ color:#542900;
     width:260px;
     height:200px;
 }
+
+
+.ahinfo_newnew
+{
+    
+}
+.ahinfo_newnew .c_item
+{
+    padding-bottom: 30px;
+    margin-bottom:20px;
+    border-bottom:dashed 1px #000;
+}
+.ahinfo_newnew .c_title
+{color:#542900;
+    font-size:18px;
+    height:40px;
+}
+
+
+
+
+.zen_ahinfo_model_post
+{
+     background-image: url("../images/pagepng.png");
+    background-position: 0px -200px;
+  
+   
+}
+.ahinfo_model_right
+{
+    margin-left:250px;
+}
+

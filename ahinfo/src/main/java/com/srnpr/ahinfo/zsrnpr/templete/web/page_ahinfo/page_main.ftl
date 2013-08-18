@@ -58,10 +58,19 @@
 					</div>
 					<div class="c_center">
 
-						<div class="c_left"></div>
-						<div class="c_right">
+						<div class="c_left">
+							<#assign page_adv_left=pageexec.upDataOne("y_adv","position_cid","32620003")>
+						<a href="${page_adv_left["link_url"]}">
 							<img
-								src="http://www.wierchomla.com.pl/uploads/thumbs/1001x408/201109191105480.spa1120_2_bann.jpg" />
+								src="${page_adv_left["file_url"]}" />
+								</a>
+						</div>
+						<div class="c_right">
+						<#assign page_adv_right=pageexec.upDataOne("y_adv","position_cid","32620001")>
+						<a href="${page_adv_right["link_url"]}">
+							<img
+								src="${page_adv_right["file_url"]}" />
+								</a>
 						</div>
 					</div>
 

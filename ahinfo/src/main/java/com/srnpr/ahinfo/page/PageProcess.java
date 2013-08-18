@@ -29,6 +29,28 @@ public class PageProcess implements IWebProcess {
 
 		String sTargetString = wRequest.upSet(EWebSet.Url_Target);
 		mPageInfo.setPageInclude(sTargetString);
+		
+		if (wRequest.upSet(EWebSet.Url_View).equals("joinus")) {
+			
+			
+			wRequest.inSet(EWebSet.Url_Target, "add");
+			wRequest.inSet(EWebSet.Url_View, "v_ah_join");
+			
+			mPageInfo = new WebBaseProcess().ShowHtml(wRequest);
+			
+			List<MWebFields> mPageDataFields = (List<MWebFields>) mPageInfo
+					.getPageData();
+			
+			mPageInfo.setPageData(mPageDataFields);
+			
+			
+			mPageInfo.setPageInclude(sTargetString);
+
+			
+		}
+		
+		
+		
 		if (wRequest.upSet(EWebSet.Url_View).equals("user")) {
 
 			Map<String, Object> mUserMap = upUserInfo();
@@ -116,6 +138,11 @@ public class PageProcess implements IWebProcess {
 			mResult = new UserCall(pRequest).callLogin();
 
 		} 
+		else if (sView.equals("v_ah_join")) {
+			mResult = new WebBaseProcess().showResult(pRequest);
+		}
+		
+		
 
 		return mResult;
 	}
