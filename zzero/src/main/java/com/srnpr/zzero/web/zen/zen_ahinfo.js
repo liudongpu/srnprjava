@@ -30,6 +30,13 @@ zen
 					});
 
 				},
+				
+				showshop:function(o)
+				{
+					this.model("", $(o).next().html());
+					
+				},
+				
 
 				logout : function() {
 					zen.f.cookie("yinxl_user_cookieid", null, {
@@ -242,15 +249,15 @@ zen
 				model : function(sTitle, sContent, fHidden) {
 
 					if (!$('#zen_ahinfo_model').length > 0) {
-						var sModel = '<div id="zen_ahinfo_model" class="modal hide fade"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>'
-								+ '<h3>'
-								+ sTitle
-								+ '</h3></div><div class="modal-body">'
+						var sModel = '<div id="zen_ahinfo_model" class="modal hide fade">'
+								
+								
+								+ '<div style="height:20px;"></div><div class="modalclose" data-dismiss="modal" aria-hidden="true"></div><div class="modal-body">'
 								+ '<p>'
-								+ sContent
+								
 								+ '</p>'
 								+ '</div>'
-								+ '<div class="modal-footer"><a  class="btn" data-dismiss="modal" aria-hidden="true">关闭</a>'
+								+ '<div style="height:20px;">'
 								+ '</div></div>';
 						$(document.body).append(sModel);
 
