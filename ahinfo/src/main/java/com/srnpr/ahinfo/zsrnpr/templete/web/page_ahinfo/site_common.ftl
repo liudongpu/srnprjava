@@ -45,8 +45,8 @@
 							<li><a href="/ahinfo/newslist-newslist">新品速递</a></li>
 							<li><a href="#">最新护理</a></li>
 							<li><a href="#">热卖臻品</a></li>
-							<li><a href="#">本月特惠</a></li>
-							<li><a href="#">新店开业</a></li>
+							<li><a href="/ahinfo/static-1009">本月特惠</a></li>
+							<li><a href="/ahinfo/shopnew-shopnew">新店开业</a></li>
 						</ul>
 						<div class="c_bottom"></div>
 					</div>
@@ -65,7 +65,7 @@
 							<li><a href="/ahinfo/static-1006">加盟优势</a></li>
 							<li><a href="/ahinfo/static-1007">开店支持</a></li>
 							<li><a href="/ahinfo/static-1008">伙伴证言</a></li>
-							<li><a href="/ahinfo/static-1009">网点介绍</a></li>
+							<li><a href="/ahinfo/shoplist-shoplist">网点介绍</a></li>
 							<li><a href="/ahinfo/joinus-new">加盟咨询</a></li>
 						</ul>
 						<div class="c_bottom"></div>

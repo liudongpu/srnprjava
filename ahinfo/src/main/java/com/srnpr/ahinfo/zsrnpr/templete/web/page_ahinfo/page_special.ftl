@@ -29,7 +29,7 @@
 									
 										
 										
-												<span class="c_se c_s1">${ec["name"]}</span>
+												<span class="c_se c_s1"><a href="/ahinfo/good-${ec["uid"]}">${ec["name"]}</a></span>
 												<span class="c_se c_s2">单价：${ec["one_price"]}</span>
 												<span class="c_se c_s3">疗程价：${ec["good_price"]}</span>
 												<span class="c_se c_s4">会员价：${ec["try_price"]}</span>
