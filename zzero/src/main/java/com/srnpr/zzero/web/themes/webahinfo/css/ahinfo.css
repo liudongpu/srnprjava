@@ -649,9 +649,64 @@ a:hover {
     float: right;
 }
 
+.ahinfo_newlist
+{
+
+}
+
+.ahinfo_newlist .c_item
+{
+    padding:30px;
+    border-bottom:dashed 1px #000;
+    clear: both;
+}
+
+.ahinfo_newlist .c_img
+{
+    width:260px;
+}
+.ahinfo_newlist .c_img img
+{
+    width:260px;
+    height:200px;
+}
+
+.ahinfo_newlist .c_info
+{
+    width:350px;
+}
+
+
+.ahinfo_newlist .c_info .c_title
+{
+    color:#542900;
+    font-size:18px;
+    height:40px;
+}
+
+.ahinfo_newlist .c_info .c_price
+{
+    margin:20px 0px 20px 0px;
+}
+
+
+.ahinfo_newlist .c_info .c_button
+{
+    background-image: url("../images/pagepng.png");
+    background-position: -250px -60px;
+    width: 100px;
+    height: 40px;
+}
 
 
 
-
+.ahinfo_newlist .c_lbox .c_img,.ahinfo_newlist .c_rbox .c_info
+{
+    float:left;
+}
+.ahinfo_newlist .c_rbox .c_img,.ahinfo_newlist .c_lbox .c_info
+{
+    float:right;
+}
 
 

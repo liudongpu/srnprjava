@@ -42,7 +42,7 @@
 					<div class="c_item ahinfo_nav_item_1 b_none">
 						<div class="c_split"></div>
 						<ul>
-							<li><a href="#">新品速递</a></li>
+							<li><a href="/ahinfo/newslist-newslist">新品速递</a></li>
 							<li><a href="#">最新护理</a></li>
 							<li><a href="#">热卖臻品</a></li>
 							<li><a href="#">本月特惠</a></li>
