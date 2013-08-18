@@ -23,7 +23,7 @@
 									<div class="c_title">${el["title"]}</div>
 									<div class="c_content">${el["content"]}</div>
 									<div class="c_price">价格：${el["price"]}</div>
-									<a href=""><div class="c_button"></div></a>
+									<a href="/ahinfo/newsinfo-${el["uid"]}"><div class="c_button"></div></a>
 
 								</div>
 								<div class="clearfix"></div>

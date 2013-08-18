@@ -709,4 +709,21 @@ a:hover {
     float:right;
 }
 
+.ahinfo_newinfo .c_title
+{color:#542900;
+    font-size:18px;
+    height:40px;
+}
 
+.ahinfo_newinfo .c_back
+{background-image: url("../images/pagepng.png");
+    background-position: 0px -70px;
+    width: 100px;
+    height: 40px;
+    float:right;
+}
+
+.ahinfo_newinfo .c_info
+{
+clear:both;
+}
