@@ -3,7 +3,7 @@
 <#assign page_obj=pageexec.upDataOne("ah_item","uid",pageinfo.getWebSet()["Url_View"])>
 <@m_site_common_header />
 
-<@m_site_common_page_before />
+<@m_site_common_page_before now_menu="2-0"/>
 				
 				<div class="ahinfo_info">
 							<div class="c_title">${page_obj["name"]}</div>

@@ -84,10 +84,12 @@
 
 
 
-<#macro m_site_common_page_before>
+<#macro m_site_common_page_before now_menu="">
 
 			<div class="ahinfo_center">
-
+				<#if (now_menu!="")>
+					<input type="hidden" name="ahinfo_page_now_menu_index" id="ahinfo_page_now_menu_index" value="${now_menu}"/>
+				</#if>
 				<div class="ahinfo_page_box">
 
 					<div class="ahinfo_page_nav"></div>

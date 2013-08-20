@@ -33,6 +33,12 @@ zen
 
 						});
 						
+						if(document.getElementById('ahinfo_page_now_menu_index'))
+							{
+							
+							sIndex=$('#ahinfo_page_now_menu_index').val();
+							}
+						
 						
 						zen.ahinfo.changemenu(sIndex);
 
