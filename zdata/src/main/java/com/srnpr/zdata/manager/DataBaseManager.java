@@ -92,6 +92,13 @@ IBaseInit {
 			cm.setJdbcUrl(sJdbcUrl);
 			cm.setUser(sJdbcUser);
 			cm.setPassword(sJdbcPassword);
+			
+			
+			cm.setIdleConnectionTestPeriod(120);
+			//cm.setMinPoolSize(5);
+			//cm.setMaxPoolSize(20);
+			
+			
 
 		} catch (Exception e) {
 			BError(e, 968001101, sJdbcClass, sJdbcUrl, sJdbcUser, sJdbcPassword);

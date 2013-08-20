@@ -87,9 +87,13 @@ public class HomeController {
 		{
 			return index("zyou-y", "login-ylogin", model,request);
 		}
-		else
+		else if(request.getRequestURL().toString().indexOf("boguan")>-1)
 		{
 			return index("zyou-login", "login-login", model,request);
+		}
+		else {
+			
+			return index("zyou-ah", "login-ahlogin", model,request);
 		}
 		
 	}
