@@ -545,6 +545,7 @@ a:hover {
     width: 100px;
     height: 40px;
     float: left;
+    cursor:pointer;
 }
 
 .ahinfo_info .c_post {
@@ -553,6 +554,7 @@ a:hover {
     height: 40px;
     float: left;
     line-height: 30px;
+    cursor:pointer;
 }
 
 

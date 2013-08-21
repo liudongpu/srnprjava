@@ -386,6 +386,37 @@ zen
 
 					});
 				},
+				
+				comentsubmit : function() {
+					var sUserCookie = zen.f.cookie("yinxl_user_cookieid");
+
+					if ($('#ahinfo_comment_post_textarea').val() == ""
+							) {
+						alert('请输入评论内容!');
+						return;
+					}
+					if (sUserCookie) {
+
+						
+							zen.ahinfo.post('comentsubmit', {
+								cookieid : sUserCookie,
+								uid:'',
+								url:location.href,
+								info_title:$('.ahinfo_page_right .c_title').text(),
+								text : $('#ahinfo_comment_post_textarea').val()
+							}, zen.ahinfo.comentsuccess);
+						
+					} else {
+						alert('请先登录，谢谢！');
+					}
+				},
+
+				comentsuccess : function(o) {
+					$('#zen_ahinfo_model').modal('hide');
+					alert("评论发表成功，谢谢！");
+				},
+				
+				
 				querysubmit : function() {
 					var sUserCookie = zen.f.cookie("yinxl_user_cookieid");
 
@@ -599,14 +630,20 @@ zen
 					this
 							.model(
 									"zen_ahinfo_model_post",
-									'<div class="ahinfo_model_right">请在下方输入您的评论：<br/><br/><textarea rows="10" cell="15"></textarea><br/><br/><input type="button" class="btn" value="提交"/></div><div style="height:20px;clear:both;"></div>');
+									'<div class="ahinfo_model_right">请在下方输入您的评论：<br/><br/><textarea rows="10" cell="15" id="ahinfo_comment_post_textarea"></textarea><br/><br/><input type="button" class="btn" onclick="zen.ahinfo.comentsubmit()" value="提交"/></div><div style="height:20px;clear:both;"></div>');
 				},
 				try_post : function() {
 					// document.writeln("<style></style>");
 					this
 							.model(
 									"zen_ahinfo_model_post",
-									'<div class="ahinfo_model_right"><br/>所在城市：<input type="text"/><br/><br/>您的电话：<input type="text"/><br/><br/><input type="button" class="btn" value="提交"/></div><div style="height:20px;clear:both;"></div>');
+									'<div class="ahinfo_model_right"><br/>所在城市：<input type="text"/><br/><br/>您的电话：<input type="text"/><br/><br/><input type="button" class="btn" value="提交" onclick="zen.ahinfo.try_submit()"/></div><div style="height:20px;clear:both;"></div>');
+				},
+				
+				try_submit:function()
+				{
+					alert('提交成功,谢谢!');
+					location.href=location.href;
 				},
 
 				error : function(o) {

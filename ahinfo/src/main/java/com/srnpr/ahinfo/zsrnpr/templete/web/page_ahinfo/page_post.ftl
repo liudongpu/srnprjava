@@ -26,7 +26,7 @@
 									<div class="c_title">${el["info_title"]}</div>
 									<div class="c_info">${el["note"]}</div>
 									<div class="c_link">
-										<div class="c_more">了解更多&gt;</div>
+										<div class="c_more"><a href="${el["info_url"]}">了解更多&gt;</a></div>
 										<div class="c_user">用户：${el["user_name"]}    发表于：${el["comment_date"]}</div>
 									</div>
 									<div class="clearfix"></div>

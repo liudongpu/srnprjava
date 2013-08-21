@@ -225,6 +225,29 @@ public class UserCall extends BaseClass {
 	}
 	
 	
+	public MResult callComment(Map<String, Object> mUserInfo) {
+
+		String sUid = pRequest.getReqMap().get("uid").toString();
+		if (result.getFlag()) {
+
+			MHashMap mHMap = new MHashMap();
+			mHMap.inAdd("uid", ComFunction.upUuid(), "user_uid", mUserInfo
+					.get("uid"), "info_title", pRequest.getReqMap().get("info_title"), "info_url", pRequest.getReqMap().get("url"),
+					"comment_date", FormatHelper.GetDateTime(), "note",
+					pRequest.getReqMap().get("text"), "info_uid", pRequest
+							.getReqMap().get("uid"),"user_name",mUserInfo
+							.get("username"));
+			DataTableManager.Get("user_comment").inPut(mHMap);
+			result.setResult(sUid);
+
+		}
+
+		return result;
+	}
+	
+	
+	
+	
 	
 	public MResult callPostCall(Map<String, Object> mUserInfo) {
 

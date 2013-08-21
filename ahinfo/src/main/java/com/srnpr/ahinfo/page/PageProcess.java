@@ -137,7 +137,10 @@ public class PageProcess implements IWebProcess {
 		} else if (sView.equals("login")) {
 			mResult = new UserCall(pRequest).callLogin();
 
-		} 
+		} else if(sView.equals("comentsubmit"))
+		{
+			mResult = new UserCall(pRequest).callComment(upUserInfo());
+		}
 		else if (sView.equals("v_ah_join")) {
 			mResult = new WebBaseProcess().showResult(pRequest);
 		}
