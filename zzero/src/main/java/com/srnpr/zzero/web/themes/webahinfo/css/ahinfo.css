@@ -51,8 +51,23 @@ a:hover {
 .ahinfo_head {
 
 }
+
+.ahinfo_head .c_link {
+    
+    position: absolute;
+    
+    top:0px;
+    
+    width: 800px;
+  height:120px;
+  margin:auto;
+    
+}
+
+
 .ahinfo_head .c_top {
     height: 120px;
+    position: static;
 }
 .ahinfo_head .c_nav {
     height: 40px;
