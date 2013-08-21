@@ -15,6 +15,9 @@
 						<div class="c_inline"></div>
 						<div class="c_user" id="ahinfo_header_user"><a href="/ahinfo/reg-reg">现在注册</a>&nbsp;|&nbsp;<a href="/ahinfo/login-login">立即登录</a></div>
 						<div class="c_phone">美丽专线：<span>400-888-8888</span></div>
+						<div>
+							<a href="/"><div class="c_link"></div></a>
+							</div>
 					</div>
 					<div class="c_nav">
 						<ul>
