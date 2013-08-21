@@ -17,8 +17,8 @@
 							</div>
 							<div class="c_line"></div>
 							<div clas="c_want">
-								<div class="c_try"></div>
-								<div class="c_post">+写评论</div>
+								<div class="c_try" onclick="zen.ahinfo.try_post()"></div>
+								<div class="c_post" onclick="zen.ahinfo.comment_post()">+写评论</div>
 							</div>
 							<div class="clearfix"></div>
 							<div class="c_show">${page_obj["content"]}</div>

@@ -8,7 +8,7 @@
 				<div class="ahinfo_info">
 							<div class="c_title">${page_obj["name"]}</div>
 							<div class="c_info">解决问题：${page_obj["note"]}</div>
-							<div class="c_info">单次价格：${page_obj["note"]}</div>
+							<div class="c_info">单次价格：${page_obj["one_price"]}</div>
 							<div class="c_info">同类项目：
 							<#list pageexec.upData("ah_good","special_uid",page_obj["special_uid"]) as ec>
 								<a href="/ahinfo/good-${ec["uid"]}">${ec["name"]}</a>
