@@ -153,7 +153,7 @@ public class DataProcess extends BaseClass {
 		// Object[] oArgsObjects=new Object[0];
 
 		MHashMap mHashMap = new MHashMap();
-		if (oArgs != null && oArgs.length > 0) {
+		if ((oArgs != null && oArgs.length > 0)||StringUtils.isNotEmpty(sWhere)) {
 
 			if (oArgs.length == 1) {
 				sWhere=oArgs[0].toString();
@@ -217,7 +217,7 @@ public class DataProcess extends BaseClass {
 		sBuilder.append(" from " + sTableName);
 
 		MHashMap mHashMap = new MHashMap();
-		if (oArgs != null && oArgs.length > 0) {
+		if ((oArgs != null && oArgs.length > 0)||StringUtils.isNotEmpty(sWhere))  {
 
 			mHashMap.inAdd(oArgs);
 
