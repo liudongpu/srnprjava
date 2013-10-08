@@ -85,8 +85,10 @@
 											id="query_dept_110101" /><label for="query_dept_110101">东城</label>
 										<input name="query_dept" type="radio" value="110114"
 											id="query_dept_110114" /><label for="query_dept_110114">昌平</label>
-											<input name="query_dept" type="radio" value="110107"
-											id="query_dept_110107" /><label for="query_dept_110107">石景山</label>
+											
+											<input name="query_dept" type="radio" value="0"
+											id="query_dept_00" checked="checked" /><label
+											for="query_dept_00">其他区域</label>
 									</dd>
 								</dl>
 								<dl>
