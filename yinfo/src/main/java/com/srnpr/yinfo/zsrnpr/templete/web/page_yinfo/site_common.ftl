@@ -87,7 +87,7 @@
 											id="query_dept_110114" /><label for="query_dept_110114">昌平</label>
 											
 											<input name="query_dept" type="radio" value="0"
-											id="query_dept_00" checked="checked" /><label
+											id="query_dept_00"  /><label
 											for="query_dept_00">其他区域</label>
 									</dd>
 								</dl>
