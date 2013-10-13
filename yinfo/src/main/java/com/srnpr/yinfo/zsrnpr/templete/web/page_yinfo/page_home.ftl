@@ -31,7 +31,7 @@
 
 		if (aLink.length > 0) {
 
-			$('.yold_info_giftbox_info').html(aLink.join(''));
+			$('.yold_info_giftbox_info').html('<div style="text-align:center;padding:10px 0px 10px 0px;"><a target="_blank" href="static-static-40048de680df4aa5938b53bd5aa02ab9">入住有礼规则</a></div>'+aLink.join(''));
 
 			show_gift();
 		}
