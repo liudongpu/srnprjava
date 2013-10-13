@@ -1355,3 +1355,24 @@ cursor: pointer;
    width:10%;
 }
 
+
+.yold_info_giftbox
+{
+    position: absolute;
+    top: 285px;
+    left: 600px;
+   
+    z-index: 1;
+    display: none;
+}
+.yold_info_giftbox_info
+{
+    border:solid 1px #36770e;
+    
+   
+}
+.yold_info_giftbox_info img
+{
+    border:solid 1px #99cb7a;
+}
+

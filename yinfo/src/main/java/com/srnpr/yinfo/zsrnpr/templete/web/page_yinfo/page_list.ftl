@@ -95,7 +95,7 @@
 					<div class="c_item">
 					<a target="_blank" href="http://wpa.qq.com/msgrd?v=3&amp;uin=508681688&amp;site=qq&amp;menu=yes">
 						<img
-							src="http://script.daoxila.com/root/img/img_20111201/service_pic.gif" />
+							src="/zzero/web/themes/webyinfo/images/service_pic.gif" />
 					</a>
 						
 					</div>

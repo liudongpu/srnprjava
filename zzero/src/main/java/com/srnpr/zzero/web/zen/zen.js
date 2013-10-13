@@ -104,6 +104,16 @@ zen.r = function() {
 };
 
 zen.f = {
+		
+		refresh:function()
+		{
+			setTimeout(function(){location.href=location.href;},2000);
+		},
+		loc:function()
+		{
+			
+		},
+		
 	cookie : function(name, value, options) {
 		if (typeof value != 'undefined') { // name and value given, set cookie
 			options = options || {};

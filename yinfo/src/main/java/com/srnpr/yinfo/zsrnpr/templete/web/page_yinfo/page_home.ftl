@@ -1,5 +1,46 @@
 
 <#assign page_obj=pageexec.upDataOne("y_info","domain",pageinfo.getWebSet()["Url_View"])>
+
+
+
+<script>
+	function show_gift(aLink) {
+		//$('.c_gift').hover
+		$('.yold_info_box .c_gift').srnprtip({
+			target : '.yold_info_giftbox',
+			show : false
+
+		});
+	};
+
+	$(function() {
+		var aLink = [];
+		
+		<#if page_obj["send_info"]!="" >
+		
+			<#assign page_gift=pageexec.upDataTop("y_send","flag_use=30010001 and uid in('"+page_obj["send_info"]+"')","",10)>
+			<#if page_gift??>
+				<#list page_gift as e_item>
+				
+				aLink.push('<img src="${e_item["send_url"]}"/>');
+				
+				
+				</#list>
+			</#if>
+		</#if>
+
+		if (aLink.length > 0) {
+
+			$('.yold_info_giftbox_info').html(aLink.join(''));
+
+			show_gift();
+		}
+
+	});
+</script>
+
+
+
 <@m_site_common_oldhead title=page_obj["name"] imgurl=page_obj["home_img"] />
 
 	<div class="y_center">
@@ -110,6 +151,9 @@
 								<!-- JiaThis Button END -->
 							
 							</div>
+						</div>
+						<div class="yold_info_giftbox">
+							<div class="yold_info_giftbox_info"></div>
 						</div>
 						<div class="clearfix"></div>
 						<div class="b_h20"></div>

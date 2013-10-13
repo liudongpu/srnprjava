@@ -15,6 +15,7 @@ import com.srnpr.yinfo.call.UserCall;
 import com.srnpr.zcom.model.MHashMap;
 import com.srnpr.zcom.model.MResult;
 import com.srnpr.zdata.manager.DataTableManager;
+import com.srnpr.zdata.model.MDataTable;
 import com.srnpr.zweb.enumer.EWebSet;
 import com.srnpr.zweb.i.IWebProcess;
 import com.srnpr.zweb.model.MWebFields;
@@ -39,6 +40,48 @@ public class PageProcess implements IWebProcess {
 				mPageInfo.setPageInclude("uaccess");
 
 			}
+			
+			
+			if (sTargetString.equals("usign")) {
+
+				if (mUserMap.get("info_domain") != null
+						&& StringUtils.isNotEmpty(mUserMap.get("info_domain")
+								.toString())) {
+					
+					Map<String, Object> mInfoMap=DataTableManager.Get("y_info").upOneMap("domain",mUserMap.get("info_domain")
+							.toString());
+					
+					
+					String sSignName=mInfoMap.get("name").toString();
+					
+					
+					String sSignStatus=mInfoMap.get("sign_status").toString();
+					
+					mUserMap.put("sign_name",
+							sSignName);
+					
+					
+					if(StringUtils.isNotEmpty(sSignStatus)&&(sSignStatus.equals("32690002")||sSignStatus.equals("32690003")))
+					{
+						sSignStatus="1";
+					}
+					else {
+						
+						sSignStatus="";
+					}
+					
+					mUserMap.put("sign_statusinfo",
+							sSignStatus);
+					
+					mPageInfo.setPageOptions(mUserMap);
+					
+				}
+				else
+				{
+					mPageInfo.setPageInclude("uaccess");
+				}
+			}
+			
 
 			if (sTargetString.equals("uedit")) {
 
@@ -57,7 +100,7 @@ public class PageProcess implements IWebProcess {
 					List<MWebFields> mPageDataFields = (List<MWebFields>) mPageInfo
 							.getPageData();
 
-					String sEngStrings = ",domain,area,money_cid,peopletype_cid,score,icon_cids,adv_cid,show_flag";
+					String sEngStrings = ",domain,area,money_cid,peopletype_cid,score,icon_cids,adv_cid,show_flag,send_info,sign_status,";
 
 					for (int i = mPageDataFields.size() - 1; i >= 0; i--) {
 						if (StringUtils.contains(sEngStrings, ","
@@ -132,6 +175,8 @@ public class PageProcess implements IWebProcess {
 				mResult = new UserCall(pRequest).callPostPhone(upUserInfo());
 			} else if (sView.equals("postcall")) {
 				mResult = new UserCall(pRequest).callPostCall(upUserInfo());
+			} else if (sView.equals("usersign")) {
+				mResult = new UserCall(pRequest).callUserSign(upUserInfo());
 			} else if (sView.equals("v_y_info")) {
 				mResult = new WebBaseProcess().showResult(pRequest);
 			}

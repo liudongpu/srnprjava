@@ -36,7 +36,7 @@
 								</div>
 								<div class="b_h10"></div>
 								<div class="control-group">
-								<span class="c_weight"></span><input type="checkbox" checked="checked"/>我已阅读并同意银杏林用户注册协议
+								<span class="c_weight"></span><input type="checkbox" checked="checked"/><a href="static-static-205e15aedd3247949c03e609e346eb21" target="_blank">我已阅读并同意银杏林用户注册协议</a>
 								<div class="b_h10"></div>
 									<span class="c_weight"></span> <a class="btn  btn-success"  onclick="zen.yinfo.submit(this,zen.yinfo.regsuccess)">&nbsp;&nbsp;注&nbsp;&nbsp;册&nbsp;&nbsp;</a>
 									
@@ -51,6 +51,7 @@
 									<li>为您精选所有养老院</li>
 									<li>专业人士为您推荐与分析</li>
 									<li>入住有礼包推荐</li>
+									<li>推荐老人成功入住，即可获取50元现金返利</li>
 								</ul>
 								<div class="b_h20"></div>
 								<span class="c_not">已有账号？</span>

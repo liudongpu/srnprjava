@@ -17,193 +17,397 @@
 <script type="text/javascript" src="../../../zen/zen.js"></script>
 <script type="text/javascript" src="../../../zen/zen_yinfo.js"></script>
 
+<script>
+	function show_gift(aLink) {
+		//$('.c_gift').hover
+		$('.yold_info_box .c_gift').srnprtip({
+			target : '.yold_info_giftbox',
+			show : false
+
+		});
+	};
+
+	$(function() {
+		var aLink = [];
+		aLink.push('<img src="http://www.yinxl.com/zzero/file/images_upload/20130719/52636037869c4fd987dcfdf80732c199.png"/>');
+
+		if (aLink.length > 0) {
+
+			$('.yold_info_giftbox_info').html(aLink.join(''));
+
+			show_gift();
+		}
+
+	});
+</script>
+
+
 
 </head>
 <body class="yinfo_body">
-
-
-
-	<div class="yinfo_header y_center">
-		<div class="yinfo_header_logo">
+	<div id="yold_header" class="yold_header y_center">
+		<div class="yold_header_logo">
 			<a href="/"></a>
 		</div>
-		<div class="yinfo_header_area">北京</div>
-		<div id="yinfo_header_search" class="yinfo_header_search">
-
-			<div class="input-append">
-				<input type="text" id="yinfo_header_search_input" class="span4"
-					placeholder="搜索城市、地区、或者养老院名称"> <a class="btn"
-					onclick="zen.yinfo.search(this)"> <i class="icon-search"></i>
-				</a>
+		<div class="yold_header_user">
+			<div id="yinfo_header_user" class="yold_header_user_text">
+				<a href="/yinfo/login-login">登录</a> &nbsp;&nbsp;<a
+					href="/yinfo/reg-reg">免费注册</a>
 			</div>
 		</div>
-		<div id="yinfo_header_user" class="yinfo_header_user">
-			<a href="/yinfo/login-login">登录</a> &nbsp;&nbsp;<a
-				href="/yinfo/reg-reg">免费注册</a>
-		</div>
-		<div class="yinfo_header_link">
+
+		<div class="yold_header_link">
 			<a target="_blank"
 				href="http://wpa.qq.com/msgrd?v=3&uin=508681688&site=qq&menu=yes"><img
 				border="0" src="http://wpa.qq.com/pa?p=2:508681688:41"
 				alt="点击这里给我发消息" title="点击这里给我发消息" /></a>
 		</div>
 	</div>
-	<div class="yinfo_nav">
+	<div class="yold_headadv ">
 		<div class="y_center">
-			<div class="yinfo_nav_box">
-				<div class="c_tip"></div>
-				<div class="c_nav">
-					<ul>
-						<li class="c_active"><a href="/">首页</a></li>
-						<li><a href="/yinfo/list-110108_0_0_0">海淀区</a></li>
-						<li><a href="/yinfo/list-110105_0_0_0">朝阳区</a></li>
-						<li><a href="/yinfo/list-110102_0_0_0">西城区</a></li>
-						<li><a href="/yinfo/list-110101_0_0_0">东城区</a></li>
-						<li><a href="/yinfo/list-110114_0_0_0">昌平区</a></li>
-						<li><a href="/yinfo/list-110107_0_0_0">石景山区</a></li>
-						<li id="yinfo_nav_box_address_other"><a href="#">其他区县</a></li>
-					</ul>
-				</div>
+			<img src="/zzero/web/themes/webyinfo/images/topad.jpg" />
+		</div>
 
-				<div class="yinfo_nav_address">
-					<ul>
-						<li><a href="/yinfo/list-110112_0_0_0">·通州区</a></li>
-						<li><a href="/yinfo/list-110113_0_0_0">·顺义区</a></li>
-						<li><a href="/yinfo/list-110106_0_0_0">·丰台区</a></li>
-						<li><a href="/yinfo/list-110109_0_0_0">·门头沟区</a></li>
-						<li><a href="/yinfo/list-110111_0_0_0">·房山区</a></li>
-						<li><a href="/yinfo/list-110115_0_0_0">·大兴区</a></li>
-						<li><a href="/yinfo/list-110116_0_0_0">·怀柔区</a></li>
-						<li><a href="/yinfo/list-110117_0_0_0">·平谷区</a></li>
-						<li><a href="/yinfo/list-110228_0_0_0">·密云县</a></li>
-						<li><a href="/yinfo/list-110229_0_0_0">·延庆县</a></li>
-					</ul>
-				</div>
+	</div>
+	<div class="yold_nav">
+		<div class="y_center">
+			<div class="yold_nav_box">
 
-				<div class="yinfo_nav_query">
-					<div class="c_box"></div>
-					<div class="c_bg">
-						<div class="c_info b_corner">
-							<div class="c_margin">
-								<dl>
-									<dt>
-										<i>1/</i>您希望养老院位于：
-									</dt>
-									<dd id="yinfo_nav_query_address">
-										<input name="query_dept" type="radio" value="0"
-											id="query_dept_0" checked="checked" /><label
-											for="query_dept_0">不限</label> <input name="query_dept"
-											type="radio" value="110108" id="query_dept_110108" /><label
-											for="query_dept_110108">海淀</label> <input name="query_dept"
-											type="radio" value="110105" id="query_dept_110105" /><label
-											for="query_dept_110105">朝阳</label> <input name="query_dept"
-											type="radio" value="110102" id="query_dept_110102" /><label
-											for="query_dept_110102">西城</label> <br /> <input
-											name="query_dept" type="radio" value="110101"
-											id="query_dept_110101" /><label for="query_dept_110101">东城</label>
-										<input name="query_dept" type="radio" value="110114"
-											id="query_dept_110114" /><label for="query_dept_110114">昌平</label>
-										<input name="query_dept" type="radio" value="110107"
-											id="query_dept_110107" /><label for="query_dept_110107">石景山</label>
-									</dd>
-								</dl>
-								<dl>
-									<dt>
-										<i>2/</i>您希望价格范围是：
-									</dt>
-									<dd id="yinfo_nav_query_money">
-										<input name="query_price" id="query_price_0" type="radio"
-											value="0" checked="checked" /><label for="query_price_0">不限</label>
-										<input name="query_price" type="radio"
-											id="query_price_32510001" value="32510001" /><label
-											for="query_price_32510001">2000元以下</label> <input
-											name="query_price" type="radio" value="32510002"
-											id="query_price_32510002" /><label
-											for="query_price_32510002">2000-3000</label> <input
-											name="query_price" type="radio" value="32510003"
-											id="query_price_32510003" /><label
-											for="query_price_32510003">3000-4000</label> <input
-											name="query_price" type="radio" value="32510004"
-											id="query_price_32510004" /><label
-											for="query_price_32510004">4000元以上</label>
-									</dd>
-								</dl>
-								<dl>
-									<dt>
-										<i>3/</i>老人的情况是：
-									</dt>
-									<dd id="yinfo_nav_query_older">
-										<input name="query_type" id="query_type_0" type="radio"
-											value="0" checked="checked" /><label for="query_type_0">不限</label>
-										<input name="query_type" type="radio" id="query_type_32520001"
-											value="32520001" /><label for="query_type_32520001">自理老人</label>
-										<input name="query_type" type="radio" value="32520002"
-											id="query_type_32520002" /><label for="query_type_32520002">半护理老人</label><br />
-										<input name="query_type" type="radio" value="32520003"
-											id="query_type_32520003" /><label for="query_type_32520003">全护理老人</label>
-										<input name="query_type" type="radio" value="32520004"
-											id="query_type_32520004" /><label for="query_type_32520004">特护</label>
+				<ul>
+					<li><a class="c_active" href="#yold_header">首页</a></li>
+					<li><a href="#yinfo_home_t1">养老院简介</a></li>
+					<li><a href="#yinfo_home_t2">收费标准</a></li>
+					<li><a href="#yinfo_home_t3">入住须知</a></li>
+					<li><a href="#yinfo_home_t4">服务指南</a></li>
+					<li><a href="#yinfo_home_t5">优惠信息</a></li>
+					<li><a href="#yinfo_home_t6">联系方式</a></li>
+					<li><a href="#yinfo_home_t7">机构位置</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
 
-
-									</dd>
-								</dl>
+	<div class="y_center">
+		<div class="yinfo_main">
+			<div class="b_h15"></div>
+			<div class="yold_info">
+				<div class="yold_info_bg">
+					<div class="yold_info_box">
+						<div class="yold_info_left">
+							<div class="c_pic">
+								<img />
 							</div>
+							<div class="b_h10"></div>
+							<div class="c_imgs">
+								<div class="c_left c_prev"></div>
+								<div class="c_center">
+									<div class="c_over c_scroll">
+										<ul>
+
+
+
+											<li><img
+												src="/zzero/file/images_upload/20130930/ccc7433967384032acc76205ccfcda45.jpg" /></li>
+											<li><img
+												src="/zzero/file/images_upload/20130930/c06fbdbe085a40c69f69e4f00eb154ca.jpg" /></li>
+											<li><img
+												src="/zzero/file/images_upload/20130930/54e87159e2414cb9879bd1efa5b67d36.jpg" /></li>
+											<li><img
+												src="/zzero/file/images_upload/20130930/28fb1cad7b8443d58de36ce2f9d60e84.jpg" /></li>
+											<li><img
+												src="/zzero/file/images_upload/20130930/fc8377ee4aa54dc6ad727c67ed01a9ec.jpg" /></li>
+											<li><img
+												src="/zzero/file/images_upload/20130930/1534d8b50ede4d20a948fd2ab5b33487.jpg" /></li>
+											<li><img
+												src="/zzero/file/images_upload/20130930/f55b27bc330d48a790ee671d2da3028f.jpg" /></li>
+
+
+
+
+
+
+
+										</ul>
+									</div>
+								</div>
+								<div class="c_right c_next"></div>
+							</div>
+							<script>
+								$('.yold_info_left .c_imgs').srnprscroll({
+									target : '.yold_info_left .c_pic img'
+								});
+							</script>
 
 						</div>
-						<div class="c_bottons">
-							<div class="c_btn b_corner" onclick="zen.yinfo.query()">立即查看</div>
+						<div class="yold_info_right">
+							<div class="c_box">
+								<div class="c_top">
+									<div class="c_left">
+										<h2>海淀区益康敬老院</h2>
+										<input type="hidden" id="yold_info_home_uid"
+											name="yold_info_home_uid"
+											value="b8650782e5384239a31a78bde7816b9e" />
+									</div>
+									<div class="c_right">
+										<div class="c_icontip"></div>
+									</div>
+								</div>
+								<div class="c_item">
+									<span>地&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;区：</span>北京
+									海淀区
 
+
+								</div>
+								<div class="c_item">
+									<span>床&nbsp;&nbsp;位&nbsp;&nbsp;数：</span>
+								</div>
+								<div class="c_item">
+									<span>收住对象：</span>
+
+
+								</div>
+								<div class="c_item">
+									<span>机构地址：</span><a class="c_link" href="#yinfo_home_t7">【查看地图】</a>
+								</div>
+								<div class="clearfix"></div>
+								<div class="b_h20"></div>
+								<div>
+									<div class="c_float">
+										<a class="btn btn-success" onclick="zen.yinfo.callhome()">免费预约参观</a>
+									</div>
+									<div class="c_float">
+										<a class="c_gift" href="#"></a>
+									</div>
+									<div class="c_float">
+										<a class="c_collect" href="#"></a>
+									</div>
+								</div>
+							</div>
+							<div class="c_share">
+								<!-- JiaThis Button BEGIN -->
+								<div class="jiathis_style">
+									<span class="jiathis_txt">分享到：</span> <a
+										class="jiathis_button_tools_1"></a> <a
+										class="jiathis_button_tools_2"></a> <a
+										class="jiathis_button_tools_3"></a> <a
+										class="jiathis_button_tools_4"></a> <a
+										href="http://www.jiathis.com/share"
+										class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis"
+										target="_blank">更多</a> <a class="jiathis_counter_style"></a>
+								</div>
+								<script type="text/javascript"
+									src="http://v3.jiathis.com/code/jia.js?uid=1369568754104639"
+									charset="utf-8"></script>
+								<!-- JiaThis Button END -->
+
+							</div>
 						</div>
-
+						<div class="clearfix"></div>
+						<div class="yold_info_giftbox">
+							<div class="yold_info_giftbox_info"></div>
+						</div>
+						<div class="b_h20"></div>
 					</div>
 				</div>
 			</div>
-		</div>
-	</div>
+			<div class="b_h10"></div>
+			<div class="yold_show">
 
+				<div id="yinfo_home_t1" class="c_item">
+					<div class="c_title">养老院简介</div>
+					<div></div>
+				</div>
+				<div id="yinfo_home_t2" class="c_item">
+					<div class="c_title">收费标准</div>
+					<div>
+						<table class="table table-bordered">
+							<tbody>
+								<tr class="success">
+									<td>项目</td>
+									<td>费用</td>
+									<td>项目</td>
+									<td>费用</td>
+								</tr>
+								<tr>
+									<td>单人间（元/月）</td>
+									<td>1880</td>
+									<td>双人间（元/月）</td>
+									<td>1280</td>
+								</tr>
+								<tr>
+									<td>三人间（元/月）</td>
+									<td></td>
+									<td>多人间（元/月）</td>
+									<td></td>
+								</tr>
+								<tr>
+									<td>一对一护理费（元/天）</td>
+									<td></td>
+									<td>一对二护理费（元/天）</td>
+									<td></td>
+								</tr>
+								<tr>
+									<td>一对多护理费（元/天）</td>
+									<td></td>
+									<td>伙食费（元/月）</td>
+									<td></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+				<div id="yinfo_home_t3" class="c_item">
+					<div class="c_title">入住须知</div>
+					<div>
+						<table border="0" cellpadding="0" cellspacing="0"
+							style="font-family: simsun; width: 100%">
+							<tbody>
+								<tr>
+									<td>
+										<table border="0" cellpadding="0" cellspacing="0"
+											style="width: 100%">
+											<tbody>
+												<tr>
+													<td>&nbsp;</td>
+												</tr>
+											</tbody>
+										</table>
 
+										<table border="0" cellpadding="0" cellspacing="0"
+											style="width: 657px">
+											<tbody>
+												<tr>
+													<td><img src="http://www.ykjly.com/image/ruyuan.jpg"
+														style="height: 34px; width: 657px" /></td>
+												</tr>
+											</tbody>
+										</table>
 
+										<table border="0" cellpadding="0" cellspacing="0"
+											style="width: 100%">
+											<tbody>
+												<tr>
+													<td>&nbsp;</td>
+												</tr>
+											</tbody>
+										</table>
 
+										<table border="0" cellpadding="0" cellspacing="0"
+											style="width: 657px">
+											<tbody>
+												<tr>
+													<td>
+														<div
+															style="line-height: 28px; color: rgb(102, 102, 102); font-size: 14px;">
+															<p>
+																为了送养老人和被送养人做好入院前准备工作，特将有关事宜通知如下：&nbsp;<br />
+																1、老人入院时带上本人身份证以及送养人身份证原件和复印件。&nbsp;<br />
+																2、老人入院自带生活洗漱用具、个人衣物，多余和贵重物品别带入院，防止丢失。&nbsp;<br />
+																3、送养人要真是反映老人健康状况，有无常见病及多发病，有无药物过敏，有何特殊生活习惯。精神病、<br />
+																&nbsp;&nbsp;&nbsp;传染病不予接收。&nbsp;<br />
+																4、入住老人要遵守《老年公约》，配合好服务管理工作，需要调整房间床位时，老人和家属应给予配合。<br />
+																5、医疗费用一律由乙方自负，根据身体状况交一定医疗押金。一般病、普通病在我社区卫生服务站治疗，<br />
+																&nbsp;&nbsp;
+																危重病由家属带老人去大医院治疗，因受条件限制院方不具备抢救能力，老人因急病或突然发病死亡，<br />
+																&nbsp;&nbsp; 院方不承担责任。&nbsp;<br />
+																6、入住老人给院方或他人造成损失或伤害，后果由送养人或老人个人负责赔偿，老人自我伤害由本人负<br />
+																&nbsp;&nbsp;&nbsp;责。&nbsp;<br />
+																7、对于大小便失禁的老人，由家属准备床上的尿不湿，根据老人日常生活需要，如84消毒液、洗涤灵、<br />
+																&nbsp;&nbsp;&nbsp;洁厕灵等用品一律备齐。&nbsp;<br />
+																8、入院老人因身体状况变化需要调整收费标准时，双方及时协商确定。&nbsp;<br />
+																9、老人病故，院方及时通知家属，并协助办理殡葬事宜，一切费用由乙方承担。
+															</p>
+														</div>
+													</td>
+												</tr>
+											</tbody>
+										</table>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+				<div id="yinfo_home_t4" class="c_item">
+					<div class="c_title">服务指南</div>
+					<div></div>
+				</div>
+				<div id="yinfo_home_t5" class="c_item">
+					<div class="c_title">优惠信息</div>
+					<div></div>
+				</div>
+				<div id="yinfo_home_t6" class="c_item">
+					<div class="c_title">联系方式</div>
+					<div>
+						联系地址： <br />邮编： <br />固定电话：51561669 62457367-0
+					</div>
+					<div>
+						<p>颐和园乘346路公交车到北安河西口站&nbsp;下车向西800米&nbsp;鹫峰路东侧</p>
 
-
-
-	<div class="y_center">
-		<div class="yinfo_diff">
-			<div class="yinfo_diff_box">
-				<table  class="table table-bordered">
-				<caption>基本信息对比</caption>
-				
-					<tbody>
-						<tr>
-							<th>项目</th>
-							<td>aaa</td>
-							<td>bbb</td>
-							<td>ccc</td>
-							<td>ddd</td>
-						</tr>
+						<p>&nbsp;&nbsp;驾车路线&nbsp;北清路北安河方向到头左转200米&nbsp;右转向西行800米</p>
+					</div>
+				</div>
+				<div id="yinfo_home_t7" class="c_item">
+					<div class="c_title">机构位置</div>
+					<div></div>
+					<div class="b_h10"></div>
+					<div id="yold_show_map" class="yold_show_map"></div>
+					<script type="text/javascript"
+						src="http://api.map.baidu.com/api?v=1.5&ak=CA79faace408337ea7d9fa7f4addaabd">
 						
-					</tbody>
-				</table>
-				<div class="clearfix"></div>
+					</script>
+					<script type="text/javascript">
+						var bSecond = true;
+
+						function showbaidumap(sAddress) {
+							var map = new BMap.Map("yold_show_map"); // 创建地图实例  
+							// 创建地址解析器实例
+							var myGeo = new BMap.Geocoder();
+							// 将地址解析结果显示在地图上,并调整地图视野
+							myGeo.getPoint(sAddress, function(point) {
+								if (point) {
+									map.centerAndZoom(point, 16);
+									map.addOverlay(new BMap.Marker(point));
+
+									/*
+									var marker = new BMap.Marker(map.getCenter());  // 创建标注
+									map.addOverlay(marker);              // 将标注添加到地图中
+									marker.setAnimation(BMAP_ANIMATION_BOUNCE); //跳动的动画
+									 */
+
+									var opts = {
+										width : 150, // 信息窗口宽度
+										height : 30, // 信息窗口高度
+										title : "" // 信息窗口标题
+									}
+									var infoWindow = new BMap.InfoWindow(
+											sAddress, opts); // 创建信息窗口对象
+									map.openInfoWindow(infoWindow, map
+											.getCenter()); //开启信息窗口
+
+								} else {
+									if (bSecond) {
+										showbaidumap("海淀区益康敬老院");
+										bSecond = false;
+									}
+								}
+
+							}, "北京市");
+
+						}
+
+						showbaidumap("");
+						$('.yold_nav').pin();
+					</script>
+
+				</div>
+				<div class="b_h40 clearfix"></div>
 			</div>
+
 		</div>
 	</div>
 
-
-
-
-
-
-
-
-
-	<script>
-		$(document).ready(function() {
-			zen.yinfo.headernav(false);
-		});
-	</script>
-
-
+	<div class="b_h40"></div>
 
 
 	<div class="yinfo_footer">
@@ -220,7 +424,7 @@
 				<span><a
 					href="/yinfo/static-static-c364da320ff3498fbd48d55ebdf8f438">关于我们</a></span>|
 				<span><a
-					href="/yinfo/static-static-1f53de2f4fca4145b72981601318f3fa">机构加盟指南</a></span>|
+					href="/yinfo/static-static-1f53de2f4fca4145b72981601318f3fa">机构加盟</a></span>|
 
 
 			</div>
@@ -269,53 +473,6 @@
 			</div>
 			<input type="hidden" id="yinfo_query_for_query"
 				name="yinfo_query_for_query" />
-		</div>
-	</div>
-
-
-	<div id="yinfo_compare_for" class="yinfo_compare_for y_center">
-		<div class="c_box">
-			<div class="c_title">
-				<div class="b_fl c_bold">对比栏</div>
-				<div class="b_fr">[隐藏]</div>
-			</div>
-			<div class="c_list">
-				<div class="c_item b_fl">
-					<div class="b_fl">
-						<img
-							src="http://www.yinxl.com/zzero/file/images_upload/20130614/cfb882ec9d5f4261a795b5c1382ae449.jpg">
-					</div>
-					<div class="b_fl c_text">
-						海淀区四季青镇敬老院 <a href="">删除</a>
-					</div>
-
-				</div>
-				<div class="c_item b_fl">
-					<div class="b_fl">
-						<img
-							src="http://www.yinxl.com/zzero/file/images_upload/20130614/cfb882ec9d5f4261a795b5c1382ae449.jpg">
-					</div>
-					<div class="b_fl c_text">哈哈</div>
-
-				</div>
-				<div class="c_item b_fl">
-					<div class="b_fl">
-						<img
-							src="http://www.yinxl.com/zzero/file/images_upload/20130614/cfb882ec9d5f4261a795b5c1382ae449.jpg">
-					</div>
-					<div class="b_fl c_text">哈哈</div>
-
-				</div>
-				<div class="c_item b_fl">
-					<div class="b_fl c_number">4</div>
-					<div class="b_fl c_add">您还可以继续添加</div>
-				</div>
-
-				<div class="c_buttons b_fr">
-					<a class="btn btn-success">对比</a> <br /> <a href="">清空对比栏</a>
-				</div>
-
-			</div>
 		</div>
 	</div>
 

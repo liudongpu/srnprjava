@@ -225,6 +225,36 @@ public class UserCall extends BaseClass {
 	}
 	
 	
+	public MResult callUserSign(Map<String, Object> mUserInfo) {
+		
+		
+		if (result.getFlag()) {
+
+			
+			
+			
+			
+			String sDomainString=mUserInfo.get("info_domain").toString();
+			
+			
+			MHashMap mHashMap = new MHashMap();
+			mHashMap.put("sign_status", "32690003");
+			mHashMap.put("domain", sDomainString);
+			DataTableManager.Get("y_info").inPost(mHashMap, "domain");
+			
+			
+			
+		;
+			
+			
+
+		}
+
+		return result;
+		
+	}
+	
+	
 	
 	public MResult callPostCall(Map<String, Object> mUserInfo) {
 
