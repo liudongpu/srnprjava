@@ -42,14 +42,14 @@ public class HomeController {
 	public String home(Model model,HttpServletRequest request) {
 		
 		
-		//return index("newsinfo", "main-main", model,request);
+		return index("newsinfo", "main-main", model,request);
 		
 		//return index("ahinfo", "main-main", model,request);
 		
 		
 		
 		
-		
+		/*
 		String[] sUrls=StringUtils.split(request.getRequestURL().toString(),".");
 		
 		if(sUrls.length>1&&sUrls[1].equals("yinxl"))
@@ -75,7 +75,7 @@ public class HomeController {
 		
 		
 		return index("yinfo", "main-main", model,request);
-		
+		*/
 	}
 	
 	@RequestMapping(value = "/manage", method = RequestMethod.GET)

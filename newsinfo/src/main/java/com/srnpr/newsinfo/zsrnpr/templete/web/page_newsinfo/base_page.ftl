@@ -15,11 +15,17 @@
 
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
 
+<#assign bd_url="http://bcs.duapp.com/srnprresources">
+	<link type="text/css" href="${bd_url}/zzero/web/themes/website/sitecss/base.css" rel="stylesheet">
+	<link type="text/css" href="${bd_url}/zzero/web/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<script type="text/javascript" src="${bd_url}/zzero/web/lib/jquery/jquery-last.min.js"></script>
+	<script type="text/javascript" src="${bd_url}/zzero/web/lib/jquery/jquery-pluging.js"></script>
+	<script type="text/javascript" src="${bd_url}/zzero/web/lib/bootstrap/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="${bd_url}/zzero/web/zen/zen.js"></script>
+	<script type="text/javascript" src="${bd_url}/zzero/web/zen/zen_page.js"></script>
+	<script type="text/javascript" src="${bd_url}/zzero/web/zen/zen_site.js"></script>
+	<script type="text/javascript" src="${bd_url}/zzero/web/lib/jquery/jquery-site.js"></script>
 
-	<@m_html_addcss pageconfig.getSrcCss() />
-	<@m_html_addjs pageconfig.getSrcJs() />
-	<@m_html_addjs [base_zero+"zen/zen_site.js"] />
-	<@m_html_addjs [base_zero+"lib/jquery/jquery-site.js"] />
 
 	<@m_html_addscript "zen.i({baseurl:'"+base_url+"'});" />
 
