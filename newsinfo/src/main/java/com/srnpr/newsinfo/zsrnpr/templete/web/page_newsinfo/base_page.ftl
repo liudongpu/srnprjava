@@ -4,18 +4,20 @@
 <#assign pageconfig=WebPage["PageConfig"]>
 <#assign pageinfo=WebPage["PageInfo"]>
 <#assign pageexec=WebPage["PageExec"]>
-
-<#assign base_url=pageexec.upConfigValue("zweb.url_home")>
-<#assign base_zero=pageexec.upConfigValue("zweb.url_home")+"zzero/web/">
-
 <#include "../lib/lib_html.ftl" />
 <#include "../lib/lib_page.ftl" />
 
 <#include "site_common.ftl" />
 
+
+<#assign base_url=pageexec.upConfigValue("zweb.url_home")>
+<#assign base_zero=bd_url+"/zzero/web/">
+
+
+
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
 
-<#assign bd_url="http://bcs.duapp.com/srnprresources">
+
 	<link type="text/css" href="${bd_url}/zzero/web/themes/website/sitecss/base.css" rel="stylesheet">
 	<link type="text/css" href="${bd_url}/zzero/web/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 	<script type="text/javascript" src="${bd_url}/zzero/web/lib/jquery/jquery-last.min.js"></script>

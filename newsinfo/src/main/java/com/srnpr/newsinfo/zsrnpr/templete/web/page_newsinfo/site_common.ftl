@@ -1,4 +1,7 @@
 
+<#assign bd_url="http://bcs.duapp.com/bgpmfile">
+
+
 <#macro m_site_common_header nav="" title="" >
 
 <title><@m_site_common_title nav title /></title> 
