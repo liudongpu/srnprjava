@@ -18,10 +18,10 @@
                     <div class="lay_header_position">
                         <div class="header_logo"></div>
                         <div id="header_weixin" style="float:right;width:40px;height:40px;margin-top:90px;margin-left:10px;">
-							<img src="../zzero/web/themes/website/images/bgpmweixin.jpg"/>
+							<img src="${bd_url}/zzero/web/themes/website/images/bgpmweixin.jpg"/>
 						</div>
 						<div id="header_weixin_big" style="position:absolute;right:0px;top:30px;width:200px;height:200px;z-index:1;display:none;">
-							<img src="../zzero/web/themes/website/images/bgpmweixin.jpg"/>
+							<img src="${bd_url}/zzero/web/themes/website/images/bgpmweixin.jpg"/>
 						</div>
 						
 						<script>
