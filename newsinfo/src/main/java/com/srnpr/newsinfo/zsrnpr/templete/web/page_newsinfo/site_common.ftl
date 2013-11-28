@@ -17,9 +17,27 @@
                 <div class="header_box">
                     <div class="lay_header_position">
                         <div class="header_logo"></div>
+                        <div id="header_weixin" style="float:right;width:40px;height:40px;margin-top:90px;margin-left:10px;">
+							<img src="../zzero/web/themes/website/images/bgpmweixin.jpg"/>
+						</div>
+						<div id="header_weixin_big" style="position:absolute;right:0px;top:30px;width:200px;height:200px;z-index:1;display:none;">
+							<img src="../zzero/web/themes/website/images/bgpmweixin.jpg"/>
+						</div>
+						
+						<script>
+						
+						$('#header_weixin').hover(function(){$('#header_weixin_big').show()});
+						$('#header_weixin_big').hover(function(){},function(){$('#header_weixin_big').hide()});
+						
+						</script>
+						
                         <div id="header_user" class="header_user">
 							<a href="${base_url}newsinfo/login-login">登&nbsp;陆</a>&nbsp;|&nbsp;<a href="${base_url}newsinfo/reg-reg">注&nbsp;册</a>
 						</div>
+						
+						
+						
+						
                     </div>
                     <div class="lay_header_nav">
                         <div class="header_nav_left">
