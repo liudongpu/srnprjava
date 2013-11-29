@@ -20,7 +20,7 @@
                         <div id="header_weixin" style="float:right;width:40px;height:40px;margin-top:90px;margin-left:10px;">
 							<img src="${bd_url}/zzero/web/themes/website/images/bgpmweixin.jpg"/>
 						</div>
-						<div id="header_weixin_big" style="position:absolute;right:0px;top:30px;width:200px;height:200px;z-index:1;display:none;">
+						<div id="header_weixin_big" style="position:absolute;right:0px;top:30px;width:200px;height:200px;z-index:99999;display:none;">
 							<img src="${bd_url}/zzero/web/themes/website/images/bgpmweixin.jpg"/>
 						</div>
 						
