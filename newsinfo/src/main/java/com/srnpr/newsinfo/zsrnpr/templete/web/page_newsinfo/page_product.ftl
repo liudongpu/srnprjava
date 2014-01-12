@@ -60,7 +60,7 @@
 							<div class="c_title">名称：<a href="work-work-${el["uid"]}">${el["product_name"]}</a></div>
 							
 							<div class="c_time">
-								时间：<span>${el["product_time"]?date("yyyy-MM-dd")}</span>
+								时间：<span><#if el["product_time"]!="">${el["product_time"]?date("yyyy-MM-dd")}<#else>${.now}</#if></span>
 							</div>
 							${el["product_note"]}
 						</div>

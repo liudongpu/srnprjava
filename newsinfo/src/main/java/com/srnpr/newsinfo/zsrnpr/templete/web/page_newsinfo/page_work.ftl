@@ -13,7 +13,7 @@
 		<div class="work_body">
 			<div class="work_left">
 				<h2>${work_info["product_name"]}</h2>
-				发表时间：${work_info["product_time"]?date("yyyy-MM-dd")}&nbsp;&nbsp;|&nbsp;&nbsp; 文章出处：博观拍卖
+				发表时间：${work_info["product_time"]}&nbsp;&nbsp;|&nbsp;&nbsp; 文章出处：博观拍卖
 				<div class="work_info">
 					${work_info["product_note"]}</div>
 					
@@ -28,7 +28,7 @@
 			<div class="work_right">
 				<div class="work_icons">
 					<img
-						src="http://bgpm.cf.srnpr.com/zzero/file/images_upload/20130512/7ff3b89909d14b2487e80d1c6f9ad423.jpg" />
+						src="${product_people["file_url"]}" />
 				</div>
 				<div class="work_meta">
 					<h3>${product_people["name"]}</h3>
