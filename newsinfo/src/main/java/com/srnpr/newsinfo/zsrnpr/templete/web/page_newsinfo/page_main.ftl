@@ -54,27 +54,24 @@
                 
                 <div class="index_banner">
                     <div class="index_banner_item">
-                        <a href="/newsinfo/notice-list">
-                        <img src="${base_zero}themes/website/images/index_banner_1.jpg"/>
-                        </a>
+                    
+                    	<#assign page_book_adv_top= pageexec.upDataOne("info_static","code","303300030037") >
+						<a href="${page_book_adv_top["link"]}" target="_blank"><img src="${page_book_adv_top["file_url"]}" /></a>
                     </div>
                     <div class="index_banner_split"></div>
                     <div class="index_banner_item">
-                          <a href="/newsinfo/auction-list">
-                       <img src="${base_zero}themes/website/images/index_banner_2.jpg"/>
-                        </a>
+                        <#assign page_book_adv_top= pageexec.upDataOne("info_static","code","303300030036") >
+						<a href="${page_book_adv_top["link"]}" target="_blank"><img src="${page_book_adv_top["file_url"]}" /></a>
                     </div>
                     <div class="index_banner_split"></div>
                     <div class="index_banner_item">
-                          <a href="/newsinfo/book-list">
-                        <img src="${base_zero}themes/website/images/index_banner_3.jpg"/>
-                        </a>
+                        <#assign page_book_adv_top= pageexec.upDataOne("info_static","code","303300030035") >
+						<a href="${page_book_adv_top["link"]}" target="_blank"><img src="${page_book_adv_top["file_url"]}" /></a>
                     </div>
                     <div class="index_banner_split"></div>
                     <div class="index_banner_item">
-                         <a href="/newsinfo/people-list">
-                        <img src="${base_zero}themes/website/images/index_banner_4.jpg"/>
-                        </a>
+                        <#assign page_book_adv_top= pageexec.upDataOne("info_static","code","303300030034") >
+						<a href="${page_book_adv_top["link"]}" target="_blank"><img src="${page_book_adv_top["file_url"]}" /></a>
                     </div>
                 </div>
                 
