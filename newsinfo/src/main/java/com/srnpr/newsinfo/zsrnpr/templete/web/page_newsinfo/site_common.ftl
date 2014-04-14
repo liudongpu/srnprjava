@@ -1,5 +1,5 @@
 
-<#assign bd_url="http://bcs.duapp.com/bgpmfile">
+<#assign bd_url="http://bgpmcdn.yinxl.com">
 
 
 <#macro m_site_common_header nav="" title="" >
