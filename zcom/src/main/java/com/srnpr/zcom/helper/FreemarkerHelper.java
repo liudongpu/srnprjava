@@ -59,6 +59,11 @@ public class FreemarkerHelper extends BaseClass {
 					new File(sTempPath));
 
 			configuration.setEncoding(Locale.CHINA, "UTF-8");
+			configuration.setDateTimeFormat("yyyy-MM-dd HH:mm:ss");
+			configuration.setDateFormat("yyyy-MM-dd");
+			configuration.setOutputEncoding("UTF-8");
+			configuration.setDefaultEncoding("UTF-8");
+			configuration.setTimeFormat("HH:mm:ss");
 			configuration.setTemplateLoader(fTemplateLoader);
 			Template template = configuration.getTemplate(sTempName);
 
