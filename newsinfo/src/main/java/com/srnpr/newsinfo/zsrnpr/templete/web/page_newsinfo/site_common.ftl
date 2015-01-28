@@ -1,5 +1,5 @@
 
-<#assign bd_url="http://bgpmcdn.yinxl.com">
+<#assign bd_url="">
 
 
 <#macro m_site_common_header nav="" title="" >

@@ -222,11 +222,11 @@ public class UserCall extends BaseClass {
 				
 				
 				MHashMap mMap = new MHashMap();
-				mMap.put("cookie_id", mUserInfo.get("cookie_id"));
-
+				mMap.put("cookie_id", ComFunction.upUuid());
+				mMap.put("zid", mUserInfo.get("zid"));
 				mMap.put("login_pass", pRequest.getReqMap().get("login_pass")
 						.toString());
-				DataTableManager.Get("user_info").inPost(mMap, "cookie_id");
+				DataTableManager.Get("user_info").inPost(mMap, "zid");
 				
 				
 				
