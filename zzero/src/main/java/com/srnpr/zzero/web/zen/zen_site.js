@@ -48,6 +48,33 @@ zen
 					return sShareUrl;
 				},
 
+				urlget : function(sKey, sUrl) {
+
+					var sReturn = "";
+
+					if (!sUrl) {
+						sUrl = location.href;
+						if (sUrl.indexOf('?') < 1) {
+							sUrl = sUrl + "?";
+						}
+					}
+
+					var sParams = sUrl.split('?')[1].split('&');
+
+					for (var i = 0, j = sParams.length; i < j; i++) {
+
+						var sKv = sParams[i].split("=");
+						if (sKv[0] == sKey) {
+							sReturn = sKv[1];
+							break;
+						}
+					}
+
+					return sReturn;
+
+				},
+				
+				
 				success : function(data, fSuc) {
 					// alert(o);
 					var obj = $.evalJSON(data);
@@ -105,6 +132,38 @@ zen
 					zen.site.login_success(o);
 					zen.site.model('提示消息', '注册成功！', function() {
 						zen.site.href('newsinfo/usercenter-user');
+					});
+				},
+				login_forget : function() {
+
+					zen.site.post('forget', {
+						login_name : $('#login_name').val()
+					}, zen.site.forget_success);
+
+				},
+				forget_success : function(o) {
+
+					zen.site.model('提示消息', '发送邮件成功，请到邮箱继续下一步操作！', function() {
+
+					});
+				},
+				login_repass : function() {
+
+					if ($('#login_pass').val() != $('#login_pass2').val()) {
+						zen.site.model('错误消息', '密码与重复密码输入不一致！');
+					} else {
+
+						zen.site.post('repass', {
+							cookie_id : zen.site.urlget('code'),
+							login_pass : $('#login_pass').val()
+						}, zen.site.repass_success);
+					}
+
+				},
+				repass_success : function(o) {
+
+					zen.site.model('提示消息', '重置密码成功，请重新登陆！', function() {
+
 					});
 				},
 
@@ -202,14 +261,15 @@ zen
 					}
 
 					if (oSuccess.result && oSuccess.result.length > 0) {
-						for ( var i = 0, j = oSuccess.result.length; i < j; i++) {
+						for (var i = 0, j = oSuccess.result.length; i < j; i++) {
 
 							var oItem = oSuccess.result[i];
 
 							aHtml
 									.push('<div class="c_item"><div class="c_title"><span>'
 											+ oItem["username"]
-											+(oItem["userlevel"]=="30210002"?'<i class="b_icon b_vip" title="名家账号"></i>':'')
+											+ (oItem["userlevel"] == "30210002" ? '<i class="b_icon b_vip" title="名家账号"></i>'
+													: '')
 											+ '</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'
 											+ oItem["comment_date"]
 											+ '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'
@@ -391,7 +451,7 @@ zen
 								(iSize * iItemSize) + 'px');
 
 						if (iSize > iShowSize) {
-							for ( var i = iSize - iShowSize, j = 0; i >= j; i--) {
+							for (var i = iSize - iShowSize, j = 0; i >= j; i--) {
 								$('#' + sId + ' .zen_picnav_nav ul')
 										.prepend(
 												'<li id="'

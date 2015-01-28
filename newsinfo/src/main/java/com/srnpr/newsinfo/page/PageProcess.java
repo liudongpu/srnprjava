@@ -35,7 +35,8 @@ public class PageProcess implements IWebProcess {
 		mPageInfo.setPageInclude(wRequest.upSet(EWebSet.Url_Target));
 
 		// if user
-		if (wRequest.upSet(EWebSet.Url_View).equals("user")||wRequest.upSet(EWebSet.Url_Target).equals("club")) {
+		if (wRequest.upSet(EWebSet.Url_View).equals("user")
+				|| wRequest.upSet(EWebSet.Url_Target).equals("club")) {
 			mPageInfo.setPageOptions(upUserInfo());
 		}
 		return mPageInfo;
@@ -70,27 +71,24 @@ public class PageProcess implements IWebProcess {
 			mResult = new UserCall(pRequest).Reg();
 		} else if (sView.equals("login")) {
 			mResult = new UserCall(pRequest).Login();
-		}
-		else if (sView.equals("change_info")) {
+		} else if (sView.equals("forget")) {
+			mResult = new UserCall(pRequest).Forget();
+		}  else if (sView.equals("repass")) {
+			mResult = new UserCall(pRequest).Repass();
+		}else if (sView.equals("change_info")) {
 			mResult = new UserCall(pRequest).ChangeInfo(upUserInfo());
-		}else if (sView.equals("change_pass")) {
+		} else if (sView.equals("change_pass")) {
 			mResult = new UserCall(pRequest).ChangePass(upUserInfo());
-		}else if(sView.equals("comment_show"))
-		{
-			mResult=new InfoCall(pRequest).CommentList();
+		} else if (sView.equals("comment_show")) {
+			mResult = new InfoCall(pRequest).CommentList();
 		}
-		
-		else if(sView.equals("comment_submit"))
-		{
-			mResult=new InfoCall(pRequest).CommentSubmit(upUserInfo());
-		}
-		else if(sView.equals("collect_submit"))
-		{
-			mResult=new InfoCall(pRequest).CollectSubmit(upUserInfo());
-		}
-		else if(sView.equals("update_goods"))
-		{
-			mResult=new InfoCall(pRequest).updateGoods();
+
+		else if (sView.equals("comment_submit")) {
+			mResult = new InfoCall(pRequest).CommentSubmit(upUserInfo());
+		} else if (sView.equals("collect_submit")) {
+			mResult = new InfoCall(pRequest).CollectSubmit(upUserInfo());
+		} else if (sView.equals("update_goods")) {
+			mResult = new InfoCall(pRequest).updateGoods();
 		}
 		return mResult;
 

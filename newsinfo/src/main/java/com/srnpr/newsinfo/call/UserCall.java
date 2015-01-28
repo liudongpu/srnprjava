@@ -12,6 +12,7 @@ import com.srnpr.zcom.helper.FormatHelper;
 import com.srnpr.zcom.model.MHashMap;
 import com.srnpr.zcom.model.MResult;
 import com.srnpr.zdata.manager.DataTableManager;
+import com.srnpr.zweb.helper.MailSupport;
 import com.srnpr.zweb.page.PageExec;
 import com.srnpr.zweb.page.PageRequest;
 
@@ -150,6 +151,98 @@ public class UserCall extends BaseClass {
 		return result;
 
 	}
+	
+	
+	public MResult Forget() {
+
+		if (!StringUtils.isNotEmpty(pRequest.getReqMap().get("login_name")
+				.toString())) {
+			result.error(937301002);
+		} 
+
+		if (result.getFlag()) {
+			Map<String, Object> mUserInfo = DataTableManager.Get("user_info")
+					.upOneMap("login_name",
+							pRequest.getReqMap().get("login_name").toString());
+			
+			if (mUserInfo != null) {
+				MHashMap mHashMap = new MHashMap();
+
+				
+				
+				MailSupport mailSupport=new MailSupport();
+				
+				StringBuilder sb=new StringBuilder();
+				
+				sb.append("亲爱的博观拍卖用户：<br/><br/>");
+				sb.append("你正在通过邮箱找回你的帐号登录密码，请点击以下链接重设你的密码：<br/><br/>");
+				
+				String sLink="http://www.boguanpaimai.com/newsinfo/repass-repass?code="+mUserInfo.get("cookie_id");
+				
+				sb.append("<a href=\""+sLink+"\">"+sLink+"</a><br/><br/> ");
+				
+				sb.append("若点击无效，请将该链接复制到浏览器地址栏中并直接访问。<br/><br/>  ");
+				
+				
+				
+				
+				mailSupport.sendMail(mUserInfo.get("login_name").toString(), "博观拍卖找回密码邮件", sb.toString(), "smtp.exmail.qq.com", "bgpmreset@qq.srnpr.com", "bgpm2015");
+				
+				
+
+				result.setResult(mHashMap);
+
+			} else {
+				result.error(937301006);
+			}
+			
+			
+			
+		}
+		return result;
+
+	}
+	
+	
+	public MResult Repass() {
+
+		if (!StringUtils.isNotEmpty(pRequest.getReqMap().get("login_pass")
+				.toString())) {
+			result.error(937301002);
+		}
+
+		if (result.getFlag()) {
+
+			Map<String, Object> mUserInfo = DataTableManager.Get("user_info")
+					.upOneMap("cookie_id",
+							pRequest.getReqMap().get("cookie_id").toString());
+			
+			if (mUserInfo != null) {
+				MHashMap mHashMap = new MHashMap();
+				
+				
+				MHashMap mMap = new MHashMap();
+				mMap.put("cookie_id", mUserInfo.get("cookie_id"));
+
+				mMap.put("login_pass", pRequest.getReqMap().get("login_pass")
+						.toString());
+				DataTableManager.Get("user_info").inPost(mMap, "cookie_id");
+				
+				
+				
+				result.setResult(mHashMap);
+				
+			}else {
+				result.error(937301006);
+			}
+			
+		}
+		return result;
+
+	}
+	
+	
+	
 
 	public MResult ChangeInfo(Map<String, Object> mUserInfo) {
 
