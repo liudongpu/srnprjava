@@ -3,6 +3,8 @@ package com.srnpr.zweb.page;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.apache.commons.lang.StringUtils;
+
 import com.srnpr.zcom.base.BaseClass;
 import com.srnpr.zcom.helper.FreemarkerHelper;
 import com.srnpr.zcom.manager.ConfigCacheManager;
@@ -24,6 +26,9 @@ public class WebPage extends BaseClass {
 		switch (wRequest.getDidPageType()) {
 		case 416120106:
 			sReturn=upPageJson(wRequest);
+			break;
+		case 987654322:
+			sReturn=upPageCustom(wRequest);
 			break;
 		default:
 			sReturn=upPageObj(wRequest);
@@ -72,6 +77,33 @@ public class WebPage extends BaseClass {
 		return upConvert(mConfig.getBaseInclude(), hPageTemp);
 	}
 	
+	
+	private String upPageCustom(PageRequest wRequest)
+	{
+		HashMap<Object, Object> hPageTemp = new HashMap<Object, Object>();
+		HashMap<Object, Object> hWebPage = new HashMap<Object, Object>();
+		
+		
+		
+		MWebConfig mConfig = WebConst.GetWebConfig(wRequest
+				.upSet(EWebSet.Url_Path));
+		
+		mConfig.setBaseInclude("page_"+wRequest
+				.upSet(EWebSet.Url_Path)+"/"+"base_custom");
+		
+		hWebPage.put("PageConfig", mConfig);
+		MWebPage mPageInfo = WebConst.GetWebProcess(
+				wRequest.upSet(EWebSet.Url_Path)).Process(wRequest);
+		mPageInfo.setWebSet(wRequest.convertWebSet());
+		
+		hWebPage.put("PageInfo", mPageInfo);
+		hWebPage.put("PageExec", pageExec);
+		
+		hWebPage.put("PageMethod", mConfig.getPageMethod());
+		
+		hPageTemp.put("WebPage", hWebPage);
+		return upConvert(mConfig.getBaseInclude(), hPageTemp);
+	}
 	
 	
 	
@@ -136,6 +168,7 @@ public class WebPage extends BaseClass {
 				
 			}
 		}
+		
 		
 		
 		
