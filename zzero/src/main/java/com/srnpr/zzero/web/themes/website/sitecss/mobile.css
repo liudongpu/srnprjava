@@ -1,0 +1,287 @@
+html {
+	width: 640px;
+	height: 100%;
+	font-size: 62.5%; /* 10¡Â16=62.5% */
+}
+
+.mobile_body {
+	font-family: Microsoft Yahei;
+}
+
+.mobile_w_h5 {
+	height: 5px;
+}
+
+.mobile_w_h20 {
+	height: 20px;
+}
+
+.mobile_w_border_b {
+	border-bottom: solid 1px #ebebeb;
+}
+
+.mobile_w_border_t {
+	border-top: solid 1px #ebebeb;
+}
+
+.mobile_w_border_r {
+	border-right: solid 1px #ebebeb;
+}
+
+.mobile_w_bg_white {
+	background-color: #ffffff;
+}
+
+.mobile_w_bg_base {
+	background-color: #f9f9f7;
+}
+
+.mobile_lay_head {
+	background-image: url("../mimg/mobile-repx.png");
+	background-position: 0px 0px;
+	height: 88px;
+	width: 100%;
+	position: relative;
+}
+
+.mobile_head_left {
+	background-image: url("../mimg/mobile-img.png");
+	background-position: 0px 0px;
+	height: 88px;
+	width: 90px;
+	float: left;
+}
+
+.mobile_head_center {
+	width: 50%;
+	margin-left: 25%;
+	position: absolute;
+}
+
+.mobile_head_logo {
+	background-image: url("../mimg/mobile-img.png");
+	background-position: -200px 0px;
+	height: 80px;
+	width: 200px;
+	margin: auto;
+}
+
+.mobile_head_right {
+	background-image: url("../mimg/mobile-img.png");
+	background-position: -100px 0px;
+	height: 88px;
+	width: 90px;
+	float: right;
+}
+
+.mobile_head_menu {
+	width: 45%;
+	min-height: 100px;
+	border-left: solid 1px #bbbfbe;
+	border-bottom: solid 1px #bbbfbe;
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	background-color: #fff;
+	z-index: 20;
+	top: 88px;
+	display:none;
+}
+
+.mobile_head_menu_content
+{
+	width:90%;
+	float:right;
+}
+.mobile_head_menu_item
+{
+	height:86px;
+}
+
+.mobile_head_menu_left
+{
+	float:left;
+	width:65px;
+	height:86px;
+	background-image: url("../mimg/mobile-img.png");
+	
+}
+
+.mobile_head_menu_one
+{
+	background-position: 0px -200px;
+}
+.mobile_head_menu_two
+{
+	background-position: -100px -200px;
+}
+.mobile_head_menu_three
+{
+	background-position: -200px -200px;
+}
+.mobile_head_menu_four
+{
+	background-position: -300px -200px;
+}
+.mobile_head_menu_five
+{
+	background-position: -400px -200px;
+}
+
+
+.mobile_head_menu_right
+{
+	float:left;
+	font-size:2.6rem;
+	line-height:86px;
+	
+}
+
+
+.mobile_lay_main {
+	clear: both;
+}
+
+.mobile_mindex_body {
+	
+}
+
+.mobile_mindex_adv {
+	
+}
+
+.mobile_mindex_adv img {
+	margin: auto;
+}
+
+.mobile_mindex_tips {
+	height: 90px;
+	border-top: solid 1px #ebece8;
+	border-bottom: solid 1px #ebece8;
+}
+
+.mobile_mindex_tips_left {
+	float: left;
+	width: 50px;
+	background-image: url("../mimg/mobile-img.png");
+	background-position: -400px 0px;
+	height: 90px;
+}
+
+.mobile_mindex_tips_text {
+	float: left;
+	width: 300px;
+	font-size: 3rem;
+	line-height: 90px;
+	height: 90px;
+}
+
+.mobile_mindex_tips_right {
+	float: right;
+	width: 50px;
+	background-image: url("../mimg/mobile-img.png");
+	background-position: -450px 0px;
+	height: 90px;
+}
+
+.mobile_mindex_content_item {
+	padding-top: 30px;
+	width: 90%;
+	margin-left: 5%;
+	min-height: 150px;
+	width: 90%;
+}
+
+.mobile_mindex_content_left {
+	float: left;
+	width: 66%;
+}
+
+.mobile_mindex_content_right {
+	float: right;
+	width: 30%;
+}
+
+.mobile_mindex_content_ico {
+	float: left;
+	width: 40px;
+}
+
+.mobile_mindex_content_ico_one {
+	width: 25px;
+	background-image: url("../mimg/mobile-img.png");
+	background-position: -500px 0px;
+	height: 25px;
+}
+
+.mobile_mindex_content_ico_two {
+	width: 25px;
+	background-image: url("../mimg/mobile-img.png");
+	background-position: -526px 0px;
+	height: 25px;
+}
+
+.mobile_mindex_content_author {
+	float: left;
+	min-width: 50px; font-size : 1.6rem;
+	color: #999999;
+	line-height: 2.5rem;
+	font-size: 1.6rem;
+}
+
+.mobile_mindex_content_date {
+	float: right;
+	width: 120px;
+	font-size: 1.6rem;
+	color: #999999;
+	line-height: 2.5rem;
+}
+
+.mobile_mindex_content_title {
+	font-size: 2.8rem;
+	line-height: 4rem;
+}
+
+.mobile_mindex_menu {
+	height: 170px;
+	background-color: #fefefe;
+}
+
+.mobile_mindex_menu_box {
+	margin-left: 2%;
+}
+
+.mobile_mindex_menu_item {
+	width: 24%;
+	height: 170px;
+	float: left;
+}
+
+.mobile_mindex_menu_ico {
+	width: 100px;
+	background-image: url("../mimg/mobile-img.png");
+	background-position: -200px -100px;
+	height: 100px;
+	margin: auto;
+}
+
+.mobile_mindex_menu_one {
+	background-position: -200px -100px;
+}
+
+.mobile_mindex_menu_two {
+	background-position: -300px -100px;
+}
+
+.mobile_mindex_menu_three {
+	background-position: -400px -100px;
+}
+
+.mobile_mindex_menu_four {
+	background-position: -500px -100px;
+}
+
+.mobile_mindex_menu_text {
+	text-align: center;
+	font-size: 2.4rem;
+}

@@ -1,6 +1,6 @@
 
 <#assign bd_url="">
-
+<#assign bd_img_cdn_url="http://www.boguanpaimai.com">
 
 <#macro m_site_common_header nav="" title="" >
 
@@ -288,63 +288,54 @@ $(window).ready(function(){zen.site.comment_show('${uid}')});
 <title><@m_site_common_title nav title /></title> 
 <meta name="keywords" content="博观拍卖,拍卖,博观,珠宝,玉石,机构" />
 <meta name="description" content="${title}-博观拍卖 - 中国珠宝玉石专业拍卖机构" />
+<meta
+	content="width=device-width, initial-scale=0.65, maximum-scale=1.0, user-scalable=0"
+	name="viewport" />
+<meta content="yes" name="apple-mobile-web-app-capable" />
+<meta content="black" name="apple-mobile-web-app-status-bar-style" />
+<meta content="telephone=no" name="format-detection" />
+<meta content="email=no" name="format-detection" />
 
 
+<link type="text/css" href="${bd_url}/zzero/web/themes/website/sitecss/mobile.css"
+	rel="stylesheet">
+<script type="text/javascript" src="${bd_url}/zzero/web/zen/zen_mobile.js"></script>
+	
 </head>
-<body class="website_body">
-	<div class="layout_header">
-            <div class="header_top">
-                <div class="website_center">
-                <div class="header_box">
-                    <div class="lay_header_position">
-                        <div class="header_logo"></div>
-                        <div id="header_weixin" style="float:right;width:40px;height:40px;margin-top:90px;margin-left:10px;">
-							<img src="${bd_url}/zzero/web/themes/website/images/bgpmweixin.jpg"/>
-						</div>
-						<div id="header_weixin_big" style="position:absolute;right:0px;top:30px;width:200px;height:200px;z-index:99999;display:none;">
-							<img src="${bd_url}/zzero/web/themes/website/images/bgpmweixin.jpg"/>
-						</div>
-						
-						<script>
-						
-						$('#header_weixin').hover(function(){$('#header_weixin_big').show()});
-						$('#header_weixin_big').hover(function(){},function(){$('#header_weixin_big').hide()});
-						
-						</script>
-						
-                        <div id="header_user" class="header_user">
-							<a href="${base_url}newsinfo/login-login">登&nbsp;陆</a>&nbsp;|&nbsp;<a href="${base_url}newsinfo/reg-reg">注&nbsp;册</a>
-						</div>
-						
-						
-						
-						
-                    </div>
-                    <div class="lay_header_nav">
-                        <div class="header_nav_left">
-                            <ul>
-                                <li><a <#if (nav=="main")> class="active"</#if> href="/">首 页</a></li>
-                                <li><a <#if (nav=="info")> class="active"</#if> href="/newsinfo/info-list">博观资讯</a></li>
-                                <li><a <#if (nav=="notice")> class="active"</#if> href="/newsinfo/notice-list">博观公告</a></li>
-                                <li><a <#if (nav=="auction")> class="active"</#if> href="/newsinfo/auction-list">预展及成交 </a></li>
-                                <li><a <#if (nav=="book")> class="active"</#if> href="/newsinfo/book-list"> 博观书房 </a></li>
-                                <li><a <#if (nav=="club")> class="active"</#if> href="/newsinfo/club-list">博观俱乐部 </a></li>
-                                <li><a <#if (nav=="people")> class="active"</#if> href="/newsinfo/people-list">名家论道</a></li>
-                            </ul>
-                        </div>
-                        <div class="header_nav_right">
-                            <div class="header_nav_search" onmouseover="$('#site_common_search_box').show()">
-								<input type="text" id="site_common_search_box" style="display:none;" />
-								<div onclick="zen.site.search()"></div>
-							</div>
-                        </div>
-                    </div>
-                    
-                    <div class="header_regtip"></div>
-                </div>
-                </div>
-            </div>
-        </div>
+<body class="mobile_body mobile_w_bg_base">
+
+	<div class="mobile_lay_head">
+		<div class="mobile_head_left"></div>
+		<div class="mobile_head_center">
+			<div class="mobile_head_logo"></div>
+		</div>
+		<div class="mobile_head_right" onclick="zen.mobile.menu_open()"></div>
+		<div class="mobile_head_menu" id="mobile_head_menu">
+			<div class="mobile_head_menu_content">
+				<div class="mobile_head_menu_item mobile_w_border_b">
+					<div class="mobile_head_menu_left mobile_head_menu_one"></div>
+					<div class="mobile_head_menu_right">分享</div>
+				</div>
+				<div class="mobile_head_menu_item mobile_w_border_b">
+					<div class="mobile_head_menu_left mobile_head_menu_two"></div>
+					<div class="mobile_head_menu_right">回到首页</div>
+				</div>
+				<div class="mobile_head_menu_item mobile_w_border_b">
+					<div class="mobile_head_menu_left mobile_head_menu_three"></div>
+					<div class="mobile_head_menu_right">联系电话</div>
+				</div>
+				<div class="mobile_head_menu_item mobile_w_border_b">
+					<div class="mobile_head_menu_left mobile_head_menu_four"></div>
+					<div class="mobile_head_menu_right">在线送拍</div>
+				</div>
+				<div class="mobile_head_menu_item">
+					<div class="mobile_head_menu_left mobile_head_menu_five"></div>
+					<div class="mobile_head_menu_right">客户服务</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
 </#macro>
 
 
