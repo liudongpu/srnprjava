@@ -9,6 +9,10 @@ zen
 					user_cookieid : ''
 
 				},
+				config:{
+					img_url:'http://www.boguanpaimai.com/'
+					
+				},
 
 				init : function() {
 					zen.site.initlogin();

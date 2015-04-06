@@ -56,6 +56,22 @@ public class InfoCall extends BaseClass {
 		return result;
 	}
 
+	public MResult NewsList() {
+
+		int iPageIndex = Integer.valueOf(pRequest.getReqMap().get("page_index")
+				.toString());
+
+		if (result.getFlag()) {
+			result.setResult(DataTableManager.Get("info_news").upList("zid,uid,title,note,file_url,create_time",
+					"-create_time", iPageIndex * 10, (iPageIndex + 1) * 10,
+					new MHashMap()));
+			// result.setMessage(sUid);
+
+		}
+
+		return result;
+	}
+
 	public MResult CommentSubmit(Map<String, Object> mUserInfo) {
 
 		String sUid = pRequest.getReqMap().get("uid").toString();
@@ -139,54 +155,43 @@ public class InfoCall extends BaseClass {
 		}
 
 		if (result.getFlag()) {
-			
-			ZipHelper zipHelper=new ZipHelper();
-			
+
+			ZipHelper zipHelper = new ZipHelper();
+
 			String sZip = pRequest.upRequestParam("zip");
-			
+
 			String sFileUrl = CommonConst.Get(EComConst.root_realpath_baseweb)
 					+ sZip;
-			
-			
-			
-			
-			
-			String sPath=CommonConst.Get(EComConst.root_realpath_baseweb)+"/zzero/file/images_zip/";
-			
-			List<String> lFiles= zipHelper.upZipFiles(sFileUrl, sPath+sUid+"/");
-			
-			for(String s:lFiles)
-			{
-				String sFileName=FilenameUtils.getName(s);
-				
-				
-				Map<String, Object> mExit= ts.upOneMap("code",FilenameUtils.getBaseName(sFileName),"special_uid", sUid);
-				
-				if(mExit!=null)
-				{
-					
-					MHashMap mUpdate=new MHashMap();
+
+			String sPath = CommonConst.Get(EComConst.root_realpath_baseweb)
+					+ "/zzero/file/images_zip/";
+
+			List<String> lFiles = zipHelper.upZipFiles(sFileUrl, sPath + sUid
+					+ "/");
+
+			for (String s : lFiles) {
+				String sFileName = FilenameUtils.getName(s);
+
+				Map<String, Object> mExit = ts.upOneMap("code",
+						FilenameUtils.getBaseName(sFileName), "special_uid",
+						sUid);
+
+				if (mExit != null) {
+
+					MHashMap mUpdate = new MHashMap();
 					mUpdate.put("uid", mExit.get("uid"));
-					mUpdate.put("file_url", "/zzero/file/images_zip/"+sUid+"/"+sFileName);
-					
+					mUpdate.put("file_url", "/zzero/file/images_zip/" + sUid
+							+ "/" + sFileName);
+
 					ts.inPost(mUpdate, "uid");
-					
+
 				}
-				
-				
-				
+
 			}
-			
-			
-			
-			
-			
 
 		}
-		
-		
-		if(result.getFlag())
-		{
+
+		if (result.getFlag()) {
 			result.setMessage(BInfo(937309001));
 		}
 

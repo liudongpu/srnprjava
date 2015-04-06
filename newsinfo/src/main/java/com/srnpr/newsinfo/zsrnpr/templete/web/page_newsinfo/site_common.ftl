@@ -283,7 +283,7 @@ $(window).ready(function(){zen.site.comment_show('${uid}')});
 
 
 
-<#macro m_mb_common_header nav="" title="" >
+<#macro m_mb_common_header nav="" title="" type="0" >
 
 <title><@m_site_common_title nav title /></title> 
 <meta name="keywords" content="博观拍卖,拍卖,博观,珠宝,玉石,机构" />
@@ -301,8 +301,38 @@ $(window).ready(function(){zen.site.comment_show('${uid}')});
 	rel="stylesheet">
 <script type="text/javascript" src="${bd_url}/zzero/web/zen/zen_mobile.js"></script>
 	
+
+<#if type=="1" >
+		<script type="text/javascript" src="${bd_url}/zzero/web/lib/iscroll/iscroll-probe.js"></script>
+
+	<style>
+	* {
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		box-sizing: border-box;
+	}
+	
+	html {
+		-ms-touch-action: none;
+	}
+	
+	body {
+		height: 100px;
+		overflow: hidden;
+		/* this is important to prevent the whole page to bounce */
+	}
+	</style>
+</#if>
+
+	
 </head>
 <body class="mobile_body mobile_w_bg_base">
+
+<#if type=="1" >
+		<div class="mobile_base_scroll_wrap" id="mobile_base_scroll_wrap">
+		<div class="mobile_base_scroll_box" id="mobile_base_scroll_box">
+</#if>
+
 
 	<div class="mobile_lay_head">
 		<div class="mobile_head_left"></div>
