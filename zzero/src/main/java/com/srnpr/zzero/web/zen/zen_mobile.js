@@ -16,6 +16,11 @@ zen
 
 				},
 
+				to_page:function(sUrl)
+				{
+					location.href=sUrl;
+				},
+				
 				page_mnews : function() {
 
 					//zen.mobile.temp.refresh_func=zen.mobile.news_refresh;
@@ -29,9 +34,16 @@ zen
 
 				refresh_page : function(f) {
 					myScroll = new IScroll('#mobile_base_scroll_wrap', {
-						probeType : 3,
-						mouseWheel : true
+						//probeType : 3,
+						mouseWheel : true,
+						//preventDefault:false,
+						preventDefaultException:{tagName: /^(INPUT|TEXTAREA|BUTTON|SELECT|A|DIV)$/ }
+						
 					});
+					
+					
+					
+					
 
 					function updatePosition() {
 
@@ -56,10 +68,10 @@ zen
 					}
 
 					myScroll.on('scrollEnd', updatePosition);
-
+					/*
 					document.addEventListener('touchmove', function(e) {
 						e.preventDefault();
-					}, false);
+					}, false);*/
 
 				},
 
@@ -82,9 +94,9 @@ zen
 						aHtml
 								.push('<div class="mobile_mnews_item mobile_w_border_t"><div class="mobile_mnews_bg"><div class="mobile_mnews_box"><div class="mobile_w_h20"></div>');
 
-						aHtml.push('<div class="mobile_mnews_title">'
+						aHtml.push('<a href="/newsinfo/mcontent-content-'+oe["uid"]+'"><div class="mobile_mnews_title" >'
 								+ oe["title"]
-								+ '</div><div class="mobile_w_h20"></div>');
+								+ '</div><div class="mobile_w_h20"></div></a>');
 
 						aHtml
 								.push('<div class="<div class="mobile_mnews_tips">发表时间：'

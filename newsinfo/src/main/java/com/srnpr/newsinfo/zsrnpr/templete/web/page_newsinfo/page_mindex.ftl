@@ -49,14 +49,15 @@
 			<div class="mobile_mindex_tips mobile_w_bg_white">
 				<div class="mobile_mindex_tips_left"></div>
 				<div class="mobile_mindex_tips_text">博观资讯</div>
-				<div class="mobile_mindex_tips_right"></div>
+				<div class="mobile_mindex_tips_right"><a href="/newsinfo/mnews-list"><div class="mobile_base_inbox"></div></a></div>
 			</div>
 			<div class="mobile_mindex_content mobile_w_bg_white">
 
 				<#list mb_index_list as el>
 				<div class="mobile_mindex_content_item 	<#if el_index==0>mobile_w_border_b</#if> ">
+				<a href="/newsinfo/mcontent-content-${el["uid"]}">
 					<div class="mobile_mindex_content_left">
-						<div class="mobile_mindex_content_title">${el["title"]}</div>
+						<div class="mobile_mindex_content_title"> ${el["title"]}</div>
 						<div class="mobile_w_h20"></div>
 						<div class="mobile_mindex_content_ico">
 							<div  <#if el_index==0>class="mobile_mindex_content_ico_one"</#if>  <#if el_index==1>class="mobile_mindex_content_ico_two"</#if> ></div>
@@ -68,6 +69,7 @@
 						<img
 							src="${bd_img_cdn_url}${el["file_url"]}" />
 					</div>
+					</a>
 				</div>
 
 				</#list>

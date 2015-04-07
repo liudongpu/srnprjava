@@ -347,8 +347,10 @@ $(window).ready(function(){zen.site.comment_show('${uid}')});
 					<div class="mobile_head_menu_right">分享</div>
 				</div>
 				<div class="mobile_head_menu_item mobile_w_border_b">
+				<a href="/newsinfo/mindex-list">
 					<div class="mobile_head_menu_left mobile_head_menu_two"></div>
 					<div class="mobile_head_menu_right">回到首页</div>
+				</a>
 				</div>
 				<div class="mobile_head_menu_item mobile_w_border_b">
 					<div class="mobile_head_menu_left mobile_head_menu_three"></div>
