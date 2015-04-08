@@ -92,8 +92,10 @@
 					<div class="mobile_mindex_menu_item mobile_w_border_r">
 
 						<div class="mobile_w_h20"></div>
+						<a href="/newsinfo/mnotice-list">
 						<div class="mobile_mindex_menu_ico mobile_mindex_menu_two"></div>
 						<div class="mobile_mindex_menu_text">公告</div>
+						</a>
 
 					</div>
 					<div class="mobile_mindex_menu_item mobile_w_border_r">

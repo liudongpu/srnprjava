@@ -63,7 +63,7 @@ public class InfoCall extends BaseClass {
 
 		if (result.getFlag()) {
 			result.setResult(DataTableManager.Get("info_news").upList("zid,uid,title,note,file_url,create_time",
-					"-create_time", iPageIndex * 10, 10,
+					"-orderid,-create_time", iPageIndex * 10, 10,
 					new MHashMap()));
 			// result.setMessage(sUid);
 
@@ -71,6 +71,48 @@ public class InfoCall extends BaseClass {
 
 		return result;
 	}
+	
+	
+	public MResult NoticeList() {
+
+		int iPageIndex = Integer.valueOf(pRequest.getReqMap().get("page_index")
+				.toString());
+
+		if (result.getFlag()) {
+			result.setResult(DataTableManager.Get("info_notice").upList("zid,uid,title,note,content,create_time",
+					"-orderid,-create_time", iPageIndex * 10, 10,
+					new MHashMap()));
+			// result.setMessage(sUid);
+
+		}
+
+		return result;
+	}
+	
+	
+	
+	
+	public MResult PicList() {
+
+		int iPageIndex = Integer.valueOf(pRequest.getReqMap().get("page_index")
+				.toString());
+		String sUid = pRequest.getReqMap().get("pic_uid").toString();
+		
+		
+		MHashMap map=new MHashMap();
+		map.put("special_uid", sUid);
+		
+		if (result.getFlag()) {
+			result.setResult(DataTableManager.Get("info_good").upList("zid,uid,name,code,assess_price,success_price,file_url",
+					"code", iPageIndex * 10, 10,
+					map));
+			// result.setMessage(sUid);
+
+		}
+
+		return result;
+	}
+	
 
 	public MResult CommentSubmit(Map<String, Object> mUserInfo) {
 

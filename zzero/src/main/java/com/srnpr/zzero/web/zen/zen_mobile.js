@@ -7,7 +7,8 @@ zen
 					page_index : 0,
 
 					flag_process : 0,
-					refresh_func : null
+					refresh_func : null,
+					temp_uid : ''
 
 				},
 				menu_open : function() {
@@ -26,39 +27,43 @@ zen
 
 					var iLength = s.length - 1;
 					var sLastYear = '';
-					
-					$.each(s, function(i, obj) {
 
-						// var sYear
-						var sThisYear = $(obj).find('.mobile_mauction_year')
-								.text().substr(0, 4);
-						var sLastYear = '';
-						if (i < iLength) {
-							sLastYear = $(s[i + 1]).find(
-									'.mobile_mauction_year').text()
-									.substr(0, 4);
-						}
-console.log(sThisYear != sLastYear);
-						if (sThisYear != sLastYear) {
-							$(obj).append('<div class="mobile_mauction_split">'+sThisYear+'年&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;</div>');
-							$(obj).after('<div class="mobile_mauction_line">'+(i==iLength?'<div class="mobile_mauction_from"></div>':'')+'</div>');
-							
-						}
+					$
+							.each(
+									s,
+									function(i, obj) {
 
-					});
+										// var sYear
+										var sThisYear = $(obj).find(
+												'.mobile_mauction_year').text()
+												.substr(0, 4);
+										var sLastYear = '';
+										if (i < iLength) {
+											sLastYear = $(s[i + 1]).find(
+													'.mobile_mauction_year')
+													.text().substr(0, 4);
+										}
+										console.log(sThisYear != sLastYear);
+										if (sThisYear != sLastYear) {
+											$(obj)
+													.append(
+															'<div class="mobile_mauction_split">'
+																	+ sThisYear
+																	+ '年&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;</div>');
+											$(obj)
+													.after(
+															'<div class="mobile_mauction_line">'
+																	+ (i == iLength ? '<div class="mobile_mauction_from"></div>'
+																			: '')
+																	+ '</div>');
+
+										}
+
+									});
 
 				},
 
-				page_mnews : function() {
-
-					// zen.mobile.temp.refresh_func=zen.mobile.news_refresh;
-					zen.mobile.refresh_page(function() {
-						zen.mobile.news_refresh();
-					});
-
-					zen.mobile.news_refresh();
-
-				},
+				
 
 				refresh_page : function(f) {
 					myScroll = new IScroll('#mobile_base_scroll_wrap', {
@@ -66,7 +71,7 @@ console.log(sThisYear != sLastYear);
 						mouseWheel : true,
 						// preventDefault:false,
 						preventDefaultException : {
-							tagName : /^(INPUT|TEXTAREA|BUTTON|SELECT|A|DIV)$/
+							tagName : /^(INPUT|TEXTAREA|BUTTON|SELECT|A|DIV|IMG)$/
 						}
 
 					});
@@ -102,7 +107,25 @@ console.log(sThisYear != sLastYear);
 					 */
 
 				},
+				
+				refresh_success:function(oResult)
+				{
+					zen.mobile.temp.flag_process = 0;
 
+					zen.mobile.temp.page_index = zen.mobile.temp.page_index + 1;
+				},
+				
+				
+				page_mnews : function() {
+
+					// zen.mobile.temp.refresh_func=zen.mobile.news_refresh;
+					zen.mobile.refresh_page(function() {
+						zen.mobile.news_refresh();
+					});
+
+					zen.mobile.news_refresh();
+
+				},
 				news_refresh : function() {
 					zen.site.post('news_show', {
 						page_index : zen.mobile.temp.page_index
@@ -110,9 +133,9 @@ console.log(sThisYear != sLastYear);
 				},
 				news_success : function(oResult) {
 
-					zen.mobile.temp.flag_process = 0;
+					zen.mobile.refresh_success(oResult);
 
-					zen.mobile.temp.page_index = zen.mobile.temp.page_index + 1;
+					
 
 					var aHtml = [];
 
@@ -153,7 +176,115 @@ console.log(sThisYear != sLastYear);
 
 					myScroll.refresh();
 
-				}
+				},
+
+				
+				page_mnotice : function() {
+
+					// zen.mobile.temp.refresh_func=zen.mobile.news_refresh;
+					zen.mobile.refresh_page(function() {
+						zen.mobile.notice_refresh();
+					});
+
+					zen.mobile.notice_refresh();
+
+				},
+				
+				notice_refresh : function() {
+					zen.site.post('notice_show', {
+						page_index : zen.mobile.temp.page_index
+					}, zen.mobile.notice_success);
+				},
+				notice_success : function(oResult) {
+
+					zen.mobile.refresh_success(oResult);
+
+					var aHtml = [];
+
+					for ( var i in oResult.result) {
+						var oe = oResult.result[i];
+
+						aHtml
+								.push('<div class="mobile_mnews_item mobile_w_border_t"><div class="mobile_mnews_bg"><div class="mobile_mnews_box"><div class="mobile_w_h20"></div>');
+
+						aHtml.push('<div class="mobile_mnews_title" >'
+								+ oe["title"]
+								+ '</div><div class="mobile_w_h20"></div>');
+
+						aHtml
+								.push('<div class="<div class="mobile_mnews_tips">发表时间：'
+										+ oe["create_time"]
+										+ '&nbsp;&nbsp;|&nbsp;&nbsp;文章出处：博观拍卖</div><div class="mobile_w_h20"></div>');
+
+						
+
+						aHtml.push('<div class="mobile_w_h20"></div>');
+						aHtml.push('<div class="mobile_mnews_info">'
+								+ oe["content"] + '</div>');
+						aHtml
+								.push('<div class="mobile_w_h30"></div></div></div><div class="mobile_w_h20 mobile_w_border_t"></div></div>');
+						aHtml.push('');
+
+					}
+
+					$('#mobile_mnews_list').append(aHtml.join(''));
+
+					myScroll.refresh();
+
+				},
+				
+				page_mpic : function(sUid) {
+
+					// zen.mobile.temp.refresh_func=zen.mobile.news_refresh;
+					zen.mobile.temp.temp_uid = sUid;
+					zen.mobile.refresh_page(function() {
+						zen.mobile.pic_refresh();
+					});
+
+					zen.mobile.pic_refresh();
+
+				},
+				pic_refresh : function() {
+					zen.site.post('pic_show', {
+						page_index : zen.mobile.temp.page_index,
+						pic_uid : zen.mobile.temp.temp_uid
+					}, zen.mobile.pic_success);
+				},
+				pic_success : function(oResult) {
+
+					zen.mobile.refresh_success(oResult);
+
+					var aHtml = [];
+
+					for ( var i in oResult.result) {
+						var oe = oResult.result[i];
+
+						aHtml
+								.push('<div class="mobile_mpic_item">');
+						aHtml.push('<a href="mgood-good-' + oe["uid"]
+								+ '"><div class="mobile_mpic_in"><div class="mobile_mpic_img">');
+						aHtml.push('<img src="' + zen.site.config.img_url
+								+ oe["file_url"] + '" />');
+						aHtml.push('</div>');
+						aHtml.push('<div class="mobile_mpic_title">'
+								+ oe["name"] + '</div>');
+						aHtml.push('<div class="mobile_mpic_info">图录号：'
+								+ oe["code"] + '</div>');
+						aHtml.push('<div class="mobile_mpic_info">参考价：'
+								+ oe["assess_price"] + '</div>');
+						aHtml.push('<div class="mobile_mpic_info">成交价：￥'
+								+ oe["success_price"] + '</div>');
+						aHtml.push('</div></a></div>');
+
+					}
+
+					$('#mobile_mpic_list').append(aHtml.join(''));
+
+					myScroll.refresh();
+
+				},
+
+				last : {}
 
 			}
 		});

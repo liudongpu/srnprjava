@@ -83,6 +83,10 @@ public class PageProcess implements IWebProcess {
 			mResult = new InfoCall(pRequest).CommentList();
 		}else if (sView.equals("news_show")) {
 			mResult = new InfoCall(pRequest).NewsList();
+		}else if (sView.equals("pic_show")) {
+			mResult = new InfoCall(pRequest).PicList();
+		}else if (sView.equals("notice_show")) {
+			mResult = new InfoCall(pRequest).NoticeList();
 		}
 
 		else if (sView.equals("comment_submit")) {

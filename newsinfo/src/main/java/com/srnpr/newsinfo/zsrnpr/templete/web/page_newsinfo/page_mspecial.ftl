@@ -29,7 +29,7 @@
 					时间：${el["time"]?date("yyyy-MM-dd")}
 					</div>
 					<div class="mobile_mspecital_text">
-					成交总金额：￥${el["success_price"]}元 
+					成交总金额：￥${el["success_price"]}
 					</div>
 					</a>
 					<div class="mobile_w_h10"></div>
