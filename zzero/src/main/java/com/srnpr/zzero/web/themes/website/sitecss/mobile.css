@@ -21,6 +21,10 @@ html {
 .mobile_w_h5 {
 	height: 5px;
 }
+.mobile_w_h10
+{
+	height: 10px;
+}
 
 .mobile_w_h20 {
 	height: 20px;
@@ -578,3 +582,32 @@ html {
 }
 
 
+.mobile_mspecital_img img
+{
+	width:100%;
+}
+
+.mobile_mspecital_title
+{
+	font-size:2.8rem;
+	line-height:2.8rem;
+	text-indent:1rem;
+}
+.mobile_mspecital_text
+{
+	font-size:2rem;
+	line-height:2.5rem;
+	text-indent:1rem;
+}
+.mobile_mspecital_split
+{
+	height:50px;
+}
+.mobile_mspecital_ico
+{
+	background-image: url("../mimg/mobile-img.png");
+	background-position: -700px -200px;
+	width:100px;
+	height:100px;
+	margin:auto;
+}
