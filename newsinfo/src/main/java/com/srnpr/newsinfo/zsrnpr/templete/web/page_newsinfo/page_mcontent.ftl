@@ -1,5 +1,5 @@
 
-<@m_mb_common_header nav="main"  />
+<@m_mb_common_header nav="main"  button="back"/>
 
 <#assign note_info=pageexec.upDataOne("info_news","uid",pageinfo.getWebSet()["Url_Option"])>
 

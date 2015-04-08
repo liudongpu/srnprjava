@@ -84,8 +84,10 @@
 				<div class="mobile_mindex_menu_box">
 					<div class="mobile_mindex_menu_item mobile_w_border_r">
 						<div class="mobile_w_h20"></div>
+						<a href="/newsinfo/mauction-list">
 						<div class="mobile_mindex_menu_ico mobile_mindex_menu_one"></div>
 						<div class="mobile_mindex_menu_text">预展/结果</div>
+						</a>
 					</div>
 					<div class="mobile_mindex_menu_item mobile_w_border_r">
 

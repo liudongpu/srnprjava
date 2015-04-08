@@ -283,7 +283,7 @@ $(window).ready(function(){zen.site.comment_show('${uid}')});
 
 
 
-<#macro m_mb_common_header nav="" title="" type="0" >
+<#macro m_mb_common_header nav="" title="" type="0" button="user">
 
 <title><@m_site_common_title nav title /></title> 
 <meta name="keywords" content="博观拍卖,拍卖,博观,珠宝,玉石,机构" />
@@ -335,7 +335,10 @@ $(window).ready(function(){zen.site.comment_show('${uid}')});
 
 
 	<div class="mobile_lay_head">
-		<div class="mobile_head_left"></div>
+		<div class="mobile_head_left">
+		<#if button=="user"><a href="/newsinfo/"><div class="mobile_head_icon_user"></div></a></#if>
+		<#if button=="back"><a href="javascript:history.go(-1)"><div class="mobile_head_icon_back"></div></a></#if>
+		</div>
 		<div class="mobile_head_center">
 			<div class="mobile_head_logo"></div>
 		</div>

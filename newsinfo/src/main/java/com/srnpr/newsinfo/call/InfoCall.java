@@ -63,7 +63,7 @@ public class InfoCall extends BaseClass {
 
 		if (result.getFlag()) {
 			result.setResult(DataTableManager.Get("info_news").upList("zid,uid,title,note,file_url,create_time",
-					"-create_time", iPageIndex * 10, (iPageIndex + 1) * 10,
+					"-create_time", iPageIndex * 10, 10,
 					new MHashMap()));
 			// result.setMessage(sUid);
 
