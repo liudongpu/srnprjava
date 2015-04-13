@@ -280,7 +280,7 @@ zen
 				page_musercollect : function(sUid) {
 
 					// zen.mobile.temp.refresh_func=zen.mobile.news_refresh;
-					
+
 					zen.mobile.refresh_page(function() {
 						zen.mobile.usercollect_refresh();
 					});
@@ -302,12 +302,14 @@ zen
 					for ( var i in oResult.result) {
 						var oe = oResult.result[i];
 
-						aHtml.push('<div class="mobile_mlogin_item mobile_w_border_b">');
-						
-						aHtml.push('<a href="m'
-								+ oe["info_url"]
-								+ '"><div class="mobile_mlogin_title">'+oe["info_title"]+'</div>');
-						aHtml.push('<div class="mobile_mlogin_date">'+oe["collect_date"]+'</div>');
+						aHtml
+								.push('<div class="mobile_mlogin_item mobile_w_border_b">');
+
+						aHtml.push('<a href="m' + oe["info_url"]
+								+ '"><div class="mobile_mlogin_title">'
+								+ oe["info_title"] + '</div>');
+						aHtml.push('<div class="mobile_mlogin_date">'
+								+ oe["collect_date"] + '</div>');
 						aHtml.push('</a></div>');
 
 					}
@@ -320,7 +322,7 @@ zen
 				page_musercomment : function(sUid) {
 
 					// zen.mobile.temp.refresh_func=zen.mobile.news_refresh;
-					
+
 					zen.mobile.refresh_page(function() {
 						zen.mobile.usercomment_refresh();
 					});
@@ -342,13 +344,17 @@ zen
 					for ( var i in oResult.result) {
 						var oe = oResult.result[i];
 
-						
-						
-						aHtml.push('<div class="mobile_mlogin_comment_item mobile_w_border_b mobile_w_border_t"><div class="mobile_mlogin_comment_title mobile_w_border_b">•&nbsp;'+oe["info_title"]+'</div>');
-						aHtml.push('<div class="mobile_mlogin_comment_info"><span class="mobile_mlogin_comment_icon"></span>'+oe["note"]+'</div>');
-						
-						aHtml.push('<div class="mobile_mlogin_comment_date">'+oe["comment_date"]+'</div>');
-						aHtml.push('<div class="mobile_w_h20"></div></div><div class="mobile_w_h20"></div>');
+						aHtml
+								.push('<div class="mobile_mlogin_comment_item mobile_w_border_b mobile_w_border_t"><div class="mobile_mlogin_comment_title mobile_w_border_b">•&nbsp;'
+										+ oe["info_title"] + '</div>');
+						aHtml
+								.push('<div class="mobile_mlogin_comment_info"><span class="mobile_mlogin_comment_icon"></span>'
+										+ oe["note"] + '</div>');
+
+						aHtml.push('<div class="mobile_mlogin_comment_date">'
+								+ oe["comment_date"] + '</div>');
+						aHtml
+								.push('<div class="mobile_w_h20"></div></div><div class="mobile_w_h20"></div>');
 
 					}
 
@@ -489,6 +495,14 @@ zen
 						});
 					}
 				},
+
+				userbidagree_click : function() {
+					zen.site.href("newsinfo/muserbidsave-user");
+				},
+				userbidsave_click : function() {
+					zen.site.href("newsinfo/muserbidsuccess-user");
+				},
+
 				last : {}
 
 			}

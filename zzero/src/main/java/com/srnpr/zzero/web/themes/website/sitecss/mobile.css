@@ -19,6 +19,10 @@ html {
 .mobile_w_h5 {
 	height: 5px;
 }
+.mobile_w_clear
+{
+	clear:both;
+}
 
 .mobile_w_h10 {
 	height: 10px;
@@ -831,6 +835,13 @@ html {
 	height: 769px;
 }
 
+.mobile_mbid_for_bgtwo
+{
+	background-image: url("../mimg/mobile-bidsuccess.png");
+	width: 100%;
+	height: 834px;
+}
+
 .mobile_mbid_for_agree {
 	font-size: 2.4rem;
 	line-height: 3rem;
@@ -840,3 +851,63 @@ html {
 .mobile_mbid_for_agree a {
 	color: #5d823e;
 }
+
+.mobile_mbid_form
+{
+	text-indent:20px;
+	font-size:2.4rem;
+}
+
+.mobile_mbid_form_tips
+{
+	color:#777777;
+}
+.mobile_mbid_form_list
+{
+	background-color:#fff;
+}
+.mobile_mbid_form_item
+{
+	min-height:90px;
+	font-size:2.8rem;
+	line-height:90px;
+	width:96%;
+	float:right;
+	clear:both;
+	
+}
+
+.mobile_mbid_form_left
+{
+	float:left;
+	padding-right:30px;
+	
+}
+.mobile_mbid_form_right
+{
+	float:left;
+}
+.mobile_mbid_form_right input
+{
+	height:80px;
+	border:none;
+	font-size:2.8rem;
+	line-height:80px;
+	width:90%;
+}
+.mobile_mbid_form_right textarea
+{
+	border:none;
+	font-size:2.8rem;
+	line-height:3rem;
+	height:120px;
+	width:90%;
+}
+.mobile_mbid_green
+{
+	color:#518129;
+	line-height:4rem;
+	width:92%;
+	margin-left:3%;
+}
+

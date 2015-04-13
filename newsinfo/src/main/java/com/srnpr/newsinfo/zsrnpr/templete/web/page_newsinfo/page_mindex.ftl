@@ -108,8 +108,10 @@
 					<div class="mobile_mindex_menu_item">
 
 						<div class="mobile_w_h20"></div>
+						<a href="/newsinfo/muserbidagree-user">
 						<div class="mobile_mindex_menu_ico mobile_mindex_menu_four"></div>
 						<div class="mobile_mindex_menu_text">竞投办理</div>
+						</a>
 
 					</div>
 				</div>
