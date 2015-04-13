@@ -113,6 +113,51 @@ public class InfoCall extends BaseClass {
 		return result;
 	}
 	
+	
+	
+	public MResult CollectAll(Map<String, Object> mUserInfo) {
+
+		int iPageIndex = Integer.valueOf(pRequest.getReqMap().get("page_index")
+				.toString());
+		
+		
+		MHashMap map=new MHashMap();
+		map.put("user_uid", mUserInfo
+				.get("uid"));
+		
+		if (result.getFlag()) {
+			result.setResult(DataTableManager.Get("user_collect").upList("zid,uid,info_url,info_title,left(collect_date,10) as collect_date,info_uid,info_type",
+					"-collect_date", iPageIndex * 10, 10,
+					map));
+			// result.setMessage(sUid);
+
+		}
+
+		return result;
+	}
+	
+	public MResult CommentAll(Map<String, Object> mUserInfo) {
+
+		int iPageIndex = Integer.valueOf(pRequest.getReqMap().get("page_index")
+				.toString());
+		
+		
+		MHashMap map=new MHashMap();
+		map.put("user_uid", mUserInfo
+				.get("uid"));
+		
+		if (result.getFlag()) {
+			result.setResult(DataTableManager.Get("user_comment").upList("zid,uid,info_url,info_title, comment_date,info_uid,info_type,note",
+					"-comment_date", iPageIndex * 10, 10,
+					map));
+			// result.setMessage(sUid);
+
+		}
+
+		return result;
+	}
+	
+	
 
 	public MResult CommentSubmit(Map<String, Object> mUserInfo) {
 

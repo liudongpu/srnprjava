@@ -336,7 +336,7 @@ $(window).ready(function(){zen.site.comment_show('${uid}')});
 
 	<div class="mobile_lay_head">
 		<div class="mobile_head_left">
-		<#if button=="user"><a href="/newsinfo/"><div class="mobile_head_icon_user"></div></a></#if>
+		<#if button=="user"><a href="/newsinfo/musercenter-user"><div class="mobile_head_icon_user"></div></a></#if>
 		<#if button=="back"><a href="javascript:history.go(-1)"><div class="mobile_head_icon_back"></div></a></#if>
 		</div>
 		<div class="mobile_head_center">
