@@ -368,6 +368,11 @@ html {
 	line-height: 75px;
 }
 
+.mobile_base_buttom_color_2
+{
+	background-color: #7b7c6f;
+}
+
 .mobile_base_more_box {
 	width: 250px;
 	margin: auto;
@@ -841,6 +846,19 @@ html {
 	width: 100%;
 	height: 834px;
 }
+.mobile_mbid_for_bgthree
+{
+	background-image: url("../mimg/mobile-ent.png");
+	width: 100%;
+	height: 645px;
+}
+.mobile_mbid_for_bgfour
+{
+	background-image: url("../mimg/mobile-send.png");
+	width: 100%;
+	height: 646px;
+}
+
 
 .mobile_mbid_for_agree {
 	font-size: 2.4rem;
@@ -909,5 +927,61 @@ html {
 	line-height:4rem;
 	width:92%;
 	margin-left:3%;
+}
+.mobile_mbid_table table
+{
+	width:100%;
+	font-size:2.6rem;
+	line-height:8rem;
+}
+
+.mobile_mbid_table table tr
+{
+	border-bottom:solid 1px #f2f2f2;
+}
+
+.mobile_mbid_table table th
+{
+	color:#999;
+}
+
+.mobile_mbid_table_th1
+{
+	width:65%;
+	
+}
+.mobile_mbid_table_th2
+{
+	width:5%;
+	
+}
+.mobile_mbid_table_th3
+{
+	width:30%;
+	
+}
+
+.mobile_mbid_table table td
+{
+	background-color:#fff;
+	text-indent:15px;
+}
+.mobile_mbid_show
+{
+	padding:20px;
+	background-color:#fff;
+	font-size:2.8rem;
+	line-height:5rem;
+	border-top:solid 1px #f2f2f2;
+	border-bottom:solid 1px #f2f2f2;
+	
+}
+.mobile_mbid_show_title
+{
+	font-size:3.6rem;
+}
+.mobile_mbid_show img
+{
+	width:100%;
 }
 
