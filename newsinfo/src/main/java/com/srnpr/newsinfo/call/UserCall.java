@@ -256,6 +256,7 @@ public class UserCall extends BaseClass {
 						mUserInfo.get("uid")) == 0) {
 
 			MHashMap mMap = new MHashMap();
+			mMap.put("uid", ComFunction.upUuid());
 			mMap.put("user_uid", mUserInfo.get("uid"));
 			mMap.put("login_name", mUserInfo.get("login_name"));
 
@@ -288,13 +289,97 @@ public class UserCall extends BaseClass {
 
 	}
 
+	public MResult EntSave(Map<String, Object> mUserInfo) {
+
+		if (mUserInfo != null) {
+			Map<String, Object> mGoodMap = DataTableManager.Get("info_good")
+					.upOneMap("code",
+							pRequest.getReqMap().get("good_code").toString());
+
+			if (mGoodMap != null) {
+
+				MHashMap mMap = new MHashMap();
+				mMap.put("uid", ComFunction.upUuid());
+				mMap.put("user_uid", mUserInfo.get("uid"));
+				mMap.put("login_name", mUserInfo.get("login_name"));
+
+				mMap.put("user_name", pRequest.getReqMap().get("user_name")
+						.toString());
+				mMap.put("user_number", pRequest.getReqMap().get("user_number")
+						.toString());
+				mMap.put("user_phone", pRequest.getReqMap().get("user_phone")
+						.toString());
+				mMap.put("good_code", pRequest.getReqMap().get("good_code")
+						.toString());
+				mMap.put("good_price", pRequest.getReqMap().get("good_price")
+						.toString());
+
+				mMap.put("good_name", mGoodMap.get("name").toString());
+				mMap.put("good_file", mGoodMap.get("file_url").toString());
+				mMap.put("create_time", FormatHelper.GetDateTime());
+
+				DataTableManager.Get("user_ent").inPut(mMap);
+			} else {
+				result.error(937309003);
+			}
+
+		} else {
+			result.error(937301007);
+		}
+
+		return result;
+
+	}
+
+	public MResult SendSave(Map<String, Object> mUserInfo) {
+
+		if (mUserInfo != null) {
+
+			MHashMap mMap = new MHashMap();
+			mMap.put("uid", ComFunction.upUuid());
+			mMap.put("user_uid", mUserInfo.get("uid"));
+			mMap.put("login_name", mUserInfo.get("login_name"));
+
+			mMap.put("user_name", pRequest.getReqMap().get("user_name")
+					.toString());
+			mMap.put("user_phone", pRequest.getReqMap().get("user_phone")
+					.toString());
+			mMap.put("user_email", pRequest.getReqMap().get("user_email")
+					.toString());
+			mMap.put("good_name", pRequest.getReqMap().get("good_name")
+					.toString());
+			mMap.put("good_author", pRequest.getReqMap().get("good_author")
+					.toString());
+			mMap.put("good_size", pRequest.getReqMap().get("good_size")
+					.toString());
+			mMap.put("good_weight", pRequest.getReqMap().get("good_weight")
+					.toString());
+			mMap.put("good_price", pRequest.getReqMap().get("good_price")
+					.toString());
+			mMap.put("photo_one", pRequest.getReqMap().get("photo_one")
+					.toString());
+			mMap.put("photo_two", pRequest.getReqMap().get("photo_two")
+					.toString());
+			mMap.put("photo_three", pRequest.getReqMap().get("photo_three")
+					.toString());
+
+			mMap.put("create_time", FormatHelper.GetDateTime());
+
+			DataTableManager.Get("user_send").inPut(mMap);
+
+		} else {
+			result.error(937301007);
+		}
+
+		return result;
+
+	}
+
 	public MResult BidCheck(Map<String, Object> mUserInfo) {
 		if (mUserInfo != null) {
 
-			
-				result.setResult(DataTableManager.Get("user_bid").upCount("user_uid",
-						mUserInfo.get("uid")) );
-			
+			result.setResult(DataTableManager.Get("user_bid").upCount(
+					"user_uid", mUserInfo.get("uid")));
 
 		} else {
 			result.error(937301007);

@@ -18,11 +18,14 @@
 							<th class="mobile_mbid_table_th2"></th>
 							<th class="mobile_mbid_table_th3">委托底价</th>
 						</tr>
+						<#assign  pageData=pageexec.upDataOrder("user_send","-create_time","user_uid",pageinfo.getPageOptions()["uid"])  >
+						<#list pageData as el> 
 						<tr>
-							<td><a href="musersendshow-user?uid=">名称</a></td>
+							<td><a href="musersendshow-user-${el["uid"]}">${el["good_name"]}</a></td>
 							<td>|</td>
-							<td><a href="musersendshow-user?uid=">￥1234567</a></td>
+							<td><a href="musersendshow-user-${el["uid"]}">￥${el["good_price"]}</a></td>
 						</tr>
+						</#list>
 					</table>
 
 				</div>

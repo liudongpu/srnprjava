@@ -531,7 +531,43 @@ zen
 					zen.site.href("newsinfo/muserbidsuccess-user");
 
 				},
+				userentsave_click : function(iType) {
 
+					zen.site.post('ent_save', {
+						user_name : $('#user_name').val(),
+						user_number : $('#user_number').val(),
+						user_phone : $('#user_phone').val(),
+						good_code : $('#good_code').val(),
+						good_price : $('#good_price').val()
+					}, zen.mobile.userentsave_success);
+
+				},
+				userentsave_success : function() {
+					zen.site.href("newsinfo/muserentall-user");
+
+				},
+				usersendsave_click : function(iType) {
+
+					zen.site.post('send_save', {
+						user_name : $("#user_name").val(),
+						user_phone : $("#user_phone").val(),
+						user_email : $("#user_email").val(),
+						good_name : $("#good_name").val(),
+						good_author : $("#good_author").val(),
+						good_size : $("#good_size").val(),
+						good_weight : $("#good_weight").val(),
+						good_price : $("#good_price").val(),
+						photo_one : "1",
+						photo_two : "2",
+						photo_three : "3"
+					}, zen.mobile.usersendsave_success);
+
+				},
+				usersendsave_success : function() {
+					zen.site.href("newsinfo/musersendall-user");
+
+				},
+				
 				last : {}
 
 			}

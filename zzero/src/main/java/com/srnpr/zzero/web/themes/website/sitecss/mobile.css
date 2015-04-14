@@ -1005,3 +1005,17 @@ html {
 	line-height:4rem;
 	padding:3rem;
 }
+
+.mobile_share_box
+{
+	position:absolute;
+	background-color:#fff;
+	width:500px;
+	height:200px;
+	top:100px;
+	left:100px;
+	border:solid 1px #000;
+	
+}
+
+

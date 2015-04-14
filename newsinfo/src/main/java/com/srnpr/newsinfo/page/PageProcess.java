@@ -81,7 +81,11 @@ public class PageProcess implements IWebProcess {
 			mResult = new UserCall(pRequest).BidSave(upUserInfo());
 		}else if (sView.equals("bid_check")) {
 			mResult = new UserCall(pRequest).BidCheck(upUserInfo());
-		} else if (sView.equals("change_pass")) {
+		} else if (sView.equals("ent_save")) {
+			mResult = new UserCall(pRequest).EntSave(upUserInfo());
+		}else if (sView.equals("send_save")) {
+			mResult = new UserCall(pRequest).SendSave(upUserInfo());
+		}else if (sView.equals("change_pass")) {
 			mResult = new UserCall(pRequest).ChangePass(upUserInfo());
 		} else if (sView.equals("comment_show")) {
 			mResult = new InfoCall(pRequest).CommentList();
