@@ -360,8 +360,10 @@ $(window).ready(function(){zen.site.comment_show('${uid}')});
 					<div class="mobile_head_menu_right">联系电话</div>
 				</div>
 				<div class="mobile_head_menu_item mobile_w_border_b">
+				<a href="/newsinfo/musersendall-user">
 					<div class="mobile_head_menu_left mobile_head_menu_four"></div>
 					<div class="mobile_head_menu_right">在线送拍</div>
+				</a>
 				</div>
 				<div class="mobile_head_menu_item">
 					<div class="mobile_head_menu_left mobile_head_menu_five"></div>

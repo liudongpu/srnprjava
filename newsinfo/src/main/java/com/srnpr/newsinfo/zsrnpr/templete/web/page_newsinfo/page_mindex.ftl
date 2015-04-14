@@ -99,11 +99,11 @@
 
 					</div>
 					<div class="mobile_mindex_menu_item mobile_w_border_r">
-
+						<a href="/newsinfo/muserentall-user">
 						<div class="mobile_w_h20"></div>
 						<div class="mobile_mindex_menu_ico mobile_mindex_menu_three"></div>
 						<div class="mobile_mindex_menu_text">委托竞投</div>
-
+						</a>
 					</div>
 					<div class="mobile_mindex_menu_item">
 
