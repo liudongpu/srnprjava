@@ -93,7 +93,9 @@ public class HomeController {
 		}
 		else {
 			
-			return index("zyou-ah", "login-ahlogin", model,request);
+			//return index("zyou-ah", "login-ahlogin", model,request);
+			
+			return index("zyou-login", "login-login", model,request);
 		}
 		
 	}

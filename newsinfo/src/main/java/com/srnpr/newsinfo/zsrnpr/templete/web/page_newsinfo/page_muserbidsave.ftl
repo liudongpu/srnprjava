@@ -19,21 +19,21 @@
 						<div class="mobile_mbid_form_item mobile_w_border_b">
 							<div class="mobile_mbid_form_left">姓名</div>
 							<div class="mobile_mbid_form_right">
-								<input type="text" placeholder="请输入姓名" />
+								<input type="text" id="user_name" placeholder="请输入姓名" />
 							</div>
 
 						</div>
 						<div class="mobile_mbid_form_item mobile_w_border_b">
 							<div class="mobile_mbid_form_left">手机</div>
 							<div class="mobile_mbid_form_right">
-								<input type="text" placeholder="请输入手机号码" />
+								<input type="text" id="user_phone" placeholder="请输入手机号码" />
 							</div>
 
 						</div>
 						<div class="mobile_mbid_form_item">
 							<div class="mobile_mbid_form_left">地址</div>
 							<div class="mobile_mbid_form_right">
-								<textarea placeholder="请输入办理人地址"></textarea>
+								<textarea id="user_address" placeholder="请输入办理人地址"></textarea>
 							</div>
 							<div class="mobile_w_clear"></div>
 						</div>
@@ -45,21 +45,21 @@
 						<div class="mobile_mbid_form_item mobile_w_border_b">
 							<div class="mobile_mbid_form_left">银行账号</div>
 							<div class="mobile_mbid_form_right">
-								<input type="text" placeholder="请输入银行账号" />
+								<input type="text" id="bank_no" placeholder="请输入银行账号" />
 							</div>
 
 						</div>
 						<div class="mobile_mbid_form_item mobile_w_border_b">
 							<div class="mobile_mbid_form_left">户主姓名</div>
 							<div class="mobile_mbid_form_right">
-								<input type="text" placeholder="请输入户主姓名" />
+								<input type="text" id="bank_home" placeholder="请输入户主姓名" />
 							</div>
 
 						</div>
 						<div class="mobile_mbid_form_item ">
 							<div class="mobile_mbid_form_left">开户银行</div>
 							<div class="mobile_mbid_form_right">
-								<input type="text" placeholder="请输入开户银行" />
+								<input type="text" id="bank_name" placeholder="请输入开户银行" />
 							</div>
 
 						</div>

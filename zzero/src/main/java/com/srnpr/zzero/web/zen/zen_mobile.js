@@ -496,11 +496,40 @@ zen
 					}
 				},
 
+				page_muserbidagree : function() {
+					zen.site.post('bid_check', {
+
+					}, zen.mobile.muserbidagree_success)
+				},
+				muserbidagree_success : function(o) {
+					if (o.result > 0) {
+						$('#mobile_mbid_notice').show();
+					} else {
+						$('#mobile_mbid_body').show();
+					}
+				},
+
 				userbidagree_click : function() {
 					zen.site.href("newsinfo/muserbidsave-user");
 				},
 				userbidsave_click : function() {
+					// zen.site.href("newsinfo/muserbidsuccess-user");
+
+					zen.site.post('bid_save', {
+						user_name : $('#user_name').val(),
+						user_phone : $('#user_phone').val(),
+						user_address : $('#user_address').val(),
+						bank_no : $('#bank_no').val(),
+						bank_home : $('#bank_home').val(),
+						bank_name : $('#bank_name').val(),
+						card_one : "1",
+						card_two : "2"
+					}, zen.mobile.userbidsave_success);
+
+				},
+				userbidsave_success : function() {
 					zen.site.href("newsinfo/muserbidsuccess-user");
+
 				},
 
 				last : {}

@@ -51,26 +51,21 @@ public class UserCall extends BaseClass {
 				result.error(937301004);
 			}
 		}
-		
-		String sPhoneNUmber="";
-		
-		if(result.getFlag())
-		{
-			if(StringUtils.isNotEmpty(pRequest.upRequestParam("reg_phone")))
-			{
-				sPhoneNUmber=pRequest.upRequestParam("reg_phone");
-				
-				if(!StringUtils.isNumeric(sPhoneNUmber)||sPhoneNUmber.length()!=11)
-				{
+
+		String sPhoneNUmber = "";
+
+		if (result.getFlag()) {
+			if (StringUtils.isNotEmpty(pRequest.upRequestParam("reg_phone"))) {
+				sPhoneNUmber = pRequest.upRequestParam("reg_phone");
+
+				if (!StringUtils.isNumeric(sPhoneNUmber)
+						|| sPhoneNUmber.length() != 11) {
 					result.error(937301009);
 				}
-				
+
 			}
-			
-			
+
 		}
-		
-		
 
 		if (result.getFlag()) {
 
@@ -88,20 +83,15 @@ public class UserCall extends BaseClass {
 
 			MHashMap mHMap = new MHashMap();
 
-			String sRegName=pRequest.getReqMap().get("reg_name").toString();
-			
-			mHMap.inAdd("uid", sUid, "login_name",
-					sRegName, "login_pass",
+			String sRegName = pRequest.getReqMap().get("reg_name").toString();
+
+			mHMap.inAdd("uid", sUid, "login_name", sRegName, "login_pass",
 					pRequest.getReqMap().get("reg_pass"), "user_email",
-					sRegName, "reg_date",
-					FormatHelper.GetDateTime(), "cookie_id", sCookieId);
-			
-			
-				mHMap.inAdd("real_name",StringUtils.substringBefore(sRegName, "@"));
-			
-			
-			
-			
+					sRegName, "reg_date", FormatHelper.GetDateTime(),
+					"cookie_id", sCookieId);
+
+			mHMap.inAdd("real_name", StringUtils.substringBefore(sRegName, "@"));
+
 			DataTableManager.Get("user_info").inPut(mHMap);
 
 			MHashMap mResult = new MHashMap();
@@ -140,7 +130,8 @@ public class UserCall extends BaseClass {
 
 				mHashMap.put("bgpm_user_cookieid", mUserInfo.get("cookie_id"));
 				mHashMap.put("bgpm_user_name", mUserInfo.get("login_name"));
-				mHashMap.put("bgpm_user_levelid", mUserInfo.get("userlevel_cid"));
+				mHashMap.put("bgpm_user_levelid",
+						mUserInfo.get("userlevel_cid"));
 
 				result.setResult(mHashMap);
 
@@ -151,59 +142,52 @@ public class UserCall extends BaseClass {
 		return result;
 
 	}
-	
-	
+
 	public MResult Forget() {
 
 		if (!StringUtils.isNotEmpty(pRequest.getReqMap().get("login_name")
 				.toString())) {
 			result.error(937301002);
-		} 
+		}
 
 		if (result.getFlag()) {
 			Map<String, Object> mUserInfo = DataTableManager.Get("user_info")
 					.upOneMap("login_name",
 							pRequest.getReqMap().get("login_name").toString());
-			
+
 			if (mUserInfo != null) {
 				MHashMap mHashMap = new MHashMap();
 
-				
-				
-				MailSupport mailSupport=new MailSupport();
-				
-				StringBuilder sb=new StringBuilder();
-				
+				MailSupport mailSupport = new MailSupport();
+
+				StringBuilder sb = new StringBuilder();
+
 				sb.append("亲爱的博观拍卖用户：<br/><br/>");
 				sb.append("你正在通过邮箱找回你的帐号登录密码，请点击以下链接重设你的密码：<br/><br/>");
-				
-				String sLink="http://www.boguanpaimai.com/newsinfo/repass-repass?code="+mUserInfo.get("cookie_id");
-				
-				sb.append("<a href=\""+sLink+"\">"+sLink+"</a><br/><br/> ");
-				
+
+				String sLink = "http://www.boguanpaimai.com/newsinfo/repass-repass?code="
+						+ mUserInfo.get("cookie_id");
+
+				sb.append("<a href=\"" + sLink + "\">" + sLink
+						+ "</a><br/><br/> ");
+
 				sb.append("若点击无效，请将该链接复制到浏览器地址栏中并直接访问。<br/><br/>  ");
-				
-				
-				
-				
-				mailSupport.sendMail(mUserInfo.get("login_name").toString(), "博观拍卖找回密码邮件", sb.toString(), "smtp.exmail.qq.com", "bgpmreset@qq.srnpr.com", "bgpm2015");
-				
-				
+
+				mailSupport.sendMail(mUserInfo.get("login_name").toString(),
+						"博观拍卖找回密码邮件", sb.toString(), "smtp.exmail.qq.com",
+						"bgpmreset@qq.srnpr.com", "bgpm2015");
 
 				result.setResult(mHashMap);
 
 			} else {
 				result.error(937301006);
 			}
-			
-			
-			
+
 		}
 		return result;
 
 	}
-	
-	
+
 	public MResult Repass() {
 
 		if (!StringUtils.isNotEmpty(pRequest.getReqMap().get("login_pass")
@@ -216,33 +200,27 @@ public class UserCall extends BaseClass {
 			Map<String, Object> mUserInfo = DataTableManager.Get("user_info")
 					.upOneMap("cookie_id",
 							pRequest.getReqMap().get("cookie_id").toString());
-			
+
 			if (mUserInfo != null) {
 				MHashMap mHashMap = new MHashMap();
-				
-				
+
 				MHashMap mMap = new MHashMap();
 				mMap.put("cookie_id", ComFunction.upUuid());
 				mMap.put("zid", mUserInfo.get("zid"));
 				mMap.put("login_pass", pRequest.getReqMap().get("login_pass")
 						.toString());
 				DataTableManager.Get("user_info").inPost(mMap, "zid");
-				
-				
-				
+
 				result.setResult(mHashMap);
-				
-			}else {
+
+			} else {
 				result.error(937301006);
 			}
-			
+
 		}
 		return result;
 
 	}
-	
-	
-	
 
 	public MResult ChangeInfo(Map<String, Object> mUserInfo) {
 
@@ -271,32 +249,80 @@ public class UserCall extends BaseClass {
 		return result;
 	}
 
+	public MResult BidSave(Map<String, Object> mUserInfo) {
+
+		if (mUserInfo != null
+				&& DataTableManager.Get("user_bid").upCount("user_uid",
+						mUserInfo.get("uid")) == 0) {
+
+			MHashMap mMap = new MHashMap();
+			mMap.put("user_uid", mUserInfo.get("uid"));
+			mMap.put("login_name", mUserInfo.get("login_name"));
+
+			mMap.put("phone_num", "");
+
+			mMap.put("user_name", pRequest.getReqMap().get("user_name")
+					.toString());
+			mMap.put("user_phone", pRequest.getReqMap().get("user_phone")
+					.toString());
+			mMap.put("user_address", pRequest.getReqMap().get("user_address")
+					.toString());
+			mMap.put("bank_no", pRequest.getReqMap().get("bank_no").toString());
+			mMap.put("bank_home", pRequest.getReqMap().get("bank_home")
+					.toString());
+			mMap.put("bank_name", pRequest.getReqMap().get("bank_name")
+					.toString());
+			mMap.put("card_one", pRequest.getReqMap().get("card_one")
+					.toString());
+			mMap.put("card_two", pRequest.getReqMap().get("card_two")
+					.toString());
+			mMap.put("create_time", FormatHelper.GetDateTime());
+
+			DataTableManager.Get("user_bid").inPut(mMap);
+
+		} else {
+			result.error(937301007);
+		}
+
+		return result;
+
+	}
+
+	public MResult BidCheck(Map<String, Object> mUserInfo) {
+		if (mUserInfo != null) {
+
+			
+				result.setResult(DataTableManager.Get("user_bid").upCount("user_uid",
+						mUserInfo.get("uid")) );
+			
+
+		} else {
+			result.error(937301007);
+		}
+
+		return result;
+	}
+
 	public MResult ChangePass(Map<String, Object> mUserInfo) {
 
 		PageExec pExec = new PageExec();
 
 		if (mUserInfo != null) {
-			if(result.getFlag())
-			{
-				if (!StringUtils.isNotEmpty(pRequest.getReqMap().get("login_pass")
-						.toString())) {
+			if (result.getFlag()) {
+				if (!StringUtils.isNotEmpty(pRequest.getReqMap()
+						.get("login_pass").toString())) {
 					result.error(937301002);
 				}
 			}
-			
-			if(result.getFlag())
-			{
-				
-				if(!mUserInfo.get("login_pass").equals(pRequest.getReqMap().get("old_login_pass")
-						.toString()))
-				{
+
+			if (result.getFlag()) {
+
+				if (!mUserInfo.get("login_pass").equals(
+						pRequest.getReqMap().get("old_login_pass").toString())) {
 					result.error(937301008);
 				}
-				
+
 			}
-			
-			
-			
 
 			if (result.getFlag()) {
 				MHashMap mMap = new MHashMap();

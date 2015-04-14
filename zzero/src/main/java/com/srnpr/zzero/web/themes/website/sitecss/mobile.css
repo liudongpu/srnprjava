@@ -23,6 +23,10 @@ html {
 {
 	clear:both;
 }
+.mobile_w_none
+{
+	display:none;
+}
 
 .mobile_w_h10 {
 	height: 10px;
@@ -985,3 +989,19 @@ html {
 	width:100%;
 }
 
+.mobile_mbid_notice_title
+{
+	font-size:3rem;
+	line-height:6rem;
+	color:#468847;
+}
+
+.mobile_mbid_notice_message
+{
+	background-color:#fff;
+	border:solid 1px #d6e9c6;
+	color:#468847;
+	font-size:2.4rem;
+	line-height:4rem;
+	padding:3rem;
+}
