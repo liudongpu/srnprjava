@@ -130,7 +130,8 @@ html {
 }
 
 .mobile_head_menu_item {
-	height: 86px;
+	min-height: 86px;
+	clear:both;
 }
 
 .mobile_head_menu_left {
@@ -252,16 +253,16 @@ html {
 .mobile_mindex_content_author {
 	float: left;
 	min-width: 50px;
-	font-size: 1.6rem;
+	font-size: 2.2rem;
 	color: #999999;
 	line-height: 2.5rem;
-	font-size: 1.6rem;
+	
 }
 
 .mobile_mindex_content_date {
 	float: right;
 	width: 120px;
-	font-size: 1.6rem;
+	font-size: 2.2rem;
 	color: #999999;
 	line-height: 2.5rem;
 }
@@ -1008,13 +1009,9 @@ html {
 
 .mobile_share_box
 {
-	position:absolute;
-	background-color:#fff;
-	width:500px;
-	height:200px;
-	top:100px;
-	left:100px;
-	border:solid 1px #000;
+	display:none;
+	padding-left:40px;
+	padding-bottom:20px;
 	
 }
 

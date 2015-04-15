@@ -346,8 +346,19 @@ $(window).ready(function(){zen.site.comment_show('${uid}')});
 		<div class="mobile_head_menu" id="mobile_head_menu">
 			<div class="mobile_head_menu_content">
 				<div class="mobile_head_menu_item mobile_w_border_b">
-					<div class="mobile_head_menu_left mobile_head_menu_one"></div>
-					<div class="mobile_head_menu_right">分享</div>
+					<div onclick="zen.mobile.share_baidu()">
+						<div class="mobile_head_menu_left mobile_head_menu_one"></div>
+						<div class="mobile_head_menu_right">分享</div>
+						<div class="mobile_w_clear"></div>
+					</div>
+					<div class="mobile_share_box" id="mobile_share_box">
+						<div class="bdsharebuttonbox">
+							<a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a><a
+								href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a><a
+								href="#" class="bds_renren" data-cmd="renren" title="分享到人人网"></a><a
+								href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+						</div>
+					</div>
 				</div>
 				<div class="mobile_head_menu_item mobile_w_border_b">
 				<a href="/newsinfo/mindex-list">
@@ -356,8 +367,10 @@ $(window).ready(function(){zen.site.comment_show('${uid}')});
 				</a>
 				</div>
 				<div class="mobile_head_menu_item mobile_w_border_b">
+				<a href="tel:01065760069">
 					<div class="mobile_head_menu_left mobile_head_menu_three"></div>
 					<div class="mobile_head_menu_right">联系电话</div>
+				</a>
 				</div>
 				<div class="mobile_head_menu_item mobile_w_border_b">
 				<a href="/newsinfo/musersendall-user">

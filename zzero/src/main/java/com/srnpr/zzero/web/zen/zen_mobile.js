@@ -8,7 +8,8 @@ zen
 
 					flag_process : 0,
 					refresh_func : null,
-					temp_uid : ''
+					temp_uid : '',
+					share_show:false
 
 				},
 				menu_open : function() {
@@ -17,6 +18,39 @@ zen
 
 				},
 
+				share_baidu:function()
+				{
+					if(zen.mobile.share_show)
+						{
+						$('#mobile_share_box').hide();
+						zen.mobile.share_show=false;
+						}else
+							{
+							$('#mobile_share_box').show();
+							zen.mobile.share_show=true;
+							}
+					
+					
+					
+					window._bd_share_config = {
+							"common" : {
+								"bdSnsKey" : {},
+								"bdText" : "",
+								"bdMini" : "2",
+								"bdMiniList" : false,
+								"bdPic" : "",
+								"bdStyle" : "0",
+								"bdSize" : "32"
+							},
+							"share" : {}
+						};
+						with (document)
+							0[(getElementsByTagName('head')[0] || body)
+									.appendChild(createElement('script')).src = 'http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='
+									+ ~(-new Date() / 36e5)];
+				},
+				
+				
 				to_page : function(sUrl) {
 					location.href = sUrl;
 				},
