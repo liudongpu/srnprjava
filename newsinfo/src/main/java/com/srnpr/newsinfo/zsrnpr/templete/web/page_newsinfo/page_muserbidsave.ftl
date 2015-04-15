@@ -65,6 +65,28 @@
 						</div>
 						<div class="mobile_w_clear"></div>
 					</div>
+					<div class="mobile_w_h10"></div>
+					<div
+						class="mobile_mbid_form_list mobile_w_border_b mobile_w_border_t">
+						<div class="mobile_mbid_form_item mobile_w_border_b">
+							<div class="mobile_mbid_form_left">身份证正面</div>
+							<div class="mobile_mbid_form_right">
+								
+								<@m_mb_common_upload id="card_one" />
+							</div>
+
+						</div>
+						<div class="mobile_mbid_form_item mobile_w_border_b">
+							<div class="mobile_mbid_form_left">身份证反面</div>
+							<div class="mobile_mbid_form_right">
+								
+								<@m_mb_common_upload id="card_two" />
+							</div>
+
+						</div>
+						
+						<div class="mobile_w_clear"></div>
+					</div>
 					<div class="mobile_w_h30"></div>
 					<div class="mobile_mbid_green">注意：竞投办理人姓名、银行卡户主姓名、身份证姓名必须一致方可办理竞投手续。</div>
 					<div class="mobile_w_h30"></div>

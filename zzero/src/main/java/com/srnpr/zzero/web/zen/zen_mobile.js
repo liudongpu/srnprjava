@@ -591,9 +591,9 @@ zen
 						good_size : $("#good_size").val(),
 						good_weight : $("#good_weight").val(),
 						good_price : $("#good_price").val(),
-						photo_one : "1",
-						photo_two : "2",
-						photo_three : "3"
+						photo_one : $("#photo_one").val(),
+						photo_two : $("#photo_two").val(),
+						photo_three : $("#photo_three").val()
 					}, zen.mobile.usersendsave_success);
 
 				},

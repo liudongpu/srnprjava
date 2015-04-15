@@ -80,6 +80,29 @@
 							</div>
 
 						</div>
+						
+						
+						<div class="mobile_mbid_form_item mobile_w_border_b">
+							<div class="mobile_mbid_form_left">拍品照片1</div>
+							<div class="mobile_mbid_form_right">
+								<@m_mb_common_upload id="photo_one" />
+							</div>
+
+						</div>
+						<div class="mobile_mbid_form_item mobile_w_border_b">
+							<div class="mobile_mbid_form_left">拍品照片2</div>
+							<div class="mobile_mbid_form_right">
+								<@m_mb_common_upload id="photo_two" />
+							</div>
+
+						</div>
+						<div class="mobile_mbid_form_item mobile_w_border_b">
+							<div class="mobile_mbid_form_left">拍品照片3</div>
+							<div class="mobile_mbid_form_right">
+								<@m_mb_common_upload id="photo_three" />
+							</div>
+
+						</div>
 						<div class="mobile_w_clear"></div>
 					</div>
 					<div class="mobile_w_h10"></div>

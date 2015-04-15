@@ -2,7 +2,7 @@
 <@m_mb_common_header nav="main"  button="back"/>
 
 
-
+<#if (pageinfo.getPageOptions()?exists) >
 
 
 
@@ -41,5 +41,13 @@
 			zen.mobile.page_muserbidagree()
 		});
 	</script>
+	
+	
+	<#else>
+	<@m_mb_common__nologin />
+</#if>
+	
+	
+	
 <@m_mb_common_footer />
 </body>

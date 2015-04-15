@@ -379,8 +379,10 @@ $(window).ready(function(){zen.site.comment_show('${uid}')});
 				</a>
 				</div>
 				<div class="mobile_head_menu_item">
+				<a href="/newsinfo/mstatic-static-303300010006">
 					<div class="mobile_head_menu_left mobile_head_menu_five"></div>
 					<div class="mobile_head_menu_right">客户服务</div>
+				</a>
 				</div>
 			</div>
 		</div>
@@ -388,6 +390,23 @@ $(window).ready(function(){zen.site.comment_show('${uid}')});
 	</div>
 </#macro>
 
+
+<#macro m_mb_common_upload id="" value="">
+
+
+<input type="hidden" id="${id}" name="${id}" value="${value}">
+								<iframe src="/zyou-iframe/mupload-images_upload?parentid=${id}" frameborder="0"  width="100%" style="height: 100px;"></iframe>
+
+	
+</#macro>
+
+<#macro m_mb_common__nologin from="">
+
+  <script>
+  location.href="/newsinfo/mlogin-login?zen_site_url_login_from=${from}";
+  </script>
+
+</#macro>
 
 
 

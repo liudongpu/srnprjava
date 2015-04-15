@@ -261,7 +261,7 @@ html {
 
 .mobile_mindex_content_date {
 	float: right;
-	width: 120px;
+	min-width: 160px;
 	font-size: 2.2rem;
 	color: #999999;
 	line-height: 2.5rem;
@@ -446,6 +446,12 @@ html {
 	font-size: 2rem;
 	color: #999999;
 	height: 24px;
+}
+
+.mobile_mcontent_info
+{
+	font-size:2rem;
+	line-height:2.5rem;
 }
 
 .mobile_mauction_box {
@@ -1015,4 +1021,18 @@ html {
 	
 }
 
+.mobile_mstatic_box {
+	width: 94%;
+	margin-left: 3%;
+}
 
+.mobile_mstatic_title {
+	font-size: 4rem;
+	line-height: 50px;
+}
+
+.mobile_mstatic_info {
+	font-size: 2rem;
+	
+	line-height: 3rem;
+}
