@@ -13,7 +13,7 @@
 				<div class="mobile_w_h20 "></div>
 				<div>
 					<img
-						src="${bd_img_cdn_url}${good_info["file_url"]}" />
+						src="${bd_img_cdn_url}${pageexec.upMobile(good_info["file_url"])}" />
 				</div>
 				<div class="mobile_w_h20 "></div>
 				<div class="mobile_mgood_title">${good_info["name"]}</div>

@@ -14,7 +14,7 @@
 							 <#list pageexec.upData("info_adv") as el>
 							 <a href="${el["link_url"]}">
 								  <img
-	                            src="${el["file_url"]}"
+	                            src="${pageexec.upSite(el["file_url"])}"
 	                            alt="" title="#htmlcaption_${el_index}" />
 							 </a>
 							 </#list>
@@ -56,22 +56,22 @@
                     <div class="index_banner_item">
                     
                     	<#assign page_book_adv_top= pageexec.upDataOne("info_static","code","303300030037") >
-						<a href="${page_book_adv_top["link"]}" target="_blank"><img src="${page_book_adv_top["file_url"]}" /></a>
+						<a href="${page_book_adv_top["link"]}" target="_blank"><img src="${pageexec.upImg(page_book_adv_top["file_url"],256)}" /></a>
                     </div>
                     <div class="index_banner_split"></div>
                     <div class="index_banner_item">
                         <#assign page_book_adv_top= pageexec.upDataOne("info_static","code","303300030036") >
-						<a href="${page_book_adv_top["link"]}" target="_blank"><img src="${page_book_adv_top["file_url"]}" /></a>
+						<a href="${page_book_adv_top["link"]}" target="_blank"><img src="${pageexec.upImg(page_book_adv_top["file_url"],256)}" /></a>
                     </div>
                     <div class="index_banner_split"></div>
                     <div class="index_banner_item">
                         <#assign page_book_adv_top= pageexec.upDataOne("info_static","code","303300030035") >
-						<a href="${page_book_adv_top["link"]}" target="_blank"><img src="${page_book_adv_top["file_url"]}" /></a>
+						<a href="${page_book_adv_top["link"]}" target="_blank"><img src="${pageexec.upImg(page_book_adv_top["file_url"],256)}" /></a>
                     </div>
                     <div class="index_banner_split"></div>
                     <div class="index_banner_item">
                         <#assign page_book_adv_top= pageexec.upDataOne("info_static","code","303300030034") >
-						<a href="${page_book_adv_top["link"]}" target="_blank"><img src="${page_book_adv_top["file_url"]}" /></a>
+						<a href="${page_book_adv_top["link"]}" target="_blank"><img src="${pageexec.upImg(page_book_adv_top["file_url"],256)}" /></a>
                     </div>
                 </div>
                 

@@ -14,6 +14,7 @@ import org.springframework.web.context.request.ServletRequestAttributes;
 import com.srnpr.zcom.base.BaseClass;
 import com.srnpr.zcom.common.CommonConst;
 import com.srnpr.zcom.enumer.EComConst;
+import com.srnpr.zcom.helper.FormatHelper;
 import com.srnpr.zdata.manager.DataTableManager;
 import com.srnpr.zdata.support.DataSupport;
 import com.srnpr.zdata.support.TableSupport;
@@ -62,32 +63,27 @@ public class PageExec extends BaseClass {
 			String... args) {
 		return DataTableManager.Get(sTableName).upOneQuery(sWhere, args);
 	}
-	
-	
-	public Map<String, Object> upDataOneOrder(String sTableName, String sWhere,String sOrder,
-			String... args) {
-		return DataTableManager.Get(sTableName).upOneOrder(sWhere,sOrder, args);
-	}
-	
 
-	
-	public Object upDataTop(String sTableName, String sWhere,
-			String sOrder,int iTopSize,Object... oArgs) {
-		return DataTableManager.Get(sTableName).upListAll("",sWhere, sOrder,0,
-				iTopSize, oArgs);
-		
+	public Map<String, Object> upDataOneOrder(String sTableName, String sWhere,
+			String sOrder, String... args) {
+		return DataTableManager.Get(sTableName)
+				.upOneOrder(sWhere, sOrder, args);
 	}
-	
-	
-	
+
+	public Object upDataTop(String sTableName, String sWhere, String sOrder,
+			int iTopSize, Object... oArgs) {
+		return DataTableManager.Get(sTableName).upListAll("", sWhere, sOrder,
+				0, iTopSize, oArgs);
+
+	}
+
 	public MPageNav upPageNav(String sTableName, String sFields, String sOrder,
 			Object... oArgs) {
-		return upPageNavQuery(sTableName,sFields,"",sOrder,oArgs);
+		return upPageNavQuery(sTableName, sFields, "", sOrder, oArgs);
 	}
-	
-	
-	public MPageNav upPageNavQuery(String sTableName, String sFields,String sWhere, String sOrder,
-			Object... oArgs) {
+
+	public MPageNav upPageNavQuery(String sTableName, String sFields,
+			String sWhere, String sOrder, Object... oArgs) {
 		MPageNav mPageNav = new MPageNav();
 
 		if (StringUtils.isNotEmpty(upRequest().getParameter("z_page_index"))) {
@@ -104,14 +100,14 @@ public class PageExec extends BaseClass {
 		}
 
 		if (mPageNav.getPageCount() < 0) {
-			mPageNav.setPageCount(DataTableManager.Get(sTableName).upListCountWhere(sWhere,
-					oArgs));
+			mPageNav.setPageCount(DataTableManager.Get(sTableName)
+					.upListCountWhere(sWhere, oArgs));
 		}
-		
-		mPageNav.setPageData(
-		DataTableManager.Get(sTableName).upListAll(sFields,sWhere, sOrder, (mPageNav.getPageIndex()-1)*mPageNav.getPageSize(),
+
+		mPageNav.setPageData(DataTableManager.Get(sTableName).upListAll(
+				sFields, sWhere, sOrder,
+				(mPageNav.getPageIndex() - 1) * mPageNav.getPageSize(),
 				mPageNav.getPageSize(), oArgs));
-		
 
 		return mPageNav;
 	}
@@ -121,69 +117,68 @@ public class PageExec extends BaseClass {
 				.getRequestAttributes()).getRequest();
 
 	}
-	
-	public String upRequestParameter(String sKey)
-	{
-		String sValueString="";
-		
-		if(upRequest().getParameter(sKey)!=null)
-		{
-			sValueString=upRequest().getParameter(sKey).toString();
+
+	public String upRequestParameter(String sKey) {
+		String sValueString = "";
+
+		if (upRequest().getParameter(sKey) != null) {
+			sValueString = upRequest().getParameter(sKey).toString();
 		}
-		
-		
+
 		return sValueString;
 	}
-	
-	
-	
-	public String upHtmlTag(Object oHtml,int iLength)
-	{
-		String htmlStr=oHtml.toString();
-		 String regEx_html="<[^>]+>"; //定义HTML标签的正则表达式 
-		 Pattern p_html=Pattern.compile(regEx_html,Pattern.CASE_INSENSITIVE); 
-         Matcher m_html=p_html.matcher(htmlStr); 
-         htmlStr=m_html.replaceAll(""); //过滤html标签 
-         
-         htmlStr=htmlStr.trim();
-         
-         
-         if(iLength>0)
-         {
-        	 htmlStr=StringUtils.left(htmlStr, iLength);
-         }
-         
-         
 
-        return htmlStr; //返回文本字符串 
+	public String upHtmlTag(Object oHtml, int iLength) {
+		String htmlStr = oHtml.toString();
+		String regEx_html = "<[^>]+>"; // 定义HTML标签的正则表达式
+		Pattern p_html = Pattern.compile(regEx_html, Pattern.CASE_INSENSITIVE);
+		Matcher m_html = p_html.matcher(htmlStr);
+		htmlStr = m_html.replaceAll(""); // 过滤html标签
+
+		htmlStr = htmlStr.trim();
+
+		if (iLength > 0) {
+			htmlStr = StringUtils.left(htmlStr, iLength);
+		}
+
+		return htmlStr; // 返回文本字符串
 	}
-	
-	public void inSession(String sKey,Object oValue)
-	{
+
+	public void inSession(String sKey, Object oValue) {
 		HttpServletRequest hRequest = ((ServletRequestAttributes) RequestContextHolder
 				.getRequestAttributes()).getRequest();
 
-		if (hRequest != null 
-				) {
+		if (hRequest != null) {
 			hRequest.getSession().setAttribute(sKey, oValue);
-			
+
 		}
 	}
-	
-	
-	public Object upSession(String sKey)
-	{
-		Object oReturnObject=null;
+
+	public Object upSession(String sKey) {
+		Object oReturnObject = null;
 		HttpServletRequest hRequest = ((ServletRequestAttributes) RequestContextHolder
 				.getRequestAttributes()).getRequest();
 
-		if (hRequest != null 
-				) {
-			
-			oReturnObject= hRequest.getSession().getAttribute(sKey);
-			
+		if (hRequest != null) {
+
+			oReturnObject = hRequest.getSession().getAttribute(sKey);
+
 		}
 		return oReturnObject;
 	}
 
+	public String upImg(String sUrl, int iWidth) {
+
+		return FormatHelper.upImg(sUrl, iWidth);
+
+	}
+
+	public String upMobile(String sUrl) {
+
+		return FormatHelper.upImg(sUrl, FormatHelper.Mobile_Size);
+	}
+	public String upSite(String sUrl) {
+
+		return FormatHelper.upImg(sUrl, FormatHelper.Site_Width);
+	}
 }

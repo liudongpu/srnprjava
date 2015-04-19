@@ -133,7 +133,7 @@
 						<ul>
 						 	<#list pageexec.upDataTop("info_images","","-zid",12,"position_cid",cid) as el>
 	                            <li><a href="${base_url}newsinfo/img-img-${el["uid"]}" title="${el["title"]}"> <img
-									src="${el["file_url"]}"
+									src="${pageexec.upImg(el["file_url"],142)}"
 									alt="${el["title"]}"> <span><#if (el["title"]?length>22)>${el["title"]?substring(0,22)}<#else> ${el["title"]}</#if></span>
 							</a></li>
 							 

@@ -41,7 +41,7 @@
 					<a href="special-list-${el["uid"]}">
 						<div class="c_image">
 							<img
-								src="${el["file_url"]}" />
+								src="${pageexec.upImg(el["file_url"],355)}" />
 						</div></a>
 						<div class="c_info">
 							<div class="c_title">拍卖会：${el["name"]}</div>

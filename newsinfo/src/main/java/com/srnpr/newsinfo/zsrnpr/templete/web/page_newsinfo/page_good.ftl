@@ -12,7 +12,7 @@
 			<div class="good_body">
 				<div class="good_image">
 					<img
-					src="${good_info["file_url"]}"
+					src="${pageexec.upSite(good_info["file_url"])}"
 					alt="" />
 				</div>
 				<div class="good_tools"></div>

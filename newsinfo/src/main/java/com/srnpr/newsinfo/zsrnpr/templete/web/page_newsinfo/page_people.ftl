@@ -49,7 +49,7 @@
 
 			<#list page_people_list	as el>
 				<a class="c_item b_corner" href="product-view-${el["uid"]}" >
-				<img class="b_corner" src="${el["file_url"]}"/>
+				<img class="b_corner" src="${pageexec.upImg(el["file_url"],250)}"/>
 				<h4>${el["name"]}</h4>
 				</a>
 				

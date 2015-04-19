@@ -13,7 +13,7 @@
 		
 		<div class="product_people">
 			<div class="c_note"><h3>${product_people["name"]}</h3><div class="c_note_info">${product_people["note"]}</div></div>
-			<div class="c_img"><img src="${product_people["file_url"]}"/></div>
+			<div class="c_img"><img src="${pageexec.upImg(product_people["file_url"],250)}"/></div>
 			
 		</div>
 		
@@ -54,7 +54,7 @@
 					<div class="c_inner">
 						<div class="c_image">
 							<a href="work-work-${el["uid"]}"><img
-								src="${el["file_url"]}" /></a>
+								src="${pageexec.upImg(el["file_url"],355)}" /></a>
 						</div>
 						<div class="c_info">
 							<div class="c_title">名称：<a href="work-work-${el["uid"]}">${el["product_name"]}</a></div>

@@ -23,7 +23,7 @@
 							<div class="swiper-slide">
 							<a href="${el["link_url"]?replace("newsinfo/","newsinfo/m")}">
 							<img
-								src="${bd_img_cdn_url}${el["file_url"]}"
+								src="${bd_img_cdn_url}${pageexec.upMobile(el["file_url"])}"
 								alt="" />
 							</a>
 							</div>
@@ -76,7 +76,7 @@
 					</div>
 					<div class="mobile_mindex_content_right">
 						<img
-							src="${bd_img_cdn_url}${el["file_url"]}" />
+							src="${bd_img_cdn_url}${pageexec.upImg(el["file_url"],200)}" />
 					</div>
 					</a>
 				</div>

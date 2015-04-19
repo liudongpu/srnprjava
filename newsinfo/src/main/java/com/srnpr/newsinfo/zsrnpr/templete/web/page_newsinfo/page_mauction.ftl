@@ -31,7 +31,7 @@
 								<a href="mspecial-list-${el["uid"]}">
 								<div>
 									<img
-										src="${bd_img_cdn_url}${el["file_url"]}" />
+										src="${bd_img_cdn_url}${pageexec.upImg(el["file_url"],355)}" />
 								</div>
 								<div class="mobile_w_h20"></div>
 								<div class="mobile_mauction_title">${el["name"]}</div>

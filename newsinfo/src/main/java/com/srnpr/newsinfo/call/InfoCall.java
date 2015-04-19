@@ -12,6 +12,7 @@ import com.srnpr.zcom.common.ComFunction;
 import com.srnpr.zcom.common.CommonConst;
 import com.srnpr.zcom.enumer.EComConst;
 import com.srnpr.zcom.helper.FormatHelper;
+import com.srnpr.zcom.helper.MapHelper;
 import com.srnpr.zcom.model.MHashMap;
 import com.srnpr.zcom.model.MResult;
 import com.srnpr.zdata.manager.DataTableManager;
@@ -62,24 +63,27 @@ public class InfoCall extends BaseClass {
 				.toString());
 
 		if (result.getFlag()) {
-			result.setResult(DataTableManager.Get("info_news").upList("zid,uid,title,note,file_url,create_time",
-					"-orderid,-create_time", iPageIndex * 10, 10,
-					new MHashMap()));
+			result.setResult(new MapHelper().upImageSize(
+					DataTableManager.Get("info_news").upList(
+							"zid,uid,title,note,file_url,create_time",
+							"-orderid,-create_time", iPageIndex * 10, 10,
+							new MHashMap()), FormatHelper.Mobile_Size,
+					"file_url"));
 			// result.setMessage(sUid);
 
 		}
 
 		return result;
 	}
-	
-	
+
 	public MResult NoticeList() {
 
 		int iPageIndex = Integer.valueOf(pRequest.getReqMap().get("page_index")
 				.toString());
 
 		if (result.getFlag()) {
-			result.setResult(DataTableManager.Get("info_notice").upList("zid,uid,title,note,content,create_time",
+			result.setResult(DataTableManager.Get("info_notice").upList(
+					"zid,uid,title,note,content,create_time",
 					"-orderid,-create_time", iPageIndex * 10, 10,
 					new MHashMap()));
 			// result.setMessage(sUid);
@@ -88,76 +92,67 @@ public class InfoCall extends BaseClass {
 
 		return result;
 	}
-	
-	
-	
-	
+
 	public MResult PicList() {
 
 		int iPageIndex = Integer.valueOf(pRequest.getReqMap().get("page_index")
 				.toString());
 		String sUid = pRequest.getReqMap().get("pic_uid").toString();
-		
-		
-		MHashMap map=new MHashMap();
+
+		MHashMap map = new MHashMap();
 		map.put("special_uid", sUid);
-		
+
 		if (result.getFlag()) {
-			result.setResult(DataTableManager.Get("info_good").upList("zid,uid,name,code,assess_price,success_price,file_url",
-					"code", iPageIndex * 10, 10,
-					map));
+			result.setResult(new MapHelper().upImageSize(DataTableManager.Get("info_good").upList(
+					"zid,uid,name,code,assess_price,success_price,file_url",
+					"code", iPageIndex * 10, 10, map), FormatHelper.Mobile_Size/2,
+					"file_url"));
 			// result.setMessage(sUid);
 
 		}
 
 		return result;
 	}
-	
-	
-	
+
 	public MResult CollectAll(Map<String, Object> mUserInfo) {
 
 		int iPageIndex = Integer.valueOf(pRequest.getReqMap().get("page_index")
 				.toString());
-		
-		
-		MHashMap map=new MHashMap();
-		map.put("user_uid", mUserInfo
-				.get("uid"));
-		
+
+		MHashMap map = new MHashMap();
+		map.put("user_uid", mUserInfo.get("uid"));
+
 		if (result.getFlag()) {
-			result.setResult(DataTableManager.Get("user_collect").upList("zid,uid,info_url,info_title,left(collect_date,10) as collect_date,info_uid,info_type",
-					"-collect_date", iPageIndex * 10, 10,
-					map));
+			result.setResult(DataTableManager
+					.Get("user_collect")
+					.upList("zid,uid,info_url,info_title,left(collect_date,10) as collect_date,info_uid,info_type",
+							"-collect_date", iPageIndex * 10, 10, map));
 			// result.setMessage(sUid);
 
 		}
 
 		return result;
 	}
-	
+
 	public MResult CommentAll(Map<String, Object> mUserInfo) {
 
 		int iPageIndex = Integer.valueOf(pRequest.getReqMap().get("page_index")
 				.toString());
-		
-		
-		MHashMap map=new MHashMap();
-		map.put("user_uid", mUserInfo
-				.get("uid"));
-		
+
+		MHashMap map = new MHashMap();
+		map.put("user_uid", mUserInfo.get("uid"));
+
 		if (result.getFlag()) {
-			result.setResult(DataTableManager.Get("user_comment").upList("zid,uid,info_url,info_title, comment_date,info_uid,info_type,note",
-					"-comment_date", iPageIndex * 10, 10,
-					map));
+			result.setResult(DataTableManager
+					.Get("user_comment")
+					.upList("zid,uid,info_url,info_title, comment_date,info_uid,info_type,note",
+							"-comment_date", iPageIndex * 10, 10, map));
 			// result.setMessage(sUid);
 
 		}
 
 		return result;
 	}
-	
-	
 
 	public MResult CommentSubmit(Map<String, Object> mUserInfo) {
 

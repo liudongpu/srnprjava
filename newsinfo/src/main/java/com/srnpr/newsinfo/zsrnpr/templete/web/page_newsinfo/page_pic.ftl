@@ -34,7 +34,7 @@
 			
 				<div class="c_item b_corner">
 					<a href="good-good-${el["uid"]}"><img class="b_corner"
-						src="${el["file_url"]}" /></a>
+						src="${pageexec.upImg(el["file_url"],250)}" /></a>
 					<div class="c_text">
 						<h4><a href="good-good-${el["uid"]}" title="${el["name"]}">${el["name"]}</a></h4>
 						图录号：${el["code"]}<br /> 参考价：${el["assess_price"]}<br /> 

@@ -18,7 +18,7 @@
 				<a href="mpic-list-${el["uid"]}">
 					<div class="mobile_mspecital_img">
 						<img
-							src="${bd_img_cdn_url}${el["file_url"]}" />
+							src="${bd_img_cdn_url}${pageexec.upMobile(el["file_url"])}" />
 					</div>
 					<div class="mobile_w_h20"></div>
 					<div class="mobile_mspecital_title">

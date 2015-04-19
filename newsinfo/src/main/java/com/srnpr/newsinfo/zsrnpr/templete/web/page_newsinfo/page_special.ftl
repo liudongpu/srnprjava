@@ -10,7 +10,7 @@
 					<div class="span3">
 						<div class="special_box_auction">
 							<div class="c_img">
-								<img src="${special_info['file_url']}" />
+								<img src="${pageexec.upImg(special_info['file_url'],253)}" />
 							</div>
 							<div class="c_info">
 								<div class="c_title">${special_info['name']}</div>
@@ -40,7 +40,7 @@
 
 								<dl>
 									<dt>
-										<a href="pic-list-${el["uid"]}"><img src="${el["file_url"]}"/></a>
+										<a href="pic-list-${el["uid"]}"><img src="${pageexec.upImg(el["file_url"],160)}"/></a>
 									</dt>
 									<dd>
 										<h3><a href="pic-list-${el["uid"]}">${el["name"]}</a></h3>
