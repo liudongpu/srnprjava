@@ -11,16 +11,16 @@
 
 				<div class="book_adv_top">
 				<#assign page_book_adv_top= pageexec.upDataOne("info_static","code","303300030001") >
-					<a href="${page_book_adv_top["link"]}" target="_blank"><img src="${page_book_adv_top["file_url"]}" /></a>
+					<a href="${page_book_adv_top["link"]}" target="_blank"><img src="${pageexec.upSite(page_book_adv_top["file_url"])}" /></a>
 				</div>
 				<div class="book_center">
 					<div class="c_left">
 					<#assign page_book_adv_left= pageexec.upDataOne("info_static","code","303300030002") >
-					<a href="${page_book_adv_left["link"]}" target="_blank"><img src="${page_book_adv_left["file_url"]}" /></a>
+					<a href="${page_book_adv_left["link"]}" target="_blank"><img src="${pageexec.upImg(page_book_adv_left["file_url"],550)}" /></a>
 					</div>
 					<div class="c_right">
 					<#assign page_book_adv_right= pageexec.upDataOne("info_static","code","303300030003") >
-					<a href="${page_book_adv_right["link"]}" target="_blank"><img src="${page_book_adv_right["file_url"]}" /></a>
+					<a href="${page_book_adv_right["link"]}" target="_blank"><img src="${pageexec.upImg(page_book_adv_right["file_url"],550)}" /></a>
 					</div>
 				</div>
 				<div class="clearfix"></div>
@@ -36,7 +36,7 @@
 								<#list pageexec.upDataOrder("info_book","-sort_index") as el> 	
 						 			<li>
 						 				<a href="${base_url}books/${el["book_url"]}" target="_blank"> 
-						 					<img src="${el["file_url"]}" alt="${el["title"]}" />
+						 					<img src="${pageexec.upImg(el["file_url"],142)}" alt="${el["title"]}" />
 						 					<span>${el["title"]}</span>
 										</a>
 									</li>

@@ -14,7 +14,7 @@
 						<#if (el["file_url"]??)&&(el["file_url"]!="")>
 						<div class="c_image">
 							<img
-								src="${el["file_url"]}" />
+								src="${pageexec.upImg(el["file_url"],750)}" />
 						</div>
 						</#if>
 						<div class="c_des">导 语：
@@ -48,7 +48,7 @@
 						<#if (el["file_url"]??)&&(el["file_url"]!="")>
 						<div class="c_image">
 							<img
-								src="${el["file_url"]}" />
+								src="${pageexec.upImg(el["file_url"],750)}" />
 						</div>
 						</#if>
 						<div class="c_des">
