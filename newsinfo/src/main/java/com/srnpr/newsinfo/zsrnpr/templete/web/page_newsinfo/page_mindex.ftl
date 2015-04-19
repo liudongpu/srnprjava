@@ -1,5 +1,5 @@
 
-<@m_mb_common_header nav="main"  />
+<@m_mb_common_header nav="main"  type="2"/>
 
 <#assign mb_index_adv=pageexec.upData("info_adv")>
 
@@ -12,38 +12,47 @@
 		<div class="mobile_mindex_body">
 			<div class="mobile_w_h5"></div>
 			<div class="mobile_mindex_adv">
-				<div id="myCarousel" class="carousel slide">
-					<ol class="carousel-indicators">
-						
+			
+			
+				<div class="swiper-container  mobile_mindex_adv_box">
+					<div class="swiper-wrapper">
 						
 						<#list mb_index_adv as el>
 
-							<li data-target="#myCarousel" data-slide-to="${el_index}"  <#if el_index==0>class="active"</#if>></li>
 							
-						</#list>						
+							<div class="swiper-slide">
+							<a href="${el["link_url"]?replace("newsinfo/","newsinfo/m")}">
+							<img
+								src="${bd_img_cdn_url}${el["file_url"]}"
+								alt="" />
+							</a>
+							</div>
+						</#list>	
 
-					</ol>
-					<!-- Carousel items -->
-					<div class="carousel-inner">
-					
-					
-						<#list mb_index_adv as el>
-							 <div class="item <#if el_index==0>active</#if>">
-								  <img
-	                            src="${bd_img_cdn_url}${el["file_url"]}"
-	                            alt="" title="#htmlcaption_${el_index}" />
-							 </div>
-						</#list>
-					
-					
-					
-						
+
+
+
 					</div>
-					<!-- Carousel nav -->
-					<a class="carousel-control left" href="#myCarousel"
-						data-slide="prev">&lsaquo;</a> <a class="carousel-control right"
-						href="#myCarousel" data-slide="next">&rsaquo;</a>
+					
+					<div class="swiper-pagination"></div>
+
 				</div>
+			
+			
+				<script>        
+				  var mySwiper = new Swiper ('.swiper-container', {
+				    //direction: 'vertical',
+				    loop: true,
+				    
+				    // 如果需要分页器
+				    pagination: '.swiper-pagination',
+				    autoplay:5000
+				    
+				    
+				  })        
+  			</script>
+			
+				
 			</div>
 			<div class="mobile_w_h20 "></div>
 			<div class="mobile_mindex_tips mobile_w_bg_white">

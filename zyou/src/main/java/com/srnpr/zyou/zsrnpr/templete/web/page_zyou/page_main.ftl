@@ -13,7 +13,12 @@
 					欢迎您：<span id="page_main_user_name"></span>，<a onclick="zen.page.logout()">退出系统</a>
 				</p>
 				<ul class="nav">
-					<li class="active"><a href="/" target="_blank">网站首页</a></li>
+				
+					<li><a onclick="changeNav(1)"  class="navbar-link">网站后台</a></li>
+					<li><a onclick="changeNav(2)"  class="navbarlink">手机后台</a></li>
+				
+				
+					<li class="active"><a href="/" class="navbar-link"  target="_blank">网站首页</a></li>
 					
 					<li><a onclick="zen.page.call('${base_url}zyou/func-system_table-97b1bcc3a90111e2bb7900241d8adc62-func_do=refreshcache')" class="navbar-link">刷新缓存</a></li>
 				</ul>
@@ -32,7 +37,7 @@
 <div class="container-fluid">
 	<div class="row-fluid">
 		<div class="span2">
-			<div class="well sidebar-nav" id="page_main_menu">
+			<div class="well sidebar-nav" style="display:none" id="page_main_menu">
 				<ul class="nav nav-list">
 					<li class="nav-header">广告设置</li>
 					<li><a href="${base_url}zyou/chart-v_info_adv">首页轮播广告</a></li>
@@ -58,6 +63,19 @@
 					<li><a href="${base_url}zyou/chart-v_user_comment">评论列表</a></li>
 				</ul>
 			</div>
+			
+			<div class="well sidebar-nav" style="display:none" id="page_main_menu_2">
+				<ul class="nav nav-list">
+					<li class="nav-header">用户相关</li>
+					<li><a href="${base_url}zyou/chart-v_user_bid">竞投办理</a></li>
+					<li><a href="${base_url}zyou/chart-v_user_ent">委托竞投</a></li>
+					<li><a href="${base_url}zyou/chart-v_user_send">在线送拍</a></li>
+					<li class="nav-header">内容相关</li>
+					<li><a href="${base_url}zyou/chart-v_info_static_nav--system_cid=30330004">静态内容</a></li>
+					
+				</ul>
+			</div>
+			
 			<!--/.well -->
 		</div>
 		<!--/span-->
@@ -88,15 +106,46 @@ function()
 			if($(el).attr('href').indexOf(sTarget)>-1)
 			{
 				$(el).parent().addClass('active');
+				changeNav(1);
+			}
+			
+		});
+		$('#page_main_menu_2 li a').each(
+		function(n,el)
+		{
+			//alert(el);
+			
+			if($(el).attr('href').indexOf(sTarget)>-1)
+			{
+				$(el).parent().addClass('active');
+				changeNav(2);
 			}
 			
 		}
 	
-	);
+		);
 	
 }
 
 );
+
+
+function changeNav(iType)
+{
+	if(iType==1)
+	{
+		$('#page_main_menu').show();
+		$('#page_main_menu_2').hide();
+	}
+	else
+	{
+		$('#page_main_menu').hide();
+		$('#page_main_menu_2').show();
+	}
+	
+
+}
+
 
 
 </script>

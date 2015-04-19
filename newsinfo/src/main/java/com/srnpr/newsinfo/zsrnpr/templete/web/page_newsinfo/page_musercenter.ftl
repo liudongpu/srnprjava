@@ -3,7 +3,7 @@
 
 
 	
-	
+	<#if (pageinfo.getPageOptions()?exists) >
 	
 	
 	<div class="mobile_lay_main">
@@ -74,5 +74,13 @@
 			zen.mobile.initlogin()
 		});
 	</script>
+	
+	
+		
+	<#else>
+	<@m_mb_common__nologin />
+</#if>
+	
+	
 <@m_mb_common_footer />
 </body>

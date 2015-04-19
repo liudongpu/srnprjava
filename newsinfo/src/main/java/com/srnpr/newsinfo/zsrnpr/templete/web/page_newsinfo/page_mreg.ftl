@@ -34,7 +34,7 @@
 				<div class="mobile_w_h20 "></div>
 				<div class="mobile_base_buttom" onclick="zen.mobile.loginreg()">注册</div>
 				<div class="mobile_w_h30 "></div>
-				<div class="mobile_mlogin_desc">注册即视为同意<a href="">《博观用户服务协议》</a></div>
+				<div class="mobile_mlogin_desc">注册即视为同意<a href="/newsinfo/mstatic-static-303300040002">《博观用户服务协议》</a></div>
 			</div>
 		</div>
 	</div>

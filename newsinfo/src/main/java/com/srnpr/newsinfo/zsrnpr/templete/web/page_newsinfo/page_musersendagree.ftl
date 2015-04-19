@@ -13,7 +13,7 @@
 
 				<div class="mobile_mbid_for_bgfour"></div>
 				<div class="mobile_mbid_for_agree">
-					<input type="checkbox" checked="checked" />我同意<a href="">在线送拍协议</a>
+					<input type="checkbox" checked="checked" />我同意<a href="/newsinfo/mstatic-static-303300040005">在线送拍协议</a>
 
 				</div>
 				<div class="mobile_w_h30 "></div>

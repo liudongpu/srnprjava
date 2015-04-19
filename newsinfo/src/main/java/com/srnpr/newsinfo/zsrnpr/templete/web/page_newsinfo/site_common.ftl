@@ -289,7 +289,7 @@ $(window).ready(function(){zen.site.comment_show('${uid}')});
 <meta name="keywords" content="博观拍卖,拍卖,博观,珠宝,玉石,机构" />
 <meta name="description" content="${title}-博观拍卖 - 中国珠宝玉石专业拍卖机构" />
 <meta
-	content="width=device-width, initial-scale=0.65, maximum-scale=1.0, user-scalable=0"
+	content="width=640px, maximum-scale=1.0, user-scalable=0"
 	name="viewport" />
 <meta content="yes" name="apple-mobile-web-app-capable" />
 <meta content="black" name="apple-mobile-web-app-status-bar-style" />
@@ -300,7 +300,17 @@ $(window).ready(function(){zen.site.comment_show('${uid}')});
 <link type="text/css" href="${bd_url}/zzero/web/themes/website/sitecss/mobile.css"
 	rel="stylesheet">
 <script type="text/javascript" src="${bd_url}/zzero/web/zen/zen_mobile.js"></script>
-	
+
+<#if type=="2" >
+
+<link type="text/css" href="${bd_url}/zzero/web/lib/swiper/swiper3.06.min.css"
+	rel="stylesheet">
+<script type="text/javascript" src="${bd_url}/zzero/web/lib/swiper/swiper3.06.jquery.min.js"></script>
+
+
+</#if>
+
+
 
 <#if type=="1" >
 		<script type="text/javascript" src="${bd_url}/zzero/web/lib/iscroll/iscroll-probe.js"></script>
@@ -379,7 +389,7 @@ $(window).ready(function(){zen.site.comment_show('${uid}')});
 				</a>
 				</div>
 				<div class="mobile_head_menu_item">
-				<a href="/newsinfo/mstatic-static-303300010006">
+				<a href="/newsinfo/mstatic-static-303300040001">
 					<div class="mobile_head_menu_left mobile_head_menu_five"></div>
 					<div class="mobile_head_menu_right">客户服务</div>
 				</a>
