@@ -362,12 +362,16 @@ $(window).ready(function(){zen.site.comment_show('${uid}')});
 						<div class="mobile_w_clear"></div>
 					</div>
 					<div class="mobile_share_box" id="mobile_share_box">
-						<div class="bdsharebuttonbox">
-							<a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a><a
-								href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a><a
-								href="#" class="bds_renren" data-cmd="renren" title="分享到人人网"></a><a
-								href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+						<!-- JiaThis Button BEGIN -->
+						<div class="jiathis_style_32x32">
+							<a class="jiathis_button_qzone"></a> <a
+								class="jiathis_button_tsina"></a> <a
+								class="jiathis_button_weixin"></a> <a
+								class="jiathis_button_renren"></a> 
 						</div>
+						
+						<!-- JiaThis Button END -->
+						<div id="mobile_share_box_js"></div>
 					</div>
 				</div>
 				<div class="mobile_head_menu_item mobile_w_border_b">

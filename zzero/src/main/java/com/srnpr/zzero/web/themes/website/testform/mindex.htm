@@ -37,7 +37,8 @@
 
 <link type="text/css" href="../../../lib/swiper/swiper3.06.min.css"
 	rel="stylesheet">
-<script type="text/javascript" src="../../../lib/swiper/swiper3.06.jquery.min.js"></script>
+<script type="text/javascript"
+	src="../../../lib/swiper/swiper3.06.jquery.min.js"></script>
 
 
 </head>
@@ -54,8 +55,23 @@
 		<div class="mobile_head_menu" id="mobile_head_menu">
 			<div class="mobile_head_menu_content">
 				<div class="mobile_head_menu_item mobile_w_border_b">
-					<div class="mobile_head_menu_left mobile_head_menu_one"></div>
-					<div class="mobile_head_menu_right">分享</div>
+					<div onclick="zen.mobile.share_baidu()">
+						<div class="mobile_head_menu_left mobile_head_menu_one"></div>
+						<div class="mobile_head_menu_right">分享</div>
+						<div class="mobile_w_clear"></div>
+					</div>
+					<div class="mobile_share_box" id="mobile_share_box">
+						<!-- JiaThis Button BEGIN -->
+						<div class="jiathis_style_32x32">
+							<a class="jiathis_button_qzone"></a> <a
+								class="jiathis_button_tsina"></a> <a
+								class="jiathis_button_weixin"></a> <a
+								class="jiathis_button_renren"></a> 
+						</div>
+						
+						<!-- JiaThis Button END -->
+						<div id="mobile_share_box_js"></div>
+					</div>
 				</div>
 				<div class="mobile_head_menu_item mobile_w_border_b">
 					<div class="mobile_head_menu_left mobile_head_menu_two"></div>
@@ -83,46 +99,52 @@
 		<div class="mobile_mindex_body">
 			<div class="mobile_w_h5"></div>
 			<div class="mobile_mindex_adv">
-			
-			
-			<div class="swiper-container  mobile_mindex_adv_box">
-    <div class="swiper-wrapper">
-        <div class="swiper-slide"><img
+
+
+				<div class="swiper-container  mobile_mindex_adv_box">
+					<div class="swiper-wrapper">
+						<div class="swiper-slide">
+							<img
 								src="http://www.boguanpaimai.com/zzero/file/images_upload/20150112/ab73a8631ed84c5ba5a591779647050f.jpg"
-								alt="" /></div>
-        <div class="swiper-slide"><img
+								alt="" />
+						</div>
+						<div class="swiper-slide">
+							<img
 								src="http://www.boguanpaimai.com/zzero/file/images_upload/20150112/ab73a8631ed84c5ba5a591779647050f.jpg"
-								alt="" /></div>
-        <div class="swiper-slide"><img
+								alt="" />
+						</div>
+						<div class="swiper-slide">
+							<img
 								src="http://www.boguanpaimai.com/zzero/file/images_upload/20150112/ab73a8631ed84c5ba5a591779647050f.jpg"
-								alt="" /></div>
-    </div>
-    <!-- 如果需要分页器 -->
-    <div class="swiper-pagination"></div>
-    
-   
-    
-    
-</div>
-			
-			<script>        
-  var mySwiper = new Swiper ('.swiper-container', {
-    //direction: 'vertical',
-    loop: true,
-    
-    // 如果需要分页器
-    pagination: '.swiper-pagination',
-    
-    // 如果需要前进后退按钮
-    //nextButton: '.swiper-button-next',
-    //prevButton: '.swiper-button-prev',
-    
-    // 如果需要滚动条
-    //scrollbar: '.swiper-scrollbar',
-  })        
-  </script>
-			
-				
+								alt="" />
+						</div>
+					</div>
+					<!-- 如果需要分页器 -->
+					<div class="swiper-pagination"></div>
+
+
+
+
+				</div>
+
+				<script>
+					var mySwiper = new Swiper('.swiper-container', {
+						//direction: 'vertical',
+						loop : true,
+
+						// 如果需要分页器
+						pagination : '.swiper-pagination',
+
+					// 如果需要前进后退按钮
+					//nextButton: '.swiper-button-next',
+					//prevButton: '.swiper-button-prev',
+
+					// 如果需要滚动条
+					//scrollbar: '.swiper-scrollbar',
+					})
+				</script>
+
+
 			</div>
 			<div class="mobile_w_h20 "></div>
 			<div class="mobile_mindex_tips mobile_w_bg_white">
@@ -133,7 +155,9 @@
 			<div class="mobile_mindex_content mobile_w_bg_white">
 				<div class="mobile_mindex_content_item mobile_w_border_b">
 					<div class="mobile_mindex_content_left">
-						<div class="mobile_mindex_content_title"><a href="">私人订制，珠宝的传承之路</a></div>
+						<div class="mobile_mindex_content_title">
+							<a href="">私人订制，珠宝的传承之路</a>
+						</div>
 						<div class="mobile_w_h20"></div>
 						<div class="mobile_mindex_content_ico">
 							<div class="mobile_mindex_content_ico_one"></div>
