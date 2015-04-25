@@ -124,6 +124,16 @@ public class UserCall extends BaseClass {
 							pRequest.getReqMap().get("login_name").toString(),
 							"login_pass",
 							pRequest.getReqMap().get("login_pass").toString());
+			
+			if (mUserInfo == null) {
+				mUserInfo = DataTableManager.Get("user_info")
+						.upOneMap("phone_num",
+								pRequest.getReqMap().get("login_name").toString(),
+								"login_pass",
+								pRequest.getReqMap().get("login_pass").toString());
+			}
+			
+			
 
 			if (mUserInfo != null) {
 				MHashMap mHashMap = new MHashMap();
@@ -330,6 +340,32 @@ public class UserCall extends BaseClass {
 		return result;
 
 	}
+	
+	
+	public MResult SendDel(Map<String, Object> mUserInfo) {
+
+		if (mUserInfo != null) {
+			
+			String sUid= pRequest.getReqMap().get("id").toString();
+			
+			if(StringUtils.isNotBlank(sUid))
+			{
+				
+				
+				DataTableManager.Get("user_send").inDelete("uid",sUid);
+				
+			}
+			
+			
+			
+		}else {
+			result.error(937301007);
+		}
+
+		return result;
+	}
+	
+	
 
 	public MResult SendSave(Map<String, Object> mUserInfo) {
 

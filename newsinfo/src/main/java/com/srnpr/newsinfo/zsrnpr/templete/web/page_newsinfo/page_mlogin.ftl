@@ -13,7 +13,7 @@
 					<div class="mobile_mlogin_item mobile_w_border_b">
 						<div class="mobile_mlogin_icon_base mobile_mlogin_icon_mail"></div>
 						<div class="mobile_mlogin_input">
-							<input type="text"  id="login_loginname"  placeholder="请输入您的邮箱" />
+							<input type="text"  id="login_loginname"  placeholder="请输入您的邮箱或者手机号" />
 						</div>
 					</div>
 

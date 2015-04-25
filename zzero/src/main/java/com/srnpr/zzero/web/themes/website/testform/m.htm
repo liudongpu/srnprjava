@@ -34,180 +34,178 @@
 	rel="stylesheet">
 <script type="text/javascript" src="../../../zen/zen_mobile.js"></script>
 
-
-<link type="text/css" href="../../../lib/swiper/swiper3.06.min.css"
-	rel="stylesheet">
 <script type="text/javascript"
-	src="../../../lib/swiper/swiper3.06.jquery.min.js"></script>
+	src="../../../lib/iscroll/iscroll-probe.js"></script>
 
+
+
+<style>
+* {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+html {
+	-ms-touch-action: none;
+}
+
+body {
+	height: 100px;
+	overflow: hidden;
+	/* this is important to prevent the whole page to bounce */
+}
+</style>
 
 </head>
 <body class="mobile_body mobile_w_bg_base">
 
-	<div class="mobile_lay_head">
-		<div class="mobile_head_left">
-			<div class="mobile_head_icon_user"></div>
-		</div>
-		<div class="mobile_head_center">
-			<div class="mobile_head_logo"></div>
-		</div>
-		<div class="mobile_head_right" onclick="zen.mobile.menu_open()"></div>
-		<div class="mobile_head_menu" id="mobile_head_menu">
-			<div class="mobile_head_menu_content">
-				<div class="mobile_head_menu_item mobile_w_border_b">
-					<div class="mobile_head_menu_left mobile_head_menu_one"></div>
-					<div class="mobile_head_menu_right">分享</div>
+	<div class="mobile_base_scroll_wrap" id="mobile_base_scroll_wrap">
+		<div class="mobile_base_scroll_box" id="mobile_base_scroll_box">
+			<div class="mobile_lay_head">
+				<div class="mobile_head_left">
+					<div class="mobile_head_icon_user"></div>
 				</div>
-				<div class="mobile_head_menu_item mobile_w_border_b">
-					<div class="mobile_head_menu_left mobile_head_menu_two"></div>
-					<div class="mobile_head_menu_right">回到首页</div>
+				<div class="mobile_head_center">
+					<div class="mobile_head_logo"></div>
 				</div>
-				<div class="mobile_head_menu_item mobile_w_border_b">
-					<div class="mobile_head_menu_left mobile_head_menu_three"></div>
-					<div class="mobile_head_menu_right">联系电话</div>
-				</div>
-				<div class="mobile_head_menu_item mobile_w_border_b">
-					<div class="mobile_head_menu_left mobile_head_menu_four"></div>
-					<div class="mobile_head_menu_right">在线送拍</div>
-				</div>
-				<div class="mobile_head_menu_item">
-					<div class="mobile_head_menu_left mobile_head_menu_five"></div>
-					<div class="mobile_head_menu_right">客户服务</div>
-				</div>
-			</div>
-		</div>
-
-	</div>
-
-
-	<div class="mobile_lay_main">
-		<div class="mobile_mindex_body">
-			<div class="mobile_w_h5"></div>
-			<div class="mobile_mindex_adv">
-
-
-				<div class="swiper-container  mobile_mindex_adv_box">
-					<div class="swiper-wrapper">
-						<div class="swiper-slide">
-						<a href="">
-							<img
-								src="http://www.boguanpaimai.com/zzero/file/images_upload/20150112/ab73a8631ed84c5ba5a591779647050f.jpg"
-								alt="" />
-								</a>
+				<div class="mobile_head_right" onclick="zen.mobile.menu_open()"></div>
+				<div class="mobile_head_menu" id="mobile_head_menu">
+					<div class="mobile_head_menu_content">
+						<div class="mobile_head_menu_item mobile_w_border_b">
+							<div class="mobile_head_menu_left mobile_head_menu_one"></div>
+							<div class="mobile_head_menu_right">分享</div>
 						</div>
-						<div class="swiper-slide">
-							<img
-								src="http://www.boguanpaimai.com/zzero/file/images_upload/20150112/ab73a8631ed84c5ba5a591779647050f.jpg"
-								alt="" />
+						<div class="mobile_head_menu_item mobile_w_border_b">
+							<div class="mobile_head_menu_left mobile_head_menu_two"></div>
+							<div class="mobile_head_menu_right">回到首页</div>
 						</div>
-						<div class="swiper-slide">
-							<img
-								src="http://www.boguanpaimai.com/zzero/file/images_upload/20150112/ab73a8631ed84c5ba5a591779647050f.jpg"
-								alt="" />
+						<div class="mobile_head_menu_item mobile_w_border_b">
+							<div class="mobile_head_menu_left mobile_head_menu_three"></div>
+							<div class="mobile_head_menu_right">联系电话</div>
 						</div>
-					</div>
-
-					<div class="swiper-pagination"></div>
-
-				</div>
-
-				<script>
-					var mySwiper = new Swiper('.swiper-container', {
-						//direction: 'vertical',
-						loop : true,
-
-						// 如果需要分页器
-						pagination : '.swiper-pagination',
-						autoplay:5000
-
-					// 如果需要前进后退按钮
-					//nextButton: '.swiper-button-next',
-					//prevButton: '.swiper-button-prev',
-
-					// 如果需要滚动条
-					//scrollbar: '.swiper-scrollbar',
-					})
-				</script>
-
-
-			</div>
-			<div class="mobile_w_h20 "></div>
-			<div class="mobile_mindex_tips mobile_w_bg_white">
-				<div class="mobile_mindex_tips_left"></div>
-				<div class="mobile_mindex_tips_text">博观资讯</div>
-				<div class="mobile_mindex_tips_right"></div>
-			</div>
-			<div class="mobile_mindex_content mobile_w_bg_white">
-				<div class="mobile_mindex_content_item mobile_w_border_b">
-					<div class="mobile_mindex_content_left">
-						<div class="mobile_mindex_content_title">
-							<a href="">私人订制，珠宝的传承之路</a>
+						<div class="mobile_head_menu_item mobile_w_border_b">
+							<div class="mobile_head_menu_left mobile_head_menu_four"></div>
+							<div class="mobile_head_menu_right">在线送拍</div>
 						</div>
-						<div class="mobile_w_h20"></div>
-						<div class="mobile_mindex_content_ico">
-							<div class="mobile_mindex_content_ico_one"></div>
+						<div class="mobile_head_menu_item">
+							<div class="mobile_head_menu_left mobile_head_menu_five"></div>
+							<div class="mobile_head_menu_right">客户服务</div>
 						</div>
-						<div class="mobile_mindex_content_author">博观拍卖</div>
-						<div class="mobile_mindex_content_date">2015-04-01</div>
-					</div>
-					<div class="mobile_mindex_content_right">
-						<img
-							src="http://www.boguanpaimai.com/zzero/file/images_upload/20150401/90cd079fa253416491346eaa08fcf5b1.jpg" />
-					</div>
-				</div>
-				<div class="mobile_mindex_content_item ">
-					<div class="mobile_mindex_content_left">
-						<div class="mobile_mindex_content_title">北京博观2014秋季拍卖会拍卖现场</div>
-						<div class="mobile_w_h20"></div>
-						<div class="mobile_mindex_content_ico">
-							<div class="mobile_mindex_content_ico_two"></div>
-						</div>
-						<div class="mobile_mindex_content_author">博观拍卖</div>
-						<div class="mobile_mindex_content_date">2015-04-01</div>
-					</div>
-					<div class="mobile_mindex_content_right">
-						<img
-							src="http://www.boguanpaimai.com/zzero/file/images_upload/20150330/f7d65b363c82497c9fcd196d4c6325c9.jpg" />
-					</div>
-				</div>
-			</div>
-
-			<div class="mobile_w_h20 mobile_w_border_b mobile_w_border_t"></div>
-			<div class="mobile_mindex_menu">
-				<div class="mobile_mindex_menu_box">
-					<div class="mobile_mindex_menu_item mobile_w_border_r">
-						<div class="mobile_w_h20"></div>
-						<div class="mobile_mindex_menu_ico mobile_mindex_menu_one"></div>
-						<div class="mobile_mindex_menu_text">预展/结果</div>
-					</div>
-					<div class="mobile_mindex_menu_item mobile_w_border_r">
-
-						<div class="mobile_w_h20"></div>
-						<div class="mobile_mindex_menu_ico mobile_mindex_menu_two"></div>
-						<div class="mobile_mindex_menu_text">公告</div>
-
-					</div>
-					<div class="mobile_mindex_menu_item mobile_w_border_r">
-
-						<div class="mobile_w_h20"></div>
-						<div class="mobile_mindex_menu_ico mobile_mindex_menu_three"></div>
-						<div class="mobile_mindex_menu_text">委托竞投</div>
-
-					</div>
-					<div class="mobile_mindex_menu_item">
-
-						<div class="mobile_w_h20"></div>
-						<div class="mobile_mindex_menu_ico mobile_mindex_menu_four"></div>
-						<div class="mobile_mindex_menu_text">竞投办理</div>
-
 					</div>
 				</div>
 
 			</div>
-			<div class="mobile_w_h20  mobile_w_border_t"></div>
+
+
+			<div class="mobile_lay_main">
+				<div class="mobile_mnews_body " id="mobile_mnews_body">
+					<div id="mobile_mnews_scroll" class="">
+
+						<div id="mobile_mnews_list">
+							<div class="mobile_mnews_item mobile_w_border_t">
+								<div class="mobile_mnews_bg">
+									<div class="mobile_mnews_box">
+										<div class="mobile_w_h20"></div>
+										<div class="mobile_mnews_title">彩色翡翠</div>
+										<div class="mobile_w_h20"></div>
+										<div class="mobile_mnews_tips">发表时间：2015-02-27 |
+											文章出处：博观拍卖</div>
+										<div class="mobile_w_h20"></div>
+										<div>
+											<img
+												src="http://www.boguanpaimai.com/zzero/file/images_upload/20150311/eb978462de4c4e9382fa8db28bf5a9ef.jpg" />
+										</div>
+										<div class="mobile_w_h20"></div>
+										<div class="mobile_mnews_info">导 语：
+											随着中国经济的转型升级，玉石市场也在悄无声息地发生着转变。黄金白银的不断走低，宝石市场不但没有出现下滑，反而从金银市</div>
+										<div class="mobile_w_h30"></div>
+									</div>
+								</div>
+								<div class="mobile_w_h20 mobile_w_border_t"></div>
+							</div>
+							<div class="mobile_mnews_item mobile_w_border_t">
+								<div class="mobile_mnews_bg">
+									<div class="mobile_mnews_box">
+										<div class="mobile_w_h20"></div>
+										<div class="mobile_mnews_title">彩色翡翠</div>
+										<div class="mobile_w_h20"></div>
+										<div class="mobile_mnews_tips">发表时间：2015-02-27 |
+											文章出处：博观拍卖</div>
+										<div class="mobile_w_h20"></div>
+										<div>
+											<img
+												src="http://www.boguanpaimai.com/zzero/file/images_upload/20150311/eb978462de4c4e9382fa8db28bf5a9ef.jpg" />
+										</div>
+										<div class="mobile_w_h20"></div>
+										<div class="mobile_mnews_info">导 语：
+											随着中国经济的转型升级，玉石市场也在悄无声息地发生着转变。黄金白银的不断走低，宝石市场不但没有出现下滑，反而从金银市</div>
+										<div class="mobile_w_h30"></div>
+									</div>
+								</div>
+								<div class="mobile_w_h20 mobile_w_border_t"></div>
+							</div>
+							<div class="mobile_mnews_item mobile_w_border_t">
+								<div class="mobile_mnews_bg">
+									<div class="mobile_mnews_box">
+										<div class="mobile_w_h20"></div>
+										<div class="mobile_mnews_title">彩色翡翠</div>
+										<div class="mobile_w_h20"></div>
+										<div class="mobile_mnews_tips">发表时间：2015-02-27 |
+											文章出处：博观拍卖</div>
+										<div class="mobile_w_h20"></div>
+										<div>
+											<img
+												src="http://www.boguanpaimai.com/zzero/file/images_upload/20150311/eb978462de4c4e9382fa8db28bf5a9ef.jpg" />
+										</div>
+										<div class="mobile_w_h20"></div>
+										<div class="mobile_mnews_info">导 语：
+											随着中国经济的转型升级，玉石市场也在悄无声息地发生着转变。黄金白银的不断走低，宝石市场不但没有出现下滑，反而从金银市</div>
+										<div class="mobile_w_h30"></div>
+									</div>
+								</div>
+								<div class="mobile_w_h20 mobile_w_border_t"></div>
+							</div>
+							<div class="mobile_mnews_item mobile_w_border_t">
+								<div class="mobile_mnews_bg">
+									<div class="mobile_mnews_box">
+										<div class="mobile_w_h20"></div>
+										<div class="mobile_mnews_title">彩色翡翠</div>
+										<div class="mobile_w_h20"></div>
+										<div class="mobile_mnews_tips">发表时间：2015-02-27 |
+											文章出处：博观拍卖</div>
+										<div class="mobile_w_h20"></div>
+										<div>
+											<img
+												src="http://www.boguanpaimai.com/zzero/file/images_upload/20150311/eb978462de4c4e9382fa8db28bf5a9ef.jpg" />
+										</div>
+										<div class="mobile_w_h20"></div>
+										<div class="mobile_mnews_info">导 语：
+											随着中国经济的转型升级，玉石市场也在悄无声息地发生着转变。黄金白银的不断走低，宝石市场不但没有出现下滑，反而从金银市</div>
+										<div class="mobile_w_h30"></div>
+									</div>
+								</div>
+								<div class="mobile_w_h20 mobile_w_border_t"></div>
+							</div>
+						</div>
+						<div class="mobile_base_more" id="mobile_base_more">
+							<div class="mobile_base_more_box">
+								<div class="mobile_base_more_left"></div>
+								<div class="mobile_base_more_right">下拉加载更多</div>
+							</div>
+						</div>
+						<div style="clear: both;"></div>
+					</div>
+				</div>
+			</div>
 		</div>
 	</div>
 
+	<script type="text/javascript">
+		$(function() {
+			zen.mobile.page_mnews()
+		});
+	</script>
 </body>
 
 

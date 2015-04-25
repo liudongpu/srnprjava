@@ -3,7 +3,7 @@
 
 <#assign mb_index_adv=pageexec.upData("info_adv")>
 
-<#assign mb_index_list=pageexec.upDataTop("info_news","file_url!=''","-create_time",2)>
+<#assign mb_index_list=pageexec.upDataTop("info_news","mobile_url!=''","-create_time",2)>
 
 
 
@@ -76,7 +76,7 @@
 					</div>
 					<div class="mobile_mindex_content_right">
 						<img
-							src="${bd_img_cdn_url}${pageexec.upImg(el["file_url"],200)}" />
+							src="${bd_img_cdn_url}${pageexec.upImg(el["mobile_url"],200)}" />
 					</div>
 					</a>
 				</div>

@@ -215,6 +215,14 @@ public class WebBaseProcess extends BaseClass {
 							// sText="<a href=\"\" target=\"\"></a>";
 
 							if (StringUtils.isNotEmpty(sText)) {
+
+								if (StringUtils.isNotBlank(mFields
+										.getSourceCode())) {
+									sText = FormatHelper.upImg(sText, Integer
+											.valueOf(mFields
+													.getSourceCode()));
+								}
+
 								sText = FormatHelper
 										.FormatString(
 												BConfig("zweb.replace_list_url"),

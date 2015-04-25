@@ -9,7 +9,7 @@ zen
 					flag_process : 0,
 					refresh_func : null,
 					temp_uid : '',
-					share_show:false
+					share_show : false
 
 				},
 				menu_open : function() {
@@ -18,39 +18,33 @@ zen
 
 				},
 
-				share_baidu:function()
-				{
-					if(zen.mobile.share_show)
-						{
+				share_baidu : function() {
+					if (zen.mobile.share_show) {
 						$('#mobile_share_box').hide();
-						zen.mobile.share_show=false;
-						}else
-							{
-							$('#mobile_share_box').show();
-							zen.mobile.share_show=true;
-							}
-					
-					
-					
+						zen.mobile.share_show = false;
+					} else {
+						$('#mobile_share_box').show();
+						zen.mobile.share_show = true;
+					}
+
 					window._bd_share_config = {
-							"common" : {
-								"bdSnsKey" : {},
-								"bdText" : "",
-								"bdMini" : "2",
-								"bdMiniList" : false,
-								"bdPic" : "",
-								"bdStyle" : "0",
-								"bdSize" : "32"
-							},
-							"share" : {}
-						};
-						with (document)
-							0[(getElementsByTagName('head')[0] || body)
-									.appendChild(createElement('script')).src = 'http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='
-									+ ~(-new Date() / 36e5)];
+						"common" : {
+							"bdSnsKey" : {},
+							"bdText" : "",
+							"bdMini" : "2",
+							"bdMiniList" : false,
+							"bdPic" : "",
+							"bdStyle" : "0",
+							"bdSize" : "32"
+						},
+						"share" : {}
+					};
+					with (document)
+						0[(getElementsByTagName('head')[0] || body)
+								.appendChild(createElement('script')).src = 'http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='
+								+ ~(-new Date() / 36e5)];
 				},
-				
-				
+
 				to_page : function(sUrl) {
 					location.href = sUrl;
 				},
@@ -353,6 +347,7 @@ zen
 					myScroll.refresh();
 
 				},
+
 				page_musercomment : function(sUid) {
 
 					// zen.mobile.temp.refresh_func=zen.mobile.news_refresh;
@@ -556,8 +551,8 @@ zen
 						bank_no : $('#bank_no').val(),
 						bank_home : $('#bank_home').val(),
 						bank_name : $('#bank_name').val(),
-						card_one : "1",
-						card_two : "2"
+						card_one : $('#card_one').val(),
+						card_two : $('#card_two').val()
 					}, zen.mobile.userbidsave_success);
 
 				},
@@ -565,6 +560,11 @@ zen
 					zen.site.href("newsinfo/muserbidsuccess-user");
 
 				},
+
+				page_musersendsave : function() {
+
+				},
+
 				userentsave_click : function(iType) {
 
 					zen.site.post('ent_save', {
@@ -580,7 +580,35 @@ zen
 					zen.site.href("newsinfo/muserentall-user");
 
 				},
+
+				usersenddel_click : function(sId) {
+
+					zen.site.post('send_del', {
+						id : sId
+
+					}, zen.mobile.usersenddel_success);
+
+				},
+				usersenddel_success : function() {
+					zen.site.href("newsinfo/musersendall-user");
+
+				},
+
 				usersendsave_click : function(iType) {
+
+					if (!zen.mobile.check_field([ {
+						id : 'good_name',
+						note : '名称'
+					}, {
+						id : 'good_price',
+						note : '委托底价'
+					}, {
+						id : 'photo_one',
+						note : '拍品图片'
+					} ])) {
+						return false;
+					}
+					;
 
 					zen.site.post('send_save', {
 						user_name : $("#user_name").val(),
@@ -601,7 +629,32 @@ zen
 					zen.site.href("newsinfo/musersendall-user");
 
 				},
-				
+
+				check_field : function(oCheck) {
+
+					var bFlag = true;
+
+					for ( var i in oCheck) {
+
+						if (bFlag) {
+							var oThis = oCheck[i];
+
+							if ($('#' + oThis.id).val() == "") {
+
+								//alert(oThis.note + '不能为空！');
+								
+								zen.site.model('错误消息', oThis.note + '不能为空！');
+								
+								bFlag = false;
+
+							}
+						}
+					}
+
+					return bFlag;
+
+				},
+
 				last : {}
 
 			}

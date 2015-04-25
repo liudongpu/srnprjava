@@ -81,44 +81,57 @@ public class WebViewManager extends BaseClass implements IBaseManager,
 					mFields.setDidQueryType(Integer.valueOf(String
 							.valueOf(mFieldMap.get("did_query_type"))));
 
+					
+					
+
 					if (mFieldMap.containsKey("source_code")) {
-						MWebSource mSource = WebSourceManager
-								.upWebSource(String.valueOf(mFieldMap
-										.get("source_code")));
-						if (mSource != null) {
+						// 如果是上传 特殊判断参数
+						if (mFields.getDidFieldType() == 416108121) {
+							mFields.setSourceCode(mFieldMap.get(
+									"source_code").toString());
+						} else {
 
-							if (iDidPageType == 416120101
-									|| iDidPageType == 416120105|| iDidPageType == 416120109) {
+							MWebSource mSource = WebSourceManager
+									.upWebSource(String.valueOf(mFieldMap
+											.get("source_code")));
+							if (mSource != null) {
 
-								String sSqlString = "select "
-										+ mSource.getFieldText()
-										+ " as source_text,"
-										+ mSource.getFieldValed()
-										+ " as source_value  from "
-										+ mSource.getFrom() + " where "
-										+ mSource.getWhereEdit();
+								if (iDidPageType == 416120101
+										|| iDidPageType == 416120105
+										|| iDidPageType == 416120109) {
 
-								sSqlString = FormatHelper.FormatString(
-										sSqlString, String.valueOf(mFieldMap
-												.get("source_parameter")));
+									String sSqlString = "select "
+											+ mSource.getFieldText()
+											+ " as source_text,"
+											+ mSource.getFieldValed()
+											+ " as source_value  from "
+											+ mSource.getFrom() + " where "
+											+ mSource.getWhereEdit();
 
-								mFields.setSourceparameter(sSqlString);
+									sSqlString = FormatHelper.FormatString(
+											sSqlString,
+											String.valueOf(mFieldMap
+													.get("source_parameter")));
 
-							} else {
-								String sSqlString = "select "
-										+ mSource.getFieldText() + " from "
-										+ mSource.getFrom() + " where "
-										+ mSource.getWhereBook();
+									mFields.setSourceparameter(sSqlString);
 
-								sSqlString = FormatHelper.FormatString(
-										sSqlString, mFields.getColumnName());
+								} else {
+									String sSqlString = "select "
+											+ mSource.getFieldText() + " from "
+											+ mSource.getFrom() + " where "
+											+ mSource.getWhereBook();
 
-								mFields.setSourceparameter(sSqlString);
+									sSqlString = FormatHelper
+											.FormatString(sSqlString,
+													mFields.getColumnName());
+
+									mFields.setSourceparameter(sSqlString);
+
+								}
 
 							}
 
 						}
-
 					}
 
 					if (!StringUtils.isEmpty(sOrderString)
@@ -205,50 +218,38 @@ public class WebViewManager extends BaseClass implements IBaseManager,
 
 	public synchronized static void recheckOptions(String sViewCode) {
 
-		
 		String sCode = (String) sViewCode;
-		
-		
-		inOption(sCode,"添加","416120103","415101001");
-		inOption(sCode,"修改","416120107","415101305");
-		inOption(sCode,"提交","416120101","415101019");
-		inOption(sCode,"提交","416120105","415101019");
 
-		
+		inOption(sCode, "添加", "416120103", "415101001");
+		inOption(sCode, "修改", "416120107", "415101305");
+		inOption(sCode, "提交", "416120101", "415101019");
+		inOption(sCode, "提交", "416120105", "415101019");
+
 	}
-	
-	private static void inOption(String sCode,String sName,String sDidPt,String sDidOt)
-	{
+
+	private static void inOption(String sCode, String sName, String sDidPt,
+			String sDidOt) {
 		String sTableName = DataTableManager.Get("zweb_view")
 				.upOneMap("code", sCode).get("table_name").toString();
-		
-		MHashMap mHashMap=new MHashMap();
-		
+
+		MHashMap mHashMap = new MHashMap();
+
 		mHashMap.put("view_code", sCode);
 		mHashMap.put("name", sName);
 		mHashMap.put("did_page_type", sDidPt);
 		mHashMap.put("did_option_type", sDidOt);
-		
-		
-		
-		long lCout=DataTableManager.Get("zweb_options").upCount(mHashMap.upObjs());
-		
-		
-		if(lCout==0)
-		{
+
+		long lCout = DataTableManager.Get("zweb_options").upCount(
+				mHashMap.upObjs());
+
+		if (lCout == 0) {
 			mHashMap.put("uid", ComFunction.upUuid());
-			
+
 			DataTableManager.Get("zweb_options").inPut(mHashMap);
-			
+
 		}
-		
-		
-		
+
 	}
-	
-	
-	
-	
 
 	public static MWebView upView(String sKey, int iPageType) {
 

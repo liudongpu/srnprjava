@@ -16,7 +16,8 @@
 						<tr>
 							<th class="mobile_mbid_table_th1">拍品名称</th>
 							<th class="mobile_mbid_table_th2"></th>
-							<th class="mobile_mbid_table_th3">委托底价</th>
+							<th class="mobile_mbid_table_th4">委托底价</th>
+							<th class="mobile_mbid_table_th5">操作</th>
 						</tr>
 						<#assign  pageData=pageexec.upDataOrder("user_send","-create_time","user_uid",pageinfo.getPageOptions()["uid"])  >
 						<#list pageData as el> 
@@ -24,6 +25,7 @@
 							<td><a href="musersendshow-user-${el["uid"]}">${el["good_name"]}</a></td>
 							<td>|</td>
 							<td><a href="musersendshow-user-${el["uid"]}">￥${el["good_price"]}</a></td>
+							<td><a href="javascript:zen.mobile.usersenddel_click('${el["uid"]}')">删除</a></td>
 						</tr>
 						</#list>
 					</table>
