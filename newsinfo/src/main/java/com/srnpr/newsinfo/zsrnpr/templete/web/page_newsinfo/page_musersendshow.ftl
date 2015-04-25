@@ -24,19 +24,19 @@
 					<div class="mobile_w_h20"></div>
 					<div class="mobile_mbid_show_img">
 						<img
-							src="${note_info["photo_one"]}" />
+							src="${pageexec.upMobile(note_info["photo_one"])}" />
 
 					</div>
 					<div class="mobile_w_h20"></div>
 					<div class="mobile_mbid_show_img">
 						<img
-							src="${note_info["photo_two"]}" />
+							src="${pageexec.upMobile(note_info["photo_two"])}" />
 
 					</div>
 					<div class="mobile_w_h20"></div>
 					<div class="mobile_mbid_show_img">
 						<img
-							src="${note_info["photo_three"]}" />
+							src="${pageexec.upMobile(note_info["photo_three"])}" />
 
 					</div>
 					<div class="mobile_w_h20"></div>

@@ -26,7 +26,7 @@ zen
 						$('#mobile_share_box').show();
 						zen.mobile.share_show = true;
 					}
-
+					/*
 					window._bd_share_config = {
 						"common" : {
 							"bdSnsKey" : {},
@@ -43,6 +43,9 @@ zen
 						0[(getElementsByTagName('head')[0] || body)
 								.appendChild(createElement('script')).src = 'http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='
 								+ ~(-new Date() / 36e5)];
+								*/
+					$('#mobile_share_box_js').html('<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1406793959846526" charset="utf-8"></script>');
+					
 				},
 
 				to_page : function(sUrl) {
