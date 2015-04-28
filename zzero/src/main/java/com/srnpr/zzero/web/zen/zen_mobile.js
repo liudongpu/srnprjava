@@ -601,7 +601,7 @@ zen
 					zen.site.href("newsinfo/muserentall-user");
 
 				},
-				userentdel_click:function()
+				userentdel_click:function(sId)
 				{
 					zen.site.post('ent_del', {
 						id : sId
