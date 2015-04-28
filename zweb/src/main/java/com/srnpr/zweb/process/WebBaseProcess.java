@@ -190,7 +190,7 @@ public class WebBaseProcess extends BaseClass {
 			String sOrderBy="-zid";
 			if(sPageView.equals("v_user_bid"))
 			{
-				sOrderBy="-update_time ";
+				sOrderBy="-update_time";
 			}
 
 			List<Map<String, Object>> listMaps = dHelper.upListAll(
