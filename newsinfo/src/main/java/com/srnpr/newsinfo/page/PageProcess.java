@@ -79,6 +79,8 @@ public class PageProcess implements IWebProcess {
 			mResult = new UserCall(pRequest).ChangeInfo(upUserInfo());
 		}else if (sView.equals("bid_save")) {
 			mResult = new UserCall(pRequest).BidSave(upUserInfo());
+		}else if (sView.equals("bid_update")) {
+			mResult = new UserCall(pRequest).BidUpdate(upUserInfo());
 		}else if (sView.equals("bid_check")) {
 			mResult = new UserCall(pRequest).BidCheck(upUserInfo());
 		} else if (sView.equals("ent_save")) {
@@ -87,6 +89,8 @@ public class PageProcess implements IWebProcess {
 			mResult = new UserCall(pRequest).SendSave(upUserInfo());
 		}else if (sView.equals("send_del")) {
 			mResult = new UserCall(pRequest).SendDel(upUserInfo());
+		}else if (sView.equals("ent_del")) {
+			mResult = new UserCall(pRequest).EntDel(upUserInfo());
 		}else if (sView.equals("change_pass")) {
 			mResult = new UserCall(pRequest).ChangePass(upUserInfo());
 		} else if (sView.equals("comment_show")) {

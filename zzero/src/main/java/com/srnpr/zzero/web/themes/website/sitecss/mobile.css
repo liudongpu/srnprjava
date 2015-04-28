@@ -349,11 +349,17 @@ html {
 }
 
 .mobile_mnews_info {
-	font-size: 2.6rem;
-	line-height: 34px;
+	font-size: 2.6rem !important;
+	line-height: 34px !important;
 	color: #656565;
 }
-
+.mobile_mnews_info p,.mobile_mnews_info p span,.mobile_mnews_info p span strong,.mobile_mnews_info span strong
+{
+	font-size: 2.6rem !important;
+	line-height: 34px !important;
+	margin:0px;
+	padding:0px;
+}
 .mobile_base_inbox {
 	width: 100%;
 	height: 100%;
@@ -549,8 +555,8 @@ html {
 
 .mobile_mauction_desc {
 	color: #4f4e4e;
-	font-sze: 1.8rem;
-	line-height: 1.8rem;
+	font-size: 1.8rem;
+	line-height: 2.4rem;
 }
 
 .mobile_mauction_absolute_tip {

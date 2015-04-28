@@ -16,7 +16,8 @@
 						<tr>
 							<th class="mobile_mbid_table_th1">竞投品名称</th>
 							<th class="mobile_mbid_table_th2"></th>
-							<th class="mobile_mbid_table_th3">委托出价</th>
+							<th class="mobile_mbid_table_th4">委托出价</th>
+							<th class="mobile_mbid_table_th5">操作</th>
 						</tr>
 						
 						
@@ -26,6 +27,7 @@
 							<td><a href="muserentshow-user-${el["uid"]}">${el["good_name"]}</a></td>
 							<td>|</td>
 							<td><a href="muserentshow-user-${el["uid"]}">￥${el["good_price"]}</a></td>
+							<td><a href="javascript:zen.mobile.userentdel_click('${el["uid"]}')">删除</a></td>
 						</tr>
 						</#list>
 						

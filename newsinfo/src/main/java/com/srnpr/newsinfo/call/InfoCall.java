@@ -83,7 +83,7 @@ public class InfoCall extends BaseClass {
 
 		if (result.getFlag()) {
 			result.setResult(DataTableManager.Get("info_notice").upList(
-					"zid,uid,title,note,content,create_time",
+					"zid,uid,title,note,replace(content,'<p>&nbsp;</p>','') as content,create_time",
 					"-orderid,-create_time", iPageIndex * 10, 10,
 					new MHashMap()));
 			// result.setMessage(sUid);

@@ -43,6 +43,13 @@ public class PageExec extends BaseClass {
 		return DataTableManager.Get(sTableName).upListListByQuery(sArgs);
 	}
 
+	
+	public int upDataCount(String sTableName, String... sArgs) {
+		return DataTableManager.Get(sTableName).upListCount(sArgs);
+	}
+
+	
+	
 	public Object upDataList(String sTableName, String sFields, String sOrder,
 			int start, int end, Object... oArgs) {
 		return DataTableManager.Get(sTableName).upList(sFields, sOrder, start,

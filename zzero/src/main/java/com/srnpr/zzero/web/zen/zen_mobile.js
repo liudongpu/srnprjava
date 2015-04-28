@@ -238,7 +238,7 @@ zen
 								+ '</div><div class="mobile_w_h20"></div>');
 
 						aHtml
-								.push('<div class="<div class="mobile_mnews_tips">发表时间：'
+								.push('<div class="mobile_mnews_tips">发表时间：'
 										+ oe["create_time"]
 										+ '&nbsp;&nbsp;|&nbsp;&nbsp;文章出处：博观拍卖</div><div class="mobile_w_h20"></div>');
 
@@ -563,6 +563,24 @@ zen
 					zen.site.href("newsinfo/muserbidsuccess-user");
 
 				},
+				
+				
+				userbidupdate_click : function() {
+					// zen.site.href("newsinfo/muserbidsuccess-user");
+
+					zen.site.post('bid_update', {
+						
+					}, zen.mobile.userbidupdate_success);
+
+				},
+				userbidupdate_success : function() {
+					zen.site.href("newsinfo/muserbidsuccess-user");
+
+				},
+				
+				
+				
+				
 
 				page_musersendsave : function() {
 
@@ -583,7 +601,17 @@ zen
 					zen.site.href("newsinfo/muserentall-user");
 
 				},
+				userentdel_click:function()
+				{
+					zen.site.post('ent_del', {
+						id : sId
 
+					}, zen.mobile.userentdel_success);
+				},
+				userentdel_success : function() {
+					zen.site.href("newsinfo/muserentall-user");
+
+				},
 				usersenddel_click : function(sId) {
 
 					zen.site.post('send_del', {

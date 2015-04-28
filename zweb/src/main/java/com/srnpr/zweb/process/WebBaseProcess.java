@@ -185,11 +185,18 @@ public class WebBaseProcess extends BaseClass {
 				mPagePagination.setPageCount(dHelper.upCountAll(sQuery,
 						mWhereMap.upObjs()));
 			}
+			
+			
+			String sOrderBy="-zid";
+			if(sPageView.equals("v_user_bid"))
+			{
+				sOrderBy="-update_time ";
+			}
 
 			List<Map<String, Object>> listMaps = dHelper.upListAll(
 					sbField.toString(),
 					sQuery,
-					"-zid",
+					sOrderBy,
 					(mPagePagination.getPageIndex() - 1)
 							* mPagePagination.getPageSize(),
 					mPagePagination.getPageSize(), mWhereMap.upObjs());

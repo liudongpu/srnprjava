@@ -12,6 +12,7 @@ import com.srnpr.zcom.helper.FormatHelper;
 import com.srnpr.zcom.model.MHashMap;
 import com.srnpr.zcom.model.MResult;
 import com.srnpr.zdata.manager.DataTableManager;
+import com.srnpr.zdata.model.MDataTable;
 import com.srnpr.zweb.helper.MailSupport;
 import com.srnpr.zweb.page.PageExec;
 import com.srnpr.zweb.page.PageRequest;
@@ -124,16 +125,14 @@ public class UserCall extends BaseClass {
 							pRequest.getReqMap().get("login_name").toString(),
 							"login_pass",
 							pRequest.getReqMap().get("login_pass").toString());
-			
+
 			if (mUserInfo == null) {
-				mUserInfo = DataTableManager.Get("user_info")
-						.upOneMap("phone_num",
-								pRequest.getReqMap().get("login_name").toString(),
-								"login_pass",
-								pRequest.getReqMap().get("login_pass").toString());
+				mUserInfo = DataTableManager.Get("user_info").upOneMap(
+						"phone_num",
+						pRequest.getReqMap().get("login_name").toString(),
+						"login_pass",
+						pRequest.getReqMap().get("login_pass").toString());
 			}
-			
-			
 
 			if (mUserInfo != null) {
 				MHashMap mHashMap = new MHashMap();
@@ -288,8 +287,15 @@ public class UserCall extends BaseClass {
 			mMap.put("card_two", pRequest.getReqMap().get("card_two")
 					.toString());
 			mMap.put("create_time", FormatHelper.GetDateTime());
+			mMap.put("update_time", FormatHelper.GetDateTime());
 
 			DataTableManager.Get("user_bid").inPut(mMap);
+
+			MHashMap mLog = new MHashMap();
+			mLog.put("uid", ComFunction.upUuid());
+			mLog.put("user_uid", mUserInfo.get("uid"));
+			mLog.put("create_time", FormatHelper.GetDateTime());
+			DataTableManager.Get("log_bid").inPut(mLog);
 
 		} else {
 			result.error(937301007);
@@ -297,6 +303,33 @@ public class UserCall extends BaseClass {
 
 		return result;
 
+	}
+
+	public MResult BidUpdate(Map<String, Object> mUserInfo) {
+
+		if (mUserInfo != null
+				&& DataTableManager.Get("user_bid").upCount("user_uid",
+						mUserInfo.get("uid")) > 0) {
+
+			MHashMap mUpdate = new MHashMap();
+
+			mUpdate.put("user_uid", mUserInfo.get("uid"));
+
+			mUpdate.put("update_time", FormatHelper.GetDateTime());
+
+			DataTableManager.Get("user_bid").inPost(mUpdate, "user_uid");
+
+			MHashMap mLog = new MHashMap();
+			mLog.put("uid", ComFunction.upUuid());
+			mLog.put("user_uid", mUserInfo.get("uid"));
+			mLog.put("create_time", FormatHelper.GetDateTime());
+			DataTableManager.Get("log_bid").inPut(mLog);
+			
+
+		} else {
+			result.error(937301007);
+		}
+		return result;
 	}
 
 	public MResult EntSave(Map<String, Object> mUserInfo) {
@@ -340,31 +373,46 @@ public class UserCall extends BaseClass {
 		return result;
 
 	}
-	
-	
+
 	public MResult SendDel(Map<String, Object> mUserInfo) {
 
 		if (mUserInfo != null) {
-			
-			String sUid= pRequest.getReqMap().get("id").toString();
-			
-			if(StringUtils.isNotBlank(sUid))
-			{
-				
-				
-				DataTableManager.Get("user_send").inDelete("uid",sUid);
-				
+
+			String sUid = pRequest.getReqMap().get("id").toString();
+
+			if (StringUtils.isNotBlank(sUid)) {
+
+				DataTableManager.Get("user_send").inDelete("uid", sUid);
+
 			}
-			
-			
-			
-		}else {
+
+		} else {
 			result.error(937301007);
 		}
 
 		return result;
 	}
 	
+	
+	
+	public MResult EntDel(Map<String, Object> mUserInfo) {
+
+		if (mUserInfo != null) {
+
+			String sUid = pRequest.getReqMap().get("id").toString();
+
+			if (StringUtils.isNotBlank(sUid)) {
+
+				DataTableManager.Get("user_ent").inDelete("uid", sUid);
+
+			}
+
+		} else {
+			result.error(937301007);
+		}
+
+		return result;
+	}
 	
 
 	public MResult SendSave(Map<String, Object> mUserInfo) {
