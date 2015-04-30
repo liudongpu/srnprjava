@@ -191,6 +191,7 @@ public class WebBaseProcess extends BaseClass {
 			if(sPageView.equals("v_user_bid"))
 			{
 				sOrderBy="-update_time";
+				//设置
 			}
 
 			List<Map<String, Object>> listMaps = dHelper.upListAll(
