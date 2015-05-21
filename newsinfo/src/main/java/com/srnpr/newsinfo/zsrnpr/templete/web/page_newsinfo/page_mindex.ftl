@@ -21,7 +21,7 @@
 
 							
 							<div class="swiper-slide">
-							<a href="${el["link_url"]?replace("newsinfo/","newsinfo/m")}">
+							<a href="${el["link_url"]?replace("newsinfo/","newsinfo/m")?replace("www.boguanpaimai.com","m.boguanpaimai.com")}">
 							<img
 								src="${bd_img_cdn_url}${pageexec.upMobile(el["file_url"])}"
 								alt="" />

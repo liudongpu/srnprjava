@@ -1,5 +1,5 @@
 
-<@m_mb_common_header nav="main" type="1" />
+<@m_mb_common_header  type="1" title="公告" />
 
 
 

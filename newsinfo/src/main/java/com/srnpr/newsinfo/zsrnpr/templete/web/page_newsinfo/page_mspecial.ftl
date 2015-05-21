@@ -1,5 +1,5 @@
-
-<@m_mb_common_header nav="main"  button="back"/>
+<#assign note_info=pageexec.upDataOne("info_auction","uid",pageinfo.getWebSet()["Url_Option"])>
+<@m_mb_common_header button="back" title=note_info["name"] />
 
 
 

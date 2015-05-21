@@ -33,6 +33,47 @@
 <link type="text/css" href="../../../themes/website/sitecss/mobile.css"
 	rel="stylesheet">
 <script type="text/javascript" src="../../../zen/zen_mobile.js"></script>
+
+
+<script type="text/javascript"
+	src="../../../lib/iscroll/iscroll-probe.js"></script>
+	
+	<style>
+	.mobile_mgood_body {
+	position: absolute;
+	z-index: 1;
+	top: 90px;
+	bottom: 0px;
+	left: 0;
+	width: 100%;
+	background: #ccc;
+	overflow: hidden;
+}
+	.mobile_mgood_box {
+	position: absolute;
+	z-index: 1;
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+	width: 2000px;
+	-webkit-transform: translateZ(0);
+	-moz-transform: translateZ(0);
+	-ms-transform: translateZ(0);
+	-o-transform: translateZ(0);
+	transform: translateZ(0);
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	-webkit-text-size-adjust: none;
+	-moz-text-size-adjust: none;
+	-ms-text-size-adjust: none;
+	-o-text-size-adjust: none;
+	text-size-adjust: none;
+	background: #fff;
+}
+	</style>
+	
+
 </head>
 <body class="mobile_body mobile_w_bg_base">
 
@@ -73,9 +114,9 @@
 
 
 	<div class="mobile_lay_main">
-		<div class="mobile_mgood_body">
+		<div class="mobile_mgood_body" id="mobile_mgood_body">
 
-			<div class="mobile_mgood_box">
+			<div class="mobile_mgood_box" id="mobile_mgood_box">
 				<div class="mobile_w_h20 "></div>
 				<div>
 					<img
@@ -97,6 +138,29 @@
 			</div>
 		</div>
 	</div>
+
+
+	<script>
+		$(function() {
+			//var myScroll = new IScroll('#mobile_mgood_body');
+			
+			/*
+			myScroll.on('scrollEnd', function() {
+
+				console.log(this.directionX);
+
+				if (this.x < -1000) {
+					// do something
+
+				}
+			});*/
+			
+			myScroll = new IScroll('#mobile_mgood_box', { scrollX: true, freeScroll: true });
+			document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
+			
+		})
+	</script>
+
 </body>
 
 

@@ -1,5 +1,5 @@
 
-<@m_mb_common_header nav="main"  button="back"/>
+<@m_mb_common_header   button="back" title="预展/结果"/>
 
 
 
