@@ -1,7 +1,9 @@
-
-<@m_mb_common_header nav="main"  button="back"/>
-
 <#assign good_info=pageexec.upDataOne("info_good","uid",pageinfo.getWebSet()["Url_Option"])>
+
+
+<@m_mb_common_header type="3" title=good_info["name"] button="back"/>
+
+
 
 
 
@@ -33,6 +35,45 @@
 			</div>
 		</div>
 	</div>
+
+	<script>
+	
+	var sLast="";
+	
+	var sNext="";
+	
+	<#assign good_info_last=pageexec.upDataOneOrder("info_good","special_uid=:ospecial_uid and code<:ocode","-code","ocode",good_info["code"],"ospecial_uid",good_info["special_uid"])?default('') >
+							<#if good_info_last?is_hash>
+								sLast="${good_info_last["uid"]}";							
+							</#if>
+
+	<#assign good_info_last=pageexec.upDataOneOrder("info_good","special_uid=:ospecial_uid and code>:ocode","code","ocode",good_info["code"],"ospecial_uid",good_info["special_uid"])?default('') >
+							<#if good_info_last?is_hash>
+sNext="${good_info_last["uid"]}";
+							</#if>
+
+$(function(){
+
+			if(sNext)
+			{
+				$(".mobile_mgood_box").on("swipeleft",function(){
+				 location.href="mgood-good-"+sNext;
+				});
+			}
+			if(sLast)
+			{
+				$(".mobile_mgood_box").on("swiperight",function(){
+				 location.href="mgood-good-"+sLast;
+				});
+			}
+
+
+			
+});
+	</script>	
+	
+	
+
 
 <@m_mb_common_footer />
 </body>

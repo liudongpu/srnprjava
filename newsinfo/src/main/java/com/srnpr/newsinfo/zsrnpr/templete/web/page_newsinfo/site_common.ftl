@@ -301,6 +301,16 @@ $(window).ready(function(){zen.site.comment_show('${uid}')});
 	rel="stylesheet">
 <script type="text/javascript" src="${bd_url}/zzero/web/zen/zen_mobile.js"></script>
 
+
+<#if type=="3" >
+
+<script type="text/javascript" src="${bd_url}/zzero/web/lib/jquery/jquery.mobile.touch.min.js"></script>
+
+
+</#if>
+
+
+
 <#if type=="2" >
 
 <link type="text/css" href="${bd_url}/zzero/web/lib/swiper/swiper3.06.min.css"
