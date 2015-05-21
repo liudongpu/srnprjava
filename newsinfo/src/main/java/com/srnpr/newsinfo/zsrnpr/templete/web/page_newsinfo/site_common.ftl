@@ -87,6 +87,18 @@
 </#macro>
 
 
+<#macro m_mobile_common_title nav="" title="">
+	<@compress single_line=true>
+	
+	<#if (nav=="main")>博观拍卖 - 中国珠宝玉石专业拍卖机构 
+	<#else>
+			${title}
+	</#if>
+			
+	</@compress>
+</#macro>
+
+
 
 <#macro m_site_common_footer>
 
@@ -285,7 +297,7 @@ $(window).ready(function(){zen.site.comment_show('${uid}')});
 
 <#macro m_mb_common_header nav="" title="" type="0" button="user">
 
-<title><@m_site_common_title nav title /></title> 
+<title><@m_mobile_common_title nav title /></title> 
 <meta name="keywords" content="博观拍卖,拍卖,博观,珠宝,玉石,机构" />
 <meta name="description" content="${title}-博观拍卖 - 中国珠宝玉石专业拍卖机构" />
 <meta
