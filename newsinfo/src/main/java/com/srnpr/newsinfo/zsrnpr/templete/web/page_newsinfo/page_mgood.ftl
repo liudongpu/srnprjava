@@ -66,7 +66,7 @@ $(function(){
 				$(".mobile_mgood_box").on("swipeleft",function(){
 				 location.href="mgood-good-"+sNext;
 				});
-				$('#mobile_mgood_click_next').html('<a href="mgood-good-'+sNext+'">下一个&gt;</a>');
+				$('#mobile_mgood_click_next').html('<a href="mgood-good-'+sNext+'">下一个&nbsp;&gt;</a>');
 				
 			}
 			if(sLast)
@@ -75,7 +75,7 @@ $(function(){
 				 location.href="mgood-good-"+sLast;
 				});
 				
-				$('#mobile_mgood_click_last').html('<a href="mgood-good-'+sLast+'">&lt;上一个</a>');
+				$('#mobile_mgood_click_last').html('<a href="mgood-good-'+sLast+'">&lt;&nbsp;上一个</a>');
 				
 			}
 
