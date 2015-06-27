@@ -82,10 +82,11 @@ public class InfoCall extends BaseClass {
 				.toString());
 
 		if (result.getFlag()) {
-			result.setResult(DataTableManager.Get("info_notice").upList(
-					"zid,uid,title,note,replace(content,'<p>&nbsp;</p>','') as content,create_time",
-					"-orderid,-create_time", iPageIndex * 10, 10,
-					new MHashMap()));
+			result.setResult(DataTableManager
+					.Get("info_notice")
+					.upList("zid,uid,title,note,replace(content,'<p>&nbsp;</p>','') as content,create_time",
+							"-orderid,-create_time", iPageIndex * 10, 10,
+							new MHashMap()));
 			// result.setMessage(sUid);
 
 		}
@@ -102,11 +103,40 @@ public class InfoCall extends BaseClass {
 		MHashMap map = new MHashMap();
 		map.put("special_uid", sUid);
 
+		int iLength = sUid.length();
+
 		if (result.getFlag()) {
-			result.setResult(new MapHelper().upImageSize(DataTableManager.Get("info_good").upList(
-					"zid,uid,name,code,assess_price,success_price,file_url",
-					"code", iPageIndex * 10, 10, map), FormatHelper.Mobile_Size/2,
-					"file_url"));
+
+			if (iLength < 30) {
+
+				//map.put("name", "%" + sUid + "%");
+				
+				if(StringUtils.isBlank(sUid))
+				{
+					sUid="not exist empty";
+				}
+
+				result.setResult(new MapHelper()
+						.upImageSize(
+								DataTableManager
+										.Get("info_good")
+										.upListAll(
+												"zid,uid,name,code,assess_price,success_price,file_url",
+												"name like :name or code like :name", "code",
+												iPageIndex * 10, 10, "name",
+												"%" + sUid + "%"),
+								FormatHelper.Mobile_Size / 2, "file_url"));
+			} else {
+
+				result.setResult(new MapHelper()
+						.upImageSize(
+								DataTableManager
+										.Get("info_good")
+										.upList("zid,uid,name,code,assess_price,success_price,file_url",
+												"code", iPageIndex * 10, 10,
+												map),
+								FormatHelper.Mobile_Size / 2, "file_url"));
+			}
 			// result.setMessage(sUid);
 
 		}

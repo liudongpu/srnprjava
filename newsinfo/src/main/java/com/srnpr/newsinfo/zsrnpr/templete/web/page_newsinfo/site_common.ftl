@@ -366,6 +366,9 @@ $(window).ready(function(){zen.site.comment_show('${uid}')});
 </#if>
 
 
+<#if button=="search">
+
+<#else>
 	<div class="mobile_lay_head">
 		<div class="mobile_head_left">
 		<#if button=="user"><a href="/newsinfo/musercenter-user"><div class="mobile_head_icon_user"></div></a></#if>
@@ -414,16 +417,25 @@ $(window).ready(function(){zen.site.comment_show('${uid}')});
 					<div class="mobile_head_menu_right">在线送拍</div>
 				</a>
 				</div>
-				<div class="mobile_head_menu_item">
+				<div class="mobile_head_menu_item mobile_w_border_b">
 				<a href="/newsinfo/mstatic-static-303300040001">
 					<div class="mobile_head_menu_left mobile_head_menu_five"></div>
 					<div class="mobile_head_menu_right">客户服务</div>
+				</a>
+				</div>
+				<div class="mobile_head_menu_item">
+				<a href="/newsinfo/msearch-search">
+					<div class="mobile_head_menu_left mobile_head_menu_six"></div>
+					<div class="mobile_head_menu_right">搜索拍品</div>
 				</a>
 				</div>
 			</div>
 		</div>
 
 	</div>
+	
+</#if>	
+
 </#macro>
 
 

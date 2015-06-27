@@ -27,25 +27,18 @@ zen
 						zen.mobile.share_show = true;
 					}
 					/*
-					window._bd_share_config = {
-						"common" : {
-							"bdSnsKey" : {},
-							"bdText" : "",
-							"bdMini" : "2",
-							"bdMiniList" : false,
-							"bdPic" : "",
-							"bdStyle" : "0",
-							"bdSize" : "32"
-						},
-						"share" : {}
-					};
-					with (document)
-						0[(getElementsByTagName('head')[0] || body)
-								.appendChild(createElement('script')).src = 'http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='
-								+ ~(-new Date() / 36e5)];
-								*/
-					$('#mobile_share_box_js').html('<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1406793959846526" charset="utf-8"></script>');
-					
+					 * window._bd_share_config = { "common" : { "bdSnsKey" : {},
+					 * "bdText" : "", "bdMini" : "2", "bdMiniList" : false,
+					 * "bdPic" : "", "bdStyle" : "0", "bdSize" : "32" }, "share" : {} };
+					 * with (document) 0[(getElementsByTagName('head')[0] ||
+					 * body) .appendChild(createElement('script')).src =
+					 * 'http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion=' +
+					 * ~(-new Date() / 36e5)];
+					 */
+					$('#mobile_share_box_js')
+							.html(
+									'<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1406793959846526" charset="utf-8"></script>');
+
 				},
 
 				to_page : function(sUrl) {
@@ -205,6 +198,13 @@ zen
 
 				},
 
+				btn_msearch : function() {
+
+					location.href = "msearch-search-"
+							+ $('#msearch_input').val();
+
+				},
+
 				page_mnotice : function() {
 
 					// zen.mobile.temp.refresh_func=zen.mobile.news_refresh;
@@ -277,6 +277,17 @@ zen
 				pic_success : function(oResult) {
 
 					zen.mobile.refresh_success(oResult);
+
+					// 兼容搜索 如果第一页没有内容 则显示无结果
+					if (zen.mobile.temp.page_index == 1
+							&& oResult.result.length == 0) {
+						
+						$('#mobile_msearch_empty').show();
+						$('#mobile_mpic_body').hide();
+						
+						
+
+					}
 
 					var aHtml = [];
 
@@ -563,13 +574,12 @@ zen
 					zen.site.href("newsinfo/muserbidsuccess-user");
 
 				},
-				
-				
+
 				userbidupdate_click : function() {
 					// zen.site.href("newsinfo/muserbidsuccess-user");
 
 					zen.site.post('bid_update', {
-						
+
 					}, zen.mobile.userbidupdate_success);
 
 				},
@@ -577,10 +587,6 @@ zen
 					zen.site.href("newsinfo/muserbidsuccess-user");
 
 				},
-				
-				
-				
-				
 
 				page_musersendsave : function() {
 
@@ -601,8 +607,7 @@ zen
 					zen.site.href("newsinfo/muserentall-user");
 
 				},
-				userentdel_click:function(sId)
-				{
+				userentdel_click : function(sId) {
 					zen.site.post('ent_del', {
 						id : sId
 
@@ -672,10 +677,10 @@ zen
 
 							if ($('#' + oThis.id).val() == "") {
 
-								//alert(oThis.note + '不能为空！');
-								
+								// alert(oThis.note + '不能为空！');
+
 								zen.site.model('错误消息', oThis.note + '不能为空！');
-								
+
 								bFlag = false;
 
 							}

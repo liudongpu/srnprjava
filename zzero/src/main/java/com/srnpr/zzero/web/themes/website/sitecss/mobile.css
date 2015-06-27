@@ -161,6 +161,11 @@ html {
 	background-position: -400px -200px;
 }
 
+.mobile_head_menu_six {
+	background-position: -500px -400px;
+}
+
+
 .mobile_head_menu_right {
 	float: left;
 	font-size: 2.6rem;
@@ -353,13 +358,15 @@ html {
 	line-height: 34px !important;
 	color: #656565;
 }
-.mobile_mnews_info p,.mobile_mnews_info p span,.mobile_mnews_info p span strong,.mobile_mnews_info span strong
-{
+
+.mobile_mnews_info p, .mobile_mnews_info p span, .mobile_mnews_info p span strong,
+	.mobile_mnews_info span strong {
 	font-size: 2.6rem !important;
 	line-height: 34px !important;
-	margin:0px;
-	padding:0px;
+	margin: 0px;
+	padding: 0px;
 }
+
 .mobile_base_inbox {
 	width: 100%;
 	height: 100%;
@@ -1026,14 +1033,12 @@ html {
 	display: none;
 	padding-left: 40px;
 	padding-bottom: 20px;
-	height:50px;
+	height: 50px;
 }
 
-.mobile_share_box .bshare-custom 
-{
-	width:100%;
+.mobile_share_box .bshare-custom {
+	width: 100%;
 }
-
 
 .mobile_mstatic_box {
 	width: 94%;
@@ -1049,3 +1054,61 @@ html {
 	font-size: 2rem;
 	line-height: 3rem;
 }
+
+
+.mobile_head_search
+{
+	float:left;
+	width:80%;
+}
+
+.mobile_msearch_bg {
+	height: 60px;
+	width: 100%%;
+	margin-top: 15px;
+	
+	background-color: #fff;
+	over-flow:hidden;
+}
+
+.mobile_msearch_btn {
+	float: left;
+	background-image: url("../mimg/mobile-img.png");
+	background-position: -100px -400px;
+	width: 50px;
+	height: 60px;
+}
+.mobile_msearch_input
+{
+	float:left;
+	width:90%;
+	
+}
+.mobile_msearch_input input
+{
+	height:60px;
+	line-height:60px;
+	width:100%;
+	border:none;
+	font-size: 2.6rem;
+}
+
+
+.mobile_msearch_empty
+{
+	width:100%;
+	height:300px;
+	display:none;
+	padding-top:100px;
+	
+}
+
+.mobile_msearch_empty_img {
+	
+	background-image: url("../mimg/mobile-img.png");
+	background-position: -200px -400px;
+	width: 300px;
+	height: 200px;
+	margin:auto;
+}
+

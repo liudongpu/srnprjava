@@ -18,6 +18,13 @@
 						src="${bd_img_cdn_url}${pageexec.upMobile(good_info["file_url"])}" />
 				</div>
 				<div class="mobile_w_h20 "></div>
+				<div class="mobile_mgood_tip">
+					<div id="mobile_mgood_click_last" style="float:left;"></div>
+					<div id="mobile_mgood_click_next" style="float:right;"></div>
+					<div style="clear:both;"></div>
+				</div>
+				
+				<div class="mobile_w_h20 mobile_w_clear "></div>
 				<div class="mobile_mgood_title">${good_info["name"]}</div>
 
 				<div class="mobile_mgood_tip">图录号：${good_info["code"]}</div>
@@ -59,12 +66,17 @@ $(function(){
 				$(".mobile_mgood_box").on("swipeleft",function(){
 				 location.href="mgood-good-"+sNext;
 				});
+				$('#mobile_mgood_click_next').html('<a href="mgood-good-'+sNext+'">下一个&gt;</a>');
+				
 			}
 			if(sLast)
 			{
 				$(".mobile_mgood_box").on("swiperight",function(){
 				 location.href="mgood-good-"+sLast;
 				});
+				
+				$('#mobile_mgood_click_last').html('<a href="mgood-good-'+sLast+'">&lt;上一个</a>');
+				
 			}
 
 
