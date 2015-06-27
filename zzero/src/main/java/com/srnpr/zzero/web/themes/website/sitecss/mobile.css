@@ -1058,8 +1058,9 @@ html {
 
 .mobile_head_search
 {
-	float:left;
-	width:82%;
+	float:right;
+	width:80%;
+	margin-right:2%;
 }
 
 .mobile_msearch_bg {
