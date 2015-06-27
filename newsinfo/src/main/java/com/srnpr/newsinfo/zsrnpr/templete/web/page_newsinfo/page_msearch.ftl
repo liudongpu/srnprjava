@@ -19,11 +19,13 @@
 				<div  class="mobile_head_search">
 
 					<div class="mobile_msearch_bg">
-						<div class="mobile_msearch_btn" onclick="zen.mobile.btn_msearch()"></div>
+						
 						<div class="mobile_msearch_input">
 							<input id="msearch_input" type="text" value="${search_text}" />
 						</div>
-
+						<div class="mobile_msearch_btn" onclick="zen.mobile.btn_msearch()">
+							<div  class="mobile_msearch_icon"></div>
+						</div>
 
 					</div>
 
