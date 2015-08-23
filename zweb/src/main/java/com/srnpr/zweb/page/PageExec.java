@@ -130,9 +130,9 @@ public class PageExec extends BaseClass {
 
 			int sName = Integer.valueOf(DataTableManager.Get("info_good")
 					.upOneMap("uid", sCode).get("qrsum").toString());
-
+			sName=sName+1;
 			MHashMap map = new MHashMap();
-			map.inAdd("qrsum", sName + 1, "uid", sCode);
+			map.inAdd("qrsum", sName , "uid", sCode);
 
 			DataTableManager.Get("info_good").inPost(map, "uid");
 			sReturn = String.valueOf(sName);
