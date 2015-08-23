@@ -6,6 +6,7 @@ import java.util.Iterator;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 import org.apache.commons.fileupload.FileItem;
 import org.apache.commons.fileupload.FileUploadException;
@@ -18,6 +19,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
 import org.springframework.web.multipart.MultipartFile;
@@ -28,6 +30,7 @@ import com.srnpr.zcom.model.MHashMap;
 import com.srnpr.zweb.common.WebConst;
 import com.srnpr.zweb.page.UploadFile;
 import com.srnpr.zweb.page.WebPage;
+import com.srnpr.zweb.process.TwoDimensionCode;
 
 /**
  * Handles requests for the application home page.
@@ -135,6 +138,23 @@ public class HomeController {
 	public String defy(Model model,HttpServletRequest request) {
 		
 		return index("yinfo", "main-main", model,request);
+	}
+	
+	
+	@RequestMapping(value = "/qrcode/{path}/{url}")
+	@ResponseBody
+	public String qrcode( 
+			@PathVariable("url") String sUrl, Model model,HttpServletRequest request, HttpServletResponse response) {
+		
+		try {
+			TwoDimensionCode.getInstance().encoderQRCode("http://m.boguanpaimai.com/newsinfo/mgood-good-"+sUrl,response.getOutputStream(),"png");
+		} catch (IOException e) {
+			
+			e.printStackTrace();
+		}
+		
+		
+		return null;
 	}
 	
 	

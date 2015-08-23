@@ -195,7 +195,7 @@ no result
 
 
 <#macro m_page_href  p_name  p_href >
-<a  href="${p_href!}" target=“_blank”>${p_name!}</a>
+<a  href="${p_href!}" target="_blank">${p_name!}</a>
 </#macro>
 <#macro m_page_table_delete  p_name  p_func >
 <a  onclick="zen.page.del('${p_func!}')" >${p_name!}</a>
