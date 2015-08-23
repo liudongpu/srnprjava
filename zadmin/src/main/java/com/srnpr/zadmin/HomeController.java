@@ -159,7 +159,7 @@ public class HomeController {
 
 		
 		try {
-			TwoDimensionCode.getInstance().encoderQRCode("http://m.boguanpaimai.com/newsinfo/mgood-good-"+sUrl,response.getOutputStream(),"png");
+			TwoDimensionCode.getInstance().encoderQRCode("http://m.boguanpaimai.com/newsinfo/mgood-qr-"+sUrl,response.getOutputStream(),"png");
 		} catch (IOException e) {
 			
 			e.printStackTrace();

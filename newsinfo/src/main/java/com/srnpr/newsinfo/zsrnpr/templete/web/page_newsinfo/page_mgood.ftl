@@ -1,6 +1,6 @@
 <#assign good_info=pageexec.upDataOne("info_good","uid",pageinfo.getWebSet()["Url_Option"])>
 
-
+<#assign mgood_show_type=pageexec.upQrSum(pageinfo.getWebSet()["Url_Option"]) >
 <@m_mb_common_header type="3" title=good_info["name"] button="back"/>
 
 
@@ -13,6 +13,13 @@
 
 			<div class="mobile_mgood_box">
 				<div class="mobile_w_h20 "></div>
+				
+				<#if mgood_show_type!="">
+
+					<div style="width:100%;height:60px;color: #3c763d;background-color:#dff0d8;border-color: #bce8f1;line-height:60px;text-indent:30px;font-size:30px;">正版验证 :  这是第${mgood_show_type}次验证   </div>
+					<div class="mobile_w_h20 "></div>
+
+				</#if>
 				<div>
 					<img
 						src="${bd_img_cdn_url}${pageexec.upMobile(good_info["file_url"])}" />

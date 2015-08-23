@@ -15,6 +15,7 @@ import com.srnpr.zcom.base.BaseClass;
 import com.srnpr.zcom.common.CommonConst;
 import com.srnpr.zcom.enumer.EComConst;
 import com.srnpr.zcom.helper.FormatHelper;
+import com.srnpr.zcom.model.MHashMap;
 import com.srnpr.zdata.manager.DataTableManager;
 import com.srnpr.zdata.support.DataSupport;
 import com.srnpr.zdata.support.TableSupport;
@@ -43,13 +44,10 @@ public class PageExec extends BaseClass {
 		return DataTableManager.Get(sTableName).upListListByQuery(sArgs);
 	}
 
-	
 	public int upDataCount(String sTableName, String... sArgs) {
 		return DataTableManager.Get(sTableName).upListCount(sArgs);
 	}
 
-	
-	
 	public Object upDataList(String sTableName, String sFields, String sOrder,
 			int start, int end, Object... oArgs) {
 		return DataTableManager.Get(sTableName).upList(sFields, sOrder, start,
@@ -125,6 +123,24 @@ public class PageExec extends BaseClass {
 
 	}
 
+	public String upQrSum(String sCode) {
+
+		String sReturn = "";
+		if (StringUtils.contains(upRequest().getRequestURI(), "-qr-")) {
+
+			int sName = Integer.valueOf(DataTableManager.Get("info_good")
+					.upOneMap("uid", sCode).get("qrsum").toString());
+
+			MHashMap map = new MHashMap();
+			map.inAdd("qrsum", sName + 1, "uid", sCode);
+
+			DataTableManager.Get("info_good").inPost(map, "uid");
+			sReturn = String.valueOf(sName);
+		}
+
+		return sReturn;
+	}
+
 	public String upRequestParameter(String sKey) {
 		String sValueString = "";
 
@@ -184,6 +200,7 @@ public class PageExec extends BaseClass {
 
 		return FormatHelper.upImg(sUrl, FormatHelper.Mobile_Size);
 	}
+
 	public String upSite(String sUrl) {
 
 		return FormatHelper.upImg(sUrl, FormatHelper.Site_Width);
