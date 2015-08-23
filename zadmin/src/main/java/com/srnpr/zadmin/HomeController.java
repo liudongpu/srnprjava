@@ -27,6 +27,7 @@ import org.springframework.web.multipart.MultipartHttpServletRequest;
 import org.springframework.web.multipart.commons.CommonsMultipartFile;
 
 import com.srnpr.zcom.model.MHashMap;
+import com.srnpr.zdata.manager.DataTableManager;
 import com.srnpr.zweb.common.WebConst;
 import com.srnpr.zweb.page.UploadFile;
 import com.srnpr.zweb.page.WebPage;
@@ -141,10 +142,21 @@ public class HomeController {
 	}
 	
 	
-	@RequestMapping(value = "/qrcode/{path}/{url}")
+	@RequestMapping(value = "/qrcode/{path}/{url}", produces = { "application/binary;charset=UTF-8" })
 	@ResponseBody
 	public String qrcode( 
 			@PathVariable("url") String sUrl, Model model,HttpServletRequest request, HttpServletResponse response) {
+		
+		
+		response.setContentType("application/binary;charset=UTF-8");
+
+		
+		
+		 String sName= DataTableManager.Get("info_good").upOneMap("uid",sUrl).get("code").toString();
+		
+		response.setHeader("Content-disposition", "attachment; filename="
+				+ sName + ".png");// 组装附件名称和格式
+
 		
 		try {
 			TwoDimensionCode.getInstance().encoderQRCode("http://m.boguanpaimai.com/newsinfo/mgood-good-"+sUrl,response.getOutputStream(),"png");

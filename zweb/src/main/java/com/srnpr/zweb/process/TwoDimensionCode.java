@@ -31,7 +31,7 @@ private static TwoDimensionCode instance = new TwoDimensionCode();
 	public void encoderQRCode(String content, OutputStream output,
 			String imgType) {
 		try {
-			BufferedImage bufImg = this.getQR_CODEBufferedImage(content, BarcodeFormat.QR_CODE, 200,200,this.getDecodeHintType());
+			BufferedImage bufImg = this.getQR_CODEBufferedImage(content, BarcodeFormat.QR_CODE, 500,500,this.getDecodeHintType());
 
 			ImageIO.write(bufImg, imgType, output);
 		} catch (Exception e) {
