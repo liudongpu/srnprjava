@@ -12,8 +12,7 @@
 	<#list pageexec.upData("info_special","auction_uid",pageinfo.getWebSet()["Url_Option"])	as el>
 	<li>
 	
-    	<a href="mgoodlist-list-${el["uid"]}"><img class="b_corner"
-						src="${bd_img_cdn_url}${pageexec.upMobile(el["file_url"])}"/ >
+    	<a href="mgoodlist-list-${el["uid"]}"><img src="${bd_img_cdn_url}${pageexec.upMobile(el["file_url"])}"/ >
 			<#assign goodlist = pageexec.upDataOrder("info_good","code","special_uid",el["uid"])>
         	<h2>${el["name"]}</h2>
         	<p>拍卖时间：${el["time"]?date("yyyy-MM-dd")}</p>
