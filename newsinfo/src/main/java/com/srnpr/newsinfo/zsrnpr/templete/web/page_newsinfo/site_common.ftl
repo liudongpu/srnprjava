@@ -469,4 +469,42 @@ $(window).ready(function(){zen.site.comment_show('${uid}')});
 	
 </#macro>
 
+<#macro m_mb_common_header_new nav="" title="" type="0" button="user">
+<meta name="keywords" content="博观拍卖,拍卖,博观,珠宝,玉石,机构" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+<meta name="description" content="${title}-博观拍卖 - 中国珠宝玉石专业拍卖机构" />
+<meta content="yes" name="apple-mobile-web-app-capable" />
+<meta content="black" name="apple-mobile-web-app-status-bar-style" />
+<meta content="telephone=no" name="format-detection" />
+<meta content="email=no" name="format-detection" />
+<title><@m_mobile_common_title nav title /></title> 
+
+<link type="text/css" href="${bd_url}/zzero/web/themes/website/sitecss/mobile_style.css"
+	rel="stylesheet">
+<script type="text/javascript" src="${bd_url}/zzero/web/zen/zen_mobile.js"></script>
+<script type="text/javascript" src="${bd_url}/zzero/web/lib/jquery/jquery.mobile.touch.min.js"></script>
+
+</head>
+<body>
+</#macro>
+
+<#macro m_mb_common_footer_new>
+<div class="foot">
+	<ul>
+    	<li><a href="mhelp-static-303300010002">竞买流程</a></li>
+    	<li><a href="mhelp-static-303300010003">竞买须知</a></li>
+    	<li><a href="mhelp-static-303300010004">委托须知</a></li>
+    	<li><a href="mhelp-static-303300010005">拍卖规则</a></li>
+    </ul>
+    <div class="bd">
+    	<h2>联系方式</h2>
+        <p><b>地&emsp;&emsp;址：</b>北京市朝阳区三间房东路一号“北京懋隆文化产业创意园”十栋</p>
+        <p><b>邮&emsp;&emsp;编：</b>100024</p>
+        <p><b>电&emsp;&emsp;话：</b>86-10-65760069/65769969</p>
+        <p><b>传&emsp;&emsp;真：</b>86-10-65760969</p>
+        <p><b>征集邮箱：</b>pm@boguanpaimai.com</p>
+        <p><b>客服邮箱：</b>service@boguanpaimai.com</p>
+    </div>
+</div>
+</#macro>
 

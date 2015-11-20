@@ -1,0 +1,103 @@
+html{font-size: 100px;}
+body{font: .14rem/.22rem "microsoft yahei";background:#f0f3f5;}
+html,body{min-width:320px;max-width:640px;margin:0 auto;}
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,pre,form,fieldset,input,textarea,blockquote,p,header,footer,nav,section,article,aside,video{padding:0px; margin:0px; tap-highlight-color: rgba(0,0,0,0); -webkit-tap-highlight-color: rgba(0,0,0,0); -ms-tap-highlight-color: rgba(0,0,0,0);}   
+table,td,tr,th{font-size:12px;}
+table{margin:0px auto;}
+img{vertical-align:top; border:0px;}
+ol,ul{list-style:none;} 
+li{list-style-type:none;} 
+h1,h2,h3,h4,h5,h6{font-weight:normal;}   
+address,caption,cite,code,dfn,em,i,b{font-weight:normal; font-style:normal;}   
+a{color:#0077dd; text-decoration:none; outline:none;}
+a:hover{text-decoration:none;}
+img{width: 100%; height: auto; vertical-align: top;}
+input,textarea,select,button{outline: none; resize: none; border: 0; font-family: "microsoft yahei";}
+.tl{text-align:left;}.tr{text-align:right;}.tc{text-align:center;}.tb{font-weight:bold;}
+.clearfix:after{content:''; clear:both; display:block; line-height:0px; font-size:0px; height:0px; visibility:hidden;}
+.clearfix{*zoom:1;}
+.clear{clear:both; display:block; line-height:0px; font-size:0px; height:0px; visibility:hidden;}
+
+.wrap{width:100%;height:100%;position:fixed;background:url(../mimg/start.jpg) no-repeat center bottom;background-size:100%;left:0;top:0;}
+
+.banner{position:relative;overflow:hidden;border-bottom:1px solid #ede9d9;margin-bottom:.1rem;}
+.banner h2{box-sizing:border-box;padding-right:.1rem;color:#333;width:100%;position:absolute;overflow:hidden;left:0;}
+
+.index-list{overflow:hidden;margin-top:.1rem;}
+.index-list li{margin-bottom:.1rem;overflow:hidden;height:1.33rem;}
+.index-list li a{background:#fff;display:block;padding:.1rem 0;height:1.33rem;box-sizing:border-box;overflow:hidden;position:relative;padding-left:1.32rem;}
+.index-list li img{width:1.22rem;height:1.33rem;position:absolute;left:0;top:0;}
+.index-list li a h2{font-weight:bold;font-size:.14rem;line-height:.16rem;color:#333;margin-bottom:.1rem;}
+.index-list li p{font-size:.12rem;color:#666;line-height:.18rem;}
+
+.list .hd{background:#fff;padding:.1rem;overflow:hidden;}
+.list .hd h2{line-height:.2rem;font-size:.17rem;margin-bottom:.1rem;color:#333;font-weight:bold;}
+.list .hd p{line-height:.24rem;font-size:.13rem;color:#666;}
+.list ul{padding:.1rem 0 0 .05rem;overflow:hidden;}
+.list ul li{overflow:hidden;margin-bottom:.1rem;width:50%;box-sizing:border-box;padding-right:.05rem;float:left;}
+.list ul li a{background:#fff;display:block;}
+.list ul li a h2{height:.28rem;line-height:.28rem;padding:.03rem .03rem 0 .03rem;overflow:hidden;font-size:.13rem;color:#333;}
+.list ul li a p{padding:0 .03rem .05rem .03rem;font-size:.12rem;color:#666;line-height:.18rem;}
+.list ul li a p b{color:#e55d5d;}
+
+.detail img{margin-bottom:.1rem;overflow:hidden;}
+.detail .hd{padding:.1rem;overflow:hidden;background:#fff;margin-bottom:.1rem;}
+.detail .hd h2{font-size:.13rem;color:#333;line-height:.15rem;margin-bottom:.08rem;}
+.detail .hd p{font-size:.12rem;color:#e55d5d;line-height:.2rem;font-weight:bold;}
+.detail .hd p b{font-size:.15rem;font-weight:bold;}
+.detail ul{padding:0 .1rem;overflow:hidden;background:#fff;margin-bottom:.1rem;}
+.detail ul li{height:.43rem;line-height:.43rem;font-size:.12rem;color:#666;padding-left:.48rem;position:relative;}
+.detail ul li+li{border-top:1px solid #d6d6d6;}
+.detail ul li b{width:.48rem;position:absolute;left:0;top:0;height:.43rem;font-size:.14rem;color:#333;}
+.detail dl{overflow:hidden;margin-bottom:.1rem;background:#fff;padding:0 .1rem;}
+.detail dl dt{height:.43rem;line-height:.43rem;font-size:.14rem;color:#333;border-bottom:1px solid #d6d6d6;font-weight:normal}
+.detail dl dd{padding:.05rem 0;overflow:hidden;line-height:.18rem;font-size:.12rem;color:#666;}
+
+.foot{overflow:hidden;background:#fff;}
+.foot ul{overflow:hidden;height:.15rem;padding:.17rem .05rem;border-bottom:1px solid #e5e5e5;}
+.foot ul li{width:25%;float:left;text-align:center;height:.15rem;line-height:.15rem;box-sizing:border-box;}
+.foot ul li+li{border-left:1px solid #999;}
+.foot ul li a{color:#666;font-size:.13rem;}
+.foot .bd{padding:.15rem .2rem;overflow:hidden;}
+.foot .bd h2{margin-bottom:.03rem;line-height:.24rem;font-size:.15rem;color:#999;}
+.foot .bd p{overflow:hidden;padding-left:.6rem;position:relative;line-height:.16rem;font-size:.12rem;color:#999;}
+.foot .bd p b{position:absolute;left:0;top:0;line-height:.18rem;}
+
+.content h2{overflow:hidden;margin-top:.1rem;line-height:.5rem;height:.5rem;text-align:center;font-size:.2rem;color:#333;}
+.content .bd{padding:0 .1rem;overflow:hidden;}
+.content .bd p{line-height:.18rem;font-size:.12rem;color:#333;margin-bottom:.1rem;}
+
+.up{width:.44rem;height:.44rem;background:url(../mimg/up.png) no-repeat;overflow:hidden;position:fixed;right:.15rem;bottom:.15rem;text-indent:-999em;background-size:100%;}
+
+@media screen and (min-width: 320px){
+	.banner h2{line-height:.37rem;height:.37rem;top:.28rem;font-size:.16rem;padding-left:.95rem;}
+	.banner h2.h2{line-height:.19rem;}
+}
+@media screen and (min-width: 360px){
+	.banner h2{line-height:.41rem;height:.41rem;top:.3rem;font-size:.18rem;padding-left:1.05rem;}
+	.banner h2.h2{line-height:.21rem;}
+}
+@media screen and (min-width: 375px){
+	.banner h2{line-height:.43rem;height:.43rem;top:.32rem;font-size:.18rem;padding-left:1.11rem;}
+	.banner h2.h2{line-height:.22rem;}
+}
+@media screen and (min-width: 400px){
+	.banner h2{line-height:.46rem;height:.46rem;top:.34rem;font-size:.19rem;padding-left:1.25rem;}
+	.banner h2.h2{line-height:.23rem;}
+}
+@media screen and (min-width: 414px){
+	.banner h2{line-height:.47rem;height:.47rem;top:.35rem;font-size:.20rem;padding-left:1.22rem;}
+	.banner h2.h2{line-height:.24rem;}
+}
+@media screen and (min-width: 480px){
+	.banner h2{line-height:.55rem;height:.55rem;top:.41rem;font-size:.23rem;padding-left:1.41rem;}
+	.banner h2.h2{line-height:.28rem;}
+}
+@media screen and (min-width: 568px){
+	.banner h2{line-height:.65rem;height:.65rem;top:.48rem;font-size:.27rem;padding-left:1.65rem;}
+	.banner h2.h2{line-height:.33rem;}
+}
+@media screen and (min-width: 640px){
+	.banner h2{line-height:.73rem;height:.73rem;top:.55rem;font-size:.32rem;padding-left:1.91rem;}
+	.banner h2.h2{line-height:.37rem;}
+}
