@@ -1,5 +1,22 @@
 <#assign special_info=pageexec.upDataOne("info_auction","uid",pageinfo.getWebSet()["Url_Option"])>
-<@m_mb_common_header_new type="3" title=special_info["name"] button="back"/>
+<@m_mb_common_header_new type="1" title=special_info["name"] button="back"/>
+
+<div class="wrap" style="background:url(${bd_img_cdn_url}${pageexec.upMobile(special_info["file_url"])}) no-repeat center top;background-size:100%;display:none;"></div>
+<div class="bottom" style="display:none;"><img src="${bd_url}/zzero/web/themes/website/mimg/bottom.jpg" alt=""></div>
+
+<script type="text/javascript">
+var uId = $.cookie("id");
+if(undefined == uId || null == uId || '' == uId){
+	$('.wrap').show();
+	$('.bottom').show();
+	$.cookie('id', 1 ,{expires:30});
+	setTimeout(function(){
+		$('.wrap').fadeOut('slow');
+		$('.bottom').fadeOut('slow');
+	},3000)
+}
+</script>
+
 <div class="banner"><img src="${bd_url}/zzero/web/themes/website/mimg/bn02.jpg" alt=""></div>
 <div class="list">
 	<div class="hd">

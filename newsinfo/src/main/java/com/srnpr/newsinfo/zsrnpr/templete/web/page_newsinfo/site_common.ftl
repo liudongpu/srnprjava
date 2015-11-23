@@ -479,8 +479,10 @@ $(window).ready(function(){zen.site.comment_show('${uid}')});
 <meta content="email=no" name="format-detection" />
 <title><@m_mobile_common_title nav title /></title> 
 
-<link type="text/css" href="${bd_url}/zzero/web/themes/website/sitecss/mobile_style.css"
-	rel="stylesheet">
+<link type="text/css" href="${bd_url}/zzero/web/themes/website/sitecss/mobile_style.css" rel="stylesheet">
+<#if type=="1" >
+<script type="text/javascript" src="${bd_url}/zzero/web/lib/jquery/jquery.cookie.js"></script>
+</#if>
 <script type="text/javascript" src="${bd_url}/zzero/web/zen/zen_mobile.js"></script>
 <script type="text/javascript" src="${bd_url}/zzero/web/lib/jquery/jquery.mobile.touch.min.js"></script>
 
