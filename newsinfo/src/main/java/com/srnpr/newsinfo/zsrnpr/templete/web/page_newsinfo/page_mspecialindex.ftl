@@ -1,6 +1,6 @@
 <#assign special_info=pageexec.upDataOne("info_auction","uid",pageinfo.getWebSet()["Url_Option"])>
-<@m_mb_common_header_new type="1" title=special_info["name"] button="back"/>
-
+<@m_mb_common_header_new type="2" title=special_info["name"] button="back"/>
+<img src="${bd_url}/zzero/web/themes/website/mimg/logo.jpg" alt="" style="position:absolute;left:-10000rem;top:-10000rem;">
 <div class="wrap" style="background:url(${bd_img_cdn_url}${pageexec.upMobile(special_info["file_url"])}) no-repeat center top;background-size:100%;display:none;"></div>
 <div class="bottom" style="display:none;"><img src="${bd_url}/zzero/web/themes/website/mimg/bottom.jpg" alt=""></div>
 
@@ -40,3 +40,37 @@ if(undefined == uId || null == uId || '' == uId){
     </#list>
 </ul>
 <@m_mb_common_footer_new/>
+<script type="text/javascript">
+document.addEventListener('WeixinJSBridgeReady',
+            function onBridgeReady() {
+                WeixinJSBridge.call('showOptionMenu');
+                 // 发送给好友
+                WeixinJSBridge.on('menu:share:appmessage', function(argv){
+                  WeixinJSBridge.invoke('sendAppMessage',{
+                "img_url": '${bd_url}/zzero/web/themes/website/mimg/logo.jpg',
+                "img_width": "300",
+                "img_height": "300",
+                "link": window.location.href,
+                "desc": '',
+                "title": '${special_info["name"]}',
+            }, function(res) {
+                //_report('send_msg', res.err_msg);
+            });
+                });
+                // 分享至朋友圈
+                WeixinJSBridge.on('menu:share:timeline',
+                function(argv) { 
+                    WeixinJSBridge.invoke('shareTimeline', {
+                        "img_url": '${bd_url}/zzero/web/themes/website/mimg/logo.jpg',
+                        "link": window.location.href,
+                        "title": '${special_info["name"]}',
+                        "desc": ''
+                    },
+                    function(res) {
+                        WeixinJSBridge.log(res.err_msg);
+                        // alert(res);
+		});
+	});
+});
+</script>
+</baby>

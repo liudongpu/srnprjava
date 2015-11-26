@@ -319,6 +319,64 @@ zen
 					myScroll.refresh();
 
 				},
+				
+				page_mgoodlist : function(sUid) {
+
+					zen.mobile.temp.temp_uid = sUid;
+					zen.mobile.refresh_page(function() {
+						zen.mobile.mgoodlist_refresh();
+					});
+
+					zen.mobile.mgoodlist_refresh();
+
+				},
+				mgoodlist_refresh : function() {
+					zen.site.post('pic_show', {
+						page_index : zen.mobile.temp.page_index,
+						pic_uid : zen.mobile.temp.temp_uid
+					}, zen.mobile.mgoodlist_success);
+				},
+				mgoodlist_success : function(oResult) {
+
+					zen.mobile.refresh_success(oResult);
+
+					// 兼容搜索 如果第一页没有内容 则显示无结果
+					if (zen.mobile.temp.page_index == 1
+							&& oResult.result.length == 0) {
+						
+						$('#mobile_msearch_empty').show();
+						$('#mobile_mgoodlist_body').hide();
+						
+						
+
+					}
+					//$('#count').text('拍品数量：'+oResult.result.length);
+					var aHtml = [];
+
+					for ( var i in oResult.result) {
+						var oe = oResult.result[i];
+
+						aHtml.push('<li>');
+						aHtml.push('<a href="mgooddetail-good-'	+ oe["uid"]	+ '">');
+						aHtml.push('<img src="' + zen.site.config.img_url
+								+ oe["file_url"] + '" />');
+						aHtml.push('<h2>'
+								+ oe["name"] + '</h2>');
+						aHtml.push('<p>图录号：'
+								+ oe["code"] + '<br>');
+						aHtml.push('<b>参考价：'
+								+ oe["assess_price"] + '</b><br>');
+						aHtml.push('<b>成交价：'
+								+ oe["success_price"] + '</b>');
+						aHtml.push('</p></a>');
+						aHtml.push('</li>');
+					}
+					$('#mobile_mgoodlist_list').append(aHtml.join(''));
+
+					myScroll.refresh();
+
+				},
+				
 				page_musercollect : function(sUid) {
 
 					// zen.mobile.temp.refresh_func=zen.mobile.news_refresh;

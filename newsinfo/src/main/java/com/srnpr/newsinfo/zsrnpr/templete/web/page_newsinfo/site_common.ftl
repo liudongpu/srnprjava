@@ -480,11 +480,33 @@ $(window).ready(function(){zen.site.comment_show('${uid}')});
 <title><@m_mobile_common_title nav title /></title> 
 
 <link type="text/css" href="${bd_url}/zzero/web/themes/website/sitecss/mobile_style.css" rel="stylesheet">
-<#if type=="1" >
-<script type="text/javascript" src="${bd_url}/zzero/web/lib/jquery/jquery.cookie.js"></script>
-</#if>
 <script type="text/javascript" src="${bd_url}/zzero/web/zen/zen_mobile.js"></script>
 <script type="text/javascript" src="${bd_url}/zzero/web/lib/jquery/jquery.mobile.touch.min.js"></script>
+<#if type=="2" >
+<script type="text/javascript" src="${bd_url}/zzero/web/lib/jquery/jquery.cookie.js"></script>
+</#if>
+<#if type=="1" >
+		<script type="text/javascript" src="${bd_url}/zzero/web/lib/iscroll/iscroll-probe.js"></script>
+
+	<style>
+	* {
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		box-sizing: border-box;
+	}
+	
+	html {
+		-ms-touch-action: none;
+	}
+	
+	body {
+		height: 100px;
+		overflow: hidden;
+		/* this is important to prevent the whole page to bounce */
+	}
+	</style>
+</#if>
+
 
 </head>
 <body>
@@ -507,6 +529,9 @@ $(window).ready(function(){zen.site.comment_show('${uid}')});
         <p><b>征集邮箱：</b>pm@boguanpaimai.com</p>
         <p><b>客服邮箱：</b>service@boguanpaimai.com</p>
     </div>
+</div>
+<div style="display:none;">
+<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_5501354'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s25.cnzz.com/stat.php%3Fid%3D5501354' type='text/javascript'%3E%3C/script%3E"));</script>
 </div>
 </#macro>
 
