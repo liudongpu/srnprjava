@@ -67,10 +67,10 @@ input,textarea,select,button{outline: none; resize: none; border: 0; font-family
 .content .bd{padding:0 .1rem;overflow:hidden;}
 .content .bd p{line-height:.18rem;font-size:.12rem;color:#333;margin-bottom:.1rem;}
 
-.more{margin:.05rem 0 .15rem 0;text-align:center;overflow:hidden;height:.3rem;line-height:.3rem;font-size:.14rem;color:#999;}
+.more{margin:.05rem 0 .15rem 0;text-align:center;overflow:hidden;height:.3rem;line-height:.3rem;font-size:.14rem;color:#999;clear:both;}
 .more i{display:inline-block;width:.27rem;height:.27rem;vertical-align:middle;margin-right:.05rem;background:url(../mimg/icon.png) no-repeat;background-size:auto 100%;}
 
-.up{width:.44rem;height:.44rem;background:url(../mimg/up.png) no-repeat;overflow:hidden;position:fixed;right:.15rem;bottom:.15rem;text-indent:-999em;background-size:100%;}
+.up{width:.44rem;height:.44rem;background:url(../mimg/up.png) no-repeat;overflow:hidden;position:fixed;right:.15rem;bottom:.15rem;text-indent:-999em;background-size:100%;z-index:1000;}
 .bottom{width:100%;position:fixed;bottom:0;left:0;z-index:100;}
 
 @media screen and (min-width: 320px){

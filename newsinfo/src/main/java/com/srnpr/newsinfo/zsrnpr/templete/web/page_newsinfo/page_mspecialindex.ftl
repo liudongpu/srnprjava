@@ -48,8 +48,8 @@ document.addEventListener('WeixinJSBridgeReady',
                 WeixinJSBridge.on('menu:share:appmessage', function(argv){
                   WeixinJSBridge.invoke('sendAppMessage',{
                 "img_url": '${bd_url}/zzero/web/themes/website/mimg/logo.jpg',
-                "img_width": "300",
-                "img_height": "300",
+                "img_width": "200",
+                "img_height": "200",
                 "link": window.location.href,
                 "desc": '',
                 "title": '${special_info["name"]}',

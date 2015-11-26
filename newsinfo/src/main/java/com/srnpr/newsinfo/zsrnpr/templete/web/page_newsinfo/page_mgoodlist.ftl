@@ -28,12 +28,13 @@
 			zen.mobile.page_mgoodlist("${pageinfo.getWebSet()["Url_Option"]}");
 		});
 	</script>
+	
 </div>
 
 <@m_mb_common_footer_new />
 </div>
 </div>
-<a class="up" href="javascript:history.back(-1);">返回</a>
+<a class="up" href="mspecialindex-list-${special_info["auction_uid"]}">返回</a>
 <script type="text/javascript">
 document.addEventListener('WeixinJSBridgeReady',
             function onBridgeReady() {

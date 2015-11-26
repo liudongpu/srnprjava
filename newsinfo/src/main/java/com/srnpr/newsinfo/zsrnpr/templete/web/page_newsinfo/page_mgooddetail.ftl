@@ -26,7 +26,7 @@
     </dl>
 </div>
 <@m_mb_common_footer_new/>
-<a class="up" href="javascript:history.back(-1);">返回</a>
+<a class="up" href="mgoodlist-list-${good_info["special_uid"]}">返回</a>
 <script type="text/javascript">
 document.addEventListener('WeixinJSBridgeReady',
             function onBridgeReady() {
