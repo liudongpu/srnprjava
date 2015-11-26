@@ -30,10 +30,10 @@ if(undefined == uId || null == uId || '' == uId){
 	<li>
 	
     	<a href="mgoodlist-list-${el["uid"]}"><img src="${bd_img_cdn_url}${pageexec.upMobile(el["file_url"])}"/ >
-			<#assign goodlist = pageexec.upDataOrder("info_good","code","special_uid",el["uid"])>
+			<#assign goodCount = pageexec.upDataCount("info_good","special_uid",el["uid"])>
         	<h2>${el["name"]}</h2>
         	<p>拍卖时间：${el["time"]?date("yyyy-MM-dd")}</p>
-            <p>拍卖数量：${goodlist?size}</p>
+            <p>拍卖数量：${goodCount}</p>
             <p>成交总额：${el["success_price"]}</p>
         </a>
     </li>
