@@ -10,21 +10,22 @@
         <p id="count">拍品数量：${goodlist?size}</p>
         <p>成交总额：${special_info["success_price"]?default('')}</p>
     </div>
-
-	    <ul id="mobile_mgoodlist_list">
+    <div class="cont">
+	    <ul>
 	    <#list goodlist as el>
     	 <li>
     	<a href="mgooddetail-good-${el["uid"]}"><img src="${bd_img_cdn_url}${pageexec.upMobile(el["file_url"])}" / >
          <h2>${el["name"]}</h2>
          <p>图录号${el["code"]}<br>
-      		   参考价：<b>${el["assess_price"]}</b><br>
+      		   参考价：<b>${el["assess_price"]}</b>
                                               成交价：<b>${el["success_price"]}</b>
          </p>
-       </a>
-    </li>
-    </#list>
+        </a>
+        </li>
+        </#list>
 	    </ul>
-</div>	
+	</div>    
+</div>
 
 <@m_mb_common_footer_new />
 <a class="up" href="mspecialindex-list-${special_info["auction_uid"]}">返回</a>
