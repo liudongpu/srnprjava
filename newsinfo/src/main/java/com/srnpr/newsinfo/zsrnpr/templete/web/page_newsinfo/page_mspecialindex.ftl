@@ -22,13 +22,13 @@ if(undefined == uId || null == uId || '' == uId){
 	<div class="hd">
     	<h2>${special_info['name']}</h2>  
     	
-    	<#if pageinfo.getWebSet()["Url_Option"]=="cad9800fa6bd4f948f13e891df4b396a">
+    	<#if pageinfo.getWebSet()["Url_Option"]=="29e29aa79843450f8d7fb7dcef80f436">
     	<p>
 		预展时间：2015年11月28日-29日<br/>
 拍卖时间：2015年11月30日10:00开始顺次拍卖<br/>
 预展地点：国家会议中心一层C245展位（天工奖展区旁）<br/>
 拍卖地点：国家会议中心会议区三层311B会议室<br/>
-特别提示：博观拍卖将与淘宝网拍卖会实行线上线下同步拍<br/><br/>
+特别提示：博观拍卖将与淘宝网拍卖会实行线上线下同步拍
 		</p>
 		<#else>
 		
