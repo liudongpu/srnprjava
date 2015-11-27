@@ -16,6 +16,7 @@
     	 <li>
     	<a href="mgooddetail-good-${el["uid"]}"><img src="${bd_img_cdn_url}${pageexec.upMobile(el["file_url"])}" / >
          <h2>${el["name"]}</h2>
+         
          <p>图录号：${el["code"]}<br>
       		   参考价：<b>${el["assess_price"]}</b>
                                               成交价：<b>${el["success_price"]}</b>
