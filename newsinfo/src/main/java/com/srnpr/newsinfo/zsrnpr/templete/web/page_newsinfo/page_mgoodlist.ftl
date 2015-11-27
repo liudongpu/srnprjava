@@ -10,7 +10,6 @@
         <p id="count">拍品数量：${goodlist?size}</p>
         <p>成交总额：${special_info["success_price"]?default('')}</p>
     </div>
-    <div class="cont">
 	    <ul>
 	    <#list goodlist as el>
     	 <li>
