@@ -38,7 +38,7 @@ input,textarea,select,button{outline: none; resize: none; border: 0; font-family
 .list ul li a{background:#fff;display:block;}
 .list ul li a h2{height:.28rem;line-height:.28rem;padding:.03rem .03rem 0 .03rem;overflow:hidden;font-size:.13rem;color:#333;}
 .list ul li a p{padding:0 .03rem .05rem .03rem;font-size:.12rem;color:#666;line-height:.18rem;}
-.list ul li a p b{color:#e55d5d;}
+.list ul li a p b{display:block;color:#e55d5d;}
 
 .detail img{margin-bottom:.1rem;overflow:hidden;}
 .detail .hd{padding:.1rem;overflow:hidden;background:#fff;margin-bottom:.1rem;}

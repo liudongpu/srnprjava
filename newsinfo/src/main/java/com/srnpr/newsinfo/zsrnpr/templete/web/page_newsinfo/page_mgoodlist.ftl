@@ -11,13 +11,13 @@
         <p>成交总额：${special_info["success_price"]?default('')}</p>
     </div>
 
-	    <ul id="mobile_mgoodlist_list">
+	    <ul>
 	    <#list goodlist as el>
     	 <li>
     	<a href="mgooddetail-good-${el["uid"]}"><img src="${bd_img_cdn_url}${pageexec.upMobile(el["file_url"])}" / >
          <h2>${el["name"]}</h2>
          <p>图录号${el["code"]}<br>
-      		   参考价：<b>${el["assess_price"]}</b><br>
+      		   参考价：<b>${el["assess_price"]}</b>
                                               成交价：<b>${el["success_price"]}</b>
          </p>
        </a>
