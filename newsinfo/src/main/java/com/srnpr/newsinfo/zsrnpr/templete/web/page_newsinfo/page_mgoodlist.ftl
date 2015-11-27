@@ -10,6 +10,7 @@
         <p id="count">拍品数量：${goodlist?size}</p>
         <p>成交总额：${special_info["success_price"]?default('')}</p>
     </div>
+    <div class="cont">
 	    <ul>
 	    <#list goodlist as el>
     	 <li>
@@ -23,7 +24,7 @@
         </li>
         </#list>
 	    </ul>
-	</div>    
+	</div>
 </div>
 
 <@m_mb_common_footer_new />
