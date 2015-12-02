@@ -1,5 +1,10 @@
 <#assign special_info=pageexec.upDataOne("info_special","uid",pageinfo.getWebSet()["Url_Option"])>
 <@m_mb_common_header_new type="3" title=special_info["name"] button="back"/>
+<script type="text/javascript">
+$(function() {
+    $("img.lazy").lazyload();
+});
+</script>
 <img src="${bd_url}/zzero/web/themes/website/mimg/logo.jpg" alt="" style="position:absolute;left:-10000rem;top:-10000rem;">
 <#assign goodlist = pageexec.upDataOrder("info_good","code","special_uid",pageinfo.getWebSet()["Url_Option"])>
 <div class="banner"><img src="${bd_url}/zzero/web/themes/website/mimg/bn01.jpg" alt=""><h2 class="h2">${special_info["name"]}</h2></div>
@@ -14,7 +19,7 @@
 	    <ul>
 	    <#list goodlist as el>
     	 <li>
-    	<a href="mgooddetail-good-${el["uid"]}"><img src="${bd_img_cdn_url}${pageexec.upMobile(el["file_url"])}" / >
+    	<a href="mgooddetail-good-${el["uid"]}"><img class="lazy" data-original="${bd_img_cdn_url}${pageexec.upMobile(el["file_url"])}" / >
          <h2>${el["name"]}</h2>
          
          <p>图录号：${el["code"]}<br>

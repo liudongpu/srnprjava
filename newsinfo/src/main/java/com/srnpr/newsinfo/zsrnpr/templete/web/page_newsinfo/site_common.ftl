@@ -506,7 +506,9 @@ $(window).ready(function(){zen.site.comment_show('${uid}')});
 	}
 	</style>
 </#if>
-
+<#if type=="3" >
+<script type="text/javascript" src="${bd_url}/zzero/web/lib/jquery/jquery.lazyload.js"></script>
+</#if>
 
 </head>
 <body>
