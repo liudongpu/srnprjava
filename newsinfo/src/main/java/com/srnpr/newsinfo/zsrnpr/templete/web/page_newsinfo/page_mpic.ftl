@@ -1,10 +1,10 @@
 <#assign note_info=pageexec.upDataOne("info_special","uid",pageinfo.getWebSet()["Url_Option"])>
+<#assign auction_info=pageexec.upDataOne("info_auction","uid",note_info["auction_uid"])>
 <@m_mb_common_header type="1"  button="back" title=note_info["name"]/>
 
-
-
-
-
+	<div class="mobile_list_head">
+	${auction_info['instruction']?default("")} 
+	</div>
 	<div class="mobile_lay_main">
 				<div class="mobile_mpic_body " id="mobile_mpic_body">
 					<div id="mobile_mpic_scroll" class="">
