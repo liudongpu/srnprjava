@@ -7,7 +7,7 @@
 	<div class="layout_height8"></div>
 
 		<div class="search_body">
-		<#assign  pageSearchNav=pageexec.upPageNavQuery("info_good",""," name like :name or code like :name ","-time","name","%"+pageinfo.getWebSet()["Url_Option"]+"%" )  >
+		<#assign  pageSearchNav=pageexec.upPageNavQuery("info_good",""," (name like :name or code like :name) and file_url!='' ","-time","name","%"+pageinfo.getWebSet()["Url_Option"]+"%" )  >
 					<div><h3>搜索结果</h3></div>
 			<div class="search_table">
 				<table class="table table-bordered  table-hover">

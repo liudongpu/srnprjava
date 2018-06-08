@@ -35,7 +35,7 @@
 				<div class="mobile_mgood_title">${good_info["name"]}</div>
 
 				<div class="mobile_mgood_tip">图录号：${good_info["code"]}</div>
-				<div class="mobile_mgood_tip">质地：${good_info["texture"]}</div>
+				<div class="mobile_mgood_tip">款识：${good_info["texture"]}</div>
 				<div class="mobile_mgood_tip">尺寸：${good_info["size"]}</div>
 				<div class="mobile_mgood_tip">参考价：${good_info["assess_price"]}</div>
 				<div class="mobile_mgood_tip">成交价：${good_info["success_price"]}</div>

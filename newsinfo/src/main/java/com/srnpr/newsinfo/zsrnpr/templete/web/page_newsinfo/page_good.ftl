@@ -41,7 +41,7 @@
 								<h4>${good_info["name"]}</h4>
 								图录号：${good_info["code"]}
 								<br />
-								质地：${good_info["texture"]}
+								款识：${good_info["texture"]}
 								<br />
 								尺寸：${good_info["size"]}
 								<br />

@@ -17,7 +17,7 @@
 		<#else>
 			<li><b>作者：</b></li>
 		</#if>
-    	<li><b>质地：</b>${good_info["texture"]}</li>
+    	<li><b>款识：</b>${good_info["texture"]}</li>
     	<li><b>尺寸：</b>${good_info["size"]}</li>
     </ul>
     <dl>
