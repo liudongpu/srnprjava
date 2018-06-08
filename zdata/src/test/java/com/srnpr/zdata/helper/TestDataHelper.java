@@ -5,7 +5,7 @@ import com.srnpr.zdata.TestBase;
 
 public class TestDataHelper extends TestBase {
 
-	@Test
+	
 	public void test() {
 		//fail("Not yet implemented");
 
