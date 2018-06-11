@@ -27,7 +27,7 @@
 							<td>${el["code"]}</td>
 							<td>${el["name"]}</td>
 							<td><img class="b_corner"
-						src="${el["file_url"]}" /></td>
+						src="${pageexec.upImg(el["file_url"],50)}" /></td>
 							<td><a href="good-good-${el["uid"]}">查看</a></td>
 						</tr>
 					</#list>
