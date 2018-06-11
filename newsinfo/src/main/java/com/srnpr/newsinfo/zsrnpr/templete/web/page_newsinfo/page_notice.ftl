@@ -17,6 +17,7 @@
 				</div>
 			</div>
 		</div>
+		<@m_site_common_qrcode />
 	</div>
 <@m_site_common_share_script />
 <@m_site_common_footer />

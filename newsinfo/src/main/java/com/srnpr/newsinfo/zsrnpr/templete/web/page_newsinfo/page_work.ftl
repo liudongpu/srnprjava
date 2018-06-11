@@ -42,7 +42,7 @@
 			<div class="h_40"></div>
 		</div>
 
-
+<@m_site_common_qrcode />
 </div>
 	
 	

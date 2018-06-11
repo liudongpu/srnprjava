@@ -148,6 +148,8 @@
 
 <@m_site_common_piclist cid="30350002" />
 
+<@m_site_common_qrcode />
+
 	</div>
 
 <#else>
