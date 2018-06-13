@@ -2,7 +2,9 @@
 	<@m_site_common_header nav="auction" title=special_info["name"] />
 
 	<div class="layout_main website_center">
-		<div class="b_sitenav"><@m_site_common_breadcrumb ["预展及成交","auction-list",special_info["name"],""] /></div>
+		<div class="b_sitenav"><@m_site_common_breadcrumb ["预展及成交","auction-list",special_info["name"],""] />
+		<span style="float:right;color:#000;font-weight:bold;">    拍品咨询：18515306113（微信同号）</span>
+		</div>
 		<div class="special_body">
 			<div class="layout_height8"></div>
 			<div class="container-fluid">
@@ -82,7 +84,7 @@
 			</div>
 			
 			<div class="h_40"></div>
-			
+			<@m_site_common_qrcode />
 		</div>
 
 

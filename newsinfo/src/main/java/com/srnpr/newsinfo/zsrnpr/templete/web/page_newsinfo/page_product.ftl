@@ -77,6 +77,7 @@
 			<div class="layout_height8" style="height: 100px;"></div>
 		</div>
 	</div>
+	<@m_site_common_qrcode />
 	</div>
 
 <@m_site_common_footer />

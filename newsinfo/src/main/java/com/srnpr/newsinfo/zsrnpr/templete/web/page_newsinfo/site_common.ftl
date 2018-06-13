@@ -105,9 +105,9 @@
 
 
 
-	<div id="bgpmqrcode" style="position: fixed;bottom: 20px;margin-left: 850px;width:150px;height:170px;">
+	<div id="bgpmqrcode" style="position: fixed;bottom: 10px;right:10px;width:150px;height:170px;">
 			<div style="height:20px;background-color:#ccc;line-height:20px;padding-left:8px;">
-			客服咨询<a href="javascript:$('#bgpmqrcode').hide()"><span style="float:right;padding-right:8px;">X</span></a>
+			拍品咨询<a href="javascript:$('#bgpmqrcode').hide()"><span style="float:right;padding-right:8px;">X</span></a>
 			</div>
 			<img style="width:148px;height:148px;border:solid 1px #ccc;" src="${bd_url}/zzero/web/themes/website/images/bgpmservice.jpg"/>
 
