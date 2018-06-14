@@ -45,6 +45,7 @@
 			
 		</div>
 		 <@m_site_common_piclist />
+		 <@m_site_common_qrcode />
 	</div>
 	
 	

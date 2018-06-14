@@ -53,7 +53,7 @@
 
 			<div class="clearfix"></div>
 		</div>
-
+<@m_site_common_qrcode />
 
 	</div>
 
