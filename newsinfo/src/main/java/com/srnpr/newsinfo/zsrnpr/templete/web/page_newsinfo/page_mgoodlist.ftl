@@ -14,6 +14,7 @@ $(function() {
         <p>拍卖时间：${special_info["time"]}</p>
         <p id="count">拍品数量：${goodlist?size}</p>
         <p>成交总额：${special_info["success_price"]?default('')}</p>
+        <@m_mb_common_qrcode/>
     </div>
     <div class="cont">
 	    <ul>

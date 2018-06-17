@@ -114,6 +114,22 @@
 	</div>
 </#macro>
 
+<#macro m_mb_common_qrcode>
+
+
+
+
+	<div id="bgpmqrcode" style="text-align:center;margin:auto;">
+			<div style="height:20px;line-height:20px;padding-left:8px;text-align:center;">
+			拍品咨询
+			</div>
+			<img style="width:100px;height:100px;border:solid 1px #ccc;" src="${bd_url}/zzero/web/themes/website/images/bgpmservice.jpg"/>
+
+	</div>
+</#macro>
+
+
+
 
 
 

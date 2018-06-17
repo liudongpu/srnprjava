@@ -9,6 +9,7 @@
     	<h2>${good_info["name"]}<br>图录号：${good_info["code"]}</h2>
         <p>参考价：<b>${good_info["assess_price"]}</b></p>
         <p>成交价：<b>${good_info["success_price"]}</b></p>
+        <@m_mb_common_qrcode/>
     </div>
     <ul>
 		<#assign names=good_info["name"]?trim?split(" ")>
